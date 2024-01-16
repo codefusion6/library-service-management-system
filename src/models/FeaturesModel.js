@@ -1,12 +1,11 @@
 import { mongoose } from "mongoose";
-
-const featuresSchema = new mongoose.Schema({
-    features: {
+import { Schema } from "mongoose";
+const featuresSchema = new Schema({
+    featureType: {
         type: String,
         require: true
     }
 })
 
 
-const Features = mongoose.model("Features", featuresSchema)
-export default Features;
+export const Feature = mongoose.model("Feature", featuresSchema)
