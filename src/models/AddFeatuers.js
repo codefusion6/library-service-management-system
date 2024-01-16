@@ -1,4 +1,4 @@
-import mongoose, { Mongoose, model } from "mongoose";
+import { mongoose } from "mongoose";
 
 const featuresSchema = new mongoose.Schema({
     features: {
@@ -8,5 +8,5 @@ const featuresSchema = new mongoose.Schema({
 })
 
 
-const Features = Mongoose.model("Features", featuresSchema)
+const Features = mongoose.model("Features", featuresSchema)
 export default Features;
