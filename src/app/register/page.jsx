@@ -36,34 +36,22 @@ const register = () => {
 
             <button
               type="submit"
-              className="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1"
+              className="w-full text-center py-3 rounded bg-blue-600 text-white hover:bg-green-dark focus:outline-none my-1"
             >
               Create Account
             </button>
 
             <div className="text-center text-sm text-grey-dark mt-4">
-              By signing up, you agree to the
-              <a
-                className="no-underline border-b border-grey-dark text-grey-dark"
-                href="#"
-              >
-                Terms of Service
-              </a>
-              and
-              <a
-                className="no-underline border-b border-grey-dark text-grey-dark"
-                href="#"
-              >
-                Privacy Policy
-              </a>
+              By signing up, you agree to the Terms of Service and Privacy
+              Policy
             </div>
           </div>
 
           <div className="text-grey-dark mt-6">
             Already have an account?
             <a
-              className="no-underline border-b border-blue text-blue"
-              href="../login/"
+              className="no-underline border-b border-blue-300 text-blue-600"
+              href="/login"
             >
               Log in
             </a>
