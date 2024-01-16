@@ -1,9 +1,10 @@
 import React from 'react';
-
+import Feature from '@/components/feature/Feature';
+import booksData from '../../public/books.json';
 const HomePage = () => {
   return (
     <div>
-      <h2>This is HomePage</h2>
+      <Feature books={booksData}></Feature>
     </div>
   );
 };
