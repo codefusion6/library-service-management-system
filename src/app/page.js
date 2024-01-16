@@ -1,10 +1,14 @@
+import React from 'react';
+import Feature from '@/components/feature/Feature';
+import booksData from '../../public/books.json';
 import Banner from "@/components/layout/Banner";
-
-
-export default function Home() {
+const HomePage = () => {
   return (
-    <main className="">
+    <div>
       <Banner />
-    </main>
-  )
-}
+      <Feature books={booksData}></Feature>
+    </div>
+  );
+};
+
+export default HomePage;
