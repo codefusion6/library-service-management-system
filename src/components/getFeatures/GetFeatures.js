@@ -6,10 +6,12 @@ async function GetFeatures() {
     });
 
     const data = await res.json();
-    console.log()
+    // console.log()
 
     return (
-        <div>{data?.name}</div>
+        <div className='container mx-auto'>
+            <h1 className='mt-20 text-3xl font-bold'>{data?.message}</h1>
+        </div>
     )
 }
 
