@@ -14,7 +14,7 @@ const Navbar = () => {
           <FaBars className='md:hidden' />
           <ul className=' gap-6 hidden md:flex'>
             <li><Link href="/">Home</Link></li>
-            <li><Link href="/">Home</Link></li>
+            <li><Link href="/about">About Us</Link></li>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/">Home</Link></li>
           </ul>
