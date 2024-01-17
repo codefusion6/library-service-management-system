@@ -6,6 +6,7 @@ import React from 'react';
 const AboutPage = () => {
   return (
     <div>
+      <div>About Us</div>
       <AboutBanner></AboutBanner>
       <AboutMission></AboutMission>
       <AboutTeam></AboutTeam>
