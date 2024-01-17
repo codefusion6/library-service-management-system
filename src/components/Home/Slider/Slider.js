@@ -1,6 +1,5 @@
 import React from "react";
 import Swiper from "./Swiper";
-
 const Slider = () => {
   return (
     <section className="container mx-auto my-16 ">

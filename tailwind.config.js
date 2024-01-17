@@ -18,5 +18,5 @@ module.exports = {
       },
     },
   },
-  plugins: [nextui()],
+  plugins: [],
 }

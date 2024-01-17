@@ -1,10 +1,10 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import favicon from '../../public/images/favicon.png'
-import Head from 'next/head'
-import Navbar from '@/components/Home/Navbar'
-import Footer from '@/components/Home/Footer'
+import Head from 'next/head';
 import './globals.css';
+import Navbar from '@/components/home/Navbar';
+import Footer from '@/components/home/Footer';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -16,7 +16,7 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
   return (
-    <>
+    <html lang="en" suppressHydrationWarning={true}>
       <Head>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +29,7 @@ const RootLayout = ({ children }) => {
         {children}
         <Footer />
       </body>
-    </>
+    </html>
   );
 };
 
