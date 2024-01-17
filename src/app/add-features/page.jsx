@@ -1,4 +1,5 @@
-import GetFeatures from '@/components/getFeatures/getFeatures'
+
+import GetFeatures from '@/components/getFeatures/GetFeatures'
 import React from 'react'
 
 function page() {

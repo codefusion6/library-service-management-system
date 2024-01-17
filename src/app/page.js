@@ -1,8 +1,8 @@
 import React from 'react';
 import Feature from '@/components/home/feature/Feature';
 import booksData from '../../public/books.json';
-import Banner from '@/components/Home/Banner';
-import Slider from '@/components/Home/Slider/Slider';
+import Banner from '@/components/home/Banner';
+import Slider from '@/components/home/Slider/Slider';
 const HomePage = () => {
   return (
     <div>
