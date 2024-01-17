@@ -1,23 +1,26 @@
 "use client";
 import React from "react";
-import { Accordion, AccordionItem, Button } from "@nextui-org/react";
+import { Accordion, AccordionItem } from "@nextui-org/react";
 
 const FAQ = () => {
-  const defaultContent =
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.";
+  const ans1 =
+    "LTo request a book, simply navigate to the book details page and click on the Request to Borrow button. Follow the prompts to complete the borrowing request.";
+  const ans2 = 
+  " Once you've requested to borrow a book, the admin will review and approve the request, turning you into a borrowing member. You'll be notified upon approval." 
+
   return (
     <div>
-      <Button>Button Explore</Button>
-      <Accordion>
-        <AccordionItem key="1" aria-label="Accordion 1" title="Accordion 1">
-          {defaultContent}
+    
+      <Accordion  variant="splitted">
+        <AccordionItem key="1" aria-label="How can I request to borrow a book on this platform?" title="How can I request to borrow a book on this platform?">
+          {ans1}
         </AccordionItem>
-        <AccordionItem key="2" aria-label="Accordion 2" title="Accordion 2">
-          {defaultContent}
+        <AccordionItem key="2" aria-label="Accordion 2" title="How does the approval process for book borrowing requests work?">
+          {ans2}
         </AccordionItem>
-        <AccordionItem key="3" aria-label="Accordion 3" title="Accordion 3">
+        {/* <AccordionItem key="3" aria-label="Accordion 3" title="Accordion 3">
           {defaultContent}
-        </AccordionItem>
+        </AccordionItem> */}
       </Accordion>
     </div>
   );
