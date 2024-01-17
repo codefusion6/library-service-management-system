@@ -8,7 +8,7 @@ const FAQ = () => {
   return (
     <div>
       <Button>Button Explore</Button>
-      {/* <Accordion>
+      <Accordion>
         <AccordionItem key="1" aria-label="Accordion 1" title="Accordion 1">
           {defaultContent}
         </AccordionItem>
@@ -18,7 +18,7 @@ const FAQ = () => {
         <AccordionItem key="3" aria-label="Accordion 3" title="Accordion 3">
           {defaultContent}
         </AccordionItem>
-      </Accordion> */}
+      </Accordion>
     </div>
   );
 };
