@@ -2,14 +2,30 @@
 "use client"
 import Link from 'next/link'
 import { FaBars } from "react-icons/fa6";
-import logo from './../../../public/images/bookflow.png'
+import logo from './../../public/images/bookflow.png'
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Navbar = () => {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(false);
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scroll) {
+        setScroll(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scroll]);
 
   const user = false;
+
   return (
     <div className={`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}>
       <div className='max-w-7xl mx-auto flex justify-between items-center px-3 py-3'>
@@ -53,7 +69,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
