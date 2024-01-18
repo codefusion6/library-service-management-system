@@ -2,7 +2,7 @@
 "use client"
 import Link from 'next/link'
 import { FaBars } from "react-icons/fa6";
-import logo from './../../public/images/bookflow.png'
+import logo from '../../public/images/bookflow.png'
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 
@@ -30,7 +30,7 @@ const Navbar = () => {
     <div className={`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}>
       <div className='max-w-7xl mx-auto flex justify-between items-center px-3 py-3'>
         <Link href="/">
-          <Image className="w-60" src={logo} alt="our logo" />
+          <Image className="max-w-[200px]" src={logo} alt="our logo" width={200} height={100} />
         </Link>
         <div>
           <ul className='gap-6 hidden md:flex'>
