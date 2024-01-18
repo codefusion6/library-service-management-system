@@ -29,8 +29,8 @@ const Sliding = () => {
           className="border p-1 rounded-full mx-auto w-[250px]"
         />
 
-        <h1 className="mt-3 text-2xl font-medium">Kazi Nazrul Islam</h1>
-        <p className="mt-3 text-center font-normal">
+        <h1 className="mt-3 text-2xl font-semibold">Kazi Nazrul Islam</h1>
+        <p className="mt-3 text-center font-medium mx-20">
           Revolutionary poet and the &quot;Rebel Poet&quot; of Bangladesh, Kazi
           Nazrul Islam, left an indelible mark on literature with his powerful
           verses that echoed the spirit of freedom and resistance.Kazi Nazrul
@@ -47,8 +47,8 @@ const Sliding = () => {
           className="border p-1 rounded-full mx-auto w-[250px]"
         />
 
-        <h1 className="mt-3 text-2xl font-medium ">Rabindranath Tagore</h1>
-        <p className="mt-3 text-center font-normal">
+        <h1 className="mt-3 text-2xl font-semibold ">Rabindranath Tagore</h1>
+        <p className="mt-3 text-center font-medium mx-20">
           Renowned poet, philosopher, and the first non-European Nobel laureate
           in Literature, Rabindranath Tagore&apos;s profound writings continue
           to inspire and transcend cultural boundaries, celebrating the beauty
@@ -65,8 +65,8 @@ const Sliding = () => {
           className="border p-1 rounded-full mx-auto w-[250px]"
         />
 
-        <h1 className="mt-3 text-2xl font-medium">Muhammad Zafar Iqbal</h1>
-        <p className="mt-3 text-center font-normal">
+        <h1 className="mt-3 text-2xl font-semibold">Muhammad Zafar Iqbal</h1>
+        <p className="mt-3 text-center font-medium mx-20">
           Prolific science fiction writer and eminent academic, Muhammad Zafar
           Iqbal has enriched Bangladeshi literature with his imaginative tales
           and contributions to the field of science and technology
@@ -82,8 +82,8 @@ const Sliding = () => {
           alt="profile"
           className="border p-1 rounded-full mx-auto w-[250px]"
         />
-        F<h1 className="mt-3 text-2xl font-medium">Humayun Ahmed</h1>
-        <p className="mt-3 text-center font-normal">
+        F<h1 className="mt-3 text-2xl font-semibold">Humayun Ahmed</h1>
+        <p className="mt-3 text-center font-medium mx-20">
           A beloved storyteller and prolific author, Humayun Ahmed&apos;s
           literary works, spanning novels, dramas, and films, have captivated
           generations, making him a cultural icon in Bangladesh.Humayun

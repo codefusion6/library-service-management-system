@@ -5,8 +5,8 @@ import './globals.css'
 import favicon from '../../public/images/favicon.png'
 import Head from 'next/head';
 import './globals.css';
-import Navbar from '@/components/home/Navbar';
-import Footer from '@/components/home/Footer';
+import Navbar from '@/components/Home/Navbar';
+import Footer from '@/components/Home/Footer';
 // import { NextUIProvider } from '@nextui-org/react';
 
 
