@@ -1,62 +1,70 @@
-/* eslint-disable @next/next/no-img-element */
 "use client";
-import Link from "next/link";
 import React from "react";
-import { Input } from "@nextui-org/react";
-// import { EyeFilledIcon } from "./EyeFilledIcon";
-// import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
-// import { FaReact, FaGithub } from 'react-i
-import { FaEye, FaEyeSlash } from "react-icons/fa6";
+/* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
 import LottieAnimation from "./LottieAnimation";
+import { Input } from "@nextui-org/react";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
-const LoginForm = () => {
+const RegisterForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
-  
-
+  const variants = ["flat", "bordered", "underlined", "faded"];
   const toggleVisibility = () => setIsVisible(!isVisible);
   return (
     <div>
       <div>
-      <div>
-          <h2 className="lg:text-4xl text-blue-500  text-center lg:font-medium lg:mt-5">Please Sign In </h2>
+        <div>
+          <h2 className="lg:text-4xl text-blue-500  text-center lg:font-medium lg:mt-5">Please Sign Up </h2>
           <hr  className="w-[46vh] lg:ml-[87vh] mt-3  mb-5 border  items-center " />
         </div>
         <section className=" flex dark:bg-gray-900">
-          <div className="flex gap-5  lg:items-center lg:justify-center lg:px-6 lg:py-8 mx-auto md:h-screen">
-            <div >
-              <div className="flex items-center mr-10 mb-6 text-2xl ">
-               
+          <div className="flex  items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
+            <div href="" className="flex items-center mb-6 text-2xl ">
+              <div className="flex  mr-18 mb-6 text-2xl ">
                 <LottieAnimation></LottieAnimation>
               </div>
             </div>
 
             <div className="ml-10">
-              <div class="relative  py-2 sm:max-w-xl sm:mx-auto">
-                <div class="relative   lg:px-4 lg:py-1 bg-white lg:mx-8 md:mx-0  shadow rounded-3xl sm:p-18">
-                  <div class="lg:max-w-md lg:mx-auto ">
-                    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="relative  py-3 sm:max-w-xl sm:mx-auto">
+                <div className="relative px-4 py-10 bg-white mx-8 md:mx-0  shadow rounded-3xl sm:p-18">
+                  <div className="max-w-md mx-auto ">
+                    <div className="mt-5">
                       <div>
                         <label
-                          class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
+                          className="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
+                          for="fullname"
+                        >
+                          Full Name
+                        </label>
+                        <Input
+                          isClearable
+                          type="name"
+                          label="Name"
+                          variant="bordered"
+                          placeholder="Enter your Full Name"
+                          onClear={() => console.log("input cleared")}
+                          className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                        />
+                      </div>
+                      <div className="">
+                        <label
+                          className="font-semibold ml-5  text-sm text-gray-600 pb-1 block"
                           for="email"
                         >
                           Email
                         </label>
-
                         <Input
                           isClearable
                           type="email"
                           label="Email"
                           variant="bordered"
                           placeholder="Enter your email"
-                          
                           onClear={() => console.log("input cleared")}
-                          className="max-w-xs  rounded-lg px-3 ml-5 py-2 mt-1 mb-5 text-sm w-96 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                          className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                         />
                       </div>
-                    </div>
-                    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      
+
                       <div>
                         <label
                           class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
@@ -64,7 +72,6 @@ const LoginForm = () => {
                         >
                           Password
                         </label>
-                        
                         <Input
                           label="Password"
                           variant="bordered"
@@ -85,12 +92,12 @@ const LoginForm = () => {
                           type={isVisible ? "text" : "password"}
                           className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                         />
-                        
                       </div>
                     </div>
-                    <div class="flex justify-center items-center">
+
+                    <div className="flex justify-center items-center">
                       <div>
-                        <button class="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
+                        <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
                           <svg
                             viewBox="0 0 24 24"
                             height="25"
@@ -187,18 +194,19 @@ const LoginForm = () => {
                         class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                         type="submit"
                       >
-                        Sign In
+                        Sign up
                       </button>
                     </div>
                     <div class="flex items-center justify-between mt-4">
                       <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                       <Link
                         class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
-                        href="/register"
+                        href="/login"
                       >
-                        Do not have an account?{" "}
+                        have an account?
                         <span className="text-blue-500 font-serif">
-                          Sign Up
+                          {" "}
+                          Log in
                         </span>
                       </Link>
                       <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
@@ -214,4 +222,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default RegisterForm;
