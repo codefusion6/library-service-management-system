@@ -31,13 +31,13 @@ const LoginForm = () => {
             </div>
 
             <div className="ml-10">
-              <div class="relative  py-2 sm:max-w-xl sm:mx-auto">
-                <div class="relative   lg:px-4 lg:py-1 bg-white lg:mx-8 md:mx-0  shadow rounded-3xl sm:p-18">
-                  <div class="lg:max-w-md lg:mx-auto ">
-                    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div className="relative  py-2 sm:max-w-xl sm:mx-auto">
+                <div className="relative   lg:px-4 lg:py-1 bg-white lg:mx-8 md:mx-0  border  shadow-lg rounded-3xl sm:p-18">
+                  <div className="lg:max-w-md lg:mx-auto ">
+                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <label
-                          class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
+                          className="font-semibold ml-10 text-sm text-gray-600  block"
                           for="email"
                         >
                           Email
@@ -51,15 +51,15 @@ const LoginForm = () => {
                           placeholder="Enter your email"
                           
                           onClear={() => console.log("input cleared")}
-                          className="max-w-xs  rounded-lg px-3 ml-5 py-2 mt-1 mb-5 text-sm w-96 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                          className="max-w-xs  rounded-lg px-3 ml-10 py-2 mt-1 mb-5 text-sm w-96 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                         />
                       </div>
                     </div>
-                    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
                       
                       <div>
                         <label
-                          class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
+                          className="font-semibold ml-10 text-sm text-gray-600 pb-1 block"
                           for="password"
                         >
                           Password
@@ -83,14 +83,14 @@ const LoginForm = () => {
                             </button>
                           }
                           type={isVisible ? "text" : "password"}
-                          className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                          className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-10 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                         />
                         
                       </div>
                     </div>
-                    <div class="flex justify-center items-center">
+                    <div className="flex justify-center items-center">
                       <div>
-                        <button class="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
+                        <button className="flex items-center  justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
                           <svg
                             viewBox="0 0 24 24"
                             height="25"
@@ -165,9 +165,9 @@ const LoginForm = () => {
                               fill="#FFF"
                             ></path>
                           </svg>
-                          <span class="ml-2">Sign up with Google</span>
+                          <span className="ml-2">Sign up with Google</span>
                         </button>
-                        <button class="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg mt-4">
+                        <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg mt-4">
                           <svg
                             viewBox="0 0 30 30"
                             height="30"
@@ -178,22 +178,22 @@ const LoginForm = () => {
                           >
                             <path d="M25.565,9.785c-0.123,0.077-3.051,1.702-3.051,5.305c0.138,4.109,3.695,5.55,3.756,5.55 c-0.061,0.077-0.537,1.963-1.947,3.94C23.204,26.283,21.962,28,20.076,28c-1.794,0-2.438-1.135-4.508-1.135 c-2.223,0-2.852,1.135-4.554,1.135c-1.886,0-3.22-1.809-4.4-3.496c-1.533-2.208-2.836-5.673-2.882-9 c-0.031-1.763,0.307-3.496,1.165-4.968c1.211-2.055,3.373-3.45,5.734-3.496c1.809-0.061,3.419,1.242,4.523,1.242 c1.058,0,3.036-1.242,5.274-1.242C21.394,7.041,23.97,7.332,25.565,9.785z M15.001,6.688c-0.322-1.61,0.567-3.22,1.395-4.247 c1.058-1.242,2.729-2.085,4.17-2.085c0.092,1.61-0.491,3.189-1.533,4.339C18.098,5.937,16.488,6.872,15.001,6.688z"></path>
                           </svg>
-                          <span class="ml-2">Sign up with Apple</span>
+                          <span className="ml-2">Sign up with Apple</span>
                         </button>
                       </div>
                     </div>
-                    <div class="mt-5">
+                    <div className="mt-5">
                       <button
-                        class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                        className="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                         type="submit"
                       >
                         Sign In
                       </button>
                     </div>
-                    <div class="flex items-center justify-between mt-4">
-                      <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+                    <div className="flex items-center justify-between mt-4">
+                      <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                       <Link
-                        class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
+                        className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
                         href="/register"
                       >
                         Do not have an account?{" "}
@@ -201,7 +201,7 @@ const LoginForm = () => {
                           Sign Up
                         </span>
                       </Link>
-                      <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+                      <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                     </div>
                   </div>
                 </div>
