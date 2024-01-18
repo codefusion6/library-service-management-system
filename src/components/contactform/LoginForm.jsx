@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
-const register = () => {
+const LoginForm = () => {
   return (
     <div>
-      <div>
+   <div>
         <section className=" flex dark:bg-gray-900">
           <div className="flex  items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
             <a href="" className="flex items-center mb-6 text-2xl ">
@@ -22,89 +22,38 @@ const register = () => {
                 <div class="relative px-4 py-10 bg-white mx-8 md:mx-0  shadow rounded-3xl sm:p-18">
                   <div class="max-w-md mx-auto ">
                     <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                      
                       <div>
                         <label
-                          class="font-semibold text-sm text-gray-600 pb-1 block"
-                          for="fullname"
-                        >
-                          Full Name
-                        </label>
-                        <input
-                          class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-                          type="text"
-                          id="fullname"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          class="font-semibold text-sm text-gray-600 pb-1 block"
+                          class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
                           for="email"
                         >
                           Email
                         </label>
                         <input
-                          class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                          class="border rounded-lg px-3 ml-5 py-2 mt-1 mb-5 text-sm w-96 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                           type="email"
                           id="email"
                         />
                       </div>
-                      <div>
+                     
+                      
+                    </div>
+                    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
                         <label
-                          class="font-semibold text-sm text-gray-600 pb-1 block"
-                          for="username"
-                        >
-                          Username
-                        </label>
-                        <input
-                          class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-                          type="text"
-                          id="username"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          class="font-semibold text-sm text-gray-600 pb-1 block"
+                          class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
                           for="password"
                         >
                           Password
                         </label>
                         <input
-                          class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                          class="border rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                           type="password"
                           id="password"
                         />
                       </div>
-                    </div>
-                    <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label
-                          class="font-semibold text-sm text-gray-600 pb-1 block"
-                          for="dob"
-                        >
-                          Date of Birth
-                        </label>
-                        <input
-                          class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-                          type="date"
-                          id="dob"
-                        />
-                      </div>
-                      <div>
-                        <label
-                          class="font-semibold text-sm text-gray-600 pb-1 block"
-                          for="gender"
-                        >
-                          Gender
-                        </label>
-                        <select
-                          class="border rounded-lg px-3 py-2 mt-1 mb-5 text-sm w-full focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-                          id="gender"
-                        >
-                          <option value="male">Male</option>
-                          <option value="female">Female</option>
-                          <option value="other">Other</option>
-                        </select>
-                      </div>
+                      
                     </div>
                     <div class="flex justify-center items-center">
                       <div>
@@ -205,16 +154,16 @@ const register = () => {
                         class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                         type="submit"
                       >
-                        Sign up
+                        Sign In
                       </button>
                     </div>
                     <div class="flex items-center justify-between mt-4">
                       <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                       <Link
                         class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
-                        href="/login"
+                        href="/register"
                       >
-                        have an account? Log in
+                       Do not have an account? <span className='text-blue-500 font-serif'>Sign Up</span>
                       </Link>
                       <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                     </div>
@@ -229,4 +178,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default LoginForm;
