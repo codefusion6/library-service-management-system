@@ -4,8 +4,7 @@ import { NextResponse, NextRequest } from "next/server"
 
 
 
-await dbConnect();
-
+dbConnect();
 
 export async function GET(req) {
     // console.log("Hello")
