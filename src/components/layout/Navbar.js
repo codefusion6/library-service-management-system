@@ -13,10 +13,9 @@ const Navbar = () => {
   return (
     <div className='bg-slate-200'>
       <div className='max-w-7xl  mx-auto flex justify-between items-center px-3 py-3'>
-        <Link href="/">
-            <Image className="w-60" src={logo} alt="our logo" />
-        </Link>        
-      <div>
+        <Image className="max-w-[180px] " src={logo} alt="our logo" />
+        <div>
+
           <ul className=' gap-6 hidden md:flex'>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About Us</Link></li>
