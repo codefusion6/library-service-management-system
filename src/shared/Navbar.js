@@ -17,7 +17,6 @@ const Navbar = () => {
         setScroll(isScrolled);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -30,7 +29,7 @@ const Navbar = () => {
     <div className={`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}>
       <div className='max-w-7xl mx-auto flex justify-between items-center px-3 py-3'>
         <Link href="/">
-          <Image className="w-60" src={logo} alt="our logo" />
+          <Image className="max-w-[180px]" src={logo} alt="our logo" />
         </Link>
         <div>
           <ul className='gap-6 hidden md:flex'>
