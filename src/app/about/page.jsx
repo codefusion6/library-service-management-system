@@ -1,6 +1,6 @@
-import AboutBanner from '@/components/about/AboutBanner';
-import AboutMission from '@/components/about/AboutMission';
-import AboutTeam from '@/components/about/AboutTeam';
+import AboutBanner from '@/pages/about/AboutBanner';
+import AboutMission from '@/pages/about/AboutMission';
+import AboutTeam from '@/pages/about/AboutTeam';
 import React from 'react';
 
 const AboutPage = () => {

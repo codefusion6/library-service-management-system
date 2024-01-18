@@ -2,7 +2,7 @@
 "use client"
 import Link from 'next/link'
 import { FaBars } from "react-icons/fa6";
-import logo from './../../../public/images/bookflow.png'
+import logo from './../../public/images/bookflow.png'
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
 

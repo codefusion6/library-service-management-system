@@ -4,8 +4,9 @@ import './globals.css'
 import favicon from '../../public/images/favicon.png'
 import Head from 'next/head';
 import './globals.css';
-import Navbar from '@/components/Home/Navbar';
-import Footer from '@/components/Home/Footer';
+import Footer from '@/shared/Footer';
+import Navbar from '@/shared/Navbar';
+
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,9 +24,7 @@ const RootLayout = ({ children }) => {
         <link rel="shortcut icon" href={favicon} />
         <title>{metadata.title}</title>
       </Head>
-
       <body className={inter.className}>
-
         <Navbar />
         {children}
         <Footer />
