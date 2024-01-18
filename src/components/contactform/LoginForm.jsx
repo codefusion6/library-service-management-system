@@ -16,7 +16,7 @@ const LoginForm = () => {
   const toggleVisibility = () => setIsVisible(!isVisible);
   return (
     <div>
-      <div>
+      <div className="">
       <div>
           <h2 className="lg:text-4xl text-blue-500  text-center lg:font-medium lg:mt-5">Please Sign In </h2>
           <hr  className="w-[46vh] lg:ml-[87vh] mt-3  mb-5 border  items-center " />
