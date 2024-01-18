@@ -11,7 +11,8 @@ const page = () => {
             <section className='bg-slate-100'>
                 <div className='max-w-7xl mx-auto md:flex justify-between items-center flex-row-reverse py-10 px-3'>
                     <div className='flex-1'>
-                        <Image width={400} height={300} src="https://i.ibb.co/cLVK4DX/contactus.png" alt="contact page" />
+                        {/* <Image width={400} height={300} src="https://i.ibb.co/cLVK4DX/contactus.png" alt="contact page" /> */}
+                        <Image src="https://cdni.iconscout.com/illustration/premium/thumb/choose-best-teacher-online-1946856-1648375.png" alt="contact page" />
                     </div>
                     <div className='flex-1 space-y-5'>
                         <h3 className='text-5xl font-bold'>Book<span className='text-blue-600'>Flow</span></h3>
