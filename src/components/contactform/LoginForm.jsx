@@ -1,28 +1,28 @@
 /* eslint-disable @next/next/no-img-element */
-import Link from 'next/link';
-import React from 'react';
+import Link from "next/link";
+import React from "react";
 
 const LoginForm = () => {
   return (
     <div>
-   <div>
+      <div>
         <section className=" flex dark:bg-gray-900">
           <div className="flex  items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
-            <a href="" className="flex items-center mb-6 text-2xl ">
-              <img
-                className="w-72 h-80  mr-10"
-                src="https://i.ibb.co/rwn7CvW/depositphotos-430460192-stock.webp"
-                alt=""
-              />
-            </a>
+            <div data-aos="zoom-in-down">
+              <div className="flex items-center mb-6 text-2xl ">
+                <img
+                  className="w-72 h-80  mr-10"
+                  src="https://i.ibb.co/rwn7CvW/depositphotos-430460192-stock.webp"
+                  alt=""
+                />
+              </div>
+            </div>
 
             <div className="ml-10">
-              
               <div class="relative  py-3 sm:max-w-xl sm:mx-auto">
                 <div class="relative px-4 py-10 bg-white mx-8 md:mx-0  shadow rounded-3xl sm:p-18">
                   <div class="max-w-md mx-auto ">
                     <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      
                       <div>
                         <label
                           class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
@@ -36,11 +36,9 @@ const LoginForm = () => {
                           id="email"
                         />
                       </div>
-                     
-                      
                     </div>
                     <div class="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                    <div>
+                      <div>
                         <label
                           class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
                           for="password"
@@ -53,7 +51,6 @@ const LoginForm = () => {
                           id="password"
                         />
                       </div>
-                      
                     </div>
                     <div class="flex justify-center items-center">
                       <div>
@@ -163,7 +160,10 @@ const LoginForm = () => {
                         class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
                         href="/register"
                       >
-                       Do not have an account? <span className='text-blue-500 font-serif'>Sign Up</span>
+                        Do not have an account?{" "}
+                        <span className="text-blue-500 font-serif">
+                          Sign Up
+                        </span>
                       </Link>
                       <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                     </div>
