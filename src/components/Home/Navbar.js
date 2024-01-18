@@ -20,7 +20,7 @@ const Navbar = () => {
           <ul className=' gap-6 hidden md:flex'>
             <li><Link href="/">Home</Link></li>
             <li><Link href="/about">About Us</Link></li>
-            <li><Link href="/">Home</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
             <li><Link href="/">Home</Link></li>
           </ul>
         </div>
