@@ -41,7 +41,6 @@ const page = () => {
                                     <h2>BookFlow</h2>
                                     <address>424-Dhaka, Surma</address>
                                     <address>Dhaka, Bangladesh</address>
-
                                 </div>
                             </div>
                         </div>
