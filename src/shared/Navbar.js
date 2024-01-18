@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+// / eslint-disable @next/next / no - img - element /
 "use client"
 import Link from 'next/link'
 import { FaBars } from "react-icons/fa6";
@@ -17,6 +17,7 @@ const Navbar = () => {
         setScroll(isScrolled);
       }
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -29,7 +30,7 @@ const Navbar = () => {
     <div className={`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}>
       <div className='max-w-7xl mx-auto flex justify-between items-center px-3 py-3'>
         <Link href="/">
-          <Image className="max-w-[180px]" src={logo} alt="our logo" />
+          <Image className="w-60" src={logo} alt="our logo" />
         </Link>
         <div>
           <ul className='gap-6 hidden md:flex'>
@@ -61,7 +62,6 @@ const Navbar = () => {
                 <li onClick={() => setShow(!show)} className='border-1 px-3 p-1 hover:bg-black hover:text-gray-200 rounded-md border-gray-500'>
                   <Link href="/contact">Contact</Link>
                 </li>
-                {/* Add more menu items as needed */}
               </ul>
             </div>
           )}
