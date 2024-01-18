@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
+import ContactBanner from '@/pages/contact/ContactBanner'
 import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
     return (
         <>
+        <ContactBanner></ContactBanner>
             <section className='bg-slate-100'>
                 <div className='max-w-7xl mx-auto md:flex justify-between items-center flex-row-reverse py-10 px-3'>
                     <div className='flex-1'>
