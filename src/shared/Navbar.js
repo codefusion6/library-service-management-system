@@ -62,7 +62,6 @@ const Navbar = () => {
                 <li onClick={() => setShow(!show)} className='border-1 px-3 p-1 hover:bg-black hover:text-gray-200 rounded-md border-gray-500'>
                   <Link href="/contact">Contact</Link>
                 </li>
-                {/* Add more menu items as needed */}
               </ul>
             </div>
           )}
