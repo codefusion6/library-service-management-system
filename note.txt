@@ -1,7 +1,0 @@
-Sumon:
------------------------------       
-I have created a folder name lib nad inside it MongoConnect.js
-
-priyanka:
-----------------------------
-The folder structure was not correct so I fixed It and now working on FAQ and authors section.
