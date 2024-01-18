@@ -1,4 +1,3 @@
-
 import { Inter } from 'next/font/google'
 import * as React from "react";
 import './globals.css'
@@ -7,14 +6,6 @@ import Head from 'next/head';
 import './globals.css';
 import Navbar from '@/components/Home/Navbar';
 import Footer from '@/components/Home/Footer';
-<<<<<<< HEAD
-
-=======
-// import Navbar from '@/components/home/Navbar';
-// import Footer from '@/components/home/Footer';
-// import { NextUIProvider } from '@nextui-org/react';
->>>>>>> 781fd1aebc8edf90745bc510c48e7c56e48c17e0
-
 
 const inter = Inter({ subsets: ['latin'] });
 
