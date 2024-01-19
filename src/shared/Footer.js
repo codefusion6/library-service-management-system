@@ -8,8 +8,8 @@ import { MdHomeRepairService, MdOutlineEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <div className="bg-[#090808] text-gray-400 py-10">
-      <div className="justify-center mx-auto grid grid-cols-1 md:grid-cols-4 place-items-center gap-5">
+    <div className="bg-black text-gray-400 py-10 px-20">
+      <div className="justify-center grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-5 ">
         <div>
           <ul className="text-left text-white space-y-1">
             <li>
@@ -38,8 +38,8 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        {/* <div> */}
-          {/* <ul className="">
+        <div>
+          <ul className="text-white">
             <li>
               <Link href="/">Home</Link>
             </li>
@@ -52,8 +52,8 @@ const Footer = () => {
             <li>
               <Link href="/">Service</Link>
             </li>
-          </ul> */}
-        {/* </div> */}
+          </ul>
+        </div>
         <div>
           <ul className="text-left text-white space-y-1">
             <li>
@@ -111,7 +111,9 @@ const Footer = () => {
       </div>
       <hr className="mt-4" />
       <div>
-        <p className="text-center pt-5 text-lg text-[#ddb425]">All reserved right &copy; CodeFusion</p>
+        <p className="text-center pt-5 text-lg text-[#ddb425]">
+          All reserved right &copy; CodeFusion
+        </p>
       </div>
     </div>
   );
