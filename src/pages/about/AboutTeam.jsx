@@ -4,57 +4,57 @@ import Image from 'next/image';
 import React from 'react';
 
 const teamMembers = [
-    {
-      id: 1,
-      name: 'John Doe',
-      designation: 'CEO',
-      imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
-      linkedin: '#',
-      facebook: '#',
+  {
+    id: 1,
+    name: 'John Doe',
+    designation: 'CEO',
+    imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
+    linkedin: '#',
+    facebook: '#',
 
-    },
-    {
-      id: 2,
-      name: 'Jane Smith',
-      designation: 'CTO',
-      imageUrl: 'https://i.ibb.co/gv2X0vH/user3.jpg',
-      linkedin: '#',
-      facebook: '#',
-    },
-    {
-      id: 3,
-      name: 'Bob Johnson',
-      designation: 'Lead Developer',
-      imageUrl: 'https://i.ibb.co/D5CTNN3/user2.jpg',
-      linkedin: '#',
-      facebook: '#',
-    },
-    {
-      id: 4,
-      name: 'Alice Williams',
-      designation: 'Marketing Manager',
-      imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
-      linkedin: '#',
-      facebook: '#',
-    },
-    {
-      id: 5,
-      name: 'Mark Davis',
-      designation: 'UX/UI Designer',
-      imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
-      linkedin: '#',
-      facebook: '#',
-    },
-    {
-      id: 6,
-      name: 'Emily Taylor',
-      designation: 'Content Writer',
-      imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
-      linkedin: '#',
-      facebook: '#',
-    },
-  ];
-  
+  },
+  {
+    id: 2,
+    name: 'Jane Smith',
+    designation: 'CTO',
+    imageUrl: 'https://i.ibb.co/gv2X0vH/user3.jpg',
+    linkedin: '#',
+    facebook: '#',
+  },
+  {
+    id: 3,
+    name: 'Bob Johnson',
+    designation: 'Lead Developer',
+    imageUrl: 'https://i.ibb.co/D5CTNN3/user2.jpg',
+    linkedin: '#',
+    facebook: '#',
+  },
+  {
+    id: 4,
+    name: 'Alice Williams',
+    designation: 'Marketing Manager',
+    imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
+    linkedin: '#',
+    facebook: '#',
+  },
+  {
+    id: 5,
+    name: 'Mark Davis',
+    designation: 'UX/UI Designer',
+    imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
+    linkedin: '#',
+    facebook: '#',
+  },
+  {
+    id: 6,
+    name: 'Emily Taylor',
+    designation: 'Content Writer',
+    imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
+    linkedin: '#',
+    facebook: '#',
+  },
+];
+
 
 const AboutTeam = () => {
   return (
@@ -63,7 +63,7 @@ const AboutTeam = () => {
         <h2 className="text-3xl font-bold mb-8 text-center text-white">Our Team</h2>
 
         <div className="flex flex-wrap justify-center -mx-4">
-          {teamMembers.map((member) => (
+          {teamMembers?.map((member) => (
             <div key={member.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-8">
               <div className="bg-white p-6 rounded-lg shadow-lg">
                 <Image
