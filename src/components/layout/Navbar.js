@@ -11,7 +11,7 @@ const Navbar = () => {
 
   const user = false;
   return (
-    <div className={`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}>
+    <div className={`fixed top-0 w-full z-50 ${scroll ? 'bg-black shadow-md text-white top-0' : 'bg-transparent'}`}>
       <div className='max-w-7xl mx-auto flex justify-between items-center px-3 py-3'>
         <Link href="/">
           <Image className="w-60" src={logo} alt="our logo" />
@@ -25,7 +25,10 @@ const Navbar = () => {
         </div>
         <div className='flex gap-4 relative items-center'>
           {user ? (
-            <img className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="" />
+            <Image className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt=""
+            width={50}
+            height={50}
+            />
           ) : (
             <>
               <button className={`py-2 px-3 rounded-3xl text-md ${scroll ? 'bg-white text-black' : 'bg-green-700 text-white'}`}>

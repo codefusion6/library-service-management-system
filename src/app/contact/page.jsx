@@ -1,16 +1,21 @@
 /* eslint-disable @next/next/no-img-element */
 import ContactBanner from '@/pages/contact/ContactBanner'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
     return (
         <>
-        <ContactBanner></ContactBanner>
+            <ContactBanner></ContactBanner>
             <section className='bg-slate-100'>
-                <div className='max-w-7xl mx-auto md:flex justify-between items-center flex-row-reverse py-10 px-3'>
-                    <div className='flex-1'>
-                        <img src="https://cdni.iconscout.com/illustration/premium/thumb/choose-best-teacher-online-1946856-1648375.png" alt="contact page" />
+                <div className='max-w-5xl mx-auto md:flex justify-between items-center flex-row-reverse py-10 px-3'>
+                    <div>
+                        <Image src="https://i.ibb.co/9nmjqK9/choose-best-teacher-online-1946856-1648375-1.webp" alt="contact page"
+                            className='opacity-100 w-full'
+                            height={500}
+                            width={300}
+                        />
                     </div>
                     <div className='flex-1 space-y-5'>
                         <h3 className='text-5xl font-bold'>Book<span className='text-blue-600'>Flow</span></h3>
