@@ -6,6 +6,7 @@ import Banner from "@/pages/home/Banner";
 import FAQ from "@/pages/home/faq/FAQ";
 import Slider from "@/pages/home/Slider/Slider";
 import Feature from "@/pages/home/Feature";
+import HomeContact from "@/shared/HomeContact";
 
 const HomePage = () => {
   return (
@@ -15,6 +16,7 @@ const HomePage = () => {
         <Feature books={booksData}></Feature>
         <Slider></Slider>
         <FAQ></FAQ>
+        <HomeContact></HomeContact>
       </NextUIProvider>
     </div>
 

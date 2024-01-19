@@ -1,18 +1,34 @@
-import { dbConnect } from "@/lib/MongoConnect"
-import Features from "@/models/boodFeatures/FeaturesModel"
+import { dbConnect } from "@/libs/MongoConnect";
+import Feature from "@/models/boodFeatures/FeaturesModel";
 import { NextResponse, NextRequest } from "next/server"
 
 
 
-dbConnect();
+
 
 export async function GET(req) {
     // console.log("Hello")
-    return NextResponse.json({
-        message: "Hi, I am from Server",
-    },
-        {
-            status: 201
-        }
-    )
+    const {
+        bookName,
+        type,
+        createdBy,
+        price,
+        startMarking,
+        image
+    } = await req.body.json();
+    // connect to mongodb
+    await dbConnect();
+
+    // what i wnat to do
+    await Feature.create({
+        bookName,
+        type,
+        createdBy,
+        price,
+        startMarking,
+        image
+    })
+    // return the response
+    return NextResponse.json({ message: "Features Created!" }, { status: 201 });
+
 }

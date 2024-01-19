@@ -6,15 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "export": "next build && next export"
   },
   "dependencies": {
+    "firebase": "^10.7.1",
     "@headlessui/react": "^1.7.18",
     "@nextui-org/react": "^2.2.9",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
     "aos": "^3.0.0-beta.6",
-    "daisyui": "^4.6.0",
     "framer-motion": "^10.18.0",
     "lottie-react": "^2.4.0",
     "mongoose": "^8.0.4",
