@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+// / eslint-disable @next/next / no - img - element /
 "use client"
 import Link from 'next/link'
 import { FaBars } from "react-icons/fa6";
@@ -41,7 +41,10 @@ const Navbar = () => {
         </div>
         <div className='flex gap-4 relative items-center'>
           {user ? (
-            <img className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="" />
+            <Image className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="" 
+            width={50}
+            height={50}
+            />
           ) : (
             <>
               <button className={`py-2 px-3 rounded-3xl text-md ${scroll ? 'bg-white text-black' : 'bg-green-700 text-white'}`}>
@@ -62,7 +65,6 @@ const Navbar = () => {
                 <li onClick={() => setShow(!show)} className='border-1 px-3 p-1 hover:bg-black hover:text-gray-200 rounded-md border-gray-500'>
                   <Link href="/contact">Contact</Link>
                 </li>
-                {/* Add more menu items as needed */}
               </ul>
             </div>
           )}
