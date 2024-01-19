@@ -23,9 +23,11 @@ const Feature = ({ books }) => {
     <div className="container mx-auto mt-8">
       <h1 className="text-3xl font-bold text-center mb-8">Featured Books</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {books.map((book, index) => (
+        {books?.map((book, index) => (
           <div key={index} className="p-4 border border-gray-300 rounded-md">
-            <img src={book.book.image} alt={book.book.name} className="mb-4 w-full h-auto object-cover" />
+            <Image src={book.book.image} alt={book.book.name} className="mb-4 w-full h-auto object-cover" 
+            width={200}
+            height={400}/>
             <h2 className="text-xl font-bold mb-2">{book.book.name}</h2>
             <p className="text-sm text-gray-600 mb-2">{book.book.type}</p>
             <p className="text-sm text-gray-600 mb-2">Author: {book.book.createdBy}</p>
