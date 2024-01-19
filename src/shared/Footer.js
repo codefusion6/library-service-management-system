@@ -10,12 +10,12 @@ import { MdHomeRepairService, MdOutlineEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <section className="bg-black">
+    <section className="bg-black pt-20">
       <div className="container mx-auto">
         <div className=" text-gray-400 py-10">
-          <div className="justify-center grid grid-cols-1 md:grid-cols-3 gap-5">
+          <div className="justify-center grid md:grid-cols-3 gap-5">
             <div>
-              <ul className="text-left text-white space-y-1">
+              <ul className="text-left text-white space-y-5">
                 <li>
                   <Link href="/" className="font-medium flex gap-2 items-center">
                     <CiHome className="text-xl text-red-100" />
@@ -42,7 +42,7 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <ul className="text-left text-white space-y-1">
+              <ul className="text-left text-white space-y-5">
                 <li>
                   <Link className="flex font-medium gap-2 items-center" href="/">
                     Privace
@@ -66,11 +66,11 @@ const Footer = () => {
               </ul>
             </div>
             <div>
-              <ul className="text-left text-white space-y-1">
+              <ul className="text-left text-white space-y-5">
                 <li>
                   <Link className="flex font-medium gap-2 items-center" href="/">
                     <MdOutlineEmail size={25} className="text-xl text-[#ddb425]" />
-                    teamcodefusion24@gmail.com{" "}
+                    teamcodefusion24@gmail.com
                   </Link>
                 </li>
                 <li>
@@ -99,8 +99,8 @@ const Footer = () => {
         </div>
       </div>
       <hr className="mt-4" />
-      <div className="py-6">
-        <p className="text-center pt-5 text-lg text-white">&copy; All reserved right &copy; CodeFusion</p>
+      <div className="py-8">
+        <p className="text-center pt-5 text-lg text-white">All reserved right &copy; CodeFusion</p>
       </div>
     </section>
   );
