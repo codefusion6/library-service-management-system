@@ -1,5 +1,5 @@
 
-import GetFeatures from '@/components/getFeatures/GetFeatures'
+// import GetFeatures from '@/components/getFeatures/GetFeatures'
 import React from 'react'
 
 function page() {
@@ -19,7 +19,7 @@ function page() {
                     <input type="text" className='px-2 py-1 bg-slate-700 mr-4 rounded-md text-white' placeholder='Price' />
                 </div>
             </form>
-            <GetFeatures></GetFeatures>
+            {/* <GetFeatures></GetFeatures> */}
         </div>
     )
 }

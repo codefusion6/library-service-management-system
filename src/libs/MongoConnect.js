@@ -15,7 +15,7 @@ export async function dbConnect() {
             console.log(
                 "MongoDB connection error, please make sure mongoDB is ruuning." + err
             );
-            process.exit();
+            // process.exit();
         });
     } catch (err) {
         console.log(err.message);
