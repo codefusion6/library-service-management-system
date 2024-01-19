@@ -69,7 +69,7 @@ const Footer = () => {
               <ul className="text-left text-white space-y-1">
                 <li>
                   <Link className="flex font-medium gap-2 items-center" href="/">
-                    <MdOutlineEmail className="text-xl text-[#ddb425]" />
+                    <MdOutlineEmail size={25} className="text-xl text-[#ddb425]" />
                     teamcodefusion24@gmail.com{" "}
                   </Link>
                 </li>
@@ -83,8 +83,7 @@ const Footer = () => {
                     className="flex font-medium gap-2 items-center"
                     href="https://github.com/codefusion6"
                   >
-                    {" "}
-                    <FaGithub className="text-xl text-[#ddb425]" />
+                    <FaGithub size={25} className="text-xl text-[#ddb425]" />
                     www.github.com/codefusion6
                   </Link>
                 </li>
@@ -101,7 +100,7 @@ const Footer = () => {
       </div>
       <hr className="mt-4" />
       <div className="py-6">
-        <p className="text-center pt-5 text-lg text-white">All reserved right &copy; CodeFusion</p>
+        <p className="text-center pt-5 text-lg text-white">&copy; All reserved right &copy; CodeFusion</p>
       </div>
     </section>
   );
