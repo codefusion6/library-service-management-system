@@ -41,7 +41,10 @@ const Navbar = () => {
         </div>
         <div className='flex gap-4 relative items-center'>
           {user ? (
-            <img className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="" />
+            <Image className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="" 
+            width={50}
+            height={50}
+            />
           ) : (
             <>
               <button className={`py-2 px-3 rounded-3xl text-md ${scroll ? 'bg-white text-black' : 'bg-green-700 text-white'}`}>
