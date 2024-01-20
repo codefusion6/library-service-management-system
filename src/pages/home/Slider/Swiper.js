@@ -7,6 +7,8 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 import "../../../../src/app/styles/swiper.module.css"
+import SliderCard from './SliderCard';
+import { Image } from '@nextui-org/react';
 const SwiperSlider = () => {
   return (
     <div>
@@ -22,19 +24,23 @@ const SwiperSlider = () => {
             spaceBetween: 20,
           },
           768: {
-            slidesPerView: 4,
+            slidesPerView: 2,
             spaceBetween: 40,
           },
           1024: {
-            slidesPerView: 5,
+            slidesPerView: 4,
             spaceBetween: 50,
           },
         }}
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>
+          <SliderCard></SliderCard>
+        </SwiperSlide>
+        <SwiperSlide>
+          {/* <Image src='https://i.ibb.co/4NnR3WH/author-4.jpg'></Image> */}
+        </SwiperSlide>
         <SwiperSlide>Slide 3</SwiperSlide>
         <SwiperSlide>Slide 4</SwiperSlide>
         <SwiperSlide>Slide 5</SwiperSlide>
