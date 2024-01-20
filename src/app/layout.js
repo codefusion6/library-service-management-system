@@ -4,8 +4,8 @@ import './globals.css'
 import favicon from '../../public/images/favicon.png'
 import Head from 'next/head';
 import './globals.css';
-import Footer from '@/shared/Footer';
 import Navbar from '@/shared/Navbar';
+import Footer from '@/shared/Footer';
 
 
 const inter = Inter({ subsets: ['latin'] });

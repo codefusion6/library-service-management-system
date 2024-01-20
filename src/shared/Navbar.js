@@ -37,6 +37,7 @@ const Navbar = () => {
             <li><Link href="/" className='text-white'>Home</Link></li>
             <li><Link href="/about" className='text-white'>About Us</Link></li>
             <li><Link href="/contact" className='text-white'>Contact</Link></li>
+            <li><Link href="/add-book" className='text-white'>Add Book</Link></li>
           </ul>
         </div>
         <div className='flex gap-4 relative items-center'>
@@ -64,6 +65,9 @@ const Navbar = () => {
                 </li>
                 <li onClick={() => setShow(!show)} className='border-1 px-3 p-1 hover:bg-black hover:text-gray-200 rounded-md border-gray-500'>
                   <Link href="/contact">Contact</Link>
+                </li>
+                <li onClick={() => setShow(!show)} className='border-1 px-3 p-1 hover:bg-black hover:text-gray-200 rounded-md border-gray-500'>
+                  <Link href="/add-book" className='text-white'>Add Book</Link>
                 </li>
               </ul>
             </div>
