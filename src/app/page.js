@@ -1,11 +1,11 @@
 "use client"
 import React from "react";
-import Feature from "@/components/home/feature/Feature";
 import booksData from "../../public/books.json";
-import Banner from "@/components/home/Banner";
-import Slider from "@/components/home/Slider/Slider";
-import { Accordion, NextUIProvider } from "@nextui-org/react";
-import FAQ from "@/components/home/FAQ";
+import { NextUIProvider } from "@nextui-org/react";
+import Banner from "@/pages/home/Banner";
+import FAQ from "@/pages/home/faq/FAQ";
+import Slider from "@/pages/home/Slider/Slider";
+import Feature from "@/pages/home/Feature";
 import Contact from "@/components/home/Contact";
 
 const HomePage = () => {
