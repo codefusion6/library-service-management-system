@@ -2,10 +2,6 @@ import { dbConnect } from "@/libs/MongoConnect";
 import Feature from "@/models/boodFeatures/FeaturesModel";
 import { NextResponse, NextRequest } from "next/server"
 
-
-
-
-
 export async function GET(req) {
     // console.log("Hello")
     const {
