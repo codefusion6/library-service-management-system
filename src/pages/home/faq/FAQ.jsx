@@ -17,7 +17,7 @@ const FAQ = () => {
     "  Absolutely! You can add your favorite books to the bookmark page, allowing you to easily access and manage your preferred reads.";
 
   return (
-    <section className="pb-10 faq px-1 md:px-0">
+    <section className="pb-10 container px-1 md:px-0">
       <h1 className="text-xl md:text-3xl font-bold text-center mb-10">FAQ</h1>
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-5 justify-center items-center mx-auto">
         <div>
@@ -25,7 +25,8 @@ const FAQ = () => {
         </div>
         <div className="border rounded-lg p-3 md:p-7">
           <Accordion>
-            <AccordionItem className="items-start"
+            <AccordionItem
+             className="items-start text-lg"
               key="1"
               aria-label="How can I request to borrow a book on this platform?"
               title="How can I request to borrow a book on this platform?"

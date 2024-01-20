@@ -1,4 +1,4 @@
-import { Inter } from 'next/font/google'
+import { Merriweather } from 'next/font/google'
 import * as React from "react";
 import './globals.css'
 import favicon from '../../public/images/favicon.png'
@@ -8,7 +8,10 @@ import Navbar from '@/shared/Navbar';
 import Footer from '@/shared/Footer';
 
 
-const inter = Inter({ subsets: ['latin'] });
+const merriweather = Merriweather({
+   subsets: ['latin'],
+   weight: ['400', '300', '700', '900']
+  });
 
 export const metadata = {
   title: 'BookFlow',
@@ -24,7 +27,7 @@ const RootLayout = ({ children }) => {
         <link rel="shortcut icon" href={favicon} />
         <title>{metadata.title}</title>
       </Head>
-      <body className={inter.className}>
+      <body className={merriweather.className}>
         <Navbar />
         {children}
         <Footer />

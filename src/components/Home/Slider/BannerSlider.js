@@ -38,7 +38,7 @@ const BannerSlider = () => {
       </SwiperSlide>
       <SwiperSlide>
         <Image src={slide3} alt="slider"></Image>
-      </SwiperSlide>
+      </SwiperSlide>    
       <SwiperSlide>
         <Image src={slide4} alt="slider"></Image>
       </SwiperSlide>
