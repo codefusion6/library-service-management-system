@@ -1,13 +1,13 @@
 const { Schema, model, models } = require("mongoose");
 
 const featuresSchema = new Schema({
-    book: {
-        bookName: String,
-        type: String,
-        createdBy: String,
-        price: Number,
-        startMarking: Number,
-        image: String,
+    Feature: {
+        bookName: { type: String },
+        type: { type: String },
+        createdBy: { type: String },
+        price: { type: Number },
+        startMarking: { type: String },
+        image: { type: String },
     }
 })
 

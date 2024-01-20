@@ -6,7 +6,7 @@ import { NextResponse, NextRequest } from "next/server"
 
 
 
-export async function GET(req) {
+export async function POST(request) {
     // console.log("Hello")
     const {
         bookName,
@@ -15,7 +15,7 @@ export async function GET(req) {
         price,
         startMarking,
         image
-    } = await req.body.json();
+    } = await request.body;
     // connect to mongodb
     await dbConnect();
 
