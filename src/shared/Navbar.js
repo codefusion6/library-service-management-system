@@ -4,45 +4,28 @@ import Link from 'next/link'
 import { FaBars } from "react-icons/fa6";
 import logo from '../../public/images/bookflow.png'
 import Image from 'next/image';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 const Navbar = () => {
-  const [show, setShow] = useState(false);
-  const [scroll, setScroll] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      if (isScrolled !== scroll) {
-        setScroll(isScrolled);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scroll]);
+  const [show, setShow] = useState(false)
 
   const user = false;
-
   return (
-    <div className={`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}>
+    <div className={`fixed top-0 w-full z-50 ${scroll ? 'bg-black shadow-md text-white top-0' : 'bg-transparent'}`}>
       <div className='max-w-7xl mx-auto flex justify-between items-center px-3 py-3'>
         <Link href="/">
-          <Image className="max-w-[200px]" src={logo} alt="our logo" width={200} height={100} />
+          <Image className="w-60" src={logo} alt="our logo" />
         </Link>
         <div>
           <ul className='gap-6 hidden md:flex'>
             <li><Link href="/" className='text-white'>Home</Link></li>
             <li><Link href="/about" className='text-white'>About Us</Link></li>
             <li><Link href="/contact" className='text-white'>Contact</Link></li>
-            <li><Link href="/add-book" className='text-white'>Add Book</Link></li>
           </ul>
         </div>
         <div className='flex gap-4 relative items-center'>
           {user ? (
-            <Image className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="" 
+            <Image className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt=""
             width={50}
             height={50}
             />
@@ -66,16 +49,14 @@ const Navbar = () => {
                 <li onClick={() => setShow(!show)} className='border-1 px-3 p-1 hover:bg-black hover:text-gray-200 rounded-md border-gray-500'>
                   <Link href="/contact">Contact</Link>
                 </li>
-                <li onClick={() => setShow(!show)} className='border-1 px-3 p-1 hover:bg-black hover:text-gray-200 rounded-md border-gray-500'>
-                  <Link href="/add-book" className='text-white'>Add Book</Link>
-                </li>
+                {/* Add more menu items as needed */}
               </ul>
             </div>
           )}
         </div>
       </div>
     </div>
-  );
+  )
 }
 
-export default Navbar;
+export default Navbar

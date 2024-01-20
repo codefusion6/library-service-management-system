@@ -4,8 +4,9 @@ import './globals.css'
 import favicon from '../../public/images/favicon.png'
 import Head from 'next/head';
 import './globals.css';
-import Navbar from '@/shared/Navbar';
 import Footer from '@/shared/Footer';
+import { AuthContextProvider } from './context/AuthContext';
+import Navbar from '@/shared/Navbar';
 
 
 const inter = Inter({ subsets: ['latin'] });
@@ -25,9 +26,11 @@ const RootLayout = ({ children }) => {
         <title>{metadata.title}</title>
       </Head>
       <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <AuthContextProvider>
+            <Navbar />
+            {children}
+            <Footer />
+        </AuthContextProvider>
       </body>
     </html >
   );

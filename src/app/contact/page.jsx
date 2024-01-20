@@ -1,20 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
 import ContactBanner from '@/pages/contact/ContactBanner'
-import { Image } from '@nextui-org/react'
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
 const page = () => {
     return (
         <>
-        <ContactBanner></ContactBanner>
+            <ContactBanner></ContactBanner>
             <section className='bg-slate-100'>
                 <div className='max-w-5xl mx-auto md:flex justify-between items-center flex-row-reverse py-10 px-3'>
                     <div>
                         <Image src="https://i.ibb.co/9nmjqK9/choose-best-teacher-online-1946856-1648375-1.webp" alt="contact page"
-                        className='opacity-100 w-full'
-                        height={500} 
-                        width={300}
+                            className='opacity-100 w-full'
+                            height={500}
+                            width={300}
                         />
                     </div>
                     <div className='flex-1 space-y-5'>

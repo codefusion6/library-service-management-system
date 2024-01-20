@@ -3,103 +3,110 @@
 import Link from "next/link";
 import React from "react";
 import { Input } from "@nextui-org/react";
-// import { EyeFilledIcon } from "./EyeFilledIcon";
-// import { EyeSlashFilledIcon } from "./EyeSlashFilledIcon";
-// import { FaReact, FaGithub } from 'react-i
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import LottieAnimation from "./LottieAnimation";
+import { UserAuth } from "@/app/context/AuthContext"; // Import UserAuth context
 
 const LoginForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
-  
+  const { googleSignIn } = UserAuth(); // Use googleSignIn function from context
 
   const toggleVisibility = () => setIsVisible(!isVisible);
+
+  const handleGoogleSignIn = async () => {
+    try {
+      await googleSignIn(); // Call googleSignIn when the Google button is clicked
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <div>
-      <div className="">
       <div>
-          <h2 className="lg:text-4xl text-blue-500  text-center lg:font-medium lg:mt-5">Please Sign In </h2>
-          <hr  className="w-[46vh] lg:ml-[87vh] mt-3  mb-5 border  items-center " />
-        </div>
-        <section className=" flex dark:bg-gray-900">
-          <div className="flex gap-5  lg:items-center lg:justify-center lg:px-6 lg:py-8 mx-auto md:h-screen">
-            <div >
-              <div className="flex items-center mr-10 mb-6 text-2xl ">
-               
-                <LottieAnimation></LottieAnimation>
-              </div>
+        <h2 className="lg:text-4xl text-blue-500 text-center lg:font-medium lg:mt-5">
+          Please Sign In
+        </h2>
+        <hr className="w-[46vh] lg:ml-[87vh] mt-3 mb-5 border items-center" />
+      </div>
+      <section className="flex dark:bg-gray-900">
+        <div className="flex gap-5 lg:items-center lg:justify-center lg:px-6 lg:py-8 mx-auto md:h-screen">
+          <div>
+            <div className="flex items-center mr-10 mb-6 text-2xl">
+              <LottieAnimation></LottieAnimation>
             </div>
+          </div>
 
-            <div className="ml-10">
-              <div className="relative  py-2 sm:max-w-xl sm:mx-auto">
-                <div className="relative   lg:px-4 lg:py-1 bg-white lg:mx-8 md:mx-0  border  shadow-lg rounded-3xl sm:p-18">
-                  <div className="lg:max-w-md lg:mx-auto ">
-                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      <div>
-                        <label
-                          className="font-semibold ml-10 text-sm text-gray-600  block"
-                          for="email"
-                        >
-                          Email
-                        </label>
+          <div className="ml-10">
+            <div className="relative py-2 sm:max-w-xl sm:mx-auto">
+              <div className="relative lg:px-4 lg:py-1 bg-white lg:mx-8 md:mx-0 border shadow-lg rounded-3xl sm:p-18">
+                <div className="lg:max-w-md lg:mx-auto">
+                  <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label
+                        className="font-semibold ml-10 text-sm text-gray-600 block"
+                        htmlFor="email"
+                      >
+                        Email
+                      </label>
 
-                        <Input
-                          isClearable
-                          type="email"
-                          label="Email"
-                          variant="bordered"
-                          placeholder="Enter your email"
-                          
-                          onClear={() => console.log("input cleared")}
-                          className="max-w-xs  rounded-lg px-3 ml-10 py-2 mt-1 mb-5 text-sm w-96 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-                        />
-                      </div>
+                      <Input
+                        isClearable
+                        type="email"
+                        label="Email"
+                        variant="bordered"
+                        placeholder="Enter your email"
+                        onClear={() => console.log("input cleared")}
+                        className="max-w-xs rounded-lg px-3 ml-10 py-2 mt-1 mb-5 text-sm w-96 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                      />
                     </div>
-                    <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
-                      
-                      <div>
-                        <label
-                          className="font-semibold ml-10 text-sm text-gray-600 pb-1 block"
-                          for="password"
-                        >
-                          Password
-                        </label>
-                        
-                        <Input
-                          label="Password"
-                          variant="bordered"
-                          placeholder="Enter your password"
-                          endContent={
-                            <button
-                              className="focus:outline-none"
-                              type="button"
-                              onClick={toggleVisibility}
-                            >
-                              {isVisible ? (
-                                <FaEye className="text-2xl text-default-400 pointer-events-none" />
-                              ) : (
-                                <FaEyeSlash className="text-2xl text-default-400 pointer-events-none" />
-                              )}
-                            </button>
-                          }
-                          type={isVisible ? "text" : "password"}
-                          className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-10 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-                        />
-                        
-                      </div>
-                    </div>
-                    <div className="flex justify-center items-center">
-                      <div>
-                        <button className="flex items-center  justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
-                          <svg
-                            viewBox="0 0 24 24"
-                            height="25"
-                            width="25"
-                            y="0px"
-                            x="0px"
-                            xmlns="http://www.w3.org/2000/svg"
+                  </div>
+                  <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div>
+                      <label
+                        className="font-semibold ml-10 text-sm text-gray-600 pb-1 block"
+                        htmlFor="password"
+                      >
+                        Password
+                      </label>
+
+                      <Input
+                        label="Password"
+                        variant="bordered"
+                        placeholder="Enter your password"
+                        endContent={
+                          <button
+                            className="focus:outline-none"
+                            type="button"
+                            onClick={toggleVisibility}
                           >
-                            <path
+                            {isVisible ? (
+                              <FaEye className="text-2xl text-default-400 pointer-events-none" />
+                            ) : (
+                              <FaEyeSlash className="text-2xl text-default-400 pointer-events-none" />
+                            )}
+                          </button>
+                        }
+                        type={isVisible ? "text" : "password"}
+                        className="max-w-xs rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-10 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex justify-center items-center">
+                    <div>
+                      <button
+                        className="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                        onClick={handleGoogleSignIn}
+                      >
+                        <svg
+                          viewBox="0 0 24 24"
+                          height="25"
+                          width="25"
+                          y="0px"
+                          x="0px"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+<path
                               d="M12,5c1.6167603,0,3.1012573,0.5535278,4.2863159,1.4740601l3.637146-3.4699707 C17.8087769,1.1399536,15.0406494,0,12,0C7.392395,0,3.3966675,2.5999146,1.3858032,6.4098511l4.0444336,3.1929321 C6.4099731,6.9193726,8.977478,5,12,5z"
                               fill="#F44336"
                             ></path>
@@ -164,52 +171,37 @@ const LoginForm = () => {
                               d="M12,0.25c2.9750366,0,5.6829224,1.0983887,7.7792969,2.8916016l0.144165-0.1375122 l-0.110014-0.0958166C17.7089558,1.0843592,15.00354,0,12,0C5.3725586,0,0,5.3725586,0,12 c0,0.0421753,0.0058594,0.0828857,0.0062866,0.125C0.0740356,5.5558472,5.4147339,0.25,12,0.25z"
                               fill="#FFF"
                             ></path>
-                          </svg>
-                          <span className="ml-2">Sign up with Google</span>
-                        </button>
-                        <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg mt-4">
-                          <svg
-                            viewBox="0 0 30 30"
-                            height="30"
-                            width="30"
-                            y="0px"
-                            x="0px"
-                            xmlns="http://www.w3.org/2000/svg"
-                          >
-                            <path d="M25.565,9.785c-0.123,0.077-3.051,1.702-3.051,5.305c0.138,4.109,3.695,5.55,3.756,5.55 c-0.061,0.077-0.537,1.963-1.947,3.94C23.204,26.283,21.962,28,20.076,28c-1.794,0-2.438-1.135-4.508-1.135 c-2.223,0-2.852,1.135-4.554,1.135c-1.886,0-3.22-1.809-4.4-3.496c-1.533-2.208-2.836-5.673-2.882-9 c-0.031-1.763,0.307-3.496,1.165-4.968c1.211-2.055,3.373-3.45,5.734-3.496c1.809-0.061,3.419,1.242,4.523,1.242 c1.058,0,3.036-1.242,5.274-1.242C21.394,7.041,23.97,7.332,25.565,9.785z M15.001,6.688c-0.322-1.61,0.567-3.22,1.395-4.247 c1.058-1.242,2.729-2.085,4.17-2.085c0.092,1.61-0.491,3.189-1.533,4.339C18.098,5.937,16.488,6.872,15.001,6.688z"></path>
-                          </svg>
-                          <span className="ml-2">Sign up with Apple</span>
-                        </button>
-                      </div>
-                    </div>
-                    <div className="mt-5">
-                      <button
-                        className="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
-                        type="submit"
-                      >
-                        Sign In
+                        </svg>
+                        <span className="ml-2">Sign up with Google</span>
                       </button>
+                      {/* Add your other buttons */}
                     </div>
-                    <div className="flex items-center justify-between mt-4">
-                      <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-                      <Link
-                        className="text-xs text-gray-500 uppercase mb-4 dark:text-gray-400 hover:underline"
-                        href="/register"
-                      >
-                        Do not have an account?
-                        <span className="text-blue-500 font-serif">
-                          Sign Up
-                        </span>
-                      </Link>
-                      <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-                    </div>
+                  </div>
+                  <div className="mt-5">
+                    <button
+                      className="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                      type="submit"
+                    >
+                      Sign In
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between mt-4">
+                    <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+                    <Link
+                      className="text-xs text-gray-500 uppercase mb-4 dark:text-gray-400 hover:underline"
+                      href="/register"
+                    >
+                      Do not have an account?
+                      <span className="text-blue-500 font-serif">Sign Up</span>
+                    </Link>
+                    <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
     </div>
   );
 };
