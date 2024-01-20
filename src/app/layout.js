@@ -1,7 +1,6 @@
 import { Inter } from 'next/font/google'
 import * as React from "react";
 import './globals.css'
-import favicon from '../../public/images/favicon.png'
 import Head from 'next/head';
 import './globals.css';
 import Footer from '@/shared/Footer';
@@ -21,7 +20,7 @@ const RootLayout = ({ children }) => {
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="description" content={metadata.description} />
-        <link rel="shortcut icon" href={favicon} />
+        {/* <link rel="icon" href={favicon} /> */}
         <title>{metadata.title}</title>
       </Head>
       <body className={inter.className}>

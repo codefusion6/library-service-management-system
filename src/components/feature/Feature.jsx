@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 
@@ -17,7 +18,7 @@ const renderStars = (rating) => {
   return stars;
 };
 
-const Feature = ({ books }) => {
+const Feature = async({ books }) => {
   return (
     <div className="container mx-auto mt-8">
         <h1 className="text-3xl font-bold text-center mb-8">Featured Books</h1>

@@ -41,9 +41,9 @@ const Navbar = () => {
         </div>
         <div className='flex gap-4 relative items-center'>
           {user ? (
-            <Image className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt="" 
-            width={50}
-            height={50}
+            <Image className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt=""
+              width={50}
+              height={50}
             />
           ) : (
             <>
