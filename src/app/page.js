@@ -5,8 +5,9 @@ import { NextUIProvider } from "@nextui-org/react";
 import Banner from "@/pages/home/Banner";
 import FAQ from "@/pages/home/faq/FAQ";
 import Slider from "@/pages/home/Slider/Slider";
+import HomeContact from "@/shared/HomeContact";
 import Feature from "@/pages/home/Feature";
-import Contact from "@/components/home/Contact";
+// import Contact from "@/components/home/Contact";
 
 const HomePage = () => {
   return (
@@ -16,7 +17,7 @@ const HomePage = () => {
         <Feature books={booksData}></Feature>
         <Slider></Slider>
         <FAQ></FAQ>
-        <Contact></Contact>
+        <HomeContact></HomeContact>
       </NextUIProvider>
     </div>
 

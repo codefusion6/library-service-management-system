@@ -1,22 +1,5 @@
 import mongoose from "mongoose";
 
-
-// export const ConnectMongoDb = async () => {
-//     if (mongoose.connection.readyState === 1) {
-//         return mongoose.connection.asPromise();
-//     }
-//     return await mongoose.connect(process.env.MONGO_URL)
-// }
-
-// import mongoose from "mongoose";
-// const connectDB = async () => {
-//     try {
-//         await mongoose.connect(process.env.MONGO_URL);
-//     } catch (err) {
-//         throw new Error("Connection Failed" + err);
-//     }
-// };
-// export default connectDB;
 export async function dbConnect() {
     try {
 
@@ -32,11 +15,9 @@ export async function dbConnect() {
             console.log(
                 "MongoDB connection error, please make sure mongoDB is ruuning." + err
             );
-            process.exit();
+            // process.exit();
         });
     } catch (err) {
         console.log(err.message);
     }
 }
-
-// mongoose.connect( uri, {useNewUrlParser: true, useUnifiedTopology: true}, () =>
