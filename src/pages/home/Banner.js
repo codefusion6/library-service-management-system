@@ -5,11 +5,11 @@ import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
   return (
-    <section className="md:h-screen flex items-center" >
+    <section className="lg:h-screen min-h-screen flex items-center" >
       <div className="container mx-auto ">
         <div className="justify-content-center align-items-center grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div className="space-y-4">
-            <h2 className="text-4xl min-h-20 md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-green-600">
+            <h2 className="text-2xl min-h-20 md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-200 to-green-600">
               <TypeAnimation
                 sequence={["", 1000, "Library Service Management", 1000]}
                 wrapper="span"
@@ -18,7 +18,7 @@ const Banner = () => {
                 repeat={Infinity}
               />
             </h2>
-            <p className="text-xl font-normal text-left">
+            <p className="md:text-xl font-base md:font-normal text-left">
               &quot;Explore a world of knowledge with our Library Service
               Management! Borrow, bookmark, and read your favorite books
               effortlessly. Unlock the joy of reading with our user-friendly
