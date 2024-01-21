@@ -2,8 +2,8 @@ import { Inter } from 'next/font/google'
 import * as React from "react";
 import './globals.css';
 import Footer from '@/shared/Footer';
+import { AuthContextProvider } from './context/AuthContext';
 import Navbar from '@/shared/Navbar';
-
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -15,9 +15,11 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
+        <AuthContextProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </AuthContextProvider>
       </body>
     </html >
   );
