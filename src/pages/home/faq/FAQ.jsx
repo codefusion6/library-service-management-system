@@ -23,7 +23,7 @@ const FAQ = () => {
         <div>
           <Image src={faq} alt="faq" className="w-4/5 mx-auto" />
         </div>
-        <div className="border rounded-lg p-3 md:p-7">
+        <div className="border rounded-lg p-3 md:p-7 text-white">
           <Accordion>
             <AccordionItem className="items-start"
               key="1"

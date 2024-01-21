@@ -10,7 +10,7 @@ import Feature from "@/pages/home/Feature";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="bg-black text-white">
       <NextUIProvider>
         <Banner />
         <Feature books={booksData}></Feature>
