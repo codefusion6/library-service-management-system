@@ -1,11 +1,9 @@
 import { Inter } from 'next/font/google'
 import * as React from "react";
-import './globals.css'
-import Head from 'next/head';
 import './globals.css';
 import Footer from '@/shared/Footer';
 import { AuthContextProvider } from './context/AuthContext';
-import Navbar from '@/shared/navbar';
+import Navbar from '@/shared/Navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -16,18 +14,11 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <Head>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content={metadata.description} />
-        {/* <link rel="icon" href={favicon} /> */}
-        <title>{metadata.title}</title>
-      </Head>
       <body className={inter.className}>
         <AuthContextProvider>
-            <Navbar />
-            {children}
-            <Footer />
+          <Navbar />
+          {children}
+          <Footer />
         </AuthContextProvider>
       </body>
     </html >
