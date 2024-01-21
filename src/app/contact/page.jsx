@@ -1,10 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
+import { connectDB } from '@/libs/database/MongoConnect'
 import ContactBanner from '@/pages/contact/ContactBanner'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const page = () => {
+const page = async () => {
+    await connectDB()
     return (
         <>
             <ContactBanner></ContactBanner>

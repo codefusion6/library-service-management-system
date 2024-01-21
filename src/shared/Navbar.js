@@ -27,7 +27,7 @@ const Navbar = () => {
   const user = false;
 
   return (
-    <div className={`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}>
+    <nav className={`fixed w-full z-50 bg-transparent ${scroll ? 'bg-black shadow-md text-white' : ''}`}>
       <div className='max-w-7xl mx-auto flex justify-between items-center px-3 py-3'>
         <Link href="/">
           <Image className="max-w-[200px]" src={logo} alt="our logo" width={200} height={100} />
@@ -70,7 +70,7 @@ const Navbar = () => {
           )}
         </div>
       </div>
-    </div>
+    </nav>
   );
 }
 
