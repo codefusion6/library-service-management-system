@@ -19,7 +19,7 @@ const renderStars = (rating) => {
 
 const Feature = ({ books }) => {
   return (
-    <div className="container mx-auto mt-8">
+    <div className="container mx-auto">
         <h1 className="text-3xl font-bold text-center mb-8">
         <TypeAnimation
             sequence={["", 1000, "Featured Books", 1000]}
