@@ -7,9 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper/modules";
 import "../../../../src/app/styles/swiper.module.css";
-import SliderCard from "./SliderCard";
 import Image from "next/image";
-// import { Image } from "@nextui-org/react";
 const SwiperSlider = () => {
   return (
     <div>
@@ -64,75 +62,81 @@ const SwiperSlider = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="py-4 card border shadow-md ">
-            <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
-              <h1 className="text-lg uppercase font-bold">Humayun Ahmed </h1>
-              <small className="text-default-500">
-                ( 13 November 1948 - 19 July 2012)
-              </small>
-              <p className="font-base text-sm">
-                A highly popular and influential author, playwright, and
-                filmmaker in Bangladesh.
-              </p>
-            </CardHeader>
-            <CardBody className="overflow-visible py-2">
-              <Image
-                alt="Card background"
-                className="object-cover rounded-xl"
-                src="https://i.ibb.co/4NnR3WH/author-4.jpg"
-                width={270}
-                height={50}
-              />
-            </CardBody>
-          </Card>
+          <div>
+            <Card className="py-4 card border shadow-md ">
+              <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
+                <h1 className="text-lg uppercase font-bold">Humayun Ahmed </h1>
+                <small className="text-default-500">
+                  ( 13 November 1948 - 19 July 2012)
+                </small>
+                <p className="font-base text-sm">
+                  A highly popular and influential author, playwright, and
+                  filmmaker in Bangladesh.
+                </p>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="https://i.ibb.co/4NnR3WH/author-4.jpg"
+                  width={270}
+                  height={50}
+                />
+              </CardBody>
+            </Card>
+          </div>
         </SwiperSlide>
         <SwiperSlide className="">
-          <Card className="py-4 card border shadow-md ">
-            <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
-              <h1 className="text-lg uppercase font-bold">
-                Muhammad Zafar Iqbal{" "}
-              </h1>
-              <small className="text-default-500">( 23 December 1952)</small>
-              <p className="font-base text-sm">
-                A prolific writer of science fiction and children&apos;s
-                literature.
-              </p>
-            </CardHeader>
-            <CardBody className="overflow-visible py-2">
-              <Image
-                alt="Card background"
-                className="object-cover rounded-xl"
-                src="https://i.ibb.co/vdBrDTr/author-3.jpg"
-                width={270}
-                height={50}
-              />
-            </CardBody>
-          </Card>
+          <div>
+            <Card className="py-4 card border shadow-md ">
+              <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
+                <h1 className="text-lg uppercase font-bold">
+                  Muhammad Zafar Iqbal{" "}
+                </h1>
+                <small className="text-default-500">( 23 December 1952)</small>
+                <p className="font-base text-sm">
+                  A prolific writer of science fiction and children&apos;s
+                  literature.
+                </p>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="https://i.ibb.co/vdBrDTr/author-3.jpg"
+                  width={270}
+                  height={50}
+                />
+              </CardBody>
+            </Card>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          <Card className="py-4 card border shadow-md ">
-            <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
-              <h1 className="text-lg uppercase font-bold">
-                Rabindranath Tagore
-              </h1>
-              <small className="text-default-500">
-                ( 7 May 1861 - 7 August 1941)
-              </small>
-              <p className="font-base text-sm">
-                Rabindranath Tagore was a polymath from India, a poet,
-                philosopher, musician, writer, and artist.
-              </p>
-            </CardHeader>
-            <CardBody className="overflow-visible py-2">
-              <Image
-                alt="Card background"
-                className="object-cover rounded-xl"
-                src="https://i.ibb.co/qJ6QHKn/author-2.jpg"
-                width={270}
-                height={50}
-              />
-            </CardBody>
-          </Card>
+          <div>
+            <Card className="py-4 card border shadow-md ">
+              <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
+                <h1 className="text-lg uppercase font-bold">
+                  Rabindranath Tagore
+                </h1>
+                <small className="text-default-500">
+                  ( 7 May 1861 - 7 August 1941)
+                </small>
+                <p className="font-base text-sm">
+                  Rabindranath Tagore was a polymath from India, a poet,
+                  philosopher, musician, writer, and artist.
+                </p>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="https://i.ibb.co/qJ6QHKn/author-2.jpg"
+                  width={270}
+                  height={50}
+                />
+              </CardBody>
+            </Card>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
           <div>
@@ -161,10 +165,13 @@ const SwiperSlider = () => {
           <div>
             <Card className="py-4 card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
-                <h1 className="text-lg uppercase font-bold">Abdul Mannan Syed</h1>
+                <h1 className="text-lg uppercase font-bold">
+                  Abdul Mannan Syed
+                </h1>
                 <small className="text-default-500">(24 September 1943)</small>
                 <p className="font-base text-sm">
-                A prominent Bangladeshi poet and essayist known for his contributions to Bengali literature.
+                  A prominent Bangladeshi poet and essayist known for his
+                  contributions to Bengali literature.
                 </p>
               </CardHeader>
               <CardBody className="overflow-visible py-2">

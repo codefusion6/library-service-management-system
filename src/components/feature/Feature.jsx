@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
-
+import { TypeAnimation } from "react-type-animation";
 const renderStars = (rating) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
@@ -20,7 +20,16 @@ const renderStars = (rating) => {
 const Feature = ({ books }) => {
   return (
     <div className="container mx-auto mt-8">
-        <h1 className="text-3xl font-bold text-center mb-8">Featured Books</h1>
+        <h1 className="text-3xl font-bold text-center mb-8">
+        <TypeAnimation
+            sequence={["", 1000, "Featured Books", 1000]}
+            wrapper="span"
+            speed={50}
+            style={{ fontSize: "1em", display: "inline-block" }}
+            repeat={Infinity}
+          />
+          
+          </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {books?.map((book, index) => (
           <div key={index} className="p-4 border border-gray-300 rounded-md">
