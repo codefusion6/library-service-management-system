@@ -1,8 +1,9 @@
 
 // import GetFeatures from '@/components/getFeatures/GetFeatures'
+
 import React from 'react'
 
-function page() {
+async function page() {
     return (
         <div>
             <form action="" className='flex py-20 container mx-auto'>

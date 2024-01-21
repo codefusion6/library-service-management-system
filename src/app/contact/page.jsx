@@ -1,8 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
+import Feedback from '@/components/feedback-client/Feedback'
 import ContactBanner from '@/pages/contact/ContactBanner'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
+
 
 const page = () => {
     return (
@@ -33,10 +35,7 @@ const page = () => {
                     </div>
                     <div className='grid grid-cols-1 md:grid-cols-2 mt-10 items-center justify-center'>
                         <div className='flex flex-col gap-2 justify-center md:w-3/4 mx-auto'>
-                            <input type="text" placeholder='Name' className='w-full py-1 px-2 bg-gray-200 rounded-md text-gray-600 font-semibold outline-none' />
-                            <input type="email" placeholder='Email' className='px-2 py-1 bg-gray-200 rounded-md text-gray-600 font-semibold outline-none' />
-                            <textarea type="text" name="message" placeholder='Your Massage' cols="30" rows="10" className='w-full py-1 px-2 bg-gray-200 rounded-md text-gray-600 font-semibold outline-none'></textarea>
-                            <button className='bg-primary text-white py-1 rounded-md font-semibold'>Send</button>
+                            <Feedback />
                         </div>
                         <div className=''>
                             <div>
