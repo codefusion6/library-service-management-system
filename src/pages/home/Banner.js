@@ -28,7 +28,7 @@ const Banner = () => {
           effortlessly. Unlock the joy of reading with our user-friendly
           platform. Your gateway to an enriched reading experience awaits!&quot;
         </p>
-        <div className="flex gap-5 font-medium ">
+        <div className="flex gap-5 font-medium">
           <Button
             color="primary"
             variant="bordered"

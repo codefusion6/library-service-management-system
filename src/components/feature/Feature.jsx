@@ -30,6 +30,7 @@ const Feature = ({ books }) => {
           />
           
           </h1>
+          
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {books?.map((book, index) => (
           <div key={index} className="p-4 border border-gray-300 rounded-md">
