@@ -1,14 +1,15 @@
 "use client";
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState } from "react";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import 'swiper/css';
-import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
-import "../../../../src/app/styles/swiper.module.css"
-import SliderCard from './SliderCard';
-import { Image } from '@nextui-org/react';
+import "swiper/css";
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import "../../../../src/app/styles/swiper.module.css";
+import SliderCard from "./SliderCard";
+import Image from "next/image";
+// import { Image } from "@nextui-org/react";
 const SwiperSlider = () => {
   return (
     <div>
@@ -36,16 +37,36 @@ const SwiperSlider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <SliderCard></SliderCard>
+          <div>
+            <SliderCard></SliderCard>
+          </div>
         </SwiperSlide>
         <SwiperSlide>
-          {/* <Image src='https://i.ibb.co/4NnR3WH/author-4.jpg'></Image> */}
+          <Image
+            src="https://i.ibb.co/4NnR3WH/author-4.jpg"
+            alt="slider image" height={550} width={350}
+          ></Image>
         </SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide className=""> <Image
+            src="https://i.ibb.co/4NnR3WH/author-4.jpg"
+            alt="slider image" height={550} width={350}
+          ></Image></SwiperSlide>
+        <SwiperSlide> <Image
+            src="https://i.ibb.co/4NnR3WH/author-4.jpg"
+            alt="slider image" height={550} width={350}
+          ></Image></SwiperSlide>
+        <SwiperSlide> <Image
+            src="https://i.ibb.co/4NnR3WH/author-4.jpg"
+            alt="slider image" height={550} width={350}
+          ></Image></SwiperSlide>
+        <SwiperSlide> <Image
+            src="https://i.ibb.co/4NnR3WH/author-4.jpg"
+            alt="slider image" height={550} width={350}
+          ></Image></SwiperSlide>
+        <SwiperSlide> <Image
+            src="https://i.ibb.co/4NnR3WH/author-4.jpg"
+            alt="slider image" height={550} width={350}
+          ></Image></SwiperSlide>
         <SwiperSlide>Slide 8</SwiperSlide>
         <SwiperSlide>Slide 9</SwiperSlide>
       </Swiper>
