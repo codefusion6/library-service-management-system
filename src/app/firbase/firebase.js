@@ -2,12 +2,12 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyDJTeONBMaGROfCTJq8ihDxWD-QoPwHe6o",
-  authDomain: "book-flow-lms.firebaseapp.com",
-  projectId: "book-flow-lms",
-  storageBucket: "book-flow-lms.appspot.com",
-  messagingSenderId: "1078768304452",
-  appId: "1:1078768304452:web:faa739d4d9d29da4a4d711"
+  apiKey: process.env.NEXT_PUBLIC_apiKey,
+  authDomain: process.env.NEXT_PUBLIC_authDomain,
+  projectId: process.env.NEXT_PUBLIC_projectId,
+  storageBucket: process.env.NEXT_PUBLIC_storageBucket,
+  messagingSenderId: process.env.NEXT_PUBLIC_messagingSenderId,
+  appId: process.env.NEXT_PUBLIC_appId,
 };
 
 const app = initializeApp(firebaseConfig);
