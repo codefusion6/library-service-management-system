@@ -6,8 +6,7 @@ import Head from 'next/head';
 import './globals.css';
 import Footer from '@/shared/Footer';
 import { AuthContextProvider } from './context/AuthContext';
-import Navbar from '@/shared/Navbar';
-
+import Navbar from '@/shared/navbar';
 
 const inter = Inter({ subsets: ['latin'] });
 

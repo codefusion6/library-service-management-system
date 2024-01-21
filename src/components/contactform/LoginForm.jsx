@@ -5,21 +5,28 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import LottieAnimation from "./LottieAnimation";
-import { UserAuth } from "@/app/context/AuthContext"; // Import UserAuth context
+import { UserAuth } from "@/app/context/AuthContext";
+import toast from "react-hot-toast";
 
 const LoginForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
-  const { googleSignIn } = UserAuth(); // Use googleSignIn function from context
+  const { googleSignIn } = UserAuth();
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
-  const handleGoogleSignIn = async () => {
-    try {
-      await googleSignIn(); // Call googleSignIn when the Google button is clicked
-    } catch (error) {
-      console.log(error);
-    }
-  };
+// Assume googleSignIn returns a promise
+const handleGoogleSignIn = async () => {
+  try {
+    // Perform Google sign-in
+    await googleSignIn();
+
+    // This will only be executed if the authentication is successful
+    toast.success('Login successful');
+  } catch (error) {
+    console.error('Google sign-in error:', error);
+  }
+};
+
 
   return (
     <div>
