@@ -1,15 +1,18 @@
 /* eslint-disable @next/next/no-img-element */
-"use client"
+"use client";
 import Link from 'next/link'
 import { FaBars } from "react-icons/fa6";
-import logo from './../../../public/images/bookflow.png'
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { useState } from 'react';
+import logo from './../../../public/images/bookflow.png';
+import { UserAuth } from '@/app/context/AuthContext';
 
 const Navbar = () => {
   const [show, setShow] = useState(false)
+  const [scroll, setScroll] = useState(false);
 
-  const user = false;
+  const { user } = UserAuth();
+
   return (
     <div className={`fixed top-0 w-full z-50 ${scroll ? 'bg-black shadow-md text-white top-0' : 'bg-transparent'}`}>
       <div className='max-w-7xl mx-auto flex justify-between items-center px-3 py-3'>
@@ -24,18 +27,20 @@ const Navbar = () => {
           </ul>
         </div>
         <div className='flex gap-4 relative items-center'>
+          {user && (
+            <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="User Profile" />
+          )}
           {user ? (
-            <Image className='w-10 h-10 rounded-full' src="https://reputationprotectiononline.com/wp-content/uploads/2022/04/78-786207_user-avatar-png-user-avatar-icon-png-transparent.png" alt=""
-            width={50}
-            height={50}
-            />
+            <button className={`py-2 px-3 rounded-3xl text-md ${scroll ? 'bg-white text-black' : 'bg-green-700 text-white'}`}>
+              Logout
+            </button>
           ) : (
-            <>
-              <button className={`py-2 px-3 rounded-3xl text-md ${scroll ? 'bg-white text-black' : 'bg-green-700 text-white'}`}>
-                <Link href="/login">Login</Link>
-              </button>
-              <FaBars onClick={() => setShow(!show)} className='md:hidden text-white text-2xl' />
-            </>
+            <button className={`py-2 px-3 rounded-3xl text-md ${scroll ? 'bg-white text-black' : 'bg-green-700 text-white'}`}>
+              <Link href="/login">Login</Link>
+            </button>
+          )}
+          {user && (
+            <FaBars onClick={() => setShow(!show)} className='md:hidden text-white text-2xl' />
           )}
           {show && (
             <div className='absolute top-10 md:hidden right-10 bg-slate-300 w-[200px] py-5 px-2 z-40 rounded-md'>
@@ -59,4 +64,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;

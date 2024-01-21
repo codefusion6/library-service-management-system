@@ -10,6 +10,7 @@ const RegistrationBanner = () => {
         <div className="absolute inset-0 bg-black opacity-40"></div>
         <div className="flex items-center justify-center h-60 relative z-10">
           <h1 className="text-4xl font-bold">Sign Up</h1>
+          
         </div>
       </div>
  
