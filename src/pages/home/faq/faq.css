@@ -2,7 +2,7 @@
     text-align: left;
     font-weight: 600;
     margin: 10px 0;
-    color: white;
+    /* color: white; */
 }
 
 @media (min-width: 768px) {

@@ -20,23 +20,23 @@ const FAQ = () => {
   return (
     <section className="pb-10 container px-1 md:px-0">
       <h1 className="text-xl md:text-3xl font-bold text-center mb-10">
-       
+
         <TypeAnimation
-            sequence={["", 1000, "FAQ", 1000]}
-            wrapper="span"
-            speed={50}
-            style={{ fontSize: "1em", display: "inline-block" }}
-            repeat={Infinity}
-          />
-        </h1>
+          sequence={["", 1000, "FAQ", 1000]}
+          wrapper="span"
+          speed={50}
+          style={{ fontSize: "1em", display: "inline-block" }}
+          repeat={Infinity}
+        />
+      </h1>
       <div className="container grid grid-cols-1 md:grid-cols-2 gap-5 justify-center items-center mx-auto">
         <div>
           <Image src={faq} alt="faq" className="w-4/5 mx-auto" />
         </div>
-        <div className="border rounded-lg p-3 md:p-7 text-white">
+        <div className="border rounded-lg p-3 md:p-7">
           <Accordion>
             <AccordionItem
-             className="items-start text-lg"
+              className="items-start text-lg"
               key="1"
               aria-label="How can I request to borrow a book on this platform?"
               title="How can I request to borrow a book on this platform?"

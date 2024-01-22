@@ -7,6 +7,7 @@ import Image from 'next/image';
 import logo from '../../public/images/bookflow.png';
 import toast, { Toaster } from 'react-hot-toast';
 import { UserAuth } from '@/app/context/AuthContext';
+import { ThemeSwitcher } from '@/components/ThemeSwitcher';
 
 const Navbar = () => {
   const [show, setShow] = useState(false);
@@ -86,6 +87,7 @@ const Navbar = () => {
             </div>
           )}
         </div>
+        <ThemeSwitcher></ThemeSwitcher>
       </div>
       {/* Toast container */}
       <Toaster position="top-right" />

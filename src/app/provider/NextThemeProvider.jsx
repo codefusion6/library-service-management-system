@@ -9,7 +9,7 @@ import { ThemeProvider as NextThemesProvider } from "next-themes";
 function NextThemeProvider({ children }) {
     return (
         <NextUIProvider>
-            <NextThemesProvider>
+            <NextThemesProvider attribute="class" defaultTheme="light">
                 {children}
             </NextThemesProvider>
         </NextUIProvider>
