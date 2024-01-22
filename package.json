@@ -10,19 +10,23 @@
     "export": "next build && next export"
   },
   "dependencies": {
-    "firebase": "^10.7.1",
     "@headlessui/react": "^1.7.18",
+    "@next/font": "^14.1.0",
     "@nextui-org/react": "^2.2.9",
     "@tailwindcss/forms": "^0.5.7",
     "@tailwindcss/typography": "^0.5.10",
     "aos": "^3.0.0-beta.6",
+    "firebase": "^10.7.2",
     "framer-motion": "^10.18.0",
     "lottie-react": "^2.4.0",
     "mongoose": "^8.0.4",
     "next": "14.0.4",
+    "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
+    "react-hot-toast": "^2.4.1",
     "react-icons": "^5.0.1",
+    "react-type-animation": "^3.2.0",
     "swiper": "^11.0.5"
   },
   "devDependencies": {

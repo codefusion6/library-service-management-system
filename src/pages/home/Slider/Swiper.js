@@ -1,100 +1,194 @@
 "use client";
 import React, { useRef, useState } from "react";
-
+import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import img1 from "../../../../public/images/author1.jpeg";
-import img2 from "../../../../public/images/author-2.jpeg";
-import img3 from "../../../../public/images/author-3.jpeg";
-import img4 from "../../../../public/images/author-4.jpeg";
-import Image from "next/image";
 
-// Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
-
-// import required modules
-import { Navigation } from "swiper/modules";
-
-const Sliding = () => {
+import "swiper/css/pagination";
+import { Pagination } from "swiper/modules";
+import "../../../../src/app/styles/swiper.module.css";
+import Image from "next/image";
+const SwiperSlider = () => {
   return (
-    <Swiper
-      navigation={true}
-      modules={[Navigation]}
-      className="items-center mb-16"
-    >
-      <SwiperSlide className="text-center">
-        <Image
-          src={img1}
-          alt="profile"
-          className="border p-1 rounded-full mx-auto w-[250px]"
-        />
-
-        <h1 className="mt-3 text-2xl font-semibold">Kazi Nazrul Islam</h1>
-        <p className="mt-3 text-center font-medium mx-20">
-          Revolutionary poet and the &quot;Rebel Poet&quot; of Bangladesh, Kazi
-          Nazrul Islam, left an indelible mark on literature with his powerful
-          verses that echoed the spirit of freedom and resistance.Kazi Nazrul
-          Islam&apos;s revolutionary poetry not only stirred the hearts of his
-          contemporaries but also ignited the flames of independence, as he
-          fearlessly voiced the aspirations of a nation seeking freedom from
-          oppression.
-        </p>
-      </SwiperSlide>
-      <SwiperSlide className="text-center">
-        <Image
-          src={img2}
-          alt="profile"
-          className="border p-1 rounded-full mx-auto w-[250px]"
-        />
-
-        <h1 className="mt-3 text-2xl font-semibold ">Rabindranath Tagore</h1>
-        <p className="mt-3 text-center font-medium mx-20">
-          Renowned poet, philosopher, and the first non-European Nobel laureate
-          in Literature, Rabindranath Tagore&apos;s profound writings continue
-          to inspire and transcend cultural boundaries, celebrating the beauty
-          of humanity.Beyond his literary genius, Rabindranath Tagore was a
-          polymath, contributing to art, music, and education. His timeless
-          compositions, including the national anthems of India and Bangladesh,
-          reflect a universal vision of humanity.
-        </p>
-      </SwiperSlide>
-      <SwiperSlide className="text-center">
-        <Image
-          src={img3}
-          alt="profile"
-          className="border p-1 rounded-full mx-auto w-[250px]"
-        />
-
-        <h1 className="mt-3 text-2xl font-semibold">Muhammad Zafar Iqbal</h1>
-        <p className="mt-3 text-center font-medium mx-20">
-          Prolific science fiction writer and eminent academic, Muhammad Zafar
-          Iqbal has enriched Bangladeshi literature with his imaginative tales
-          and contributions to the field of science and technology
-          education.Muhammad Zafar Iqbal&apos;s science fiction narratives not
-          only captivate the imagination but also inspire a fascination for the
-          wonders of science. His dedication to promoting scientific knowledge
-          has left an enduring impact on education in Bangladesh.
-        </p>
-      </SwiperSlide>
-      <SwiperSlide className="text-center">
-        <Image
-          src={img4}
-          alt="profile"
-          className="border p-1 rounded-full mx-auto w-[250px]"
-        />
-        F<h1 className="mt-3 text-2xl font-semibold">Humayun Ahmed</h1>
-        <p className="mt-3 text-center font-medium mx-20">
-          A beloved storyteller and prolific author, Humayun Ahmed&apos;s
-          literary works, spanning novels, dramas, and films, have captivated
-          generations, making him a cultural icon in Bangladesh.Humayun
-          Ahmed&apos;s literary legacy extends beyond his creative storytelling;
-          his works explore the complexities of human relationships and societal
-          issues, resonating with readers on a profound level. His influence on
-          Bangladeshi literature is immeasurable.
-        </p>
-      </SwiperSlide>
-    </Swiper>
+    <div>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={10}
+        pagination={{
+          clickable: true,
+        }}
+        breakpoints={{
+          640: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 50,
+          },
+        }}
+        modules={[Pagination]}
+        className="mySwiper"
+      >
+        <SwiperSlide>
+          <div className="">
+            <Card className="py-4 card border shadow-md ">
+              <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
+                <h1 className="text-lg uppercase font-bold">
+                  Kazi Nazrul Islam
+                </h1>
+                <small className="text-default-500">
+                  (25 May 1899 - 29 August 1976)
+                </small>
+                <p className="font-base text-sm">
+                  Often referred to as the &apos;Rebel Poet&apos; and known for
+                  his revolutionary poetry.
+                </p>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="https://i.ibb.co/BPvwNtk/author1.jpg"
+                  width={270}
+                  height={50}
+                />
+              </CardBody>
+            </Card>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            <Card className="py-4 card border shadow-md ">
+              <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
+                <h1 className="text-lg uppercase font-bold">Humayun Ahmed </h1>
+                <small className="text-default-500">
+                  ( 13 November 1948 - 19 July 2012)
+                </small>
+                <p className="font-base text-sm">
+                  A highly popular and influential author, playwright, and
+                  filmmaker in Bangladesh.
+                </p>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="https://i.ibb.co/4NnR3WH/author-4.jpg"
+                  width={270}
+                  height={50}
+                />
+              </CardBody>
+            </Card>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide className="">
+          <div>
+            <Card className="py-4 card border shadow-md ">
+              <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
+                <h1 className="text-lg uppercase font-bold">
+                  Muhammad Zafar Iqbal{" "}
+                </h1>
+                <small className="text-default-500">( 23 December 1952)</small>
+                <p className="font-base text-sm">
+                  A prolific writer of science fiction and children&apos;s
+                  literature.
+                </p>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="https://i.ibb.co/vdBrDTr/author-3.jpg"
+                  width={270}
+                  height={50}
+                />
+              </CardBody>
+            </Card>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            <Card className="py-4 card border shadow-md ">
+              <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
+                <h1 className="text-lg uppercase font-bold">
+                  Rabindranath Tagore
+                </h1>
+                <small className="text-default-500">
+                  ( 7 May 1861 - 7 August 1941)
+                </small>
+                <p className="font-base text-sm">
+                  Rabindranath Tagore was a polymath from India, a poet,
+                  philosopher, musician, writer, and artist.
+                </p>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="https://i.ibb.co/qJ6QHKn/author-2.jpg"
+                  width={270}
+                  height={50}
+                />
+              </CardBody>
+            </Card>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            <Card className="py-4 card border shadow-md ">
+              <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
+                <h1 className="text-lg uppercase font-bold">Tahmima Anam</h1>
+                <small className="text-default-500">(8 October 1975)</small>
+                <p className="font-base text-sm">
+                  Known for works like &quot;A Golden Age&quot; and &quot;The
+                  Good Muslim.&quot;
+                </p>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="https://i.ibb.co/g4Ykb0y/tahmima.jpg"
+                  width={270}
+                  height={50}
+                />
+              </CardBody>
+            </Card>
+          </div>
+        </SwiperSlide>
+        <SwiperSlide>
+          <div>
+            <Card className="py-4 card border shadow-md ">
+              <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
+                <h1 className="text-lg uppercase font-bold">
+                  Abdul Mannan Syed
+                </h1>
+                <small className="text-default-500">(24 September 1943)</small>
+                <p className="font-base text-sm">
+                  A prominent Bangladeshi poet and essayist known for his
+                  contributions to Bengali literature.
+                </p>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="https://i.ibb.co/LCmdRDZ/abdul.jpg"
+                  width={270}
+                  height={50}
+                />
+              </CardBody>
+            </Card>
+          </div>
+        </SwiperSlide>
+      </Swiper>
+    </div>
   );
 };
 
-export default Sliding;
+export default SwiperSlider;
