@@ -17,6 +17,6 @@
   height: 100%;
 }
 
-.author-section .swiper {
-  padding-bottom: 150px;
+.authors-carousel .swiper {
+  padding-bottom: 200px !important;
 }

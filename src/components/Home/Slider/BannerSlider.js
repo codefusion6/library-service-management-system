@@ -19,7 +19,6 @@ const BannerSlider = () => {
       grabCursor={true}
       centeredSlides={true}
       slidesPerView={"auto"}
-      Autoplay={true}
       coverflowEffect={{
         rotate: 50,
         stretch: 0,
@@ -32,16 +31,16 @@ const BannerSlider = () => {
       className="mySwiper"
     >
       <SwiperSlide className="">
-        <Image src={slide1} alt="slider" referrerPolicy="noreferrer" />
+        <Image src={slide1} alt="slider" />
       </SwiperSlide>
       <SwiperSlide>
-        <Image src={slide2} alt="slider" referrerPolicy="noreferrer"></Image>
+        <Image src={slide2} alt="slider"></Image>
       </SwiperSlide>
       <SwiperSlide>
-        <Image src={slide3} alt="slider" referrerPolicy="noreferrer"></Image>
+        <Image src={slide3} alt="slider"></Image>
       </SwiperSlide>
       <SwiperSlide>
-        <Image src={slide4} alt="slider" referrerPolicy="noreferrer"></Image>
+        <Image src={slide4} alt="slider"></Image>
       </SwiperSlide>
     </Swiper>
   );

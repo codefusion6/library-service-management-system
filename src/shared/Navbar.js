@@ -25,18 +25,18 @@ const Nav = () => {
   const [scroll, setScroll] = useState(false);
   const { user, logOut } = UserAuth();
 
-  useEffect(() => {
-    const handleScroll = () => {
-      const isScrolled = window.scrollY > 20;
-      if (isScrolled !== scroll) {
-        setScroll(isScrolled);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [scroll]);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     const isScrolled = window.scrollY > 20;
+  //     if (isScrolled !== scroll) {
+  //       setScroll(isScrolled);
+  //     }
+  //   };
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [scroll]);
 
   return (
     <section

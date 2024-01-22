@@ -18,7 +18,7 @@ const Banner = () => {
                 repeat={Infinity}
               />
             </h2>
-            <div className="flex flex-col gap-12">
+            <div className="flex flex-col gap-5 lg:gap-12">
               <p className="md:text-xl font-base md:font-normal text-left">
                 &quot;Explore a world of knowledge with our Library Service
                 Management! Borrow, bookmark, and read your favorite books
