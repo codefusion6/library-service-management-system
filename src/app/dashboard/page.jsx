@@ -1,14 +1,16 @@
 "use client";
 import React from 'react'
+import Sidebar from './Sidebar';
 
 function page() {
     return (
-        <main className='min-h-screen px-1 bg-slate-600 pt-24'>
+        <main className='min-h-screen px-1 pt-24'>
             <section>
-                <div className="container mx-auto">
+                <div className="">
                     <div className='flex gap-2'>
-                        <div className='w-4/12 border-r border-white bg-white'>
-                            {/* <Sidebar/>  components */}
+                        <div className='w-4/12 border-r border-black bg-white'>
+                           <Sidebar></Sidebar>
+                           
                         </div>
                         <div className='w-8/12 bg-white'>
                             {/* <Main/>  components */}
