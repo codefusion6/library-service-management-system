@@ -7,17 +7,17 @@ import FAQ from "@/pages/home/faq/FAQ";
 import Slider from "@/pages/home/Slider/Slider";
 import HomeContact from "@/shared/HomeContact";
 import Feature from "@/pages/home/Feature";
+import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+// import Contact from "@/components/home/Contact";
 
 const HomePage = () => {
   return (
-    <div>
-      <NextUIProvider>
-        <Banner />
-        <Feature books={booksData}></Feature>
-        <Slider></Slider>
-        <FAQ></FAQ>
-        <HomeContact></HomeContact>
-      </NextUIProvider>
+    <div className="">
+      <Banner />
+      <Feature books={booksData}></Feature>
+      <Slider></Slider>
+      <FAQ></FAQ>
+      <HomeContact></HomeContact>
     </div>
 
   );

@@ -28,7 +28,6 @@ import { auth } from "../firbase/firebase";
   const logOut = () => {
     signOut(auth);
   };
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
@@ -40,7 +39,6 @@ import { auth } from "../firbase/firebase";
     });
     return () => unsubscribe();
   }, [user]);
-
   return (
     <AuthContext.Provider value={{ user, googleSignIn, logOut, loading, createUser }}>
       {children}

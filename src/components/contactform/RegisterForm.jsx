@@ -32,7 +32,7 @@ const RegisterForm = () => {
                 <div className="relative px-4 py-10 bg-white mx-8 md:mx-0  shadow rounded-3xl sm:p-18">
                   <div className="max-w-md mx-auto ">
                     <form action={async() => {
-
+                      
                     }}>
                       <div className="mt-5">
                         <div>
