@@ -18,6 +18,7 @@ import logo from "../../public/images/bookflow.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 
 import { CgProfile } from "react-icons/cg";
+import { UserAuth } from "@/app/context/AuthContext";
 
 const Nav = () => {
   const [show, setShow] = useState(false);
@@ -40,7 +41,7 @@ const Nav = () => {
   return (
     <section
       className="fixed top-0 z-50 w-full bg-black text-white"
-      // {`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}
+    // {`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}
     >
       <div className="container mx-auto">
         <div className="py-4">

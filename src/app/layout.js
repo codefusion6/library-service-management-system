@@ -19,14 +19,6 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-<<<<<<< HEAD
-      
-      <body className={merriweather.className}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-=======
       <AuthContextProvider>
         <body className={merriweather.className}>
           <NextThemeProvider>
@@ -36,7 +28,6 @@ const RootLayout = ({ children }) => {
           </NextThemeProvider>
         </body>
       </AuthContextProvider>
->>>>>>> af3dd31239ac8b8d2fea7a5240640019d2715229
     </html >
   );
 };
