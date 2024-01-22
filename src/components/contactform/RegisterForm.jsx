@@ -1,15 +1,48 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import LottieAnimation from "./LottieAnimation";
 import { Input } from "@nextui-org/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
+import toast from "react-hot-toast";
+import { UserAuth } from "@/app/context/AuthContext";
+import { auth } from "@/app/firbase/firebase";
 
 const RegisterForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
-  const variants = ["flat", "bordered", "underlined", "faded"];
+  const { googleSignIn } = UserAuth(); 
+  const [fullName, setFullName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSignUp = async () => {
+    try {
+      // Create a new user with email and password using Firebase
+      await auth.createUserWithEmailAndPassword(email, password);
+
+      // After successful registration, you can redirect to the login page or any other page
+      console.log("User registered successfully");
+      router.push("/login");
+    } catch (error) {
+      // Handle registration failure, show an error message, etc.
+      console.error("Error during registration:", error.message);
+    }
+  };
   const toggleVisibility = () => setIsVisible(!isVisible);
+
+  const handleGoogleSignIn = async () => {
+    try {
+      // Perform Google sign-in
+      await googleSignIn();
+
+      // This will only be executed if the authentication is successful
+      toast.success('Registration successful');
+    } catch (error) {
+      console.error('Google sign-in error:', error);
+    }
+  };
+
   return (
     <div>
       <div>
@@ -97,7 +130,9 @@ const RegisterForm = () => {
 
                     <div className="flex justify-center items-center">
                       <div>
-                        <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
+                        <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                        onClick={handleGoogleSignIn}
+                        >
                           <svg
                             viewBox="0 0 24 24"
                             height="25"
@@ -193,6 +228,7 @@ const RegisterForm = () => {
                       <button
                         class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
                         type="submit"
+                        onClick={handleSignUp}
                       >
                         Sign up
                       </button>
