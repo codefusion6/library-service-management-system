@@ -20,7 +20,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <AuthContextProvider>
-        <body className={merriweather.className}>
+        <body className={merriweather.className} >
           <NextThemeProvider>
             <Navbar />
             {children}

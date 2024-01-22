@@ -4,7 +4,7 @@ import Swiper from "./Swiper";
 import { TypeAnimation } from "react-type-animation";
 const Slider = () => {
   return (
-    <section className="container mx-auto my-24 ">
+    <section className="container mx-auto my-24 homeBanner">
       <h1 className="text-3xl text-center mb-10">
         Meet Our{" "}
         <strong>
