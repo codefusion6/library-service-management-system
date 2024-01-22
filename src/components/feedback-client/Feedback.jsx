@@ -2,13 +2,18 @@
 
 import { addUser } from "@/libs/actions/user.actions";
 import Button from './Button';
+import toast from "react-hot-toast";
 
 
 const Feedback = () => {
   return (
     <form action={async (formData) => {
       console.log(formData);
-      await addUser(formData);
+      const response = await addUser(formData);
+      console.log(response.success);
+      if (response.success) {
+        toast.success("Success")
+      }
     }}>
       <input
         type="text"
