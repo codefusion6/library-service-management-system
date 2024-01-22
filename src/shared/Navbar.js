@@ -88,21 +88,18 @@ const Nav = () => {
                   </Link>
                 </NavbarItem>
               </div>
-
               {/* small device manu icon and items */}
-              <div className="block md:hidden items-center gap-4">
+              <div className="items-center lg:hidden block gap-4">
                 <Dropdown placement="bottom-end">
                   <DropdownTrigger>
                     <div className="w-6 h-6">
                       <GiHamburgerMenu className="text-4xl" />
                     </div>
                   </DropdownTrigger>
-
                   <DropdownMenu
                     aria-label="Profile Actions"
                     className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                    variant="flat"
-                  >
+                    variant="flat">
                     <DropdownItem className="h-full gap-2">
                       <NavbarItem>
                         <Link className="text-white" href="/">
