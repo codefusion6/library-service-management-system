@@ -39,7 +39,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-blur'}`}>
+    <nav className={`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}>
       <div className='max-w-7xl mx-auto flex justify-between items-center px-3 py-3'>
         <Link href="/">
           <Image className="max-w-[200px]" src={logo} alt="our logo" width={200} height={100} />
@@ -90,7 +90,7 @@ const Navbar = () => {
       </div>
       {/* Toast container */}
       <Toaster position="top-right" />
-    </div>
+    </nav>
   );
 }
 
