@@ -22,6 +22,7 @@ import { CgProfile } from "react-icons/cg";
 const Nav = () => {
   const [show, setShow] = useState(false);
   const [scroll, setScroll] = useState(false);
+  const { user, logOut } = UserAuth();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,7 +31,6 @@ const Nav = () => {
         setScroll(isScrolled);
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -153,6 +153,7 @@ const Nav = () => {
             </NavbarContent>
           </Navbar>
         </div>
+        {/* <ThemeSwitcher></ThemeSwitcher> */}
       </div>
     </section>
   );

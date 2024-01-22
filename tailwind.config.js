@@ -8,20 +8,57 @@ module.exports = {
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
     // "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     './node_modules/@nextui-org/theme/dist/components/(button|snippet|code|input).js'
-  ],
-  theme: {
 
-    extend: {
-      colors: {
-        primaryColor: '#0f3054',
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
-      },
-    },
-  },
-  
-  plugins: [nextui()],
+  ],
+  // theme: {
+  //   extend: {
+  //     colors: {
+  //       primaryColor: '#0f3054',
+  //     },
+  //   },
+  // },
+  darkMode: "class",
+  plugins: [
+    nextui(
+      // {
+      //   themes: {
+      //     "purple-dark": {
+      //       // extend: "dark", // <- inherit default values from dark theme
+      //       colors: {
+      //         background: "#0D001A",
+      //         foreground: "#ffffff",
+      //         primaryColor: {
+      //           50: "#3B096C",
+      //           100: "#520F83",
+      //           200: "#7318A2",
+      //           300: "#9823C2",
+      //           400: "#c031e2",
+      //           500: "#DD62ED",
+      //           600: "#F182F6",
+      //           700: "#FCADF9",
+      //           800: "#FDD5F9",
+      //           900: "#FEECFE",
+      //           DEFAULT: "#DD62ED",
+      //           foreground: "#ffffff",
+      //         },
+      //         focus: "#F182F6",
+      //       },
+      //       layout: {
+      //         disabledOpacity: "0.3",
+      //         radius: {
+      //           small: "4px",
+      //           medium: "6px",
+      //           large: "8px",
+      //         },
+      //         borderWidth: {
+      //           small: "1px",
+      //           medium: "2px",
+      //           large: "3px",
+      //         },
+      //       },
+      //     },
+      //   },
+      // }
+    ),
+  ],
 }

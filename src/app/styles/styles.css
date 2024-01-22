@@ -1,7 +1,7 @@
 .swiper {
   width: 100%;
   padding-top: 50px;
-  padding-bottom: 50px;
+  padding-bottom: 200px;
 }
 
 .swiper-slide {
@@ -15,4 +15,8 @@
   display: block;
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> af3dd31239ac8b8d2fea7a5240640019d2715229
