@@ -5,7 +5,7 @@ import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
   return (
-    <section className="lg:h-screen min-h-screen flex items-center" >
+    <section className="min-h-screen flex items-center" >
       <div className="container mx-auto ">
         <div className="justify-content-center align-items-center grid grid-cols-1 lg:grid-cols-2 gap-5">
           <div className="space-y-4">

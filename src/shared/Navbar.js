@@ -20,8 +20,28 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 
 const Nav = () => {
+  const [show, setShow] = useState(false);
+  const [scroll, setScroll] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scroll) {
+        setScroll(isScrolled);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scroll]);
+
   return (
-    <section className="fixed top-0 z-50 w-full bg-black text-white">
+    <section
+      className="fixed top-0 z-50 w-full bg-black text-white"
+      // {`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}
+    >
       <div className="container mx-auto">
         <div className="py-4">
           <Navbar>
@@ -37,7 +57,9 @@ const Nav = () => {
               </Link>
             </NavbarBrand>
 
-            <NavbarContent className=" md:flex gap-4 justify-end">
+            {/* laptop and tablet navbar */}
+
+            <NavbarContent className="lg:flex gap-4 justify-end">
               <div className="md:flex hidden gap-4">
                 <NavbarItem>
                   <Link className="text-white" href="/">
@@ -63,8 +85,9 @@ const Nav = () => {
                   </Link>
                 </NavbarItem>
               </div>
+
               {/* small device manu icon and items */}
-              <div className="hidden items-center gap-4">
+              <div className="block md:hidden items-center gap-4">
                 <Dropdown placement="bottom-end">
                   <DropdownTrigger>
                     <div className="w-6 h-6">
@@ -77,7 +100,7 @@ const Nav = () => {
                     className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
                     variant="flat"
                   >
-                    <DropdownItem  className="h-full gap-2">
+                    <DropdownItem className="h-full gap-2">
                       <NavbarItem>
                         <Link className="text-white" href="/">
                           Home
@@ -88,7 +111,6 @@ const Nav = () => {
                           About us
                         </Link>
                       </NavbarItem>
-
                       <NavbarItem>
                         <Link className="text-white" href="/contact">
                           Contact us
@@ -101,7 +123,6 @@ const Nav = () => {
                         </Link>
                       </NavbarItem>
                     </DropdownItem>
-                    
                   </DropdownMenu>
                 </Dropdown>
               </div>
