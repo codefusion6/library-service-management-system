@@ -1,6 +1,7 @@
 "use client";
 import React from 'react'
 import Sidebar from './Sidebar';
+import SidebarItems from './SidebarItems';
 
 function page() {
     return (
@@ -8,11 +9,13 @@ function page() {
             <section>
                 <div className="">
                     <div className='flex gap-2'>
-                        <div className='w-4/12 border-r border-black bg-white'>
-                           <Sidebar></Sidebar>
+                        <div className='w-3/12 border-r bg-black text-white'>
+                           <Sidebar>
+                            <SidebarItems></SidebarItems>
+                           </Sidebar>
                            
                         </div>
-                        <div className='w-8/12 bg-white'>
+                        <div className='w-9/12 bg-white'>
                             {/* <Main/>  components */}
                         </div>
                     </div>
