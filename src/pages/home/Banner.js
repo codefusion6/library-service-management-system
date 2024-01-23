@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import BannerSlider from "@/components/Home/Slider/BannerSlider";
+=======
+import BannerSlider from "@/components/home/Slider/BannerSlider";
+>>>>>>> caa28eea9a1efd2a8f9c6657381e75f2c7c7917a
 import { Button } from "@nextui-org/react";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
