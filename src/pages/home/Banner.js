@@ -1,4 +1,4 @@
-import BannerSlider from "@/components/home/Slider/BannerSlider";
+import BannerSlider from "@/components/Home/Slider/BannerSlider";
 import { Button } from "@nextui-org/react";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
