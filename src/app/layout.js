@@ -1,6 +1,6 @@
 import { Merriweather } from 'next/font/google'
 import * as React from "react";
-import './globals.css';
+// import './globals.css';
 import Footer from '@/shared/Footer';
 import { AuthContextProvider } from './context/AuthContext';
 import NextThemeProvider from './provider/NextThemeProvider';
