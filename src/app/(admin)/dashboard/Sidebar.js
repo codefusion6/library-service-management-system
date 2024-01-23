@@ -4,8 +4,6 @@ import React, { useState } from "react";
 import logo from "../../../../public/images/bookflow.png";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import { FaArrowAltCircleRight } from "react-icons/fa";
-import { SidebarContext } from "@/app/context/SidebarContext";
 
 const Sidebar = ({ children }) => {
   const [showSidebar, setShowSidebar] = useState(false)
@@ -19,10 +17,7 @@ const Sidebar = ({ children }) => {
               <FaArrowRightArrowLeft className="text-black" />
             </button>
           </div>
-          <SidebarContext.Provider value={{ expanded }}>
-            <ul className="flex-1 px-6">{children}</ul>
-          </SidebarContext.Provider>
-
+          <ul className="flex-1 px-6">{children}</ul>
           <div className="border-r flex p-3">
             <Image
               src="https://i.ibb.co/QNQ491S/tahmima.jpg"
@@ -32,13 +27,11 @@ const Sidebar = ({ children }) => {
               className="rounded-md"
             />
             <div
-              className={`flex justify-between items-center text-black bg-red-50 overflow-hidden transition-all ${
-                expanded ? "w-80 ml-3" : "w-0"
-              }`}
+              className="flex justify-between items-center text-black px-3 bg-red-50 w-80 ml-3"
             >
               <div className="leading-4">
                 <h2 className="font-semibold ">Priyanka</h2>
-                <span className="text-sm">priyanka@gmail.com</span>
+                <span classname="text-sm">priyanka@gmail.com</span>
               </div>
               <BsThreeDotsVertical size={20} className="" />
             </div>
