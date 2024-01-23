@@ -1,13 +1,12 @@
 import NextThemeProvider from "../provider/NextThemeProvider";
 import Sidebar from "./dashboard/Sidebar";
 import SidebarItems from "./dashboard/SidebarItems";
-
+import "./../globals.css"
 
 function dashboardLayout({ children }) {
   return (
     <>
       <div className='flex gap-2'>
-        navbar
         <div className='w-3/12 border-r bg-black text-white'>
           <Sidebar>
             <SidebarItems></SidebarItems>
