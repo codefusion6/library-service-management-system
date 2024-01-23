@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function BookListpage() {
+const BookListPage = () => {
     return (
-        <div>BookListpage</div>
-    )
-}
+        <div>
+            
+        </div>
+    );
+};
 
-export default BookListpage
+export default BookListPage;
+

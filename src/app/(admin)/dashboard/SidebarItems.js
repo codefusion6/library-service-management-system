@@ -1,13 +1,10 @@
-"use client";
-import { SidebarContext } from "@/app/context/SidebarContext";
+"use client"
 import Link from "next/link";
 import React, { useContext } from "react";
 import { CiBoxList } from "react-icons/ci";
 import { MdFormatListBulletedAdd } from "react-icons/md";
 
-
-const SidebarItems = () => {
-  const { expanded } = useContext(SidebarContext);
+const SidebarItems = ({ icon, text, active, alert }) => {
   return (
     <div>
       <ul className="text-black space-y-4">
