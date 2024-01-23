@@ -19,9 +19,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { UserAuth } from "@/app/context/AuthContext";
 
-
-
-
 const Nav = () => {
   const [show, setShow] = useState(false);
   const [scroll, setScroll] = useState(false);
