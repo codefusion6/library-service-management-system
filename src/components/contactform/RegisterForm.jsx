@@ -1,17 +1,15 @@
 "use client";
+import React from "react";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import LottieAnimation from "./LottieAnimation";
 import { Input } from "@nextui-org/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { UserAuth } from "@/app/context/AuthContext";
-import React from "react";
 
 const RegisterForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
   const variants = ["flat", "bordered", "underlined", "faded"];
-  const { createUser } = UserAuth()
-  const toggleVisibility = () => setIsVisible(!isVisible); 
+  const toggleVisibility = () => setIsVisible(!isVisible);
   return (
     <div>
       <div>
@@ -114,7 +112,9 @@ const RegisterForm = () => {
 
                     <div className="flex justify-center items-center">
                       <div>
-                        <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg">
+                        <button className="flex items-center justify-center py-2 px-20 bg-white hover:bg-gray-200 focus:ring-blue-500 focus:ring-offset-blue-200 text-gray-700 w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                        onClick={handleGoogleSignIn}
+                        >
                           <svg
                             viewBox="0 0 24 24"
                             height="25"
@@ -205,6 +205,14 @@ const RegisterForm = () => {
                           <span class="ml-2">Sign up with Apple</span>
                         </button>
                       </div>
+                    </div>
+                    <div class="mt-5">
+                      <button
+                        class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                        type="submit"
+                      >
+                        Sign up
+                      </button>
                     </div>
                     <div class="flex items-center justify-between mt-4">
                       <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
