@@ -1,8 +1,8 @@
+"use client"
 import Link from "next/link";
 import React from "react";
 import { CiBoxList } from "react-icons/ci";
 import { MdFormatListBulletedAdd } from "react-icons/md";
-
 
 const SidebarItems = ({ icon, text, active, alert }) => {
   return (
