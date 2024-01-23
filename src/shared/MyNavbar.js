@@ -22,7 +22,7 @@ import './navbar.css'
 
 
 
-const Nav = () => {
+const MyNavbar = () => {
   const [show, setShow] = useState(false);
   const [scroll, setScroll] = useState(false);
   const { user, logOut } = UserAuth();
@@ -165,4 +165,4 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default MyNavbar;

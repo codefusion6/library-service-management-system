@@ -10,13 +10,7 @@ module.exports = {
     './node_modules/@nextui-org/theme/dist/components/(button|snippet|code|input).js'
 
   ],
-  // theme: {
-  //   extend: {
-  //     colors: {
-  //       primaryColor: '#0f3054',
-  //     },
-  //   },
-  // },
+  
   darkMode: "class",
   plugins: [
     nextui({

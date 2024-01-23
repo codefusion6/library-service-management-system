@@ -2,7 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import React from 'react';
-import { Navbar } from '@/shared/Navbar';
+import { Navbar } from '@/shared/MyNavbar';
 import Footer from '@/shared/Footer';
 
 const NavFootProvider = ({ children }) => {

@@ -1,4 +1,4 @@
-
+import '../globals.css'
 const Layout = ({ children }) => {
   return (
         <main>
