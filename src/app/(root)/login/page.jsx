@@ -1,13 +1,15 @@
 
+
+import React from "react";
 import LoginForm from "@/components/contactform/LoginForm";
 import LoginBanner from "@/pages/login/LoginBanner";
-import React from "react";
 
-const login = () => {
+
+const Login = () => {
            
   return (
     <div>
-      <LoginBanner></LoginBanner>
+    <LoginBanner></LoginBanner>
      <LoginForm></LoginForm>
      
      
@@ -15,4 +17,4 @@ const login = () => {
   );
 };
 
-export default login;
+export default Login;

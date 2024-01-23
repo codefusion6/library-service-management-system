@@ -5,7 +5,6 @@ import AboutTeam from '@/pages/about/AboutTeam';
 import React from 'react';
 
 const AboutPage = async () => {
-
   return (
     <div>
       <AboutBanner></AboutBanner>

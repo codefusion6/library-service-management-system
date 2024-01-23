@@ -129,6 +129,7 @@ const Nav = () => {
                       </div>
                     </DropdownTrigger>
 
+<<<<<<< HEAD
                     <DropdownMenu
                       aria-label="Profile Actions"
                       className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
@@ -147,6 +148,89 @@ const Nav = () => {
               </NavbarContent>
             </Navbar>
           </div>
+=======
+                <NavbarItem>
+                  <Link className="text-white" href="/contact">
+                    Contact us
+                  </Link>
+                </NavbarItem>
+
+                <NavbarItem>
+                  <Link className="text-white" href="/contact">
+                    Our Services
+                  </Link>
+                </NavbarItem>
+                <NavbarItem>
+                  <Link className="text-white" href="/dashboard">
+                    Dashboard
+                  </Link>
+                </NavbarItem>
+              </div>
+              {/* small device manu icon and items */}
+              <div className="items-center gap-4 hidden md:block">
+                <Dropdown placement="bottom-end">
+                  <DropdownTrigger>
+                    <div className="w-6 h-6">
+                      <GiHamburgerMenu className="text-4xl" />
+                    </div>
+                  </DropdownTrigger>
+                  <DropdownMenu
+                    aria-label="Profile Actions"
+                    className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
+                    variant="flat">
+                    <DropdownItem className="h-full gap-2">
+                      <NavbarItem>
+                        <Link className="text-white" href="/">
+                          Home
+                        </Link>
+                      </NavbarItem>
+                      <NavbarItem>
+                        <Link className="text-white" href="/about">
+                          About us
+                        </Link>
+                      </NavbarItem>
+                      <NavbarItem>
+                        <Link className="text-white" href="/contact">
+                          Contact us
+                        </Link>
+                      </NavbarItem>
+
+                      <NavbarItem>
+                        <Link className="text-white" href="/contact">
+                          Our Services
+                        </Link>
+                      </NavbarItem>
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
+              {/* user profile, user email, display name and logout */}
+              <div className="flex items-center gap-4">
+                <Dropdown placement="bottom-end">
+                  <DropdownTrigger>
+                    <div className="w-6 h-6">
+                      <CgProfile className="text-4xl" />
+                    </div>
+                  </DropdownTrigger>
+
+                  <DropdownMenu
+                    aria-label="Profile Actions"
+                    className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
+                    variant="flat"
+                  >
+                    <DropdownItem key="profile" className="h-14 gap-2">
+                      <p className="font-semibold">Signed in as</p>
+                      <p className="font-semibold">zoey@example.com</p>
+                    </DropdownItem>
+                    <DropdownItem key="logout" color="danger">
+                      Log Out
+                    </DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </div>
+            </NavbarContent>
+          </Navbar>
+>>>>>>> 128ada7cc18ada2a0bc5476d89d548a057b4254a
         </div>
       </section>
 
