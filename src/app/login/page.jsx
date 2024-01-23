@@ -1,7 +1,9 @@
 
-import LoginForm from "@/components/contactform/LoginForm";
-import LoginBanner from "@/pages/login/LoginBanner";
+
 import React from "react";
+import { LoginBanner } from '@/pages/login/LoginBanner';
+import LoginForm from "@/components/contactform/LoginForm";
+
 
 const login = () => {
            
