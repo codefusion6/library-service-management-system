@@ -17,8 +17,7 @@ import Image from "next/image";
 import logo from "../../public/images/bookflow.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
-import { UserAuth } from "@/app/context/AuthContext";
-import './navbar.css'
+import { UserAuth } from "@/app/provider/context/AuthContext";
 
 
 
@@ -95,7 +94,7 @@ const MyNavbar = () => {
                                     </NavbarItem>
                                 </div>
                                 {/* {/ small device manu icon and items /} */}
-                                <div id="mobile-menu" className="items-center gap-4 flex md:hidden">
+                                <div id="mobile-menu" className="md:hidden items-center gap-4 flex">
                                     <Dropdown placement="bottom-end">
                                         <DropdownTrigger>
                                             <div className="w-6 h-6">

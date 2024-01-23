@@ -4,14 +4,14 @@ import Link from "next/link";
 import LottieAnimation from "./LottieAnimation";
 import { Input } from "@nextui-org/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import { UserAuth } from "@/app/context/AuthContext";
+import { UserAuth } from "@/app/provider/context/AuthContext";
 import React from "react";
 
 const RegisterForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
   const variants = ["flat", "bordered", "underlined", "faded"];
   const { createUser } = UserAuth()
-  const toggleVisibility = () => setIsVisible(!isVisible); 
+  const toggleVisibility = () => setIsVisible(!isVisible);
   return (
     <div>
       <div>
@@ -31,8 +31,8 @@ const RegisterForm = () => {
               <div className="relative  py-3 sm:max-w-xl sm:mx-auto">
                 <div className="relative px-4 py-10 bg-white mx-8 md:mx-0  shadow rounded-3xl sm:p-18">
                   <div className="max-w-md mx-auto ">
-                    <form action={async() => {
-                      
+                    <form action={async () => {
+
                     }}>
                       <div className="mt-5">
                         <div>

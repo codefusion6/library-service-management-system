@@ -7,7 +7,7 @@ import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
 } from "firebase/auth";
-import { auth } from "../firbase/firebase";
+import { auth } from "../../firbase/firebase";
 
 const AuthContext = createContext(null);
 
