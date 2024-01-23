@@ -10,7 +10,11 @@ import { MdHomeRepairService, MdOutlineEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
+<<<<<<< HEAD
     <section className="purple-dark text-foreground bg-black pt-20">
+=======
+    <section className="purple-dark pt-20 text-foreground bg-background">
+>>>>>>> 989a26f6d62c92a32b48a5206c70a8154f3106fd
       <div className="container mx-auto">
         <div className=" text-gray-400 py-10">
           <div className="justify-center grid md:grid-cols-3 gap-5">
