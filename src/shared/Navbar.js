@@ -18,7 +18,7 @@ import logo from "../../public/images/bookflow.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { UserAuth } from "@/app/context/AuthContext";
-
+import './navbar.css'
 
 
 
@@ -94,7 +94,7 @@ const Nav = () => {
                 </NavbarItem>
               </div>
               {/* small device manu icon and items */}
-              <div className="items-center gap-4 hidden md:block">
+              <div id="mobile-menu" className="items-center gap-4 flex md:hidden">
                 <Dropdown placement="bottom-end">
                   <DropdownTrigger>
                     <div className="w-6 h-6">
@@ -159,6 +159,7 @@ const Nav = () => {
           </Navbar>
         </div>
         {/* <ThemeSwitcher></ThemeSwitcher> */}
+        
       </div>
     </section>
   );
