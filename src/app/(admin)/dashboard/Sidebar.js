@@ -1,12 +1,12 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import logo from "../../../../public/images/bookflow.png";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaArrowAltCircleRight } from "react-icons/fa";
-import { SidebarContext } from "../context/SidebarContext";
+import { SidebarContext } from "@/app/context/SidebarContext";
 
-// const SidebarContext = createContext();
 const Sidebar = ({ children }) => {
   const [expanded, setExpanded] = useState(true);
 
