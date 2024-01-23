@@ -12,7 +12,7 @@ function dashboardLayout({ children }) {
             <SidebarItems></SidebarItems>
           </Sidebar>
         </div>
-        <div className='w-full md:w-9/12 bg-slate-500'>
+        <div className='w-full md:w-9/12 bg-slate-500 p-4 md:p-10'>
           {children}
         </div>
       </div>
