@@ -2,6 +2,9 @@
 import React from 'react'
 import Sidebar from './Sidebar';
 import SidebarItems from './SidebarItems';
+import AddBooks from '@/components/AddBooks/AddBooks';
+import { Link } from '@nextui-org/react';
+import AddBook from './addbook/page';
 
 function page() {
     return (
@@ -15,8 +18,11 @@ function page() {
                            </Sidebar>
                            
                         </div>
-                        <div className='w-9/12 bg-white'>
+                        <div className='w-9/12 bg-green-400'>
                             {/* <Main/>  components */}
+                            
+                            <AddBook></AddBook>
+                           
                         </div>
                     </div>
                 </div>

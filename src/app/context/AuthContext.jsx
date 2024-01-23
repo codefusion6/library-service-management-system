@@ -8,6 +8,8 @@ import {
 } from "firebase/auth";
 import { auth } from "../firbase/firebase";
 
+// import { auth } from "../firbase/firebase";
+
 const AuthContext = createContext();
 
 export const AuthContextProvider = ({ children }) => {
@@ -16,7 +18,7 @@ export const AuthContextProvider = ({ children }) => {
 
   const googleSignIn = async () => {
     const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
+    await signInWithPopup(auth , provider);
   };
 
   const logOut = () => {
