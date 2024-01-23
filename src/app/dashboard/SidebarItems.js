@@ -22,7 +22,7 @@ const SidebarItems = ({ icon, text, active, alert }) => {
           transition-colors group hover:bg-green-100"
         >
           <MdFormatListBulletedAdd size={20} className="text-xl font-bold" />
-          <Link href="/addbook">Add Book </Link>
+          <Link href="/dashboard/addbook">Add Book </Link>
         </li>
         <li
           className="flex gap-2 items-center py-2 px-3 my-1

@@ -149,11 +149,8 @@ const Nav = () => {
             </Navbar>
           </div>
         </div>
-
       </section>
-      <div className="block lg:hidden">
-        sumon chandra paul
-      </div>
+
     </>
   );
 };
