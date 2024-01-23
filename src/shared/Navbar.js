@@ -70,7 +70,6 @@ const Nav = () => {
                       About us
                     </Link>
                   </NavbarItem>
-
                   <NavbarItem>
                     <Link className="text-white" href="/contact">
                       Contact us

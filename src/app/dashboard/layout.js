@@ -5,7 +5,6 @@ import SidebarItems from './SidebarItems'
 function dashboardLayout({ children }) {
     return (
         <>
-
             <div className='flex gap-2'>
                 <div className='w-3/12 border-r bg-black text-white'>
                     <Sidebar>
