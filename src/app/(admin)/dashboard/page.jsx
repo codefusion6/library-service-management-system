@@ -1,9 +1,9 @@
-"use client";
+
 import React from 'react'
 import Sidebar from './Sidebar';
 import SidebarItems from './SidebarItems';
 
-function page() {
+function Dashboard() {
     return (
         <main className='min-h-screen px-1 pt-24'>
             <section>
@@ -13,7 +13,6 @@ function page() {
                            <Sidebar>
                             <SidebarItems></SidebarItems>
                            </Sidebar>
-                           
                         </div>
                         <div className='w-9/12 bg-white'>
                             {/* <Main/>  components */}
@@ -25,4 +24,4 @@ function page() {
     )
 }
 
-export default page
+export default Dashboard

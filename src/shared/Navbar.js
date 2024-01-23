@@ -87,9 +87,14 @@ const Nav = () => {
                     Our Services
                   </Link>
                 </NavbarItem>
+                <NavbarItem>
+                  <Link className="text-white" href="/dashboard">
+                    Dashboard
+                  </Link>
+                </NavbarItem>
               </div>
               {/* small device manu icon and items */}
-              <div className="items-center lg:hidden block gap-4">
+              <div className="items-center gap-4 hidden md:block">
                 <Dropdown placement="bottom-end">
                   <DropdownTrigger>
                     <div className="w-6 h-6">
