@@ -20,4 +20,4 @@ function dashboardLayout({ children }) {
   )
 }
 
-export default dashboardLayout
+export default dashboardLayout ;

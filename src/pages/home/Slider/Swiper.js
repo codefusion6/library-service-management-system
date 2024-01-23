@@ -10,7 +10,7 @@ import "../../../../src/app/styles/swiper.module.css";
 import Image from "next/image";
 const SwiperSlider = () => {
   return (
-    <div>
+    <div className="authors-carousel">
       <Swiper
         slidesPerView={1}
         spaceBetween={10}

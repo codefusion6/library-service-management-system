@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import booksData from "../../public/books.json";
+import booksData from "../../../public/books.json";
 import { NextUIProvider } from "@nextui-org/react";
 import Banner from "@/pages/home/Banner";
 import FAQ from "@/pages/home/faq/FAQ";
