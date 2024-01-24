@@ -63,7 +63,7 @@ const BookListPage = () => {
             </Link>
           </div>
         </Card>
-        <Card className="p-6 border text-center shadow-xl rounded-lg relative overflow-hidden group">
+        <Card className="p-6 border hover:border-green-600 text-center shadow-xl rounded-lg relative overflow-hidden group">
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start relative z-10">
             <p className="text-lg uppercase font-bold">
               ছোটদের নির্বাচিত নজরুল
@@ -104,7 +104,7 @@ const BookListPage = () => {
             </Link>
           </div>
         </Card>
-        <Card className="p-6 border text-center shadow-xl rounded-lg relative overflow-hidden group">
+        <Card className="p-6 border hover:border-green-600 text-center shadow-xl rounded-lg relative overflow-hidden group">
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-start relative z-10">
             <p className="text-lg uppercase font-bold">
               ছোটদের নির্বাচিত নজরুল
