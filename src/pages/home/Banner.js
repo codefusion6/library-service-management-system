@@ -1,8 +1,8 @@
 // import BannerSlider from "@/components/home/Slider/BannerSlider";
+import BannerSlider from "@/components/Home/Slider/BannerSlider";
 import { Button } from "@nextui-org/react";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import BannerSlider from '../../components/Home/Slider/BannerSlider';
 
 const Banner = () => {
   return (
@@ -31,14 +31,14 @@ const Banner = () => {
                 <Button
                   color="primary"
                   variant="bordered"
-                  className="font-bold "
+                  className="font-bold py-2 px-4 rounded-md border-1 border-[#1ba752] md:px-6"
                   size="lg"
                 >
                   Explore
                 </Button>
                 <Button
                   color="primary"
-                  className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-white shadow-lg"
+                  className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-white shadow-lg py-2 px-4 md:px-6 rounded-md"
                   size="lg"
                 >
                   Buy Now
