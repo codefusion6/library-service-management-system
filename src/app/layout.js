@@ -5,7 +5,7 @@ import Head from 'next/head';
 import './globals.css';
 import Footer from '@/shared/Footer';
 import { AuthContextProvider } from './context/AuthContext';
-import Navbar from '@/shared/navbar';
+import MyNavbar from '@/shared/MyNavbar';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -25,7 +25,7 @@ const RootLayout = ({ children }) => {
       </Head>
       <body className={inter.className}>
         <AuthContextProvider>
-            <Navbar />
+            <MyNavbar />
             {children}
             <Footer />
         </AuthContextProvider>
