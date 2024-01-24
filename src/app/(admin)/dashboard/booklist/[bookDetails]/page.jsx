@@ -1,38 +1,54 @@
 import Link from "next/link";
 import React from "react";
-import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import { Button, Card } from "@nextui-org/react";
 import Image from "next/image";
+import { FaStar } from "react-icons/fa6";
 
 const BookDetails = () => {
   return (
-    <div>
+    <div className="container mx-auto">
       <h2 className="text-3xl text-center my-5 font-medium text-green-700">
         Details Page
       </h2>
-      <div>
-        <Card className="p-6 border hover:border-green-600 text-center shadow-xl rounded-lg">
-          <div className="flex">
-            <CardBody className="overflow-visible">
-              <Image
-                alt="Card Image"
-                className="object-cover rounded-xl"
-                src="https://i.ibb.co/7KTnVdz/book1.gif"
-                width={270}
-                height={270}
-              />
-            </CardBody>
-            <CardHeader className=" flex-col items-start">
-              <p className="text-lg uppercase font-bold">
-                ছোটদের নির্বাচিত নজরুল
-              </p>
-
-              <h4 className="font-bold text-large">
-                <span className="text-base font-normal">Writer: </span>Kazi
-                Nazrul Islam
-              </h4>
-            </CardHeader>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="w-96 flex flex-col md:flex-row max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden hover:border-green-500 hover:border-2">
+          <div className="w-1/3 p-2">
+            <Image
+              src="https://i.ibb.co/7KTnVdz/book1.gif"
+              alt="Card Image"
+              width={270}
+              height={270}
+              className="w-full h-full object-cover object-center"
+            />
           </div>
-        </Card>
+
+          <div className=" p-2">
+            <p className="text-lg uppercase font-bold">
+              ছোটদের নির্বাচিত নজরুল
+            </p>
+            <span>By</span>
+            <h4 className="font-bold text-large">Kazi Nazrul Islam</h4>
+            <p className="text-base font-medium">
+              Price: <span className="font-bold">310 TK</span>{" "}
+            </p>
+
+            <p className="text-yellow-500 flex">
+              <FaStar></FaStar>
+              <FaStar />
+              <FaStar />
+              <FaStar />
+              <FaStar />
+            </p>
+            <div className="flex my-5">
+              <Button
+                className="bg-gradient-to-r from-yellow-200 to-green-600  text-white font-bold py-2 px-4 rounded"
+                size="lg"
+               >
+                Buy
+              </Button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
