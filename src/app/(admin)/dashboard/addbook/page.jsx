@@ -8,7 +8,7 @@ const AddBookFormPage = () => {
   const [bookCover, setBookCover] = useState(null);
   const [bookPdf, setBookPdf] = useState(null);
   const [email, setEmail] = useState('');
-  const [test, setTest] = useState(true)
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
     // Implement your form submission logic here
@@ -25,7 +25,7 @@ const AddBookFormPage = () => {
   return (
     <>
       <AddBookBanner></AddBookBanner>
-      <form onSubmit={handleFormSubmit} className="max-w-md mx-auto p-6 bg-white rounded-md shadow-md">
+      <form onSubmit={handleFormSubmit} className="max-w-md mx-auto p-6 bg-white rounded-md shadow-md my-8">
         <div className="mb-4">
           <label htmlFor="bookName" className="block text-gray-700 text-sm font-bold mb-2">
             Book Name:
@@ -37,9 +37,6 @@ const AddBookFormPage = () => {
             value={bookName}
             onChange={(e) => setBookName(e.target.value)}
           />
-          <button
-            onClick={() => setTest(!test)}
-            className="px-5 py-2 bg-green-500 rounded-md mt-3 text-white">{test ?  "Test Function" : "Working"}</button>
         </div>
 
         <div className="mb-4">

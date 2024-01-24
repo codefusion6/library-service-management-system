@@ -25,6 +25,7 @@ const Contact = () => {
           </a>
         </div>
       </div>
+      <h1 className="block md:hidden">Sumon paul</h1>
     </div>
   );
 };

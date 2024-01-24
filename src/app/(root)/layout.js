@@ -6,6 +6,8 @@ import { AuthContextProvider } from "../context/AuthContext";
 import MyNavbar from "@/shared/MyNavbar";
 import NextThemeProvider from "../provider/NextThemeProvider";
 import { Toaster } from "react-hot-toast";
+import "./../globals.css";
+
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["400", "300", "700", "900"],
@@ -23,6 +25,7 @@ const RootLayout = ({ children }) => {
         <body className={merriweather.className}>
           <NextThemeProvider>
             <MyNavbar />
+            <MyNavbar></MyNavbar>
             {children}
             <Toaster position="top-right"/>
             <Footer />

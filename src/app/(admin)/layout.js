@@ -1,10 +1,28 @@
+<<<<<<< HEAD
 import '../globals.css'
 const Layout = ({ children }) => {
-  return (
-        <main>
-            {children}
-        </main>
-  );
-};
+=======
+import NextThemeProvider from "../provider/NextThemeProvider";
+import Sidebar from "./dashboard/Sidebar";
+import SidebarItems from "./dashboard/SidebarItems";
+import "./../globals.css"
 
-export default Layout;
+function dashboardLayout({ children }) {
+>>>>>>> 7e136e21af1ff978add0357933f9c407e185a620
+  return (
+    <>
+      <div className='flex gap-2'>
+        <div className='w-3/12 border-r bg-black text-white'>
+          <Sidebar>
+            <SidebarItems></SidebarItems>
+          </Sidebar>
+        </div>
+        <div className='w-9/12 bg-slate-500'>
+          {children}
+        </div>
+      </div>
+    </>
+  )
+}
+
+export default dashboardLayout
