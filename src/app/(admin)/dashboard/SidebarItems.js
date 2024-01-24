@@ -1,5 +1,5 @@
 "use client";
-import { SidebarContext } from "@/app/context/SidebarContext";
+
 import Link from "next/link";
 import React, { useContext } from "react";
 import { CiBoxList } from "react-icons/ci";
@@ -7,7 +7,7 @@ import { MdFormatListBulletedAdd } from "react-icons/md";
 
 
 const SidebarItems = () => {
-  const { expanded } = useContext(SidebarContext);
+ 
   return (
     <div>
       <ul className="text-black space-y-4">
@@ -33,7 +33,7 @@ const SidebarItems = () => {
           transition-colors group hover:bg-green-100"
         >
           <CiBoxList size={20} className="text-xl font-bold" />
-          <Link href="/dashboard/booklist">Book List</Link>
+          <Link href="/dashboard/all-user">All Users</Link>
         </li>
         <li
           className="flex gap-2 items-center py-2 px-3 my-1
