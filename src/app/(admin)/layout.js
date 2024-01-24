@@ -1,9 +1,14 @@
+<<<<<<< HEAD
+import '../globals.css'
+const Layout = ({ children }) => {
+=======
 import NextThemeProvider from "../provider/NextThemeProvider";
 import Sidebar from "./dashboard/Sidebar";
 import SidebarItems from "./dashboard/SidebarItems";
 import "./../globals.css"
 
 function dashboardLayout({ children }) {
+>>>>>>> 7e136e21af1ff978add0357933f9c407e185a620
   return (
     <>
       <div className='flex gap-2'>

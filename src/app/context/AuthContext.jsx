@@ -20,9 +20,9 @@ export const AuthContextProvider = ({ children }) => {
     await signInWithPopup(auth, provider);
   };
 
-  const createUser = (email, password, fullname) => {
+  const createUser = (email, password,) => {
     setLoading(true);
-    return createUserWithEmailAndPassword(auth, email, password, fullname);
+    return createUserWithEmailAndPassword(auth, email, password,);
   }
 
   const logOut = () => {
