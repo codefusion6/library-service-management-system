@@ -15,7 +15,8 @@ export const addUser = async (formData) => {
     };
 
     const result = await User.create(newFormData);
-    return JSON.parse(JSON.stringify(result));
+    // return JSON.parse(JSON.stringify(result));
+    return { success: true };
   } catch (error) {
     return NextResponse.json("Kisu ekta hoise");
   }

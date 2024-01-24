@@ -1,54 +1,24 @@
 "use client";
-import React, { useState } from "react";
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import LottieAnimation from "./LottieAnimation";
 import { Input } from "@nextui-org/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-import toast from "react-hot-toast";
-import { UserAuth } from "@/app/context/AuthContext";
-import { auth } from "@/app/firbase/firebase";
+
+import React from "react";
+import { UserAuth } from "@/app/provider/context/context";
 
 const RegisterForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
-  const { googleSignIn } = UserAuth(); 
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSignUp = async () => {
-    try {
-      // Create a new user with email and password using Firebase
-      await auth.createUserWithEmailAndPassword(email, password);
-
-      // After successful registration, you can redirect to the login page or any other page
-      console.log("User registered successfully");
-      router.push("/login");
-    } catch (error) {
-      // Handle registration failure, show an error message, etc.
-      console.error("Error during registration:", error.message);
-    }
-  };
-  const toggleVisibility = () => setIsVisible(!isVisible);
-
-  const handleGoogleSignIn = async () => {
-    try {
-      // Perform Google sign-in
-      await googleSignIn();
-
-      // This will only be executed if the authentication is successful
-      toast.success('Registration successful');
-    } catch (error) {
-      console.error('Google sign-in error:', error);
-    }
-  };
-
+  const variants = ["flat", "bordered", "underlined", "faded"];
+  const { createUser } = UserAuth()
+  const toggleVisibility = () => setIsVisible(!isVisible); 
   return (
     <div>
       <div>
         <div>
           <h2 className="lg:text-4xl text-blue-500  text-center lg:font-medium lg:mt-5">Please Sign Up </h2>
-          <hr  className="w-[46vh] lg:ml-[87vh] mt-3  mb-5 border  items-center " />
+          <hr className="w-[46vh] lg:ml-[87vh] mt-3  mb-5 border  items-center " />
         </div>
         <section className=" flex dark:bg-gray-900">
           <div className="flex  items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0">
@@ -62,71 +32,86 @@ const RegisterForm = () => {
               <div className="relative  py-3 sm:max-w-xl sm:mx-auto">
                 <div className="relative px-4 py-10 bg-white mx-8 md:mx-0  shadow rounded-3xl sm:p-18">
                   <div className="max-w-md mx-auto ">
-                    <div className="mt-5">
-                      <div>
-                        <label
-                          className="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
-                          for="fullname"
-                        >
-                          Full Name
-                        </label>
-                        <Input
-                          isClearable
-                          type="name"
-                          label="Name"
-                          variant="bordered"
-                          placeholder="Enter your Full Name"
-                          onClear={() => console.log("input cleared")}
-                          className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-                        />
-                      </div>
-                      <div className="">
-                        <label
-                          className="font-semibold ml-5  text-sm text-gray-600 pb-1 block"
-                          for="email"
-                        >
-                          Email
-                        </label>
-                        <Input
-                          isClearable
-                          type="email"
-                          label="Email"
-                          variant="bordered"
-                          placeholder="Enter your email"
-                          onClear={() => console.log("input cleared")}
-                          className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-                        />
-                      </div>
+                    <form action={async() => {
+                      
+                    }}>
+                      <div className="mt-5">
+                        <div>
+                          <label
+                            className="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
+                            for="fullname"
+                          >
+                            Full Name
+                          </label>
+                          <Input
+                            isClearable
+                            type="name"
+                            label="Name"
+                            name="name"
+                            variant="bordered"
+                            placeholder="Enter your Full Name"
+                            onClear={() => console.log("input cleared")}
+                            className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                          />
+                        </div>
+                        <div className="">
+                          <label
+                            className="font-semibold ml-5  text-sm text-gray-600 pb-1 block"
+                            for="email"
+                          >
+                            Email
+                          </label>
+                          <Input
+                            isClearable
+                            type="email"
+                            label="Email"
+                            name="email"
+                            variant="bordered"
+                            placeholder="Enter your email"
+                            onClear={() => console.log("input cleared")}
+                            className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                          />
+                        </div>
 
-                      <div>
-                        <label
-                          class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
-                          for="password"
-                        >
-                          Password
-                        </label>
-                        <Input
-                          label="Password"
-                          variant="bordered"
-                          placeholder="Enter your password"
-                          endContent={
-                            <button
-                              className="focus:outline-none"
-                              type="button"
-                              onClick={toggleVisibility}
-                            >
-                              {isVisible ? (
-                                <FaEye className="text-2xl text-default-400 pointer-events-none" />
-                              ) : (
-                                <FaEyeSlash className="text-2xl text-default-400 pointer-events-none" />
-                              )}
-                            </button>
-                          }
-                          type={isVisible ? "text" : "password"}
-                          className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
-                        />
+                        <div>
+                          <label
+                            class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
+                            for="password"
+                          >
+                            Password
+                          </label>
+                          <Input
+                            label="Password"
+                            variant="bordered"
+                            name="password"
+                            placeholder="Enter your password"
+                            endContent={
+                              <button
+                                className="focus:outline-none"
+                                type="button"
+                                onClick={toggleVisibility}
+                              >
+                                {isVisible ? (
+                                  <FaEye className="text-2xl text-default-400 pointer-events-none" />
+                                ) : (
+                                  <FaEyeSlash className="text-2xl text-default-400 pointer-events-none" />
+                                )}
+                              </button>
+                            }
+                            type={isVisible ? "text" : "password"}
+                            className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                          />
+                        </div>
                       </div>
-                    </div>
+                      <div class="mt-5">
+                        <button
+                          class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
+                          type="submit"
+                        >
+                          Sign up
+                        </button>
+                      </div>
+                    </form>
 
                     <div className="flex justify-center items-center">
                       <div>
@@ -223,15 +208,6 @@ const RegisterForm = () => {
                           <span class="ml-2">Sign up with Apple</span>
                         </button>
                       </div>
-                    </div>
-                    <div class="mt-5">
-                      <button
-                        class="py-2 px-4 bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg"
-                        type="submit"
-                        onClick={handleSignUp}
-                      >
-                        Sign up
-                      </button>
                     </div>
                     <div class="flex items-center justify-between mt-4">
                       <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
