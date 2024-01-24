@@ -28,7 +28,6 @@ const Sliding = () => {
           alt="profile"
           className="border p-1 rounded-full mx-auto w-[250px]"
         />
-
         <h1 className="mt-3 text-2xl font-semibold">Kazi Nazrul Islam</h1>
         <p className="mt-3 text-center font-medium mx-20">
           Revolutionary poet and the &quot;Rebel Poet&quot; of Bangladesh, Kazi
@@ -46,7 +45,6 @@ const Sliding = () => {
           alt="profile"
           className="border p-1 rounded-full mx-auto w-[250px]"
         />
-
         <h1 className="mt-3 text-2xl font-semibold ">Rabindranath Tagore</h1>
         <p className="mt-3 text-center font-medium mx-20">
           Renowned poet, philosopher, and the first non-European Nobel laureate
@@ -64,7 +62,6 @@ const Sliding = () => {
           alt="profile"
           className="border p-1 rounded-full mx-auto w-[250px]"
         />
-
         <h1 className="mt-3 text-2xl font-semibold">Muhammad Zafar Iqbal</h1>
         <p className="mt-3 text-center font-medium mx-20">
           Prolific science fiction writer and eminent academic, Muhammad Zafar
@@ -94,6 +91,7 @@ const Sliding = () => {
         </p>
       </SwiperSlide>
     </Swiper>
+
   );
 };
 

@@ -20,32 +20,34 @@ const renderStars = (rating) => {
 
 const Feature = ({ books }) => {
   return (
-    <div className="container mx-auto mt-8">
-      <h1 className="text-3xl font-bold text-center mb-8">Featured Books</h1>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        {books?.map((book, index) => (
-          <div key={index} className="p-4 border border-gray-300 rounded-md">
-            <Image
-              src={book.book.image}
-              alt={book.book.name}
-              className="mb-4 w-full h-auto object-cover"
-              layout="responsive"
-              height={400}
-              width={200}
-            />
-            <h2 className="text-xl font-bold mb-2">{book.book.name}</h2>
-            <p className="text-sm text-gray-600 mb-2">{book.book.type}</p>
-            <p className="text-sm text-gray-600 mb-2">Author: {book.book.createdBy}</p>
-            <p className="text-sm text-gray-600 mb-2">Price: {book.book.price}</p>
-            <div className="flex items-center mb-2">
-              {renderStars(book.book.starMarking)}
-              <p className="text-sm text-gray-600 ml-1">{book.book.starMarking}</p>
+    <section className='purple-dark text-forground'>
+      <div className="container mx-auto mt-8">
+        <h1 className="text-3xl font-bold text-center mb-8">Featured Books</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+          {books?.map((book, index) => (
+            <div key={index} className="p-4 border border-gray-300 rounded-md">
+              <Image
+                src={book.book.image}
+                alt={book.book.name}
+                className="mb-4 w-full h-auto object-cover"
+                layout="responsive"
+                height={400}
+                width={200}
+              />
+              <h2 className="text-xl font-bold mb-2">{book.book.name}</h2>
+              <p className="text-sm mb-2">{book.book.type}</p>
+              <p className="text-sm mb-2">Author: {book.book.createdBy}</p>
+              <p className="text-sm mb-2">Price: {book.book.price}</p>
+              <div className="flex items-center mb-2">
+                {renderStars(book.book.starMarking)}
+                <p className="text-sm ml-1">{book.book.starMarking}</p>
+              </div>
+              <button className="bg-primaryColor text-white px-4 py-2 rounded-md">Add to Cart</button>
             </div>
-            <button className="bg-primaryColor text-white px-4 py-2 rounded-md">Add to Cart</button>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
