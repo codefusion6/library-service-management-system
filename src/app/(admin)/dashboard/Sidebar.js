@@ -1,12 +1,10 @@
-"use client"
 import Image from "next/image";
-import React, { useState } from "react";
+import React from "react";
 import logo from "../../../../public/images/bookflow.png";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 const Sidebar = ({ children }) => {
-  const [showSidebar, setShowSidebar] = useState(false)
   return (
     <div>
       <aside className="h-screen">
@@ -31,7 +29,7 @@ const Sidebar = ({ children }) => {
             >
               <div className="leading-4">
                 <h2 className="font-semibold ">Priyanka</h2>
-                <span classname="text-sm">priyanka@gmail.com</span>
+                <span className="text-sm">priyanka@gmail.com</span>
               </div>
               <BsThreeDotsVertical size={20} className="" />
             </div>

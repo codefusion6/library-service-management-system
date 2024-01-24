@@ -2,10 +2,13 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 import LottieAnimation from "./LottieAnimation";
-import { Input } from "@nextui-org/react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import React from "react";
+
+
+import React from "react";
+import RegisterAction from "./RegisterAction";
 
 const RegisterForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
@@ -30,6 +33,7 @@ const RegisterForm = () => {
             <div className="ml-10">
               <div className="relative  py-3 sm:max-w-xl sm:mx-auto">
                 <div className="relative px-4 py-10 bg-white mx-8 md:mx-0  shadow rounded-3xl sm:p-18">
+<<<<<<< HEAD
                   <div className="max-w-md mx-auto ">
                     <form action={async () => {
 
@@ -221,6 +225,11 @@ const RegisterForm = () => {
                       <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                     </div>
                   </div>
+=======
+
+                  <RegisterAction />
+
+>>>>>>> 7ff588f980e1ddedb0920c0e90037f3cb5a0911f
                 </div>
               </div>
             </div>
