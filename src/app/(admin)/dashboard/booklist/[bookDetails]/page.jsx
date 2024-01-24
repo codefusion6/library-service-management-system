@@ -11,8 +11,8 @@ const BookDetails = () => {
         Details Page
       </h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        <div className="w-96 flex flex-col md:flex-row max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden hover:border-green-500 hover:border-2">
-          <div className="w-1/3 p-2">
+        <div className="w-full flex flex-col md:flex-row max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden hover:border-green-500 hover:border-2">
+          <div className="w-1/3 md:w-full p-2">
             <Image
               src="https://i.ibb.co/7KTnVdz/book1.gif"
               alt="Card Image"
@@ -22,14 +22,14 @@ const BookDetails = () => {
             />
           </div>
 
-          <div className=" p-2">
+          <div className="w-full p-2">
             <p className="text-lg uppercase font-bold">
               ছোটদের নির্বাচিত নজরুল
             </p>
             <span>By</span>
             <h4 className="font-bold text-large">Kazi Nazrul Islam</h4>
             <p className="text-base font-medium">
-              Price: <span className="font-bold">310 TK</span>{" "}
+              Price: <span className="font-bold">310 TK</span>
             </p>
 
             <p className="text-yellow-500 flex">
@@ -41,7 +41,8 @@ const BookDetails = () => {
             </p>
             <div className="flex my-5">
               <Button
-                className="bg-gradient-to-r from-yellow-200 to-green-600  text-white font-bold py-2 px-4 rounded"
+              variant="ghost"
+                className="hover:bg-gradient-to-r from-yellow-200 to-green-600  hover:text-white text-black font-bold py-2 px-4 rounded"
                 size="lg"
                >
                 Buy
