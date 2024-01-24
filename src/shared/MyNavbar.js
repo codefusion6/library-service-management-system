@@ -18,9 +18,8 @@ import logo from "../../public/images/bookflow.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { UserAuth } from "@/app/context/AuthContext";
-import './navbar.css'
-
-
+import "./navbar.css";
+import { usePathname } from "next/navigation";
 
 const MyNavbar = () => {
   const [show, setShow] = useState(false);
@@ -41,11 +40,11 @@ const MyNavbar = () => {
   // }, [scroll]);
 
   return (
-    <section
-      className="fixed top-0 z-50 w-full bg-black text-white"
-    // {`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}
+    <nav
+      className="fixed top-0 z-50 opacity-30 bg-black blur-lg w-full text-white"
+      // {`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}
     >
-      <div className="container mx-auto">
+      <div className="container mx-auto fixed">
         <div className="py-4">
           <Navbar>
             <NavbarBrand>
@@ -94,7 +93,10 @@ const MyNavbar = () => {
                 </NavbarItem>
               </div>
               {/* small device manu icon and items */}
-              <div id="mobile-menu" className="items-center gap-4 flex md:hidden">
+              <div
+                id="mobile-menu"
+                className="items-center gap-4 flex md:hidden"
+              >
                 <Dropdown placement="bottom-end">
                   <DropdownTrigger>
                     <div className="w-6 h-6">
@@ -104,7 +106,8 @@ const MyNavbar = () => {
                   <DropdownMenu
                     aria-label="Profile Actions"
                     className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                    variant="flat">
+                    variant="flat"
+                  >
                     <DropdownItem className="h-full gap-2">
                       <NavbarItem>
                         <Link className="text-white" href="/">
@@ -158,10 +161,8 @@ const MyNavbar = () => {
             </NavbarContent>
           </Navbar>
         </div>
-        {/* <ThemeSwitcher></ThemeSwitcher> */}
-        
       </div>
-    </section>
+    </nav>
   );
 };
 

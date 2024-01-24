@@ -5,6 +5,7 @@ import Footer from "@/shared/Footer";
 import { AuthContextProvider } from "../context/AuthContext";
 import MyNavbar from "@/shared/MyNavbar";
 import NextThemeProvider from "../provider/NextThemeProvider";
+import { Toaster } from "react-hot-toast";
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["400", "300", "700", "900"],
@@ -23,6 +24,7 @@ const RootLayout = ({ children }) => {
           <NextThemeProvider>
             <MyNavbar />
             {children}
+            <Toaster position="top-right"/>
             <Footer />
           </NextThemeProvider>
         </body>
