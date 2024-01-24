@@ -54,7 +54,10 @@ const Navbar = () => {
         <div className='flex gap-4 relative items-center'>
           {user && (
             <>
-              <img className='w-10 h-10 rounded-full' src={user.photoURL} alt="User Profile" />
+              <Image className='rounded-full' src={user?.photoURL} alt="User Profile" 
+              width={30}
+              height={30}
+              />
               <button
                 className={`py-2 px-3 rounded-3xl text-md ${scroll ? 'bg-white text-black' : 'bg-green-700 text-white'}`}
                 onClick={handleLogout}
