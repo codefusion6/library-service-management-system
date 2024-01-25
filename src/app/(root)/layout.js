@@ -1,11 +1,12 @@
 import { Merriweather } from 'next/font/google'
 import * as React from "react";
-import "../globals.css";
 import Footer from "@/shared/Footer";
-import { AuthContextProvider } from "../provider/context/AuthContext";
 import MyNavbar from "@/shared/MyNavbar";
+import { Toaster } from "react-hot-toast";
+import "./../globals.css";
 import { Providers } from "../provider/Providers";
-import { Toaster } from 'react-hot-toast';
+import { AuthContextProvider } from "../provider/context/AuthContext";
+
 const merriweather = Merriweather({
   subsets: ['latin'],
   weight: ['400', '300', '700', '900']
@@ -24,7 +25,7 @@ const RootLayout = ({ children }) => {
           <Providers>
             <MyNavbar></MyNavbar>
             {children}
-            <Toaster position="top-right"/>
+            <Toaster position="top-right" />
             <Footer />
           </Providers>
         </body>

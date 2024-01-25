@@ -1,9 +1,7 @@
 // import NextThemeProvider from "../provider/NextThemeProvider";
 import Sidebar from "./dashboard/Sidebar";
 import SidebarItems from "./dashboard/SidebarItems";
-import "./../globals.css";
-import { UserAuth } from "../provider/context/AuthContext";
-
+import "./../globals.css"
 
 function dashboardLayout({ children }) {
   return (
