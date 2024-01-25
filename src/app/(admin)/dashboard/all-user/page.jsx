@@ -2,6 +2,7 @@
 
 import React, { useState, createContext } from "react";
 import { Image } from "@nextui-org/react";
+import Modal from "@/components/modal/modal";
 
 /* eslint-disable react/no-unescaped-entities */
 const AllUser = () => {
@@ -59,8 +60,8 @@ const AllUser = () => {
 
   const UserContext = createContext();
   const handlePositionChange = (newPosition) => {
-            setSelectedPosition(newPosition);
-          };
+    setSelectedPosition(newPosition);
+  };
 
   return (
     <div>
@@ -303,12 +304,17 @@ const AllUser = () => {
                     </div>
                   </td>
                   <td className="px-6 py-4">
-                    <a
+                    {/* <a
                       href="#"
                       className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                     >
                       Edit user
-                    </a>
+                    </a> */}
+                    <button className="text-white bg-blue-700  hover:bg-blue-800 focus:outline-none 
+                    font-medium text-sm rounded-lg px-5 -py-2 text-centermr-5 ">
+                      Edit User
+                    </button>
+                    <Modal></Modal>
                   </td>
                 </tr>
               ))}
