@@ -7,7 +7,7 @@ function dashboardLayout({ children }) {
   return (
     <>
       <div className='flex gap-2 md:flex-row flex-col'>
-        <div className='w-full h-full md:w-3/12 border-r bg-black text-white'>
+        <div className='w-full min-h-screen md:w-3/12 border-r  text-white'>
           <Sidebar>
             <SidebarItems></SidebarItems>
           </Sidebar>

@@ -41,14 +41,7 @@ const SidebarItems = ({ icon, text, active, alert }) => {
           <CiBoxList size={20} className="text-xl font-bold" />
           <Link href="/dashboard/userList">User List</Link>
         </li>
-        <li
-          className="flex gap-2 items-center py-2 px-3 my-1
-          font-medium rounded-md cursor-pointer
-          transition-colors group hover:bg-yellow-100"
-        >
-          <CiBoxList size={20} className="text-xl font-bold" />
-          <Link href="/dashboard/booklist">Book List</Link>
-        </li>
+        
       </ul>
     </div>
   );
