@@ -14,7 +14,6 @@ function dashboardLayout({ children }) {
           {children}
         </div>
       </div>
-      <div className="w-9/12 bg-slate-500">{children}</div>
     </>
   );
 }

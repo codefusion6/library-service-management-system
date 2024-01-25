@@ -1,14 +1,11 @@
-import { Merriweather } from "next/font/google";
+
 import { AuthContextProvider } from "../provider/context/AuthContext";
 import { Providers } from "../provider/Providers";
 import MyNavbar from "@/shared/MyNavbar";
 import Footer from "@/shared/Footer";
 import "./../globals.css";
 
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  weight: ["400", "300", "700", "900"],
-});
+
 
 export const metadata = {
   title: "BookFlow",
@@ -17,40 +14,13 @@ export const metadata = {
 
 const Layout = ({ children }) => {
   return (
-<<<<<<< HEAD
     <AuthContextProvider>
       <Providers>
         <MyNavbar></MyNavbar>
         {children}
-        <Footer/>
+        <Footer />
       </Providers>
     </AuthContextProvider>
-=======
-<<<<<<< HEAD
-    <AuthContextProvider>
-      {/* <NextUIProvider> */}
-        {/* <NextThemeProvider> */}
-          <MyNavbar />
-          {children}
-          <Toaster position="top-right" />
-          <Footer />
-        {/* </NextThemeProvider> */}
-      {/* </NextUIProvider> */}
-    </AuthContextProvider>
-=======
-    <html lang="en" suppressHydrationWarning={true}>
-      <AuthContextProvider>
-        <body className={merriweather.className}>
-          <Providers>
-            <MyNavbar></MyNavbar>
-            {children}
-            <Footer />
-          </Providers>
-        </body>
-      </AuthContextProvider>
-    </html >
->>>>>>> 9ee2e92034c35bdd94f4be1992678fd786cb163f
->>>>>>> 8fee0fc446fc0087a19c49d5fc1f07a804f2a8bc
   );
 };
 
