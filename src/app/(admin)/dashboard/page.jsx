@@ -74,7 +74,7 @@ function Dashboard({ children }) {
             </CardBody>
           </Card>
         </div>
-        <div>
+        <div className="w-96 mx-auto mt-5">
             <Chart></Chart>
         </div>
       </div>
