@@ -16,11 +16,8 @@ const Footer = () => {
             <div>
               <ul className="text-left text-white space-y-5">
                 <li>
-                  <Link
-                    href="/"
-                    className="font-medium flex gap-2 items-center"
-                  >
-                    <CiHome className="text-xl text-red-100" />
+                  <Link href="/" className="font-medium flex gap-2 items-center">
+                    <CiHome className="text-xl text-[#ddb425]" />
                     Home
                   </Link>
                 </li>

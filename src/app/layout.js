@@ -2,9 +2,8 @@ import { Merriweather } from "next/font/google";
 import * as React from "react";
 import "./globals.css";
 import Footer from "@/shared/Footer";
-import { AuthContextProvider } from "./context/AuthContext";
+import { AuthContextProvider } from "./provider/context/AuthContext";
 import MyNavbar from "@/shared/MyNavbar";
-import NextThemeProvider from "./provider/NextThemeProvider";
 import { Toaster } from "react-hot-toast";
 import { NextUIProvider } from "@nextui-org/react";
 

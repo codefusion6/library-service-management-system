@@ -5,7 +5,7 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 import {FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa6";
 import LottieAnimation from "./LottieAnimation";
-import { UserAuth } from "@/app/context/AuthContext";
+import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
 
 const LoginForm = () => {
@@ -31,10 +31,10 @@ const LoginForm = () => {
         </h2>
         <hr className="w-1/2 lg:w-[46vh] lg:ml-[87vh] mt-3 mb-5 border mx-auto" />
       </div>
-      <section className="flex dark:bg-gray-900">
+      <section className="flex dark:bg-gray-900  min-h-screen">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center lg:px-6 lg:py-8 mx-auto md:h-screen">
           <div className="lg:mr-10 mb-6 text-center lg:text-left">
-            <div className="flex items-center">
+            <div className="flex items-center md:hidden lg:block ">
               <LottieAnimation />
             </div>
           </div>

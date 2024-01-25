@@ -1,16 +1,16 @@
 "use client"
 import Image from "next/image";
+import React, { useState } from "react";
 import logo from "../../../../public/images/bookflow.png";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import CollapseButton from "./collapseButton";
-import { useState } from "react";
 
 const Sidebar = ({ children }) => {
   const [state, setState] = useState(true);
   return (
     <div>
-      <aside className="h-screen sticky top-0 overflow-y-scroll">
+      <aside className="min-h-screen">
         <nav className="h-full flex flex-col bg-white border-r shadow-md">
           <div className="p-4 pb-2 flex justify-between items-start">
             <Image src={logo} alt="Image" width={200} height={100} className="w-32"></Image>            
@@ -33,7 +33,7 @@ const Sidebar = ({ children }) => {
             >
               <div className="leading-4">
                 <h2 className="font-semibold ">Priyanka</h2>
-                <span className="text-sm">priyanka@gmail.com</span>
+                <span classname="text-sm">priyanka@gmail.com</span>
               </div>
               <BsThreeDotsVertical size={20} className="" />
             </div>
