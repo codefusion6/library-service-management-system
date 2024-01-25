@@ -18,7 +18,7 @@ import logo from "../../public/images/bookflow.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import toast from "react-hot-toast";
-import { UserAuth } from "@/app/context/AuthContext";
+import { UserAuth } from "@/app/provider/context/AuthContext";
 
 const MyNavbar = () => {
 const [scroll, setScroll] = useState(false);
