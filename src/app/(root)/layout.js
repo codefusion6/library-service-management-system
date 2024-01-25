@@ -25,7 +25,6 @@ const RootLayout = ({ children }) => {
         <body className={merriweather.className}>
           <NextThemeProvider>
             <MyNavbar />
-            <MyNavbar></MyNavbar>
             {children}
             <Toaster position="top-right"/>
             <Footer />
