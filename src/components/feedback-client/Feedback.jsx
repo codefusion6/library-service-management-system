@@ -31,8 +31,6 @@ const Feedback = () => {
       />
 
       <textarea placeholder="Message" rows={5} className="px-2 py-1 w-full bg-gray-200 rounded-md text-gray-600 font-semibold"></textarea>
-
-      <Button></Button>
     </form>
   );
 };

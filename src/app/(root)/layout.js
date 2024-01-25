@@ -1,17 +1,13 @@
-import { Merriweather } from "next/font/google";
 import * as React from "react";
-import "../globals.css";
+// import "./../globals.css";
 import Footer from "@/shared/Footer";
-import { AuthContextProvider } from "../context/AuthContext";
+import { AuthContextProvider } from "../provider/context/AuthContext";
 import MyNavbar from "@/shared/MyNavbar";
 import NextThemeProvider from "../provider/NextThemeProvider";
 import { Toaster } from "react-hot-toast";
-import "./../globals.css";
 
-const merriweather = Merriweather({
-  subsets: ["latin"],
-  weight: ["400", "300", "700", "900"],
-});
+
+
 
 export const metadata = {
   title: "BookFlow",
@@ -20,18 +16,17 @@ export const metadata = {
 
 const RootLayout = ({ children }) => {
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <AuthContextProvider>
-        <body className={merriweather.className}>
-          <NextThemeProvider>
-            <MyNavbar></MyNavbar>
-            {children}
-            <Toaster position="top-right" />
-            <Footer />
-          </NextThemeProvider>
-        </body>
-      </AuthContextProvider>
-    </html>
+
+    <AuthContextProvider>
+      <NextThemeProvider>
+        <MyNavbar></MyNavbar>
+        {children}
+        <Toaster position="top-right" />
+        <Footer />
+      </NextThemeProvider>
+
+    </AuthContextProvider>
+
   );
 };
 

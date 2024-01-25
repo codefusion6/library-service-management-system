@@ -17,9 +17,9 @@ import Image from "next/image";
 import logo from "../../public/images/bookflow.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
-import { UserAuth } from "@/app/context/AuthContext";
-import "./navbar.css";
-import { usePathname } from "next/navigation";
+import { UserAuth } from "@/app/provider/context/AuthContext";
+// import "./navbar.css";
+// import { usePathname } from "next/navigation";
 
 const MyNavbar = () => {
   const [show, setShow] = useState(false);
@@ -41,8 +41,8 @@ const MyNavbar = () => {
 
   return (
     <nav
-      className="fixed top-0 z-50 opacity-30 bg-black blur-lg w-full text-white"
-      // {`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}
+      className="fixed top-0 z-50 bg-black w-full text-white"
+    // {`fixed w-full z-50 ${scroll ? 'bg-black shadow-md text-white' : 'bg-transparent'}`}
     >
       <div className="container mx-auto fixed">
         <div className="py-4">
@@ -58,7 +58,6 @@ const MyNavbar = () => {
                 />
               </Link>
             </NavbarBrand>
-
             {/* laptop and tablet navbar */}
 
             <NavbarContent className="lg:flex gap-4 justify-end">
