@@ -19,7 +19,6 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { UserAuth } from "@/app/context/AuthContext";
 import "./navbar.css";
-import { usePathname } from "next/navigation";
 
 const MyNavbar = () => {
   const [show, setShow] = useState(false);

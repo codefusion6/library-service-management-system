@@ -5,9 +5,12 @@ import React from "react";
 export const Layout = () => {
   return (
     <NextUIProvider>
-      <NextThemeProvider>
-        
-      </NextThemeProvider>
+      <NextThemeProvider
+        defaultTheme="system"
+        attribute="class"
+        {...themeProps}
+      ></NextThemeProvider>
+      
     </NextUIProvider>
   );
 };
