@@ -38,7 +38,7 @@ const Banner = () => {
                 </Button>
                 <Button
                   color="primary"
-                  className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-white shadow-lg"
+                  className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-white shadow-lg px-7 py-3 rounded-lg"
                   size="lg"
                 >
                   Buy Now

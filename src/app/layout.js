@@ -6,6 +6,7 @@ import { AuthContextProvider } from "./context/AuthContext";
 import MyNavbar from "@/shared/MyNavbar";
 import NextThemeProvider from "./provider/NextThemeProvider";
 import { Toaster } from "react-hot-toast";
+import { NextUIProvider } from "@nextui-org/react";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -22,10 +23,12 @@ const RootLayout = ({ children }) => {
     <html lang="en" suppressHydrationWarning={true}>
       <AuthContextProvider>
         <body className={merriweather.className}>
-          <NextThemeProvider>
+          {/* <NextThemeProvider> */}
+          {/* <NextUIProvider> */}
             {children}
-            <Toaster position="top-right"/>
-          </NextThemeProvider>
+            <Toaster position="top-right" />
+          {/* </NextUIProvider> */}
+          {/* </NextThemeProvider> */}
         </body>
       </AuthContextProvider>
     </html>
