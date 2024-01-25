@@ -6,15 +6,17 @@ import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
 const Sidebar = ({ children }) => {
-  const [showSidebar, setShowSidebar] = useState(false)
+  const [showSidebar, setShowSidebar] = useState(true)
   return (
     <div>
       <aside className="h-screen">
         <nav className="h-full flex flex-col bg-white border-r shadow-md">
           <div className="p-4 pb-2 flex justify-between items-start">
             <Image src={logo} alt="Image" width={200} height={100} className="w-32"></Image>
-            <button className="p-3 rounded-lg bg-gray-50 hover:bg-slate-100">
-              <FaArrowRightArrowLeft className="text-black" />
+            <button 
+            onClick={() => setShowSidebar(!showSidebar)}
+            className="p-3 rounded-lg bg-gray-50 hover:bg-slate-100">
+              {showSidebar ? <FaArrowRightArrowLeft className="text-black" />: "pass"}
             </button>
           </div>
           <ul className="flex-1 px-6">{children}</ul>
