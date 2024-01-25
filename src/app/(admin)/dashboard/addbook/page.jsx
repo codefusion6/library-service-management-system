@@ -6,8 +6,7 @@ const AddBookFormPage = () => {
   // Handle form submission
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    
-    
+
     // Log form data (you can replace this with your form submission logic)
     console.log({
       bookName,

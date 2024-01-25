@@ -1,12 +1,12 @@
 // import BannerSlider from "@/components/home/Slider/BannerSlider";
+import BannerSlider from "@/components/Home/Slider/BannerSlider";
 import { Button } from "@nextui-org/react";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import BannerSlider from '../../components/Home/Slider/BannerSlider';
 
 const Banner = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 lg:py-0 px-1" >
+    <section className="min-h-screen flex items-center justify-center py-20 lg:py-0 px-1">
       <div className="container mx-auto ">
         <div className="justify-content-center align-items-center grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-3">
           <div className="flex flex-col justify-around gap-2">
@@ -31,14 +31,14 @@ const Banner = () => {
                 <Button
                   color="primary"
                   variant="bordered"
-                  className="font-bold "
+                  className="font-bold py-2 px-4 rounded-md border-1 border-[#1ba752] md:px-6"
                   size="lg"
                 >
                   Explore
                 </Button>
                 <Button
                   color="primary"
-                  className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-white shadow-lg px-7 py-3 rounded-lg"
+                  className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-white shadow-lg py-2 px-4 md:px-6 rounded-md"
                   size="lg"
                 >
                   Buy Now
