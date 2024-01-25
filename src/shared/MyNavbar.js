@@ -152,6 +152,7 @@ const MyNavbar = () => {
                             size="small"
                             height={30}
                             width={30}
+                            className="rounded-full"
                           />
                         ) : (
                           <div className="w-6 h-6">
