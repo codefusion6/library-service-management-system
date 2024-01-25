@@ -10,7 +10,7 @@ const Sidebar = ({ children }) => {
   const [state, setState] = useState(true);
   return (
     <div>
-      <aside className="h-screen">
+      <aside className="h-screen sticky top-0 overflow-y-scroll">
         <nav className="h-full flex flex-col bg-white border-r shadow-md">
           <div className="p-4 pb-2 flex justify-between items-start">
             <Image src={logo} alt="Image" width={200} height={100} className="w-32"></Image>            
