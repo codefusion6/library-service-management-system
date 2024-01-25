@@ -3,6 +3,7 @@ import { FaSearch, FaUserFriends } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { FaBookOpen, FaBookBible } from "react-icons/fa6";
+import Chart from "@/components/dashboardChart/Chart";
 
 function Dashboard({ children }) {
   return (
@@ -72,6 +73,10 @@ function Dashboard({ children }) {
               </p>
             </CardBody>
           </Card>
+        </div>
+        <div>
+          <h2 className="text-black">This is chart</h2>
+            <Chart></Chart>
         </div>
       </div>
     </main>
