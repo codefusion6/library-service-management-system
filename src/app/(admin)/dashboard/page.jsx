@@ -75,7 +75,6 @@ function Dashboard({ children }) {
           </Card>
         </div>
         <div>
-          <h2 className="text-black">This is chart</h2>
             <Chart></Chart>
         </div>
       </div>
