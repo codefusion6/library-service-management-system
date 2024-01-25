@@ -4,20 +4,32 @@ import React, { useState } from "react";
 import logo from "../../../../public/images/bookflow.png";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
+import CollapseButton from "./collapseButton";
 
 const Sidebar = ({ children }) => {
+<<<<<<< HEAD:src/app/(admin)/dashboard/Sidebar.js
   const [showSidebar, setShowSidebar] = useState(true)
+=======
+  const [state, setState] = useState(true);
+>>>>>>> 8fee0fc446fc0087a19c49d5fc1f07a804f2a8bc:src/app/(admin)/dashboard/Sidebar.jsx
   return (
     <div>
-      <aside className="h-screen">
+      <aside className="h-screen sticky top-0 overflow-y-scroll">
         <nav className="h-full flex flex-col bg-white border-r shadow-md">
           <div className="p-4 pb-2 flex justify-between items-start">
+<<<<<<< HEAD:src/app/(admin)/dashboard/Sidebar.js
             <Image src={logo} alt="Image" width={200} height={100} className="w-32"></Image>
             <button 
             onClick={() => setShowSidebar(!showSidebar)}
             className="p-3 rounded-lg bg-gray-50 hover:bg-slate-100">
               {showSidebar ? <FaArrowRightArrowLeft className="text-black" />: "pass"}
+=======
+            <Image src={logo} alt="Image" width={200} height={100} className="w-32"></Image>            
+            <button onClick={() => alert("hello world")} className="p-3 rounded-lg bg-gray-50 hover:bg-slate-100">
+              <FaArrowRightArrowLeft className="text-black" />
+>>>>>>> 8fee0fc446fc0087a19c49d5fc1f07a804f2a8bc:src/app/(admin)/dashboard/Sidebar.jsx
             </button>
+            {/* <CollapseButton></CollapseButton> */}
           </div>
           <ul className="flex-1 px-6">{children}</ul>
           <div className="border-r flex p-3">

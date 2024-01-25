@@ -1,28 +1,12 @@
 "use client";
 // Import necessary components and libraries
 import AddBookBanner from '@/pages/add-book/AddBookBanner';
-import { useState } from 'react';
-
 // Define AddBookFormPage component
 const AddBookFormPage = () => {
-  // State variables for book details
-  const [bookName, setBookName] = useState('');
-  const [authorName, setAuthorName] = useState('');
-  const [bookDescription, setBookDescription] = useState('');
-  const [bookCover, setBookCover] = useState(null);
-  const [bookPdf, setBookPdf] = useState(null);
-
-  // State variables for author details
-  const [authorImage, setAuthorImage] = useState(null);
-  const [publisherEmail, setPublisherEmail] = useState('');
-
-  // State variable for book accessibilities dropdown
-  const [bookAccessibilities, setBookAccessibilities] = useState('Basic');
-
   // Handle form submission
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    
+
     // Log form data (you can replace this with your form submission logic)
     console.log({
       bookName,
@@ -32,18 +16,19 @@ const AddBookFormPage = () => {
       bookPdf,
       authorImage,
       publisherEmail,
-      bookAccessibilities,
+      category,
     });
 
     // You can use this data to send a request to your backend or perform further actions.
   };
 
   return (
-    <>
+    <section>
       <AddBookBanner />
-
       {/* {/ Book Form /} */}
-      <form onSubmit={handleFormSubmit} className="m-8 max-w-xl mx-auto p-6 bg-white rounded-md shadow-md">
+      <form action={async (formData) => {
+
+      }} className="m-8 max-w-xl mx-auto p-6 bg-white rounded-md shadow-md">
         {/* {/ Book Name /} */}
         <div className="mb-4">
           <label htmlFor="bookName" className="block text-gray-700 text-sm font-bold mb-2">
@@ -51,10 +36,9 @@ const AddBookFormPage = () => {
           </label>
           <input
             type="text"
-            id="bookName"
+            name="bookName"
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-            value={bookName}
-            onChange={(e) => setBookName(e.target.value)}
+
           />
         </div>
 
@@ -65,10 +49,8 @@ const AddBookFormPage = () => {
           </label>
           <input
             type="text"
-            id="authorName"
+            name="authorName"
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-            value={authorName}
-            onChange={(e) => setAuthorName(e.target.value)}
           />
         </div>
 
@@ -78,10 +60,9 @@ const AddBookFormPage = () => {
             Book Description:
           </label>
           <textarea
-            id="bookDescription"
+            name="bookDescription"
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-            value={bookDescription}
-            onChange={(e) => setBookDescription(e.target.value)}
+
           />
         </div>
 
@@ -92,9 +73,8 @@ const AddBookFormPage = () => {
           </label>
           <input
             type="file"
-            id="bookCover"
+            name="bookCover"
             accept="image/*"
-            onChange={(e) => setBookCover(e.target.files[0])}
             className="w-full"
           />
         </div>
@@ -106,9 +86,8 @@ const AddBookFormPage = () => {
           </label>
           <input
             type="file"
-            id="bookPdf"
+            name="bookPdf"
             accept=".pdf"
-            onChange={(e) => setBookPdf(e.target.files[0])}
             className="w-full"
           />
         </div>
@@ -120,9 +99,8 @@ const AddBookFormPage = () => {
           </label>
           <input
             type="file"
-            id="authorImage"
+            name="authorImage"
             accept="image/*"
-            onChange={(e) => setAuthorImage(e.target.files[0])}
             className="w-full"
           />
         </div>
@@ -134,23 +112,21 @@ const AddBookFormPage = () => {
           </label>
           <input
             type="email"
-            id="publisherEmail"
+            name="publisherEmail"
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-            value={publisherEmail}
-            onChange={(e) => setPublisherEmail(e.target.value)}
+
           />
         </div>
 
         {/* {/ Book Accessibilities Dropdown /} */}
         <div className="mb-4">
-          <label htmlFor="bookAccessibilities" className="block text-gray-700 text-sm font-bold mb-2">
+          <label htmlFor="category" className="block text-gray-700 text-sm font-bold mb-2">
             Book Accessibilities:
           </label>
           <select
-            id="bookAccessibilities"
+            name="category"
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-            value={bookAccessibilities}
-            onChange={(e) => setBookAccessibilities(e.target.value)}
+
           >
             <option value="Basic">Basic</option>
             <option value="Plus">Plus</option>
@@ -166,7 +142,7 @@ const AddBookFormPage = () => {
           Add Book
         </button>
       </form>
-    </>
+    </section>
   );
 };
 

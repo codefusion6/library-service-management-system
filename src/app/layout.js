@@ -3,6 +3,7 @@ import "./globals.css";
 import { AuthContextProvider } from "./provider/context/AuthContext";
 import { Providers } from "./provider/Providers";
 
+
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["400", "300", "700", "900"],

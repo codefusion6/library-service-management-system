@@ -1,8 +1,6 @@
 // import NextThemeProvider from "../provider/NextThemeProvider";
 import Sidebar from "./dashboard/Sidebar";
 import SidebarItems from "./dashboard/SidebarItems";
-import "./../globals.css"
-
 function dashboardLayout({ children }) {
   return (
     <>
@@ -12,12 +10,13 @@ function dashboardLayout({ children }) {
             <SidebarItems></SidebarItems>
           </Sidebar>
         </div>
-        <div className='w-full md:w-9/12 bg-white p-4 md:p-10 min-h-screen'>
+        <div className="w-full md:w-9/12 bg-white p-4 md:p-10 min-h-screen">
           {children}
         </div>
       </div>
+      <div className="w-9/12 bg-slate-500">{children}</div>
     </>
-  )
+  );
 }
 
-export default dashboardLayout
+export default dashboardLayout;

@@ -1,12 +1,12 @@
 // import BannerSlider from "@/components/home/Slider/BannerSlider";
+import BannerSlider from "@/components/Home/Slider/BannerSlider";
 import { Button } from "@nextui-org/react";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
-import BannerSlider from '../../components/home/Slider/BannerSlider';
 
 const Banner = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center py-20 lg:py-0 px-1" >
+    <section className="min-h-screen flex items-center justify-center py-20 lg:py-0 px-1">
       <div className="container mx-auto ">
         <div className="justify-content-center align-items-center grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-3">
           <div className="flex flex-col justify-around gap-2">

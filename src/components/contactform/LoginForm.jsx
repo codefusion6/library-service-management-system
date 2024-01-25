@@ -24,7 +24,7 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="mx-auto ">
+    <div className="mx-auto">
       <div>
         <h2 className="text-2xl lg:text-4xl text-blue-500 text-center lg:font-medium lg:mt-5">
           Please Sign In
