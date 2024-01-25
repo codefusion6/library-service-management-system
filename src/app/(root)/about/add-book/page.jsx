@@ -1,4 +1,5 @@
 "use client"
+import CollapseButton from '@/app/(admin)/dashboard/collapseButton';
 import AddBookBanner from '@/pages/add-book/AddBookBanner';
 import { useState } from 'react';
 
@@ -41,6 +42,8 @@ const AddBookFormPage = () => {
             onClick={() => setTest(!test)}
             className="px-5 py-2 bg-green-500 rounded-md mt-3 text-white">{test ?  "Test Function" : "Working"}</button>
         </div>
+
+        <CollapseButton></CollapseButton>
 
         <div className="mb-4">
           <label htmlFor="authorName" className="block text-gray-700 text-sm font-bold mb-2">
