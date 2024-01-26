@@ -141,7 +141,7 @@ const AddBookFormPage = () => {
         >
           Add Book
         </button>
-      </form>
+      </form >
     </section>
   );
 };

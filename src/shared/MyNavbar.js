@@ -19,8 +19,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
+import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
+
 
 const MyNavbar = () => {
+  const [theme, setTheme] = useState(false)
   const [scroll, setScroll] = useState(false);
   const { user, logOut } = UserAuth();
 
@@ -184,6 +187,13 @@ const MyNavbar = () => {
                     </button>
                   )}
                 </div>
+                Hi
+                <button onClick={() => setTheme(!theme)}>
+                  {theme ?
+                    <MdDarkMode size={30} /> :
+                    <MdOutlineDarkMode size={30} />
+                  }
+                </button>
               </NavbarContent>
             </Navbar>
           </div>

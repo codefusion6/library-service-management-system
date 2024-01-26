@@ -1,11 +1,9 @@
-
 import { AuthContextProvider } from "../provider/context/AuthContext";
 import { Providers } from "../provider/Providers";
 import MyNavbar from "@/shared/MyNavbar";
 import Footer from "@/shared/Footer";
 import "./../globals.css";
-
-
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "BookFlow",
@@ -15,11 +13,10 @@ export const metadata = {
 const Layout = ({ children }) => {
   return (
     <AuthContextProvider>
-      <Providers>
-        <MyNavbar></MyNavbar>
-        {children}
-        <Footer />
-      </Providers>
+      <MyNavbar />
+      {children}
+      <Toaster position="top-right" />
+      <Footer />
     </AuthContextProvider>
   );
 };

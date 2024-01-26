@@ -52,7 +52,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/BPvwNtk/author1.jpg"
                   width={270}
                   height={50}
@@ -77,7 +77,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/4NnR3WH/author-4.jpg"
                   width={270}
                   height={50}
@@ -102,7 +102,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/vdBrDTr/author-3.jpg"
                   width={270}
                   height={50}
@@ -129,7 +129,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/qJ6QHKn/author-2.jpg"
                   width={270}
                   height={50}
@@ -152,7 +152,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/g4Ykb0y/tahmima.jpg"
                   width={270}
                   height={50}
@@ -177,7 +177,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/LCmdRDZ/abdul.jpg"
                   width={270}
                   height={50}
