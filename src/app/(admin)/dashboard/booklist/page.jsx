@@ -15,7 +15,7 @@ const BookListPage = async() => {
   // const data = await getAllBooks();
   await connectDB();
   const users = await getAllUser();
-  console.log(users);
+  // console.log(users);
   // console.log(data);
   return (
     <section className="container mx-auto">
