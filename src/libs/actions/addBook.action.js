@@ -42,7 +42,7 @@ export const addBook = async (formData) => {
 
     return { success: true, data: JSON.parse(JSON.stringify(result)) };
   } catch (error) {
-    return { error: "Fill input properly or send the required data", error };
+    return { error: "Fill input properly or send the required data", errorDetails: JSON.parse(JSON.stringify(error))};
   }
 };
 
