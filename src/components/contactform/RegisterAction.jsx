@@ -2,10 +2,10 @@
 import React from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
 import Link from "next/link";
-import { Input } from "@nextui-org/react";
 import { addUser } from "@/libs/actions/user.actions";
 import toast from "react-hot-toast";
 import { UserAuth } from "@/app/provider/context/AuthContext";
+import { Input } from "@nextui-org/react";
 
 const RegisterAction = () => {
   const [isVisible, setIsVisible] = React.useState(false);
