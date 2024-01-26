@@ -7,6 +7,7 @@ import { connectDB } from '@/libs/database/MongoConnect';
 import { useState } from 'react';
 
 // Define AddBookFormPage component
+<<<<<<< HEAD
 const AddBookFormPage = () => {
   // State variables for book details
   const [bookName, setBookName] = useState('');
@@ -42,16 +43,14 @@ const AddBookFormPage = () => {
     // You can use this data to send a request to your backend or perform further actions.
   };
 
+=======
+const AddBookFormPage = async () => {
+>>>>>>> 0240f317aa5aa616c0e45447e3f919ad30e39d1e
   return (
     <section>
       <AddBookBanner />
       {/* {/ Book Form /} */}
       <AddBookForm></AddBookForm>
-      <div>
-        {
-          data.books.map((book, idx) => <p key={idx}>{book.bookName}</p>)
-        }
-      </div>
     </section>
   );
 };
