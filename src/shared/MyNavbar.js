@@ -187,13 +187,6 @@ const MyNavbar = () => {
                     </button>
                   )}
                 </div>
-                Hi
-                <button onClick={() => setTheme(!theme)}>
-                  {theme ?
-                    <MdDarkMode size={30} /> :
-                    <MdOutlineDarkMode size={30} />
-                  }
-                </button>
               </NavbarContent>
             </Navbar>
           </div>

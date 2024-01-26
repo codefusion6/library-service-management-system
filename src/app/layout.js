@@ -18,7 +18,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <AuthContextProvider>
-        <body className={`${merriweather.className} dark text-foreground bg-background`}>
+        <body className={`${merriweather.className}`}>
           {children}
           <Toaster position="top-right" />
         </body>

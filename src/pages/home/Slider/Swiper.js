@@ -36,7 +36,7 @@ const SwiperSlider = () => {
       >
         <SwiperSlide>
           <div className="">
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">
                   Kazi Nazrul Islam
@@ -63,7 +63,7 @@ const SwiperSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">Humayun Ahmed </h1>
                 <small className="text-default-500">
@@ -88,7 +88,7 @@ const SwiperSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="">
           <div>
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">
                   Muhammad Zafar Iqbal{" "}
@@ -113,7 +113,7 @@ const SwiperSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">
                   Rabindranath Tagore
@@ -140,7 +140,7 @@ const SwiperSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">Tahmima Anam</h1>
                 <small className="text-default-500">(8 October 1975)</small>
@@ -163,7 +163,7 @@ const SwiperSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">
                   Abdul Mannan Syed
