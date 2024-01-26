@@ -1,13 +1,13 @@
 
-import UserPage from "@/components/modal/UserPage";
+import UserTable from "@/components/allUserTable/userTable";
 import React from "react";
 
-const AllUser = () => {
+const AllUsers = () => {
   return (
     <div>
-      <UserPage></UserPage>
+      <UserTable></UserTable>
     </div>
   );
 };
 
-export default AllUser;
+export default AllUsers;
