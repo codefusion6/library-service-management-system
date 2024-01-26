@@ -20,12 +20,12 @@ const Layout = ({ children }) => {
   return (
     <AuthContextProvider>
       {/* <NextUIProvider> */}
-        {/* <NextThemeProvider> */}
-          <MyNavbar />
-          {children}
-          <Toaster position="top-right" />
-          <Footer />
-        {/* </NextThemeProvider> */}
+      {/* <NextThemeProvider> */}
+      <MyNavbar />
+      {children}
+      <Toaster position="top-right" />
+      <Footer />
+      {/* </NextThemeProvider> */}
       {/* </NextUIProvider> */}
     </AuthContextProvider>
   );

@@ -40,7 +40,7 @@ const AddBookFormPage = () => {
           />
           <button
             onClick={() => setTest(!test)}
-            className="px-5 py-2 bg-green-500 rounded-md mt-3 text-white">{test ?  "Test Function" : "Working"}</button>
+            className="px-5 py-2 bg-green-500 rounded-md mt-3 text-white">{test ? "Test Function" : "Working"}</button>
         </div>
 
         <CollapseButton></CollapseButton>
