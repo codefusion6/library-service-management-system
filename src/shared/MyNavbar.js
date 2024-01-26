@@ -19,11 +19,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
-import { MdDarkMode, MdOutlineDarkMode } from "react-icons/md";
-
 
 const MyNavbar = () => {
-  const [theme, setTheme] = useState(false)
   const [scroll, setScroll] = useState(false);
   const { user, logOut } = UserAuth();
 
@@ -43,13 +40,12 @@ const MyNavbar = () => {
   const handleLogout = async () => {
     try {
       await logOut();
-      toast.success("Logout successful");
+      toast.success('Logout successful');
     } catch (error) {
-      console.error("Logout error:", error);
-      toast.error("Logout failed");
+      console.error('Logout error:', error);
+      toast.error('Logout failed');
     }
   };
-
   return (
     <>
       <section className="fixed top-0 z-50 w-full bg-black text-white">
@@ -90,7 +86,7 @@ const MyNavbar = () => {
                   </NavbarItem>
 
                   <NavbarItem>
-                    <Link className="text-white" href="/contact">
+                    <Link className="text-white" href="/our-services">
                       Our Services
                     </Link>
                   </NavbarItem>
@@ -101,10 +97,7 @@ const MyNavbar = () => {
                   </NavbarItem>
                 </div>
                 {/* Small device menu icon and items */}
-                <div
-                  id="mobile-menu"
-                  className="md:hidden items-center gap-4 flex"
-                >
+                <div id="mobile-menu" className="md:hidden items-center gap-4 flex">
                   {/* Dropdown menu for small devices */}
                   <Dropdown placement="bottom-end">
                     <DropdownTrigger>
@@ -115,8 +108,7 @@ const MyNavbar = () => {
                     <DropdownMenu
                       aria-label="Mobile Menu"
                       className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                      variant="flat"
-                    >
+                      variant="flat">
                       {/* Mobile menu items */}
                       <DropdownItem className="h-full gap-2">
                         <NavbarItem>
@@ -153,9 +145,9 @@ const MyNavbar = () => {
                             src={user.photoURL}
                             alt="User Profile"
                             size="small"
+                            className="rounded-full cursor-pointer"
                             height={30}
                             width={30}
-                            className="rounded-full"
                           />
                         ) : (
                           <div className="w-6 h-6">
@@ -172,11 +164,7 @@ const MyNavbar = () => {
                           <p className="font-semibold">Signed in as</p>
                           <p className="font-semibold">{user?.email}</p>
                         </DropdownItem>
-                        <DropdownItem
-                          key="logout"
-                          color="danger"
-                          onClick={handleLogout}
-                        >
+                        <DropdownItem key="logout" color="danger" onClick={handleLogout}>
                           Log Out
                         </DropdownItem>
                       </DropdownMenu>
