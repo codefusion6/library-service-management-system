@@ -10,7 +10,6 @@ const RegisterForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
   const variants = ["flat", "bordered", "underlined", "faded"];
   const toggleVisibility = () => setIsVisible(!isVisible);
-
   return (
     <div>
       <div>

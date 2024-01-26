@@ -1,4 +1,4 @@
-"use client";
+
 import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { TypeAnimation } from "react-type-animation";
@@ -8,7 +8,8 @@ import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
 
-const BookListPage = () => {
+const BookListPage = async() => {
+  
   return (
     <section className="container mx-auto">
       <h2 className="text-3xl text-center my-5 font-medium text-green-700">

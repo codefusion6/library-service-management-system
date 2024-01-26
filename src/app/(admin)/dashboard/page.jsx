@@ -7,7 +7,7 @@ import Chart from "@/components/dashboardChart/Chart";
 
 function Dashboard({ children }) {
   return (
-    <main className="min-h-screen">
+    <main className="h-[100vh]">
       <div className="">
         <div className="flex justify-end items-center gap-3 bg-gradient-to-r from-yellow-200 to-green-600 p-5">
           <input
@@ -47,7 +47,6 @@ function Dashboard({ children }) {
                 </p>
               </div>
             </CardHeader>
-
             <CardBody>
               <p>
                 This number is static now in next milestone we will show the
@@ -65,7 +64,6 @@ function Dashboard({ children }) {
                 </p>
               </div>
             </CardHeader>
-
             <CardBody>
               <p>
                 This number is static now in next milestone we will show the
@@ -75,8 +73,9 @@ function Dashboard({ children }) {
           </Card>
         </div>
         <div className="w-96 mx-auto mt-5">
-            <Chart></Chart>
+          <Chart></Chart>
         </div>
+
       </div>
     </main>
   );
