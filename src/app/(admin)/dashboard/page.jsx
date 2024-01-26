@@ -1,19 +1,3 @@
-<<<<<<< HEAD
-
-import React from 'react'
-import Sidebar from './Sidebar';
-import SidebarItems from './SidebarItems';
-
-function Dashboard() {
-    return (
-        <main className='min-h-screen px-1 pt-24'>
-            content
-        </main>
-    )
-}
-
-export default Dashboard
-=======
 import React from "react";
 import { FaSearch, FaUserFriends } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
@@ -91,7 +75,7 @@ function Dashboard({ children }) {
           </Card>
         </div>
         <div className="w-96 mx-auto mt-5">
-            <Chart></Chart>
+          <Chart></Chart>
         </div>
       </div>
     </main>
@@ -99,4 +83,3 @@ function Dashboard({ children }) {
 }
 
 export default Dashboard;
->>>>>>> 43c41c7ce737b18f87b2b29540cf1a41e356ebfc
