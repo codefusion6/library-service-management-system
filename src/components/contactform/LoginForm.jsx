@@ -9,6 +9,7 @@ import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
 
 const LoginForm = () => {
+
   const [isVisible, setIsVisible] = React.useState(false);
   const { googleSignIn } = UserAuth();
 
@@ -18,6 +19,8 @@ const LoginForm = () => {
     try {
       await googleSignIn();
       toast.success('Login successful');
+
+
     } catch (error) {
       console.error('Google sign-in error:', error);
     }

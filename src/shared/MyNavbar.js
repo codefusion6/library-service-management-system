@@ -46,7 +46,6 @@ const MyNavbar = () => {
       toast.error('Logout failed');
     }
   };
-
   return (
     <>
       <section className="fixed top-0 z-50 w-full bg-black text-white">
@@ -146,6 +145,7 @@ const MyNavbar = () => {
                             src={user.photoURL}
                             alt="User Profile"
                             size="small"
+                            className="rounded-full cursor-pointer"
                             height={30}
                             width={30}
                           />
