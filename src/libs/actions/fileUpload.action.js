@@ -21,7 +21,7 @@ export const fileUpload = async (file, name) => {
 
   // With the file data in the buffer, you can do whatever you want with it.
   // For this, we'll just write it to the filesystem in a new location
-  const path = join("public", file.name);
+  const path = join(file.name);
   await writeFile(path, buffer);
   const url = `http://localhost:3000/${file.name}`;
   // console.log("open ${path} to see the uploaded file");
