@@ -6,14 +6,14 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
-    // phone: {
-    //   type: Number,
-    //   // required: true,
-    // },
     email: {
       type: String,
       required: true,
     },
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 43c41c7ce737b18f87b2b29540cf1a41e356ebfc
   },
   { timestamps: true }
 );

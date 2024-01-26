@@ -25,6 +25,10 @@ const Contact = () => {
           </a>
         </div>
       </div>
+<<<<<<< HEAD
+      <h1 className="block md:hidden">Sumon paul</h1>
+=======
+>>>>>>> 43c41c7ce737b18f87b2b29540cf1a41e356ebfc
     </div>
   );
 };
