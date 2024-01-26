@@ -31,10 +31,10 @@ const LoginForm = () => {
         </h2>
         <hr className="w-1/2 lg:w-[46vh] lg:ml-[87vh] mt-3 mb-5 border mx-auto" />
       </div>
-      <section className="flex dark:bg-gray-900  min-h-screen">
+      <section className="flex dark:bg-gray-900">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center lg:px-6 lg:py-8 mx-auto md:h-screen">
           <div className="lg:mr-10 mb-6 text-center lg:text-left">
-            <div className="flex items-center md:hidden lg:block ">
+            <div className="flex items-center">
               <LottieAnimation />
             </div>
           </div>
@@ -99,7 +99,7 @@ const LoginForm = () => {
                     <span className="ml-2">Sign in with Google</span>
                   </button>
 
-                </div>
+                </div >
                 <div className="mt-5">
                   <button
                     className="bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg px-4 py-2"
@@ -119,12 +119,12 @@ const LoginForm = () => {
                   </Link>
                   <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
+              </div >
+            </div >
+          </div >
+        </div >
+      </section >
+    </div >
   );
 };
 

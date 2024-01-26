@@ -6,9 +6,41 @@ import { getAllBooks } from '@/libs/actions/addBook.action';
 import { connectDB } from '@/libs/database/MongoConnect';
 
 // Define AddBookFormPage component
-const AddBookFormPage = async () => {
-  await connectDB();
-  const data = await getAllBooks();
+const AddBookFormPage = () => {
+  // State variables for book details
+  const [bookName, setBookName] = useState('');
+  const [authorName, setAuthorName] = useState('');
+  const [bookDescription, setBookDescription] = useState('');
+  const [bookCover, setBookCover] = useState(null);
+  const [bookPdf, setBookPdf] = useState(null);
+
+  // State variables for author details
+  const [authorImage, setAuthorImage] = useState(null);
+  const [publisherEmail, setPublisherEmail] = useState('');
+
+  // State variable for book accessibilities dropdown
+  const [bookAccessibilities, setBookAccessibilities] = useState('Basic');
+
+  // Handle form submission
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+
+
+    // Log form data (you can replace this with your form submission logic)
+    console.log({
+      bookName,
+      authorName,
+      bookDescription,
+      bookCover,
+      bookPdf,
+      authorImage,
+      publisherEmail,
+      bookAccessibilities,
+    });
+
+    // You can use this data to send a request to your backend or perform further actions.
+  };
+
   return (
     <section>
       <AddBookBanner />
