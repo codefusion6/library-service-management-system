@@ -36,15 +36,13 @@ const SidebarItems = ({ expanded }) => {
         </Link>
       </li>
       <li
-        className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-      transition-colors group hover:bg-yellow-100"
-      >
-
-        <Link href="/dashboard/userList" className="flex gap-2 font-bold">
-          <CiBoxList size={25} className="text-xl font-bold" />
-          <span className={`${expanded ? "block" : "hidden"}`}>User List</span>
-        </Link>
-      </li>
+          className="flex gap-2 items-center py-2 px-3 my-1
+          font-medium rounded-md cursor-pointer
+          transition-colors group hover:bg-green-100"
+        >
+          <CiBoxList size={20} className="text-xl font-bold" />
+          <Link href="/dashboard/all-user">All Users</Link>
+        </li>
 
     </ul>
   );
