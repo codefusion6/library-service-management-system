@@ -16,11 +16,6 @@ export const addUser = async (formData) => {
 
     const result = await User.create(newFormData);
     // return JSON.parse(JSON.stringify(result));
-<<<<<<< HEAD
-    return { success: true };
-  } catch (error) {
-    return NextResponse.json("Kisu ekta hoise");
-=======
     return { success: true, data: JSON.parse(JSON.stringify(result)) };
   } catch (error) {
     return NextResponse.badRequest({ error: "Kisu ekta hoise", error });
@@ -50,6 +45,5 @@ export const getAllUser = async () => {
         error: "An unexpected error occurred.",
       });
     }
->>>>>>> 43c41c7ce737b18f87b2b29540cf1a41e356ebfc
   }
 };
