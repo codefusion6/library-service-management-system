@@ -9,7 +9,7 @@ import { MdHomeRepairService, MdOutlineEmail } from "react-icons/md";
 
 const Footer = () => {
   return (
-    <section className="pt-20 bg-black">
+    <section className="purple-dark pt-20 text-foreground bg-black">
       <div className="container mx-auto">
         <div className=" text-gray-400 py-10">
           <div className="justify-center grid md:grid-cols-3 gap-5">
@@ -17,23 +17,32 @@ const Footer = () => {
               <ul className="text-left text-white space-y-5">
                 <li>
                   <Link href="/" className="font-medium flex gap-2 items-center">
-                    <CiHome className="text-xl text-red-100" />
+                    <CiHome className="text-xl text-[#ddb425]" />
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="flex font-medium gap-2 items-center">
+                  <Link
+                    href="/"
+                    className="flex font-medium gap-2 items-center"
+                  >
                     <FaBookReader className="text-xl text-[#ddb425]" /> About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="flex font-medium gap-2 items-center">
+                  <Link
+                    href="/"
+                    className="flex font-medium gap-2 items-center"
+                  >
                     {" "}
                     <FiPhone className="text-xl text-[#ddb425]" /> Contact
                   </Link>
                 </li>
                 <li>
-                  <Link href="/" className="flex font-medium gap-2 items-center">
+                  <Link
+                    href="/"
+                    className="flex font-medium gap-2 items-center"
+                  >
                     <MdHomeRepairService className="text-xl text-[#ddb425]" />{" "}
                     Service
                   </Link>
@@ -43,22 +52,34 @@ const Footer = () => {
             <div>
               <ul className="text-left text-white space-y-5">
                 <li>
-                  <Link className="flex font-medium gap-2 items-center" href="/">
+                  <Link
+                    className="flex font-medium gap-2 items-center"
+                    href="/"
+                  >
                     Privace
                   </Link>
                 </li>
                 <li>
-                  <Link className="flex font-medium gap-2 items-center" href="/">
+                  <Link
+                    className="flex font-medium gap-2 items-center"
+                    href="/"
+                  >
                     Term & condition
                   </Link>
                 </li>
                 <li>
-                  <Link className="flex font-medium gap-2 items-center" href="/">
+                  <Link
+                    className="flex font-medium gap-2 items-center"
+                    href="/"
+                  >
                     Requirments
                   </Link>
                 </li>
                 <li>
-                  <Link className="flex font-medium gap-2 items-center" href="/">
+                  <Link
+                    className="flex font-medium gap-2 items-center"
+                    href="/"
+                  >
                     Home
                   </Link>
                 </li>
@@ -67,13 +88,22 @@ const Footer = () => {
             <div>
               <ul className="text-left text-white space-y-5">
                 <li>
-                  <Link className="flex font-medium gap-2 items-center" href="/">
-                    <MdOutlineEmail size={25} className="text-xl text-[#ddb425]" />
+                  <Link
+                    className="flex font-medium gap-2 items-center"
+                    href="/"
+                  >
+                    <MdOutlineEmail
+                      size={25}
+                      className="text-xl text-[#ddb425]"
+                    />
                     teamcodefusion24@gmail.com
                   </Link>
                 </li>
                 <li>
-                  <Link className="flex font-medium gap-2 items-center" href="/">
+                  <Link
+                    className="flex font-medium gap-2 items-center"
+                    href="/"
+                  >
                     <FaPhone className="text-xl text-[#ddb425]" /> 013********
                   </Link>
                 </li>
@@ -94,12 +124,13 @@ const Footer = () => {
               </ul>
             </div>
           </div>
-
         </div>
       </div>
       <hr className="mt-4" />
       <div className="py-8">
-        <p className="text-center pt-5 text-lg text-white">All reserved right &copy; CodeFusion</p>
+        <p className="text-center pt-5 text-lg text-white">
+          All reserved right &copy; CodeFusion
+        </p>
       </div>
     </section>
   );

@@ -1,10 +1,16 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
+<<<<<<< HEAD
 import Link from "next/link";
 import LottieAnimation from "./LottieAnimation";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 
+=======
+import LottieAnimation from "./LottieAnimation";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
+
+>>>>>>> 43c41c7ce737b18f87b2b29540cf1a41e356ebfc
 import React from "react";
 import RegisterAction from "./RegisterAction";
 
@@ -12,6 +18,10 @@ const RegisterForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
   const variants = ["flat", "bordered", "underlined", "faded"];
   const toggleVisibility = () => setIsVisible(!isVisible);
+<<<<<<< HEAD
+=======
+
+>>>>>>> 43c41c7ce737b18f87b2b29540cf1a41e356ebfc
   return (
     <div>
       <div>
@@ -43,4 +53,8 @@ const RegisterForm = () => {
   );
 };
 
+<<<<<<< HEAD
 export default RegisterForm;
+=======
+export default RegisterForm;
+>>>>>>> 43c41c7ce737b18f87b2b29540cf1a41e356ebfc
