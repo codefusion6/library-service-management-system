@@ -87,7 +87,7 @@ const MyNavbar = () => {
                   </NavbarItem>
 
                   <NavbarItem>
-                    <Link className="text-white" href="/contact">
+                    <Link className="text-white" href="/our-services">
                       Our Services
                     </Link>
                   </NavbarItem>

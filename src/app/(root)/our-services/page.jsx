@@ -1,10 +1,13 @@
-import Ourservices from '@/pages/our-services/ourservices';
+
+import Ourservices from '@/pages/ourservices/Ourservices';
+import OurServicesBanner from '@/pages/ourservices/ourservicesbanner';
 import React from 'react';
 
 const page = () => {
             return (
-                        <div>
-                                <Ourservices></Ourservices> 
+                        <div className=' bg-white h-[300vh] w-full mt-20 mb-10'>
+                                <OurServicesBanner></OurServicesBanner>
+                                <Ourservices></Ourservices>
                         </div>
             );
 };
