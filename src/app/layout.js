@@ -1,11 +1,9 @@
 import { Merriweather } from "next/font/google";
 import * as React from "react";
 import "./globals.css";
-import Footer from "@/shared/Footer";
 import { AuthContextProvider } from "./provider/context/AuthContext";
-import MyNavbar from "@/shared/MyNavbar";
 import { Toaster } from "react-hot-toast";
-import { NextUIProvider } from "@nextui-org/react";
+import { Providers } from "./provider/Providers";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -22,12 +20,10 @@ const RootLayout = ({ children }) => {
     <html lang="en" suppressHydrationWarning={true}>
       <AuthContextProvider>
         <body className={merriweather.className}>
-          {/* <NextThemeProvider> */}
-          {/* <NextUIProvider> */}
+          <Providers>
             {children}
             <Toaster position="top-right" />
-          {/* </NextUIProvider> */}
-          {/* </NextThemeProvider> */}
+          </Providers>
         </body>
       </AuthContextProvider>
     </html>
