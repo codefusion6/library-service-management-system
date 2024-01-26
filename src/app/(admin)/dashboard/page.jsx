@@ -7,7 +7,7 @@ import Chart from "@/components/dashboardChart/Chart";
 
 function Dashboard({ children }) {
   return (
-    <main className="h-[100vh] relative overflow-y-scroll top-0 p-3 md:p-5 lg:p-8">
+    <main className="h-[100vh]">
       <div className="">
         <div className="flex justify-end items-center gap-3 bg-gradient-to-r from-yellow-200 to-green-600 p-5">
           <input

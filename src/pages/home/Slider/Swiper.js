@@ -36,7 +36,7 @@ const SwiperSlider = () => {
       >
         <SwiperSlide>
           <div className="">
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">
                   Kazi Nazrul Islam
@@ -52,7 +52,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/BPvwNtk/author1.jpg"
                   width={270}
                   height={50}
@@ -63,7 +63,7 @@ const SwiperSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">Humayun Ahmed </h1>
                 <small className="text-default-500">
@@ -77,7 +77,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/4NnR3WH/author-4.jpg"
                   width={270}
                   height={50}
@@ -88,7 +88,7 @@ const SwiperSlider = () => {
         </SwiperSlide>
         <SwiperSlide className="">
           <div>
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">
                   Muhammad Zafar Iqbal{" "}
@@ -102,7 +102,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/vdBrDTr/author-3.jpg"
                   width={270}
                   height={50}
@@ -113,7 +113,7 @@ const SwiperSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">
                   Rabindranath Tagore
@@ -129,7 +129,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/qJ6QHKn/author-2.jpg"
                   width={270}
                   height={50}
@@ -140,7 +140,7 @@ const SwiperSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">Tahmima Anam</h1>
                 <small className="text-default-500">(8 October 1975)</small>
@@ -152,7 +152,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/g4Ykb0y/tahmima.jpg"
                   width={270}
                   height={50}
@@ -163,7 +163,7 @@ const SwiperSlider = () => {
         </SwiperSlide>
         <SwiperSlide>
           <div>
-            <Card className="py-4 card border shadow-md ">
+            <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
                 <h1 className="text-lg uppercase font-bold">
                   Abdul Mannan Syed
@@ -177,7 +177,7 @@ const SwiperSlider = () => {
               <CardBody className="overflow-visible py-2">
                 <Image
                   alt="Card background"
-                  className="object-cover rounded-xl"
+                  className="object-cover rounded-xl" style={{ height: "310px" }}
                   src="https://i.ibb.co/LCmdRDZ/abdul.jpg"
                   width={270}
                   height={50}

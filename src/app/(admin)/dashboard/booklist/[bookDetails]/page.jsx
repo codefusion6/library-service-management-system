@@ -11,7 +11,7 @@ const BookDetails = () => {
         Details Page
       </h2>
 
-      <div className="w-full  flex flex-col md:flex-row max-w-md mx-auto bg-white shadow-lg rounded-lg overflow-hidden hover:border-green-500 hover:border-2">
+      <div className="w-full  flex flex-col md:flex-row max-w-md mx-auto bg-white shadow-lg rounded-lg hover:border-green-500 hover:border-2">
         <div className="w-1/3 md:w-full p-2">
           <Image
             src="https://i.ibb.co/7KTnVdz/book1.gif"

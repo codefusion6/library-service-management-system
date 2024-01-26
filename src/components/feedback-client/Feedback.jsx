@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 const Feedback = () => {
   return (
     <form action={async (formData) => {
+      add.Button
       console.log(formData);
       const response = await addUser(formData);
       console.log(response.success);
@@ -31,11 +32,8 @@ const Feedback = () => {
       />
 
       <textarea placeholder="Message" rows={5} className="px-2 py-1 w-full bg-gray-200 rounded-md text-gray-600 font-semibold"></textarea>
-<<<<<<< HEAD
-=======
 
       <Button></Button>
->>>>>>> 43c41c7ce737b18f87b2b29540cf1a41e356ebfc
     </form>
   );
 };

@@ -3,7 +3,7 @@
 import Link from "next/link";
 import React from "react";
 import { Input } from "@nextui-org/react";
-import {FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa6";
+import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa6";
 import LottieAnimation from "./LottieAnimation";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
@@ -91,13 +91,13 @@ const LoginForm = () => {
                   </div>
                 </div>
                 <div className="flex justify-center items-center mt-3 lg:mt-5">
-                <button
-                  className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg px-4 py-2"
-                  onClick={handleGoogleSignIn}
-                >
-                  <FaGoogle className="text-xl" />
-                  <span className="ml-2">Sign in with Google</span>
-                </button>
+                  <button
+                    className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg px-4 py-2"
+                    onClick={handleGoogleSignIn}
+                  >
+                    <FaGoogle className="text-xl" />
+                    <span className="ml-2">Sign in with Google</span>
+                  </button>
 
                 </div>
                 <div className="mt-5">

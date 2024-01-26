@@ -1,4 +1,4 @@
-"use client";
+
 import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { TypeAnimation } from "react-type-animation";
@@ -7,8 +7,16 @@ import { FaEye } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
+import { getAllBooks } from "@/libs/actions/addBook.action";
+import { getAllUser } from "@/libs/actions/user.actions";
+import { connectDB } from "@/libs/database/MongoConnect";
 
-const BookListPage = () => {
+const BookListPage = async() => {
+  // const data = await getAllBooks();
+  await connectDB();
+  const users = await getAllUser();
+  console.log(users);
+  // console.log(data);
   return (
     <section className="container mx-auto">
       <h2 className="text-3xl text-center my-5 font-medium text-green-700">

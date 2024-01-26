@@ -1,5 +1,5 @@
 "use server";
-
+import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import User from "../database/models/userModel/user";
 import { connectDB } from "../database/MongoConnect";
@@ -16,11 +16,6 @@ export const addUser = async (formData) => {
 
     const result = await User.create(newFormData);
     // return JSON.parse(JSON.stringify(result));
-<<<<<<< HEAD
-    return { success: true };
-  } catch (error) {
-    return NextResponse.json("Kisu ekta hoise");
-=======
     return { success: true, data: JSON.parse(JSON.stringify(result)) };
   } catch (error) {
     return NextResponse.badRequest({ error: "Kisu ekta hoise", error });
@@ -31,7 +26,7 @@ export const getAllUser = async () => {
   try {
     const result = await User.find();
     // return JSON.parse(JSON.stringify(result));
-    return NextResponse.ok({ success: true, data: result });
+    return { success: true, data: JSON.parse(JSON.stringify(result)) };
   } catch (error) {
     if (error instanceof mongoose.Error.ValidationError) {
       // Handle Mongoose validation errors
@@ -40,16 +35,15 @@ export const getAllUser = async () => {
       Object.keys(error.errors).forEach((field) => {
         validationErrors[field] = error.errors[field].message;
       });
-      return NextResponse.badRequest({
+      return {
         error: "Validation failed.",
         validationErrors,
-      });
+      };
     } else {
       // Handle other types of errors
-      return NextResponse.internalServerError({
+      return {
         error: "An unexpected error occurred.",
-      });
+      };
     }
->>>>>>> 43c41c7ce737b18f87b2b29540cf1a41e356ebfc
   }
 };
