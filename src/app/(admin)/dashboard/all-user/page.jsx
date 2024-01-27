@@ -2,7 +2,7 @@
 import UserTable from "@/components/allUserTable/userTable";
 import React from "react";
 
-const AllUser = () => {
+const AllUsers = () => {
   return (
     <div>
       <UserTable></UserTable>
@@ -10,4 +10,4 @@ const AllUser = () => {
   );
 };
 
-export default AllUser;
+export default AllUsers;

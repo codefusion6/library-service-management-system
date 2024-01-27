@@ -34,7 +34,7 @@ const Sidebar = ({ }) => {
             <div className={`flex justify-between items-center text-black px-3 bg-red-50 w-80 ml-3 ${expanded ? "block" : "hidden"}`}>
               <div className="leading-4">
                 <h2 className="font-semibold ">Priyanka</h2>
-                <span className="text-sm">priyanka@gmail.com</span>
+                <span classname="text-sm">priyanka@gmail.com</span>
               </div>
               <BsThreeDotsVertical size={20} className="" />
             </div>
