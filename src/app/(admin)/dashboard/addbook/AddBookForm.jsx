@@ -8,6 +8,7 @@ const AddBookForm = () => {
         <form action={async (formData) => {
             const response = await addBook(formData);
             // refetch()
+            console.log(formData)
             if (response.success) {
                 toast.success("Book added successfully")
             }
