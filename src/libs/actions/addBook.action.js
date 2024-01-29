@@ -62,6 +62,19 @@ export const getAllBooks = async () => {
   }
 };
 
+export const getDetailsPage = async () =>{
+  router.get('/books/:bookId', async (req, res) => {
+    try {
+      const bookId = req.params.bookId;
+      const bookDetails = await getBookDetails(bookId);
+  
+      res.json(bookDetails);
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+}
+
 // export const deleteBook = async() => {
 
 // }

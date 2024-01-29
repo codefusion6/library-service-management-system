@@ -95,11 +95,6 @@ const MyNavbar = () => {
                       Dashboard
                     </Link>
                   </NavbarItem>
-                  <NavbarItem>
-                    <Link className="text-white" href="/demo">
-                      demo
-                    </Link>
-                  </NavbarItem>
                 </div>
                 {/* Small device menu icon and items */}
                 <div id="mobile-menu" className="md:hidden items-center gap-4 flex">
