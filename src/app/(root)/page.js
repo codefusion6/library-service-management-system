@@ -10,7 +10,7 @@ import Feature from "@/pages/home/Feature";
 
 const HomePage = () => {
   return (
-    <div className="">
+    <div className={``}>
       <Banner />
       <Feature books={booksData}></Feature>
       <Slider></Slider>

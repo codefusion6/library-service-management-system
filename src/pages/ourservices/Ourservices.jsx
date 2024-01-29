@@ -8,7 +8,7 @@ import LibraryServicesSection from "./LibraryServicesSection";
 
 const Ourservices = () => {
   return (
-    <div className="mt-10 mb-[10vh]">
+    <div className="mt-10 mb-[10vh] dark:bg-black dark:text-white">
       <ServicesSection></ServicesSection>
       <div>
         <div className="text-3xl flex text-center ml-[90vh] mt-[20vh] w-[39vh] mb-10 font-serif text-black bg-green-300">

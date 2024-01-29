@@ -34,7 +34,7 @@ export const AuthContextProvider = ({ children }) => {
       setLoading(false);
       // Log photoURL if available
       if (currentUser && currentUser.photoURL) {
-        console.log('User photoURL:', currentUser.photoURL);
+        // console.log('User photoURL:', currentUser.photoURL);
       }
     });
     return () => unsubscribe();

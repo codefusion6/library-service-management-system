@@ -36,7 +36,6 @@ export const addBook = async (formData) => {
       publisherEmail: publisherEmail,
       category: category,
     };
-
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
 
@@ -55,6 +54,7 @@ export const getAllBooks = async () => {
 
     // get all books from db
     const books = await Book.find();
+
     revalidatePath("/addbook");
     return { books: JSON.parse(JSON.stringify(books)) };
   } catch (error) {
