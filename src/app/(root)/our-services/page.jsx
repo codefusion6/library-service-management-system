@@ -1,15 +1,16 @@
-
 import Ourservices from '@/pages/ourservices/Ourservices';
 import OurServicesBanner from '@/pages/ourservices/ourservicesbanner';
 import React from 'react';
 
-const page = () => {
-            return (
-                        <div className=' bg-white h-[300vh] w-full mt-20 mb-10'>
-                                <OurServicesBanner></OurServicesBanner>
-                                <Ourservices></Ourservices>
-                        </div>
-            );
+const Page = () => {
+    return (
+        <div className='bg-white min-h-screen'>
+            <OurServicesBanner />
+            <div className="mx-auto max-w-6xl px-4">
+                <Ourservices />
+            </div>
+        </div>
+    );
 };
 
-export default page;
+export default Page;

@@ -40,8 +40,13 @@ const SidebarItems = ({ expanded }) => {
           font-medium rounded-md cursor-pointer
           transition-colors group hover:bg-green-100"
         >
-          <CiBoxList size={20} className="text-xl font-bold" />
-          <Link href="/dashboard/all-user">All Users</Link>
+          
+          <Link href="/dashboard/all-user" className="flex gap-2 font-bold"
+          >
+            <CiBoxList size={20} className="text-xl font-bold" />
+             <sapn className={`${expanded ? "block" : "hidden"}`}> All Users</sapn>
+           
+          </Link>
         </li>
 
     </ul>
