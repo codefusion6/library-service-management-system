@@ -1,7 +1,7 @@
 import React from "react";
 import MessengerCustomerChat from "react-messenger-customer-chat";
 
-const chatbot = () => {
+const Chatbot = () => {
   return (
     <div>
       <MessengerCustomerChat
@@ -14,4 +14,4 @@ const chatbot = () => {
   );
 };
 
-export default chatbot;
+export default Chatbot;
