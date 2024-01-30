@@ -1,12 +1,10 @@
 "use server";
-import { NextResponse } from "next/server";
 import { fileUpload } from "./fileUpload.action";
 import { connectDB } from "../database/MongoConnect";
 import Book from "../database/models/bookModel/book";
 import { revalidatePath } from "next/cache";
 
 // create book
-
 export const addBook = async (formData) => {
   const bookName = formData.get("bookName");
   const authorName = formData.get("authorName");
@@ -49,6 +47,7 @@ export const addBook = async (formData) => {
   }
 };
 
+// many book
 export const addManyBook = async () => {
   const books = [
     {
@@ -114,7 +113,6 @@ export const addManyBook = async () => {
 };
 
 // get all books
-
 export const getAllBooks = async () => {
   try {
     // db connect
@@ -126,6 +124,18 @@ export const getAllBooks = async () => {
     return { books: JSON.parse(JSON.stringify(books)) };
   } catch (error) {
     console.log(error);
+  }
+};
+
+// single book
+
+export const getBook = async (id) => {
+  try {
+    await connectDB();
+    const result = await Book.findById(id);
+    return JSON.parse(JSON.stringify(result));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
   }
 };
 
