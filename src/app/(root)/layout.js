@@ -4,7 +4,7 @@ import "./../globals.css";
 import Footer from "@/shared/Footer";
 import { AuthContextProvider } from "../provider/context/AuthContext";
 import MyNavbar from "@/shared/MyNavbar";
-import { Providers } from "../provider/Providers";
+// import { Providers } from "../provider/Providers";
 import { Toaster } from 'react-hot-toast';
 const merriweather = Merriweather({
   subsets: ['latin'],

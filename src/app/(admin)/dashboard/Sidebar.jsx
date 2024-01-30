@@ -1,36 +1,37 @@
-"use client"
+'use client'
 import Image from "next/image";
 import React, { useState } from "react";
 import logo from "../../../../public/images/bookflow.png";
-import { FaArrowRightArrowLeft } from "react-icons/fa6";
+// import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import CollapseButton from "./collapseButton";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
+import SidebarItems from "./SidebarItems";
+import Link from "next/link";
 
-const Sidebar = ({ children }) => {
-  const [state, setState] = useState(true);
+const Sidebar = ({ }) => {
+  const [expanded, setExpanded] = useState(true)
+
   return (
-    <div>
-      <aside className="min-h-screen">
-        <nav className="h-full flex flex-col bg-white border-r shadow-md">
+    <div className={`bg-white fixed top-0 border-r shadow-md lg:static z-50 ${expanded ? "lg:w-[20%] -left-[500%] lg:left-0" : "lg:w-[6%]"} duration-200`}>
+      <aside className="h-screen">
+        <nav className="h-screen flex flex-col">
           <div className="p-4 pb-2 flex justify-between items-start">
-            <Image src={logo} alt="Image" width={200} height={100} className="w-32"></Image>            
-            <button onClick={() => alert("hello world")} className="p-3 rounded-lg bg-gray-50 hover:bg-slate-100">
-              <FaArrowRightArrowLeft className="text-black" />
+            <Link href="/"> <Image src={logo} alt="Image" width={200} height={100} className={`w-32 ${expanded ? "blcok" : "hidden"}`}></Image></Link>
+            <button className={`p-2 rotate-180 lg:rotate-0 rounded-lg bg-gray-50 hover:bg-slate-100 fixed lg:static left-0 top-0 ${!expanded ? "" : ""}`} onClick={() => setExpanded(!expanded)}>
+              {expanded ? <FaArrowLeft size={30} className="text-black" /> : <FaArrowRight className="text-black" size={30} />}
             </button>
-            {/* <CollapseButton></CollapseButton> */}
           </div>
-          <ul className="flex-1 px-6">{children}</ul>
+          <ul className="flex-1 px-6">
+            <SidebarItems expanded={expanded} />
+          </ul>
           <div className="border-r flex p-3">
             <Image
               src="https://i.ibb.co/QNQ491S/tahmima.jpg"
               alt="profile image"
               width={50}
               height={30}
-              className="rounded-md"
-            />
-            <div
-              className="flex justify-between items-center text-black px-3 bg-red-50 w-80 ml-3"
-            >
+              className="rounded-md" />
+            <div className={`flex justify-between items-center text-black px-3 bg-red-50 w-80 ml-3 ${expanded ? "block" : "hidden"}`}>
               <div className="leading-4">
                 <h2 className="font-semibold ">Priyanka</h2>
                 <span classname="text-sm">priyanka@gmail.com</span>

@@ -4,8 +4,9 @@ import { IoIosNotifications } from "react-icons/io";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { FaBookOpen, FaBookBible } from "react-icons/fa6";
 import Chart from "@/components/dashboardChart/Chart";
+import withAuth from "@/middleware/withAuth";
 
-function Dashboard({ children }) {
+function Dashboard({ }) {
   return (
     <main className="h-[100vh]">
       <div className="">
@@ -29,7 +30,6 @@ function Dashboard({ children }) {
                 </p>
               </div>
             </CardHeader>
-
             <CardBody>
               <p>
                 This number is static now in next milestone we will show the
