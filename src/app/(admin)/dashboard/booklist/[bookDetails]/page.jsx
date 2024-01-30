@@ -4,7 +4,8 @@ import { Button, Card } from "@nextui-org/react";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa6";
 
-const BookDetails = () => {
+const BookDetails = ({params}) => {
+  console.log(params);
   return (
     <div className="container mx-auto">
       <h2 className="text-3xl text-center my-5 font-medium text-green-700">
