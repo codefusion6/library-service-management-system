@@ -5,8 +5,8 @@ const chatbot = () => {
   return (
     <div>
       <MessengerCustomerChat
-        pageId="61556139837567"
-        appId="679058601064715"
+        pageId="211119442090945"
+        appId="937135961109989"
        
       />
       ,
