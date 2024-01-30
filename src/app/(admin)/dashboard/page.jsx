@@ -72,8 +72,8 @@ function Dashboard({ }) {
             </CardBody>
           </Card>
         </div>
-        <div className="w-96 mx-auto mt-5">
-          <Chart></Chart>
+        <div className="w-96 container mx-auto mt-5">
+            <Chart></Chart>
         </div>
 
       </div>

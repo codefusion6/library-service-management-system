@@ -41,7 +41,7 @@ const LoginForm = () => {
           <div className="lg:mr-10 mb-6 text-center lg:text-left">
             <div className="flex items-center">
               <LottieAnimation />
-            </div>
+            </div>  
           </div>
 
           <div className="lg:ml-10">
