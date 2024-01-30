@@ -148,6 +148,7 @@ return (
                         size="small"
                         height={30}
                         width={30}
+                        className="rounded"
                     />
                 ) : (
                     <div className="w-6 h-6">
