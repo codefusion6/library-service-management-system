@@ -1,11 +1,17 @@
 
 import React from "react";
-import { Button, Card } from "@nextui-org/react";
+import { Button} from "@nextui-org/react";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa6";
+import { getBook } from "@/libs/actions/book.action";
 
-const BookDetails = ({params}) => {
+const BookDetails = async ({params}) => {
+  
   console.log(params.id);
+
+  const singleBook = await getBook(params.id);
+  console.log(singleBook);
+
   return (
     <div className="container mx-auto">
       <h2 className="text-3xl text-center my-5 font-medium text-green-700">
@@ -22,11 +28,11 @@ const BookDetails = ({params}) => {
           />
         </div>
         <div className="w-full p-2">
-          <p className="text-lg uppercase font-bold">ছোটদের নির্বাচিত নজরুল</p>
+          <p className="text-lg uppercase font-bold">{singleBook.bookName}</p>
           <span>By</span>
-          <h4 className="font-bold text-large">Kazi Nazrul Islam</h4>
+          <h4 className="font-bold text-large">{singleBook.authorName}</h4>
           <p className="text-base font-medium">
-            Price: <span className="font-bold">310 TK</span>
+            Price: <span className="font-bold">{singleBook.category}</span>
           </p>
 
           <p className="text-yellow-500 flex">
