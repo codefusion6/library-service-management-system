@@ -127,8 +127,6 @@ export const getAllBooks = async () => {
   }
 };
 
-<<<<<<< HEAD:src/libs/actions/addBook.action.js
-=======
 // single book
 
 export const getBook = async (id) => {
@@ -140,7 +138,6 @@ export const getBook = async (id) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
->>>>>>> 1f1beb859d235d18d7c4ccad831cd97bec0051fe:src/libs/actions/book.action.js
 
 // export const deleteBook = async() => {
 
