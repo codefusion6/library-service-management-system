@@ -42,7 +42,74 @@ export const addBook = async (formData) => {
 
     return { success: true, data: JSON.parse(JSON.stringify(result)) };
   } catch (error) {
-    return { error: "Fill input properly or send the required data", errorDetails: JSON.parse(JSON.stringify(error))};
+    return {
+      error: "Fill input properly or send the required data",
+      errorDetails: JSON.parse(JSON.stringify(error)),
+    };
+  }
+};
+
+export const addManyBook = async () => {
+  const books = [
+    {
+      bookName: "Fun Adventure",
+      authorName: "Author A",
+      bookDescription: "An exciting adventure book.",
+      bookCover: "https://i.ibb.co/ggqDRjp/img-01.jpg",
+      bookPdf: "https://example.com/fun-adventure-pdf",
+      authorImage: "https://example.com/author-a-image",
+      publisherEmail: "authorA@example.com",
+      category: "Basic",
+      price: "$19.99",
+      starMarking: 4.5,
+      image: "https://i.ibb.co/ggqDRjp/img-01.jpg",
+    },
+    {
+      bookName: "Another Adventure",
+      authorName: "Author B",
+      bookDescription: "Another thrilling adventure awaits in this book.",
+      bookCover: "https://i.ibb.co/c6LYn1H/img-02.jpg",
+      bookPdf: "https://example.com/another-adventure-pdf",
+      authorImage: "https://example.com/author-b-image",
+      publisherEmail: "authorB@example.com",
+      category: "Plus",
+      price: "$24.99",
+      starMarking: 4.2,
+      image: "https://i.ibb.co/c6LYn1H/img-02.jpg",
+    },
+    {
+      bookName: "The Third Book",
+      authorName: "Author C",
+      bookDescription: "A mysterious book that will keep you on the edge.",
+      bookCover: "https://i.ibb.co/PWkCDsv/img-03.jpg",
+      bookPdf: "https://example.com/third-book-pdf",
+      authorImage: "https://example.com/author-c-image",
+      publisherEmail: "authorC@example.com",
+      category: "Elite",
+      price: "$29.99",
+      starMarking: 2,
+      image: "https://i.ibb.co/PWkCDsv/img-03.jpg",
+    },
+    {
+      bookName: "React Icon Star",
+      authorName: "Author D",
+      bookDescription: "A technology book with React insights.",
+      bookCover: "https://i.ibb.co/jyF3hNx/img-04.jpg",
+      bookPdf: "https://example.com/react-icon-star-pdf",
+      authorImage: "https://example.com/author-d-image",
+      publisherEmail: "authorD@example.com",
+      category: "Basic",
+      price: "$14.99",
+      starMarking: 3,
+      image: "https://i.ibb.co/jyF3hNx/img-04.jpg",
+    },
+  ];
+
+  try {
+    const result = await Book.insertMany(books);
+    return JSON.parse(JSON.stringify(result));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
   }
 };
 
