@@ -1,5 +1,4 @@
 import { Merriweather } from "next/font/google";
-import * as React from "react";
 import "./globals.css";
 import { AuthContextProvider } from "./provider/context/AuthContext";
 import { Toaster } from "react-hot-toast";
