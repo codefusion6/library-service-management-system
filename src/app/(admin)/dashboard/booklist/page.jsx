@@ -4,18 +4,18 @@ import { FaEye } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
-import { addManyBook, getAllBooks } from "@/libs/actions/addBook.action";
+import { addManyBook, getAllBooks, getBook } from "@/libs/actions/book.action";
 import { connectDB } from "@/libs/database/MongoConnect";
 import DashBookSlider from "@/components/dashBookSlider/DashBookSlider";
 
-const BookListPage = async ({params}) => {
+const BookListPage = async ({ params }) => {
   console.log(params, "params");
   
   await connectDB();
-  const res = await addManyBook();
+  const res = await getBook("65b8dc882c1a2b234add17f0")
   console.log(res);
   const data = await getAllBooks();
-  console.log(data);
+  // console.log(data);
 
   return (
     <section className="container mx-auto">
