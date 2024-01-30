@@ -33,7 +33,7 @@ const Sidebar = ({ children }) => {
             >
               <div className="leading-4">
                 <h2 className="font-semibold ">Priyanka</h2>
-                <span classname="text-sm">priyanka@gmail.com</span>
+                <span className="text-sm">priyanka@gmail.com</span>
               </div>
               <BsThreeDotsVertical size={20} className="" />
             </div>

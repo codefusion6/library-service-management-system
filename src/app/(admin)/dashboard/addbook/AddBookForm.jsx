@@ -1,5 +1,5 @@
 "use client"
-import { addBook, getAllBooks, } from '@/libs/actions/addBook.action';
+import { addBook, getAllBooks, } from '@/libs/actions/book.action';
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 const AddBookForm = () => {
