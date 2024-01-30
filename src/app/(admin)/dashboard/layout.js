@@ -1,11 +1,12 @@
+// import withAuth from '@/middleware/withAuth';
 import React from 'react';
 
-const LayOut = ({children}) => {
+const LayOut = ({ children }) => {
     return (
         <div>
-        {children}
+            {children}
         </div>
     );
 };
 
-export default LayOut;
+export default LayOut

@@ -1,5 +1,6 @@
 "use client"
-import {Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Image} from "@nextui-org/react";
+import withAuth from "@/middleware/withAuth";
+import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Image } from "@nextui-org/react";
 
 
 const UserPage = () => {
@@ -14,7 +15,7 @@ const UserPage = () => {
       <TableBody>
         <TableRow key="1">
           <TableCell>
-            <Image style={{opacity:"100"}} src="https://i.ibb.co/Fbc90wF/woman-949666.png" alt="img1" className="rounded-full w-12 h-8 size-10 opacity-100" height={100} width={100} ></Image>
+            <Image style={{ opacity: "100" }} src="https://i.ibb.co/Fbc90wF/woman-949666.png" alt="img1" className="rounded-full w-12 h-8 size-10 opacity-100" height={100} width={100} ></Image>
           </TableCell>
           <TableCell>Arina Huque Rafa</TableCell>
           <TableCell>Admin</TableCell>
@@ -22,7 +23,7 @@ const UserPage = () => {
         </TableRow>
         <TableRow key="2">
           <TableCell>
-            <Image style={{opacity:"100"}} src="https://i.ibb.co/yP0bv4y/Whats-Appir.jpg" alt="img2" className="rounded-full w-12 h-8 size-10 opacity-100" height={100} width={100}  ></Image>
+            <Image style={{ opacity: "100" }} src="https://i.ibb.co/yP0bv4y/Whats-Appir.jpg" alt="img2" className="rounded-full w-12 h-8 size-10 opacity-100" height={100} width={100}  ></Image>
           </TableCell>
           <TableCell>Priyanka Das Dipa</TableCell>
           <TableCell>Technical Lead</TableCell>
@@ -30,7 +31,7 @@ const UserPage = () => {
         </TableRow>
         <TableRow key="3">
           <TableCell>
-            <Image style={{opacity:"100"}} src="https://i.ibb.co/PxCg9PK/man-11696179.png" alt="img3" className="rounded-full w-12 h-8 size-10 opacity-100" height={100} width={100} ></Image>
+            <Image style={{ opacity: "100" }} src="https://i.ibb.co/PxCg9PK/man-11696179.png" alt="img3" className="rounded-full w-12 h-8 size-10 opacity-100" height={100} width={100} ></Image>
           </TableCell>
           <TableCell>Sabbir Ahmed </TableCell>
           <TableCell>Senior Developer</TableCell>
@@ -38,7 +39,7 @@ const UserPage = () => {
         </TableRow>
         <TableRow key="4">
           <TableCell>
-            <Image style={{opacity:"100"}} src="https://i.ibb.co/MDyKKgQ/804953.png" alt="img4" className="rounded-full w-12 h-8 size-10 opacity-100" height={100} width={100}  ></Image>
+            <Image style={{ opacity: "100" }} src="https://i.ibb.co/MDyKKgQ/804953.png" alt="img4" className="rounded-full w-12 h-8 size-10 opacity-100" height={100} width={100}  ></Image>
           </TableCell>
           <TableCell>Probesh Nath </TableCell>
           <TableCell>Community Manager</TableCell>
@@ -48,4 +49,4 @@ const UserPage = () => {
     </Table>
   );
 };
-export default UserPage ;
+export default withAuth(UserPage);
