@@ -50,7 +50,7 @@ const MyNavbar = () => {
   };
   return (
     <>
-      <section className="fixed top-0 z-50 w-full dark:bg-white dark:text-black bg-black text-white">
+      <section className="fixed top-0 z-50 w-full bg-black text-white">
         <div className="container mx-auto">
           <div className="py-4">
             <Navbar>
