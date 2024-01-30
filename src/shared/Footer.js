@@ -34,7 +34,7 @@ const Footer = () => {
                     href="/"
                     className="flex font-medium gap-2 items-center"
                   >
-                    {" "}
+                    
                     <FiPhone className="text-xl text-[#ddb425]" /> Contact
                   </Link>
                 </li>
@@ -43,7 +43,7 @@ const Footer = () => {
                     href="/"
                     className="flex font-medium gap-2 items-center"
                   >
-                    <MdHomeRepairService className="text-xl text-[#ddb425]" />{" "}
+                    <MdHomeRepairService className="text-xl text-[#ddb425]" />
                     Service
                   </Link>
                 </li>

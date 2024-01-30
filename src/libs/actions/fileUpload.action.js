@@ -11,20 +11,14 @@ export const fileUpload = async (file, name) => {
     throw new Error("No file uploaded");
   }
 
-  // const originalFileName = file.name;
-  // const fileExtension = extname(originalFileName);
-  // console.log(originalFileName, fileExtension);
-  // const modifiedFileName = `${name}_${originalFileName}`;
-
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
 
   // With the file data in the buffer, you can do whatever you want with it.
   // For this, we'll just write it to the filesystem in a new location
   const path = join("public",file.name); // for local
-  // const path = join(file.name); // for production
   await writeFile(path, buffer);
   const url = `http://localhost:3000/${file.name}`;
-  // console.log("open ${path} to see the uploaded file");
+
   return { success: true, file_url: JSON.parse(JSON.stringify(url)) };
 };
