@@ -4,14 +4,14 @@ import lottie from "../../assest/animation.json"
 import Lottie from 'lottie-react';
 
 const LottieAnimation = () => {
-            return (
-                        <div>
+  return (
+    <div>
 
-                                  <Lottie animationData={lottie}>
-                                    
-                                    </Lottie>  
-                        </div>
-            );
+      <Lottie animationData={lottie}>
+
+      </Lottie>
+    </div>
+  );
 };
 
 export default LottieAnimation;

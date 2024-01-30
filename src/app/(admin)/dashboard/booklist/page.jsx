@@ -1,4 +1,5 @@
 
+
 import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { TypeAnimation } from "react-type-animation";
@@ -7,20 +8,21 @@ import { FaEye } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
-import { getAllBooks } from "@/libs/actions/addBook.action";
-import { getAllUser } from "@/libs/actions/user.actions";
+import { addManyBook, getAllBooks, getBook } from "@/libs/actions/book.action";
 import { connectDB } from "@/libs/database/MongoConnect";
 
-const BookListPage = async() => {
-  // const data = await getAllBooks();
+const BookListPage = async ({ params }) => {
+  console.log(params, "params");
   await connectDB();
-  const users = await getAllUser();
-  console.log(users);
+  const res = await getBook("65b8dc882c1a2b234add17f0")
+  console.log(res);
+  const data = await getAllBooks();
   // console.log(data);
+
   return (
     <section className="container mx-auto">
       <h2 className="text-3xl text-center my-5 font-medium text-green-700">
-      Available Books List
+        Available Books List
         {/* <TypeAnimation
           sequence={["", 1000, "Available Books List", 1000]}
           wrapper="span"

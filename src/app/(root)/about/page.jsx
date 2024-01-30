@@ -1,4 +1,3 @@
-
 import AboutBanner from '@/pages/about/AboutBanner';
 import AboutMission from '@/pages/about/AboutMission';
 import AboutTeam from '@/pages/about/AboutTeam';

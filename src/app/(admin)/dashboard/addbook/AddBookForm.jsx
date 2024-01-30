@@ -1,22 +1,14 @@
 "use client"
-import { addBook, getAllBooks, } from '@/libs/actions/addBook.action';
+import { addBook, getAllBooks, } from '@/libs/actions/book.action';
 import { useQuery } from '@tanstack/react-query';
-import { revalidatePath } from 'next/cache';
 import toast from 'react-hot-toast';
 const AddBookForm = () => {
-    // const { data: books, refetch } = useQuery({
-    //     queryKey: ["books"],
-    //     queryFn: async () => {
-    //         const res = await getAllBooks()
-    //         return res.books
-    //     },
-    // })
-    // console.log(books);
+
     return (
         <form action={async (formData) => {
             const response = await addBook(formData);
             // refetch()
-            if(response.success){
+            if (response.success) {
                 toast.success("Book added successfully")
             }
             console.log(response);
