@@ -50,7 +50,7 @@ const LoginForm = () => {
                   isClearable
                   type="email"
                   placeholder="Please Enter Your Email"
-                  className="md:max-w-sm w-full outline-none bg-gray-200 rounded-lg px-3  py-2 mt-1 text-sm  focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                  className=" w-full outline-none bg-gray-200 rounded-lg px-3  py-2 mt-1 text-sm  focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                 />
               </div>
               <div className="flex relative">
@@ -59,7 +59,7 @@ const LoginForm = () => {
                   placeholder="Enter your password"
 
                   type={isVisible ? "text" : "password"}
-                  className="md:max-w-sm w-full outline-none bg-gray-200 rounded-lg px-3  py-2 mt-1 text-sm  focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+                  className=" w-full outline-none bg-gray-200 rounded-lg px-3  py-2 mt-1 text-sm  focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
                 />
                 <button
                   className="focus:outline-none absolute top-2 right-2"
