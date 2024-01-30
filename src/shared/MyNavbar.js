@@ -40,10 +40,10 @@ const MyNavbar = () => {
   const handleLogout = async () => {
     try {
       await logOut();
-      toast.success('Logout successful');
+      toast.success("Logout successful");
     } catch (error) {
-      console.error('Logout error:', error);
-      toast.error('Logout failed');
+      console.error("Logout error:", error);
+      toast.error("Logout failed");
     }
   };
   return (
@@ -91,13 +91,26 @@ const MyNavbar = () => {
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
+                    <Link className="text-white" href="/allBooks">
+                      All Books
+                    </Link>
+                  </NavbarItem>
+                  <NavbarItem>
+                    <Link className="text-white" href="/pricing">
+                      Pricing
+                    </Link>
+                  </NavbarItem>
+                  <NavbarItem>
                     <Link className="text-white" href="/dashboard">
                       Dashboard
                     </Link>
                   </NavbarItem>
                 </div>
                 {/* Small device menu icon and items */}
-                <div id="mobile-menu" className="md:hidden items-center gap-4 flex">
+                <div
+                  id="mobile-menu"
+                  className="md:hidden items-center gap-4 flex"
+                >
                   {/* Dropdown menu for small devices */}
                   <Dropdown placement="bottom-end">
                     <DropdownTrigger>
@@ -108,7 +121,8 @@ const MyNavbar = () => {
                     <DropdownMenu
                       aria-label="Mobile Menu"
                       className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                      variant="flat">
+                      variant="flat"
+                    >
                       {/* Mobile menu items */}
                       <DropdownItem className="h-full gap-2">
                         <NavbarItem>
@@ -129,6 +143,16 @@ const MyNavbar = () => {
                         <NavbarItem>
                           <Link className="text-white" href="/contact">
                             Our Services
+                          </Link>
+                        </NavbarItem>
+                        <NavbarItem>
+                          <Link className="text-white" href="/allBooks">
+                            All Books
+                          </Link>
+                        </NavbarItem>
+                        <NavbarItem>
+                          <Link className="text-white" href="/pricing">
+                            Pricing
                           </Link>
                         </NavbarItem>
                       </DropdownItem>
@@ -164,7 +188,11 @@ const MyNavbar = () => {
                           <p className="font-semibold">Signed in as</p>
                           <p className="font-semibold">{user?.email}</p>
                         </DropdownItem>
-                        <DropdownItem key="logout" color="danger" onClick={handleLogout}>
+                        <DropdownItem
+                          key="logout"
+                          color="danger"
+                          onClick={handleLogout}
+                        >
                           Log Out
                         </DropdownItem>
                       </DropdownMenu>
