@@ -41,7 +41,7 @@ export const addBook = async (formData) => {
 
     return { success: true, data: JSON.parse(JSON.stringify(result)) };
   } catch (error) {
-    return { error: "Fill input properly or send the required data" };
+    return { error: "Fill input properly or send the required data", errorDetails: JSON.parse(JSON.stringify(error)) };
   }
 };
 
@@ -54,7 +54,6 @@ export const getAllBooks = async () => {
 
     // get all books from db
     const books = await Book.find();
-
     revalidatePath("/addbook");
     return { books: JSON.parse(JSON.stringify(books)) };
   } catch (error) {

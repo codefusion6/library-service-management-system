@@ -1,10 +1,15 @@
-import React, { useContext } from "react";
+import { Merriweather } from 'next/font/google'
+import * as React from "react";
 import "./../globals.css";
 import Footer from "@/shared/Footer";
 import { AuthContextProvider } from "../provider/context/AuthContext";
 import MyNavbar from "@/shared/MyNavbar";
+import { Providers } from "../provider/Providers";
 import { Toaster } from 'react-hot-toast';
-
+const merriweather = Merriweather({
+  subsets: ['latin'],
+  weight: ['400', '300', '700', '900']
+});
 
 export const metadata = {
   title: 'BookFlow',
@@ -13,14 +18,16 @@ export const metadata = {
 
 const Layout = ({ children }) => {
   return (
-    <div className={``}>
-      <AuthContextProvider>
-        <MyNavbar />
-        {children}
-        <Toaster position="top-right" />
-        <Footer />
-      </AuthContextProvider>
-    </div>
+    <AuthContextProvider>
+      {/* <NextUIProvider> */}
+      {/* <NextThemeProvider> */}
+      <MyNavbar />
+      {children}
+      <Toaster position="top-right" />
+      <Footer />
+      {/* </NextThemeProvider> */}
+      {/* </NextUIProvider> */}
+    </AuthContextProvider>
   );
 };
 

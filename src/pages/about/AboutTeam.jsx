@@ -63,7 +63,7 @@ const AboutTeam = () => {
         <div className="flex flex-wrap justify-center -mx-4">
           {teamMembers.map((member) => (
             <div key={member.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-8">
-              <div className="bg-white dark:bg-slate-500 dark:text-white p-6 rounded-lg shadow-lg">
+              <div className="bg-white p-6 rounded-lg shadow-lg">
                 <Image
                   src={member.imageUrl}
                   alt={member.name}
@@ -72,7 +72,7 @@ const AboutTeam = () => {
                   height={300}
                 />
                 <h3 className="text-xl font-semibold mb-2">{member.name}</h3>
-                <p className="text-gray-600 dark:text-white mb-4">{member.designation}</p>
+                <p className="text-gray-600 mb-4">{member.designation}</p>
                 <div className="flex space-x-4">
                   <a
                     href={member.linkedin}

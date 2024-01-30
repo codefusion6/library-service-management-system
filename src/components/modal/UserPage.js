@@ -1,5 +1,4 @@
 "use client"
-import withAuth from "@/middleware/withAuth";
 import { Table, TableHeader, TableColumn, TableBody, TableRow, TableCell, Image } from "@nextui-org/react";
 
 
@@ -49,4 +48,4 @@ const UserPage = () => {
     </Table>
   );
 };
-export default withAuth(UserPage);
+export default UserPage;

@@ -1,8 +1,9 @@
 import { Merriweather } from "next/font/google";
-import React, { } from "react";
+import * as React from "react";
 import "./globals.css";
 import { AuthContextProvider } from "./provider/context/AuthContext";
 import { Toaster } from "react-hot-toast";
+
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["400", "300", "700", "900"],
@@ -15,7 +16,7 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning={true}>
       <AuthContextProvider>
-        <body className={`${merriweather.className} dark:bg-black bg-white dark:text-white text-black`}>
+        <body className={`${merriweather.className}`}>
           {children}
           <Toaster position="top-right" />
         </body>

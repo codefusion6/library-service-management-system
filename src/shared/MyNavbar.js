@@ -1,5 +1,5 @@
 "use client";
-import React, { } from "react";
+import React from "react";
 import { useState, useEffect } from "react";
 import {
   Navbar,
@@ -17,15 +17,13 @@ import Image from "next/image";
 import logo from "../../public/images/bookflow.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
-import toast from "react-hot-toast";
 import { UserAuth } from "@/app/provider/context/AuthContext";
-import ThemeToggle from "@/components/ThemeToggle";
-// import ThemeSwitch from "@/components/ThemeSwitch";
+import toast from "react-hot-toast";
 
 const MyNavbar = () => {
-  // const [dark, setDark] = useState(false)
   const [scroll, setScroll] = useState(false);
   const { user, logOut } = UserAuth();
+
   useEffect(() => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 20;
@@ -89,11 +87,10 @@ const MyNavbar = () => {
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
-                    <Link className="" href="/dashboard">
+                    <Link className="text-white" href="/dashboard">
                       Dashboard
                     </Link>
                   </NavbarItem>
-                  {/* <ThemeSwitch></ThemeSwitch> */}
                 </div>
                 {/* Small device menu icon and items */}
                 <div id="mobile-menu" className="md:hidden items-center gap-4 flex">
@@ -157,7 +154,8 @@ const MyNavbar = () => {
                       <DropdownMenu
                         aria-label="Profile Actions"
                         className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                        variant="flat">
+                        variant="flat"
+                      >
                         <DropdownItem key="profile" className="h-14 gap-2">
                           <p className="font-semibold">Signed in as</p>
                           <p className="font-semibold">{user?.email}</p>
@@ -173,12 +171,11 @@ const MyNavbar = () => {
                     </button>
                   )}
                 </div>
-                <ThemeToggle></ThemeToggle>
               </NavbarContent>
             </Navbar>
           </div>
         </div>
-      </section >
+      </section>
     </>
   );
 };
