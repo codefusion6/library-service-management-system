@@ -1,5 +1,8 @@
 "use client"
 import { Image } from "@nextui-org/react";
+import PricingSection from "./PricingSection";
+import LibraryServicesSection from "./LibraryServicesSection";
+import LibraryFeatures from "./LibraryFeatures";
 
 const servicesData = [
   {
@@ -28,6 +31,7 @@ const Ourservices = () => {
       <h2 className="text-3xl font-serif text-black bg-green-300 text-center p-4">
         Our Services
       </h2>
+      <LibraryServicesSection></LibraryServicesSection>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {servicesData.map((service) => (
           <div key={service.id} className="mt-5">
@@ -50,6 +54,8 @@ const Ourservices = () => {
           </div>
         ))}
       </div>
+      <PricingSection></PricingSection>
+      <LibraryFeatures></LibraryFeatures>
     </div>
   );
 };
