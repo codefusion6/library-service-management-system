@@ -14,7 +14,7 @@ const SidebarItems = ({ expanded }) => {
       >
         <Link href="/dashboard" className="flex gap-2 font-bold">
           <FaHome size={25} className="text-xl font-bold" />
-          <sapn className={`${expanded ? "block" : "hidden"}`}>Admin Home</sapn>
+          <span className={`${expanded ? "block" : "hidden"}`}>Admin Home</span>
         </Link>
       </li>
       <li
@@ -23,7 +23,7 @@ const SidebarItems = ({ expanded }) => {
       >
         <Link href="/dashboard/booklist" className="flex gap-2 font-bold">
           <CiBoxList size={25} className="text-xl font-bold" />
-          <sapn className={`${expanded ? "block" : "hidden"}`}>Book List</sapn>
+          <span className={`${expanded ? "block" : "hidden"}`}>Book List</span>
         </Link>
       </li>
       <li
@@ -32,7 +32,7 @@ const SidebarItems = ({ expanded }) => {
       >
         <Link href="/dashboard/addbook" className="flex gap-2 font-bold">
           <MdFormatListBulletedAdd size={25} className="text-xl font-bold" />
-          <sapn className={`${expanded ? "block" : "hidden"}`}>Add Book</sapn>
+          <span className={`${expanded ? "block" : "hidden"}`}>Add Book</span>
         </Link>
       </li>
       <li
@@ -41,7 +41,7 @@ const SidebarItems = ({ expanded }) => {
       >
         <Link href="/dashboard/all-user" className="flex gap-2 font-bold">
           <CiBoxList size={25} className="text-xl font-bold" />
-          <sapn className={`${expanded ? "block" : "hidden"}`}>All Users</sapn>
+          <span className={`${expanded ? "block" : "hidden"}`}>All Users</span>
         </Link>
       </li>
     </ul>
