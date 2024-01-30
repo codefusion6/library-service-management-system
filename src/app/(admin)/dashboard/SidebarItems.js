@@ -14,7 +14,7 @@ const SidebarItems = ({ expanded }) => {
       >
         <Link href="/dashboard" className="flex gap-2 font-bold">
           <FaHome size={25} className="text-xl font-bold" />
-          <span className={`${expanded ? "block" : "hidden"}`}>Admin Home</span>
+          <sapn className={`${expanded ? "block" : "hidden"}`}>Admin Home</sapn>
         </Link>
       </li>
       <li
@@ -23,7 +23,7 @@ const SidebarItems = ({ expanded }) => {
       >
         <Link href="/dashboard/booklist" className="flex gap-2 font-bold">
           <CiBoxList size={25} className="text-xl font-bold" />
-          <span className={`${expanded ? "block" : "hidden"}`}>Book List</span>
+          <sapn className={`${expanded ? "block" : "hidden"}`}>Book List</sapn>
         </Link>
       </li>
       <li
@@ -32,18 +32,23 @@ const SidebarItems = ({ expanded }) => {
       >
         <Link href="/dashboard/addbook" className="flex gap-2 font-bold">
           <MdFormatListBulletedAdd size={25} className="text-xl font-bold" />
-          <span className={`${expanded ? "block" : "hidden"}`}>Add Book</span>
+          <sapn className={`${expanded ? "block" : "hidden"}`}>Add Book</sapn>
         </Link>
       </li>
       <li
-        className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-      transition-colors group hover:bg-yellow-100"
-      >
-        <Link href="/dashboard/all-user" className="flex gap-2 font-bold">
-          <CiBoxList size={25} className="text-xl font-bold" />
-          <span className={`${expanded ? "block" : "hidden"}`}>All Users</span>
-        </Link>
-      </li>
+          className="flex gap-2 items-center py-2 px-3 my-1
+          font-medium rounded-md cursor-pointer
+          transition-colors group hover:bg-green-100"
+        >
+          
+          <Link href="/dashboard/all-user" className="flex gap-2 font-bold"
+          >
+            <CiBoxList size={20} className="text-xl font-bold" />
+             <sapn className={`${expanded ? "block" : "hidden"}`}> All Users</sapn>
+           
+          </Link>
+        </li>
+
     </ul>
   );
 };
