@@ -17,13 +17,13 @@ const AllBooks = () => {
             className="w-full h-[450px]"
           ></Image>
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50"></div>
-          <p className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold text-center">
+          <p className="absolute top-1/2 left-1/2 border-b-2 pb-2 border-white transform -translate-x-1/2 -translate-y-1/2 text-white text-2xl font-bold text-center">
             Choose Your Books and Enjoy
           </p>
           <div className="divider text-white text-2xl"></div>
         </div>
         <div className="flex mt-5">
-          <div className="w-1/3 mt-2 ml-5">
+          <div className="w-1/3 mt-2 md:mr-7">
             <AllBooksSlider></AllBooksSlider>
           </div>
           <div className="flex-1 space-y-3">

@@ -4,9 +4,9 @@ body{
 }
 
 .swiper {
-  width: 350px;
-  height: 300px;
-  position: absolute;
+  width: 100%;
+  height: auto;
+  /* position: absolute; */
     /*  left: 20%;
   top: 50%;
   margin-left: -150px;

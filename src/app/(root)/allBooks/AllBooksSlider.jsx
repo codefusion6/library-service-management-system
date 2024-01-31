@@ -8,6 +8,7 @@ import "swiper/css/pagination";
 import "./styles.css";
 
 import { EffectCube, Pagination } from "swiper/modules";
+import Image from "next/image";
 
 const AllBooksSlider = () => {
   return (
@@ -26,16 +27,16 @@ const AllBooksSlider = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-1.jpg" />
+          <Image width={400} height={400} alt="card" className="w-full" src="https://i.ibb.co/3kbYLkR/allbooks.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+          <Image width={400} height={400} alt="card" className="w-full" src="https://i.ibb.co/3kbYLkR/allbooks.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-3.jpg" />
+          <Image width={400} height={400} alt="card" className="w-full" src="https://i.ibb.co/3kbYLkR/allbooks.jpg" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src="https://swiperjs.com/demos/images/nature-4.jpg" />
+          <Image width={400} height={400} alt="card" className="w-full"  src="https://i.ibb.co/3kbYLkR/allbooks.jpg" />
         </SwiperSlide>
       </Swiper>
     </div>
