@@ -4,6 +4,7 @@ import MyNavbar from "@/shared/MyNavbar";
 import Footer from "@/shared/Footer";
 import "./../globals.css";
 import { Toaster } from "react-hot-toast";
+import Chatbot from "@/components/chatbot/Chatbot";
 
 export const metadata = {
   title: "BookFlow",
@@ -16,6 +17,7 @@ const Layout = ({ children }) => {
       <MyNavbar />
       {children}
       <Toaster position="top-right" />
+      <Chatbot></Chatbot>
       <Footer />
     </AuthContextProvider>
   );
