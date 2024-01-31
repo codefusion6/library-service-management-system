@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import "./bookType.module.css"
 
 const BookTypes = () => {
-  const [selectedId, setSelectedId] = useState(null);
+  // const [selectedId, setSelectedId] = useState(null);
 
   const items = [
     {
@@ -43,7 +43,7 @@ const BookTypes = () => {
           <button className='bg-orange-800 rounded-md mt-2 capitalize py-1 px-3'>Become member</button>
         </div>
       </div>
-      <div className='grid grid-cols-2 gap-4'>
+      {/* <div className='grid grid-cols-2 gap-4'>
         {items.map((item) => (
           <motion.div
             key={item.id}
@@ -55,9 +55,9 @@ const BookTypes = () => {
             <h2>{item.title}</h2>
           </motion.div>
         ))}
-      </div>
+      </div> */}
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {selectedId && (
           <motion.div
             key={selectedId}
@@ -80,7 +80,7 @@ const BookTypes = () => {
             </motion.div>
           </motion.div>
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </section>
   );
 };

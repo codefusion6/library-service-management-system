@@ -1,5 +1,6 @@
 import React from 'react'
 import AddWriter from './AddWriter'
+import Image from 'next/image'
 
 const Writers = () => {
     const writers = [
@@ -50,7 +51,7 @@ const Writers = () => {
             {
                 writers.map((writer) => (
                     <div className='border-2 p-2 rounded-md'>
-                        <img height={300} className='h-[200px] w-full rounded-md' src="https://i.ibb.co/686tyHs/probesh-deb-nath.jpg" alt="writer" />
+                        <Image height={200} width={300} className='h-[200px] w-full rounded-t-md' src="https://i.ibb.co/686tyHs/probesh-deb-nath.jpg" alt="writer" />
                         <h3 className='mt-2 text-xl font-bold'>{writer?.name}</h3>
                         <p className='text-sm'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae perferendis esse quidem distinctio unde!</p>
                     </div>
