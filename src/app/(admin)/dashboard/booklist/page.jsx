@@ -1,6 +1,7 @@
 
 import DashBookSlider from "@/components/dashBookSlider/DashBookSlider";
-import BookCard from "./bookCard";
+import BookCard from "./BookCard";
+
 
 const BookListPage = async() => {
   return (
