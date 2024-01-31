@@ -1,5 +1,4 @@
-// app/providers.tsx
-'use client'
+"use client"
 import { NextUIProvider } from '@nextui-org/react'
 
 export function Providers({ children }) {
