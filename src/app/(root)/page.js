@@ -8,6 +8,7 @@ import Slider from "@/pages/home/Slider/Slider";
 import HomeContact from "@/shared/HomeContact";
 import Feature from "@/pages/home/Feature";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import BookTypes from "@/pages/home/BookTypes/BookTypes";
 // import Contact from "@/components/home/Contact";
 
 const HomePage = () => {
@@ -16,6 +17,7 @@ const HomePage = () => {
       <Banner />
       <Feature books={booksData}></Feature>
       <Slider></Slider>
+      <BookTypes />
       <FAQ></FAQ>
       <HomeContact></HomeContact>
     </div>
