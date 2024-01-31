@@ -1,10 +1,10 @@
+'use client'
 import React from "react";
 import { FaSearch, FaUserFriends } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { FaBookOpen, FaBookBible } from "react-icons/fa6";
 import Chart from "@/components/dashboardChart/Chart";
-import withAuth from "@/middleware/withAuth";
 
 function Dashboard({ }) {
   return (
@@ -73,7 +73,7 @@ function Dashboard({ }) {
           </Card>
         </div>
         <div className="w-96 container mx-auto mt-5">
-            <Chart></Chart>
+          <Chart></Chart>
         </div>
 
       </div>

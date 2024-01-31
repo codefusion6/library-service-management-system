@@ -7,9 +7,7 @@ const LottieAnimation = () => {
   return (
     <div>
 
-      <Lottie animationData={lottie}>
-
-      </Lottie>
+      <Lottie animationData={lottie}></Lottie>
     </div>
   );
 };

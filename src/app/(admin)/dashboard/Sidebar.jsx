@@ -7,9 +7,12 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import SidebarItems from "./SidebarItems";
 import Link from "next/link";
+import { UserAuth } from "@/app/provider/context/AuthContext";
+
 
 const Sidebar = ({ }) => {
   const [expanded, setExpanded] = useState(true)
+  const { user, loading } = UserAuth();
 
   return (
     <div className={`bg-white fixed top-0 border-r shadow-md lg:static z-50 ${expanded ? "lg:w-[20%] -left-[500%] lg:left-0" : "lg:w-[6%]"} duration-200`}>
@@ -21,24 +24,30 @@ const Sidebar = ({ }) => {
               {expanded ? <FaArrowLeft size={30} className="text-black" /> : <FaArrowRight className="text-black" size={30} />}
             </button>
           </div>
-          <ul className="flex-1 px-6">
+          <ul className="flex-1 px-6 mt-4">
             <SidebarItems expanded={expanded} />
           </ul>
-          <div className="border-r flex p-3">
-            <Image
-              src="https://i.ibb.co/QNQ491S/tahmima.jpg"
-              alt="profile image"
-              width={50}
-              height={30}
-              className="rounded-md" />
-            <div className={`flex justify-between items-center text-black px-3 bg-red-50 w-80 ml-3 ${expanded ? "block" : "hidden"}`}>
-              <div className="leading-4">
-                <h2 className="font-semibold ">Priyanka</h2>
-                <span className="text-sm">priyanka@gmail.com</span>
+          {!loading && user &&
+            <div className="border-r flex p-3">
+              <Image
+                src={user?.photoURL}
+                rel="noopener noreferrer"
+                alt="profile image"
+                width={50}
+                height={30}
+                className="rounded-md" />
+              <div className={`flex justify-between items-center text-black px-3 bg-red-50 w-full ml-3 rounded-md ${expanded ? "block" : "hidden"}`}>
+                <div className="leading-4">
+
+                  <div className="">
+                    <h2 className="font-semibold pb-1">{user?.displayName}</h2>
+                    <span className="text-sm">{user?.email}</span>
+                  </div>
+                </div>
+                <BsThreeDotsVertical size={20} className="" />
               </div>
-              <BsThreeDotsVertical size={20} className="" />
             </div>
-          </div>
+          }
         </nav>
       </aside>
     </div>
