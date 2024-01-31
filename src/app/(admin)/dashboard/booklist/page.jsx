@@ -2,7 +2,6 @@
 import DashBookSlider from "@/components/dashBookSlider/DashBookSlider";
 import BookCard from "./BookCard";
 
-
 const BookListPage = async() => {
   return (
     <section className="container mx-auto">
