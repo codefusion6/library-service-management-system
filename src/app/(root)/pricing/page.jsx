@@ -31,18 +31,66 @@ const Pricing = () => {
             />
           </p>
         </div>
-        <div>
-          <div className="bg-white p-6 w-96 rounded-lg shadow-md transition-transform duration-300 transform hover:scale-105">
-            <h3 className="text-xl font-semibold text-gray-800 mb-4">
-              Library Pass
-            </h3>
-            <p className="text-gray-600 mb-4">
-              Unlimited book borrowing + All online services
-            </p>
-            <p className="text-2xl font-bold text-indigo-600">$29.99/month</p>
-            <button className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded-full hover:bg-indigo-700 transition-colors duration-300">
-              Subscribe
-            </button>
+      <h1 className="text-3xl font-bold text-center my-5 text-shadow"> Our Amazing package&apos;s </h1>
+        <div className="my-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="bg-white p-6 w-96 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105">
+              <Image
+                src="https://i.ibb.co/L6z7Pkc/4735.jpg"
+                alt="card image"
+                width={350}
+                height={50}
+                className="h-[250px]"
+              ></Image>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                Basic 
+              </h3>
+              <p className="text-gray-600 mb-4">
+               Our <strong>Basic</strong> package for user. Where user can view all the books but can not download the books. 
+              </p>
+              <p className="text-2xl font-bold text-indigo-600">$2.00/month</p>
+              <button className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded-full transition-colors duration-300">
+                Subscribe
+              </button>
+            </div>
+            <div className="bg-white p-6 w-96 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105">
+              <Image
+                src="https://i.ibb.co/L0qYX95/img2.jpg"
+                alt="card image"
+                width={350}
+                height={50}
+                className="h-[250px]"
+              ></Image>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+              Elite 
+              </h3>
+              <p className="text-gray-600 mb-4">
+               Our <strong>Elite</strong> package for user. Where user can view all the books also can download the books. 
+              </p>
+              <p className="text-2xl font-bold text-indigo-600">$2.50/month</p>
+              <button className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded-full transition-colors duration-300">
+                Subscribe
+              </button>
+            </div>
+            <div className="bg-white p-6 w-96 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105">
+              <Image
+                src="https://i.ibb.co/tZMc11M/img3.jpg"
+                alt="card image"
+                width={350}
+                height={50}
+                className="h-[250px]"
+              ></Image>
+              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
+                Pluse 
+              </h3>
+              <p className="text-gray-600 mb-4">
+               Our <strong>Pluse</strong> package for user. Where user can view all the books,edit and download the books. 
+              </p>
+              <p className="text-2xl font-bold text-indigo-600">$3.00/month</p>
+              <button className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded-full transition-colors duration-300">
+                Subscribe
+              </button>
+            </div>
           </div>
         </div>
       </div>
