@@ -10,7 +10,6 @@ import {
 import { auth } from "../../firbase/firebase";
 
 const AuthContext = createContext(null);
-
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
