@@ -26,7 +26,7 @@ export const getAllUser = async () => {
   try {
     const result = await User.find();
     // return JSON.parse(JSON.stringify(result));
-    return { success: true, data: JSON.parse(JSON.stringify(result)) };
+    return { success: true, data: JSON.parse(JSON.stringify(result))};
   } catch (error) {
     if (error instanceof mongoose.Error.ValidationError) {
       // Handle Mongoose validation errors

@@ -10,7 +10,6 @@ import Feature from "@/pages/home/Feature";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
 import Chatbot from "@/components/chatbot/Chatbot";
 
-// import Contact from "@/components/home/Contact";
 
 const HomePage = () => {
   return (
