@@ -1,5 +1,5 @@
-import HowHelp from '@/pages/allwriter/HowHelp'
-import Writers from '@/pages/allwriter/Writers'
+import HowHelp from '@/pages/allwriters/HowHelp'
+import Writers from '@/pages/allwriters/Writers'
 import React from 'react'
 
 const page = () => {
