@@ -1,4 +1,5 @@
 "use client";
+import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import React from "react";
 import { TypeAnimation } from "react-type-animation";
@@ -31,7 +32,10 @@ const Pricing = () => {
             />
           </p>
         </div>
-      <h1 className="text-3xl font-bold text-center my-5 text-shadow"> Our Amazing package&apos;s </h1>
+        <h1 className="text-3xl font-bold text-center my-5 text-shadow">
+          {" "}
+          Our Amazing package&apos;s{" "}
+        </h1>
         <div className="my-10">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             <div className="bg-white p-6 w-96 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105">
@@ -42,16 +46,18 @@ const Pricing = () => {
                 height={50}
                 className="h-[250px]"
               ></Image>
-              <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                Basic 
-              </h3>
+              <div className="text-2xl font-semibold text-gray-800 mb-4">
+                Basic
+              </div>
               <p className="text-gray-600 mb-4">
-               Our <strong>Basic</strong> package for user. Where user can view all the books but can not download the books. 
+                Our <strong>Basic</strong> package for user. Where user can view
+                all the books but can not download the books.
               </p>
               <p className="text-2xl font-bold text-indigo-600">$2.00/month</p>
-              <button className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded-full transition-colors duration-300">
+              <button className="mt-4 border text-black border-indigo-600 hover:bg-indigo-600 hover:text-white py-2 px-4 rounded-full transition-colors duration-300">
                 Subscribe
               </button>
+              
             </div>
             <div className="bg-white p-6 w-96 rounded-lg shadow-lg transition-transform duration-300 transform hover:scale-105">
               <Image
@@ -62,13 +68,14 @@ const Pricing = () => {
                 className="h-[250px]"
               ></Image>
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-              Elite 
+                Elite
               </h3>
               <p className="text-gray-600 mb-4">
-               Our <strong>Elite</strong> package for user. Where user can view all the books also can download the books. 
+                Our <strong>Elite</strong> package for user. Where user can view
+                all the books also can download the books.
               </p>
               <p className="text-2xl font-bold text-indigo-600">$2.50/month</p>
-              <button className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded-full transition-colors duration-300">
+              <button className="mt-4 bg-indigo-600 hover:border hover:border-indigo-600 hover:bg-white hover:text-black text-white py-2 px-4 rounded-full transition-colors duration-300">
                 Subscribe
               </button>
             </div>
@@ -81,13 +88,14 @@ const Pricing = () => {
                 className="h-[250px]"
               ></Image>
               <h3 className="text-2xl font-semibold text-gray-800 mb-4">
-                Pluse 
+                Pluse
               </h3>
               <p className="text-gray-600 mb-4">
-               Our <strong>Pluse</strong> package for user. Where user can view all the books,edit and download the books. 
+                Our <strong>Pluse</strong> package for user. Where user can view
+                all the books,edit and download the books.
               </p>
               <p className="text-2xl font-bold text-indigo-600">$3.00/month</p>
-              <button className="mt-4 bg-indigo-600 text-white py-2 px-4 rounded-full transition-colors duration-300">
+              <button className="mt-4 border text-black border-indigo-600 hover:bg-indigo-600 hover:text-white py-2 px-4 rounded-full transition-colors duration-300">
                 Subscribe
               </button>
             </div>
