@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Feedback from '@/components/feedback-client/Feedback'
 import ContactBanner from '@/pages/contact/ContactBanner'
+import Talk from '@/pages/contact/Talk'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -25,8 +26,10 @@ const page = () => {
                         <Link href="/about"><button className='bg-blue-700 py-1 px-3 text-white rounded-md mt-3'>Learn More</button></Link>
                     </div>
                 </div>
-
             </section>
+
+                <Talk />
+                
             <div className='container mx-auto'>
                 <div className='mx-auto py-10 px-3 '>
                     <div>
