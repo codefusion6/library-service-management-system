@@ -1,15 +1,14 @@
+"use client"
 import React from "react";
-import MessengerCustomerChat from "react-messenger-customer-chat";
+import { CustomChat, FacebookProvider } from "react-facebook";
 
 const Chatbot = () => {
   return (
     <div>
-      <MessengerCustomerChat
-        pageId="211119442090945"
-        appId="937135961109989"
-       
-      />
-      ,
+           <FacebookProvider appId="937135961109989" chatSupport>
+        <CustomChat pageId="211119442090945" minimized={true}/>
+      </FacebookProvider>    
+      
     </div>
   );
 };
