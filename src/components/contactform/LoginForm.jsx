@@ -5,7 +5,7 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa6";
 import LottieAnimation from "./LottieAnimation";
-import { UserAuth } from "@/app/provider/context/AuthContext";
+import { UserAuth, userState } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
 import { useRouter } from 'next/navigation';
 
@@ -13,7 +13,7 @@ const LoginForm = () => {
   const router = useRouter()
 
   const [isVisible, setIsVisible] = React.useState(false);
-  const { googleSignIn } = UserAuth();
+  const { googleSignIn, } = UserAuth();
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
@@ -41,7 +41,7 @@ const LoginForm = () => {
           <div className="lg:mr-10 mb-6 text-center lg:text-left">
             <div className="flex items-center">
               <LottieAnimation />
-            </div>  
+            </div>
           </div>
 
           <div className="lg:ml-10">

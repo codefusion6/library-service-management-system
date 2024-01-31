@@ -12,7 +12,6 @@ import { auth } from "../../firbase/firebase";
 import { createCookie, deleteCookie } from "@/libs/actions/useCookie.action";
 
 const AuthContext = createContext(null);
-
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);

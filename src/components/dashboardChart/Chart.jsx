@@ -27,8 +27,6 @@ export const data = {
     },
   ],
 };
-console.log(data);
-
 const Chart = () => {
   return (
     <div>

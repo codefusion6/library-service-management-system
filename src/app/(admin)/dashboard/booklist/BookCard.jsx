@@ -15,8 +15,6 @@ const BookCard = async ({id}) => {
 //   const res = await getBook("65b8dc882c1a2b234add17f0");
   console.log(id);
   const data = await getAllBooks();
-
-
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-10">
