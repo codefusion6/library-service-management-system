@@ -1,0 +1,24 @@
+body{
+    position: relative;
+    height: 100%;
+}
+
+.swiper {
+  width: 350px;
+  height: 300px;
+  position: absolute;
+    /*  left: 20%;
+  top: 50%;
+  margin-left: -150px;
+  margin-top: -150px; */ 
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+}
