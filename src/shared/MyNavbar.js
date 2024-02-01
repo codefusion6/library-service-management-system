@@ -91,16 +91,18 @@ const MyNavbar = () => {
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
+                    <Link className="text-white" href="/all-writers">
+                      Writers
+                    </Link>
+                  </NavbarItem>
+                  <NavbarItem>
                     <Link className="text-white" href="/dashboard">
                       Dashboard
                     </Link>
                   </NavbarItem>
                 </div>
                 {/* Small device menu icon and items */}
-                <div
-                  id="mobile-menu"
-                  className="md:hidden items-center gap-4 flex"
-                >
+                <div id="mobile-menu" className="md:hidden items-center gap-4 flex">
                   {/* Dropdown menu for small devices */}
                   <Dropdown placement="bottom-end">
                     <DropdownTrigger>

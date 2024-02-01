@@ -9,10 +9,12 @@ import Link from "next/link";
 
 import { getAllBooks, getBook } from "@/libs/actions/book.action";
 import { connectDB } from "@/libs/database/MongoConnect";
+import BookDeleteBtn from "./bookDeleteBtn";
 
-const BookCard = async ({id}) => {
+const BookCard = async ({ id }) => {
+  console.log(id);
   await connectDB();
-//   const res = await getBook("65b8dc882c1a2b234add17f0");
+  //   const res = await getBook("65b8dc882c1a2b234add17f0");
   console.log(id);
   const data = await getAllBooks();
   return (
@@ -43,11 +45,7 @@ const BookCard = async ({id}) => {
                 <FaEdit className="text-3xl text-white" />
                 <span className="text-white">Edit</span>
               </Link>
-
-              <Link href="#">
-                <AiFillDelete className="text-3xl text-red-700" />
-                <span className="text-white">Delete</span>
-              </Link>
+              <BookDeleteBtn id={book._id}></BookDeleteBtn>
             </div>
           </Card>
         ))}
