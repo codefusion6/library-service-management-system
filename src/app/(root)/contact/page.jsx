@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import Feedback from '@/components/feedback-client/Feedback'
 import ContactBanner from '@/pages/contact/ContactBanner'
+import Talk from '@/pages/contact/Talk'
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
@@ -25,28 +26,32 @@ const page = () => {
                         <Link href="/about"><button className='bg-blue-700 py-1 px-3 text-white rounded-md mt-3'>Learn More</button></Link>
                     </div>
                 </div>
-
             </section>
-            <div className='container mx-auto'>
-                <div className='mx-auto py-10 px-3 '>
-                    <div>
-                        <h2 className='text-4xl font-bold mb-2 text-center'>Library Service Management System</h2>
-                        <p className='text-sm md:w-2/3 text-center mx-auto'> Unleash the world of literature at your fingertips with our online library. Dive into a diverse collection of books, seamlessly accessible from anywhere. Explore, read, and elevate your reading journey with BookFlow.</p>
-                    </div>
-                    <div className='grid grid-cols-1 md:grid-cols-2 mt-10 items-center justify-center'>
-                        <div className='flex flex-col gap-2 justify-center md:w-3/4 mx-auto'>
-                            <Feedback />
+
+            <Talk />
+
+            <div className='bg-gray-100'>
+                <div className='container mx-auto'>
+                    <div className='mx-auto py-10 px-3 '>
+                        <div>
+                            <h2 className='text-4xl font-bold mb-2 text-center'>Library Service Management System</h2>
+                            <p className='text-sm md:w-2/3 text-center mx-auto'> Unleash the world of literature at your fingertips with our online library. Dive into a diverse collection of books, seamlessly accessible from anywhere. Explore, read, and elevate your reading journey with BookFlow.</p>
                         </div>
-                        <div className=''>
-                            <div>
-                                <div className='mb-3 font-semibold'>
-                                    <p className='py-1'>codefusion@gmail.com</p>
-                                    <p>+8801736232333</p>
-                                </div>
-                                <div className='mt-10 space-y-3 font-medium'>
-                                    <h2>BookFlow</h2>
-                                    <address>424-Dhaka, Surma</address>
-                                    <address>Dhaka, Bangladesh</address>
+                        <div className='grid grid-cols-1 md:grid-cols-2 mt-10 items-center justify-center place-items-center'>
+                            <div className='flex flex-col gap-2 justify-center md:w-3/4 mx-auto'>
+                                <Feedback />
+                            </div>
+                            <div className=''>
+                                <div>
+                                    <div className='mb-3 font-semibold'>
+                                        <p className='py-1'>codefusion@gmail.com</p>
+                                        <p>+8801736232333</p>
+                                    </div>
+                                    <div className='mt-10 space-y-3 font-medium'>
+                                        <h2>BookFlow</h2>
+                                        <address>424-Dhaka, Surma</address>
+                                        <address>Dhaka, Bangladesh</address>
+                                    </div>
                                 </div>
                             </div>
                         </div>
