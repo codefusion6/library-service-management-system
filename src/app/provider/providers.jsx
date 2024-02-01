@@ -8,3 +8,5 @@ export function Providers({ children }) {
         </NextUIProvider>
     )
 }
+
+export default Providers
