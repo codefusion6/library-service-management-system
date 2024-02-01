@@ -1,0 +1,116 @@
+"use client";
+
+import React from "react";
+import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import { FaEye, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import Image from "next/image";
+
+const Cards = () => {
+  const data = [
+    {
+      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      title: "The Catcher in the Rye",
+      price: 19.99,
+      rating: 1.5,
+    },
+    {
+      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpgg",
+      title: "To Kill a Mockingbird",
+      price: 29.99,
+      rating: 3.8,
+    },
+    {
+      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      title: "1984",
+      price: 14.99,
+      rating: 4.2,
+    },
+    {
+      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      title: "The Great Gatsby",
+      price: 24.99,
+      rating: 4.0,
+    },
+    {
+      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      title: "Harry Potter and the Sorcerer's Stone",
+      price: 39.99,
+      rating: 4.8,
+    },
+    {
+      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      title: "The Hobbit",
+      price: 49.99,
+      rating: 2.0,
+    },
+    {
+      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      title: "Pride and Prejudice",
+      price: 16.99,
+      rating: 4.1,
+    },
+    {
+      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      title: "The Lord of the Rings",
+      price: 32.99,
+      rating: 4.6,
+    },
+  ];
+
+  const renderStars = (rating) => {
+    const fullStars = Math.floor(rating);
+    const hasHalfStar = rating % 1 !== 0;
+
+    const stars = [];
+    for (let i = 0; i < fullStars; i++) {
+      stars.push(<FaStar key={i} className="text-yellow-500" />);
+    }
+
+    if (hasHalfStar) {
+      stars.push(<FaStarHalfAlt key="half" className="text-yellow-500" />);
+    }
+    return stars;
+  };
+
+  return (
+    <>
+      {data.map((items, index) => (
+        <Card key={index} className="py-1 border shadow-md">
+          <CardBody className="overflow-visible py-2 card-inner">
+            <Image
+              alt="Card background"
+              className="rounded-xl p-10"
+              src={items.image_url}
+              width={270}
+              height={250}
+            />
+            <div>
+              <ul className="flex gap-2">
+                <li className="bg-green-200 p-2  rounded-2xl">
+                  <FaEye className="text-2xl text-black"></FaEye>
+                </li>
+                <li className="bg-green-200 p-2  rounded-2xl">
+                  <FaEye className="text-2xl text-black"></FaEye>
+                </li>
+                <li className="bg-green-200 p-2  rounded-2xl">
+                  <FaEye className="text-2xl text-black"></FaEye>
+                </li>
+              </ul>
+            </div>
+          </CardBody>
+
+          <div className="border-b-1 pb-2 "></div>
+          <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
+            <p className="uppercase font-bold text-center flex text-2xl text-yellow-400">
+              {renderStars(items.rating)}
+            </p>
+            <h4 className="font-semibold text-lg">{items.title}</h4>
+            <p className=" text-black text-xl font-bold">$ {items.price}</p>
+          </CardHeader>
+        </Card>
+      ))}
+    </>
+  );
+};
+
+export default Cards;
