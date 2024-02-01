@@ -75,7 +75,10 @@ const Cards = () => {
   return (
     <>
       {data.map((items, index) => (
-        <Card key={index} className="py-1 border shadow-md relative">
+        <Card
+          key={index}
+          className="py-1 border shadow-md relative transition-transform duration-300 transform hover:scale-90"
+        >
           <CardBody className="overflow-visible py-2 card-inner">
             <Image
               alt="Card background"
