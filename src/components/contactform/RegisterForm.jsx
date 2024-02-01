@@ -1,9 +1,7 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
-import Link from "next/link";
 import LottieAnimation from "./LottieAnimation";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-
 
 import React from "react";
 import RegisterAction from "./RegisterAction";

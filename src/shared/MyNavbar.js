@@ -2,16 +2,16 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import {
-Navbar,
-NavbarBrand,
-NavbarContent,
-NavbarItem,
-Link,
-DropdownItem,
-DropdownTrigger,
-Dropdown,
-DropdownMenu,
-Avatar,
+  Navbar,
+  NavbarBrand,
+  NavbarContent,
+  NavbarItem,
+  Link,
+  DropdownItem,
+  DropdownTrigger,
+  Dropdown,
+  DropdownMenu,
+  Avatar,
 } from "@nextui-org/react";
 import Image from "next/image";
 import logo from "../../public/images/bookflow.png";
@@ -21,118 +21,117 @@ import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
 
 const MyNavbar = () => {
-const [scroll, setScroll] = useState(false);
-const { user, logOut } = UserAuth();
+  const [scroll, setScroll] = useState(false);
+  const { user, logOut } = UserAuth();
 
-useEffect(() => {
-const handleScroll = () => {
-const isScrolled = window.scrollY > 20;
-if (isScrolled !== scroll) {
-setScroll(isScrolled);
-}
-};
-window.addEventListener("scroll", handleScroll);
-return () => {
-window.removeEventListener("scroll", handleScroll);
-};
-}, [scroll]);
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 20;
+      if (isScrolled !== scroll) {
+        setScroll(isScrolled);
+      }
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scroll]);
 
-const handleLogout = async () => {
-try {
-await logOut();
-toast.success('Logout successful');
-} catch (error) {
-console.error('Logout error:', error);
-toast.error('Logout failed');
-}
-};
-
-return (
-<>
-<section className="fixed top-0 z-50 w-full bg-black text-white">
-<div className="container mx-auto">
-<div className="py-4">
-    <Navbar>
-        <NavbarBrand>
-            <Link href="/">
-                <Image
+  const handleLogout = async () => {
+    try {
+      await logOut();
+      toast.success('Logout successful');
+    } catch (error) {
+      console.error('Logout error:', error);
+      toast.error('Logout failed');
+    }
+  };
+  return (
+    <>
+      <section className="fixed top-0 z-50 w-full bg-black text-white">
+        <div className="container mx-auto">
+          <div className="py-4">
+            <Navbar>
+              <NavbarBrand>
+                <Link href="/">
+                  <Image
                     className="max-w-[200px]"
                     src={logo}
                     alt="our logo"
                     width={200}
                     height={100}
-                />
-            </Link>
-        </NavbarBrand>
+                  />
+                </Link>
+              </NavbarBrand>
 
-        {/* Laptop and tablet navbar */}
-        <NavbarContent className="lg:flex gap-4 justify-end">
-            <div className="md:flex hidden gap-4">
-                <NavbarItem>
+              {/* Laptop and tablet navbar */}
+              <NavbarContent className="lg:flex gap-4 justify-end">
+                <div className="md:flex hidden gap-4">
+                  <NavbarItem>
                     <Link className="text-white" href="/">
-                        Home
+                      Home
                     </Link>
-                </NavbarItem>
+                  </NavbarItem>
 
-                <NavbarItem>
+                  <NavbarItem>
                     <Link className="text-white" href="/about">
-                        About us
+                      About us
                     </Link>
-                </NavbarItem>
+                  </NavbarItem>
 
-                <NavbarItem>
+                  <NavbarItem>
                     <Link className="text-white" href="/contact">
-                        Contact us
+                      Contact us
                     </Link>
-                </NavbarItem>
+                  </NavbarItem>
 
-                <NavbarItem>
-                    <Link className="text-white" href="/contact">
-                        Our Services
+                  <NavbarItem>
+                    <Link className="text-white" href="/our-services">
+                      Our Services
                     </Link>
-                </NavbarItem>
-                <NavbarItem>
+                  </NavbarItem>
+                  <NavbarItem>
                     <Link className="text-white" href="/dashboard">
-                        Dashboard
+                      Dashboard
                     </Link>
-                </NavbarItem>
-            </div>
-            {/* Small device menu icon and items */}
-            <div id="mobile-menu" className="md:hidden items-center gap-4 flex">
-                {/* Dropdown menu for small devices */}
-                <Dropdown placement="bottom-end">
+                  </NavbarItem>
+                </div>
+                {/* Small device menu icon and items */}
+                <div id="mobile-menu" className="md:hidden items-center gap-4 flex">
+                  {/* Dropdown menu for small devices */}
+                  <Dropdown placement="bottom-end">
                     <DropdownTrigger>
-                        <div className="w-6 h-6">
-                            <GiHamburgerMenu className="text-4xl" />
-                        </div>
+                      <div className="w-6 h-6">
+                        <GiHamburgerMenu className="text-4xl" />
+                      </div>
                     </DropdownTrigger>
                     <DropdownMenu
-                        aria-label="Mobile Menu"
-                        className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                        variant="flat">
-                        {/* Mobile menu items */}
-                        <DropdownItem className="h-full gap-2">
-                            <NavbarItem>
-                                <Link className="text-white" href="/">
-                                    Home
-                                </Link>
-                            </NavbarItem>
-                            <NavbarItem>
-                                <Link className="text-white" href="/about">
-                                    About us
-                                </Link>
-                            </NavbarItem>
-                            <NavbarItem>
-                                <Link className="text-white" href="/contact">
-                                    Contact us
-                                </Link>
-                            </NavbarItem>
-                            <NavbarItem>
-                                <Link className="text-white" href="/contact">
-                                    Our Services
-                                </Link>
-                            </NavbarItem>
-                        </DropdownItem>
+                      aria-label="Mobile Menu"
+                      className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
+                      variant="flat">
+                      {/* Mobile menu items */}
+                      <DropdownItem className="h-full gap-2">
+                        <NavbarItem>
+                          <Link className="text-white" href="/">
+                            Home
+                          </Link>
+                        </NavbarItem>
+                        <NavbarItem>
+                          <Link className="text-white" href="/about">
+                            About us
+                          </Link>
+                        </NavbarItem>
+                        <NavbarItem>
+                          <Link className="text-white" href="/contact">
+                            Contact us
+                          </Link>
+                        </NavbarItem>
+                        <NavbarItem>
+                          <Link className="text-white" href="/contact">
+                            Our Services
+                          </Link>
+                        </NavbarItem>
+                      </DropdownItem>
                     </DropdownMenu>
                 </Dropdown>
             </div>

@@ -1,4 +1,4 @@
-// import NextThemeProvider from "../provider/NextThemeProvider";
+
 import Sidebar from "./dashboard/Sidebar";
 import SidebarItems from "./dashboard/SidebarItems";
 import "./../globals.css"
@@ -6,14 +6,10 @@ import "./../globals.css"
 function dashboardLayout({ children }) {
   return (
     <>
-      <div className='flex gap-2 md:flex-row flex-col'>
-        <div className='w-full h-full md:w-3/12 border-r bg-black text-white'>
-          <Sidebar>
-            <SidebarItems></SidebarItems>
-          </Sidebar>
-        </div>
-        <div className='w-full md:w-9/12 bg-white p-4 md:p-10 min-h-screen'>
-          {children}
+      <div className='flex gap-2'>
+        <Sidebar>
+        </Sidebar>
+        <div className="flex-1 h-[100vh] relative overflow-y-scroll top-0 p-3 md:p-5 lg:p-8">{children}
         </div>
       </div>
     </>
