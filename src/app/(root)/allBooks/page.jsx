@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import AllBooksSlider from "./AllBooksSlider";
 import { FaSearch } from "react-icons/fa";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
@@ -24,8 +23,7 @@ const AllBooks = () => {
           <div className="divider text-white text-2xl"></div>
         </div>
         <div className="flex mt-5">
-          <div className="w-1/3 mt-2 md:mr-7">
-            {/* <AllBooksSlider></AllBooksSlider> */}
+          <div className="w-[400px] mt-2 md:mr-7">
             <BooksSidebar></BooksSidebar>
           </div>
           <div className="flex-1 space-y-3">
