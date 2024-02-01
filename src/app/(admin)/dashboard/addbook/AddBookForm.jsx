@@ -3,9 +3,11 @@ import { addBook, getAllBooks, } from '@/libs/actions/book.action';
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 import { CldUploadWidget } from 'next-cloudinary';
+import { useState } from 'react';
 
 const AddBookForm = () => {
-
+    const [resource, setResource] = useState(null);
+    console.log(resource);
     return (
         <section>
             <form action={async (formData) => {
@@ -130,16 +132,39 @@ const AddBookForm = () => {
                     Add Book
                 </button>
             </form>
+
             <CldUploadWidget
                 // signatureEndpoint="/api/sign-cloudinary-params"
                 uploadPreset='lms_code_fusion'
-            // onSuccess={(results) => {
-            //     console.log('Public ID', results.info.public_id);
-            //   }}
-            onSuccess={(result, { widget }) => {
-                setResource(result?.info);
-                widget.close();
-            }}
+                autoUpload={false}
+                onSuccess={(result, { widget }) => {
+                    setResource(result?.info);
+                    console.log(resource);
+                    widget.close();
+                }}
+            >
+                {({ open }) => {
+                    function handleOnClick() {
+                        setResource(null);
+                        open();
+                    }
+                    return (
+                        <button className='px-5 py-3 rounded-md text-white bg-violet-700 hover:bg-blue-700' onClick={handleOnClick}>
+                            Upload an Image
+                        </button>
+                    );
+                }}
+            </CldUploadWidget>
+            {/* <CldUploadWidget
+                // signatureEndpoint="/api/sign-cloudinary-params"
+                uploadPreset='lms_code_fusion'
+                // onSuccess={(results) => {
+                //     console.log('Public ID', results.info.public_id);
+                //   }}
+                onSuccess={(result, { widget }) => {
+                    setResource(result?.info);
+                    widget.close();
+                }}
             >
                 {({ open }) => {
                     // function handleOnClick() {
@@ -148,7 +173,7 @@ const AddBookForm = () => {
                     // } 
                     return <button className='px-5 py-3 rounded-md text-white bg-violet-700 hover:bg-blue-700' onClick={() => open()}>Upload an Image</button>
                 }}
-            </CldUploadWidget>
+            </CldUploadWidget> */}
         </section>
     )
 }
