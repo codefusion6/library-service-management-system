@@ -8,12 +8,14 @@ import Slider from "@/pages/home/Slider/Slider";
 import HomeContact from "@/shared/HomeContact";
 import Feature from "@/pages/home/Feature";
 import { ThemeSwitcher } from "@/components/ThemeSwitcher";
+import RecommendedBooks from "@/pages/home/recomented/RecommendedBooks";
 // import Contact from "@/components/home/Contact";
 
 const HomePage = () => {
   return (
     <div className="">
       <Banner />
+      <RecommendedBooks></RecommendedBooks>
       <Feature books={booksData}></Feature>
       <Slider></Slider>
       <FAQ></FAQ>
