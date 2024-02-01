@@ -3,7 +3,8 @@ import { addBook, getAllBooks, } from '@/libs/actions/book.action';
 import { useQuery } from '@tanstack/react-query';
 import toast from 'react-hot-toast';
 const AddBookForm = () => {
-
+    const [resource, setResource] = useState(null);
+    console.log(resource);
     return (
         <div
             className="relative min-h-screen flex items-center justify-center"

@@ -139,6 +139,12 @@ export const getBook = async (id) => {
   }
 };
 
-// export const deleteBook = async() => {
-
-// }
+export const deleteBook = async (id) => {
+  try {
+    const result = await Book.findByIdAndDelete(id);
+    revalidatePath("/dashboard/booklist");
+    return JSON.parse(JSON.stringify(result));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
