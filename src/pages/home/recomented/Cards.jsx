@@ -14,43 +14,43 @@ const Cards = () => {
       rating: 1.5,
     },
     {
-      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpgg",
+      image_url: "https://i.ibb.co/ZxmCxVC/book1.gif",
       title: "To Kill a Mockingbird",
       price: 29.99,
       rating: 3.8,
     },
     {
-      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      image_url: "https://i.ibb.co/6Rr9ggd/book2.jpg",
       title: "1984",
       price: 14.99,
       rating: 4.2,
     },
     {
-      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      image_url: "https://i.ibb.co/PTxG8dD/book3.jpg",
       title: "The Great Gatsby",
       price: 24.99,
       rating: 4.0,
     },
     {
-      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      image_url: "https://i.ibb.co/KNLm4VK/book4.jpg",
       title: "Harry Potter and the Sorcerer's Stone",
       price: 39.99,
       rating: 4.8,
     },
     {
-      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      image_url: "https://i.ibb.co/980s5Mn/book5.jpg",
       title: "The Hobbit",
       price: 49.99,
       rating: 2.0,
     },
     {
-      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      image_url: "https://i.ibb.co/wND8KSD/book6.gif",
       title: "Pride and Prejudice",
       price: 16.99,
       rating: 4.1,
     },
     {
-      image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
+      image_url: "https://i.ibb.co/s3JDK3j/book7.png",
       title: "The Lord of the Rings",
       price: 32.99,
       rating: 4.6,
@@ -75,17 +75,17 @@ const Cards = () => {
   return (
     <>
       {data.map((items, index) => (
-        <Card key={index} className="py-1 border shadow-md">
+        <Card key={index} className="py-1 border shadow-md relative">
           <CardBody className="overflow-visible py-2 card-inner">
             <Image
               alt="Card background"
-              className="rounded-xl p-10"
+              className="rounded-xl w-full p-5"
               src={items.image_url}
               width={270}
               height={250}
             />
-            <div>
-              <ul className="flex gap-2">
+            <div className="">
+              <ul className="flex gap-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <li className="bg-green-200 p-2  rounded-2xl">
                   <FaEye className="text-2xl text-black"></FaEye>
                 </li>
@@ -100,7 +100,7 @@ const Cards = () => {
           </CardBody>
 
           <div className="border-b-1 pb-2 "></div>
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
+          <CardHeader className="pb-0 pt-2 px-4 flex-col items-center py-5">
             <p className="uppercase font-bold text-center flex text-2xl text-yellow-400">
               {renderStars(items.rating)}
             </p>
