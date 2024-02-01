@@ -1,11 +1,13 @@
-
 import UserTable from "@/components/allUserTable/userTable";
+import UserPage from "@/components/modal/UserPage";
 import React from "react";
 
 const AllUsers = () => {
   return (
-    <div>
-      <UserTable></UserTable>
+    <div className="p-4">
+      <div className="">
+        <UserTable></UserTable>
+      </div>
     </div>
   );
 };

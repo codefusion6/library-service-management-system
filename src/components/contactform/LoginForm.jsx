@@ -5,13 +5,13 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa6";
 import LottieAnimation from "./LottieAnimation";
-import { UserAuth } from "@/app/provider/context/AuthContext";
+import { UserAuth, userState } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
 
 const LoginForm = () => {
 
   const [isVisible, setIsVisible] = React.useState(false);
-  const { googleSignIn } = UserAuth();
+  const { googleSignIn, } = UserAuth();
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 

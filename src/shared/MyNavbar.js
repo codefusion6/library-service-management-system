@@ -40,10 +40,10 @@ const MyNavbar = () => {
   const handleLogout = async () => {
     try {
       await logOut();
-      toast.success('Logout successful');
+      toast.success("Logout successful");
     } catch (error) {
-      console.error('Logout error:', error);
-      toast.error('Logout failed');
+      console.error("Logout error:", error);
+      toast.error("Logout failed");
     }
   };
   return (
@@ -113,7 +113,8 @@ const MyNavbar = () => {
                     <DropdownMenu
                       aria-label="Mobile Menu"
                       className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                      variant="flat">
+                      variant="flat"
+                    >
                       {/* Mobile menu items */}
                       <DropdownItem className="h-full gap-2">
                         <NavbarItem>
@@ -169,7 +170,11 @@ const MyNavbar = () => {
                           <p className="font-semibold">Signed in as</p>
                           <p className="font-semibold">{user?.email}</p>
                         </DropdownItem>
-                        <DropdownItem key="logout" color="danger" onClick={handleLogout}>
+                        <DropdownItem
+                          key="logout"
+                          color="danger"
+                          onClick={handleLogout}
+                        >
                           Log Out
                         </DropdownItem>
                       </DropdownMenu>
