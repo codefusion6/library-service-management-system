@@ -8,6 +8,7 @@ import {
   createUserWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../../firbase/firebase";
+import { createCookie, deleteCookie } from "@/libs/actions/useCookie.action";
 
 const AuthContext = createContext(null);
 export const AuthContextProvider = ({ children }) => {
@@ -31,20 +32,20 @@ export const AuthContextProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
-      // Log photoURL if available
-      if (currentUser && currentUser.photoURL) {
-        console.log('User photoURL:', currentUser.photoURL);
+      if (currentUser) {
+        createCookie()
+      } else {
+        deleteCookie()
       }
     });
     return () => unsubscribe();
-  }, [user]);
+  }, [user, loading]);
   return (
     <AuthContext.Provider value={{ user, googleSignIn, logOut, loading, createUser }}>
       {children}
     </AuthContext.Provider>
   );
 };
-
 export const UserAuth = () => {
   return useContext(AuthContext);
 };

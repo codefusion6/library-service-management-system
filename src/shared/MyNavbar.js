@@ -63,11 +63,15 @@ const MyNavbar = () => {
                   />
                 </Link>
               </NavbarBrand>
+<<<<<<< HEAD
 
+=======
+>>>>>>> afdd6ad131e408ed849897f605afd01cdd32d9d8
               {/* Laptop and tablet navbar */}
               <NavbarContent className="lg:flex gap-4 justify-end">
                 <div className="md:flex hidden gap-4">
                   <NavbarItem>
+<<<<<<< HEAD
                     <Link className="text-white" href="/">
                       Home
                     </Link>
@@ -87,6 +91,24 @@ const MyNavbar = () => {
 
                   <NavbarItem>
                     <Link className="text-white" href="/our-services">
+=======
+                    <Link className="" href="/">
+                      Home
+                    </Link>
+                  </NavbarItem>
+                  <NavbarItem>
+                    <Link className="" href="/about">
+                      About us
+                    </Link>
+                  </NavbarItem>
+                  <NavbarItem>
+                    <Link className="" href="/contact">
+                      Contact us
+                    </Link>
+                  </NavbarItem>
+                  <NavbarItem>
+                    <Link className="" href="/our-services">
+>>>>>>> afdd6ad131e408ed849897f605afd01cdd32d9d8
                       Our Services
                     </Link>
                   </NavbarItem>

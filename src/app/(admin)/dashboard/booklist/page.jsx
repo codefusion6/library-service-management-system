@@ -2,7 +2,11 @@
 import DashBookSlider from "@/components/dashBookSlider/DashBookSlider";
 import BookCard from "./BookCard";
 
+<<<<<<< HEAD
 const BookListPage = async() => {
+=======
+const BookListPage = async () => {
+>>>>>>> afdd6ad131e408ed849897f605afd01cdd32d9d8
   return (
     <section className="container mx-auto">
       <h2 className="text-3xl text-center my-5 font-medium text-green-700">

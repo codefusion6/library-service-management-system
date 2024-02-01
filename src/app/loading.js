@@ -1,9 +1,8 @@
+import BooksAnimation from '@/components/booksAnimation/BooksAnimation'
 import React from 'react'
-
-const Loading = () => {
+function Loading() {
   return (
-    <div>loading...</div>
+    <BooksAnimation></BooksAnimation>
   )
 }
-
 export default Loading
