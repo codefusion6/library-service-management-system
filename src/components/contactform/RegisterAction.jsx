@@ -36,6 +36,7 @@ const RegisterAction = () => {
             if (user.user) {
               toast.success("User created successfully");
               const res = await addUser(formData);
+              console.log(res);
             }
           } catch (error) {
             console.log(error.message);
