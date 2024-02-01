@@ -11,7 +11,7 @@ import toast from "react-hot-toast";
 const LoginForm = () => {
 
   const [isVisible, setIsVisible] = React.useState(false);
-  const { googleSignIn, } = UserAuth();
+  const { googleSignIn, logIn } = UserAuth();
 
   const toggleVisibility = () => setIsVisible(!isVisible);
 
