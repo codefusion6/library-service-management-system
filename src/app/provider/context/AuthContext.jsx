@@ -8,7 +8,7 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-import { auth } from "../../firbase/firebase";
+import { auth } from "@/app/firbase/firebase";
 
 const AuthContext = createContext(null);
 export const AuthContextProvider = ({ children }) => {
