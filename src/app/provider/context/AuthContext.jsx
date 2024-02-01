@@ -6,11 +6,11 @@ import {
   onAuthStateChanged,
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
 } from "firebase/auth";
 import { auth } from "../../firbase/firebase";
 
 const AuthContext = createContext(null);
-
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -23,6 +23,11 @@ export const AuthContextProvider = ({ children }) => {
   const createUser = (email, password,) => {
     setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password,);
+  }
+
+  const logIn = (email, password) => {
+    setLoading(true)
+    return signInWithEmailAndPassword(auth, email, password)
   }
 
   const logOut = () => {
@@ -40,7 +45,7 @@ export const AuthContextProvider = ({ children }) => {
     return () => unsubscribe();
   }, [user]);
   return (
-    <AuthContext.Provider value={{ user, googleSignIn, logOut, loading, createUser }}>
+    <AuthContext.Provider value={{ user, googleSignIn, logOut, logIn, loading, createUser }}>
       {children}
     </AuthContext.Provider>
   );

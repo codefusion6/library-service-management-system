@@ -20,12 +20,12 @@ const renderStars = (rating) => {
 
 const Feature = ({ books }) => {
   return (
-    <section className='purple-dark text-forground'>
+<section className='py-8 '>
       <div className="container mx-auto mt-8">
         <h1 className="text-3xl font-bold text-center mb-8">Featured Books</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
           {books?.map((book, index) => (
-            <div key={index} className="p-4 border border-gray-300 rounded-md">
+            <div key={index} className="p-4 border border-gray-300 rounded-md hover:shadow-lg transition-transform duration-300 transform hover:scale-105 bg-gradient-to-r from-[#68a74b] to-[#dcde4e]">
               <Image
                 src={book.book.image}
                 alt={book.book.name}
@@ -42,7 +42,7 @@ const Feature = ({ books }) => {
                 {renderStars(book.book.starMarking)}
                 <p className="text-sm ml-1">{book.book.starMarking}</p>
               </div>
-              <button className="bg-primaryColor text-white px-4 py-2 rounded-md">Add to Cart</button>
+              <button class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300 transform hover:scale-105">Add to Cart</button>
             </div>
           ))}
         </div>

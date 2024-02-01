@@ -1,5 +1,4 @@
-// app/providers.tsx
-'use client'
+"use client"
 import { NextUIProvider } from '@nextui-org/react'
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query"
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools"
@@ -16,3 +15,5 @@ export function Providers({ children }) {
         </QueryClientProvider>
     )
 }
+
+export default Providers

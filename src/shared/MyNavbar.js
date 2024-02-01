@@ -40,10 +40,10 @@ const MyNavbar = () => {
   const handleLogout = async () => {
     try {
       await logOut();
-      toast.success('Logout successful');
+      toast.success("Logout successful");
     } catch (error) {
-      console.error('Logout error:', error);
-      toast.error('Logout failed');
+      console.error("Logout error:", error);
+      toast.error("Logout failed");
     }
   };
   return (
@@ -97,7 +97,10 @@ const MyNavbar = () => {
                   </NavbarItem>
                 </div>
                 {/* Small device menu icon and items */}
-                <div id="mobile-menu" className="md:hidden items-center gap-4 flex">
+                <div
+                  id="mobile-menu"
+                  className="md:hidden items-center gap-4 flex"
+                >
                   {/* Dropdown menu for small devices */}
                   <Dropdown placement="bottom-end">
                     <DropdownTrigger>
@@ -108,7 +111,8 @@ const MyNavbar = () => {
                     <DropdownMenu
                       aria-label="Mobile Menu"
                       className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                      variant="flat">
+                      variant="flat"
+                    >
                       {/* Mobile menu items */}
                       <DropdownItem className="h-full gap-2">
                         <NavbarItem>
@@ -133,55 +137,59 @@ const MyNavbar = () => {
                         </NavbarItem>
                       </DropdownItem>
                     </DropdownMenu>
-                </Dropdown>
-            </div>
-            {/* User profile, user email, display name, and logout */}
-            <div className="flex items-center gap-4">
-    {user ? (
-        <Dropdown placement="bottom-end">
-            <DropdownTrigger>
-                {user.photoURL ? (
-                    <Image
-                        src={user.photoURL}
-                        alt="User Profile"
-                        size="small"
-                        height={30}
-                        width={30}
-                        className="rounded"
-                    />
-                ) : (
-                    <div className="w-6 h-6">
-                        <CgProfile className="text-4xl" />
-                    </div>
-                )}
-            </DropdownTrigger>
-            <DropdownMenu
-                aria-label="Profile Actions"
-                className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                variant="flat"
-            >
-                <DropdownItem key="profile" className="h-14 gap-2">
-                    <p className="font-semibold">Signed in as</p>
-                    <p className="font-semibold">{user?.email}</p>
-                </DropdownItem>
-                <DropdownItem key="logout" color="danger" onClick={handleLogout}>
-                    Log Out
-                </DropdownItem>
-            </DropdownMenu>
-        </Dropdown>
-    ) : (
-        <button className="py-2 px-3 rounded-3xl text-md bg-green-700 text-white">
-        <Link href="/login">Login</Link>
-        </button>
-    )}
-</div>
-        </NavbarContent>
-    </Navbar>
-</div>
-</div>
-</section>
-</>
-);
+                  </Dropdown>
+                </div>
+                {/* User profile, user email, display name, and logout */}
+                <div className="flex items-center gap-4">
+                  {user ? (
+                    <Dropdown placement="bottom-end">
+                      <DropdownTrigger>
+                        {user.photoURL ? (
+                          <Image
+                            src={user.photoURL}
+                            alt="User Profile"
+                            size="small"
+                            className="rounded-full cursor-pointer"
+                            height={30}
+                            width={30}
+                          />
+                        ) : (
+                          <div className="w-6 h-6">
+                            <CgProfile className="text-4xl" />
+                          </div>
+                        )}
+                      </DropdownTrigger>
+                      <DropdownMenu
+                        aria-label="Profile Actions"
+                        className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
+                        variant="flat"
+                      >
+                        <DropdownItem key="profile" className="h-14 gap-2">
+                          <p className="font-semibold">Signed in as</p>
+                          <p className="font-semibold">{user?.email}</p>
+                        </DropdownItem>
+                        <DropdownItem
+                          key="logout"
+                          color="danger"
+                          onClick={handleLogout}
+                        >
+                          Log Out
+                        </DropdownItem>
+                      </DropdownMenu>
+                    </Dropdown>
+                  ) : (
+                    <button className="py-2 px-3 rounded-3xl text-md bg-green-700 text-white">
+                      <Link href="/login">Login</Link>
+                    </button>
+                  )}
+                </div>
+              </NavbarContent>
+            </Navbar>
+          </div>
+        </div>
+      </section>
+    </>
+  );
 };
 
 export default MyNavbar;

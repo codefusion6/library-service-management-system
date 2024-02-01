@@ -43,6 +43,7 @@ const RegisterAction = () => {
             if (user.user) {
               toast.success("User created successfully");
               const res = await addUser(formData);
+              console.log(res);
             }
           } catch (error) {
             console.log(error.message);
@@ -134,10 +135,10 @@ const RegisterAction = () => {
         </div>
       </form>
 
-      <div class="flex items-center justify-between mt-4">
-        <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+      <div className="flex items-center justify-between mt-4">
+        <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
         <Link
-          class="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
+          className="text-xs text-gray-500 uppercase dark:text-gray-400 hover:underline"
           href="/login"
         >
           have an account?
