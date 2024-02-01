@@ -89,7 +89,7 @@ const LoginForm = () => {
 
                       <Input
                         variant="underlined"
-                        name=""
+                        name="password"
                         placeholder="Enter your password"
                         endContent={
                           <button
