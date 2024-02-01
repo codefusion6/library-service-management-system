@@ -3,6 +3,7 @@ import React from "react";
 import AllBooksSlider from "./AllBooksSlider";
 import { FaSearch } from "react-icons/fa";
 import AllBookCard from "./AllBookCard";
+import BooksSidebar from "./BooksSidebar";
 
 const AllBooks = () => {
   return (
@@ -24,7 +25,8 @@ const AllBooks = () => {
         </div>
         <div className="flex mt-5">
           <div className="w-1/3 mt-2 md:mr-7">
-            <AllBooksSlider></AllBooksSlider>
+            {/* <AllBooksSlider></AllBooksSlider> */}
+            <BooksSidebar></BooksSidebar>
           </div>
           <div className="flex-1 space-y-3">
             <h1 className="text-xl font-semibold">Search Here</h1>

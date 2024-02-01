@@ -2,8 +2,9 @@
 
 import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
-import { FaEye, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaEye, FaRegHeart, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Image from "next/image";
+import { Tooltip, Button } from "@nextui-org/react";
 
 const Cards = () => {
   const data = [
@@ -90,14 +91,20 @@ const Cards = () => {
             <div className="">
               <ul className="flex gap-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <li className="bg-green-200 p-2  rounded-2xl">
-                  <FaEye className="text-2xl text-black"></FaEye>
+                  <Tooltip showArrow={true} content="view book">
+                    <Button>
+                      <FaEye className="text-2xl text-black"></FaEye>
+                    </Button>
+                  </Tooltip>
                 </li>
                 <li className="bg-green-200 p-2  rounded-2xl">
-                  <FaEye className="text-2xl text-black"></FaEye>
+                  <Tooltip showArrow={true} content="add to favorite">
+                    <Button>
+                      <FaRegHeart className="text-2xl text-black"></FaRegHeart>
+                    </Button>
+                  </Tooltip>
                 </li>
-                <li className="bg-green-200 p-2  rounded-2xl">
-                  <FaEye className="text-2xl text-black"></FaEye>
-                </li>
+                
               </ul>
             </div>
           </CardBody>
