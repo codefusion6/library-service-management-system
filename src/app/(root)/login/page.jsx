@@ -7,7 +7,7 @@ const Login = () => {
 
   return (
     <div>
-      <LoginBanner></LoginBanner>
+      {/* <LoginBanner></LoginBanner> */}
       <LoginForm></LoginForm>
     </div>
   );
