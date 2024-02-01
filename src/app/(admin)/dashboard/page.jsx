@@ -1,7 +1,4 @@
-<<<<<<< HEAD
-=======
 'use client'
->>>>>>> afdd6ad131e408ed849897f605afd01cdd32d9d8
 import React from "react";
 import { FaSearch, FaUserFriends } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
@@ -9,11 +6,7 @@ import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { FaBookOpen, FaBookBible } from "react-icons/fa6";
 import Chart from "@/components/dashboardChart/Chart";
 
-<<<<<<< HEAD
-function Dashboard({ children }) {
-=======
 function Dashboard() {
->>>>>>> afdd6ad131e408ed849897f605afd01cdd32d9d8
   return (
     <main className="h-[100vh]">
       <div className="">
@@ -32,19 +25,10 @@ function Dashboard() {
               <div className="flex flex-col">
                 <p className="text-bold">Total User</p>
                 <p className="text-xl font-semibold flex gap-3 ">
-<<<<<<< HEAD
-                  <FaUserFriends className="text-3xl" />
-                  105
-                </p>
-              </div>
-            </CardHeader>
-
-=======
                   <FaUserFriends className="text-3xl" />105
                 </p>
               </div>
             </CardHeader>
->>>>>>> afdd6ad131e408ed849897f605afd01cdd32d9d8
             <CardBody>
               <p>
                 This number is static now in next milestone we will show the
@@ -88,20 +72,10 @@ function Dashboard() {
           </Card>
         </div>
         <div className="w-96 container mx-auto mt-5">
-<<<<<<< HEAD
-            <Chart></Chart>
-        </div>
-
-=======
           <Chart></Chart>
         </div>
->>>>>>> afdd6ad131e408ed849897f605afd01cdd32d9d8
       </div>
     </main>
   );
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> afdd6ad131e408ed849897f605afd01cdd32d9d8
 export default Dashboard;
