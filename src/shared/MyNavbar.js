@@ -87,6 +87,16 @@ const MyNavbar = () => {
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
+                    <Link className="text-white" href="/allBooks">
+                      All Books
+                    </Link>
+                  </NavbarItem>
+                  <NavbarItem>
+                    <Link className="text-white" href="/pricing">
+                      Pricing
+                    </Link>
+                  </NavbarItem>
+                  <NavbarItem>
                     <Link className="text-white" href="/dashboard">
                       Dashboard
                     </Link>
@@ -129,6 +139,16 @@ const MyNavbar = () => {
                         <NavbarItem>
                           <Link className="text-white" href="/contact">
                             Our Services
+                          </Link>
+                        </NavbarItem>
+                        <NavbarItem>
+                          <Link className="text-white" href="/allBooks">
+                            All Books
+                          </Link>
+                        </NavbarItem>
+                        <NavbarItem>
+                          <Link className="text-white" href="/pricing">
+                            Pricing
                           </Link>
                         </NavbarItem>
                       </DropdownItem>
