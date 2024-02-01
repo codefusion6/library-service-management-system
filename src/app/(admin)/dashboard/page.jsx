@@ -6,7 +6,7 @@ import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { FaBookOpen, FaBookBible } from "react-icons/fa6";
 import Chart from "@/components/dashboardChart/Chart";
 
-function Dashboard({ }) {
+function Dashboard() {
   return (
     <main className="h-[100vh]">
       <div className="">
@@ -25,8 +25,7 @@ function Dashboard({ }) {
               <div className="flex flex-col">
                 <p className="text-bold">Total User</p>
                 <p className="text-xl font-semibold flex gap-3 ">
-                  <FaUserFriends className="text-3xl" />
-                  105
+                  <FaUserFriends className="text-3xl" />105
                 </p>
               </div>
             </CardHeader>
@@ -75,10 +74,8 @@ function Dashboard({ }) {
         <div className="w-96 container mx-auto mt-5">
           <Chart></Chart>
         </div>
-
       </div>
     </main>
   );
 }
-
 export default Dashboard;
