@@ -5,7 +5,6 @@ import Image from "next/image";
 import { FaStar } from "react-icons/fa6";
 import { getBook } from "@/libs/actions/book.action";
 import Link from "next/link";
-import pdf from "../../../../../../public/ckeditor4-export-pdf (1).pdf"
 
 const BookDetails = async ({params}) => {
   
