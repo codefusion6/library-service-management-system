@@ -12,10 +12,9 @@ import { connectDB } from "@/libs/database/MongoConnect";
 import BookDeleteBtn from "./bookDeleteBtn";
 
 const BookCard = async ({ id }) => {
-  console.log(id);
   await connectDB();
   //   const res = await getBook("65b8dc882c1a2b234add17f0");
-  console.log(id);
+  // console.log(id);
   const data = await getAllBooks();
   return (
     <>
@@ -41,7 +40,7 @@ const BookCard = async ({ id }) => {
                 <span className="text-white">View</span>
               </Link>
 
-              <Link href="#">
+              <Link href={`/dashboard/booklist/${book._id}`}>
                 <FaEdit className="text-3xl text-white" />
                 <span className="text-white">Edit</span>
               </Link>

@@ -1,6 +1,5 @@
 "use client"
 import { Image } from "@nextui-org/react";
-import PricingSection from "./PricingSection";
 import LibraryServicesSection from "./LibraryServicesSection";
 import LibraryFeatures from "./LibraryFeatures";
 
@@ -38,9 +37,9 @@ const Ourservices = () => {
             <div className="group relative cursor-pointer overflow-hidden duration-300 transform hover:scale-105">
               <div className="group-hover:scale-110">
                 <Image
-                height={300}
-                width={500}
-                style={{opacity:100}}
+                  height={300}
+                  width={500}
+                  style={{ opacity: 100 }}
                   className="w-full h-60 object-cover"
                   src={service.imageSrc}
                   alt="img1"
@@ -54,7 +53,6 @@ const Ourservices = () => {
           </div>
         ))}
       </div>
-      <PricingSection></PricingSection>
       <LibraryFeatures></LibraryFeatures>
     </div>
   );

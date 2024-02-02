@@ -1,3 +1,4 @@
+import PdfViewer from "@/components/fdfViewer/Pdf";
 import Link from "next/link";
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
