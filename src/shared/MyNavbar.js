@@ -91,8 +91,18 @@ const MyNavbar = () => {
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
+<<<<<<< HEAD
                     <Link className="text-white" href="/all-writers">
                       Writers
+=======
+                    <Link className="text-white" href="/allBooks">
+                      All Books
+                    </Link>
+                  </NavbarItem>
+                  <NavbarItem>
+                    <Link className="text-white" href="/pricing">
+                      Pricing
+>>>>>>> 2e784b7ee0d971af331ebb83f3c06a1353c3011c
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
@@ -102,7 +112,10 @@ const MyNavbar = () => {
                   </NavbarItem>
                 </div>
                 {/* Small device menu icon and items */}
-                <div id="mobile-menu" className="md:hidden items-center gap-4 flex">
+                <div
+                  id="mobile-menu"
+                  className="md:hidden items-center gap-4 flex"
+                >
                   {/* Dropdown menu for small devices */}
                   <Dropdown placement="bottom-end">
                     <DropdownTrigger>
@@ -135,6 +148,16 @@ const MyNavbar = () => {
                         <NavbarItem>
                           <Link className="text-white" href="/contact">
                             Our Services
+                          </Link>
+                        </NavbarItem>
+                        <NavbarItem>
+                          <Link className="text-white" href="/allBooks">
+                            All Books
+                          </Link>
+                        </NavbarItem>
+                        <NavbarItem>
+                          <Link className="text-white" href="/pricing">
+                            Pricing
                           </Link>
                         </NavbarItem>
                       </DropdownItem>
