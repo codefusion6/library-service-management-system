@@ -14,23 +14,23 @@ export const addBook = async (formData) => {
   const authorImage = formData.get("authorImage");
   const publisherEmail = formData.get("publisherEmail");
   const category = formData.get("category");
+  console.log(bookCover, bookPdf, authorImage);
   try {
-    // connect db
     await connectDB();
 
     // save files in public folder and recieve url
-    const bookCoverUrl = await fileUpload(bookCover, "bookCover");
-    const bookPdfUrl = await fileUpload(bookPdf, "bookPdf");
-    const authorImageUrl = await fileUpload(authorImage, "authorImage");
+    // const bookCoverUrl = await fileUpload(bookCover, "bookCover");
+    // const bookPdfUrl = await fileUpload(bookPdf, "bookPdf");
+    // const authorImageUrl = await fileUpload(authorImage, "authorImage");
 
     // data to be save in db
     const book = {
       bookName: bookName,
       authorName: authorName,
       bookDescription: bookDescription,
-      bookCover: bookCoverUrl.file_url,
-      bookPdf: bookPdfUrl.file_url,
-      authorImage: authorImageUrl.file_url,
+      bookCover: bookCover,
+      bookPdf: bookPdf,
+      authorImage: authorImage,
       publisherEmail: publisherEmail,
       category: category,
     };
