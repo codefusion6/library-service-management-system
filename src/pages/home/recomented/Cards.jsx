@@ -78,8 +78,8 @@ const Cards = () => {
       {data.map((items, index) => (
         <Card
           key={index}
-          className="py-1 border shadow-md relative transition-transform duration-300 transform hover:scale-95 overflow-hidden group">
-          <CardBody className="overflow-visible py-2 card-inner">
+          className="py-1 border shadow-md relative transition-transform duration-300 transform hover:scale-95 group">
+          <CardBody className="py-2 card-inner overflow-hidden">
             <Image
               alt="Card background"
               className="rounded-xl w-full p-5"
@@ -87,16 +87,16 @@ const Cards = () => {
               width={270}
               height={250}
             />
-            <ul className="opacity-80 flex gap-3 items-center justify-center duration-300 left-0 absolute top-full w-full h-full bg-black bg-opacity-35 group-hover:top-0">
-              <li className="bg-green-200 p-2 rounded-2xl w-20 h-10 flex items-center justify-center">
-                <Tooltip showArrow={true} content="view book">
+            <ul className="opacity-80 flex gap-3 items-center justify-center duration-300 left-0 absolute -bottom-full w-full group-hover:bottom-0 overflow-hidden">
+              <li className="bg-lime-500 p-2 rounded-2xl w-20 h-10 flex items-center justify-center">
+                <Tooltip showArrow={true} content="view book" className="text-white font-bold">
                   <Button>
                     <FaEye className="text-2xl text-black"></FaEye>
                   </Button>
                 </Tooltip>
               </li>
-              <li className="bg-green-200 p-2 rounded-2xl w-20 h-10 flex items-center justify-center">
-                <Tooltip showArrow={true} content="add to favorite">
+              <li className="bg-lime-500 p-2 rounded-2xl w-20 h-10 flex items-center justify-center">
+                <Tooltip showArrow={true} content="add to favorite" className="text-white font-bold">
                   <Button>
                     <FaRegHeart className="text-2xl text-black"></FaRegHeart>
                   </Button>
@@ -107,12 +107,16 @@ const Cards = () => {
 
           <div className="border-b-1 pb-2 "></div>
           <CardHeader className="pb-0 pt-2 px-4 flex-col items-center py-5">
-            <p className="uppercase font-bold text-center flex text-2xl text-yellow-400">
-              {renderStars(items.rating)}
-            </p>
-            <h4 className="font-semibold text-lg">{items.title}</h4>
-            <p className=" text-black text-xl font-bold">$ {items.price}</p>
+            <div>
+              <p className="uppercase font-bold text-center flex text-2xl text-yellow-400">
+                {renderStars(items.rating)}
+              </p>
+              <h4 className="font-semibold text-lg">{items.title}</h4>
+              <p className=" text-black text-xl font-bold">$ {items.price}</p>
+            </div>
+
           </CardHeader>
+
         </Card>
       ))}
     </>
