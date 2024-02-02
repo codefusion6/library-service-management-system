@@ -22,7 +22,7 @@ const BookDetails = async ({params}) => {
       <div className="w-full  flex flex-col md:flex-row md:w-2/3 mx-auto bg-white shadow-lg rounded-lg border hover:border-green-500 hover:border-2">
         <div className="w-full  md:max-w-[300px] p-2">
           <Image
-            src="https://i.ibb.co/7KTnVdz/book1.gif"
+            src={singleBook.bookCover}
             alt="Card Image"
             width={270}
             height={270}
