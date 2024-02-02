@@ -12,14 +12,13 @@ import Chatbot from "@/components/chatbot/chatbot";
 
 const HomePage = () => {
   return (
-    <div className="">
+    <div className="lg:ml-8 lg:mr-8">
       <Banner />
       <RecommendedBooks></RecommendedBooks>
       <Feature books={booksData}></Feature>
       <Slider></Slider>
       <FAQ></FAQ>
       <HomeContact></HomeContact>
-      <Chatbot></Chatbot>
     </div>
   );
 };

@@ -39,7 +39,7 @@ const BookCard = async ({ id }) => {
                 <span className="text-white">View</span>
               </Link>
 
-              <Link href="#">
+              <Link href={`/dashboard/booklist/${book._id}`}>
                 <FaEdit className="text-3xl text-white" />
                 <span className="text-white">Edit</span>
               </Link>
