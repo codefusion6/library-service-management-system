@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import booksData from "../../../public/books.json";
 import Banner from "@/pages/home/Banner";
@@ -8,8 +8,13 @@ import HomeContact from "@/shared/HomeContact";
 import Feature from "@/pages/home/Feature";
 import RecommendedBooks from "@/pages/home/recomented/RecommendedBooks";
 import BookTypes from "@/pages/home/BookTypes/BookTypes";
+import Chatbot from "@/components/chatbot/chatbot";
 
+<<<<<<< HEAD
+// import Contact from "@/components/home/Contact";
+=======
 
+>>>>>>> 2b44c595d567736298f4e5f24f255f1ae3adbc22
 
 const HomePage = () => {
   return (
@@ -21,6 +26,7 @@ const HomePage = () => {
       <BookTypes />
       <FAQ></FAQ>
       <HomeContact></HomeContact>
+      <Chatbot></Chatbot>
     </div>
   );
 };

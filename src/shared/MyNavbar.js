@@ -87,8 +87,18 @@ const MyNavbar = () => {
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
+<<<<<<< HEAD
+                    <Link className="text-white" href="/allBooks">
+                      All Books
+                    </Link>
+                  </NavbarItem>
+                  <NavbarItem>
+                    <Link className="text-white" href="/pricing">
+                      Pricing
+=======
                     <Link className="text-white" href="/all-writers">
                       Writers
+>>>>>>> 2b44c595d567736298f4e5f24f255f1ae3adbc22
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
