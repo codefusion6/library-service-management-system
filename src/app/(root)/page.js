@@ -10,11 +10,6 @@ import RecommendedBooks from "@/pages/home/recomented/RecommendedBooks";
 import BookTypes from "@/pages/home/BookTypes/BookTypes";
 import Chatbot from "@/components/chatbot/chatbot";
 
-<<<<<<< HEAD
-// import Contact from "@/components/home/Contact";
-=======
-
->>>>>>> 2b44c595d567736298f4e5f24f255f1ae3adbc22
 
 const HomePage = () => {
   return (
