@@ -4,58 +4,60 @@ import React from 'react';
 const teamMembers = [
   {
     id: 1,
-    name: 'John Doe',
-    designation: 'CEO',
-    imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
+    name: 'Priyanka Das Dipa',
+    designation: 'Front End Developer',
+    imageUrl: 'https://i.ibb.co/f1R3Wyz/user.jpg',
+    linkedin: 'https://www.linkedin.com/in/priyanka-das-dipa-58327b285/',
+    facebook: 'https://www.facebook.com/priyankadas.dipa.7',
+
+  },
+  {
+    id: 2,
+    name: 'Arina Huque Rafa',
+    designation: 'Front End Developer',
+    imageUrl: 'https://i.ibb.co/f1R3Wyz/user.jpg',
     linkedin: '#',
     facebook: '#',
 
   },
   {
-    id: 2,
-    name: 'Jane Smith',
-    designation: 'CTO',
-    imageUrl: 'https://i.ibb.co/gv2X0vH/user3.jpg',
-    linkedin: '#',
-    facebook: '#',
-  },
-  {
-    id: 3,
-    name: 'Bob Johnson',
-    designation: 'Lead Developer',
-    imageUrl: 'https://i.ibb.co/D5CTNN3/user2.jpg',
-    linkedin: '#',
-    facebook: '#',
+    "id": 3,
+    "name": "Sumon Chandra Paul",
+    "designation": "Full Stack End Developer",
+    "imageUrl": "https://i.ibb.co/gTBx7qs/sumon.png",
+    "linkedin": "https://www.linkedin.com/in/sumonpaul5/",
+    "facebook": "https://www.facebook.com/sumonpaul55"
   },
   {
     id: 4,
-    name: 'Alice Williams',
-    designation: 'Marketing Manager',
-    imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
-    linkedin: '#',
-    facebook: '#',
+    name: 'Probesh Deb Nath ',
+    designation: 'MERN Stack Developer',
+    imageUrl: 'https://i.ibb.co/686tyHs/probesh-deb-nath.jpg',
+    linkedin: 'https://bd.linkedin.com/in/probeshnath',
+    facebook: 'https://www.facebook.com/probeshdebnath20',
   },
   {
     id: 5,
-    name: 'Mark Davis',
-    designation: 'UX/UI Designer',
+    name: 'Sabbir Ahammed',
+    designation: 'Back End Developer',
     imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
     linkedin: '#',
     facebook: '#',
   },
   {
     id: 6,
-    name: 'Emily Taylor',
-    designation: 'Content Writer',
-    imageUrl: 'https://i.ibb.co/VxyDZPj/user2.jpg',
-    linkedin: '#',
-    facebook: '#',
+    name: 'Ranit Sarker',
+    designation: 'Front End Developer',
+    imageUrl: 'https://i.ibb.co/FbN1hfC/ranit.png',
+    linkedin: 'https://www.facebook.com/Ranit.Sarker',
+    facebook: 'https://www.facebook.com/Ranit.Sarker',
+
   },
 ];
 
 const AboutTeam = () => {
   return (
-    <section className="relative py-16 bg-cover bg-center" style={{ backgroundImage: 'url("/images/about/AboutTeam.jpg")' }}>
+    <section className="relative py-16 bg-cover bg-center" style={{ backgroundImage: 'url("/images/about/AboutTeam.jpg")', backgroundAttachment: 'fixed' }}>
       <div className="absolute inset-0 bg-black opacity-40"></div>
       <div className="container mx-auto relative z-10">
         <h2 className="text-3xl font-bold mb-8 text-center text-white">Our Team</h2>

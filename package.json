@@ -40,6 +40,7 @@
     "react-type-animation": "^3.2.0",
     "sharp": "^0.33.2",
     "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.10.4",
     "swiper": "^11.0.5"
   },
   "devDependencies": {
