@@ -10,9 +10,9 @@ import {
   useDisclosure,
   Image,
 } from "@nextui-org/react";
-import { useQuery } from "@tanstack/react-query";
-import { getAllUser } from "@/libs/actions/user.actions";
-import { connectDB } from "@/libs/database/MongoConnect";
+// import { useQuery } from "@tanstack/react-query";
+// import { getAllUser } from "@/libs/actions/user.actions";
+// import { connectDB } from "@/libs/database/MongoConnect";
 
 const UserTable = () => {
 
@@ -28,7 +28,7 @@ const UserTable = () => {
   // })
   // console.log(users);
 
-  
+
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -58,8 +58,8 @@ const UserTable = () => {
       <Fragment>
         <div>
           <div>
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-          <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
+            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+              <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
                 <div className="mt-5 ml-5">
                   <button
                     id="dropdownActionButton"
@@ -187,125 +187,124 @@ const UserTable = () => {
                   </tr>
                 </thead>
                 <tbody>
-                {filteredUsers.map((user, index) => (
-                  <tr key={index}
-                   className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                    {/* ... rest of the rendering logic for each user */}
-                    <th
-                      scope="row"
-                      className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
-                    >
-                      <Image
-                      style={{opacity:100}}
-                        width={100}
-                        className="w-10 h-10 rounded-full"
-                        src="https://i.ibb.co/MDyKKgQ/804953.png"
-                        alt="img"
-                      />
-                      <div className="ps-3">
-                        <div className="text-base font-semibold">
-                          <h2>{user.name}</h2>
+                  {filteredUsers.map((user, index) => (
+                    <tr key={index}
+                      className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                      {/* ... rest of the rendering logic for each user */}
+                      <th
+                        scope="row"
+                        className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
+                      >
+                        <Image
+                          style={{ opacity: 100 }}
+                          width={100}
+                          className="w-10 h-10 rounded-full"
+                          src="https://i.ibb.co/MDyKKgQ/804953.png"
+                          alt="img"
+                        />
+                        <div className="ps-3">
+                          <div className="text-base font-semibold">
+                            <h2>{user.name}</h2>
+                          </div>
+                          <div className="font-normal text-gray-500">
+                            <h2>{user.email}</h2>
+                          </div>
                         </div>
-                        <div className="font-normal text-gray-500">
-                          <h2>{user.email}</h2>
+                      </th>
+                      <td className="px-6 py-4 relative">
+                        <div className="cursor-pointer">
+                          <span className="text-blue-600 dark:text-blue-500 hover:underline">
+                            Admin
+                          </span>
+                          <svg
+                            className="w-4 h-4 inline-block ml-1"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
                         </div>
-                      </div>
-                    </th>
-                    <td className="px-6 py-4 relative">
-                      <div className="cursor-pointer">
-                        <span className="text-blue-600 dark:text-blue-500 hover:underline">
-                          Admin
-                        </span>
-                        <svg
-                          className="w-4 h-4 inline-block ml-1"
-                          aria-hidden="true"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M19 9l-7 7-7-7"
-                          />
-                        </svg>
-                      </div>
-                      {/* Dropdown content */}
-                      <div className="absolute hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
-                        <ul className="py-1 text-sm text-gray-700 dark:text-gray-200">
-                          <li>
-                            <a
-                              href="#"
-                              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                            >
-                              Admin
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                            >
-                              Moderator
-                            </a>
-                          </li>
-                          <li>
-                            <a
-                              href="#"
-                              className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
-                            >
-                              User
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <div className="flex items-center">
-                        <div className="h-2.5 w-2.5 rounded-full "></div>
-                        Online
-                      </div>
-                    </td>
-                    <td className="px-6 py-4">
-                      <> 
-                        <Button onPress={onOpen} className="text-blue-700 font-serif">Edit</Button>
-                        <Modal isOpen={isOpen} onOpenChange={onOpenChange} className="bg-green-200 border h-52" >
-                          <ModalContent>
-                            {(onClose) => (
-                              <>
-                                <ModalHeader className="flex flex-col gap-1">
-                                  Modal Title
-                                </ModalHeader>
-                                <ModalBody>
-                                  <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipiscing elit. Nullam pulvinar risus non
-                                    risus hendrerit venenatis. Pellentesque sit
-                                    amet hendrerit risus, sed porttitor quam.
-                                  </p>
-                                  
-                                </ModalBody>
-                                <ModalFooter>
-                                  <Button className="bg-green-700 text-xl font-serif  rounded-md"
-                                    color="danger"
-                                    variant="light"
-                                    onPress={onClose}
-                                  >
-                                    Close
-                                  </Button>
-                                  
-                                </ModalFooter>
-                              </>
-                            )}
-                          </ModalContent>
-                        </Modal>
-                      </>
-                    </td>
-                  </tr>
-                
-                   ))}
+                        {/* Dropdown content */}
+                        <div className="absolute hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+                          <ul className="py-1 text-sm text-gray-700 dark:text-gray-200">
+                            <li>
+                              <a
+                                href="#"
+                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                              >
+                                Admin
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                              >
+                                Moderator
+                              </a>
+                            </li>
+                            <li>
+                              <a
+                                href="#"
+                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                              >
+                                User
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex items-center">
+                          <div className="h-2.5 w-2.5 rounded-full "></div>
+                          Online
+                        </div>
+                      </td>
+                      <td className="px-6 py-4">
+                        <>
+                          <Button onPress={onOpen} className="text-blue-700 font-serif">Edit</Button>
+                          <Modal isOpen={isOpen} onOpenChange={onOpenChange} className="bg-green-200 border h-52" >
+                            <ModalContent>
+                              {(onClose) => (
+                                <>
+                                  <ModalHeader className="flex flex-col gap-1">
+                                    Modal Title
+                                  </ModalHeader>
+                                  <ModalBody>
+                                    <p>
+                                      Lorem ipsum dolor sit amet, consectetur
+                                      adipiscing elit. Nullam pulvinar risus non
+                                      risus hendrerit venenatis. Pellentesque sit
+                                      amet hendrerit risus, sed porttitor quam.
+                                    </p>
+
+                                  </ModalBody>
+                                  <ModalFooter>
+                                    <Button className="bg-green-700 text-xl font-serif  rounded-md"
+                                      color="danger"
+                                      variant="light"
+                                      onPress={onClose}
+                                    >
+                                      Close
+                                    </Button>
+
+                                  </ModalFooter>
+                                </>
+                              )}
+                            </ModalContent>
+                          </Modal>
+                        </>
+                      </td>
+                    </tr>
+                  ))}
                 </tbody>
               </table>
             </div>
