@@ -3,8 +3,6 @@ import { addBook, } from '@/libs/actions/book.action';
 import toast from 'react-hot-toast';
 import { CldUploadWidget } from 'next-cloudinary';
 import { useState } from 'react';
-import Image from 'next/image';
-// import { cloudinary } from '@/libs/actions/cloudConfiguration.action';
 
 const AddBookForm = () => {
     const [resource, setResource] = useState(null);
