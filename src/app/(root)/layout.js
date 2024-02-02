@@ -13,15 +13,15 @@ export const metadata = {
 
 const Layout = ({ children }) => {
   return (
- <div >
-     <AuthContextProvider>
-      <MyNavbar />
-      {children}
-      <Toaster position="top-right" />
-      <Chatbot></Chatbot>
-      <Footer />
-    </AuthContextProvider>
- </div>
+    <div >
+      <AuthContextProvider>
+        <MyNavbar />
+        {children}
+        <Toaster position="top-right" />
+        <Chatbot></Chatbot>
+        <Footer />
+      </AuthContextProvider>
+    </div>
   );
 };
 

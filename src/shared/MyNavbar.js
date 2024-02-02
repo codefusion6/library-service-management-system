@@ -63,34 +63,31 @@ const MyNavbar = () => {
                   />
                 </Link>
               </NavbarBrand>
-
               {/* Laptop and tablet navbar */}
               <NavbarContent className="lg:flex gap-4 justify-end">
-                <div className="md:flex hidden gap-4">
+                <div className="lg:flex hidden gap-4">
                   <NavbarItem>
-                    <Link className="text-white" href="/">
+                    <Link className="" href="/">
                       Home
                     </Link>
                   </NavbarItem>
-
                   <NavbarItem>
-                    <Link className="text-white" href="/about">
+                    <Link className="" href="/about">
                       About us
                     </Link>
                   </NavbarItem>
-
                   <NavbarItem>
-                    <Link className="text-white" href="/contact">
+                    <Link className="" href="/contact">
                       Contact us
                     </Link>
                   </NavbarItem>
-
                   <NavbarItem>
-                    <Link className="text-white" href="/our-services">
+                    <Link className="" href="/our-services">
                       Our Services
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
+<<<<<<< HEAD
                     <Link className="text-white" href="/allBooks">
                       All Books
                     </Link>
@@ -98,6 +95,10 @@ const MyNavbar = () => {
                   <NavbarItem>
                     <Link className="text-white" href="/pricing">
                       Pricing
+=======
+                    <Link className="text-white" href="/all-writers">
+                      Writers
+>>>>>>> 2b44c595d567736298f4e5f24f255f1ae3adbc22
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
@@ -109,8 +110,7 @@ const MyNavbar = () => {
                 {/* Small device menu icon and items */}
                 <div
                   id="mobile-menu"
-                  className="md:hidden items-center gap-4 flex"
-                >
+                  className="lg:hidden items-center gap-4 flex">
                   {/* Dropdown menu for small devices */}
                   <Dropdown placement="bottom-end">
                     <DropdownTrigger>
@@ -181,16 +181,21 @@ const MyNavbar = () => {
                       </DropdownTrigger>
                       <DropdownMenu
                         aria-label="Profile Actions"
-                        className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                        variant="flat"
-                      >
-                        <DropdownItem key="profile" className="h-14 gap-2">
+                        className="bg-gradient-to-tr py-5 from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
+                        variant="flat">
+                        <DropdownItem key="profile" className="h-14 gap-2 pb-3">
                           <p className="font-semibold">Signed in as</p>
                           <p className="font-semibold">{user?.email}</p>
+                        </DropdownItem>
+                        <DropdownItem>
+                          <Link className="font-bold py-2 w-full border-t pt-3 hover:text-primary duration-200" href="/dashboard">
+                            Dashboard
+                          </Link>
                         </DropdownItem>
                         <DropdownItem
                           key="logout"
                           color="danger"
+                          className="hover:text-primary duration-200 font-bold"
                           onClick={handleLogout}
                         >
                           Log Out

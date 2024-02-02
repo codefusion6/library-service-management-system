@@ -27,6 +27,7 @@
     "mongoose": "^8.0.4",
     "next": "14.0.4",
     "next-cloudinary": "^5.20.0",
+    "next-images": "^1.8.5",
     "next-themes": "^0.2.1",
     "pspdfkit": "^2024.1.1",
     "react": "^18",
