@@ -18,6 +18,7 @@ const page = async ({ params }) => {
                                 alt="Card Image"
                                 width={270}
                                 height={270}
+                                style={{ opacity: "1" }}
                                 className="w-full h-full object-cover object-center"
                             />
                         </div>
