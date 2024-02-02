@@ -3,7 +3,8 @@ import MyNavbar from "@/shared/MyNavbar";
 import Footer from "@/shared/Footer";
 import "./../globals.css";
 import { Toaster } from "react-hot-toast";
-import Chatbot from "@/components/chatbot/Chatbot";
+import Chatbot from "@/components/chatbot/chatbot";
+
 
 export const metadata = {
   title: "BookFlow",
