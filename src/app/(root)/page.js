@@ -18,7 +18,6 @@ const HomePage = () => {
       <FAQ></FAQ>
       <HomeContact></HomeContact>
       <Chatbot></Chatbot>
-
     </div>
   );
 };

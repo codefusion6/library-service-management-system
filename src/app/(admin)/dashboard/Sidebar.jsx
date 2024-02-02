@@ -9,10 +9,9 @@ import SidebarItems from "./SidebarItems";
 import Link from "next/link"
 import { UserAuth } from "@/app/provider/context/AuthContext";
 
-
 const Sidebar = ({ }) => {
   const [expanded, setExpanded] = useState(true)
-  const { user, loading } = UserAuth();
+  const { user } = UserAuth();
   // console.log(user)
 
   return (
@@ -38,7 +37,6 @@ const Sidebar = ({ }) => {
               className="rounded-md" />
             <div className={`flex justify-between items-center text-black px-3 bg-red-50 w-full ml-3 rounded-md ${expanded ? "block" : "hidden"}`}>
               <div className="leading-4">
-
                 <div className="">
                   <h2 className="font-semibold pb-1">{user?.displayName}</h2>
                   <span className="text-sm">{user?.email}</span>

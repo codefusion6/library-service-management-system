@@ -3,13 +3,14 @@ import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa6";
 import { getBook } from "@/libs/actions/book.action";
+import Pdf from "@/components/fdfViewer/Pdf";
+
 
 const BookDetails = async ({ params }) => {
-
-  console.log(params.id);
+  // console.log(params.id);
 
   const singleBook = await getBook(params.id);
-  console.log(singleBook);
+  // console.log(singleBook);
 
   return (
     <div className="container mx-auto">
@@ -35,7 +36,7 @@ const BookDetails = async ({ params }) => {
           </p>
 
           <p className="text-yellow-500 flex">
-            <FaStar></FaStar>
+            <FaStar />
             <FaStar />
             <FaStar />
             <FaStar />
@@ -49,9 +50,17 @@ const BookDetails = async ({ params }) => {
             >
               Buy
             </Button>
+            <Button
+              variant="ghost"
+              className="hover:bg-gradient-to-r from-yellow-200 to-green-600  hover:text-white text-black font-bold py-2 px-4 rounded"
+              size="lg"
+            >
+              View Pdf
+            </Button>
           </div>
         </div>
       </div>
+
     </div>
   );
 };
