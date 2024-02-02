@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React from "react";
 import booksData from "../../../public/books.json";
 import Banner from "@/pages/home/Banner";
@@ -11,7 +11,6 @@ import BookTypes from "@/pages/home/BookTypes/BookTypes";
 import Chatbot from "@/components/chatbot/chatbot";
 
 
-
 const HomePage = () => {
   return (
     <div className="lg:ml-8 lg:mr-8">
@@ -22,7 +21,6 @@ const HomePage = () => {
       <BookTypes />
       <FAQ></FAQ>
       <HomeContact></HomeContact>
-
       <Chatbot></Chatbot>
     </div>
   );
