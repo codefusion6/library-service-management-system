@@ -1,5 +1,4 @@
 import { AuthContextProvider } from "../provider/context/AuthContext";
-import { Providers } from "../provider/Providers";
 import MyNavbar from "@/shared/MyNavbar";
 import Footer from "@/shared/Footer";
 import "./../globals.css";
