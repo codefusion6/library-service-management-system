@@ -36,13 +36,12 @@ export const addBook = async (formData) => {
       publisherEmail: publisherEmail,
       category: category,
     };
-
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
 
     return { success: true, data: JSON.parse(JSON.stringify(result)) };
   } catch (error) {
-    return { error: "Fill input properly or send the required data", errorDetails: JSON.parse(JSON.stringify(error))};
+    return { error: "Fill input properly or send the required data", errorDetails: JSON.parse(JSON.stringify(error)) };
   }
 };
 

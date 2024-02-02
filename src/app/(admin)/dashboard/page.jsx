@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import { FaSearch, FaUserFriends } from "react-icons/fa";
 import { IoIosNotifications } from "react-icons/io";
@@ -5,7 +6,7 @@ import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { FaBookOpen, FaBookBible } from "react-icons/fa6";
 import Chart from "@/components/dashboardChart/Chart";
 
-function Dashboard({ children }) {
+function Dashboard() {
   return (
     <main className="h-[100vh]">
       <div className="">
@@ -24,12 +25,10 @@ function Dashboard({ children }) {
               <div className="flex flex-col">
                 <p className="text-bold">Total User</p>
                 <p className="text-xl font-semibold flex gap-3 ">
-                  <FaUserFriends className="text-3xl" />
-                  105
+                  <FaUserFriends className="text-3xl" />105
                 </p>
               </div>
             </CardHeader>
-
             <CardBody>
               <p>
                 This number is static now in next milestone we will show the
@@ -73,12 +72,10 @@ function Dashboard({ children }) {
           </Card>
         </div>
         <div className="w-96 container mx-auto mt-5">
-            <Chart></Chart>
+          <Chart></Chart>
         </div>
-
       </div>
     </main>
   );
 }
-
 export default Dashboard;

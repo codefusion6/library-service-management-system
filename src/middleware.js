@@ -1,20 +1,24 @@
-"use client";
-import { NextResponse } from "next/server";
+import { NextResponse } from 'next/server'
+import { cookies } from 'next/headers'
 
-export async function middleware(request) {
-  const { pathname, searchParams } = request.nextUrl;
-  // if () {
-  //   return NextResponse.redirect(new URL("/login", request.url));
-  // }
-  console.log({
-    pathname,
-    sort: searchParams.get("sort"),
-    text: "from middleware",
-  });
-
-  return NextResponse.next();
+export function middleware(request) {
+  const cookieStore = cookies();
+  const user = cookieStore.get('user')
+  if (!user) {
+    return NextResponse.redirect(new URL('/login', request.url))
+  }
+}
+// See "Matching Paths" below to learn more
+export const config = {
+  matcher: ['/dashboard'],
 }
 
-export const config = {
-  matcher: "/dashboard",
-};
+
+
+
+
+
+
+
+
+
