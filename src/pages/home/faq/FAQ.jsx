@@ -18,7 +18,7 @@ const FAQ = () => {
     "  Absolutely! You can add your favorite books to the bookmark page, allowing you to easily access and manage your preferred reads.";
 
   return (
-    <section className="pb-10 container px-1 md:px-0">
+    <section className="pb-10 container mx-auto px-1 md:px-0">
       <h1 className="text-xl md:text-3xl font-bold text-center mb-10">
 
         <TypeAnimation

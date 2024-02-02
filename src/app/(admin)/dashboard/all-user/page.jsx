@@ -1,5 +1,4 @@
 import UserTable from "@/components/allUserTable/userTable";
-import UserPage from "@/components/modal/UserPage";
 import React from "react";
 
 const AllUsers = () => {

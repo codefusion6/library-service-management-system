@@ -1,6 +1,5 @@
 "use client"
 import { Image } from "@nextui-org/react";
-import PricingSection from "./PricingSection";
 import LibraryServicesSection from "./LibraryServicesSection";
 import LibraryFeatures from "./LibraryFeatures";
 
@@ -54,7 +53,6 @@ const Ourservices = () => {
           </div>
         ))}
       </div>
-      <PricingSection></PricingSection>
       <LibraryFeatures></LibraryFeatures>
     </div>
   );

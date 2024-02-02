@@ -122,8 +122,7 @@ const SwiperSlider = () => {
                   ( 7 May 1861 - 7 August 1941)
                 </small>
                 <p className="font-base text-sm">
-                  Rabindranath Tagore was a polymath from India, a poet,
-                  philosopher, musician, writer, and artist.
+                  Rabindranath Tagore was a polymath from India, musician, writer, and artist.
                 </p>
               </CardHeader>
               <CardBody className="overflow-visible py-2">
@@ -170,8 +169,8 @@ const SwiperSlider = () => {
                 </h1>
                 <small className="text-default-500">(24 September 1943)</small>
                 <p className="font-base text-sm">
-                  A prominent Bangladeshi poet and essayist known for his
-                  contributions to Bengali literature.
+                  A prominent Bangladeshi poet  known for his
+                  contributions to  literature.
                 </p>
               </CardHeader>
               <CardBody className="overflow-visible py-2">
