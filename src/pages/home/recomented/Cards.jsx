@@ -78,8 +78,7 @@ const Cards = () => {
       {data.map((items, index) => (
         <Card
           key={index}
-          className="py-1 border shadow-md relative transition-transform duration-300 transform hover:scale-90"
-        >
+          className="py-1 border shadow-md relative transition-transform duration-300 transform hover:scale-95 overflow-hidden group">
           <CardBody className="overflow-visible py-2 card-inner">
             <Image
               alt="Card background"
@@ -88,25 +87,22 @@ const Cards = () => {
               width={270}
               height={250}
             />
-            <div className="">
-              <ul className="flex gap-2 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <li className="bg-green-200 p-2  rounded-2xl">
-                  <Tooltip showArrow={true} content="view book">
-                    <Button>
-                      <FaEye className="text-2xl text-black"></FaEye>
-                    </Button>
-                  </Tooltip>
-                </li>
-                <li className="bg-green-200 p-2  rounded-2xl">
-                  <Tooltip showArrow={true} content="add to favorite">
-                    <Button>
-                      <FaRegHeart className="text-2xl text-black"></FaRegHeart>
-                    </Button>
-                  </Tooltip>
-                </li>
-                
-              </ul>
-            </div>
+            <ul className="opacity-80 flex gap-3 items-center justify-center duration-300 left-0 absolute top-full w-full h-full bg-black bg-opacity-35 group-hover:top-0">
+              <li className="bg-green-200 p-2 rounded-2xl w-20 h-10 flex items-center justify-center">
+                <Tooltip showArrow={true} content="view book">
+                  <Button>
+                    <FaEye className="text-2xl text-black"></FaEye>
+                  </Button>
+                </Tooltip>
+              </li>
+              <li className="bg-green-200 p-2 rounded-2xl w-20 h-10 flex items-center justify-center">
+                <Tooltip showArrow={true} content="add to favorite">
+                  <Button>
+                    <FaRegHeart className="text-2xl text-black"></FaRegHeart>
+                  </Button>
+                </Tooltip>
+              </li>
+            </ul>
           </CardBody>
 
           <div className="border-b-1 pb-2 "></div>

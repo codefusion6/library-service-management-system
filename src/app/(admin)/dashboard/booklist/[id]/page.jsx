@@ -50,15 +50,18 @@ const BookDetails = async ({ params }) => {
             >
               Buy
             </Button>
-            <Button
-              variant="ghost"
-              className="hover:bg-gradient-to-r from-yellow-200 to-green-600  hover:text-white text-black font-bold py-2 px-4 rounded"
-              size="lg"
-            >
-              View Pdf
-            </Button>
-            <Button>
-              <Link href="/public/ckeditor4-export-pdf (1).pdf" download={singleBook.bookPdf} to="pdf" target="_blank"> Download</Link>
+            <Link href={`/dashboard/booklist/${singleBook._id}/view-pdf`} target="_blank">
+              <Button
+                variant="ghost"
+                className="hover:bg-gradient-to-r from-yellow-200 to-green-600  hover:text-white text-black font-bold py-2 px-4 rounded"
+                size="lg"
+              >
+                View Pdf
+              </Button>
+            </Link>
+            <Button variant="ghost" className="hover:bg-gradient-to-r from-yellow-200 to-green-600  hover:text-white text-black font-bold py-2 px-4 rounded"
+              size="lg">
+              <a href="/sumon.pdf" download="/sumon.pdf" to="pdf" target="_blank"> Download</a>
             </Button>
           </div>
         </div>
