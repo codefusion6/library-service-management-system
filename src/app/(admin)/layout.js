@@ -1,6 +1,6 @@
 
-import Sidebar from "./dashboard/Sidebar";
 import "./../globals.css"
+import Sidebar from "./dashboard/Sidebar"
 
 function dashboardLayout({ children }) {
   return (

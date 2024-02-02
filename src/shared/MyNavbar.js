@@ -65,7 +65,7 @@ const MyNavbar = () => {
               </NavbarBrand>
               {/* Laptop and tablet navbar */}
               <NavbarContent className="lg:flex gap-4 justify-end">
-                <div className="md:flex hidden gap-4">
+                <div className="lg:flex hidden gap-4">
                   <NavbarItem>
                     <Link className="" href="/">
                       Home
@@ -96,16 +96,11 @@ const MyNavbar = () => {
                       Pricing
                     </Link>
                   </NavbarItem>
-                  <NavbarItem>
-                    <Link className="text-white" href="/dashboard">
-                      Dashboard
-                    </Link>
-                  </NavbarItem>
                 </div>
                 {/* Small device menu icon and items */}
                 <div
                   id="mobile-menu"
-                  className="md:hidden items-center gap-4 flex"
+                  className="lg:hidden items-center gap-4 flex"
                 >
                   {/* Dropdown menu for small devices */}
                   <Dropdown placement="bottom-end">
@@ -177,16 +172,21 @@ const MyNavbar = () => {
                       </DropdownTrigger>
                       <DropdownMenu
                         aria-label="Profile Actions"
-                        className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                        variant="flat"
-                      >
-                        <DropdownItem key="profile" className="h-14 gap-2">
+                        className="bg-gradient-to-tr py-5 from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
+                        variant="flat">
+                        <DropdownItem key="profile" className="h-14 gap-2 pb-3">
                           <p className="font-semibold">Signed in as</p>
                           <p className="font-semibold">{user?.email}</p>
+                        </DropdownItem>
+                        <DropdownItem>
+                          <Link className="font-bold py-2 w-full border-t pt-3 hover:text-primary duration-200" href="/dashboard">
+                            Dashboard
+                          </Link>
                         </DropdownItem>
                         <DropdownItem
                           key="logout"
                           color="danger"
+                          className="hover:text-primary duration-200 font-bold"
                           onClick={handleLogout}
                         >
                           Log Out

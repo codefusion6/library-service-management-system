@@ -9,7 +9,6 @@ import Feature from "@/pages/home/Feature";
 import Chatbot from "@/components/chatbot/chatbot";
 
 
-
 const HomePage = () => {
   return (
     <div className="">
@@ -19,6 +18,7 @@ const HomePage = () => {
       <FAQ></FAQ>
       <HomeContact></HomeContact>
       <Chatbot></Chatbot>
+
     </div>
   );
 };

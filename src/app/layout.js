@@ -3,6 +3,8 @@ import "./globals.css";
 import { AuthContextProvider } from "./provider/context/AuthContext";
 import { Toaster } from "react-hot-toast";
 
+
+
 const merriweather = Merriweather({
   subsets: ["latin"],
   weight: ["400", "300", "700", "900"],
@@ -18,10 +20,12 @@ const RootLayout = ({ children }) => {
         <body className={`${merriweather.className}`}>
           {children}
           <Toaster position="top-right" />
+
         </body>
       </AuthContextProvider>
     </html>
   );
 };
+
 
 export default RootLayout;

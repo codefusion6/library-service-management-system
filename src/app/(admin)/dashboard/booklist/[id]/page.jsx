@@ -1,15 +1,11 @@
 import React from "react";
-import { Button} from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import { FaStar } from "react-icons/fa6";
 import { getBook } from "@/libs/actions/book.action";
 
-<<<<<<< HEAD
-const BookDetails = ({ params }) => {
-=======
-const BookDetails = async ({params}) => {
-  
->>>>>>> fcfa1fa8971035618e015f8629373706afb068dc
+const BookDetails = async ({ params }) => {
+
   console.log(params.id);
 
   const singleBook = await getBook(params.id);

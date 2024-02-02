@@ -10,10 +10,10 @@ import Link from "next/link";
 import { getAllBooks, getBook } from "@/libs/actions/book.action";
 import { connectDB } from "@/libs/database/MongoConnect";
 
-const BookCard = async ({id}) => {
+const BookCard = async ({ id }) => {
   await connectDB();
-//   const res = await getBook("65b8dc882c1a2b234add17f0");
-  console.log(id);
+  //   const res = await getBook("65b8dc882c1a2b234add17f0");
+  // console.log(id);
   const data = await getAllBooks();
   return (
     <>
