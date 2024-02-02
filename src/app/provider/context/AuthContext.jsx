@@ -8,12 +8,8 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from "firebase/auth";
-<<<<<<< HEAD
 import { auth } from "../../firbase/firebase";
 import { createCookie, deleteCookie } from "@/libs/actions/useCookie.action";
-=======
-import { auth } from "@/app/firbase/firebase";
->>>>>>> 7bd4e1b0f6c16a79ce5aeb9ee87d9158437e60ff
 
 const AuthContext = createContext(null);
 export const AuthContextProvider = ({ children }) => {

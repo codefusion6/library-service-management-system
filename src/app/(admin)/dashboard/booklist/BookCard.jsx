@@ -12,16 +12,9 @@ import { connectDB } from "@/libs/database/MongoConnect";
 import BookDeleteBtn from "./bookDeleteBtn";
 
 const BookCard = async ({ id }) => {
-<<<<<<< HEAD
   await connectDB();
   //   const res = await getBook("65b8dc882c1a2b234add17f0");
   // console.log(id);
-=======
-  console.log(id);
-  await connectDB();
-  //   const res = await getBook("65b8dc882c1a2b234add17f0");
-  console.log(id);
->>>>>>> 7bd4e1b0f6c16a79ce5aeb9ee87d9158437e60ff
   const data = await getAllBooks();
   return (
     <>
