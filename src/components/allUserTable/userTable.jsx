@@ -10,8 +10,25 @@ import {
   useDisclosure,
   Image,
 } from "@nextui-org/react";
+import { useQuery } from "@tanstack/react-query";
+import { getAllUser } from "@/libs/actions/user.actions";
+import { connectDB } from "@/libs/database/MongoConnect";
 
 const UserTable = () => {
+
+  // const {data:users}= useQuery({
+  //   queryKey : ["users"],
+  //   queryFn : async()=>{
+  //     await connectDB()
+  //     const res = await getAllUser()
+  //     return res.data
+
+  //   }
+
+  // })
+  // console.log(users);
+
+  
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -29,7 +46,6 @@ const UserTable = () => {
       role: "Admin",
       status: "Online",
     },
-    // Add more users as needed
   ];
 
   // Filter users based on search query
@@ -42,8 +58,8 @@ const UserTable = () => {
       <Fragment>
         <div>
           <div>
-            <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-              <div className="flex items-center  justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
+          <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+          <div className="flex items-center justify-between flex-column flex-wrap md:flex-row space-y-4 md:space-y-0 pb-4 bg-white dark:bg-gray-900">
                 <div className="mt-5 ml-5">
                   <button
                     id="dropdownActionButton"
