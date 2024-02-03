@@ -5,11 +5,7 @@ import BooksList from "@/components/bookList/BooksList";
 
 
 const BookDetails = async ({ params }) => {
-  // console.log(params.id);
-
-  const singleBook = await getBook(params.id);
-  // console.log(singleBook);
-
+  const singleBook = await getBook(params?.id);
   return (
     <div>
       <BooksList singleBookData={singleBook}></BooksList>

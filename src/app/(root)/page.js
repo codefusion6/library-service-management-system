@@ -8,20 +8,17 @@ import HomeContact from "@/shared/HomeContact";
 import Feature from "@/pages/home/Feature";
 import RecommendedBooks from "@/pages/home/recomented/RecommendedBooks";
 import BookTypes from "@/pages/home/BookTypes/BookTypes";
-import Chatbot from "@/components/chatbot/chatbot";
-
 
 const HomePage = () => {
   return (
-    <div className="lg:ml-8 lg:mr-8">
+    <div className="">
       <Banner />
       <RecommendedBooks></RecommendedBooks>
+      <BookTypes />
       <Feature books={booksData}></Feature>
       <Slider></Slider>
-      <BookTypes />
       <FAQ></FAQ>
       <HomeContact></HomeContact>
-      <Chatbot></Chatbot>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 
 import DashBookSlider from "@/components/dashBookSlider/DashBookSlider";
 import BookCard from "./BookCard";
-
+export const dynamic = "force-dynamic";
 const BookListPage = async () => {
   return (
     <section className="container mx-auto">
