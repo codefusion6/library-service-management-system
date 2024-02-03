@@ -95,13 +95,10 @@ const MyNavbar = () => {
                     <Link className="text-white" href="/pricing">
                       Pricing
                     </Link>
-                    <Link className="text-white" href="/all-writers">
-                      Writers
-                    </Link>
                   </NavbarItem>
                   <NavbarItem>
-                    <Link className="text-white" href="/dashboard">
-                      Dashboard
+                    <Link className="text-white" href="/all-writers">
+                      Writers
                     </Link>
                   </NavbarItem>
                 </div>

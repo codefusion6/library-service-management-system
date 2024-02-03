@@ -44,7 +44,7 @@ const SwiperSlider = () => {
                 <small className="text-default-500">
                   (25 May 1899 - 29 August 1976)
                 </small>
-                <p className="font-base text-sm">
+                <p className="font-base text-sm line-clamp-2">
                   Often referred to as the &apos;Rebel Poet&apos; and known for
                   his revolutionary poetry.
                 </p>
@@ -69,7 +69,7 @@ const SwiperSlider = () => {
                 <small className="text-default-500">
                   ( 13 November 1948 - 19 July 2012)
                 </small>
-                <p className="font-base text-sm">
+                <p className="font-base text-sm line-clamp-2">
                   A highly popular and influential author, playwright, and
                   filmmaker in Bangladesh.
                 </p>
@@ -90,7 +90,7 @@ const SwiperSlider = () => {
           <div>
             <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
-                <h1 className="text-lg uppercase font-bold">
+                <h1 className="text-lg uppercase font-bold line-clamp-1">
                   Muhammad Zafar Iqbal{" "}
                 </h1>
                 <small className="text-default-500">( 23 December 1952)</small>
@@ -115,13 +115,13 @@ const SwiperSlider = () => {
           <div>
             <Card className="py-2 rounded-lg card border shadow-md ">
               <CardHeader className="pb-0 pt-2 px-4 space-y-2 flex-col items-start">
-                <h1 className="text-lg uppercase font-bold">
+                <h1 className="text-lg uppercase font-bold line-clamp-1">
                   Rabindranath Tagore
                 </h1>
                 <small className="text-default-500">
                   ( 7 May 1861 - 7 August 1941)
                 </small>
-                <p className="font-base text-sm">
+                <p className="font-base text-sm line-clamp-2">
                   Rabindranath Tagore was a polymath from India, musician, writer, and artist.
                 </p>
               </CardHeader>
@@ -168,7 +168,7 @@ const SwiperSlider = () => {
                   Abdul Mannan Syed
                 </h1>
                 <small className="text-default-500">(24 September 1943)</small>
-                <p className="font-base text-sm">
+                <p className="font-base text-sm line-clamp-2">
                   A prominent Bangladeshi poet  known for his
                   contributions to  literature.
                 </p>
