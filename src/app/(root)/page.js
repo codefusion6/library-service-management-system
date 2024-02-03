@@ -11,12 +11,12 @@ import BookTypes from "@/pages/home/BookTypes/BookTypes";
 
 const HomePage = () => {
   return (
-    <div className="lg:ml-8 lg:mr-8">
+    <div className="">
       <Banner />
+      <BookTypes />
       <RecommendedBooks></RecommendedBooks>
       <Feature books={booksData}></Feature>
       <Slider></Slider>
-      <BookTypes />
       <FAQ></FAQ>
       <HomeContact></HomeContact>
     </div>
