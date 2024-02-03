@@ -2,8 +2,7 @@ import { Merriweather } from "next/font/google";
 import "./globals.css";
 import { AuthContextProvider } from "./provider/context/AuthContext";
 import { Toaster } from "react-hot-toast";
-
-
+import Chatbot from "@/components/chatbot/chatbot";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -20,12 +19,11 @@ const RootLayout = ({ children }) => {
         <body className={`${merriweather.className}`}>
           {children}
           <Toaster position="top-right" />
-
+          <Chatbot />
         </body>
       </AuthContextProvider>
     </html>
   );
 };
-
 
 export default RootLayout;
