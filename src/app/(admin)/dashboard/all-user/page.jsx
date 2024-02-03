@@ -1,11 +1,12 @@
-
 import UserTable from "@/components/allUserTable/userTable";
 import React from "react";
 
 const AllUsers = () => {
   return (
-    <div>
-      <UserTable></UserTable>
+    <div className="p-4">
+      <div className="">
+        <UserTable></UserTable>
+      </div>
     </div>
   );
 };

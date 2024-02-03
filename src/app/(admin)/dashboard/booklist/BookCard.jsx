@@ -9,14 +9,13 @@ import Link from "next/link";
 
 import { getAllBooks, getBook } from "@/libs/actions/book.action";
 import { connectDB } from "@/libs/database/MongoConnect";
+import BookDeleteBtn from "./bookDeleteBtn";
 
-const BookCard = async ({id}) => {
+const BookCard = async () => {
   await connectDB();
-//   const res = await getBook("65b8dc882c1a2b234add17f0");
-  console.log(id);
+  //   const res = await getBook("65b8dc882c1a2b234add17f0");
+  // console.log(id);
   const data = await getAllBooks();
-
-
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-10">
@@ -41,15 +40,11 @@ const BookCard = async ({id}) => {
                 <span className="text-white">View</span>
               </Link>
 
-              <Link href="#">
+              <Link href={`/dashboard/booklist/${book._id}`}>
                 <FaEdit className="text-3xl text-white" />
                 <span className="text-white">Edit</span>
               </Link>
-
-              <Link href="#">
-                <AiFillDelete className="text-3xl text-red-700" />
-                <span className="text-white">Delete</span>
-              </Link>
+              <BookDeleteBtn id={book._id}></BookDeleteBtn>
             </div>
           </Card>
         ))}

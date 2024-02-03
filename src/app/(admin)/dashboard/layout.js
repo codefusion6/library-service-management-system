@@ -1,11 +1,8 @@
-import React from 'react';
+import React from "react";
 
-const LayOut = ({children}) => {
-    return (
-        <div>
-        {children}
-        </div>
-    );
+const LayOut = ({ children }) => {
+
+  return <div>{children}</div>;
 };
 
 export default LayOut;

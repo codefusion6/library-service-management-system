@@ -1,5 +1,4 @@
 import { AuthContextProvider } from "../provider/context/AuthContext";
-import { Providers } from "../provider/Providers";
 import MyNavbar from "@/shared/MyNavbar";
 import Footer from "@/shared/Footer";
 import "./../globals.css";
@@ -12,12 +11,14 @@ export const metadata = {
 
 const Layout = ({ children }) => {
   return (
-    <AuthContextProvider>
-      <MyNavbar />
-      {children}
-      <Toaster position="top-right" />
-      <Footer />
-    </AuthContextProvider>
+    <div>
+      <AuthContextProvider>
+        <MyNavbar />
+        {children}
+        <Toaster position="top-right" />
+        <Footer />
+      </AuthContextProvider>
+    </div>
   );
 };
 

@@ -11,7 +11,7 @@ import { getAllBooks } from "@/libs/actions/book.action";
 
 const AllBookCard = async ({ id }) => {
   await connectDB();
-//   console.log(id);
+  //   console.log(id);
   const data = await getAllBooks();
 
   return (
