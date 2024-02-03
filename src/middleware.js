@@ -4,6 +4,7 @@ import { cookies } from 'next/headers'
 export async function middleware(request) {
   const cookieStore = cookies();
   const user = cookieStore.get('user')
+
   if (!user) {
     return NextResponse.redirect(new URL('/login', request.url))
   }
