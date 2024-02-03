@@ -38,11 +38,12 @@ export const AuthContextProvider = ({ children }) => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
       setLoading(false);
-      // if (currentUser) {
-      //   createCookie()
-      // } else {
-      //   deleteCookie()
-      // }
+
+      if (currentUser) {
+        createCookie()
+      } else {
+        deleteCookie()
+      }
     });
     return () => unsubscribe();
   }, [user, loading]);
