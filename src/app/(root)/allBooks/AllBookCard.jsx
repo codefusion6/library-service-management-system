@@ -40,11 +40,6 @@ const AllBookCard = async ({ id }) => {
               <FaEdit className="text-3xl text-white" />
               <span className="text-white">Edit</span>
             </Link>
-
-            <Link href="#">
-              <AiFillDelete className="text-3xl text-red-700" />
-              <span className="text-white">Delete</span>
-            </Link>
           </div>
         </Card>
       ))}
