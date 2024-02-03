@@ -5,6 +5,7 @@ import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import { FaEye, FaRegHeart, FaStar, FaStarHalfAlt } from "react-icons/fa";
 import Image from "next/image";
 import { Tooltip, Button } from "@nextui-org/react";
+import Link from "next/link";
 
 const Cards = () => {
   const data = [
@@ -78,7 +79,8 @@ const Cards = () => {
       {data.map((items, index) => (
         <Card
           key={index}
-          className="py-1 border shadow-md relative transition-transform duration-300 transform hover:scale-95 group">
+          className="py-1 border shadow-md relative transition-transform duration-300 transform hover:scale-95 group"
+        >
           <CardBody className="py-2 card-inner overflow-hidden">
             <Image
               alt="Card background"
@@ -89,14 +91,24 @@ const Cards = () => {
             />
             <ul className="opacity-80 flex gap-3 items-center justify-center duration-300 left-0 absolute -bottom-full w-full group-hover:bottom-0 overflow-hidden">
               <li className="bg-lime-500 p-2 rounded-2xl w-20 h-10 flex items-center justify-center">
-                <Tooltip showArrow={true} content="view book" className="text-white font-bold">
+                <Tooltip
+                  showArrow={true}
+                  content="view book"
+                  className="text-white font-bold"
+                >
                   <Button>
-                    <FaEye className="text-2xl text-black"></FaEye>
+                    <Link href="">
+                      <FaEye className="text-2xl text-black"></FaEye>
+                    </Link>
                   </Button>
                 </Tooltip>
               </li>
               <li className="bg-lime-500 p-2 rounded-2xl w-20 h-10 flex items-center justify-center">
-                <Tooltip showArrow={true} content="add to favorite" className="text-white font-bold">
+                <Tooltip
+                  showArrow={true}
+                  content="add to favorite"
+                  className="text-white font-bold"
+                >
                   <Button>
                     <FaRegHeart className="text-2xl text-black"></FaRegHeart>
                   </Button>
@@ -114,9 +126,7 @@ const Cards = () => {
               <h4 className="font-semibold text-lg">{items.title}</h4>
               <p className=" text-black text-xl font-bold">$ {items.price}</p>
             </div>
-
           </CardHeader>
-
         </Card>
       ))}
     </>
