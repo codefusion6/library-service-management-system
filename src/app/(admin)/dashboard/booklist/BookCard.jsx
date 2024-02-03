@@ -3,18 +3,15 @@ import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
-import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
 
-import { getAllBooks, getBook } from "@/libs/actions/book.action";
+import { getAllBooks,} from "@/libs/actions/book.action";
 import { connectDB } from "@/libs/database/MongoConnect";
 import BookDeleteBtn from "./bookDeleteBtn";
 
-const BookCard = async ({ id }) => {
+const BookCard = async () => {
   await connectDB();
-  //   const res = await getBook("65b8dc882c1a2b234add17f0");
-  // console.log(id);
   const data = await getAllBooks();
   return (
     <>
