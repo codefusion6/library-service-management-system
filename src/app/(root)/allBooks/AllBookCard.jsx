@@ -6,14 +6,10 @@ import { FaEye } from "react-icons/fa";
 import { AiFillDelete } from "react-icons/ai";
 import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
-import { connectDB } from "@/libs/database/MongoConnect";
 import { getAllBooks } from "@/libs/actions/book.action";
 
-const AllBookCard = async ({ id }) => {
-  await connectDB();
-  //   console.log(id);
+const AllBookCard = async () => {
   const data = await getAllBooks();
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
       {data?.books?.map((book, index) => (
