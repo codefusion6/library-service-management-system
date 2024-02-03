@@ -1,5 +1,5 @@
 "use server";
-import { fileUpload } from "./fileUpload.action";
+// import { fileUpload } from "./fileUpload.action";
 import { connectDB } from "../database/MongoConnect";
 import Book from "../database/models/bookModel/book";
 import { revalidatePath } from "next/cache";
@@ -14,7 +14,7 @@ export const addBook = async (formData) => {
   const authorImage = formData.get("authorImage");
   const publisherEmail = formData.get("publisherEmail");
   const category = formData.get("category");
-  console.log(bookCover, bookPdf, authorImage);
+  // console.log(bookCover, bookPdf, authorImage);
   try {
     await connectDB();
     // data to be save in db
@@ -31,7 +31,6 @@ export const addBook = async (formData) => {
 
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
-
     return { success: true, data: JSON.parse(JSON.stringify(result)) };
   } catch (error) {
     return {
@@ -111,7 +110,6 @@ export const getAllBooks = async () => {
   try {
     // db connect
     await connectDB();
-
     // get all books from db
     const books = await Book.find();
     revalidatePath("/addbook");
