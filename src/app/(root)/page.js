@@ -13,8 +13,8 @@ const HomePage = () => {
   return (
     <div className="">
       <Banner />
-      <BookTypes />
       <RecommendedBooks></RecommendedBooks>
+      <BookTypes />
       <Feature books={booksData}></Feature>
       <Slider></Slider>
       <FAQ></FAQ>
