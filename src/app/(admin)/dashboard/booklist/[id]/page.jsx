@@ -7,11 +7,7 @@ import Link from "next/link";
 
 
 const BookDetails = async ({ params }) => {
-  // console.log(params.id);
-
-  const singleBook = await getBook(params.id);
-  // console.log(singleBook);
-
+  const singleBook = await getBook(params?.id);
   return (
     <div className="container mx-auto">
       <h2 className="text-3xl text-center my-5 font-medium text-green-700">
