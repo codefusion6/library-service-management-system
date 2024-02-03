@@ -11,7 +11,7 @@ import { getAllBooks, getBook } from "@/libs/actions/book.action";
 import { connectDB } from "@/libs/database/MongoConnect";
 import BookDeleteBtn from "./bookDeleteBtn";
 
-const BookCard = async ({ id }) => {
+const BookCard = async () => {
   await connectDB();
   //   const res = await getBook("65b8dc882c1a2b234add17f0");
   // console.log(id);
@@ -22,14 +22,16 @@ const BookCard = async ({ id }) => {
         {data?.books?.map((book, index) => (
           <Card
             key={index}
-            className="p-6 border hover:border-green-500 hover:border-2 text-center shadow-xl rounded-lg relative overflow-hidden group">
+            className="p-6 border hover:border-green-500 hover:border-2 text-center shadow-xl rounded-lg relative overflow-hidden group"
+          >
             <CardBody className="overflow-visible py-2">
               <Image
                 alt="Card Image"
                 className="object-cover rounded-xl"
                 src={book.bookCover}
                 width={270}
-                height={270} />
+                height={270}
+              />
             </CardBody>
             <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-50 transition-opacity"></div>
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity gap-3">
