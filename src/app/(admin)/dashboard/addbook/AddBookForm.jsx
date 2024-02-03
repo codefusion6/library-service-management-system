@@ -32,7 +32,7 @@ const AddBookForm = () => {
                     try {
 
                         const response = await addBook(formData);
-                        if (response.success) {
+                        if (response?.success) {
                             toast.success("Book added successfully")
                         }
                         console.log(response);
