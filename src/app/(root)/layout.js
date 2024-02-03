@@ -11,7 +11,7 @@ export const metadata = {
 
 const Layout = ({ children }) => {
   return (
-    <div >
+    <div>
       <AuthContextProvider>
         <MyNavbar />
         {children}
