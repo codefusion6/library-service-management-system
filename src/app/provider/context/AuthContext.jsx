@@ -35,13 +35,13 @@ export const AuthContextProvider = ({ children }) => {
     signOut(auth);
   };
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
       setLoading(false);
       if (currentUser) {
-        createCookie()
+        await createCookie()
       } else {
-        deleteCookie()
+        await deleteCookie()
       }
     });
     return () => unsubscribe();
