@@ -1,7 +1,7 @@
 "use client"
 import Swal from 'sweetalert2'
 import { deleteBook } from '@/libs/actions/book.action'
-import { connectDB } from '@/libs/database/MongoConnect'
+// import { connectDB } from '@/libs/database/MongoConnect'
 import { AiFillDelete } from 'react-icons/ai'
 
 const BookDeleteBtn = ({ id }) => {
@@ -25,7 +25,6 @@ const BookDeleteBtn = ({ id }) => {
                 });
             }
         });
-
     }
     return (
         <button onClick={handleDelete} >
@@ -34,5 +33,4 @@ const BookDeleteBtn = ({ id }) => {
         </button>
     )
 }
-
 export default BookDeleteBtn
