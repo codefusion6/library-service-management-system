@@ -32,5 +32,4 @@ const BookDeleteBtn = ({ id }) => {
         </button>
     )
 }
-
 export default BookDeleteBtn
