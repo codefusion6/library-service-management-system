@@ -31,7 +31,8 @@ export const addBook = async (formData) => {
 
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
-    return { success: true, data: JSON.parse(JSON.stringify(result)) };
+
+    return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return {
       error: "Fill input properly or send the required data",
@@ -113,7 +114,7 @@ export const getAllBooks = async () => {
     // get all books from db
     const books = await Book.find();
     revalidatePath("/addbook");
-    return { books: JSON.parse(JSON.stringify(books)) };
+    return JSON.parse(JSON.stringify({ books: books }));
   } catch (error) {
     console.log(error);
   }
