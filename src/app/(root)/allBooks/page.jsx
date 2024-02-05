@@ -3,6 +3,7 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
+export const dynamic = "force-dynamic";
 
 const AllBooks = () => {
   return (
@@ -46,5 +47,4 @@ const AllBooks = () => {
     </section>
   );
 };
-
 export default AllBooks;

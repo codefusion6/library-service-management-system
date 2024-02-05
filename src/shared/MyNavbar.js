@@ -101,11 +101,6 @@ const MyNavbar = () => {
                       Writers
                     </Link>
                   </NavbarItem>
-                  <NavbarItem>
-                    <Link className="text-white" href="/dashboard">
-                      Dashboard
-                    </Link>
-                  </NavbarItem>
                 </div>
                 {/* Small device menu icon and items */}
                 <div
