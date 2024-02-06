@@ -1,12 +1,25 @@
 import React from 'react'
 
 const page = () => {
-  return (
-    <div className='pt-28'>
-        <h2>Writer Name Here</h2>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, quis illo at ab quibusdam officiis repellat consequuntur molestias fugiat assumenda cumque facere voluptatum ut deserunt. Iste, modi suscipit maiores, tempora sint aperiam repudiandae, totam earum alias voluptatem obcaecati harum pariatur dignissimos tenetur veritatis atque nisi laboriosam fugiat accusantium error blanditiis laborum saepe? Fugiat cupiditate modi quaerat eveniet nostrum incidunt architecto alias, molestiae nisi ea aliquid sint, quo repudiandae recusandae dignissimos libero nesciunt assumenda placeat enim, vitae voluptatum culpa ex. Officiis odio nisi, corrupti aperiam officia recusandae quisquam dignissimos numquam ipsum, id necessitatibus ut obcaecati velit. Vero mollitia facere nesciunt eum obcaecati, molestiae odit. Dolores aperiam deleniti, hic repudiandae dolorum ea est doloremque sed asperiores iure eum placeat exercitationem nostrum commodi? Nam fuga sint ut voluptas vero quo nobis, consequatur magnam animi iure sit dicta, adipisci sapiente molestias necessitatibus earum quisquam aut accusantium. Modi corrupti dicta amet vel dolor quod nisi facere repellat corporis quasi suscipit magnam, cupiditate debitis eaque quis. Suscipit tenetur, impedit fuga natus velit dolor labore ea soluta, recusandae voluptate molestias facere corporis accusantium corrupti in eos doloribus enim earum pariatur quo doloremque nam illum animi laboriosam? Dolorum deserunt aliquam tempora nesciunt impedit mollitia corporis aperiam in, provident inventore ipsam possimus architecto laboriosam est natus. Dicta suscipit harum velit vel obcaecati sunt impedit est, vitae reiciendis ex! Est, cupiditate doloremque. Eius excepturi aliquid, sed tenetur quis blanditiis architecto iure iusto ut sit quas sunt enim esse officiis ex ratione odio quasi modi vitae accusantium possimus fugiat. Amet ea ducimus reiciendis animi eaque? Esse, iusto optio odio eveniet dignissimos explicabo rerum ipsum alias reiciendis veniam! Repellat, iusto! Officiis consequatur, sapiente iure tenetur laborum omnis quaerat dolor porro quia maxime soluta eveniet cumque laboriosam ducimus illum. Consectetur similique iusto debitis perspiciatis distinctio rerum numquam? Dolorum eius possimus odit exercitationem dolor.
-    </div>
-  )
+    return (
+        <div className='pt-28'>
+            <div>
+                <div>
+                    <img src="https://i.ibb.co/686tyHs/probesh-deb-nath.jpg" alt="" />
+                </div>
+                <div>
+                    <h2>Writer Name Here</h2>
+                    <hr />
+                    <p><strong>Address</strong> <span>Dhaka, Newmarket</span></p>
+                    <p><strong>Date of Birth</strong> <span>10 july, 1950</span></p>
+                    <p><strong>Date of Dead</strong> <span>09 Auguest, 2000</span></p>
+                    <p><strong>Address</strong> <span>Dhaka, Newmarket</span></p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio fuga dicta dolor nisi accusantium velit expedita tempore autem quibusdam dolorem pariatur neque a sunt dolore, excepturi consequuntur. Doloribus modi iusto veritatis impedit, molestiae libero laborum pariatur alias cumque ipsum porro id, voluptas blanditiis. Cum non, nemo, odit dicta fugiat voluptatum a harum commodi distinctio tenetur ut impedit quasi, eos laborum ad est quod provident culpa! Natus, dolorem voluptate. Sint, consectetur adipisci veritatis quia placeat dicta earum eligendi. Porro consequuntur unde iusto ab mollitia, iste dolor, omnis quod delectus laboriosam sed, dicta alias dolorem modi! Impedit iste nemo voluptatibus maiores. Totam dicta nam velit ea, iure impedit esse beatae rem voluptate voluptatum modi labore vel itaque pariatur aut. Eos, maiores? Expedita, vel natus. Qui, molestiae. Praesentium animi ipsam cum aut id minima alias repudiandae voluptate maiores, culpa exercitationem impedit eligendi sapiente voluptatum. Consequuntur explicabo ut ipsam eaque, aperiam dignissimos repellat mollitia, totam quidem odio atque eius excepturi quia asperiores nostrum est sint iure quam molestiae pariatur nihil blanditiis. Enim ipsam, nihil voluptas nulla ullam quaerat ipsa, architecto tenetur temporibus eos non molestias explicabo exercitationem tempora tempore animi dolorum culpa, esse provident officiis eaque dolor laborum rem praesentium? Fugiat accusantium officia impedit consectetur perferendis ab amet qui inventore provident minima placeat perspiciatis facilis ullam eveniet voluptatem est voluptas laudantium cupiditate aliquam tenetur, animi natus doloribus numquam molestias? Corporis, commodi numquam culpa animi aspernatur rerum autem asperiores, accusantium quas architecto nesciunt nostrum? Laborum similique consequuntur ab voluptatum eligendi, enim, fugiat aliquam odio voluptate laudantium nihil commodi cum expedita magnam officia voluptas ipsam alias aut, veritatis fugit ea facere vitae amet quibusdam! Consequuntur molestias unde similique, illum eos blanditiis perferendis ab, corporis voluptatum optio veritatis a, atque nobis officiis odio suscipit ipsum veniam architecto animi. Minus reiciendis obcaecati quidem quia laudantium quos optio exercitationem.</p>
+                </div>
+            </div>
+
+        </div>
+    )
 }
 
 export default page
