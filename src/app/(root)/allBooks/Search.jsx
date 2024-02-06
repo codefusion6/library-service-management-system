@@ -1,26 +1,42 @@
-"use server";
+"use client";
 import { getAllBooks } from "@/libs/actions/book.action";
-import { useRouter } from "next/navigation";
-import React, { useState } from "react";
-import { useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
-import { useDebounce } from "use-debounce";
+import { useState, useEffect } from "react";
 
-const Search = async () => {
-  const data = await getAllBooks();
+const Search = () => {
+  // const books = await getAllBooks();
 
-  const [text, setText] = useState("");
-  const router = useRouter();
-  const [query] = useDebounce(text, 500);
+  const [books, setBooks] = useState([]);
+  const [searchTerm, setSearchTerm] = useState("");
+  const [filteredBooks, setFilteredBooks] = useState([]);
 
   useEffect(() => {
-    if (!query) {
-      router.push(`/allBooks`);
+    const fetchBooks = async () => {
+      try {
+        const data = await getAllBooks();
+        setBooks(data.books);
+      } catch (error) {
+        console.error("Error fetching books:", error);
+      }
+    };
+
+    fetchBooks();
+  }, []);
+
+  useEffect(() => {
+    if (!searchTerm) {
+      setFilteredBooks(books);
     } else {
-      router.push(`/allBooks?search=${query}`);
+      const filtered = books.filter((book) =>
+        book.bookName.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+      setFilteredBooks(filtered);
     }
-  }, [query, router]);
-  
+  }, [searchTerm, books]);
+
+  const handleSearch = (e) => {
+    setSearchTerm(e.target.value);
+  };
 
   return (
     <div className="relative rounded-md shadow-sm">
@@ -28,11 +44,16 @@ const Search = async () => {
         <FaSearch className="h-5 w-5 text-gray-400" aria-hidden="true" />
       </div>
       <input
-        value={text}
-        placeholder="Search movies..."
-        onChange={(e) => setText(e.target.value)}
+        value={searchTerm}
+        placeholder="Search for books"
+        onChange={handleSearch}
         className="block w-full rounded-md border-0 py-1.5 pl-10 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-sky-600 sm:text-sm sm:leading-6"
       />
+      {/* <div>
+        {filteredBooks?.map((book) => (
+          <div key={book._id}>{book.bookName}</div>
+        ))}
+      </div> */}
     </div>
   );
 };

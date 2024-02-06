@@ -9,7 +9,7 @@ import { getAllBooks } from "@/libs/actions/book.action";
 const AllBookCard = async ({ searchParams }) => {
   const data = await getAllBooks();
 
-  console.log(data);
+  // console.log(data);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -27,16 +27,22 @@ const AllBookCard = async ({ searchParams }) => {
             />
           </CardBody>
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-50 transition-opacity"></div>
-          <div className="absolute top-0 left-0 w-full h-full transform flex justify-center pb-10 items-end space-x-4 opacity-0 group-hover:opacity-100 transition-opacity gap-3">
-            <Link href={`/allBooks/${book._id}`} className="">
-              <FaEye className="text-3xl text-white" />
-              <span className="text-white">View</span>
-            </Link>
+          <div className="absolute top-0 left-0 w-full h-full transform">
+            <p className="text-xl font-bold text-center text-white">
+              {book.bookName}
+            </p>
 
-            <Link href="#">
-              <FaRegHeart className="text-3xl text-white" />
-              <span className="text-white">Add Favorite</span>
-            </Link>
+            <div className=" flex justify-center pb-10 items-end space-x-4  gap-3">
+              <Link href={`/allBooks/${book._id}`} className="">
+                <FaEye className="text-3xl text-white" />
+                <span className="text-white">View</span>
+              </Link>
+
+              <Link href="#">
+                <FaRegHeart className="text-3xl text-white" />
+                <span className="text-white">Add Favorite</span>
+              </Link>
+            </div>
           </div>
         </Card>
       ))}
