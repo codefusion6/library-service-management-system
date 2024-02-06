@@ -1,15 +1,15 @@
 "use server";
 import React from "react";
-import { Card, CardHeader, CardBody } from "@nextui-org/react";
+import { Card, CardBody } from "@nextui-org/react";
 import Image from "next/image";
-import { FaEye } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
+import { FaEye, FaRegHeart } from "react-icons/fa";
 import Link from "next/link";
 import { getAllBooks } from "@/libs/actions/book.action";
 
-const AllBookCard = async ({searchParams}) => {
+const AllBookCard = async ({ searchParams }) => {
   const data = await getAllBooks();
-  // console.log(searchParams.page);
+
+  console.log(data);
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -34,8 +34,8 @@ const AllBookCard = async ({searchParams}) => {
             </Link>
 
             <Link href="#">
-              <FaEdit className="text-3xl text-white" />
-              <span className="text-white">Edit</span>
+              <FaRegHeart className="text-3xl text-white" />
+              <span className="text-white">Add Favorite</span>
             </Link>
           </div>
         </Card>

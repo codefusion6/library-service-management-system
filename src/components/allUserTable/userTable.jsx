@@ -10,9 +10,6 @@ import {
   useDisclosure,
   Image,
 } from "@nextui-org/react";
-// import { useQuery } from "@tanstack/react-query";
-// import { getAllUser } from "@/libs/actions/user.actions";
-// import { connectDB } from "@/libs/database/MongoConnect";
 
 const UserTable = () => {
 
