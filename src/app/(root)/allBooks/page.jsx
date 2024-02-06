@@ -3,6 +3,7 @@ import React from "react";
 import { FaSearch } from "react-icons/fa";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
+import Pagination from "./Pagination";
 export const dynamic = "force-dynamic";
 
 const AllBooks = () => {
@@ -38,8 +39,9 @@ const AllBooks = () => {
               <FaSearch className="text-xl"></FaSearch>
             </div>
             <h1 className="text-2xl font-semibold">All Books</h1>
-            <div className="">
-                <AllBookCard></AllBookCard>
+            <div className="space-y-8">
+              <AllBookCard></AllBookCard>
+              <Pagination></Pagination>
             </div>
           </div>
         </div>
