@@ -4,10 +4,14 @@ import { FaSearch } from "react-icons/fa";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
 import Pagination from "./Pagination";
+import { getAllBooks } from "@/libs/actions/book.action";
 export const dynamic = "force-dynamic";
 
-const AllBooks = () => {
+const AllBooks = async ({ searchParams }) => {
+  const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
+  const { books, totalPage } = await getAllBooks(pageNumber)
   return (
+
     <section className="min-h-screen">
       <div className="container mx-auto my-10">
         <div className="mt-28 relative">
@@ -40,8 +44,8 @@ const AllBooks = () => {
             </div>
             <h1 className="text-2xl font-semibold">All Books</h1>
             <div className="space-y-8">
-              <AllBookCard></AllBookCard>
-              <Pagination></Pagination>
+              <AllBookCard books={books}></AllBookCard>
+              <Pagination totalPage={totalPage} currentPage={pageNumber}></Pagination>
             </div>
           </div>
         </div>
