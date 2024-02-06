@@ -1,0 +1,12 @@
+import React from 'react'
+
+const page = () => {
+  return (
+    <div className='pt-28'>
+        <h2>Writer Name Here</h2>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum, quis illo at ab quibusdam officiis repellat consequuntur molestias fugiat assumenda cumque facere voluptatum ut deserunt. Iste, modi suscipit maiores, tempora sint aperiam repudiandae, totam earum alias voluptatem obcaecati harum pariatur dignissimos tenetur veritatis atque nisi laboriosam fugiat accusantium error blanditiis laborum saepe? Fugiat cupiditate modi quaerat eveniet nostrum incidunt architecto alias, molestiae nisi ea aliquid sint, quo repudiandae recusandae dignissimos libero nesciunt assumenda placeat enim, vitae voluptatum culpa ex. Officiis odio nisi, corrupti aperiam officia recusandae quisquam dignissimos numquam ipsum, id necessitatibus ut obcaecati velit. Vero mollitia facere nesciunt eum obcaecati, molestiae odit. Dolores aperiam deleniti, hic repudiandae dolorum ea est doloremque sed asperiores iure eum placeat exercitationem nostrum commodi? Nam fuga sint ut voluptas vero quo nobis, consequatur magnam animi iure sit dicta, adipisci sapiente molestias necessitatibus earum quisquam aut accusantium. Modi corrupti dicta amet vel dolor quod nisi facere repellat corporis quasi suscipit magnam, cupiditate debitis eaque quis. Suscipit tenetur, impedit fuga natus velit dolor labore ea soluta, recusandae voluptate molestias facere corporis accusantium corrupti in eos doloribus enim earum pariatur quo doloremque nam illum animi laboriosam? Dolorum deserunt aliquam tempora nesciunt impedit mollitia corporis aperiam in, provident inventore ipsam possimus architecto laboriosam est natus. Dicta suscipit harum velit vel obcaecati sunt impedit est, vitae reiciendis ex! Est, cupiditate doloremque. Eius excepturi aliquid, sed tenetur quis blanditiis architecto iure iusto ut sit quas sunt enim esse officiis ex ratione odio quasi modi vitae accusantium possimus fugiat. Amet ea ducimus reiciendis animi eaque? Esse, iusto optio odio eveniet dignissimos explicabo rerum ipsum alias reiciendis veniam! Repellat, iusto! Officiis consequatur, sapiente iure tenetur laborum omnis quaerat dolor porro quia maxime soluta eveniet cumque laboriosam ducimus illum. Consectetur similique iusto debitis perspiciatis distinctio rerum numquam? Dolorum eius possimus odit exercitationem dolor.
+    </div>
+  )
+}
+
+export default page
