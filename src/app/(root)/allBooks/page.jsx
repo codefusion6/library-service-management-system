@@ -29,7 +29,7 @@ const AllBooks = async ({ searchParams }) => {
           <div className="divider text-white text-2xl"></div>
         </div>
         <div className="flex mt-5">
-          <div className="w-[400px] mt-2 md:mr-7">
+          <div className="w-[300px] mt-2 md:mr-7">
             <BooksSidebar></BooksSidebar>
           </div>
           <div className="flex-1 space-y-3">

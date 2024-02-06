@@ -97,7 +97,6 @@ export const addManyBook = async () => {
       image: "https://i.ibb.co/jyF3hNx/img-04.jpg",
     },
   ];
-
   try {
     const result = await Book.insertMany(books);
     return JSON.parse(JSON.stringify(result));
@@ -105,7 +104,6 @@ export const addManyBook = async () => {
     return JSON.parse(JSON.stringify(error));
   }
 };
-
 // get all books
 export const getAllBooks = async (page) => {
   try {
@@ -120,11 +118,9 @@ export const getAllBooks = async (page) => {
     revalidatePath("/addbook");
     return JSON.parse(JSON.stringify({ books: books, totalPage }));
   } catch (error) {
-    console.log(error);
+    return JSON.parse(JSON.stringify(error))
   }
 };
-
-// single book
 
 export const getBook = async (id) => {
   try {
