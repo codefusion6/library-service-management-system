@@ -20,7 +20,7 @@ const renderStars = (rating) => {
 
 const Feature = ({ books }) => {
   return (
-<section className='py-8 '>
+    <section className='py-8 '>
       <div className="container mx-auto mt-8">
         <h1 className="text-3xl font-bold text-center mb-8">Featured Books</h1>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
@@ -42,7 +42,7 @@ const Feature = ({ books }) => {
                 {renderStars(book.book.starMarking)}
                 <p className="text-sm ml-1">{book.book.starMarking}</p>
               </div>
-              <button class="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300 transform hover:scale-105">Add to Cart</button>
+              <button className="bg-green-600 text-white px-4 py-2 rounded-md hover:bg-green-700 transition duration-300 transform hover:scale-105">Add to Cart</button>
             </div>
           ))}
         </div>
