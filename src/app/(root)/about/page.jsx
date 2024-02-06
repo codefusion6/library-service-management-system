@@ -12,6 +12,7 @@ const AboutPage = async () => {
       <AboutBanner></AboutBanner>
       <AboutMission></AboutMission>
       <AboutVision></AboutVision>
+
       <AboutTeam></AboutTeam>
       <TechnologyStack></TechnologyStack>
       <PoliciesAchievements></PoliciesAchievements>
