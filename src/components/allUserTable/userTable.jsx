@@ -34,7 +34,7 @@ const UserTable = ({ allUser }) => {
 
   // Filter users based on search query
   const filteredUsers = allUser.data?.filter((user) => user.name.toLowerCase() === searchQuery.toLowerCase());
-  console.log(filteredUsers)
+  // console.log(filteredUsers)
   return (
     <div>
       <Fragment>
