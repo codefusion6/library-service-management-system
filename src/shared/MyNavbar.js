@@ -192,6 +192,14 @@ const MyNavbar = () => {
                             Dashboard
                           </Link>
                         </DropdownItem>
+                        <DropdownItem>
+                          <Link
+                            className="font-bold py-2 w-full border-t pt-3 hover:text-primary duration-200"
+                            href="/userProfile"
+                          >
+                            Profile
+                          </Link>
+                        </DropdownItem>
                         <DropdownItem
                           key="logout"
                           color="danger"
