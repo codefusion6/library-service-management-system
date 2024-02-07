@@ -9,7 +9,7 @@ const CollapseButton = () => {
     // const 
     return (
         <button onClick={() => {
-            console.log(state);
+            // console.log(state);
             setState(!state)
         }}
             className="p-3 rounded-lg bg-gray-50 hover:bg-slate-100"

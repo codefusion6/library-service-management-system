@@ -107,7 +107,6 @@ export const addManyBook = async () => {
 // get all books
 export const getAllBooks = async (page) => {
   try {
-    // db connect
     await connectDB();
     // get all books from db
     const per_page = 1
