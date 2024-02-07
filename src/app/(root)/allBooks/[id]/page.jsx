@@ -8,12 +8,12 @@ import { FaRegStar } from "react-icons/fa";
 
 const page = async ({ params }) => {
   const singleBook = await getBook(params.id);
-  console.log(singleBook);
+  // console.log(singleBook);
 
   return (
     <main className="min-h-screen pt-32">
-      <div className="container mx-auto">
-        <div className="flex gap-5">
+      <div className="container mx-auto m-5">
+        <div className="md:flex flex-wrap gap-5">
           <div className=" space-y-4">
             <Image
               src={singleBook.bookCover}
