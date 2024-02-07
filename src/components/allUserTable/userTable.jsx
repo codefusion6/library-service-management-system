@@ -10,29 +10,14 @@ import {
   useDisclosure,
   Image,
 } from "@nextui-org/react";
-// import { useQuery } from "@tanstack/react-query";
-// import { getAllUser } from "@/libs/actions/user.actions";
-// import { connectDB } from "@/libs/database/MongoConnect";
 
 const UserTable = () => {
-
-  // const {data:users}= useQuery({
-  //   queryKey : ["users"],
-  //   queryFn : async()=>{
-  //     await connectDB()
-  //     const res = await getAllUser()
-  //     return res.data
-
-  //   }
-
-  // })
-  // console.log(users);
+  
 
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [searchQuery, setSearchQuery] = useState("");
 
-  // Sample user data
   const users = [
     {
       name: "Priyanka Das Dipa",

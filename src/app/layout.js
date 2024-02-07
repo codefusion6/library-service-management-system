@@ -3,6 +3,7 @@ import "./globals.css";
 import { AuthContextProvider } from "./provider/context/AuthContext";
 import { Toaster } from "react-hot-toast";
 import Chatbot from "@/components/chatbot/chatbot";
+import Template from "./template";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -17,7 +18,8 @@ const RootLayout = ({ children }) => {
     <html lang="en" suppressHydrationWarning={true}>
       <AuthContextProvider>
         <body className={`${merriweather.className}`}>
-          {children}
+          <Template> {children}</Template>
+         
           <Toaster position="top-right" />
           <Chatbot />
         </body>
