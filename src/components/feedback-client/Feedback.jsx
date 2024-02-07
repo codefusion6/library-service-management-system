@@ -1,5 +1,4 @@
 "use client";
-import { Button, Input, Textarea } from "@nextui-org/react";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
 
@@ -26,83 +25,58 @@ const Feedback = () => {
   };
 
   return (
-    <form ref={form} onSubmit={sendEmail} className="space-y-5 bg-gray-200">
-      <div className="items-center ">
-        <div className="mt-5">
-          <label
-            className="font-semibold ml-8 lg:ml-5 text-sm text-gray-600 pb-1 block"
-            for="name"
-          >
-            Name
-          </label>
-          <Input
-            isClearable
+    <div className="flex flex-col items-center justify-center h-screen dark">
+      <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
+        <h2 className="text-2xl font-bold text-gray-200 mb-4">
+          Contact With Us
+        </h2>
+
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col">
+          <input
             type="text"
             placeholder="Your name"
             name="user_name"
-            variant="bordered"
-            onClear={() => console.log("input cleared")}
-            className="max-w-xs text-center rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 "
+            className="bg-gray-700 text-gray-200 border-0 
+       rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
           />
-        </div>
-        <div className="">
-          <label
-            className="font-semibold ml-5  text-sm text-gray-600 pb-1 block"
-            for="email"
-          >
-            Email
-          </label>
-          <Input
-            isClearable
+          <input
             type="email"
             placeholder="Your email"
             name="user_email"
-            variant="bordered"
-            onClear={() => console.log("input cleared")}
-            className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+            className="bg-gray-700 text-gray-200 border-0 
+       rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
           />
-        </div>
-        <div className="">
-          <label
-            className="font-semibold ml-5  text-sm text-gray-600 pb-1 block"
-            for="email"
-          >
-            Subject
-          </label>
-          <Input
-            isClearable
+          <input
             type="text"
             placeholder="Subject"
             name="subject"
-            variant="bordered"
-            onClear={() => console.log("input cleared")}
-            className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+            className="bg-gray-700 text-gray-200 border-0 
+       rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
           />
-        </div>
-        <div className="">
-          <label
-            className="font-semibold ml-5  text-sm text-gray-600 pb-1 block"
-            for="massage"
-          >
-            Massage
-          </label>
-          <Textarea
-            isClearable
+          <input
             type="text"
             placeholder="write your message"
             name="message"
-            variant="bordered"
-            onClear={() => console.log("input cleared")}
-            className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+            className="bg-gray-700 text-gray-200 border-0 
+       rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
           />
+
+          <button
+            type="submit"
+            className="bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4
+       hover:bg-green-600 hover:to-blue-600 transition ease-in-out duration-150"
+          >
+            Send Message
+          </button>
+        </form>
+
+        <div className="flex justify-center mt-4">
+          <a className="text-sm text-gray-400 hover:underline" href="#">
+            Privacy Policy
+          </a>
         </div>
-        <Button radius="md" 
-        type="submit"
-        >
-        Send Message
-      </Button>
       </div>
-    </form>
+    </div>
   );
 };
 
