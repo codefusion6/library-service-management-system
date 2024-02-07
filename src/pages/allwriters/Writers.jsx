@@ -1,5 +1,4 @@
 import React from 'react'
-import AddWriter from './AddWriter'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -49,7 +48,7 @@ const Writers = () => {
 
                 ))
             }
-            {/* <AddWriter /> */}
+           
         </section>
     )
 }
