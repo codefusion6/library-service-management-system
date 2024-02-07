@@ -1,3 +1,4 @@
+"use client"
 import { addWriter } from '@/libs/actions/writer.action';
 import React from 'react'
 import toast from 'react-hot-toast';

@@ -1,4 +1,4 @@
-
+"use server"
 
 // create writer
 export const addWriter = async (formData) => {
