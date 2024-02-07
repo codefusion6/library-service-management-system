@@ -11,33 +11,30 @@ import {
   Image,
 } from "@nextui-org/react";
 
-const UserTable = () => {
-  
+const UserTable = ({ allUser }) => {
 
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const [searchQuery, setSearchQuery] = useState("");
 
-  const users = [
-    {
-      name: "Priyanka Das Dipa",
-      email: "dipa@gmail.com",
-      role: "Admin",
-      status: "Online",
-    },
-    {
-      name: "Arina  Huque Rafa",
-      email: "rafa@gmail.com",
-      role: "Admin",
-      status: "Online",
-    },
-  ];
+  // const allUser = [
+  //   {
+  //     name: "Priyanka Das Dipa",
+  //     email: "dipa@gmail.com",
+  //     role: "Admin",
+  //     status: "Online",
+  //   },
+  //   {
+  //     name: "Arina  Huque Rafa",
+  //     email: "rafa@gmail.com",
+  //     role: "Admin",
+  //     status: "Online",
+  //   },
+  // ];
 
   // Filter users based on search query
-  const filteredUsers = users.filter((user) =>
-    user.name.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-
+  const filteredUsers = allUser.data?.filter((user) => user.name.toLowerCase() === searchQuery.toLowerCase());
+  console.log(filteredUsers)
   return (
     <div>
       <Fragment>
@@ -158,6 +155,9 @@ const UserTable = () => {
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                   <tr>
                     <th scope="col" className="px-6 py-3">
+                      No
+                    </th>
+                    <th scope="col" className="px-6 py-3">
                       Name
                     </th>
                     <th scope="col" className="px-6 py-3">
@@ -172,9 +172,10 @@ const UserTable = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {filteredUsers.map((user, index) => (
+                  {allUser.data?.map((user, index) => (
                     <tr key={index}
                       className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <th scope="col" className="px-6 py-3">{index + 1}</th>
                       {/* ... rest of the rendering logic for each user */}
                       <th
                         scope="row"
