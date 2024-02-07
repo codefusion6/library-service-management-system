@@ -110,7 +110,7 @@ export const getAllBooks = async (page) => {
     // db connect
     await connectDB();
     // get all books from db
-    const per_page = 3
+    const per_page = 1
     const pageNumber = page || 1;
     const count = await Book.find().countDocuments();
     const books = await Book.find().limit(per_page).skip((pageNumber - 1) * per_page)

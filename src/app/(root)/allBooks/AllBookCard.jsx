@@ -27,10 +27,10 @@ const AllBookCard = ({ books }) => {
               <span className="text-white">View</span>
             </Link>
 
-            <Link href="#" className="flex justify-center flex-col items-center">
+            <button className="flex justify-center flex-col items-center">
               <FaHeart className="text-3xl text-white hover:text-pink-600" />
               <span className="text-white text-sm">Add to favourit</span>
-            </Link>
+            </button>
           </div>
         </Card>
       ))}
