@@ -27,8 +27,8 @@ const AllBookCard = async ({ searchParams }) => {
             />
           </CardBody>
           <div className="absolute top-0 left-0 w-full h-full bg-black opacity-0 group-hover:opacity-50 transition-opacity"></div>
-          <div className="absolute top-0 left-0 w-full h-full transform">
-            <p className="text-xl font-bold text-center text-white">
+          <div className=" absolute top-0 left-0 w-full h-full flex flex-col justify-center items-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
+            <p className=" text-xl font-bold text-center text-white">
               {book.bookName}
             </p>
 

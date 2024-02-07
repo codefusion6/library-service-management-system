@@ -113,6 +113,7 @@ export const getAllBooks = async () => {
     await connectDB();
     // get all books from db
     const books = await Book.find();
+    
     revalidatePath("/addbook");
     return JSON.parse(JSON.stringify({ books: books }));
   } catch (error) {
