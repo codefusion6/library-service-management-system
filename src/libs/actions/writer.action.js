@@ -30,7 +30,6 @@ export const addWriter = async (formData) => {
       return {
         // error: "Fill input properly or send the required data",
         // errorDetails: JSON.parse(JSON.stringify(error)),
-        // console.log("error")
       };
     }
   };

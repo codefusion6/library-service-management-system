@@ -14,24 +14,12 @@ const Writers = () => {
             name: "Kazi Najrul"
         },
         {
-            id: 3,
-            name: "Robisrdonath Takur"
-        },
-        {
             id: 4,
             name: "Josim Uddin"
         },
         {
-            id: 5,
-            name: "Robisrdonath Takur"
-        },
-        {
             id: 6,
             name: "Ahsan"
-        },
-        {
-            id: 7,
-            name: "Robisrdonath Takur"
         },
         {
             id: 8,
@@ -55,13 +43,13 @@ const Writers = () => {
                         <div className='border-2 p-2 rounded-md'>
                             <Image height={200} width={300} className='h-[200px] w-full rounded-t-md' src="https://i.ibb.co/686tyHs/probesh-deb-nath.jpg" alt="writer" />
                             <h3 className='mt-2 text-xl font-bold'>{writer?.name}</h3>
-                            <p className='text-sm'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae perferendis esse quidem distinctio unde!</p>
+                            <p className='text-sm'>My target gift you awesome book, that you can create love in your mind</p>
                         </div>
                     </Link>
 
                 ))
             }
-            <AddWriter />
+            {/* <AddWriter /> */}
         </section>
     )
 }
