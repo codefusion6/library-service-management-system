@@ -81,7 +81,7 @@ const RegisterAction = () => {
 
           <div>
             <label
-              class="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
+              className="font-semibold ml-5 text-sm text-gray-600 pb-1 block"
               for="password"
             >
               Password
@@ -108,7 +108,7 @@ const RegisterAction = () => {
             />
           </div>
         </div>
-        <div class="mt-5">
+        <div className="mt-5">
 
           <button
             className="flex mb-2 items-center justify-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg px-4 py-2"
@@ -137,7 +137,7 @@ const RegisterAction = () => {
           have an account?
           <span className="text-blue-500 font-serif">Log in</span>
         </Link>
-        <span class="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+        <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
       </div>
     </div>
   );
