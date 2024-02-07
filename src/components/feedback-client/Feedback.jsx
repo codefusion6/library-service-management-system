@@ -1,39 +1,107 @@
 "use client";
-
-import { addUser } from "@/libs/actions/user.actions";
-import Button from './Button';
-import toast from "react-hot-toast";
-
+import { Button, Input, Textarea } from "@nextui-org/react";
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const Feedback = () => {
+  const variants = ["flat", "bordered", "underlined", "faded"];
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_p7rqb5s", "template_werqkje", form.current, {
+        publicKey: "9_n4lbfdbf8zEwq4N",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
-    <form action={async (formData) => {
-      add.Button
-      console.log(formData);
-      const response = await addUser(formData);
-      console.log(response.success);
-      if (response.success) {
-        toast.success("Success")
-      }
-    }}
-      className="space-y-5"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        className="w-full py-1 px-2 bg-gray-200 rounded-md text-gray-600 font-semibold outline-none"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        className="px-2 py-1 bg-gray-200 rounded-md text-gray-600 font-semibold outline-none w-full"
-      />
-
-      <textarea placeholder="Message" rows={5} className="px-2 py-1 w-full bg-gray-200 rounded-md text-gray-600 font-semibold"></textarea>
-
-      <Button></Button>
+    <form ref={form} onSubmit={sendEmail} className="space-y-5 bg-gray-200">
+      <div className="items-center ">
+        <div className="mt-5">
+          <label
+            className="font-semibold ml-8 lg:ml-5 text-sm text-gray-600 pb-1 block"
+            for="name"
+          >
+            Name
+          </label>
+          <Input
+            isClearable
+            type="text"
+            placeholder="Your name"
+            name="user_name"
+            variant="bordered"
+            onClear={() => console.log("input cleared")}
+            className="max-w-xs text-center rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 "
+          />
+        </div>
+        <div className="">
+          <label
+            className="font-semibold ml-5  text-sm text-gray-600 pb-1 block"
+            for="email"
+          >
+            Email
+          </label>
+          <Input
+            isClearable
+            type="email"
+            placeholder="Your email"
+            name="user_email"
+            variant="bordered"
+            onClear={() => console.log("input cleared")}
+            className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div className="">
+          <label
+            className="font-semibold ml-5  text-sm text-gray-600 pb-1 block"
+            for="email"
+          >
+            Subject
+          </label>
+          <Input
+            isClearable
+            type="text"
+            placeholder="Subject"
+            name="subject"
+            variant="bordered"
+            onClear={() => console.log("input cleared")}
+            className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div className="">
+          <label
+            className="font-semibold ml-5  text-sm text-gray-600 pb-1 block"
+            for="massage"
+          >
+            Massage
+          </label>
+          <Textarea
+            isClearable
+            type="text"
+            placeholder="write your message"
+            name="message"
+            variant="bordered"
+            onClear={() => console.log("input cleared")}
+            className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <Button radius="md" 
+        type="submit"
+        >
+        Send Message
+      </Button>
+      </div>
     </form>
   );
 };
