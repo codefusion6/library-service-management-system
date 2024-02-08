@@ -24,7 +24,7 @@ const PoliciesAchievements = () => {
         </span>
       </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="bg-white text-black transition duration-300 p-6 rounded-md">
+          <div className="bg-white text-black transition duration-300 p-6 rounded-md shadow-lg">
             <h3 className="text-xl font-bold mb-4">Library Policies</h3>
             <ul className="list-disc pl-4">
               {policies.map((policy, index) => (
@@ -32,7 +32,7 @@ const PoliciesAchievements = () => {
               ))}
             </ul>
           </div>
-          <div className="bg-white text-black transition duration-300 p-6 rounded-md">
+          <div className="bg-white text-black transition duration-300 p-6 rounded-md shadow-lg">
             <h3 className="text-xl font-bold mb-4">Achievements</h3>
             <ul className="list-disc pl-4">
               {achievements.map((achievement, index) => (
