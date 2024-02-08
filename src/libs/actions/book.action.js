@@ -105,7 +105,7 @@ export const addManyBook = async () => {
   }
 };
 // get all books
-export const getAllBooks = async ({query, page, }) => {
+export const getAllBooks = async ({ query, page, }) => {
   try {
     await connectDB();
     // get all books from db
@@ -115,7 +115,7 @@ export const getAllBooks = async ({query, page, }) => {
     const count = await Book.find().countDocuments();
 
     const books = await Book.find(titleCondition).limit(per_page).skip((pageNumber - 1) * per_page)
-    
+
     const totalPage = Math.ceil(count / per_page)
 
     revalidatePath("/addbook");
