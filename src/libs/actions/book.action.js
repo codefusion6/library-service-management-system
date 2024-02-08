@@ -110,16 +110,11 @@ export const getAllBooks = async (page) => {
     // db connect
     await connectDB();
     // get all books from db
-<<<<<<< HEAD
-    const books = await Book.find();
-    
-=======
-    const per_page = 1
+    const per_page = 1;
     const pageNumber = page || 1;
     const count = await Book.find().countDocuments();
     const books = await Book.find().limit(per_page).skip((pageNumber - 1) * per_page)
     const totalPage = Math.ceil(count / per_page)
->>>>>>> de1bc1c6686519cf9b82f5499b896fdad6786d66
     revalidatePath("/addbook");
     return JSON.parse(JSON.stringify({ books: books, totalPage }));
   } catch (error) {
