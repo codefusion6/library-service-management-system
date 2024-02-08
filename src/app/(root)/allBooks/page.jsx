@@ -5,11 +5,13 @@ import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
 import Pagination from "./Pagination";
 import { getAllBooks } from "@/libs/actions/book.action";
+import Search from "@/shared/Search";
 export const dynamic = "force-dynamic";
 
 const AllBooks = async ({ searchParams }) => {
   const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
-  const { books, totalPage } = await getAllBooks(pageNumber)
+  const searchText = (searchParams?.query) || "";
+  const { books, totalPage } = await getAllBooks({ query: searchText, pageNumber })
   return (
 
     <section className="min-h-screen">
@@ -35,12 +37,7 @@ const AllBooks = async ({ searchParams }) => {
           <div className="flex-1 space-y-3">
             <h1 className="text-xl font-semibold">Search Here</h1>
             <div className="flex gap-2 items-center">
-              <input
-                type="text"
-                placeholder="search a book"
-                className="rounded-lg py-2 px-3 w-full border"
-              />
-              <FaSearch className="text-xl"></FaSearch>
+              <Search></Search>
             </div>
             <h1 className="text-2xl font-semibold">All Books</h1>
             <div className="space-y-8">

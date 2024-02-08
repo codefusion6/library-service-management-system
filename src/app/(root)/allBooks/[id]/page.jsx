@@ -6,7 +6,6 @@ import { getBook } from '@/libs/actions/book.action';
 
 const page = async ({ params }) => {
     const singleBook = await getBook(params.id);
-
     return (
         <main className='min-h-screen pt-32'>
             <div className='container mx-auto'>
