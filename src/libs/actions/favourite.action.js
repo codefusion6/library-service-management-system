@@ -4,7 +4,7 @@ import { connectDB } from "../database/MongoConnect"
 import Favourite from "../database/models/favouriteModel/favourite"
 
 export const addFavourite = async (favouriteInfo) => {
-    // console.log(favouriteInfo)
+    console.log(favouriteInfo)
     try {
         await connectDB()
         const query = { email: favouriteInfo.email }

@@ -9,6 +9,7 @@ export const dynamic = "force-dynamic";
 const AllBooks = async ({ searchParams }) => {
   const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
   const { books, totalPage } = await getAllBooks(pageNumber)
+  // console.log(books)
   return (
 
     <section className="min-h-screen">
