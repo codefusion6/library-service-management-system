@@ -5,8 +5,9 @@ const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 export const POST = async (request) => {
     try {
         const data = await request.json();
+
         const customer = await stripe.customers.create({
-            email: 'sumonpaul3217@gmail.com',
+            email: data?.email,
             address: {
                 city: "Mymensingh",
                 country: "Bangladesh",
