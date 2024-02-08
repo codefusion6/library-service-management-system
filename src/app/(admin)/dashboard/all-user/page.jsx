@@ -7,7 +7,6 @@ const AllUsers = () => {
     <div className="p-4">
       <div className="">
         <UserTable></UserTable>
-        <TableUser/>
       </div>
     </div>
   );

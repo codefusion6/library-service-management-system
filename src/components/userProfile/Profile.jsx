@@ -35,11 +35,11 @@ const Profile = () => {
           </div>
           <div className="space-y-2">
             <p className="font-semibold">
-              Name: <br />{" "}
+              Name: <br />
               <span className="font-semibold"> {user?.displayName}</span>
             </p>
             <p className="font-semibold">
-              Email: <br />{" "}
+              Email: <br />
               <span className="font-semibold"> {user?.email}</span>
             </p>
             <ul className="flex gap-3 mt-5">
