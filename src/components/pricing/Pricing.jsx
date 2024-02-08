@@ -1,16 +1,20 @@
 'use client'
+import { UserAuth } from '@/app/provider/context/AuthContext'
 import React from 'react'
 import toast from 'react-hot-toast'
 import { FaPenNib } from 'react-icons/fa'
 import { FaArrowRightLong, FaArrowTrendUp } from 'react-icons/fa6'
 
 const Pricing = () => {
+    const { user } = UserAuth()
     // const charge = { amount: 50 }
+    const email = user?.email;
     const checkout = async (amount, subscriptionType) => {
+        const paymentInfo = { email, amount, subscriptionType }
         await fetch("https://library-service-management-system.vercel.app/api/payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ amount, subscriptionType })
+            body: JSON.stringify(paymentInfo)
         }).then(res => res.json()
             .then(data => {
                 const resData = data;
