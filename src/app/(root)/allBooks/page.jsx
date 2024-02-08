@@ -3,11 +3,14 @@ import React from "react";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
 import Pagination from "./Pagination";
-import Search from "./Search";
+import { getAllBooks } from "@/libs/actions/book.action";
 export const dynamic = "force-dynamic";
 
-const AllBooks = () => {
+const AllBooks = async ({ searchParams }) => {
+  const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
+  const { books, totalPage } = await getAllBooks(pageNumber)
   return (
+
     <section className="min-h-screen">
       <div className="container mx-auto my-10">
         <div className="mt-28 relative">
@@ -25,15 +28,15 @@ const AllBooks = () => {
           <div className="divider text-white text-2xl"></div>
         </div>
         <div className="flex mt-5">
-          <div className="w-[400px] mt-2 md:mr-7">
+          <div className="w-[300px] mt-2 md:mr-7">
             <BooksSidebar></BooksSidebar>
           </div>
           <div className="flex-1 space-y-3">
-            <Search></Search>
+            {/* <Search></Search> */}
             <h1 className="text-2xl font-semibold">All Books</h1>
             <div className="space-y-8">
-              <AllBookCard></AllBookCard>
-              <Pagination></Pagination>
+              <AllBookCard books={books}></AllBookCard>
+              <Pagination totalPage={totalPage} currentPage={pageNumber}></Pagination>
             </div>
           </div>
         </div>

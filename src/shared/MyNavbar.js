@@ -67,22 +67,22 @@ const MyNavbar = () => {
               <NavbarContent className="lg:flex gap-4 justify-end">
                 <div className="lg:flex hidden gap-4">
                   <NavbarItem>
-                    <Link className="" href="/">
+                    <Link className="text-white" href="/">
                       Home
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
-                    <Link className="" href="/about">
+                    <Link className="text-white" href="/about">
                       About us
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
-                    <Link className="" href="/contact">
+                    <Link className="text-white" href="/contact">
                       Contact us
                     </Link>
                   </NavbarItem>
                   <NavbarItem>
-                    <Link className="" href="/our-services">
+                    <Link className="text-white" href="/our-services">
                       Our Services
                     </Link>
                   </NavbarItem>
@@ -186,7 +186,7 @@ const MyNavbar = () => {
                         </DropdownItem>
                         <DropdownItem>
                           <Link
-                            className="font-bold py-2 w-full border-t pt-3 hover:text-primary duration-200"
+                            className="font-bold text-black py-2 w-full border-t pt-3 hover:text-primary duration-200"
                             href="/dashboard"
                           >
                             Dashboard
@@ -194,7 +194,7 @@ const MyNavbar = () => {
                         </DropdownItem>
                         <DropdownItem>
                           <Link
-                            className="font-bold py-2 w-full border-t pt-3 hover:text-primary duration-200"
+                            className="font-bold py-2 w-full border-t pt-3 hover:text-primary duration-200 text-black"
                             href="/userProfile"
                           >
                             Profile
@@ -212,7 +212,7 @@ const MyNavbar = () => {
                     </Dropdown>
                   ) : (
                     <button className="py-2 px-3 rounded-3xl text-md bg-green-700 text-white">
-                      <Link href="/login">Login</Link>
+                      <Link href="/login" className="text-white">Login</Link>
                     </button>
                   )}
                 </div>
