@@ -1,5 +1,6 @@
 "use client";
 import { UserAuth } from "@/app/provider/context/AuthContext";
+import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import React from "react";
 import { AiOutlineTwitter } from "react-icons/ai";
@@ -53,6 +54,7 @@ const Profile = () => {
                 <FaGithub />
               </li>
             </ul>
+            <Button className="bg-indigo-600 mt-10 px-6 py-2 rounded-md ">Edit Profile</Button>
           </div>
         </div>
       </div>
