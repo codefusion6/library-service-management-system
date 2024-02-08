@@ -13,7 +13,6 @@ export const addUser = async (formData) => {
       name: name,
       email: email,
     };
-
     const result = await User.create(newFormData);
     // return JSON.parse(JSON.stringify(result));
     return JSON.parse(JSON.stringify({ success: true, data: result }));
@@ -24,6 +23,7 @@ export const addUser = async (formData) => {
 
 export const getAllUser = async () => {
   try {
+    await connectDB();
     const result = await User.find();
     // return JSON.parse(JSON.stringify(result));
     return JSON.parse(JSON.stringify({ success: true, data: result }));

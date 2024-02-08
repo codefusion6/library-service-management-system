@@ -18,8 +18,7 @@ const BooksList = ({ singleBookData }) => {
                         alt="Card Image"
                         width={270}
                         height={270}
-                        className="w-full h-full object-cover object-center"
-                    />
+                        className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="flex-1 p-2">
                     <p className="text-lg uppercase font-bold">{singleBookData.bookName}</p>
@@ -28,7 +27,6 @@ const BooksList = ({ singleBookData }) => {
                     <p className="text-base font-medium">
                         Price: <span className="font-bold">{singleBookData.category}</span>
                     </p>
-
                     <p className="text-yellow-500 flex">
                         <FaStar />
                         <FaStar />
@@ -40,22 +38,19 @@ const BooksList = ({ singleBookData }) => {
                         <Button
                             variant="ghost"
                             className="hover:bg-gradient-to-r from-yellow-200 to-green-600  hover:text-white text-black font-bold py-2 px-4 rounded"
-                            size="lg"
-                        >
-                            Buy
+                            size="lg"> Buy
                         </Button>
                         <Link href={`/dashboard/booklist/${singleBookData._id}/view-pdf`} target="_blank">
                             <Button
                                 variant="ghost"
                                 className="hover:bg-gradient-to-r from-yellow-200 to-green-600  hover:text-white text-black font-bold py-2 px-4 rounded"
-                                size="lg"
-                            >
+                                size="lg">
                                 View Pdf
                             </Button>
                         </Link>
                         <Button variant="ghost" className="hover:bg-gradient-to-r from-yellow-200 to-green-600  hover:text-white text-black font-bold py-2 px-4 rounded"
                             size="lg">
-                            <a href="/sumon.pdf" download="/sumon.pdf" to="pdf" target="_blank"> Download</a>
+                            <a href="/Md_Morsed_Alam (1).pdf" download="/sumon.pdf" to="pdf" target="_blank"> Download</a>
                         </Button>
                     </div>
                 </div>
@@ -64,5 +59,4 @@ const BooksList = ({ singleBookData }) => {
         </div>
     )
 }
-
 export default BooksList
