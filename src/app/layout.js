@@ -19,7 +19,6 @@ const RootLayout = ({ children }) => {
       <AuthContextProvider>
         <body className={`${merriweather.className}`}>
           <Template> {children}</Template>
-         
           <Toaster position="top-right" />
           <Chatbot />
         </body>

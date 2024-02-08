@@ -12,7 +12,7 @@ const AllBookCard = ({ books }) => {
   const { user } = UserAuth();
   const handleFavouriteClick = async (bookId) => {
     const favouritBook = {
-      userEmail: user.email,
+      email: user.email,
       bookId: bookId,
     }
     try {
