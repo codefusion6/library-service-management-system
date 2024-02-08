@@ -7,7 +7,7 @@ import { FaArrowRightLong, FaArrowTrendUp } from 'react-icons/fa6'
 const Pricing = () => {
     // const charge = { amount: 50 }
     const checkout = async (amount, subscriptionType) => {
-        await fetch("http://localhost:3000/api/payment", {
+        await fetch("https://library-service-management-system.vercel.app/api/payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ amount, subscriptionType })
