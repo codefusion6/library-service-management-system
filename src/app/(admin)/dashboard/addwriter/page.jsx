@@ -1,4 +1,4 @@
-import AddWriterForm from "./addWriterForm"
+import AddWriterForm from "./AddWriterForm"
 
 const AddWriter = () => {
   return (
