@@ -45,7 +45,8 @@
     "slick-carousel": "^1.8.1",
     "stripe": "^14.14.0",
     "sweetalert2": "^11.10.4",
-    "swiper": "^11.0.5"
+    "swiper": "^11.0.5",
+    "use-debounce": "^10.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

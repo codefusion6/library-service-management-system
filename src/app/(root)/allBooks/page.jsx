@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React from "react";
-import { FaSearch } from "react-icons/fa";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
 import Pagination from "./Pagination";
@@ -33,15 +32,7 @@ const AllBooks = async ({ searchParams }) => {
             <BooksSidebar></BooksSidebar>
           </div>
           <div className="flex-1 space-y-3">
-            <h1 className="text-xl font-semibold">Search Here</h1>
-            <div className="flex gap-2 items-center">
-              <input
-                type="text"
-                placeholder="search a book"
-                className="rounded-lg py-2 px-3 w-full border"
-              />
-              <FaSearch className="text-xl"></FaSearch>
-            </div>
+            {/* <Search></Search> */}
             <h1 className="text-2xl font-semibold">All Books</h1>
             <div className="space-y-8">
               <AllBookCard books={books}></AllBookCard>
