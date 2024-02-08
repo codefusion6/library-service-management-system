@@ -16,11 +16,15 @@ const PoliciesAchievements = () => {
   ];
 
   return (
-    <section className="py-16 bg-gradient-to-r from-[#68a74b] to-[#dcde4e] text-white">
+    <section className="py-16 bg-gray-100">
       <div className="container mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">Policies and Achievements</h2>
+        <h2 className="text-xl font-semibold mb-8 text-center">
+        <span className="bg-gradient-to-r from-[#68a74b] to-[#dcde4e] text-transparent text-white px-4 py-2 rounded-sm">
+        Policies and Achievements
+        </span>
+      </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="hover:bg-white hover:text-black transition duration-300 p-6 rounded-md">
+          <div className="bg-white text-black transition duration-300 p-6 rounded-md">
             <h3 className="text-xl font-bold mb-4">Library Policies</h3>
             <ul className="list-disc pl-4">
               {policies.map((policy, index) => (
@@ -28,7 +32,7 @@ const PoliciesAchievements = () => {
               ))}
             </ul>
           </div>
-          <div className="hover:bg-white hover:text-black transition duration-300 p-6 rounded-md">
+          <div className="bg-white text-black transition duration-300 p-6 rounded-md">
             <h3 className="text-xl font-bold mb-4">Achievements</h3>
             <ul className="list-disc pl-4">
               {achievements.map((achievement, index) => (
