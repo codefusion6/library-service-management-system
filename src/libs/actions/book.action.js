@@ -107,7 +107,6 @@ export const addManyBook = async () => {
 // get all books
 export const getAllBooks = async ({query, page, }) => {
   try {
-    // db connect
     await connectDB();
     // get all books from db
     const titleCondition = query ? { bookName: { $regex: query, $options: 'i' } } : {}
@@ -118,6 +117,7 @@ export const getAllBooks = async ({query, page, }) => {
     const books = await Book.find(titleCondition).limit(per_page).skip((pageNumber - 1) * per_page)
     
     const totalPage = Math.ceil(count / per_page)
+
     revalidatePath("/addbook");
     return JSON.parse(JSON.stringify({ books: books, totalPage }));
   } catch (error) {
