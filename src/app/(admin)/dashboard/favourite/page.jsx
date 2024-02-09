@@ -1,4 +1,4 @@
-import FavouriteBooks from '@/components/favouriteBooks/FavouriteBooks'
+// import FavouriteBooks from '@/components/favouriteBooks/FavouriteBooks'
 import React from 'react'
 
 const page = () => {
