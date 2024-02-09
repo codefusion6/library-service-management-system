@@ -25,7 +25,7 @@ function Dashboard() {
               <div className="flex flex-col">
                 <p className="text-bold">Total User</p>
                 <p className="text-xl font-semibold flex gap-3 ">
-                  <FaUserFriends className="text-3xl" />105
+                  <FaUserFriends className="text-3xl" />5
                 </p>
               </div>
             </CardHeader>
@@ -42,7 +42,7 @@ function Dashboard() {
                 <p className="text-bold flex"> Total Books</p>
                 <p className="text-xl font-semibold flex gap-3 ">
                   <FaBookOpen className="text-3xl" />
-                  105
+                  5
                 </p>
               </div>
             </CardHeader>
@@ -59,7 +59,7 @@ function Dashboard() {
                 <p className="text-bold">Total Featured book</p>
                 <p className="text-xl font-semibold flex gap-3  ">
                   <FaBookBible className="text-3xl" />
-                  105
+                  3
                 </p>
               </div>
             </CardHeader>

@@ -1,5 +1,6 @@
+// "use client"
 import Image from "next/image";
-import React from "react";
+// import React, { useEffect, useState } from "react";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
 import Pagination from "./Pagination";
@@ -8,11 +9,32 @@ import Search from "@/shared/Search";
 export const dynamic = "force-dynamic";
 
 const AllBooks = async ({ searchParams }) => {
+  // const [books, setBooks] = useState();
+  // const [totalPage, setTotalPage] = useState();
   const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
   const searchText = (searchParams?.query) || "";
-  const { books, totalPage } = await getAllBooks({ query: searchText, pageNumber })
-  return (
+  console.log(pageNumber, "PageNumber from allbooks");
+  const { books, totalPage } = await getAllBooks({ query: searchText, page: pageNumber, })
 
+  // useEffect(() => {
+  //   const fetchBooks = async () => {
+  //     console.log(pageNumber, "from effect");
+  //     try {
+  //       const { books: fetchedBooks, totalPage: fetchedTotalPage } = await getAllBooks({
+  //         query: searchText,
+  //         page: pageNumber,
+  //       });
+
+  //       setBooks(fetchedBooks);
+  //       setTotalPage(fetchedTotalPage);
+  //     } catch (error) {
+  //       console.error('Error fetching books:', error);
+  //     }
+  //   };
+  //   fetchBooks();
+  // }, [pageNumber, searchText]);
+
+  return (
     <section className="min-h-screen">
       <div className="container mx-auto my-10">
         <div className="mt-28 relative">
