@@ -19,11 +19,11 @@ function Dashboard() {
           <FaSearch className="text-2xl"></FaSearch>
           <IoIosNotifications className="text-3xl" />
         </div>
-        <div className="pt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div className="pt-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
           <Card className="max-w-[400px] border bg-green-900 p-5 text-white rounded-lg">
             <CardHeader className="flex gap-3">
               <div className="flex flex-col">
-                <p className="text-bold">Total User</p>
+                <p className="text-bold font-semibold">Total User</p>
                 <p className="text-xl font-semibold flex gap-3 ">
                   <FaUserFriends className="text-3xl" />5
                 </p>
@@ -31,15 +31,14 @@ function Dashboard() {
             </CardHeader>
             <CardBody>
               <p>
-                This number is static now in next milestone we will show the
-                number from Database.
+
               </p>
             </CardBody>
           </Card>
           <Card className="max-w-[400px] border bg-green-700 p-5 text-white rounded-lg">
             <CardHeader className="flex gap-3">
               <div className="flex flex-col">
-                <p className="text-bold flex"> Total Books</p>
+                <p className="text-bold text-xl font-semibold"> Total Books</p>
                 <p className="text-xl font-semibold flex gap-3 ">
                   <FaBookOpen className="text-3xl" />
                   5
@@ -48,15 +47,14 @@ function Dashboard() {
             </CardHeader>
             <CardBody>
               <p>
-                This number is static now in next milestone we will show the
-                number from Database.
+
               </p>
             </CardBody>
           </Card>
           <Card className="max-w-[400px] border bg-green-500 p-5 text-white rounded-lg">
             <CardHeader className="flex gap-3">
               <div className="flex flex-col">
-                <p className="text-bold">Total Featured book</p>
+                <p className="text-bold font-semibold">Total Featured book</p>
                 <p className="text-xl font-semibold flex gap-3  ">
                   <FaBookBible className="text-3xl" />
                   3
@@ -65,13 +63,28 @@ function Dashboard() {
             </CardHeader>
             <CardBody>
               <p>
-                This number is static now in next milestone we will show the
-                number from Database.
+
+              </p>
+            </CardBody>
+          </Card>
+          <Card className="max-w-[400px] border bg-green-700 p-5 text-white rounded-lg">
+            <CardHeader className="flex gap-3">
+              <div className="flex flex-col">
+                <p className="text-bold text-xl font-semibold">Recomandded books</p>
+                <p className="text-xl font-semibold flex gap-3 ">
+                  <FaBookOpen className="text-3xl" />
+                  8
+                </p>
+              </div>
+            </CardHeader>
+            <CardBody>
+              <p>
+
               </p>
             </CardBody>
           </Card>
         </div>
-        <div className="w-96 container mx-auto mt-5">
+        <div className="w-96 container mx-auto mt-20">
           <Chart></Chart>
         </div>
       </div>

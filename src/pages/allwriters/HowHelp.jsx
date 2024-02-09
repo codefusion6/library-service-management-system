@@ -9,57 +9,57 @@ const HowHelp = () => {
             <h2 className="text-center text-3xl font-semibold pb-10">How Can We Help?</h2>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 gap-y-10">
                 <div className="text-center">
-                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-40 h-40 rounded-full">
-                        <FaUserGraduate  className="text-4xl text-orange-500" />
+                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-28 h-28 rounded-full">
+                        <FaUserGraduate  className="text-4xl text-green-400" />
                     </div>
-                    <p>I want to become write </p>
+                    <p className="py-2 font-semibold">I want to become write </p>
                 </div>
                 <div className="text-center">
-                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-40 h-40 rounded-full">
-                        <FaBookReader className="text-4xl text-orange-500" />
+                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-28 h-28 rounded-full">
+                        <FaBookReader className="text-4xl text-green-400" />
                     </div>
-                    <p>I want to write Book</p>
+                    <p className="py-2 font-semibold">I want to write Book</p>
                 </div>
                 <div className="text-center">
-                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-40 h-40 rounded-full">
-                        <GiBookCover  className="text-4xl text-orange-500" />
+                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-28 h-28 rounded-full">
+                        <GiBookCover  className="text-4xl text-green-400" />
                     </div>
-                    <p>I want to be Member</p>
+                    <p className="py-2 font-semibold">I want to be Member</p>
                 </div>
                 <div className="text-center">
-                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-40 h-40 rounded-full">
+                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-28 h-28 rounded-full">
 
-                        <SiHatenabookmark className="text-4xl text-orange-500" />
+                        <SiHatenabookmark className="text-4xl text-green-400" />
                     </div>
-                    <p>I want to write Blog</p>
+                    <p className="py-2 font-semibold">I want to write Blog</p>
                 </div>
                 <div className="text-center">
-                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-40 h-40 rounded-full">
+                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-28 h-28 rounded-full">
 
-                        <FaPenNib className="text-4xl text-orange-500" />
+                        <FaPenNib className="text-4xl text-green-400" />
                     </div>
-                    <p>I want to write for peoples</p>
+                    <p className="py-2 font-semibold">I want to write for peoples</p>
                 </div>
                 <div className="text-center">
-                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-40 h-40 rounded-full">
+                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-28 h-28 rounded-full">
 
-                        <FaPenNib className="text-4xl text-orange-500" />
+                        <FaPenNib className="text-4xl text-green-400" />
                     </div>
-                    <p>I want to write for peoples</p>
+                    <p className="py-2 font-semibold">I want to write for peoples</p>
                 </div>
                 <div className="text-center">
-                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-40 h-40 rounded-full">
+                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-28 h-28 rounded-full">
 
-                        <FaPenNib className="text-4xl text-orange-500" />
+                        <FaPenNib className="text-4xl text-green-400" />
                     </div>
-                    <p>I want to write for peoples</p>
+                    <p className="py-2 font-semibold">I want to write for peoples</p>
                 </div>
                 <div className="text-center">
-                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-40 h-40 rounded-full">
+                    <div className="bg-gray-100 mx-auto flex justify-center items-center w-28 h-28 rounded-full">
 
-                        <FaPenNib className="text-4xl text-orange-500" />
+                        <FaPenNib className="text-4xl text-green-400" />
                     </div>
-                    <p>I want to write for peoples</p>
+                    <p className="py-2 font-semibold">I want to write for peoples</p>
                 </div>
             </div>
         </section>

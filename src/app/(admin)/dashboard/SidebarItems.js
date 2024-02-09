@@ -1,8 +1,9 @@
 import Link from "next/link";
 import React from "react";
 import { CiBoxList } from "react-icons/ci";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaUserPlus } from "react-icons/fa";
 import { MdFormatListBulletedAdd } from "react-icons/md";
+
 
 const SidebarItems = ({ expanded }) => {
   // const user = "user";
