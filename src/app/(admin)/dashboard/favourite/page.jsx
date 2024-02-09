@@ -6,7 +6,8 @@ const page = () => {
         <main>
             <section>
                 <div className="container mx-auto">
-                    <FavouriteBooks></FavouriteBooks>
+                    {/* <FavouriteBooks></FavouriteBooks> */}
+                    <h1>Favourite book page</h1>
                 </div>
             </section>
         </main>
