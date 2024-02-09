@@ -48,7 +48,7 @@ const Writers = () => {
 
                 ))
             }
-           
+
         </section>
     )
 }
