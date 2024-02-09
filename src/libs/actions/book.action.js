@@ -105,12 +105,8 @@ export const addManyBook = async () => {
   }
 };
 // get all books
-<<<<<<< HEAD
 export const getAllBooks = async ({ query, page, }) => {
-=======
-export const getAllBooks = async ({query, page,}) => {
   console.log(page, "from server");
->>>>>>> ea75030eee8771f31b49af144620cc58ebc1bcd5
   try {
     await connectDB();
     // get all books from db

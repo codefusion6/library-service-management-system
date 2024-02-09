@@ -25,11 +25,7 @@ function Dashboard() {
               <div className="flex flex-col">
                 <p className="text-bold font-semibold">Total User</p>
                 <p className="text-xl font-semibold flex gap-3 ">
-<<<<<<< HEAD
-                  <FaUserFriends className="text-3xl" />6
-=======
                   <FaUserFriends className="text-3xl" />5
->>>>>>> ea75030eee8771f31b49af144620cc58ebc1bcd5
                 </p>
               </div>
             </CardHeader>
@@ -45,11 +41,7 @@ function Dashboard() {
                 <p className="text-bold text-xl font-semibold"> Total Books</p>
                 <p className="text-xl font-semibold flex gap-3 ">
                   <FaBookOpen className="text-3xl" />
-<<<<<<< HEAD
-                  12
-=======
                   5
->>>>>>> ea75030eee8771f31b49af144620cc58ebc1bcd5
                 </p>
               </div>
             </CardHeader>
@@ -65,11 +57,7 @@ function Dashboard() {
                 <p className="text-bold font-semibold">Total Featured book</p>
                 <p className="text-xl font-semibold flex gap-3  ">
                   <FaBookBible className="text-3xl" />
-<<<<<<< HEAD
-                  8
-=======
                   3
->>>>>>> ea75030eee8771f31b49af144620cc58ebc1bcd5
                 </p>
               </div>
             </CardHeader>
