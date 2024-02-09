@@ -1,4 +1,4 @@
-import FavouriteBooks from '@/components/favouriteBooks/FavouriteBooks'
+// import FavouriteBooks from '@/components/favouriteBooks/FavouriteBooks'
 import React from 'react'
 
 const page = () => {
@@ -6,7 +6,8 @@ const page = () => {
         <main>
             <section>
                 <div className="container mx-auto">
-                    <FavouriteBooks></FavouriteBooks>
+                    {/* <FavouriteBooks></FavouriteBooks> */}
+                    <h1>Favourite book page</h1>
                 </div>
             </section>
         </main>
