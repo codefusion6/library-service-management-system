@@ -2,7 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 
-const page = () => {
+const WriterDetails = () => {
     return (
         <div className='pt-28 container mx-auto'>
             <div className='grid grid-cols-1 md:grid-cols-3 py-5 md:gap-10  px-3 md:px-0'>
@@ -36,4 +36,4 @@ const page = () => {
     )
 }
 
-export default page
+export default WriterDetails

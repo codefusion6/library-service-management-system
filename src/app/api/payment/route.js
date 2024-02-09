@@ -5,8 +5,9 @@ const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
 export const POST = async (request) => {
     try {
         const data = await request.json();
+
         const customer = await stripe.customers.create({
-            email: 'sumonpaul3217@gmail.com',
+            email: data?.email,
             address: {
                 city: "Mymensingh",
                 country: "Bangladesh",
@@ -19,8 +20,8 @@ export const POST = async (request) => {
             payment_method_types: ["card"],
             customer: customer.id,
             mode: "payment",
-            success_url: "http://localhost:3000/successPyment",
-            cancel_url: "http://localhost:3000/cancel?token" + customer.id,
+            success_url: "https://library-service-management-system.vercel.app/successPyment",
+            cancel_url: "https://library-service-management-system.vercel.app/cancel?token" + customer.id,
             line_items: [
                 {
                     quantity: 1,
@@ -36,7 +37,6 @@ export const POST = async (request) => {
         })
         // checkout url
         return NextResponse.json({ message: checkOutSession, url: checkOutSession.url, status: 200 })
-
     } catch (error) {
         return NextResponse.json({ message: error.message, status: 500 })
     }

@@ -81,6 +81,18 @@ const SidebarItems = ({ expanded }) => {
                 <sapn className={`${expanded ? "block" : "hidden"}`}> All Users</sapn>
               </Link>
             </li>
+            <li
+              className="flex gap-2 items-center py-2 px-3 my-1
+      font-medium rounded-md cursor-pointer
+      transition-colors group hover:bg-green-100"
+            >
+
+              <Link href="/dashboard/payment-history" className="flex gap-2 font-bold"
+              >
+                <CiBoxList size={20} className="text-xl font-bold" />
+                <sapn className={`${expanded ? "block" : "hidden"}`}> Payment History</sapn>
+              </Link>
+            </li>
 
           </ul>
       }

@@ -1,6 +1,6 @@
 module.exports = {
   images: {
-    domains: ['i.ibb.co', 'reputationprotectiononline.com', 'lh3.googleusercontent.com', 'localhost', "res.cloudinary.com"],
+    domains: ['i.ibb.co', 'reputationprotectiononline.com', 'lh3.googleusercontent.com', 'localhost', "res.cloudinary.com", "images.remotePatterns"],
   },
   webpack: (config) => {
     config.resolve.fallback = {

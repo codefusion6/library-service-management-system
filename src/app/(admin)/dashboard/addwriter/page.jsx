@@ -1,7 +1,6 @@
 import AddWriterForm from "./addWriterForm"
 
-
-const page = () => {
+const AddWriter = () => {
   return (
     <div className=''>
       <div className=' py-5 px-3 md:px-0'>
@@ -18,4 +17,4 @@ const page = () => {
   )
 }
 
-export default page
+export default AddWriter
