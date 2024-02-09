@@ -45,7 +45,7 @@ const AddWriterForm = () => {
                         }
                         return (
                             <button type='button' className='w-full px-5 py-3 rounded-md text-white bg-green-400 hover:bg-green-700' onClick={handleOnClick}>
-                                Upload Book Cover
+                                Upload Writer Image
                             </button>
                         );
                     }}

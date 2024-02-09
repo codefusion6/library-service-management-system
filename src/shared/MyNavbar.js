@@ -147,6 +147,11 @@ const MyNavbar = () => {
                           </Link>
                         </NavbarItem>
                         <NavbarItem>
+                          <Link className="text-white" href="/all-writers">
+                            Writers
+                          </Link>
+                        </NavbarItem>
+                        <NavbarItem>
                           <Link className="text-white" href="/pricing">
                             Pricing
                           </Link>

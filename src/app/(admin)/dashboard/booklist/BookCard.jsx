@@ -5,18 +5,18 @@ import Image from "next/image";
 import { FaEye } from "react-icons/fa";
 import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
-
 import { getAllBooks,} from "@/libs/actions/book.action";
-import { connectDB } from "@/libs/database/MongoConnect";
 import BookDeleteBtn from "./bookDeleteBtn";
 
-const BookCard = async () => {
-  await connectDB();
-  const data = await getAllBooks();
+const BookCard = async ({searchParams}) => {
+  const pageNumber = Number(searchParams?.page === undefined ? "1" : searchParams?.page)
+  const searchText = (searchParams?.query) || "";
+  const { books, totalPage } = await getAllBooks({ query: searchText, pageNumber })
+  console.log(books, totalPage);
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-10">
-        {data?.books?.map((book, index) => (
+        {books?.map((book, index) => (
           <Card
             key={index}
             className="p-6 border hover:border-green-500 hover:border-2 text-center shadow-xl rounded-lg relative overflow-hidden group"
