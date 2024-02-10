@@ -3,6 +3,7 @@ import DashBookSlider from "@/components/dashBookSlider/DashBookSlider";
 import BookCard from "./BookCard";
 import Pagination from "./Pagination";
 import { getAllBooks } from "@/libs/actions/book.action";
+import { Button } from "@nextui-org/react";
 export const dynamic = "force-dynamic";
 
 const BookListPage = async ({ searchParams }) => {
@@ -22,6 +23,9 @@ const BookListPage = async ({ searchParams }) => {
       <BookCard books={books} ></BookCard>
       <Pagination totalPage={totalPage} currentPage={pageNumber} />
       <button className="bg-[#18c96433] text-[#12a150] py-2 px-5 rounded-full">Test Button</button>
+      <Button color="danger">
+        Danger
+      </Button>
     </section>
   );
 };

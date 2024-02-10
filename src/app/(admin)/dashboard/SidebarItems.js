@@ -60,7 +60,7 @@ const SidebarItems = ({ expanded }) => {
           </li>
           <li
             className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-  transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+  transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96525] text-[#12a150]"
           >
             <Link href="/dashboard/addbook" className="flex gap-2 font-bold">
               <MdFormatListBulletedAdd

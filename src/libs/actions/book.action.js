@@ -3,6 +3,7 @@
 import { connectDB } from "../database/MongoConnect";
 import Book from "../database/models/bookModel/book";
 import { revalidatePath } from "next/cache";
+import Favourite from "../database/models/favouriteModel/favourite";
 
 // create book
 export const addBook = async (formData) => {
@@ -145,3 +146,17 @@ export const deleteBook = async (id) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+
+
+//  get all favourite books
+export const getAllFavouriteBooks = async (email) => {
+  try {
+    const query = { email: email }
+    const result = await Favourite.find(query);
+
+    return JSON.parse(JSON.stringify(result))
+
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error))
+  }
+}
