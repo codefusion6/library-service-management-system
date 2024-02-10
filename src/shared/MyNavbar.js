@@ -117,8 +117,7 @@ const MyNavbar = () => {
                     <DropdownMenu
                       aria-label="Mobile Menu"
                       className="bg-gradient-to-tr from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                      variant="flat"
-                    >
+                      variant="flat">
                       {/* Mobile menu items */}
                       <DropdownItem className="h-full gap-2">
                         <NavbarItem>
@@ -183,8 +182,7 @@ const MyNavbar = () => {
                       <DropdownMenu
                         aria-label="Profile Actions"
                         className="bg-gradient-to-tr py-5 from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
-                        variant="flat"
-                      >
+                        variant="flat">
                         <DropdownItem key="profile" className="h-14 gap-2 pb-3">
                           <p className="font-semibold">Signed in as</p>
                           <p className="font-semibold">{user?.email}</p>
@@ -192,16 +190,14 @@ const MyNavbar = () => {
                         <DropdownItem>
                           <Link
                             className="font-bold text-black py-2 w-full border-t pt-3 hover:text-primary duration-200"
-                            href="/dashboard"
-                          >
+                            href="/dashboard">
                             Dashboard
                           </Link>
                         </DropdownItem>
                         <DropdownItem>
                           <Link
                             className="font-bold py-2 w-full border-t pt-3 hover:text-primary duration-200 text-black"
-                            href="/userProfile"
-                          >
+                            href="/userProfile">
                             Profile
                           </Link>
                         </DropdownItem>
@@ -209,8 +205,7 @@ const MyNavbar = () => {
                           key="logout"
                           color="danger"
                           className="hover:text-primary duration-200 font-bold"
-                          onClick={handleLogout}
-                        >
+                          onClick={handleLogout}>
                           Log Out
                         </DropdownItem>
                       </DropdownMenu>
