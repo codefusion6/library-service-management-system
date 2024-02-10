@@ -41,6 +41,10 @@ next-env.d.ts
 .contentlayer
 
 .vercel
+<<<<<<< HEAD
 
 
 package-lock.json
+=======
+package-lock.json
+>>>>>>> 41d5096bb13d0de58c02b8f9e2654b53d830926d
