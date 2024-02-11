@@ -4,8 +4,29 @@ import { Card, CardBody } from "@nextui-org/react";
 import Image from "next/image";
 import { FaEye, FaHeart } from "react-icons/fa";
 import Link from "next/link";
+import { UserAuth } from "@/app/provider/context/AuthContext";
+import { addFavourite } from "@/libs/actions/favourite.action";
+import toast from "react-hot-toast";
 
 const AllBookCard = ({ books }) => {
+  const { user } = UserAuth();
+  const handleFavouriteClick = async (bookId) => {
+    const favouritBook = {
+      email: user.email,
+      bookId: bookId,
+    }
+    try {
+      const response = await addFavourite(favouritBook)
+      // console.log(favouritBook)
+      if (response.success) {
+        toast.success("Book added to your favourite list")
+        console.log(response)
+      }
+    } catch (error) {
+      toast.error(error.message)
+    }
+
+  }
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
@@ -27,7 +48,7 @@ const AllBookCard = ({ books }) => {
               <span className="text-white">View</span>
             </Link>
 
-            <button className="flex justify-center flex-col items-center">
+            <button className="flex justify-center flex-col items-center" onClick={() => handleFavouriteClick(book._id)}>
               <FaHeart className="text-3xl text-white hover:text-pink-600" />
               <span className="text-white text-sm">Add to favourit</span>
             </button>

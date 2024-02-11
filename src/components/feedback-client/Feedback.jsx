@@ -1,40 +1,82 @@
 "use client";
-
-import { addUser } from "@/libs/actions/user.actions";
-import Button from './Button';
-import toast from "react-hot-toast";
-
+import emailjs from "@emailjs/browser";
+import { useRef } from "react";
 
 const Feedback = () => {
+  const variants = ["flat", "bordered", "underlined", "faded"];
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_p7rqb5s", "template_werqkje", form.current, {
+        publicKey: "9_n4lbfdbf8zEwq4N",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+    e.target.reset();
+  };
+
   return (
-    <form action={async (formData) => {
-      add.Button
-      console.log(formData);
-      const response = await addUser(formData);
-      console.log(response.success);
-      if (response.success) {
-        toast.success("Success")
-      }
-    }}
-      className="space-y-5"
-    >
-      <input
-        type="text"
-        name="name"
-        placeholder="Name"
-        className="w-full py-1 px-2 bg-gray-200 rounded-md text-gray-600 font-semibold outline-none"
-      />
-      <input
-        type="email"
-        name="email"
-        placeholder="Email"
-        className="px-2 py-1 bg-gray-200 rounded-md text-gray-600 font-semibold outline-none w-full"
-      />
+    <div className="flex flex-col items-center justify-center h-screen dark">
+      <div className="w-full max-w-md bg-gray-800 rounded-lg shadow-md p-6">
+        <h2 className="text-2xl font-bold text-gray-200 mb-4">
+          Contact With Us
+        </h2>
 
-      <textarea placeholder="Message" rows={5} className="px-2 py-1 w-full bg-gray-200 rounded-md text-gray-600 font-semibold"></textarea>
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col">
+          <input
+            type="text"
+            placeholder="Your name"
+            name="user_name"
+            className="bg-gray-700 text-gray-200 border-0 
+       rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+          />
+          <input
+            type="email"
+            placeholder="Your email"
+            name="user_email"
+            className="bg-gray-700 text-gray-200 border-0 
+       rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+          />
+          <input
+            type="text"
+            placeholder="Subject"
+            name="subject"
+            className="bg-gray-700 text-gray-200 border-0 
+       rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+          />
+          <input
+            type="text"
+            placeholder="write your message"
+            name="message"
+            className="bg-gray-700 text-gray-200 border-0 
+       rounded-md p-2 mb-4 focus:bg-gray-600 focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
+          />
 
-      <Button></Button>
-    </form>
+          <button
+            type="submit"
+            className="bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold py-2 px-4 rounded-md mt-4
+       hover:bg-green-600 hover:to-blue-600 transition ease-in-out duration-150"
+          >
+            Send Message
+          </button>
+        </form>
+
+        <div className="flex justify-center mt-4">
+          <a className="text-sm text-gray-400 hover:underline" href="#">
+            Privacy Policy
+          </a>
+        </div>
+      </div>
+    </div>
   );
 };
 
