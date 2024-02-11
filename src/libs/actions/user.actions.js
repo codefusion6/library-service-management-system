@@ -50,10 +50,9 @@ export const getAllUser = async () => {
 
 
 export const getUserNumber = async () => {
-  await connectDB()
   try {
-    const result = User.find().countDocuments();
-    console.log(result)
+    await connectDB()
+    const result = await User.find().countDocuments();
     revalidatePath("/dashboard");
     return JSON.parse(JSON.stringify(result))
   } catch (error) {
