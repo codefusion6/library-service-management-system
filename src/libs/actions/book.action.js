@@ -106,9 +106,9 @@ export const addManyBook = async () => {
 };
 // get all books
 export const getAllBooks = async ({ query, page, }) => {
-  console.log(page, "from server");
+  // console.log(page, "from server");
+  await connectDB();
   try {
-    await connectDB();
     // get all books from db
     const per_page = 1;
     const pageNumber = page || 1;

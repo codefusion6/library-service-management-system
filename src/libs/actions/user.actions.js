@@ -47,3 +47,16 @@ export const getAllUser = async () => {
     }
   }
 };
+
+
+export const getUserNumber = async () => {
+  await connectDB()
+  try {
+    const result = User.find().countDocuments();
+    console.log(result)
+    revalidatePath("/dashboard");
+    return JSON.parse(JSON.stringify(result))
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error))
+  }
+}
