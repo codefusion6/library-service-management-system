@@ -6,6 +6,7 @@ import { Pie } from "react-chartjs-2";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 export const data = {
+
   labels: ["Story", "History", "Horror", "Easy Readers"],
   datasets: [
     {
@@ -30,7 +31,7 @@ export const data = {
 const Chart = () => {
   return (
     <div>
-      
+
       <Pie data={data}></Pie>
     </div>
   );

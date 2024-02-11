@@ -20,7 +20,7 @@ const AllBookCard = ({ books }) => {
       // console.log(favouritBook)
       if (response.success) {
         toast.success("Book added to your favourite list")
-        console.log(response)
+        // console.log(response)
       }
     } catch (error) {
       toast.error(error.message)

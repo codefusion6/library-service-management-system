@@ -20,8 +20,9 @@ const Sidebar = ({ }) => {
         <nav className="h-screen flex flex-col">
           <div className="p-4 pb-2 flex justify-between items-start">
             <Link href="/"> <Image src={logo} alt="Image" width={200} height={100} className={`w-32 ${expanded ? "blcok" : "hidden"}`}></Image></Link>
-            <button className={`p-2 rotate-180 lg:rotate-0 rounded-lg bg-gray-50 hover:bg-slate-100 fixed lg:static left-0 top-0 ${!expanded ? "" : ""}`} onClick={() => setExpanded(!expanded)}>
-              {expanded ? <FaArrowLeft size={30} className="text-black" /> : <FaArrowRight className="text-black" size={30} />}
+
+            <button className={`p-2 rotate-180 lg:rotate-0 rounded-lg bg-[#18c96433] hover:bg-green-500 text-[#12a150] hover:text-white fixed lg:static left-0 top-0 ${!expanded ? "" : ""}`} onClick={() => setExpanded(!expanded)}>
+              {expanded ? <FaArrowLeft size={30} /> : <FaArrowRight size={30} />}
             </button>
           </div>
           <ul className="flex-1 px-6 mt-4">
