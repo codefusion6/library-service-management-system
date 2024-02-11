@@ -47,3 +47,15 @@ export const getAllUser = async () => {
     }
   }
 };
+
+
+export const getUserNumber = async () => {
+  try {
+    await connectDB()
+    const result = await User.find().countDocuments();
+    revalidatePath("/dashboard");
+    return JSON.parse(JSON.stringify(result))
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error))
+  }
+}

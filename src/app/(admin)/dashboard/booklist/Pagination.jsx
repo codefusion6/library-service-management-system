@@ -4,7 +4,7 @@ import Link from "next/link";
 import { IoIosArrowBack } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 
-const Pagination = ({ currentPage, totalPage ,}) => {
+const Pagination = ({ currentPage, totalPage}) => {
 
   return (
     <div className="flex justify-center text-center items-center gap-5 my-5">

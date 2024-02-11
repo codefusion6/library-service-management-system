@@ -3,7 +3,7 @@
 import { connectDB } from "../database/MongoConnect";
 import Book from "../database/models/bookModel/book";
 import { revalidatePath } from "next/cache";
-
+import Favourite from "../database/models/favouriteModel/favourite";
 // create book
 export const addBook = async (formData) => {
   const bookName = formData.get("bookName");
@@ -106,19 +106,17 @@ export const addManyBook = async () => {
 };
 // get all books
 export const getAllBooks = async ({ query, page, }) => {
-  console.log(page, "from server");
+  // console.log(page, "from server");
+  await connectDB();
   try {
-    await connectDB();
     // get all books from db
-    const titleCondition = query ? { bookName: { $regex: query, $options: 'i' } } : {}
-    const per_page = 6
+    const per_page = 1;
     const pageNumber = page || 1;
 
     const count = await Book.find().countDocuments();
 
     const books = await Book.find(titleCondition).limit(per_page).skip((pageNumber - 1) * per_page)
     const totalPage = Math.ceil(count / per_page)
-
     revalidatePath("/addbook");
     return JSON.parse(JSON.stringify({ books: books, totalPage }));
   } catch (error) {
@@ -145,3 +143,17 @@ export const deleteBook = async (id) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+
+
+//  get all favourite books
+export const getAllFavouriteBooks = async (email) => {
+  try {
+    const query = { email: email }
+    const result = await Favourite.find(query);
+
+    return JSON.parse(JSON.stringify(result))
+
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error))
+  }
+}
