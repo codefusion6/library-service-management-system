@@ -106,16 +106,14 @@ export const addManyBook = async () => {
 };
 // get all books
 export const getAllBooks = async ({ query, page }) => {
-  // console.log(page, "from server");
-  await connectDB();
   try {
+    await connectDB();
     // get all books from db
-    const per_page = 1;
+    const per_page = 6;
     const pageNumber = page || 1;
     const count = await Book.find().countDocuments();
-    const books = await Book.find(titleCondition)
-      .limit(per_page)
-      .skip((pageNumber - 1) * per_page);
+
+    const books = await Book.find().limit(per_page).skip((pageNumber - 1) * per_page);
     const totalPage = Math.ceil(count / per_page);
     revalidatePath("/addbook");
     return JSON.parse(JSON.stringify({ books: books, totalPage }));
