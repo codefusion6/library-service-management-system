@@ -66,41 +66,7 @@ const MyNavbar = () => {
               {/* Laptop and tablet navbar */}
               <NavbarContent className="lg:flex gap-4 justify-end">
                 <div className="lg:flex hidden gap-4">
-                  <NavbarItem>
-                    <Link className="text-white" href="/">
-                      Home
-                    </Link>
-                  </NavbarItem>
-                  <NavbarItem>
-                    <Link className="text-white" href="/about">
-                      About us
-                    </Link>
-                  </NavbarItem>
-                  <NavbarItem>
-                    <Link className="text-white" href="/contact">
-                      Contact us
-                    </Link>
-                  </NavbarItem>
-                  <NavbarItem>
-                    <Link className="text-white" href="/our-services">
-                      Our Services
-                    </Link>
-                  </NavbarItem>
-                  <NavbarItem>
-                    <Link className="text-white" href="/allBooks">
-                      All Books
-                    </Link>
-                  </NavbarItem>
-                  <NavbarItem>
-                    <Link className="text-white" href="/pricing">
-                      Pricing
-                    </Link>
-                  </NavbarItem>
-                  <NavbarItem>
-                    <Link className="text-white" href="/all-writers">
-                      Writers
-                    </Link>
-                  </NavbarItem>
+
                 </div>
                 {/* Small device menu icon and items */}
                 <div
