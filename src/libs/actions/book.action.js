@@ -112,9 +112,7 @@ export const getAllBooks = async ({ query, page }) => {
     // get all books from db
     const per_page = 1;
     const pageNumber = page || 1;
-
     const count = await Book.find().countDocuments();
-
     const books = await Book.find(titleCondition)
       .limit(per_page)
       .skip((pageNumber - 1) * per_page);
@@ -145,6 +143,19 @@ export const deleteBook = async (id) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+
+// get the books based on author name
+
+export const getBooksByAuthor = async () =>{
+  try {
+    await connectDB();
+    const result = await Book.find({authorName: authorName});
+    console.log(result)
+    return JSON.parse(JSON.stringify(result));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+}
 
 //  get all favourite books
 export const getAllFavouriteBooks = async (email) => {

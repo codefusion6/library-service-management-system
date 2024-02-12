@@ -2,13 +2,15 @@ import { Avatar, Button, Image } from "@nextui-org/react";
 import React from "react";
 import Link from "next/link";
 import { FaStar } from "react-icons/fa6";
-import { getBook } from "@/libs/actions/book.action";
+import { getBook, getBooksByAuthor } from "@/libs/actions/book.action";
 import { FaRegStar } from "react-icons/fa";
 // import Image from "next/image";
 
 const page = async ({ params }) => {
   const singleBook = await getBook(params.id);
-  // console.log(singleBook);
+  const authBook = await getBooksByAuthor({authorName: authorName})
+
+  console.log(authBook);
 
   return (
     <main className="min-h-screen pt-32">

@@ -9,10 +9,13 @@ import { getWritersNumber } from "@/libs/actions/writer.action";
 async function Dashboard() {
   const userNum = await getUserNumber()
   console.log(userNum)
+
   const bookNum = await getBooksNumber()
   console.log(bookNum);
+
   const writerNum = await getWritersNumber()
   console.log(writerNum);
+  
   return (
     <main className="h-[100vh]">
       <DashboardHome bookNum={bookNum} userNum={userNum}></DashboardHome>
