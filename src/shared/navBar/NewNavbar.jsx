@@ -54,7 +54,7 @@ export default function App() {
     const [scroll, setScroll] = useState(false);
     useEffect(() => {
         const handleScroll = () => {
-            const isScrolled = window.scrollY > 20;
+            const isScrolled = window.scrollY > 200;
             if (isScrolled !== scroll) {
                 setScroll(isScrolled);
             }
