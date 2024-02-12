@@ -2,7 +2,7 @@
 import { UserAuth } from '@/app/provider/context/AuthContext'
 import { Image } from '@nextui-org/react';
 import React, { } from 'react'
-import { CgProfile } from 'react-icons/cg';
+// import { CgProfile } from 'react-icons/cg';
 
 const NavUser = () => {
     const { user, loading } = UserAuth();

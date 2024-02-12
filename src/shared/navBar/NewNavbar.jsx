@@ -5,10 +5,11 @@ import SiteLogo from "./SiteLogo";
 import "./navbar.css"
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import NavUser from "./NavUser";
+import toast from "react-hot-toast";
 // import { AcmeLogo } from "./AcmeLogo.jsx";
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
-    const { user } = UserAuth()
+    const { user, logOut } = UserAuth();
     const menuItems = [
         "Profile",
         "Dashboard",
@@ -31,6 +32,7 @@ export default function App() {
             toast.error("Logout failed");
         }
     };
+
     return (
         <Navbar
             className="max-w-full bg-slate-600 mx-auto bg-opacity-70 py-1 px-3 justify-between" id="navBar"
