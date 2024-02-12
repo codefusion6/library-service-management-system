@@ -1,5 +1,5 @@
 "use client"
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, NavbarContent, NavbarItem, Link, Button, DropdownItem, DropdownMenu, DropdownTrigger, Dropdown } from "@nextui-org/react";
 import SiteLogo from "./SiteLogo";
 import "./navbar.css"
@@ -8,19 +8,37 @@ import NavUser from "./NavUser";
 import toast from "react-hot-toast";
 // import { AcmeLogo } from "./AcmeLogo.jsx";
 export default function App() {
-    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
     const { user, logOut } = UserAuth();
     const menuItems = [
-        "Profile",
-        "Dashboard",
-        "Activity",
-        "Analytics",
-        "System",
-        "Deployments",
-        "My Settings",
-        "Team Settings",
-        "Help & Feedback",
-        "Log Out",
+        {
+            url_name: "Home",
+            link: "/"
+        },
+        {
+            url_name: "About Us",
+            link: "/about"
+        },
+        {
+            url_name: "Contact Us",
+            link: "/contact"
+        },
+        {
+            url_name: "Our Services",
+            link: "/our-services"
+        },
+        {
+            url_name: "All Books",
+            link: "/allBooks"
+        },
+        {
+            url_name: "Pricing",
+            link: "/pricing"
+        },
+        {
+            url_name: "Writters",
+            link: "/all-writers"
+        }
     ];
 
     const handleLogout = async () => {
@@ -32,10 +50,23 @@ export default function App() {
             toast.error("Logout failed");
         }
     };
-
+    // code for scrolling
+    const [scroll, setScroll] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            const isScrolled = window.scrollY > 20;
+            if (isScrolled !== scroll) {
+                setScroll(isScrolled);
+            }
+        };
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, [scroll]);
     return (
         <Navbar
-            className="max-w-full bg-slate-600 mx-auto bg-opacity-70 py-1 px-3 justify-between" id="navBar"
+            className={`max-w-full mx-auto py-1 px-3 justify-between ${!scroll ? "bg-slate-800" : null}`} id="navBar"
             isBordered
             isMenuOpen={isMenuOpen}
             onMenuOpenChange={setIsMenuOpen}
@@ -57,44 +88,43 @@ export default function App() {
                         <SiteLogo />
                     </NavbarBrand>
                     <NavbarItem>
-                        <Link className="text-white hover:text-primary duration-200" href="/">
+                        <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/">
                             Home
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link className="text-white hover:text-primary duration-200" href="/about">
+                        <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/about">
                             About us
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link className="text-white hover:text-primary duration-200" href="/contact">
+                        <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/contact">
                             Contact us
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link className="text-white hover:text-primary duration-200" href="/our-services">
+                        <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/our-services">
                             Our Services
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link className="text-white hover:text-primary duration-200" href="/allBooks">
+                        <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/allBooks">
                             All Books
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link className="text-white hover:text-primary duration-200" href="/pricing">
+                        <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/pricing">
                             Pricing
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link className="text-white hover:text-primary duration-200" href="/all-writers">
+                        <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/all-writers">
                             Writers
                         </Link>
                     </NavbarItem>
                 </NavbarContent>
 
                 <NavbarContent justify="end">
-
                     {user ? (
                         <Dropdown placement="bottom-end">
                             <DropdownTrigger>
@@ -140,22 +170,20 @@ export default function App() {
                     )}
                 </NavbarContent>
             </div>
-
-            <NavbarMenu>
+            <NavbarMenu className="py-10 px-5">
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
-                        <Link
+                        <Link href={`${item.link}`}
                             className="w-full"
-                            color={
-                                index === 2 ? "warning" : index === menuItems.length - 1 ? "danger" : "foreground"
-                            }
-                            href="#"
+                            color={`danger`}
                             size="lg"
                         >
-                            {item}
+                            {item?.url_name}
                         </Link>
                     </NavbarMenuItem>
+
                 ))}
+
             </NavbarMenu>
         </Navbar>
     );
