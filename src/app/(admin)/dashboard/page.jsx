@@ -18,9 +18,9 @@ async function Dashboard() {
   
   return (
     <main className="h-[100vh]">
-      <DashboardHome bookNum={bookNum} userNum={userNum}></DashboardHome>
+      <DashboardHome bookNum={bookNum} userNum={userNum} writerNum={writerNum}></DashboardHome>
       <div className="w-96 container mx-auto mt-20">
-        <Chart bookNum={bookNum} userNum={userNum} ></Chart>
+        <Chart bookNum={bookNum} userNum={userNum} writerNum={writerNum}></Chart>
       </div>
     </main>
   );
