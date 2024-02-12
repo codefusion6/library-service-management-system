@@ -106,16 +106,14 @@ export const addManyBook = async () => {
 };
 // get all books
 export const getAllBooks = async ({ query, page }) => {
-  // console.log(page, "from server");
-  await connectDB();
   try {
+    await connectDB();
     // get all books from db
-    const per_page = 1;
+    const per_page = 6;
     const pageNumber = page || 1;
     const count = await Book.find().countDocuments();
-    const books = await Book.find(titleCondition)
-      .limit(per_page)
-      .skip((pageNumber - 1) * per_page);
+
+    const books = await Book.find().limit(per_page).skip((pageNumber - 1) * per_page);
     const totalPage = Math.ceil(count / per_page);
     revalidatePath("/addbook");
     return JSON.parse(JSON.stringify({ books: books, totalPage }));
@@ -146,10 +144,10 @@ export const deleteBook = async (id) => {
 
 // get the books based on author name
 
-export const getBooksByAuthor = async () =>{
+export const getBooksByAuthor = async () => {
   try {
     await connectDB();
-    const result = await Book.find({authorName: authorName});
+    const result = await Book.find({ authorName: authorName });
     console.log(result)
     return JSON.parse(JSON.stringify(result));
   } catch (error) {
@@ -158,14 +156,20 @@ export const getBooksByAuthor = async () =>{
 }
 
 //  get all favourite books
-export const getAllFavouriteBooks = async (email) => {
+export const getFavouriteBook = async (email) => {
   try {
+    await connectDB();
     const query = { email: email };
-    const result = await Favourite.find(query);
-
-    return JSON.parse(JSON.stringify(result));
+    const result = await Favourite.findOne(query);
+    const favouriteBookids = result ? result.bookIds : [];
+    const bookResult = await Book.find({
+      _id: {
+        $in: favouriteBookids
+      }
+    });
+    return JSON.parse(JSON.stringify(bookResult));
   } catch (error) {
-    return JSON.parse(JSON.stringify(error));
+    return error;
   }
 };
 
