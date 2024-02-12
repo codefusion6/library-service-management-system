@@ -48,7 +48,6 @@ export const getAllUser = async () => {
   }
 };
 
-
 export const getUserNumber = async () => {
   try {
     await connectDB();

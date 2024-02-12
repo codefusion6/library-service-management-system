@@ -25,4 +25,5 @@ async function Dashboard() {
     </main>
   );
 }
+
 export default Dashboard;
