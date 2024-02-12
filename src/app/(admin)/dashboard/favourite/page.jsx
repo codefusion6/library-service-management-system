@@ -6,7 +6,7 @@ const page = async () => {
     const data = await getFavouriteBook("sumonpaul3217@gmail.com")
     // console.log(data)
     return (
-        <main>
+        <main className='bg-slate-50 p-2'>
             <section>
                 <div className="container mx-auto">
                     {/* <FavouriteBooks></FavouriteBooks> */}
