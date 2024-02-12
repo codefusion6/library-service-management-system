@@ -146,10 +146,10 @@ export const deleteBook = async (id) => {
 
 // get the books based on author name
 
-export const getBooksByAuthor = async () =>{
+export const getBooksByAuthor = async () => {
   try {
     await connectDB();
-    const result = await Book.find({authorName: authorName});
+    const result = await Book.find({ authorName: authorName });
     console.log(result)
     return JSON.parse(JSON.stringify(result));
   } catch (error) {
@@ -158,14 +158,20 @@ export const getBooksByAuthor = async () =>{
 }
 
 //  get all favourite books
-export const getAllFavouriteBooks = async (email) => {
+export const getFavouriteBook = async (email) => {
   try {
+    await connectDB();
     const query = { email: email };
-    const result = await Favourite.find(query);
-
-    return JSON.parse(JSON.stringify(result));
+    const result = await Favourite.findOne(query);
+    const favouriteBookids = result ? result.bookIds : [];
+    const bookResult = await Book.find({
+      _id: {
+        $in: favouriteBookids
+      }
+    });
+    return JSON.parse(JSON.stringify(bookResult));
   } catch (error) {
-    return JSON.parse(JSON.stringify(error));
+    return error;
   }
 };
 
