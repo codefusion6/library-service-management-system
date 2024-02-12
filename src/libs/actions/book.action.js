@@ -105,7 +105,7 @@ export const addManyBook = async () => {
   }
 };
 // get all books
-export const getAllBooks = async ({ query, page, }) => {
+export const getAllBooks = async ({ query, page }) => {
   // console.log(page, "from server");
   await connectDB();
   try {
@@ -115,12 +115,14 @@ export const getAllBooks = async ({ query, page, }) => {
 
     const count = await Book.find().countDocuments();
 
-    const books = await Book.find(titleCondition).limit(per_page).skip((pageNumber - 1) * per_page)
-    const totalPage = Math.ceil(count / per_page)
+    const books = await Book.find(titleCondition)
+      .limit(per_page)
+      .skip((pageNumber - 1) * per_page);
+    const totalPage = Math.ceil(count / per_page);
     revalidatePath("/addbook");
     return JSON.parse(JSON.stringify({ books: books, totalPage }));
   } catch (error) {
-    return JSON.parse(JSON.stringify(error))
+    return JSON.parse(JSON.stringify(error));
   }
 };
 
@@ -144,16 +146,27 @@ export const deleteBook = async (id) => {
   }
 };
 
-
 //  get all favourite books
 export const getAllFavouriteBooks = async (email) => {
   try {
-    const query = { email: email }
+    const query = { email: email };
     const result = await Favourite.find(query);
 
-    return JSON.parse(JSON.stringify(result))
-
+    return JSON.parse(JSON.stringify(result));
   } catch (error) {
-    return JSON.parse(JSON.stringify(error))
+    return JSON.parse(JSON.stringify(error));
   }
-}
+};
+
+// get the books numbers for the dashboard Cart
+
+export const getBooksNumber = async () => {
+  try {
+    await connectDB();
+    const bookNum = await Book.find().countDocuments();
+    revalidatePath("/dashboard")
+    return JSON.parse(JSON.stringify(bookNum))
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};

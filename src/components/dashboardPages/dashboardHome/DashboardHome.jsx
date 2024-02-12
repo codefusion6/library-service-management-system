@@ -5,7 +5,7 @@ import { FaBookOpen, FaSearch, FaUserFriends } from 'react-icons/fa'
 import { FaBookBible } from 'react-icons/fa6'
 import { IoIosNotifications } from 'react-icons/io'
 
-const DashboardHome = () => {
+const DashboardHome = ({bookNum, userNum}) => {
     return (
 
         <div className="">
@@ -24,7 +24,7 @@ const DashboardHome = () => {
                         <div className="flex flex-col">
                             <p className="text-bold font-semibold">Total User</p>
                             <p className="text-xl font-semibold flex gap-3 ">
-                                <FaUserFriends className="text-3xl" />5
+                                <FaUserFriends className="text-3xl" />
                             </p>
                         </div>
                     </CardHeader>
@@ -40,7 +40,7 @@ const DashboardHome = () => {
                             <p className="text-bold text-xl font-semibold"> Total Books</p>
                             <p className="text-xl font-semibold flex gap-3 ">
                                 <FaBookOpen className="text-3xl" />
-                                5
+                                {bookNum}
                             </p>
                         </div>
                     </CardHeader>
