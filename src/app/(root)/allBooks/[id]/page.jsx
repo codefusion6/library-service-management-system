@@ -1,12 +1,12 @@
-import { Avatar, Button, Image } from "@nextui-org/react";
+import {  Button, Image } from "@nextui-org/react";
 import React from "react";
 import Link from "next/link";
-import { FaStar } from "react-icons/fa6";
 import { getBook, getBooksByAuthor } from "@/libs/actions/book.action";
 import { FaRegStar } from "react-icons/fa";
+import Comment from "@/components/comment/Comment";
 // import Image from "next/image";
 
-const page = async ({ params }) => {
+const page = async ({ params, authorName }) => {
   const singleBook = await getBook(params.id);
   const authBook = await getBooksByAuthor({authorName: authorName})
 
@@ -52,14 +52,6 @@ const page = async ({ params }) => {
               <span className="font-semibold">Category:</span>
               {singleBook.category}
             </p>
-
-            {/* <Image
-              alt="author image"
-              src={singleBook.authorImage}
-              width={30}
-              height={20}
-              className="w-70 rounded-full"
-            ></Image> */}
             <div className="flex gap-2 items-center">
               <Image
                 alt="author img"
@@ -68,6 +60,10 @@ const page = async ({ params }) => {
                 height={30}
               />
               <p className="font-semibold">{singleBook.publisherEmail}</p>
+            </div>
+            <hr />
+            <div>
+              <Comment></Comment>
             </div>
           </div>
         </div>

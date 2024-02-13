@@ -6,8 +6,8 @@ import { MdFormatListBulletedAdd } from "react-icons/md";
 
 
 const SidebarItems = ({ expanded }) => {
-  const user = "user";
-  // const user = "admin";
+  // const user = "user";
+  const user = "admin";
   return (
     <>
       {user === "user" ? (
