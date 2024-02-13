@@ -3,14 +3,15 @@ import React from "react";
 import Link from "next/link";
 import { getBook, getBooksByAuthor } from "@/libs/actions/book.action";
 import { FaRegStar } from "react-icons/fa";
-import Comment from "@/components/comment/Comment";
+import Comment from "@/components/bookDetailsPage/comment/Comment";
+import SimilarAuthor from "@/components/bookDetailsPage/similarAuthor/SimilarAuthor";
 // import Image from "next/image";
 
-const page = async ({ params, authorName }) => {
+const page = async ({ params }) => {
   const singleBook = await getBook(params.id);
-  const authBook = await getBooksByAuthor({authorName: authorName})
+  const authorBook = await getBooksByAuthor(singleBook.authorName);
 
-  console.log(authBook);
+  // console.log("the values of params and auth",authorBook);
 
   return (
     <main className="min-h-screen pt-32">
@@ -67,6 +68,8 @@ const page = async ({ params, authorName }) => {
             </div>
           </div>
         </div>
+        <h2 className="my-20 text-2xl font-semibold border-b-3 pb-2">Similar Author Related Books</h2>
+        <SimilarAuthor authorBook={authorBook}></SimilarAuthor>
       </div>
     </main>
   );
