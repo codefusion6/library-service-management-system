@@ -3,7 +3,7 @@
 import { connectDB } from "../database/MongoConnect";
 import Book from "../database/models/bookModel/book";
 import { revalidatePath } from "next/cache";
-
+import Favourite from "../database/models/favouriteModel/favourite";
 // create book
 export const addBook = async (formData) => {
   const bookName = formData.get("bookName");
@@ -31,7 +31,8 @@ export const addBook = async (formData) => {
 
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
-    return { success: true, data: JSON.parse(JSON.stringify(result)) };
+
+    return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return {
       error: "Fill input properly or send the required data",
@@ -96,7 +97,6 @@ export const addManyBook = async () => {
       image: "https://i.ibb.co/jyF3hNx/img-04.jpg",
     },
   ];
-
   try {
     const result = await Book.insertMany(books);
     return JSON.parse(JSON.stringify(result));
@@ -104,22 +104,23 @@ export const addManyBook = async () => {
     return JSON.parse(JSON.stringify(error));
   }
 };
-
 // get all books
-export const getAllBooks = async () => {
+export const getAllBooks = async ({ query, page }) => {
   try {
-    // db connect
     await connectDB();
     // get all books from db
-    const books = await Book.find();
+    const per_page = 6;
+    const pageNumber = page || 1;
+    const count = await Book.find().countDocuments();
+
+    const books = await Book.find().limit(per_page).skip((pageNumber - 1) * per_page);
+    const totalPage = Math.ceil(count / per_page);
     revalidatePath("/addbook");
-    return { books: JSON.parse(JSON.stringify(books)) };
+    return JSON.parse(JSON.stringify({ books: books, totalPage }));
   } catch (error) {
-    console.log(error);
+    return JSON.parse(JSON.stringify(error));
   }
 };
-
-// single book
 
 export const getBook = async (id) => {
   try {
@@ -136,6 +137,50 @@ export const deleteBook = async (id) => {
     const result = await Book.findByIdAndDelete(id);
     revalidatePath("/dashboard/booklist");
     return JSON.parse(JSON.stringify(result));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
+
+// get the books based on author name
+
+export const getBooksByAuthor = async () => {
+  try {
+    await connectDB();
+    const result = await Book.find({ authorName: authorName });
+    console.log(result)
+    return JSON.parse(JSON.stringify(result));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+}
+
+//  get all favourite books
+export const getFavouriteBook = async (email) => {
+  try {
+    await connectDB();
+    const query = { email: email };
+    const result = await Favourite.findOne(query);
+    const favouriteBookids = result ? result.bookIds : [];
+    const bookResult = await Book.find({
+      _id: {
+        $in: favouriteBookids
+      }
+    });
+    return JSON.parse(JSON.stringify(bookResult));
+  } catch (error) {
+    return error;
+  }
+};
+
+// get the books numbers for the dashboard Cart
+
+export const getBooksNumber = async () => {
+  try {
+    await connectDB();
+    const bookNum = await Book.find().countDocuments();
+    revalidatePath("/dashboard")
+    return JSON.parse(JSON.stringify(bookNum))
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }

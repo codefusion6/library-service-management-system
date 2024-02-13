@@ -4,6 +4,7 @@ import { AuthContextProvider } from "./provider/context/AuthContext";
 import { Toaster } from "react-hot-toast";
 import Chatbot from "@/components/chatbot/chatbot";
 import Template from "./template";
+import { Providers } from "./providers";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -16,13 +17,15 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en" suppressHydrationWarning={true}>
-      <AuthContextProvider>
-        <body className={`${merriweather.className}`}>
-          <Template> {children}</Template>
-          <Toaster position="top-center" reverseOrder={false} />
+      <body className={`${merriweather.className}`}>
+        <AuthContextProvider>
+          <Template>
+            <Providers>{children}</Providers>
+          </Template>
+          <Toaster position="top-right" />
           <Chatbot />
-        </body>
-      </AuthContextProvider>
+        </AuthContextProvider>
+      </body>
     </html>
   );
 };

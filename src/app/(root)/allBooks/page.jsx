@@ -1,11 +1,19 @@
+// "use client"
 import Image from "next/image";
-import React from "react";
-import { FaSearch } from "react-icons/fa";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
+import Pagination from "./Pagination";
+import { getAllBooks } from "@/libs/actions/book.action";
+import Search from "@/shared/Search";
 export const dynamic = "force-dynamic";
 
-const AllBooks = () => {
+const AllBooks = async ({ searchParams }) => {
+  const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
+  const searchText = (searchParams?.query) || "";
+  console.log(pageNumber, "PageNumber from allbooks");
+  const { books, totalPage } = await getAllBooks({ query: searchText, page: pageNumber, })
+
+
   return (
     <section className="min-h-screen">
       <div className="container mx-auto my-10">
@@ -24,22 +32,18 @@ const AllBooks = () => {
           <div className="divider text-white text-2xl"></div>
         </div>
         <div className="flex mt-5">
-          <div className="w-[400px] mt-2 md:mr-7">
+          <div className="w-[300px] mt-2 md:mr-7">
             <BooksSidebar></BooksSidebar>
           </div>
           <div className="flex-1 space-y-3">
             <h1 className="text-xl font-semibold">Search Here</h1>
             <div className="flex gap-2 items-center">
-              <input
-                type="text"
-                placeholder="search a book"
-                className="rounded-lg py-2 px-3 w-full border"
-              />
-              <FaSearch className="text-xl"></FaSearch>
+              <Search></Search>
             </div>
             <h1 className="text-2xl font-semibold">All Books</h1>
-            <div className="">
-                <AllBookCard></AllBookCard>
+            <div className="space-y-8">
+              <AllBookCard books={books}></AllBookCard>
+              <Pagination totalPage={totalPage} currentPage={pageNumber}></Pagination>
             </div>
           </div>
         </div>
