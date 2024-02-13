@@ -1,13 +1,30 @@
-"use client"
+"use client";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import Image from "next/image";
 import React from "react";
+import { FaRegHandPointDown, FaRegStar } from "react-icons/fa";
+import {
+  Modal,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  Button,
+  useDisclosure,
+  Checkbox,
+  Input,
+  Link,
+} from "@nextui-org/react";
+// import {MailIcon} from './MailIcon.jsx';
+// import {LockIcon} from './LockIcon.jsx';
 
 const Comment = () => {
-    const { user } = UserAuth();
-    console.log(user);
+  const { user } = UserAuth();
+  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  console.log(user);
   return (
     <section>
+      
       <div className="flex gap-3">
         <Image
           alt="User Image"
@@ -16,13 +33,52 @@ const Comment = () => {
           height={30}
           className="rounded-full size-10"
         />
-        <textarea
-          name="bookDescription"
-          placeholder="write a comment"
-          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
-        />
-        
+        <Button
+          onPress={onOpen}
+          className="rounded-xl hover:bg-lime-700 border text-black border-green-600  hover:text-white font-bold px-5 py-2"
+        >
+          Rating & Review
+        </Button>
+        <Modal
+          isOpen={isOpen}
+          onOpenChange={onOpenChange}
+          placement="top-center"
+        >
+          <ModalContent>
+            {(onClose) => (
+              <>
+                <ModalHeader className="flex flex-col gap-1">
+                  Rating & Review
+                </ModalHeader>
+                <ModalBody>
+                  <div>
+                    <textarea
+                      name="bookDescription"
+                      placeholder="write a comment"
+                      className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
+                    />
+                    <p className="flex gap-2 items-center justify-center">
+                      <FaRegStar className="text-3xl" />
+                      <FaRegStar className="text-3xl" />
+                      <FaRegStar className="text-3xl" />
+                      <FaRegStar className="text-3xl" />
+                      <FaRegStar className="text-3xl" />
+                    </p>
+                  </div>
+                </ModalBody>
+                <ModalFooter>
+                  <Button color="primary" variant="flat" onPress={onClose}>
+                    Submit
+                  </Button>
+                </ModalFooter>
+              </>
+            )}
+          </ModalContent>
+        </Modal>
       </div>
+      <h2 className="my-8 text-base font-semibold flex items-center gap-2">
+        Your rating & review <span> <FaRegHandPointDown /></span>
+      </h2>
     </section>
   );
 };

@@ -56,6 +56,7 @@ const page = async ({ params }) => {
             <div className="flex gap-2 items-center">
               <Image
                 alt="author img"
+                className="size-8"
                 src={singleBook.authorImage}
                 width={30}
                 height={30}
