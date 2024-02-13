@@ -5,7 +5,7 @@ import { getBook, getBooksByAuthor } from "@/libs/actions/book.action";
 import { FaRegStar } from "react-icons/fa";
 import Comment from "@/components/bookDetailsPage/comment/Comment";
 import SimilarAuthor from "@/components/bookDetailsPage/similarAuthor/SimilarAuthor";
-// import Image from "next/image";
+
 
 const page = async ({ params }) => {
   const singleBook = await getBook(params.id);
@@ -78,4 +78,4 @@ const page = async ({ params }) => {
 
 export default page;
 
-// border border-yellow-400 hover:bg-yellow-400
+

@@ -58,14 +58,3 @@ export const getUserNumber = async () => {
     return JSON.parse(JSON.stringify(error));
   }
 };
-
-// export const getUserNumber = async () => {
-//   try {
-//     await connectDB()
-//     const userNum = await User.find().countDocuments();
-//     revalidatePath("/dashboard");
-//     return JSON.parse(JSON.stringify(userNum))
-//   } catch (error) {
-//     return JSON.parse(JSON.stringify(error))
-//   }
-// }

@@ -15,8 +15,6 @@ import {
   Input,
   Link,
 } from "@nextui-org/react";
-// import {MailIcon} from './MailIcon.jsx';
-// import {LockIcon} from './LockIcon.jsx';
 
 const Comment = () => {
   const { user } = UserAuth();
@@ -24,7 +22,6 @@ const Comment = () => {
   console.log(user);
   return (
     <section>
-      
       <div className="flex gap-3">
         <Image
           alt="User Image"
@@ -52,18 +49,32 @@ const Comment = () => {
                 </ModalHeader>
                 <ModalBody>
                   <div>
-                    <textarea
-                      name="bookDescription"
-                      placeholder="write a comment"
-                      className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
-                    />
-                    <p className="flex gap-2 items-center justify-center">
-                      <FaRegStar className="text-3xl" />
-                      <FaRegStar className="text-3xl" />
-                      <FaRegStar className="text-3xl" />
-                      <FaRegStar className="text-3xl" />
-                      <FaRegStar className="text-3xl" />
-                    </p>
+                    <form
+                      action={async (formData) => {
+                        try {
+                          const response = await addBook(formData);
+                          if (response?.success) {
+                            toast.success("Book added successfully");
+                          }
+                          console.log(response);
+                        } catch (error) {
+                          console.log(error);
+                        }
+                      }}
+                    >
+                      <textarea
+                        name="commentDescription"
+                        placeholder="write a comment"
+                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
+                      />
+                      <p className="flex gap-2 items-center justify-center">
+                        <FaRegStar className="text-3xl" />
+                        <FaRegStar className="text-3xl" />
+                        <FaRegStar className="text-3xl" />
+                        <FaRegStar className="text-3xl" />
+                        <FaRegStar className="text-3xl" />
+                      </p>
+                    </form>
                   </div>
                 </ModalBody>
                 <ModalFooter>
@@ -77,7 +88,11 @@ const Comment = () => {
         </Modal>
       </div>
       <h2 className="my-8 text-base font-semibold flex items-center gap-2">
-        Your rating & review <span> <FaRegHandPointDown /></span>
+        Your rating & review{" "}
+        <span>
+          {" "}
+          <FaRegHandPointDown />
+        </span>
       </h2>
     </section>
   );
