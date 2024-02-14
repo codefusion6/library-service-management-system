@@ -1,14 +1,17 @@
-import { Avatar, Button, Image } from "@nextui-org/react";
+import {  Button, Image } from "@nextui-org/react";
 import React from "react";
 import Link from "next/link";
-import { FaStar } from "react-icons/fa6";
-import { getBook } from "@/libs/actions/book.action";
+import { getBook, getBooksByAuthor } from "@/libs/actions/book.action";
 import { FaRegStar } from "react-icons/fa";
-// import Image from "next/image";
+import Comment from "@/components/bookDetailsPage/comment/Comment";
+import SimilarAuthor from "@/components/bookDetailsPage/similarAuthor/SimilarAuthor";
+
 
 const page = async ({ params }) => {
   const singleBook = await getBook(params.id);
-  // console.log(singleBook);
+  const authorBook = await getBooksByAuthor(singleBook.authorName);
+
+  // console.log("the values of params and auth",authorBook);
 
   return (
     <main className="min-h-screen pt-32">
@@ -50,25 +53,24 @@ const page = async ({ params }) => {
               <span className="font-semibold">Category:</span>
               {singleBook.category}
             </p>
-
-            {/* <Image
-              alt="author image"
-              src={singleBook.authorImage}
-              width={30}
-              height={20}
-              className="w-70 rounded-full"
-            ></Image> */}
             <div className="flex gap-2 items-center">
               <Image
                 alt="author img"
+                className="size-8"
                 src={singleBook.authorImage}
                 width={30}
                 height={30}
               />
               <p className="font-semibold">{singleBook.publisherEmail}</p>
             </div>
+            <hr />
+            <div>
+              <Comment></Comment>
+            </div>
           </div>
         </div>
+        <h2 className="my-20 text-2xl font-semibold border-b-3 pb-2">Similar Author Related Books</h2>
+        <SimilarAuthor authorBook={authorBook}></SimilarAuthor>
       </div>
     </main>
   );
@@ -76,4 +78,4 @@ const page = async ({ params }) => {
 
 export default page;
 
-// border border-yellow-400 hover:bg-yellow-400
+

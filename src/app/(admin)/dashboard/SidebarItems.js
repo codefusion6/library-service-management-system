@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { CiBoxList } from "react-icons/ci";
-import { FaHome, FaUserPlus } from "react-icons/fa";
+import { FaHome } from "react-icons/fa";
 import { MdFormatListBulletedAdd } from "react-icons/md";
 
 
@@ -60,7 +60,7 @@ const SidebarItems = ({ expanded }) => {
           </li>
           <li
             className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-  transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+  transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96525] text-[#12a150]"
           >
             <Link href="/dashboard/addbook" className="flex gap-2 font-bold">
               <MdFormatListBulletedAdd
@@ -73,6 +73,19 @@ const SidebarItems = ({ expanded }) => {
             </Link>
           </li>
           <li
+            className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
+  transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+            <Link href="/dashboard/addwriter" className="flex gap-2 font-bold">
+              <MdFormatListBulletedAdd
+                size={25}
+                className="text-xl font-bold"
+              />
+              <sapn className={`${expanded ? "block" : "hidden"}`}>
+                add writer
+              </sapn>
+            </Link>
+          </li>
+          <li
             className="flex gap-2 items-center py-2 px-3 my-1
       font-medium rounded-md cursor-pointer
       transition-colors group hover:bg-green-500 hover:text-white  bg-[#18c96433] text-[#12a150]"
@@ -80,7 +93,6 @@ const SidebarItems = ({ expanded }) => {
             <Link href="/dashboard/all-user" className="flex gap-2 font-bold">
               <CiBoxList size={20} className="text-xl font-bold" />
               <sapn className={`${expanded ? "block" : "hidden"}`}>
-                {" "}
                 All Users
               </sapn>
             </Link>
@@ -96,7 +108,6 @@ const SidebarItems = ({ expanded }) => {
             >
               <CiBoxList size={20} className="text-xl font-bold" />
               <sapn className={`${expanded ? "block" : "hidden"}`}>
-                {" "}
                 Payment History
               </sapn>
             </Link>

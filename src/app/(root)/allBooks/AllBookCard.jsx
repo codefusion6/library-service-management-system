@@ -9,6 +9,7 @@ import { addFavourite } from "@/libs/actions/favourite.action";
 import toast from "react-hot-toast";
 
 const AllBookCard = ({ books }) => {
+  console.log(books)
   const { user } = UserAuth();
   const handleFavouriteClick = async (bookId) => {
     const favouritBook = {
@@ -20,11 +21,12 @@ const AllBookCard = ({ books }) => {
       // console.log(favouritBook)
       if (response.success) {
         toast.success("Book added to your favourite list")
-        console.log(response)
+        // console.log(response)
       }
     } catch (error) {
       toast.error(error.message)
     }
+    
 
   }
 
