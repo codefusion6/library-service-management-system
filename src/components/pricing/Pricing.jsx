@@ -13,7 +13,7 @@ const Pricing = () => {
     const handleCheckout = async (amount, subscriptionType) => {
         const paymentInfo = { email, userName, amount, subscriptionType }
         // https://library-service-management-system.vercel.app
-        await fetch("http://localhost:3000/api/payment", {
+        await fetch("https://library-service-management-system.vercel.app/api/payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(paymentInfo)
@@ -30,7 +30,7 @@ const Pricing = () => {
                     paymentStatus: resData?.payment_status
                 }
                 console.log(resData)
-                console.log(paymentInfo)
+                // console.log(paymentInfo)
                 return window.location.href = resData.url
 
             })
@@ -120,5 +120,4 @@ const Pricing = () => {
         </section>
     )
 }
-
 export default Pricing
