@@ -1,3 +1,4 @@
+"use server";
 import { connectDB } from "../database/MongoConnect";
 import Comment from "../database/models/commentModel/comment";
 

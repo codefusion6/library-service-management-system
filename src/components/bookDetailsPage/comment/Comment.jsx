@@ -11,15 +11,12 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-  Checkbox,
-  Input,
-  Link,
 } from "@nextui-org/react";
 
 const Comment = () => {
   const { user } = UserAuth();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  console.log(user);
+  // console.log(user);
   return (
     <section>
       <div className="flex gap-3">
@@ -74,14 +71,14 @@ const Comment = () => {
                         <FaRegStar className="text-3xl" />
                         <FaRegStar className="text-3xl" />
                       </p>
+                      <ModalFooter>
+                        <Button type="submit" color="primary" variant="flat">
+                          Submit
+                        </Button>
+                      </ModalFooter>
                     </form>
                   </div>
                 </ModalBody>
-                <ModalFooter>
-                  <Button color="primary" variant="flat" onPress={onClose}>
-                    Submit
-                  </Button>
-                </ModalFooter>
               </>
             )}
           </ModalContent>
