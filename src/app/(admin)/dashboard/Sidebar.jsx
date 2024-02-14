@@ -30,7 +30,7 @@ const Sidebar = ({ }) => {
           </ul>
           < div className="border-r flex p-3">
             <Image
-              src={user?.photoURL === null ? "https://i.ibb.co/gTBx7qs/sumon.png" : user?.photoURL}
+              src={user && user?.photoURL === null ? "https://i.ibb.co/gTBx7qs/sumon.png" : user?.photoURL}
               rel="noreferrer"
               alt="profile image"
               width={50}
