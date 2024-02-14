@@ -50,3 +50,16 @@ export const getWritersNumber = async () => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+
+// get all writer
+export const getAllWriters = async () => {
+  try {
+    await connectDB();
+    // get all writer from db
+    const writers = await Writer.find()
+    // revalidatePath("/addbook");
+    return JSON.parse(JSON.stringify({ writers: writers }));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
