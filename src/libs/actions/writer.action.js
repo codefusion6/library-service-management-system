@@ -63,3 +63,13 @@ export const getAllWriters = async () => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+
+export const getWriter = async (id) => {
+  try {
+    await connectDB();
+    const result = await Writer.findById(id);
+    return JSON.parse(JSON.stringify(result));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
