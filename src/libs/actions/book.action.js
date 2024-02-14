@@ -148,7 +148,6 @@ export const getBooksByAuthor = async (authorName) => {
   try {
     await connectDB();
     const result = await Book.find({ authorName: authorName });
-    console.log(result)
     return JSON.parse(JSON.stringify(result));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
@@ -179,7 +178,6 @@ export const getBooksNumber = async () => {
   try {
     await connectDB();
     const bookNum = await Book.find().countDocuments();
-    revalidatePath("/dashboard")
     return JSON.parse(JSON.stringify(bookNum))
   } catch (error) {
     return JSON.parse(JSON.stringify(error));

@@ -4,7 +4,6 @@ import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 
 const SimilarAuthor = ({ authorBook }) => {
-  console.log("this is author", authorBook);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {authorBook.map((author, index) => (

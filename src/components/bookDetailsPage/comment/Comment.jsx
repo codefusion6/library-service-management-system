@@ -12,6 +12,8 @@ import {
   Button,
   useDisclosure,
 } from "@nextui-org/react";
+import { addComment } from "@/libs/actions/comment.action";
+import toast from "react-hot-toast";
 
 const Comment = () => {
   const { user } = UserAuth();
@@ -48,8 +50,10 @@ const Comment = () => {
                   <div>
                     <form
                       action={async (formData) => {
+                        const text = formData.get("commentDescription")
+                        console.log(text);
                         try {
-                          const response = await addBook(formData);
+                          const response = await addComment(formData);
                           if (response?.success) {
                             toast.success("Book added successfully");
                           }
@@ -71,14 +75,24 @@ const Comment = () => {
                         <FaRegStar className="text-3xl" />
                         <FaRegStar className="text-3xl" />
                       </p>
-                      <ModalFooter>
-                        <Button type="submit" color="primary" variant="flat">
-                          Submit
-                        </Button>
-                      </ModalFooter>
+                      <Button
+                        type="submit"
+                        color="primary"
+                        variant="flat"
+                      // onPress={onClose}
+                      >
+                        Submit
+                      </Button>
                     </form>
                   </div>
                 </ModalBody>
+                <ModalFooter>
+                  <Button type="submit" color="primary" variant="flat" 
+                  // onPress={onClose}
+                  >
+                    Submit
+                  </Button>
+                </ModalFooter>
               </>
             )}
           </ModalContent>

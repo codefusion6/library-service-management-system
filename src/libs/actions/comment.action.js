@@ -1,4 +1,4 @@
-"use server";
+"use server"
 import { connectDB } from "../database/MongoConnect";
 import Comment from "../database/models/commentModel/comment";
 
@@ -13,12 +13,12 @@ export const addComment = async (formData) => {
         commentDescription: commentDescription,
       };
       const result = await Comment.create(comment);
-  
       return JSON.parse(JSON.stringify({ success: true, data: result }));
+
     } catch (error) {
       return {
         error: "Fill input properly or send the required data",
-        errorDetails: JSON.parse(JSON.stringify(error)),
+        errorDetails: JSON.stringify(error),
       };
     }
   };
