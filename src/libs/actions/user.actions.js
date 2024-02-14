@@ -47,3 +47,15 @@ export const getAllUser = async () => {
     }
   }
 };
+
+export const getUserNumber = async () => {
+  try {
+    await connectDB();
+    const userNum = await User.find().countDocuments();
+    console.log("from user collection count document", userNum);
+    return JSON.parse(JSON.stringify(userNum))
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
+
