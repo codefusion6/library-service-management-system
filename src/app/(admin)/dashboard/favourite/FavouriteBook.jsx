@@ -7,7 +7,7 @@ import React from 'react'
 import Swal from 'sweetalert2'
 
 const FavouriteBook = ({ bookData }) => {
-
+    console.log(bookData)
     // console.log(book)
     // const { user } = UserAuth()
     // console.log(book)
