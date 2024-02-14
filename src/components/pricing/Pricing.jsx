@@ -9,8 +9,10 @@ const Pricing = () => {
     const { user } = UserAuth()
     // const charge = { amount: 50 }
     const email = user?.email;
-    const checkout = async (amount, subscriptionType) => {
-        const paymentInfo = { email, amount, subscriptionType }
+    const userName = user?.displayName;
+    const handleCheckout = async (amount, subscriptionType) => {
+        const paymentInfo = { email, userName, amount, subscriptionType }
+        // https://library-service-management-system.vercel.app
         await fetch("https://library-service-management-system.vercel.app/api/payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -19,7 +21,18 @@ const Pricing = () => {
             .then(data => {
                 const resData = data;
                 toast("Payment Proccessing")
+
+                const paymentInfo = {
+                    name: userName,
+                    email: resData?.customer_details?.email,
+                    time: resData?.created,
+                    paymentId: resData?.id,
+                    paymentStatus: resData?.payment_status
+                }
+                console.log(resData)
+                // console.log(paymentInfo)
                 return window.location.href = resData.url
+
             })
         ).catch(err => {
             console.log(err)
@@ -52,7 +65,7 @@ const Pricing = () => {
                                 <li className="flex gap-2 items-center"><FaArrowRightLong className="text-lg" /> User can view our website.</li>
                             </ul>
 
-                            <button onClick={() => { checkout(10, " Basic Subscription") }} className="llduraiton-200 mt-4 w-full border text-black border-indigo-600 hover:bg-indigo-600 hover:text-white py-2 px-4 rounded-full transition-colors duration-300 flex gap-3 items-center font-bold">
+                            <button onClick={() => { handleCheckout(10, " Basic Subscription") }} className="llduraiton-200 mt-4 w-full border text-black border-indigo-600 hover:bg-indigo-600 hover:text-white py-2 px-4 rounded-full transition-colors duration-300 flex gap-3 items-center font-bold">
                                 Subscribe <FaArrowTrendUp />
                             </button>
                         </div>
@@ -75,7 +88,7 @@ const Pricing = () => {
                                 <li className="flex gap-2 items-center"><FaArrowRightLong className="text-lg" /> User can view our website.</li>
                             </ul>
 
-                            <button onClick={() => { checkout(30, "Plus Subscription") }} className="mt-4 w-full border text-black border-indigo-600 hover:bg-indigo-600 hover:text-white py-2 px-4 rounded-full transition-colors duration-300 flex gap-3 items-center font-bold">
+                            <button onClick={() => { handleCheckout(30, "Plus Subscription") }} className="mt-4 w-full border text-black border-indigo-600 hover:bg-indigo-600 hover:text-white py-2 px-4 rounded-full transition-colors duration-300 flex gap-3 items-center font-bold">
                                 Subscribe <FaArrowTrendUp />
                             </button>
                         </div>
@@ -97,7 +110,7 @@ const Pricing = () => {
                                 <li className="flex gap-2 items-center"><FaArrowRightLong className="text-lg" /> User can view our website.</li>
                                 <li className="flex gap-2 items-center"><FaArrowRightLong className="text-lg" /> User can view our website.</li>
                             </ul>
-                            <button onClick={() => { checkout(50, "Elit Subscription") }} className="mt-4 w-full border text-black border-indigo-600 hover:bg-indigo-600 hover:text-white py-2 px-4 rounded-full transition-colors duration-300 flex gap-3 items-center font-bold">
+                            <button onClick={() => { handleCheckout(50, "Elit Subscription") }} className="mt-4 w-full border text-black border-indigo-600 hover:bg-indigo-600 hover:text-white py-2 px-4 rounded-full transition-colors duration-300 flex gap-3 items-center font-bold">
                                 Subscribe <FaArrowTrendUp />
                             </button>
                         </div>
@@ -107,5 +120,4 @@ const Pricing = () => {
         </section>
     )
 }
-
 export default Pricing

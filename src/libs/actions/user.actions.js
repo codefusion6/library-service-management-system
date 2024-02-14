@@ -3,7 +3,6 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import User from "../database/models/userModel/user";
 import { connectDB } from "../database/MongoConnect";
-import { Query } from "@tanstack/react-query";
 
 export const addUser = async (formData) => {
 

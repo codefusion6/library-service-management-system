@@ -13,7 +13,6 @@ const Search = ({ placeholder = 'Search title...' }) => {
   useEffect(() => {
     const delayDebounceFn = setTimeout(() => {
       let newUrl = '';
-
       if (query) {
         newUrl = formUrlQuery({
           params: searchParams.toString(),

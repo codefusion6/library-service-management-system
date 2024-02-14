@@ -10,7 +10,6 @@ export const dynamic = "force-dynamic";
 const AllBooks = async ({ searchParams }) => {
   const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
   const searchText = (searchParams?.query) || "";
-  console.log(pageNumber, "PageNumber from allbooks");
   const { books, totalPage } = await getAllBooks({ query: searchText, page: pageNumber, })
 
 
