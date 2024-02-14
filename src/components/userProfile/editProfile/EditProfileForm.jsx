@@ -3,11 +3,9 @@ import { CldUploadWidget } from "next-cloudinary";
 import React from "react";
 
 const EditProfileForm = () => {
-            
   return (
     <div>
       <form className="m-8 max-w-xl mx-auto p-6 bg-white rounded-md shadow-md">
-        {/* {/ Book Name /} */}
         <div className="mb-4">
           <label
             htmlFor="Name"
@@ -22,8 +20,6 @@ const EditProfileForm = () => {
             className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
           />
         </div>
-
-        {/* {/ Author Name /} */}
         <div className="mb-4">
           <label
             htmlFor="bio"
@@ -39,7 +35,7 @@ const EditProfileForm = () => {
           />
         </div>
 
-        {/* {/ Book Description /} */}
+        {/* {/ About /} */}
         <div className="mb-4">
           <label
             htmlFor="bookDescription"
@@ -55,10 +51,9 @@ const EditProfileForm = () => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-          {/* Author Image  */}
+          {/* User Image  */}
           <div className="mb-4">
             <CldUploadWidget
-              // signatureEndpoint="/api/sign-cloudinary-params"
               uploadPreset="lms_code_fusion"
               autoUpload={false}
               onSuccess={(result, { widget }) => {
@@ -106,8 +101,6 @@ const EditProfileForm = () => {
             <option value="Elite">Chittagonj</option>
           </select>
         </div>
-
-        {/* {/ Add Book Button /} */}
         <button
           type="submit"
           className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
