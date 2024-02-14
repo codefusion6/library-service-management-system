@@ -17,7 +17,6 @@ export const addBook = async (formData) => {
   // console.log(bookCover, bookPdf, authorImage);
   try {
     await connectDB();
-    // data to be save in db
     const book = {
       bookName: bookName,
       authorName: authorName,

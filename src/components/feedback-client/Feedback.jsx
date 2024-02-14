@@ -1,6 +1,7 @@
 "use client";
 import emailjs from "@emailjs/browser";
 import { useRef } from "react";
+import toast from "react-hot-toast";
 
 const Feedback = () => {
   const variants = ["flat", "bordered", "underlined", "faded"];
@@ -16,9 +17,11 @@ const Feedback = () => {
       .then(
         () => {
           console.log("SUCCESS!");
+          toast.success('Thank You ! We will try to contact with tou very soon ! ')
         },
         (error) => {
           console.log("FAILED...", error.text);
+          toast.error("This didn't work.")
         }
       );
     e.target.reset();
