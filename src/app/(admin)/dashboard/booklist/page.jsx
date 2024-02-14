@@ -3,8 +3,6 @@ import DashBookSlider from "@/components/dashBookSlider/DashBookSlider";
 import BookCard from "./BookCard";
 import Pagination from "./Pagination";
 import { getAllBooks } from "@/libs/actions/book.action";
-import NextPagination from "./NextPagination";
-
 export const dynamic = "force-dynamic";
 
 const BookListPage = async ({ searchParams }) => {
@@ -14,6 +12,7 @@ const BookListPage = async ({ searchParams }) => {
   const searchText = (searchParams?.query) || "";
 
   const { books, totalPage } = await getAllBooks({ query: searchText, page: pageNumber })
+  console.log(books)
 
   return (
     <section className="container mx-auto">
@@ -23,7 +22,7 @@ const BookListPage = async ({ searchParams }) => {
       <DashBookSlider></DashBookSlider>
       <BookCard books={books} ></BookCard>
       <Pagination totalPage={totalPage} currentPage={pageNumber} />
-      <NextPagination totalPage={totalPage} currentPage={pageNumber}></NextPagination>
+      <button className="bg-[#18c96433] text-[#12a150] py-2 px-5 rounded-full">Test Button</button>
     </section>
   );
 };
