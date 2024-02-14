@@ -36,7 +36,7 @@ const Sidebar = ({ }) => {
               width={50}
               height={30}
               className="rounded-md" />
-            <div className={`flex justify-between items-center text-black px-3 bg-red-50 w-full ml-3 rounded-md ${expanded ? "block" : "hidden"}`}>
+            <div className={`flex justify-between items-center text-black px-3 bg-green-100 w-full ml-2 rounded-md ${expanded ? "block" : "hidden"}`}>
               <div className="leading-4">
                 <div className="">
                   <h2 className="font-semibold pb-1">{user?.displayName}</h2>

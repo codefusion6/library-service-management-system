@@ -10,7 +10,6 @@ export const addFavourite = async (favouriteInfo) => {
     const query = { email: favouriteInfo.email };
     const options = { new: true, upsert: true };
     const bookId = favouriteInfo.bookId;
-    console.log(bookId);
 
     const result = await Favourite.findOneAndUpdate(
       query,

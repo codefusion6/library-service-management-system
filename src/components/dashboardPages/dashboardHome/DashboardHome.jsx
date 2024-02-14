@@ -5,7 +5,7 @@ import { FaBookOpen, FaSearch, FaUserFriends } from 'react-icons/fa'
 import { FaBookBible } from 'react-icons/fa6'
 import { IoIosNotifications } from 'react-icons/io'
 
-const DashboardHome = () => {
+const DashboardHome = ({bookNum, userNum, writerNum}) => {
     return (
 
         <div className="">
@@ -24,7 +24,8 @@ const DashboardHome = () => {
                         <div className="flex flex-col">
                             <p className="text-bold font-semibold">Total User</p>
                             <p className="text-xl font-semibold flex gap-3 ">
-                                <FaUserFriends className="text-3xl" />5
+                                <FaUserFriends className="text-3xl" />
+                                {userNum}
                             </p>
                         </div>
                     </CardHeader>
@@ -40,7 +41,7 @@ const DashboardHome = () => {
                             <p className="text-bold text-xl font-semibold"> Total Books</p>
                             <p className="text-xl font-semibold flex gap-3 ">
                                 <FaBookOpen className="text-3xl" />
-                                5
+                                {bookNum}
                             </p>
                         </div>
                     </CardHeader>
@@ -53,10 +54,10 @@ const DashboardHome = () => {
                 <Card className="max-w-[400px] border bg-green-500 p-5 text-white rounded-lg">
                     <CardHeader className="flex gap-3">
                         <div className="flex flex-col">
-                            <p className="text-bold font-semibold">Total Featured book</p>
+                            <p className="text-bold font-semibold">Total Writers</p>
                             <p className="text-xl font-semibold flex gap-3  ">
                                 <FaBookBible className="text-3xl" />
-                                3
+                                {writerNum}
                             </p>
                         </div>
                     </CardHeader>
@@ -88,4 +89,4 @@ const DashboardHome = () => {
     )
 }
 
-export default DashboardHome
+export default DashboardHome;
