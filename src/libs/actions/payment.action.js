@@ -1,4 +1,5 @@
 import { connectDB } from "../database/MongoConnect";
+import PaymentHistory from "../database/models/paymentModel/payment";
 import Payment from "../database/models/paymentModel/payment";
 
 
@@ -22,7 +23,7 @@ export const addPayment = async (formData) => {
         paymentAmount : paymentAmount
 
     };
-    const result = await Payment.create(payment);
+    const result = await PaymentHistory.create(payment);
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return {

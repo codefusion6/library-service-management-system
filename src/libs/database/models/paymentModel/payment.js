@@ -10,6 +10,6 @@ const PaymentSchema = new Schema({
 
 })
 
-const Payment = models.Payment || model("Payment", PaymentSchema)
+const PaymentHistory = models.PaymentHistory || model("PaymentHistory", PaymentSchema)
 
-export default Payment;
+export default PaymentHistory;
