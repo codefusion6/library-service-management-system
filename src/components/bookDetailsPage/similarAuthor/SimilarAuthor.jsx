@@ -1,10 +1,12 @@
 "use client";
 import React from "react";
-import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 
 const SimilarAuthor = ({ authorBook }) => {
+<<<<<<< HEAD
   // console.log("this is author", authorBook);
+=======
+>>>>>>> 771b9521d812e596e259164440c5315830b16a69
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
       {authorBook.map((author, index) => (

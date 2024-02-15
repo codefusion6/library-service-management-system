@@ -44,7 +44,6 @@ export const getWritersNumber = async () => {
   try {
     await connectDB();
     const writerNum = await Writer.find().countDocuments();
-    // revalidatePath("/dashboard")
     return JSON.parse(JSON.stringify(writerNum))
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
