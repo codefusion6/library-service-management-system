@@ -36,8 +36,8 @@ const page = async ({ params }) => {
             </Button>
             <Button className="w-[80%] rounded-xl hover:bg-lime-700 bg-green-600 text-white font-bold px-5 py-2">
               <a
-                href="/Md_Morsed_Alam (1).pdf"
-                download="/nazrul.pdf"
+                href="/Gitanjali.pdf"
+                download="/Gitanjali.pdf"
                 to="pdf"
                 target="_blank"
               >

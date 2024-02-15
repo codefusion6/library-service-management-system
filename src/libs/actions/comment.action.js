@@ -33,7 +33,7 @@ export const addComment = async (formData, profileImage) => {
 export const getComment = async () => {
   try {
     await connectDB();
-    const result = await Comment.find();
+    const result = (await Comment.find()).reverse();
     revalidatePath("/allBooks/:id");
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
