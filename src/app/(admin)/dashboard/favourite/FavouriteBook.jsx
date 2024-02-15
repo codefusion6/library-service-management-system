@@ -1,10 +1,31 @@
 'use client'
+import { UserAuth } from '@/app/provider/context/AuthContext'
+import { deleteFavourite } from '@/libs/actions/book.action'
 import { Link } from '@nextui-org/react'
 import Image from 'next/image'
 import React from 'react'
+import Swal from 'sweetalert2'
 
-const FavouriteBook = ({ data: book }) => {
-    console.log(book)
+const FavouriteBook = ({ data }) => {
+    const book = data;
+    // console.log(book)
+    // const { user } = UserAuth()
+    // console.log(book)
+    // const handleDelete = (id) => {
+    //     Swal.fire({
+    //         title: "Are you sure?",
+    //         text: "You will be able to see this all books page!",
+    //         icon: "warning",
+    //         showCancelButton: true,
+    //         confirmButtonColor: "#3085d6",
+    //         cancelButtonColor: "#d33",
+    //         confirmButtonText: "Yes, delete it!"
+    //     }).then(async (result) => {
+    //         if (result.isConfirmed) {
+    //             await deleteFavourite(user.email, id)
+    //         }
+    //     });
+    // }
     return (
         <div className='flex gap-4 p-2 border my-3'>
             <Image className='max-w-[200px]' src={book?.bookCover} width={300} height={600} alt={book.bookName} />
