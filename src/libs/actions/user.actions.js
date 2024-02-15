@@ -18,8 +18,6 @@ export const addUser = async (formData) => {
     const newFormData = {
       name: name,
       email: email,
-      role: role,
-      photoUrl: photoUrl,
     };
     const result = await User.create(newFormData);
     console.log("USER DATA:", result);
@@ -73,16 +71,16 @@ export const getUserNumber = async () => {
 //get one user
 
 export const getOneUser = async (email) => {
-try{
-  await connectDB();
-   const query = {
-    email:email
-   }
-   const user= await User.findOne(query)
-   return JSON.parse(JSON.stringify(user))
+  try {
+    await connectDB();
+    const query = {
+      email: email
+    }
+    const user = await User.findOne(query)
+    return JSON.parse(JSON.stringify(user))
 
-}
-catch (error){
-  return JSON.parse(JSON.stringify(error));
-}
+  }
+  catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
 };

@@ -19,7 +19,7 @@ const SidebarItems = ({ expanded }) => {
                 <sapn className={`${expanded ? "block" : "hidden"}`}>Home</sapn>
               </Link>
             </li>
-            <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+            {/* <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
               <Link
                 href="/dashboard/favourite"
                 className="flex gap-2 font-bold"
@@ -29,7 +29,7 @@ const SidebarItems = ({ expanded }) => {
                   Favorite Books
                 </sapn>
               </Link>
-            </li>
+            </li> */}
           </ul>
         </>
       ) : (
