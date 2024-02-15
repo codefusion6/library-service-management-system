@@ -35,7 +35,6 @@ export const POST = async (request) => {
             ]
         })
         return NextResponse.json({ checkOutSession, url: checkOutSession.url, status: 200 })
-
     } catch (error) {
         return NextResponse.json({ message: error.message, status: 500 })
     }
