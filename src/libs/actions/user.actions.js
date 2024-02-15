@@ -5,6 +5,8 @@ import User from "../database/models/userModel/user";
 import { connectDB } from "../database/MongoConnect";
 
 export const addUser = async (formData) => {
+
+
   try {
     await connectDB();
     const name = formData.get("name");
@@ -22,6 +24,7 @@ export const addUser = async (formData) => {
 };
 
 export const getAllUser = async () => {
+
   try {
     await connectDB();
     const result = await User.find();
@@ -57,4 +60,21 @@ export const getUserNumber = async () => {
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
+};
+
+//get one user
+
+export const getOneUser = async (email) => {
+try{
+  await connectDB();
+   const query = {
+    email:email
+   }
+   const user= await User.findOne(query)
+   return JSON.parse(JSON.stringify(user))
+
+}
+catch (error){
+  return JSON.parse(JSON.stringify(error));
+}
 };

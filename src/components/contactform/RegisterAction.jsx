@@ -1,14 +1,18 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { FaEye, FaEyeSlash, FaGoogle } from "react-icons/fa6";
 import Link from "next/link";
 import { addUser } from "@/libs/actions/user.actions";
 import toast from "react-hot-toast";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import { Input } from "@nextui-org/react";
+import { CldUploadWidget } from "next-cloudinary";
 
 const RegisterAction = () => {
   const [isVisible, setIsVisible] = React.useState(false);
+  
+  const [photoURL, setPhotoURL] = useState(null);
+
   const variants = ["flat", "bordered", "underlined", "faded"];
   const toggleVisibility = () => setIsVisible(!isVisible);
   const { createUser } = UserAuth();
@@ -27,6 +31,7 @@ const RegisterAction = () => {
     <div className="max-w-md mx-auto ">
       <form
         action={async (formData) => {
+          const userField = formData.append("photoURL", photoURL)
           const name = formData.get("name");
           const email = formData.get("email");
           const password = formData.get("password");
@@ -43,7 +48,36 @@ const RegisterAction = () => {
           }
         }}
       >
+
         <div className="mt-5">
+           {/* User Image  */}
+           <div className="mb-4">
+            <CldUploadWidget
+              uploadPreset="lms_code_fusion"
+              autoUpload={false}
+              onSuccess={(result, { widget }) => {
+                setPhotoURL(result?.info?.secure_url);
+                console.log(resource);
+                widget.close();
+              }}
+            >
+              {({ open }) => {
+                function handleOnClick() {
+                  // setAuthorImg(null);
+                  open();
+                }
+                return (
+                  <button
+                    type="button"
+                    className="px-5 py-3 rounded-md text-white bg-blue-500 hover:bg-blue-700"
+                    onClick={handleOnClick}
+                  >
+                    Upload Image
+                  </button>
+                );
+              }}
+            </CldUploadWidget>
+          </div>
           <div>
             <label
               className="font-semibold ml-5 text-sm text-gray-600 pb-1 block"

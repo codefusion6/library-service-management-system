@@ -6,7 +6,9 @@ import Image from 'next/image'
 import React from 'react'
 import Swal from 'sweetalert2'
 
-const FavouriteBook = ({ data: book }) => {
+const FavouriteBook = ({ data }) => {
+    const book = data;
+    // console.log(book)
     // const { user } = UserAuth()
     // console.log(book)
     // const handleDelete = (id) => {
