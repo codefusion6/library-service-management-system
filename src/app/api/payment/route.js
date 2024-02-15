@@ -1,4 +1,3 @@
-
 import { NextResponse } from "next/server";
 import Stripe from 'stripe';
 const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
@@ -7,13 +6,12 @@ export const POST = async (request) => {
         const data = await request.json();
         // console.log(data.userName)
         const customer = await stripe.customers.create({
-            "name": data?.userName,
-            "email": data?.email,
+            name: data?.userName,
+            email: data?.email,
             address: {
                 city: "Mymensingh",
                 country: "Bangladesh",
             },
-
         });
         // create a session for stripe
         const checkOutSession = await stripe.checkout.sessions.create({
@@ -21,8 +19,8 @@ export const POST = async (request) => {
             customer: customer.id,
             mode: "payment",
             // "https://library-service-management-system.vercel.app"
-            success_url: "https://library-service-management-system.vercel.app/successPyment",
-            cancel_url: "https://library-service-management-system.vercel.app/cancel?token" + customer.id,
+            success_url: "http://localhost:3000/successPyment",
+            cancel_url: "http://localhost:3000/pricing",
             line_items: [
                 {
                     quantity: 1,
@@ -36,7 +34,6 @@ export const POST = async (request) => {
                 }
             ]
         })
-        // checkout url
         return NextResponse.json({ checkOutSession, url: checkOutSession.url, status: 200 })
     } catch (error) {
         return NextResponse.json({ message: error.message, status: 500 })

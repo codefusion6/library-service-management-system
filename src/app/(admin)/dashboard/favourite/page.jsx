@@ -23,7 +23,7 @@ const page = async () => {
                     <div>
                         {
                             data?.map((books, idx) => (
-                                <FavouriteBook key={idx} data={books}></FavouriteBook>
+                                <FavouriteBook key={idx} bookData={books}></FavouriteBook>
                             ))
                         }
                     </div>

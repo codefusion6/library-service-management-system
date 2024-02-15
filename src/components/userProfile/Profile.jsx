@@ -1,7 +1,6 @@
 "use client";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaFacebook, FaGithub } from "react-icons/fa";
@@ -101,7 +100,7 @@ const Profile = () => {
                 <div className="space-y-2">
                   <h1 className="text-xl font-bold">About me:</h1>
                   <p className="text-base font-medium">
-                 
+
                   </p>
                 </div>
                 <div className=" flex flex-col items-center justify-center gap-5">
@@ -112,17 +111,17 @@ const Profile = () => {
                     width={350}
                     className="w-[300px] rounded-full"
                   ></Image>
-                  
-                    <Button   
+
+                  <Button
                     className="bg-green-600  mt-10 px-6 py-2 rounded-md "
                     onPress={onOpen}>Edit Profile</Button>
-                
+
                   <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
                     <ModalContent>
                       {(onClose) => (
                         <>
                           <ModalHeader className="flex flex-col gap-1">
-                           <p>{user?.displayName}</p>
+                            <p>{user?.displayName}</p>
                           </ModalHeader>
                           <ModalBody>
                             <div>

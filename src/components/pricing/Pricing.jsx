@@ -13,7 +13,7 @@ const Pricing = () => {
     const handleCheckout = async (amount, subscriptionType) => {
         const paymentInfo = { email, userName, amount, subscriptionType }
         // https://library-service-management-system.vercel.app
-        await fetch("https://library-service-management-system.vercel.app/api/payment", {
+        await fetch("http://localhost:3000/api/payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(paymentInfo)
@@ -21,23 +21,25 @@ const Pricing = () => {
             .then(data => {
                 const resData = data;
                 toast("Payment Proccessing")
+                // const paymentInfo = {
+                //     name: userName,
+                //     email: resData?.customer_details?.email,
+                //     time: resData?.created,
+                //     paymentId: resData?.id,
+                //     paymentStatus: resData?.payment_status
+                // }
 
-                const paymentInfo = {
-                    name: userName,
-                    email: resData?.customer_details?.email,
-                    time: resData?.created,
-                    paymentId: resData?.id,
-                    paymentStatus: resData?.payment_status
-                }
-                console.log(resData)
-                // console.log(paymentInfo)
+                // console.log(resData.paymentId)
+
                 return window.location.href = resData.url
-
             })
         ).catch(err => {
             console.log(err)
         })
+
+
     }
+
     return (
         <section className="min-h-screen">
             <div className="container mx-auto mt-32 px-5 lg:px-0">
