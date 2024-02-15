@@ -33,7 +33,7 @@ const AllComments = ({ allComments }) => {
             height={30}
             className="size-10 rounded-full "
           ></Image>
-          <div className="border shadow-lg rounded-lg my-5 p-5 lg:w-1/3 w-full">
+          <div className="space-y-1 border shadow-lg rounded-lg my-3 px-3 py-2 lg:w-1/3 w-full">
             <p className="text-lg font-semibold">
               {comment.commentDescription}
             </p>
