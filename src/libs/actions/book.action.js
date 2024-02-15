@@ -27,10 +27,8 @@ export const addBook = async (formData) => {
       publisherEmail: publisherEmail,
       category: category,
     };
-
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
-
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return {
@@ -39,7 +37,6 @@ export const addBook = async (formData) => {
     };
   }
 };
-
 // many book
 export const addManyBook = async () => {
   const books = [
@@ -180,7 +177,6 @@ export const getBooksNumber = async () => {
     return JSON.parse(JSON.stringify(error));
   }
 };
-
 // export const deleteFavourite = async (id, email) => {
 //   console.log(id)
 //   try {

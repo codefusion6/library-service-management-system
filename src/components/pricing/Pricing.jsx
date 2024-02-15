@@ -21,7 +21,6 @@ const Pricing = () => {
             .then(data => {
                 const resData = data;
                 toast("Payment Proccessing")
-
                 // const paymentInfo = {
                 //     name: userName,
                 //     email: resData?.customer_details?.email,
@@ -29,7 +28,7 @@ const Pricing = () => {
                 //     paymentId: resData?.id,
                 //     paymentStatus: resData?.payment_status
                 // }
-                // console.log(resData)
+
                 // console.log(resData.paymentId)
 
                 return window.location.href = resData.url

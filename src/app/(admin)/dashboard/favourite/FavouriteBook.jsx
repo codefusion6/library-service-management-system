@@ -8,9 +8,7 @@ import Swal from 'sweetalert2'
 
 const FavouriteBook = ({ bookData }) => {
     const { user } = UserAuth()
-    // console.log(id)
     const handleRemove = (id) => {
-        // console.log(id)
         Swal.fire({
             title: "Are you sure?",
             text: "You will be able to see this all books page!",

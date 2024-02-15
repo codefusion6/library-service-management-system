@@ -14,7 +14,6 @@ export const POST = async (request) => {
             },
         });
         // create a session for stripe
-
         const checkOutSession = await stripe.checkout.sessions.create({
             payment_method_types: ["card"],
             customer: customer.id,
@@ -35,14 +34,8 @@ export const POST = async (request) => {
                 }
             ]
         })
-        // const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
-        // const paymentIntents = await stripe.paymentIntents.list({
-        //     limit: 1,
-        // });
-        // const paymentDetails = paymentIntents.data[0];
-
-        // console.log(paymentDetails)
         return NextResponse.json({ checkOutSession, url: checkOutSession.url, status: 200 })
+
     } catch (error) {
         return NextResponse.json({ message: error.message, status: 500 })
     }
