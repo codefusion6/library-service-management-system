@@ -105,7 +105,7 @@ const Profile = () => {
                     height={30}
                     width={350}
                     className="w-[300px] rounded-full"
-                  ></Image>
+                  />
                   <Link
                     href={`userProfile/${user?.email}`}
                     className="bg-green-600  mt-10 px-6 py-2 rounded-md "

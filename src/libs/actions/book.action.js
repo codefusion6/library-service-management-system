@@ -199,18 +199,19 @@ export const getBooksNumber = async () => {
 // };
 
 export const deleteFavourite = async (email, bookid) => {
-  try {
-    await connectDB();
-    const result = await Favourite.findOneAndUpdate({ email: email }, { $pull: { bookIds: bookIdToRemove } }, { new: true });
-    const favouriteBookids = result ? result.bookIds : [];
-    const bookResult = await Book.find({
-      _id: {
-        $in: favouriteBookids
-      }
-    });
-    revalidatePath("/dashboard/favourite")
-    return JSON.parse(JSON.stringify(bookResult));
-  } catch (error) {
-    return error;
-  }
+  // console.log(email, bookid)
+  // try {
+  //   await connectDB();
+  //   const result = await Favourite.findOneAndUpdate({ email: email }, { $pull: { bookIds: bookIdToRemove } }, { new: true });
+  //   const favouriteBookids = result ? result.bookIds : [];
+  //   const bookResult = await Book.find({
+  //     _id: {
+  //       $in: favouriteBookids
+  //     }
+  //   });
+  //   revalidatePath("/dashboard/favourite")
+  //   return JSON.parse(JSON.stringify(bookResult));
+  // } catch (error) {
+  //   return error;
+  // }
 };

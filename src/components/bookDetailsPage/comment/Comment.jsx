@@ -11,15 +11,12 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-  Checkbox,
-  Input,
-  Link,
 } from "@nextui-org/react";
-
+import { addBook } from "@/libs/actions/book.action";
 const Comment = () => {
   const { user } = UserAuth();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  console.log(user);
+  // console.log(user);
   return (
     <section>
       <div className="flex gap-3">
@@ -28,19 +25,16 @@ const Comment = () => {
           src={user?.photoURL}
           width={30}
           height={30}
-          className="rounded-full size-10"
-        />
+          className="rounded-full size-10" />
         <Button
           onPress={onOpen}
-          className="rounded-xl hover:bg-lime-700 border text-black border-green-600  hover:text-white font-bold px-5 py-2"
-        >
+          className="rounded-xl hover:bg-lime-700 border text-black border-green-600 hover:text-white font-bold px-5 py-2">
           Rating & Review
         </Button>
         <Modal
           isOpen={isOpen}
           onOpenChange={onOpenChange}
-          placement="top-center"
-        >
+          placement="top-center">
           <ModalContent>
             {(onClose) => (
               <>
@@ -60,8 +54,7 @@ const Comment = () => {
                         } catch (error) {
                           console.log(error);
                         }
-                      }}
-                    >
+                      }}>
                       <textarea
                         name="commentDescription"
                         placeholder="write a comment"
@@ -74,12 +67,15 @@ const Comment = () => {
                         <FaRegStar className="text-3xl" />
                         <FaRegStar className="text-3xl" />
                       </p>
+                      <button color="primary" type="submit" variant="flat">
+                        Submit
+                      </button>
                     </form>
                   </div>
                 </ModalBody>
                 <ModalFooter>
-                  <Button color="primary" variant="flat" onPress={onClose}>
-                    Submit
+                  <Button onPress={onClose} variant="flat">
+                    X
                   </Button>
                 </ModalFooter>
               </>
@@ -88,9 +84,8 @@ const Comment = () => {
         </Modal>
       </div>
       <h2 className="my-8 text-base font-semibold flex items-center gap-2">
-        Your rating & review{" "}
+        Your rating & review
         <span>
-          {" "}
           <FaRegHandPointDown />
         </span>
       </h2>

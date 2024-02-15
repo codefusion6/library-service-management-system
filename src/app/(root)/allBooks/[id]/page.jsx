@@ -1,4 +1,4 @@
-import {  Button, Image } from "@nextui-org/react";
+import { Button, Image } from "@nextui-org/react";
 import React from "react";
 import Link from "next/link";
 import { getBook, getBooksByAuthor } from "@/libs/actions/book.action";
@@ -57,7 +57,7 @@ const page = async ({ params }) => {
               <Image
                 alt="author img"
                 className="size-8"
-                src={singleBook.authorImage}
+                src={`${singleBook.authorImage}`}
                 width={30}
                 height={30}
               />
