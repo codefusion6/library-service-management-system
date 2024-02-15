@@ -3,8 +3,21 @@ import { UserAuth } from '@/app/provider/context/AuthContext'
 import Link from 'next/link'
 import React from 'react'
 import { IoMdDoneAll } from 'react-icons/io'
-const PaymentSuccess = () => {
+const PaymentSuccess = ({ payments }) => {
     const { user } = UserAuth();
+    const paymentss = payments[0]
+    // console.log(paymentss)
+    const paymentHistory = {
+        amount_received: paymentss.amount_received,
+        paymentId: paymentss.id,
+        userName: user?.displayName,
+        email: user?.email,
+        profile: user?.photoURL,
+        createdAt: paymentss.created
+    }
+    // console.log(paymentHistory)
+
+
     return (
         <div>
             <div className='min-h-screen flex justify-center items-center'>
