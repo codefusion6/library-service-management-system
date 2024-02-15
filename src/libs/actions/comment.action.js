@@ -1,4 +1,5 @@
 "use server"
+import { revalidatePath } from "next/cache";
 import { connectDB } from "../database/MongoConnect";
 import Comment from "../database/models/commentModel/comment";
 
@@ -6,7 +7,7 @@ import Comment from "../database/models/commentModel/comment";
 export const addComment = async (formData) => {
     const commentDescription = formData.get("commentDescription");
     const ratingNumber = formData.get("ratingNumber");
-    console.log(commentDescription, ratingNumber);
+    // console.log(commentDescription, ratingNumber);
     try {
       await connectDB();
       // data to be save in db
@@ -16,6 +17,7 @@ export const addComment = async (formData) => {
       };
       const result = await Comment.create(comment);
       return JSON.parse(JSON.stringify({ success: true, data: result }));
+
 
     } catch (error) {
       return {
@@ -30,6 +32,7 @@ export const getComment = async () =>{
     try{
         await connectDB();
         const result = await Comment.find();
+        revalidatePath("/allBooks/[id]");
         return JSON.parse(JSON.stringify({ success: true, data: result }));
     }catch(error){
         return JSON.parse(JSON.stringify(error));

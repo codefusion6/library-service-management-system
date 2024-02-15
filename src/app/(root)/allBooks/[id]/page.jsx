@@ -45,13 +45,6 @@ const page = async ({ params }) => {
                 Download
               </a>
             </Button>
-            {/* <p className="flex gap-2 items-center justify-center">
-              <FaRegStar className="text-3xl" />
-              <FaRegStar className="text-3xl" />
-              <FaRegStar className="text-3xl" />
-              <FaRegStar className="text-3xl" />
-              <FaRegStar className="text-3xl" />
-            </p> */}
           </div>
           <div className="flex-1 md:mt-0 mt-10 space-y-4">
             <div className="text-2xl uppercase font-bold">

@@ -58,7 +58,7 @@ const   Comment = () => {
                           if (response?.success) {
                             toast.success("Book added successfully");
                           }
-                          console.log(response);
+                          // console.log(response);
                         } catch (error) {
                           console.log(error);
                         }
