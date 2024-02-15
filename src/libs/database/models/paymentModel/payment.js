@@ -1,15 +1,15 @@
 import { model, models, Schema } from "mongoose";
 
 const PaymentSchema = new Schema({
-    paymentId: { type: String, required: true},
-    paymentDate: { type: String, required: true},
-    userProfile : { type: String, required: true},
-    userName: { type: String, required: true},
-    emailAddress: {type: String, required: true},
-    paymentAmount : { type: String, required: true } 
+    amount_received: { type: String, required: true },
+    paymentId: { type: String, required: true },
+    userName: { type: String, required: true },
+    email: { type: String, required: true },
+    userProfile: { type: String, required: true },
+    createdAt: { type: String, required: true }
 
 })
 
-const Payment = models.Payment || model("Payment", PaymentSchema)
+const PaymentHistory = models.PaymentHistory || model("PaymentHistory", PaymentSchema)
 
-export default Payment;
+export default PaymentHistory;
