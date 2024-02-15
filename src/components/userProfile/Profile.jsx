@@ -240,7 +240,7 @@ const Profile = () => {
                               Close
                             </Button>
                             <Button color="primary" onPress={onClose}>
-                              Action
+                              Save
                             </Button>
                           </ModalFooter>
                         </>
