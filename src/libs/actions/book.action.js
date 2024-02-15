@@ -17,7 +17,6 @@ export const addBook = async (formData) => {
   // console.log(bookCover, bookPdf, authorImage);
   try {
     await connectDB();
-    // data to be save in db
     const book = {
       bookName: bookName,
       authorName: authorName,
@@ -112,7 +111,6 @@ export const getAllBooks = async ({ query, page }) => {
     const per_page = 6;
     const pageNumber = page || 1;
     const count = await Book.find().countDocuments();
-
     const books = await Book.find().limit(per_page).skip((pageNumber - 1) * per_page);
     const totalPage = Math.ceil(count / per_page);
     revalidatePath("/addbook");
@@ -141,7 +139,6 @@ export const deleteBook = async (id) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
-
 // get the books based on author name
 
 export const getBooksByAuthor = async (authorName) => {
@@ -153,7 +150,6 @@ export const getBooksByAuthor = async (authorName) => {
     return JSON.parse(JSON.stringify(error));
   }
 }
-
 //  get all favourite books
 export const getFavouriteBook = async (email) => {
   try {
@@ -166,14 +162,13 @@ export const getFavouriteBook = async (email) => {
         $in: favouriteBookids
       }
     });
+    revalidatePath("/dashboard/favourite")
     return JSON.parse(JSON.stringify(bookResult));
   } catch (error) {
     return error;
   }
 };
-
 // get the books numbers for the dashboard Cart
-
 export const getBooksNumber = async () => {
   try {
     await connectDB();
@@ -181,5 +176,39 @@ export const getBooksNumber = async () => {
     return JSON.parse(JSON.stringify(bookNum))
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
+  }
+};
+
+// export const deleteFavourite = async (id, email) => {
+//   console.log(id)
+//   try {
+//     const query = { email: email }
+//     const favouriteId = await Favourite.find(query)
+//     favouriteId.map((items) => {
+//       console.log(items.bookIds.length)
+//       const removeid = items.bookIds.find(removeFavourite => JSON.parse(JSON.stringify(removeFavourite)) === id)
+//     })
+//     // const result = await Favourite.findByIdAndDelete(id);
+//     revalidatePath("/dashboard/favourite");
+//     return JSON.parse(JSON.stringify(result));
+//   } catch (error) {
+//     return JSON.parse(JSON.stringify(error));
+//   }
+// };
+
+export const deleteFavourite = async (email, bookid) => {
+  try {
+    await connectDB();
+    const result = await Favourite.findOneAndUpdate({ email: email }, { $pull: { bookIds: bookIdToRemove } }, { new: true });
+    const favouriteBookids = result ? result.bookIds : [];
+    const bookResult = await Book.find({
+      _id: {
+        $in: favouriteBookids
+      }
+    });
+    revalidatePath("/dashboard/favourite")
+    return JSON.parse(JSON.stringify(bookResult));
+  } catch (error) {
+    return error;
   }
 };

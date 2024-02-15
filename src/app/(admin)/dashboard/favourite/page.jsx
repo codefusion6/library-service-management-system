@@ -2,9 +2,9 @@ import { getFavouriteBook } from '@/libs/actions/book.action'
 import React from 'react'
 import FavouriteBook from './FavouriteBook'
 
-const page = async () => {
+const Favourite = async () => {
     const data = await getFavouriteBook("sumonpaul3217@gmail.com")
-    // console.log(data)
+    console.log(data)
     return (
         <main className='bg-slate-50 p-2'>
             <section>
@@ -23,7 +23,7 @@ const page = async () => {
                     <div>
                         {
                             data?.map((books, idx) => (
-                                <FavouriteBook key={idx} data={books}></FavouriteBook>
+                                <FavouriteBook key={idx} bookData={books}></FavouriteBook>
                             ))
                         }
                     </div>
@@ -33,4 +33,4 @@ const page = async () => {
     )
 }
 
-export default page
+export default Favourite
