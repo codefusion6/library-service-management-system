@@ -5,23 +5,32 @@ import User from "../database/models/userModel/user";
 import { connectDB } from "../database/MongoConnect";
 
 export const addUser = async (formData) => {
+
+
   try {
     await connectDB();
     const name = formData.get("name");
     const email = formData.get("email");
+    // Add a default role 'user'
+    const role = "user";
+    const photoUrl = formData.get("photoUrl");
+    console.log('PhotoURL:', photoUrl);
     const newFormData = {
       name: name,
       email: email,
     };
     const result = await User.create(newFormData);
-    // return JSON.parse(JSON.stringify(result));
+    console.log("USER DATA:", result);
+
+
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
-    return NextResponse.badRequest({ error: "Kisu ekta hoise", error });
+    return NextResponse.badRequest({ error: "An error occurred while adding the user", error });
   }
 };
 
 export const getAllUser = async () => {
+
   try {
     await connectDB();
     const result = await User.find();
@@ -52,9 +61,26 @@ export const getUserNumber = async () => {
   try {
     await connectDB();
     const userNum = await User.find().countDocuments();
-    // revalidatePath("/dashboard")
+    console.log("from user collection count document", userNum);
     return JSON.parse(JSON.stringify(userNum))
   } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
+
+//get one user
+
+export const getOneUser = async (email) => {
+  try {
+    await connectDB();
+    const query = {
+      email: email
+    }
+    const user = await User.findOne(query)
+    return JSON.parse(JSON.stringify(user))
+
+  }
+  catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
 };
