@@ -31,7 +31,7 @@ export const getComment = async () => {
   try {
     await connectDB();
     const result = await Comment.find();
-    revalidatePath("/allBooks/[id]");
+    revalidatePath("/allBooks");
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));

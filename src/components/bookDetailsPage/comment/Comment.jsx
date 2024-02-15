@@ -64,48 +64,24 @@ const   Comment = () => {
                         } catch (error) {
                           console.log(error);
                         }
-<<<<<<< HEAD
-                      }}>
-=======
                       }}
                     >
                       <p className="text-tiny font-semibold mb-1">Write your comment:</p>
->>>>>>> 771b9521d812e596e259164440c5315830b16a69
                       <textarea
                         name="commentDescription"
                         placeholder="write a comment"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
                       />
-<<<<<<< HEAD
-                      <p className="flex gap-2 items-center justify-center">
-                        <FaRegStar className="text-3xl" />
-                        <FaRegStar className="text-3xl" />
-                        <FaRegStar className="text-3xl" />
-                        <FaRegStar className="text-3xl" />
-                        <FaRegStar className="text-3xl" />
-                      </p>
-                      <button color="primary" type="submit" variant="flat">
-                        Submit
-                      </button>
-                    </form>
-                  </div>
-                </ModalBody>
-                <ModalFooter>
-                  <Button onPress={onClose} variant="flat">
-                    X
-                  </Button>
-                </ModalFooter>
-=======
                       <div className="flex gap-1 items-center">
 
-                      <FaStar className="text-3xl text-yellow-500"></FaStar>
-                      <input
-                        name="ratingNumber"
-                        placeholder="Give a rate"
-                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
-                      ></input>
+                        <FaStar className="text-3xl text-yellow-500"></FaStar>
+                        <input
+                          name="ratingNumber"
+                          placeholder="Give a rate"
+                          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
+                        ></input>
                       </div>
-                      
+
                       <ModalFooter>
                         <Button type="submit" color="primary" variant="flat">
                           Submit
@@ -114,22 +90,12 @@ const   Comment = () => {
                     </form>
                   </div>
                 </ModalBody>
->>>>>>> 771b9521d812e596e259164440c5315830b16a69
               </>
             )}
           </ModalContent>
         </Modal>
       </div>
-<<<<<<< HEAD
-      <h2 className="my-8 text-base font-semibold flex items-center gap-2">
-        Your rating & review
-        <span>
-          <FaRegHandPointDown />
-        </span>
-      </h2>
-=======
-      
->>>>>>> 771b9521d812e596e259164440c5315830b16a69
+
     </section>
   );
 };
