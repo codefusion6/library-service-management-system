@@ -1,14 +1,12 @@
 "use client";
 /* eslint-disable @next/next/no-img-element */
 import LottieAnimation from "./LottieAnimation";
-import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 import React from "react";
 import RegisterAction from "./RegisterAction";
 
 const RegisterForm = () => {
   const [isVisible, setIsVisible] = React.useState(false);
-  const variants = ["flat", "bordered", "underlined", "faded"];
   const toggleVisibility = () => setIsVisible(!isVisible);
   return (
     <div>
