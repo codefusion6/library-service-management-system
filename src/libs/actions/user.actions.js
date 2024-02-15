@@ -9,15 +9,23 @@ export const addUser = async (formData) => {
     await connectDB();
     const name = formData.get("name");
     const email = formData.get("email");
+    // Add a default role 'user'
+    const role = "user";
+    const photoUrl = formData.get("photoUrl");
+    console.log('PhotoURL:', photoUrl);
     const newFormData = {
       name: name,
       email: email,
+      role: role,
+      photoUrl: photoUrl,
     };
     const result = await User.create(newFormData);
-    // return JSON.parse(JSON.stringify(result));
+    console.log("USER DATA:", result);
+
+
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
-    return NextResponse.badRequest({ error: "Kisu ekta hoise", error });
+    return NextResponse.badRequest({ error: "An error occurred while adding the user", error });
   }
 };
 

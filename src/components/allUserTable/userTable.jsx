@@ -185,7 +185,7 @@ const UserTable = ({ allUser }) => {
                           style={{ opacity: 100 }}
                           width={100}
                           className="w-10 h-10 rounded-full"
-                          src="https://i.ibb.co/MDyKKgQ/804953.png"
+                          src={user.profileImage}
                           alt="img"
                         />
                         <div className="ps-3">
@@ -200,7 +200,7 @@ const UserTable = ({ allUser }) => {
                       <td className="px-6 py-4 relative">
                         <div className="cursor-pointer">
                           <span className="text-blue-600 dark:text-blue-500 hover:underline">
-                            Admin
+                            {user?.role}
                           </span>
                           <svg
                             className="w-4 h-4 inline-block ml-1"
