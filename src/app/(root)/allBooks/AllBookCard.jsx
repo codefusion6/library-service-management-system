@@ -15,6 +15,7 @@ const AllBookCard = ({ books }) => {
       email: user.email,
       bookId: bookId,
     }
+
     try {
       const response = await addFavourite(favouritBook)
       // console.log(favouritBook)
@@ -25,7 +26,6 @@ const AllBookCard = ({ books }) => {
     } catch (error) {
       toast.error(error.message)
     }
-
   }
 
   return (

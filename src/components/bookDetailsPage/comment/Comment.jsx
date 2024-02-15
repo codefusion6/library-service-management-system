@@ -12,15 +12,10 @@ import {
   Button,
   useDisclosure,
 } from "@nextui-org/react";
-<<<<<<< HEAD
-import { addBook } from "@/libs/actions/book.action";
-const Comment = () => {
-=======
 import { addComment } from "@/libs/actions/comment.action";
 import toast from "react-hot-toast";
 
-const   Comment = () => {
->>>>>>> 771b9521d812e596e259164440c5315830b16a69
+const Comment = () => {
   const { user } = UserAuth();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   // console.log(user);
@@ -52,11 +47,12 @@ const   Comment = () => {
                   <div>
                     <form
                       action={async (formData) => {
-                        const text = formData.get("commentDescription");
-                        const rating = formData.get("ratingNumber");
-                        console.log(text, rating);
+                        // const text = formData.get("commentDescription");
+                        // const rating = formData.get("ratingNumber");
+                        const profileImage = user?.photoURL
                         try {
-                          const response = await addComment(formData);
+                          const response = await addComment(formData, profileImage);
+                          // console.log(user?.photoURL)
                           if (response?.success) {
                             toast.success("Book added successfully");
                           }
@@ -64,8 +60,7 @@ const   Comment = () => {
                         } catch (error) {
                           console.log(error);
                         }
-                      }}
-                    >
+                      }}>
                       <p className="text-tiny font-semibold mb-1">Write your comment:</p>
                       <textarea
                         name="commentDescription"
@@ -73,11 +68,11 @@ const   Comment = () => {
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
                       />
                       <div className="flex gap-1 items-center">
-
                         <FaStar className="text-3xl text-yellow-500"></FaStar>
                         <input
                           name="ratingNumber"
                           placeholder="Give a rate"
+                          max={5}
                           className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
                         ></input>
                       </div>

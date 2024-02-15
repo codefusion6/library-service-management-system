@@ -4,18 +4,21 @@ import { connectDB } from "../database/MongoConnect";
 import Comment from "../database/models/commentModel/comment";
 
 // for create the comment
-export const addComment = async (formData) => {
+export const addComment = async (formData, profileImage) => {
   const commentDescription = formData.get("commentDescription");
   const ratingNumber = formData.get("ratingNumber");
-  // console.log(commentDescription, ratingNumber);
+  const profileImages = profileImage
   try {
     await connectDB();
     // data to be save in db
     const comment = {
       commentDescription: commentDescription,
       ratingNumber: ratingNumber,
+      profileImage: profileImages
     };
+
     const result = await Comment.create(comment);
+    revalidatePath("/allBooks/:id");
     return JSON.parse(JSON.stringify({ success: true, data: result }));
 
   } catch (error) {
@@ -31,7 +34,7 @@ export const getComment = async () => {
   try {
     await connectDB();
     const result = await Comment.find();
-    revalidatePath("/allBooks");
+    revalidatePath("/allBooks/:id");
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));

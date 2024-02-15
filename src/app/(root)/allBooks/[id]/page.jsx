@@ -13,7 +13,6 @@ const page = async ({ params }) => {
   const authorBook = await getBooksByAuthor(singleBook.authorName);
   const allComments = await getComment();
 
-
   return (
     <main className="min-h-screen lg:p-0 p-10">
       <div className="container mx-auto m-5">
@@ -38,7 +37,7 @@ const page = async ({ params }) => {
             <Button className="w-[80%] rounded-xl hover:bg-lime-700 bg-green-600 text-white font-bold px-5 py-2">
               <a
                 href="/Md_Morsed_Alam (1).pdf"
-                download="/sumon.pdf"
+                download="/nazrul.pdf"
                 to="pdf"
                 target="_blank"
               >
@@ -75,7 +74,7 @@ const page = async ({ params }) => {
                 <span>
                   <FaRegHandPointDown />
                 </span>
-              </h2> 
+              </h2>
               <div >
                 <AllComments allComments={allComments}></AllComments>
               </div>
