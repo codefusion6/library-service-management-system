@@ -1,15 +1,24 @@
 "use server"
 import { connectDB } from "../database/MongoConnect";
 import PaymentHistory from "../database/models/paymentModel/payment";
+<<<<<<< HEAD
+=======
+import Payment from "../database/models/paymentModel/payment";
+>>>>>>> 9d0796df7e5ebf607a0e8f0f73b8c0e3ebf61656
 
 export const addPaymentHistory = async (paymentHistory) => {
   try {
     await connectDB();
 
 
+<<<<<<< HEAD
     // const result = await PaymentHistory.create(payment);
     const result = await PaymentHistory.create(paymentHistory);
     // console.log(result)
+=======
+    };
+    const result = await PaymentHistory.create(payment);
+>>>>>>> 9d0796df7e5ebf607a0e8f0f73b8c0e3ebf61656
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return {
