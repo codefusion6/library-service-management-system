@@ -38,8 +38,8 @@ const PaymentSuccess = ({ payments }) => {
                     </div>
                     <p className='my-5 pt-14 text-primary'>Do You want to save payment history?</p>
                     <div className='flex gap-8 justify-center'>
-                        <Link href='#'><button onClick={() => handlepaymentHistory(paymentHistory)} className='py-1 px-4 text-white bg-slate-600 text-sm hover:bg-slate-200 duration-200 hover:text-primary rounded-lg'>Yes</button></Link>
-                        <Link href='/'><button className='py-1 px-4 text-white bg-slate-600 text-sm hover:bg-slate-200 duration-200 hover:text-primary rounded-lg'>No, thanks</button></Link>
+                        <Link href='/'><button onClick={() => handlepaymentHistory(paymentHistory)} className='py-1 px-4 text-white bg-slate-600 text-sm hover:bg-slate-200 duration-200 hover:text-primary rounded-lg'>Yes</button></Link>
+                        <Link href='/allBooks'><button className='py-1 px-4 text-white bg-slate-600 text-sm hover:bg-slate-200 duration-200 hover:text-primary rounded-lg'>No, thanks</button></Link>
                     </div>
                 </div>
             </div>
