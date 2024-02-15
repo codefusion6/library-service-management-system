@@ -12,9 +12,25 @@ const page = () => {
   return (
     <>
       <ContactBanner></ContactBanner>
-      <section className="bg-slate-100">
-        <div className="max-w-5xl mx-auto md:flex justify-between items-center flex-row-reverse py-10 px-3">
-          <div>
+      <section className="bg-green-100">
+        <div className="container mx-auto grid md:grid-cols-2 gap-8 py-10 px-3 items-center">
+          <div className="col-span-2 md:col-span-1">
+            <h3 className="text-5xl font-bold text-green-800">
+              Book<span className="text-green-600">Flow</span>
+            </h3>
+            <p className="text-sm text-gray-600">
+              Elevate your reading experience with BookFlow, your premier online library.
+              Immerse yourself in a vast collection of diverse genres, seamlessly
+              accessible from anywhere. Discover, read, and enjoy literary treasures
+              effortlessly.
+            </p>
+            <Link href="/about">
+              <button className="bg-green-500 hover:bg-green-600 py-1 px-3 text-white rounded-md mt-3">
+                Learn More
+              </button>
+            </Link>
+          </div>
+          <div className="md:col-span-1">
             <Image
               src="https://i.ibb.co/9nmjqK9/choose-best-teacher-online-1946856-1648375-1.webp"
               alt="contact page"
@@ -23,24 +39,9 @@ const page = () => {
               width={300}
             />
           </div>
-          <div className="flex-1 space-y-5">
-            <h3 className="text-5xl font-bold">
-              Book<span className="text-blue-600">Flow</span>
-            </h3>
-            <p className="text-sm text-gray-500 md:w-2/3">
-              Elevate your reading experience with BookFlow, your premier online
-              library. Immerse yourself in a vast collection of diverse genres,
-              seamlessly accessible from anywhere. Discover, read, and enjoy
-              literary treasures effortlessly.
-            </p>
-            <Link href="/about">
-              <button className="bg-blue-700 py-1 px-3 text-white rounded-md mt-3">
-                Learn More
-              </button>
-            </Link>
-          </div>
         </div>
       </section>
+
 
       <Talk />
 
@@ -59,7 +60,7 @@ const page = () => {
                 your reading journey with BookFlow.
               </p>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 mt-10 items-center justify-center place-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 mt-4 items-center justify-center place-items-center">
               <div className="flex flex-col gap-2 justify-center md:w-3/4 mx-auto">
                 <Feedback />
               </div>

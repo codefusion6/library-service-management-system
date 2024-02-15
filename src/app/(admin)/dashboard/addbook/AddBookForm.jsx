@@ -80,7 +80,7 @@ const AddBookForm = () => {
                         <div className="mb-4">
                             <CldUploadWidget
                                 // signatureEndpoint="/api/sign-cloudinary-params"
-                                uploadPreset='lms_code_fusion'
+                                uploadPreset='dta6mwmlx'
                                 autoUpload={false}
                                 onSuccess={(result, { widget }) => {
                                     setBookCover(result?.info?.secure_url);
