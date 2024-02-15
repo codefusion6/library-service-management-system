@@ -27,11 +27,12 @@ const RegisterAction = () => {
   return (
     <div className="max-w-md mx-auto ">
       <form action={async (formData) => {
-          const profileImageField = formData.append("profileImage", profileImage);
-          const name = formData.get('name');
+        const profileImageField = formData.append("photoUrl", profileImage);
+    const name = formData.get('name');
           const email = formData.get('email');
           const password = formData.get('password');
 
+console.log("profile image:", profileImage);
           try {
             const user = await createUser(email, password);
             if (user.user) {
