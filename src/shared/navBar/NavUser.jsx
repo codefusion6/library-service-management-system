@@ -14,9 +14,8 @@ const NavUser = () => {
                 !loading && <Image className='size-10 py-0 px-0 rounded-full' rel="noreferrer" style={{ opacity: "1" }} src={user?.photoURL} width={100} alt={user.displayName} height={100} />
             }
 
-            {/* <CgProfile className="text-4xl" /> */}
         </>
     )
 }
 
-export default NavUser
+export default NavUser ;

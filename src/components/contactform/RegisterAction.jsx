@@ -45,7 +45,36 @@ console.log("profile image:", profileImage);
           }
         }}
       >
+
         <div className="mt-5">
+           {/* User Image  */}
+           <div className="mb-4">
+            <CldUploadWidget
+              uploadPreset="lms_code_fusion"
+              autoUpload={false}
+              onSuccess={(result, { widget }) => {
+                setPhotoURL(result?.info?.secure_url);
+                console.log(resource);
+                widget.close();
+              }}
+            >
+              {({ open }) => {
+                function handleOnClick() {
+                  // setAuthorImg(null);
+                  open();
+                }
+                return (
+                  <button
+                    type="button"
+                    className="px-5 py-3 rounded-md text-white bg-blue-500 hover:bg-blue-700"
+                    onClick={handleOnClick}
+                  >
+                    Upload Image
+                  </button>
+                );
+              }}
+            </CldUploadWidget>
+          </div>
           <div>
             <label className="font-semibold ml-5 text-sm text-gray-600 pb-1 block" htmlFor="fullname">
               Full Name
