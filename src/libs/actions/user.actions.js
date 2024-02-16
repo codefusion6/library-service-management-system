@@ -13,11 +13,13 @@ export const addUser = async (formData) => {
     const email = formData.get("email");
     // Add a default role 'user'
     const role = "user";
-    const photoUrl = formData.get("photoUrl");
-    console.log('PhotoURL:', photoUrl);
+    const photoURL = formData.get("photoURL");
+    console.log('photoURL:', photoURL);
     const newFormData = {
       name: name,
       email: email,
+      role: role,
+      photoURL: photoURL,
     };
     const result = await User.create(newFormData);
     console.log("USER DATA:", result);
