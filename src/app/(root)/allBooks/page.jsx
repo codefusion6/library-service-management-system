@@ -8,10 +8,11 @@ import Search from "@/shared/Search";
 export const dynamic = "force-dynamic";
 
 const AllBooks = async ({ searchParams }) => {
-  const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
+  const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page )
   const searchText = (searchParams?.query) || "";
   const { books, totalPage } = await getAllBooks({ query: searchText, page: pageNumber, })
-
+  console.log(books)
+  console.log(searchText, pageNumber)
 
   return (
     <section className="min-h-screen">
