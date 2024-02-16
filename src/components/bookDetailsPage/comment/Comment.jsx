@@ -11,9 +11,6 @@ import {
   ModalFooter,
   Button,
   useDisclosure,
-  Checkbox,
-  Input,
-  Link,
 } from "@nextui-org/react";
 import { addComment } from "@/libs/actions/comment.action";
 import toast from "react-hot-toast";
@@ -30,19 +27,16 @@ const Comment = () => {
           src={user?.photoURL}
           width={30}
           height={30}
-          className="rounded-full size-10"
-        />
+          className="rounded-full size-10" />
         <Button
           onPress={onOpen}
-          className="rounded-xl hover:bg-lime-700 border text-black border-green-600  hover:text-white font-bold px-5 py-2"
-        >
+          className="rounded-xl hover:bg-lime-700 border text-black border-green-600 hover:text-white font-bold px-5 py-2">
           Rating & Review
         </Button>
         <Modal
           isOpen={isOpen}
           onOpenChange={onOpenChange}
-          placement="top-center"
-        >
+          placement="top-center">
           <ModalContent>
             {(onClose) => (
               <>
@@ -64,8 +58,7 @@ const Comment = () => {
                         } catch (error) {
                           console.log(error);
                         }
-                      }}
-                    >
+                      }}>
                       <textarea
                         name="commentDescription"
                         placeholder="write a comment"
@@ -102,9 +95,8 @@ const Comment = () => {
         </Modal>
       </div>
       <h2 className="my-8 text-base font-semibold flex items-center gap-2">
-        Your rating & review{" "}
+        Your rating & review
         <span>
-          {" "}
           <FaRegHandPointDown />
         </span>
       </h2>

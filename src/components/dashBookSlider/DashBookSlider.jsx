@@ -20,56 +20,55 @@ const DashBookSlider = () => {
     <section className="">
       <div className="container mx-auto">
         <div className="">
-        <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Autoplay, Pagination, Navigation]}
-          onAutoplayTimeLeft={onAutoplayTimeLeft}
-          className="mySwiper "
-        >
-          <SwiperSlide>
-            <Image
-              src="https://i.ibb.co/nC6vF6D/img-1.jpg"
-              width={250}
-              height={100}
-              alt="Picture of the slider"
-              
-            ></Image>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="https://i.ibb.co/tZYVxkc/img-2.jpg"
-              width={500}
-              height={500}
-              alt="Picture of the slider"
-            ></Image>
-          </SwiperSlide>
-          <SwiperSlide>
-            <Image
-              src="https://i.ibb.co/5nXdJQ1/img-3.jpg"
-              width={500}
-              height={500}
-              alt="Picture of the slider"
-            ></Image>
-          </SwiperSlide>
+          <Swiper
+            spaceBetween={30}
+            centeredSlides={true}
+            autoplay={{
+              delay: 2500,
+              disableOnInteraction: false,
+            }}
+            pagination={{
+              clickable: true,
+            }}
+            navigation={true}
+            modules={[Autoplay, Pagination, Navigation]}
+            onAutoplayTimeLeft={onAutoplayTimeLeft}
+            className="mySwiper "
+          >
+            <SwiperSlide>
+              <Image
+                src="https://i.ibb.co/nC6vF6D/img-1.jpg"
+                width={250}
+                height={100}
+                alt="Picture of the slider"
 
-          <div className="autoplay-progress" slot="container-end">
-            <svg viewBox="0 0 48 48" ref={progressCircle}>
-              <circle cx="24" cy="24" r="20"></circle>
-            </svg>
-            <span ref={progressContent}></span>
-          </div>
-        </Swiper>
+              ></Image>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image
+                src="https://i.ibb.co/tZYVxkc/img-2.jpg"
+                width={500}
+                height={500}
+                alt="Picture of the slider"
+              ></Image>
+            </SwiperSlide>
+            <SwiperSlide>
+              <Image
+                src="https://i.ibb.co/5nXdJQ1/img-3.jpg"
+                width={500}
+                height={500}
+                alt="Picture of the slider"
+              ></Image>
+            </SwiperSlide>
+
+            <div className="autoplay-progress" slot="container-end">
+              <svg viewBox="0 0 48 48" ref={progressCircle}>
+                <circle cx="24" cy="24" r="20"></circle>
+              </svg>
+              <span ref={progressContent}></span>
+            </div>
+          </Swiper>
         </div>
-       
       </div>
     </section>
   );

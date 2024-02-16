@@ -4,7 +4,7 @@ import FavouriteBook from './FavouriteBook'
 
 const Favourite = async () => {
     const data = await getFavouriteBook("sumonpaul3217@gmail.com")
-    console.log(data)
+
     return (
         <main className='bg-slate-50 p-2'>
             <section>

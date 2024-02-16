@@ -8,8 +8,8 @@ import Swal from 'sweetalert2'
 
 const FavouriteBook = ({ bookData }) => {
     const { user } = UserAuth()
-
-    const handleRemove = (id) => {
+    // console.log(id)
+    const handleRemove = async (id) => {
         // console.log(id)
         Swal.fire({
             title: "Are you sure?",
@@ -21,7 +21,8 @@ const FavouriteBook = ({ bookData }) => {
             confirmButtonText: "Yes, delete it!"
         }).then(async (result) => {
             if (result.isConfirmed) {
-                await deleteFavourite(user.email, id)
+                const res = await deleteFavourite(user?.email, id)
+                console.log(res);
             }
         });
     }
