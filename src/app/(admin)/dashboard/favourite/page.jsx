@@ -4,7 +4,6 @@ import FavouriteBook from './FavouriteBook'
 
 const Favourite = async () => {
     const data = await getFavouriteBook("sumonpaul3217@gmail.com")
-
     return (
         <main className='bg-slate-50 p-2'>
             <section>
@@ -22,8 +21,8 @@ const Favourite = async () => {
                 <div className="container mx-auto">
                     <div>
                         {
-                            data?.map((books, idx) => (
-                                <FavouriteBook key={idx} bookData={books}></FavouriteBook>
+                            data?.map((book, idx) => (
+                                <FavouriteBook key={idx} book={book}></FavouriteBook>
                             ))
                         }
                     </div>
