@@ -7,13 +7,13 @@ import { FaFacebook, FaGithub } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import EditProfileForm from "./editProfile/EditProfileForm";
 
-const Profile = () => {
+const Profile =  ({editUserData}) => {
+  
   const { user } = UserAuth();
 
   return (
     <section>
       <div>
-        <div></div>
         <div className="border-green-500 border-[5px]">
           <div>
             <div className="container bg-white mx-auto m-10 h-full p-10 ">
@@ -25,12 +25,12 @@ const Profile = () => {
               <h1 className="text-3xl text-center font-bold mb-10 mt-5">
                 User Profile
               </h1>
-              <div></div>
+              
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div className="space-y-2">
                   <h1 className="text-xl font-bold">
                     About me:
-                    
+
                     </h1>
                   <p className="text-base font-medium"></p>
                 </div>
