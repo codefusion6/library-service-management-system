@@ -28,4 +28,4 @@ const Writers = async () => {
     )
 }
 
-export default Writers
+export default Writers; 
