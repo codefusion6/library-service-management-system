@@ -26,8 +26,6 @@
     "emailjs-com": "^3.2.0",
     "firebase": "^10.8.0",
     "framer-motion": "^10.18.0",
-    "i": "^0.3.7",
-    "jsonwebtoken": "^9.0.2",
     "lottie-react": "^2.4.0",
     "mongoose": "^8.0.4",
     "next-cloudinary": "^5.20.0",
