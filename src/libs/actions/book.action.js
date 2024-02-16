@@ -27,10 +27,8 @@ export const addBook = async (formData) => {
       publisherEmail: publisherEmail,
       category: category,
     };
-
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
-
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return {
@@ -39,7 +37,6 @@ export const addBook = async (formData) => {
     };
   }
 };
-
 // many book
 export const addManyBook = async () => {
   const books = [
@@ -145,7 +142,6 @@ export const getBooksByAuthor = async (authorName) => {
   try {
     await connectDB();
     const result = await Book.find({ authorName: authorName });
-
     return JSON.parse(JSON.stringify(result));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
@@ -174,13 +170,11 @@ export const getBooksNumber = async () => {
   try {
     await connectDB();
     const bookNum = await Book.find().countDocuments();
-    revalidatePath("/dashboard")
     return JSON.parse(JSON.stringify(bookNum))
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
 };
-
 // export const deleteFavourite = async (id, email) => {
 //   console.log(id)
 //   try {
@@ -199,18 +193,19 @@ export const getBooksNumber = async () => {
 // };
 
 export const deleteFavourite = async (email, bookid) => {
-  try {
-    await connectDB();
-    const result = await Favourite.findOneAndUpdate({ email: email }, { $pull: { bookIds: bookIdToRemove } }, { new: true });
-    const favouriteBookids = result ? result.bookIds : [];
-    const bookResult = await Book.find({
-      _id: {
-        $in: favouriteBookids
-      }
-    });
-    revalidatePath("/dashboard/favourite")
-    return JSON.parse(JSON.stringify(bookResult));
-  } catch (error) {
-    return error;
-  }
+  // console.log(email, bookid)
+  // try {
+  //   await connectDB();
+  //   const result = await Favourite.findOneAndUpdate({ email: email }, { $pull: { bookIds: bookIdToRemove } }, { new: true });
+  //   const favouriteBookids = result ? result.bookIds : [];
+  //   const bookResult = await Book.find({
+  //     _id: {
+  //       $in: favouriteBookids
+  //     }
+  //   });
+  //   revalidatePath("/dashboard/favourite")
+  //   return JSON.parse(JSON.stringify(bookResult));
+  // } catch (error) {
+  //   return error;
+  // }
 };

@@ -1,7 +1,6 @@
 "use client";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaFacebook, FaGithub } from "react-icons/fa";
@@ -11,7 +10,7 @@ import EditProfileForm from "./editProfile/EditProfileForm";
 
 const Profile = () => {
   const { user } = UserAuth();
-  console.log(user);
+  // console.log(user);
 
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
 
