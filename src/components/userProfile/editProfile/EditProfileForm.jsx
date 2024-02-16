@@ -1,5 +1,5 @@
 "use client";
-import { UserAuth } from "@/app/provider/context/AuthContext";
+import { addUserProfile } from "@/libs/actions/userProfile.action";
 import {
   Button,
   Modal,
@@ -12,7 +12,6 @@ import {
 import React from "react";
 
 const EditProfileForm = () => {
-  const { user } = UserAuth();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <div>
@@ -26,12 +25,23 @@ const EditProfileForm = () => {
         <ModalContent>
           {(onClose) => (
             <>
-              <ModalHeader className="flex flex-col gap-1">
-                <p>{user?.displayName}</p>
-              </ModalHeader>
+              <ModalHeader className="flex flex-col gap-1"></ModalHeader>
               <ModalBody>
                 <div>
-                  <form className="m-8 max-w-xl mx-auto p-6 bg-white rounded-md shadow-md">
+                  <form
+                    action={async (formData) => {
+                      try {
+                        const response = await addUserProfile(formData);
+                        if (response?.success) {
+                          toast.success(" added successfully");
+                        }
+                        console.log(response);
+                      } catch (error) {
+                        console.log(error);
+                      }
+                    }}
+                    className="m-8 max-w-xl mx-auto p-6 bg-white rounded-md shadow-md"
+                  >
                     <div className="mb-4">
                       <label
                         htmlFor="Name"
@@ -41,7 +51,7 @@ const EditProfileForm = () => {
                       </label>
                       <input
                         type="text"
-                        name="name"
+                        name="userName"
                         placeholder="name"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
                       />
@@ -81,19 +91,27 @@ const EditProfileForm = () => {
                         htmlFor="category"
                         className="block text-gray-700 text-sm font-bold mb-2"
                       >
-                        Live
+                        Address
                       </label>
-                      <textarea
-                        name="live"
-                        placeholder="live"
+                      <select
+                        name="category"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                      />
+                      >
+                        <option value="Dhaka">Dhaka</option>
+                        <option value="Barishal">Barishal</option>
+                        <option value="Khulna">Khulna</option>
+                        <option value="Jossore">Jossore</option>
+                        <option value="Mymangsing">Mymangsing</option>
+                        <option value="Gazipur">Gazipur</option>
+                        <option value="Sylhet">Sylhet</option>
+                        <option value="Chittagonj">Chittagonj</option>
+                      </select>
                     </div>
                     <ModalFooter>
-                      <Button color="danger" variant="light" onPress={onClose}>
+                      <Button color="danger" variant="light" >
                         Close
                       </Button>
-                      <Button color="primary" onPress={onClose}>
+                      <Button color="primary" type="submit">
                         Save
                       </Button>
                     </ModalFooter>

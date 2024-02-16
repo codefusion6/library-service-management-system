@@ -1,16 +1,14 @@
-"use client";
+"use client"
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import Image from "next/image";
 import React from "react";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
-import { Button, useDisclosure } from "@nextui-org/react";
 import EditProfileForm from "./editProfile/EditProfileForm";
 
 const Profile = () => {
   const { user } = UserAuth();
-  // console.log(user);
 
   return (
     <section>
@@ -30,7 +28,10 @@ const Profile = () => {
               <div></div>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div className="space-y-2">
-                  <h1 className="text-xl font-bold">About me:</h1>
+                  <h1 className="text-xl font-bold">
+                    About me:
+                    
+                    </h1>
                   <p className="text-base font-medium"></p>
                 </div>
                 <div className=" flex flex-col items-center justify-center gap-5">
@@ -43,6 +44,7 @@ const Profile = () => {
                   ></Image>
 
                   <EditProfileForm></EditProfileForm>
+
                 </div>
 
                 <div className="space-y-2">
