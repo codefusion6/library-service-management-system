@@ -13,7 +13,6 @@ const page = async ({ params }) => {
   const authorBook = await getBooksByAuthor(singleBook.authorName);
   const allComments = await getComment();
 
-
   return (
     <main className="min-h-screen lg:p-0 p-10">
       <div className="container mx-auto m-5">
@@ -37,21 +36,14 @@ const page = async ({ params }) => {
             </Button>
             <Button className="w-[80%] rounded-xl hover:bg-lime-700 bg-green-600 text-white font-bold px-5 py-2">
               <a
-                href="/Md_Morsed_Alam (1).pdf"
-                download="/sumon.pdf"
+                href="/Gitanjali.pdf"
+                download="/Gitanjali.pdf"
                 to="pdf"
                 target="_blank"
               >
                 Download
               </a>
             </Button>
-            {/* <p className="flex gap-2 items-center justify-center">
-              <FaRegStar className="text-3xl" />
-              <FaRegStar className="text-3xl" />
-              <FaRegStar className="text-3xl" />
-              <FaRegStar className="text-3xl" />
-              <FaRegStar className="text-3xl" />
-            </p> */}
           </div>
           <div className="flex-1 md:mt-0 mt-10 space-y-4">
             <div className="text-2xl uppercase font-bold">
@@ -68,7 +60,7 @@ const page = async ({ params }) => {
               <Image
                 alt="author img"
                 className="size-8"
-                src={singleBook.authorImage}
+                src={`${singleBook.authorImage}`}
                 width={30}
                 height={30}
               />
@@ -82,7 +74,7 @@ const page = async ({ params }) => {
                 <span>
                   <FaRegHandPointDown />
                 </span>
-              </h2> 
+              </h2>
               <div >
                 <AllComments allComments={allComments}></AllComments>
               </div>

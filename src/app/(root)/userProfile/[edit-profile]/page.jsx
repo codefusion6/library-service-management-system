@@ -1,13 +1,12 @@
 import EditProfileForm from "@/components/userProfile/editProfile/EditProfileForm";
 
+const page = async ({ params }) => {
 
-const page = async({params}) => {
-                      
-            console.log(params);
+  console.log(params);
 
   return (
     <div>
-     <EditProfileForm></EditProfileForm>
+      <EditProfileForm></EditProfileForm>
     </div>
   );
 };
