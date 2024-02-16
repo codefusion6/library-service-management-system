@@ -12,8 +12,6 @@ const Profile = () => {
   const { user } = UserAuth();
   // console.log(user);
 
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-
   return (
     <section>
       <div>
@@ -44,12 +42,6 @@ const Profile = () => {
                     className="w-[300px] rounded-full"
                   ></Image>
 
-                  <Button
-                    className="bg-green-600  mt-10 px-6 py-2 rounded-md "
-                    onPress={onOpen}
-                  >
-                    Edit Profile
-                  </Button>
                   <EditProfileForm></EditProfileForm>
                 </div>
 

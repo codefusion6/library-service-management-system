@@ -1,12 +1,27 @@
 "use client";
-import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/react";
+import { UserAuth } from "@/app/provider/context/AuthContext";
+import {
+  Button,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  useDisclosure,
+} from "@nextui-org/react";
 import React from "react";
 
 const EditProfileForm = () => {
-  
+  const { user } = UserAuth();
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   return (
     <div>
+      <Button
+        onPress={onOpen}
+        className="rounded-xl hover:bg-lime-700 border text-black border-green-600 hover:text-white font-bold px-5 py-2"
+      >
+        Edit Profile
+      </Button>
       <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
         <ModalContent>
           {(onClose) => (
@@ -74,24 +89,17 @@ const EditProfileForm = () => {
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
                       />
                     </div>
-                    <button
-                      type="submit"
-                      className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
-                    >
-                      Submit
-                    </button>
+                    <ModalFooter>
+                      <Button color="danger" variant="light" onPress={onClose}>
+                        Close
+                      </Button>
+                      <Button color="primary" onPress={onClose}>
+                        Save
+                      </Button>
+                    </ModalFooter>
                   </form>
                 </div>
               </ModalBody>
-              <ModalFooter>
-                <Button color="danger" variant="light" onPress={onClose}>
-                  Close
-                </Button>
-                <Button color="primary" onPress={onClose}>
-                  Save
-                </Button>
-              </ModalFooter>
-
             </>
           )}
         </ModalContent>
