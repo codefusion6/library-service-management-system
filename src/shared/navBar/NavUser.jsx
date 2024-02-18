@@ -6,16 +6,14 @@ import React, { } from 'react'
 
 const NavUser = () => {
     const { user, loading } = UserAuth();
-    // console.log(user)
+    console.log("user.photoURL:", user?.photoURL);
+  
     return (
-        <>
+      <>
+        {!loading && <Image className='size-10 py-0 px-0 rounded-full' rel="noreferrer" style={{ opacity: "1" }} src={user?.photoURL} width={100} alt={user?.displayName} height={100} />}
+      </>
+    );
+  };
 
-            {
-                !loading && <Image className='size-10 py-0 px-0 rounded-full' rel="noreferrer" style={{ opacity: "1" }} src={user?.photoURL} width={100} alt={user.displayName} height={100} />
-            }
-
-        </>
-    )
-}
-
-export default NavUser ;
+  export default NavUser;
+  

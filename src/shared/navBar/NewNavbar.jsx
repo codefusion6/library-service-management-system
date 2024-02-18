@@ -4,8 +4,8 @@ import { Navbar, NavbarBrand, NavbarMenuToggle, NavbarMenuItem, NavbarMenu, Navb
 import SiteLogo from "./SiteLogo";
 import "./navbar.css"
 import { UserAuth } from "@/app/provider/context/AuthContext";
-import NavUser from "./NavUser";
 import toast from "react-hot-toast";
+import NavUser from "./NavUser";
 // import { AcmeLogo } from "./AcmeLogo.jsx";
 export default function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
