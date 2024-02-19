@@ -50,7 +50,7 @@ const Pricing = () => {
                             <h1 className="text-2xl py-2 px-3 font-semibold text-white bg-indigo-600 mb-4 rounded-2xl">
                                 Basic Subscription
                             </h1>
-                            <p className="text-2xl font-bold text-indigo-600">$10.00/month</p>
+                            <p className="text-2xl font-bold text-indigo-600">$10.00/ 7 days</p>
                             <p className="text-gray-600 mb-4">
                                 Our <strong>Basic</strong> package for user. Where user can view
                                 all the books but can not download the books.
@@ -73,9 +73,9 @@ const Pricing = () => {
                             <h1 className="text-2xl py-2 px-3 font-semibold text-white bg-indigo-600 mb-4 rounded-2xl">
                                 Basic Subscription
                             </h1>
-                            <p className="text-2xl font-bold text-indigo-600">$30.00/month</p>
+                            <p className="text-2xl font-bold text-indigo-600">$30.00/ 1 month</p>
                             <p className="text-gray-600 mb-4">
-                                Our <strong>Basic</strong> package for user. Where user can view
+                                Our <strong>Plus</strong> package for user. Where user can view
                                 all the books but can not download the books.
                             </p>
                             <ul className="space-y-2">
@@ -94,9 +94,9 @@ const Pricing = () => {
                             <FaPenNib className="text-5xl bg-indigo-600 rounded-full p-2" />
 
                             <h1 className="text-2xl py-2 px-3 font-semibold text-white bg-indigo-600 mb-4 rounded-2xl">
-                                Basic Subscription
+                                Elite Subscription
                             </h1>
-                            <p className="text-2xl font-bold text-indigo-600">$50.00/month</p>
+                            <p className="text-2xl font-bold text-indigo-600">$50.00/2 months</p>
                             <p className="text-gray-600 mb-4">
                                 Our <strong>Basic</strong> package for user. Where user can view
                                 all the books but can not download the books.

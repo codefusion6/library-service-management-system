@@ -21,17 +21,26 @@ const PaymentSuccess = ({ payments }) => {
         userName: user?.displayName,
         email: user?.email,
         userProfile: user?.photoURL,
-        time: time
+        time: time,
+        subscriptionType: (Number(paymentss.amount_received) / 100) === 30 ? "plus" : (Number(paymentss.amount_received) / 100) === 50 ? "elite" : "basic"
     }
-    // console.log(paymentHistory)
+
     const handlepaymentHistory = async (paymentHistory) => {
-        // const validatePayment = await getOnePaymentHistory(user?.email)
-        const savePayment = await addPaymentHistory(paymentHistory)
-        // console.log(validatePayment)
-        if (savePayment?.success) {
-            toast.success("Payment History Saved Thank You", {
-                position: "bottom-right"
-            })
+
+        // console.log(savePayment)
+        const data = await getOnePaymentHistory(user?.email)
+        // console.log('get', data)
+        if (data?.data?.email === user?.email && data?.data?.paymentId === paymentss.id) {
+            toast.error("this Data already saved")
+        }
+        else {
+            const savePayment = await addPaymentHistory(paymentHistory)
+            // console.log("add payment", savePayment.data)
+            if (savePayment?.success) {
+                toast.success("Payment History Saved Thank You", {
+                    position: "bottom-right"
+                })
+            }
         }
     }
     if (customerId !== paymentss?.customer) {
@@ -39,6 +48,9 @@ const PaymentSuccess = ({ payments }) => {
     }
     if (!user) {
         return <div className='container mx-auto'> <h1 className='py-20 text-2xl text-center font-semibold'>You are not logged Out</h1></div>
+    }
+    if (data?.data?.email !== user?.email) {
+        return <h2>Your are not owner of this subscriptions</h2>
     }
     return (
         <div>
@@ -55,7 +67,7 @@ const PaymentSuccess = ({ payments }) => {
                     </div>
                     <p className='my-5 pt-14 text-primary'>Do You want to save payment history?</p>
                     <div className='flex gap-8 justify-center'>
-                        <Link href='/'><button onClick={() => handlepaymentHistory(paymentHistory)} className='py-1 px-4 text-white bg-slate-600 text-sm hover:bg-slate-200 duration-200 hover:text-primary rounded-lg'>Yes</button></Link>
+                        <button onClick={() => handlepaymentHistory(paymentHistory)} className='py-1 px-4 text-white bg-slate-600 text-sm hover:bg-slate-200 duration-200 hover:text-primary rounded-lg'>Yes</button>
                         <Link href='/allBooks'><button className='py-1 px-4 text-white bg-slate-600 text-sm hover:bg-slate-200 duration-200 hover:text-primary rounded-lg'>No, thanks</button></Link>
                     </div>
                 </div>

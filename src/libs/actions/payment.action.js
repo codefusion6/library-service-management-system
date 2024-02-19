@@ -4,14 +4,15 @@ import { connectDB } from "../database/MongoConnect";
 import PaymentHistory from "../database/models/paymentModel/payment";
 
 export const addPaymentHistory = async (paymentHistory) => {
-  // console.log(paymentHistory.id)
+  console.log(paymentHistory)
   try {
     await connectDB();
-    // const result = await PaymentHistory.create(payment);
+
     const result = await PaymentHistory.create(paymentHistory);
     // console.log(result)
     revalidatePath("/:customerid")
     return JSON.parse(JSON.stringify({ success: true, data: result }));
+
   } catch (error) {
     return {
       errorDetails: JSON.parse(JSON.stringify(error)),
