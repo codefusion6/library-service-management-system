@@ -32,7 +32,7 @@ const RegisterAction = () => {
           const email = formData.get('email');
           const password = formData.get('password');
 
-          console.log("profile image:", profileImage);
+          // console.log("profile image:", profileImage);
           try {
             const user = await createUser(email, password);
             if (user.user) {
