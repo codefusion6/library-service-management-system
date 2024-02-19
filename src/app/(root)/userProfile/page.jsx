@@ -1,4 +1,3 @@
-
 import Profile from "@/components/userProfile/Profile";
 import React from "react";
 

@@ -13,13 +13,12 @@ const Pricing = () => {
     const handleCheckout = async (amount, subscriptionType) => {
         const paymentInfo = { email, userName, amount, subscriptionType }
         // https://library-service-management-system.vercel.app
-        await fetch("https://library-service-management-system.vercel.app/api/payment", {
+        await fetch("http://localhost:3000/api/payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(paymentInfo)
         }).then(res => res.json()
             .then(data => {
-                const resData = data;
                 toast("Payment Proccessing")
                 // const paymentInfo = {
                 //     name: userName,
@@ -29,15 +28,11 @@ const Pricing = () => {
                 //     paymentStatus: resData?.payment_status
                 // }
 
-                // console.log(resData.paymentId)
-
-                return window.location.href = resData.url
+                return window.location.href = data.url
             })
         ).catch(err => {
             console.log(err)
         })
-
-
     }
 
     return (
