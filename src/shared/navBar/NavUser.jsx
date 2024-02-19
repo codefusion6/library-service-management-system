@@ -26,14 +26,14 @@ const NavUser = () => {
 
   return (
     <>
-      {!loading && userDetails && (
+      {!loading && (
         <Image
           className='size-10 py-0 px-0 rounded-full'
           rel="noreferrer"
           style={{ opacity: "1" }}
-          src={userDetails?.photoURL}
+          src={user?.photoURL || userDetails?.photoURL}
           width={100}
-          alt={userDetails?.name}
+          alt={user?.displayName || userDetails?.name}
           height={100}
         />
       )}
