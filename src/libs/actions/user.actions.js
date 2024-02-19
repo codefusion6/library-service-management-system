@@ -22,7 +22,7 @@ export const addUser = async (formData) => {
       photoURL: photoURL,
     };
     const result = await User.create(newFormData);
-    console.log("USER DATA:", result);
+    // console.log("USER DATA:", result);
 
 
     return JSON.parse(JSON.stringify({ success: true, data: result }));
