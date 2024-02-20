@@ -11,6 +11,7 @@ const AllBooks = async ({ searchParams }) => {
   const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
   const searchText = (searchParams?.query) || "";
   const { books, totalPage } = await getAllBooks({ query: searchText, page: pageNumber, })
+  // console.log(books)
 
 
   return (

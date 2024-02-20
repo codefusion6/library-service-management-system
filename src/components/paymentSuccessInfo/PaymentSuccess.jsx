@@ -8,20 +8,17 @@ import { useEffect } from 'react'
 import toast from 'react-hot-toast'
 import { IoMdDoneAll } from 'react-icons/io'
 const PaymentSuccess = ({ payments }) => {
-    const [userEmail, setUseremail] = useState("")
     const { user } = UserAuth();
     const paymentss = payments[0]
-    const [pageRendered, setPageRendered] = useState(false);
     const pathName = usePathname()
     const customerId = pathName.slice(1, pathName.length)
 
-    useEffect(() => {
-        const queryString = window.location.search;//it returns query strings from url
-        // console.log(queryString.replace("?email=", )) // its working for getting email from url
-        const urlParams = new URLSearchParams(queryString) // it receives an query string
-        const userEmail = (urlParams.get('email'))
-        setUseremail(userEmail)
-    }, [])
+    // useEffect(() => {
+    //     const queryString = window.location.search;  //it returns query strings from url
+    //     // console.log(queryString.replace("?email=", ))  // its working for getting email from url
+    //     const urlParams = new URLSearchParams(queryString) // it receives an query string
+    //     const userEmail = (urlParams.get('email'))
+    // }, [])
 
     // console.log(payments)
     const time = new Date().toLocaleDateString("en-bd")
@@ -37,7 +34,7 @@ const PaymentSuccess = ({ payments }) => {
 
     const handlepaymentHistory = async (paymentHistory) => {
         const data = await getOnePaymentHistory(user?.email)
-        // console.log(data?.data)
+        console.log(data?.data)
         // check history data alredy exist or not
         if (data?.data?.email === user?.email && data?.data?.paymentId === paymentss.id) {
             toast.error("this Data already saved", {
@@ -55,15 +52,13 @@ const PaymentSuccess = ({ payments }) => {
         }
         setPageRendered(true)
     }
+
+
     if (customerId !== paymentss?.customer) {
         return <div className='container mx-auto'> <h1 className='py-20 text-2xl text-center font-semibold'> You don&apos;t have any transation</h1></div>
     }
     if (!user) {
         return <div className='container mx-auto'> <h1 className='py-20 text-2xl text-center font-semibold'>You are not logged Out</h1></div>
-    }
-
-    if (pageRendered) {
-        <h4>404 not found</h4>
     }
 
 

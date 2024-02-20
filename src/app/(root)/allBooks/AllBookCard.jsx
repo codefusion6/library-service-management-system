@@ -9,6 +9,7 @@ import { addFavourite } from "@/libs/actions/favourite.action";
 import toast from "react-hot-toast";
 
 const AllBookCard = ({ books }) => {
+  // console.log(books)
   const { user } = UserAuth();
   const handleFavouriteClick = async (bookId) => {
     const favouritBook = {
