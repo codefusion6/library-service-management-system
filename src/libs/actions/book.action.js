@@ -111,7 +111,8 @@ export const getAllBooks = async ({ query, page }) => {
     const books = await Book.find().limit(per_page).skip((pageNumber - 1) * per_page);
     const totalPage = Math.ceil(count / per_page);
     revalidatePath("/addbook");
-    return JSON.parse(JSON.stringify({ books: books, totalPage }));
+    // return 
+    console.log(JSON.parse(JSON.stringify({ books: books, totalPage })));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
