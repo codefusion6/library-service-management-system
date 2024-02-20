@@ -34,7 +34,7 @@ const Pricing = () => {
                 return window.location.href = resData.url
             })
         ).catch(err => {
-            console.log(err)
+            // console.log(err)
         })
 
 
