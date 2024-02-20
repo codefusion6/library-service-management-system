@@ -31,7 +31,7 @@ const Pricing = () => {
                 return window.location.href = data.url
             })
         ).catch(err => {
-            console.log(err)
+            // console.log(err)
         })
     }
 

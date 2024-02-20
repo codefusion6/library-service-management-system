@@ -185,7 +185,7 @@ const UserTable = ({ allUser }) => {
                           style={{ opacity: 100 }}
                           width={100}
                           className="w-10 h-10 rounded-full"
-                          src={user.photoUrl}
+                          src={user.photoURL}
                           alt="img"
                         />
                         <div className="ps-3">

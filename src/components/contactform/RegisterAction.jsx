@@ -27,12 +27,12 @@ const RegisterAction = () => {
   return (
     <div className="max-w-md mx-auto ">
       <form action={async (formData) => {
-        const profileImageField = formData.append("photoUrl", profileImage);
+        const profileImageField = formData.append("photoURL", profileImage);
     const name = formData.get('name');
           const email = formData.get('email');
           const password = formData.get('password');
 
-console.log("profile image:", profileImage);
+          // console.log("profile image:", profileImage);
           try {
             const user = await createUser(email, password);
             if (user.user) {
@@ -103,7 +103,7 @@ console.log("profile image:", profileImage);
         </div>
 
         {/* Profile Image Upload */}
-        <div className="mb-4">
+        <div className="mb-4 flex items-center justify-center">
           <CldUploadWidget
             uploadPreset="lms_code_fusion"
             autoUpload={false}
