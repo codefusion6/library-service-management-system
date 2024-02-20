@@ -19,11 +19,7 @@ export const addUser = async (formData) => {
       name: name,
       email: email,
       role: role,
-<<<<<<< HEAD
       photoUrl: photoUrl,
-=======
-      photoURL: photoURL,
->>>>>>> 6f4e3481f379171205f42e815d6f747a0a87f34b
     };
     const result = await User.create(newFormData);
     // console.log("USER DATA:", result);
