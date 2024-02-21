@@ -4,7 +4,7 @@ import Link from 'next/link'
 import React from 'react'
 
 const WriterDetails =async ({params}) => {
-    // console.log(params)
+    console.log(params)
 
     const singleWriter = await getWriter(params.id);
     console.log("hi", singleWriter)

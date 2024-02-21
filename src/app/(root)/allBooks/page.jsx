@@ -1,4 +1,4 @@
-// "use client"
+
 import Image from "next/image";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
@@ -12,6 +12,7 @@ const AllBooks = async ({ searchParams }) => {
   const searchText = (searchParams?.query) || "";
   const { books, totalPage } = await getAllBooks({ query: searchText, page: pageNumber, })
   console.log(books)
+  console.log(searchText, pageNumber)
 
 
   return (
