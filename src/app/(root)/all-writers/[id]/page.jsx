@@ -1,13 +1,13 @@
+import { getBooksByAuthor } from "@/libs/actions/book.action";
 import { getWriter } from "@/libs/actions/writer.action";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 const WriterDetails = async ({ params }) => {
-  // console.log(params)
 
   const singleWriter = await getWriter(params.id);
-  // console.log("hi", singleWriter)
+  const authorBook = await getBooksByAuthor();
+  console.log(authorBook)
 
   return (
     <section className="my-10">
@@ -18,8 +18,8 @@ const WriterDetails = async ({ params }) => {
               src={singleWriter?.authorImg}
               width={300}
               height={300}
-              className="w-full h-[300px] mx-auto rounded-lg"
-              alt=""
+              className="w-full h-[350px] mx-auto rounded-lg"
+              alt="Writer Image"
             />
           </div>
           <div className="col-span-2 space-y-2">
@@ -28,19 +28,19 @@ const WriterDetails = async ({ params }) => {
             </h2>
             <hr className="mb-3" />
             <p className="flex text-left pb-1">
-              <span className="w-1/3 md:w-1/4 font-semibold">Address</span>{" "}
+              <span className="w-1/3 md:w-1/4 font-semibold">Address</span>
               <span className="w-1/3 md:w-1/4">{singleWriter?.address}</span>
             </p>
             <p className="flex text-left pb-1">
               <span className="w-1/3 md:w-1/4 font-semibold">
                 Date of Birth
-              </span>{" "}
+              </span>
               <span className="w-1/3 md:w-1/4">
                 {singleWriter?.dateOfBirth}
               </span>
             </p>
             <p className="flex text-left pb-1">
-              <span className="w-1/3 md:w-1/4 font-semibold">Date of Dead</span>{" "}
+              <span className="w-1/3 md:w-1/4 font-semibold">Date of Dead</span>
               <span className="w-1/3 md:w-1/4">
                 {singleWriter?.dateOfDeath}
               </span>
@@ -55,7 +55,7 @@ const WriterDetails = async ({ params }) => {
           {singleWriter?.writerName}&apos; all books
         </h4>
         <hr />
-        
+
       </div>
     </section>
   );

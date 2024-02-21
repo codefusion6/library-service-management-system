@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
@@ -10,12 +11,13 @@ import {
 } from "react-icons/fa";
 
 const WritersCard = ({ allWriters }) => {
+
   const getShortDescription = (description, writerId, maxLength = 200) => {
     if (description.length > maxLength) {
       return (
         <span>
-          {`${description.substring(0, maxLength)}... `}
-          <Link href={`/all-writers/${writerId}`} className="text-blue-500">
+          {`${description.substring(0, maxLength)}.... `}
+          <Link href={`/all-writers/${writerId}`} className="text-blue-600 font-bold">
             See More
           </Link>
         </span>
@@ -42,19 +44,19 @@ const WritersCard = ({ allWriters }) => {
               height={384}
             />
           </div>
-          <h2 className="text-xl font-bold mb-2 pt-2"> {writer.writerName}</h2>
+          <h2 className="text-xl font-bold mb-2 pt-2 space-y-2"> {writer.writerName}</h2>
           <p className="text-tiny mb-2">
             ({writer.dateOfBirth} - {writer.dateOfDeath})
           </p>
-          <div className="flex gap-2">
+          <div className="flex gap-2 mb-2">
             <Link href="#">
-              <FaFacebook className="text-xl text-blue-500"></FaFacebook>
+              <FaFacebook className="text-xl text-blue-600"></FaFacebook>
             </Link>
             <Link href="#">
               <FaYoutube className="text-xl text-red-700" />
             </Link>
             <Link href="#">
-              <FaSkype className="text-xl text-blue-500"></FaSkype>
+              <FaSkype className="text-xl text-blue-700"></FaSkype>
             </Link>
             <Link href="#">
               <FaGithub className="text-xl text-black"></FaGithub>
