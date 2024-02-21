@@ -10,12 +10,12 @@ import {
 } from "react-icons/fa";
 
 const WritersCard = ({ allWriters }) => {
-  const getShortDescription = (description, maxLength = 200) => {
+  const getShortDescription = (description, writerId, maxLength = 200) => {
     if (description.length > maxLength) {
       return (
         <span>
           {`${description.substring(0, maxLength)}... `}
-          <Link href="#" className="text-blue-500">
+          <Link href={`/all-writers/${writerId}`} className="text-blue-500">
             See More
           </Link>
         </span>
@@ -64,7 +64,7 @@ const WritersCard = ({ allWriters }) => {
             </Link>
           </div>
           <p className="text-sm mb-2">
-            {getShortDescription(writer.description)}
+            {getShortDescription(writer.description, writer._id)}
           </p>
         </div>
       ))}
