@@ -10,9 +10,9 @@ import { getComment } from "@/libs/actions/comment.action";
 
 const page = async ({ params }) => {
   const singleBook = await getBook(params.id);
-  const authorBook = await getBooksByAuthor(singleBook.authorName);
+  const authorBook = await getBooksByAuthor();
   const allComments = await getComment();
-
+  // singleBook.authorName
   return (
     <main className="min-h-screen lg:p-0 p-10">
       <div className="container mx-auto m-5">
