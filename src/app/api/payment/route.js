@@ -19,8 +19,8 @@ export const POST = async (request) => {
             customer: customer.id,
             mode: "payment",
             // "https://library-service-management-system.vercel.app"
-            success_url: "https://library-service-management-system.vercel.app/successPyment",
-            cancel_url: "https://library-service-management-system.vercel.app/pricing",
+            success_url: `http://localhost:3000/${customer.id}?email=${data?.email}`,
+            cancel_url: `http://localhost:3000/pricing`,
             line_items: [
                 {
                     quantity: 1,
@@ -34,7 +34,7 @@ export const POST = async (request) => {
                 }
             ]
         })
-        return NextResponse.json({ checkOutSession, url: checkOutSession.url, status: 200 })
+        return NextResponse.json({ checkOutSession, url: checkOutSession.url, status: 200, customerId: customer.id })
     } catch (error) {
         return NextResponse.json({ message: error.message, status: 500 })
     }
