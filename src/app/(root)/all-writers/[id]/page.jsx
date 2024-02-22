@@ -1,3 +1,4 @@
+import SimilarWriterBooks from "@/components/writerDetailsPage/SimilarWriterBooks";
 import { getBooksByAuthor } from "@/libs/actions/book.action";
 import { getWriter } from "@/libs/actions/writer.action";
 import Image from "next/image";
@@ -7,11 +8,11 @@ const WriterDetails = async ({ params }) => {
 
   const singleWriter = await getWriter(params.id);
   const authorBook = await getBooksByAuthor(singleWriter.writerName);
-  console.log(singleWriter.writerName)
-  console.log(authorBook)
+  // console.log(singleWriter.writerName)
+  // console.log(authorBook)
 
   return (
-    <section className="my-10">
+    <section className="my-10 p-5 lg:p-0">
       <div className=" container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 py-5 md:gap-10 px-3 md:px-0">
           <div className="w-full mx-auto pb-10 md:pb-0">
@@ -56,7 +57,7 @@ const WriterDetails = async ({ params }) => {
           {singleWriter?.writerName}&apos; all books
         </h4>
         <hr />
-
+        <SimilarWriterBooks authorBook={authorBook}></SimilarWriterBooks>
       </div>
     </section>
   );
