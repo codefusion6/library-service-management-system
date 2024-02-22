@@ -10,7 +10,7 @@ import { getComment } from "@/libs/actions/comment.action";
 
 const page = async ({ params }) => {
   const singleBook = await getBook(params.id);
-  const authorBook = await getBooksByAuthor();
+  const authorBook = await getBooksByAuthor(singleBook.authorName);
   const allComments = await getComment();
   // singleBook.authorName
   return (
