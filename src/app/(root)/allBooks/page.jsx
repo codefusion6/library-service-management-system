@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
@@ -8,11 +7,14 @@ import Search from "@/shared/Search";
 export const dynamic = "force-dynamic";
 
 const AllBooks = async ({ searchParams }) => {
-  const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
-  const searchText = (searchParams?.query) || "";
-  const { books, totalPage } = await getAllBooks({ query: searchText, page: pageNumber, })
-  
-
+  const pageNumber = Number(
+    searchParams.page === undefined ? "1" : searchParams.page
+  );
+  const searchText = searchParams?.query || "";
+  const { books, totalPage } = await getAllBooks({
+    query: searchText,
+    page: pageNumber,
+  });
 
   return (
     <section className="min-h-screen">
@@ -43,7 +45,10 @@ const AllBooks = async ({ searchParams }) => {
             <h1 className="text-2xl font-semibold">All Books</h1>
             <div className="space-y-8">
               <AllBookCard books={books}></AllBookCard>
-              <Pagination totalPage={totalPage} currentPage={pageNumber}></Pagination>
+              <Pagination
+                totalPage={totalPage}
+                currentPage={pageNumber}
+              ></Pagination>
             </div>
           </div>
         </div>
