@@ -42,11 +42,8 @@ const RegisterAction = () => {
         // Update the user profile with additional information
         const updateResult = await updateUserProfile(name, profileImage);
   
-        // Check the result of updating the profile
         if (updateResult) {
           toast.success('Profile updated successfully');
-        } else {
-          toast.error('Failed to update profile');
         }
   
         // Add user data to the database or perform any other actions
@@ -54,10 +51,11 @@ const RegisterAction = () => {
         console.log(res);
       }
     } catch (error) {
-      console.log(error.message);
+      console.log('Error creating user:', error.message);
+      // Handle other errors if needed
+      toast.error('Failed to create user');
     }
   };
-  
 
   return (
     <div className="max-w-md mx-auto ">
