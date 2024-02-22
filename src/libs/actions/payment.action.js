@@ -7,7 +7,6 @@ export const addPaymentHistory = async (paymentHistory) => {
   // console.log(paymentHistory)
   try {
     await connectDB();
-
     const result = await PaymentHistory.create(paymentHistory);
     // console.log(result)
     revalidatePath("/:customerid")
@@ -25,7 +24,7 @@ export const getPaymentHistory = async () => {
   try {
     await connectDB();
     const result = (await PaymentHistory.find()).reverse();
-    revalidatePath("/dashboard/payment-history")
+    revalidatePath("/:customerid")
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
@@ -33,10 +32,12 @@ export const getPaymentHistory = async () => {
 }
 
 // get one payment
-export const getOnePaymentHistory = async (email) => {
+export const getOnePaymentHistory = async (paymentId) => {
   try {
     await connectDB();
-    const query = { email: email }
+    const query = {
+      paymentId: paymentId
+    }
     const result = await PaymentHistory.findOne(query)
     revalidatePath("/:customerid")
     return JSON.parse(JSON.stringify({ success: true, data: result }));

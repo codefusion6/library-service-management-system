@@ -15,7 +15,7 @@ const AuthContext = createContext(null);
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
-  
+
 
   const googleSignIn = async () => {
     const provider = new GoogleAuthProvider();
@@ -38,7 +38,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      console.log("Current User:", currentUser)
+      // console.log("Current User:", currentUser)
       setLoading(false);
 
       if (currentUser) {

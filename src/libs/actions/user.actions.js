@@ -86,3 +86,36 @@ export const getOneUser = async (email) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+
+export const getUserMemberShip = async (email) => {
+  try {
+    await connectDB();
+    const filter = {
+      email: email
+    }
+    const update = {
+      role: "member"
+    }
+    const updatedResult = await User.findOneAndUpdate(filter, update,)
+    return JSON.parse(JSON.stringify(updatedResult))
+
+  }
+  catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
+
+export const getOnePaymentHistory = async (paymentid) => {
+  try {
+    await connectDB();
+    const query = {
+      email: email
+    }
+    const user = await User.findOne(query)
+    return JSON.parse(JSON.stringify(user))
+
+  }
+  catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
