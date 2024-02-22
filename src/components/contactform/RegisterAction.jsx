@@ -23,7 +23,6 @@ const RegisterAction = () => {
       console.error('Google sign-in error:', error);
     }
   };
-
   const handleSubmit = async (formData) => {
     const name = formData.get('name');
     const email = formData.get('email');
@@ -56,7 +55,6 @@ const RegisterAction = () => {
       toast.error('Failed to create user');
     }
   };
-
   return (
     <div className="max-w-md mx-auto ">
       <form action={handleSubmit}>
