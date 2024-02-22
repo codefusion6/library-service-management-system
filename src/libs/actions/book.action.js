@@ -100,6 +100,7 @@ export const addManyBook = async () => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+
 // get all books
 export const getAllBooks = async ({ query, page }) => {
   try {
@@ -137,17 +138,20 @@ export const deleteBook = async (id) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
-// get the books based on author name
 
+// get the books based on author name
 export const getBooksByAuthor = async (authorName) => {
+  console.log(authorName)
   try {
     await connectDB();
     const result = await Book.find({ authorName: authorName });
+    console.log(result)
     return JSON.parse(JSON.stringify(result));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
 }
+
 //  get all favourite books
 export const getFavouriteBook = async (email) => {
   try {
@@ -166,6 +170,7 @@ export const getFavouriteBook = async (email) => {
     return error;
   }
 };
+
 // get the books numbers for the dashboard Cart
 export const getBooksNumber = async () => {
   try {
