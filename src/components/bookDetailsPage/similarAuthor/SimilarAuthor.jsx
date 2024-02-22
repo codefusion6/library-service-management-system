@@ -17,7 +17,7 @@ const SimilarAuthor = ({ authorBook }) => {
               src={author.bookCover}
               width={270}
               height={270}
-              className="rounded-sm shadow-md h-[150px] w-[150px] object-fit"
+              className="rounded-sm shadow-md h-[200px] w-[200px] object-fit"
             />
           </div>
           <div className="text-left space-y-2">
