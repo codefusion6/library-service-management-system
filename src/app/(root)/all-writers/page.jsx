@@ -8,7 +8,7 @@ const Allwriters = async () => {
   return (
     <section>
       <div className="container mx-auto min-h-screen p-5 lg:p-0">
-        <h2 className="text-3xl text-center my-5">Our All Writer&apos;s</h2>
+        <h2 className="text-3xl text-center my-5">Meet Our Writer&apos;s</h2>
         <div className="my-10">
           <WritersCard allWriters={allWriters}></WritersCard>
         </div>
