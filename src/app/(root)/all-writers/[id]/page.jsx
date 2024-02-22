@@ -6,7 +6,8 @@ import React from "react";
 const WriterDetails = async ({ params }) => {
 
   const singleWriter = await getWriter(params.id);
-  const authorBook = await getBooksByAuthor(singleBook.authorName);
+  const authorBook = await getBooksByAuthor(singleWriter.writerName);
+  console.log(singleWriter.writerName)
   console.log(authorBook)
 
   return (

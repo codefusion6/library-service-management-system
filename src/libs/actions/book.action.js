@@ -141,9 +141,11 @@ export const deleteBook = async (id) => {
 
 // get the books based on author name
 export const getBooksByAuthor = async (authorName) => {
+  console.log(authorName)
   try {
     await connectDB();
     const result = await Book.find({ authorName: authorName });
+    console.log(result)
     return JSON.parse(JSON.stringify(result));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
