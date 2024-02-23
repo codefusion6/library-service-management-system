@@ -12,7 +12,7 @@ const BookListPage = async ({ searchParams }) => {
   const searchText = (searchParams?.query) || "";
 
   const { books, totalPage } = await getAllBooks({ query: searchText, page: pageNumber })
-  // console.log(books)
+  console.log(books)
 
   return (
     <section className="container mx-auto">
