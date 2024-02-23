@@ -14,6 +14,7 @@ export const addBook = async (formData) => {
   const authorImage = formData.get("authorImage");
   const publisherEmail = formData.get("publisherEmail");
   const category = formData.get("category");
+  const type = formData.get("type");
   // console.log(bookCover, bookPdf, authorImage);
   try {
     await connectDB();
@@ -26,6 +27,7 @@ export const addBook = async (formData) => {
       authorImage: authorImage,
       publisherEmail: publisherEmail,
       category: category,
+      type : type,
     };
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
@@ -138,6 +140,35 @@ export const deleteBook = async (id) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+
+// get the featured books from database
+export const getFeatured = async () => {
+  
+  try {
+    await connectDB();
+    const result = await Book.find({ type: "Featured" });
+    console.log(result)
+    console.log(JSON.parse(JSON.stringify(result)))
+    return JSON.parse(JSON.stringify(result));
+    
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+}
+
+// get the recommended books from database
+export const getRecommended = async (type) =>{
+  console.log(type);
+  try {
+    await connectDB();
+    const result = await Book.find({ type: "Recommended" });
+    console.log(result)
+    return JSON.parse(JSON.stringify(result));
+    
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+}
 
 // get the books based on author name
 export const getBooksByAuthor = async (authorName) => {

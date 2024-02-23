@@ -1,7 +1,10 @@
+
+import { getFeatured } from '@/libs/actions/book.action';
 import Image from 'next/image';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { TypeAnimation } from "react-type-animation";
 const renderStars = (rating) => {
+
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating % 1 !== 0;
   const stars = [];
@@ -15,7 +18,11 @@ const renderStars = (rating) => {
   return stars;
 };
 
-const Feature = async ({ books }) => {
+const Feature = async () => {
+
+  const featured = await getFeatured();
+  console.log(featured)
+
   return (
     <div className="container mx-auto">
       <h1 className="text-3xl font-bold text-center mb-8">
