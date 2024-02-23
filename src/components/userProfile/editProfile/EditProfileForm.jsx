@@ -1,4 +1,5 @@
 "use client";
+import { UserAuth } from "@/app/provider/context/AuthContext";
 import { addUserProfile } from "@/libs/actions/userProfile.action";
 import {
   Button,
@@ -13,6 +14,7 @@ import React from "react";
 
 const EditProfileForm = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const { user } = UserAuth();
   return (
     <div>
       <Button
@@ -50,26 +52,14 @@ const EditProfileForm = () => {
                         Name:
                       </label>
                       <input
+                      defaultValue={user?.displayName}
                         type="text"
                         name="userName"
                         placeholder="name"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
                       />
                     </div>
-                    <div className="mb-4">
-                      <label
-                        htmlFor="bio"
-                        className="block text-gray-700 text-sm font-bold mb-2"
-                      >
-                        Bio :
-                      </label>
-                      <input
-                        type="text"
-                        name="bio"
-                        placeholder="bio"
-                        className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                      />
-                    </div>
+                    
 
                     {/* {/ About /} */}
                     <div className="mb-4">
@@ -80,6 +70,7 @@ const EditProfileForm = () => {
                         About
                       </label>
                       <textarea
+                      defaultValue="write about your-self"
                         name="about"
                         placeholder="write about your-self"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
