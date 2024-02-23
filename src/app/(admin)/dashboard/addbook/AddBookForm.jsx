@@ -181,19 +181,6 @@ const AddBookForm = () => {
                             <option value="Elite">Elite</option>
                         </select>
                     </div>
-                    <div className="mb-4">
-                        <label htmlFor="category" className="block text-gray-700 text-sm font-bold mb-2">
-                            Book&apos;s Type:
-                        </label>
-                        <select
-                            name="type"
-                            className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                        >
-                            <option value="Recommended">Recommended</option>
-                            <option value="Featured">Featured</option>
-                            
-                        </select>
-                    </div>
                     {/* {/ Add Book Button /} */}
                     <button
                         type="submit"

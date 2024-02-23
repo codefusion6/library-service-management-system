@@ -1,6 +1,6 @@
-"use client"; 
+"use client";
 import React from "react";
-// import booksData from "../../../public/books.json";
+import booksData from "../../../public/books.json";
 import Banner from "@/pages/home/Banner";
 import FAQ from "@/pages/home/faq/FAQ";
 import Slider from "@/pages/home/Slider/Slider";
@@ -15,7 +15,7 @@ const HomePage = () => {
       <Banner />
       <RecommendedBooks></RecommendedBooks>
       <BookTypes />
-      <Feature ></Feature>
+      <Feature books={booksData}></Feature>
       <Slider></Slider>
       <FAQ></FAQ>
       <HomeContact></HomeContact>
