@@ -12,6 +12,7 @@ import {
 import { auth } from "../../firbase/firebase";
 import { createCookie, deleteCookie } from "@/libs/actions/useCookie.action";
 import { getOneUser } from "@/libs/actions/user.actions";
+import { addUser, getUserByEmail } from "@/libs/actions/user.actions";
 
 const AuthContext = createContext(null);
 export const AuthContextProvider = ({ children }) => {
@@ -22,7 +23,25 @@ export const AuthContextProvider = ({ children }) => {
 
   const googleSignIn = async () => {
     const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
+    try {
+      const { user } = await signInWithPopup(auth, provider);
+
+      // Check if the user already exists in the database
+      const existingUser = await getUserByEmail(user.email);
+
+      if (!existingUser) {
+        // If the user doesn't exist, add them to the database
+        const formData = new FormData();
+        formData.append('name', user.displayName);
+        formData.append('email', user.email);
+        formData.append('photoURL', user.photoURL);
+
+        await addUser(formData);
+        console.log('User added to the database');
+      }
+    } catch (error) {
+      console.error('Google sign-in error:', error);
+    }
   };
 
   const createUser = async (email, password,) => {
@@ -68,6 +87,7 @@ export const AuthContextProvider = ({ children }) => {
       setUser(currentUser);
       // console.log("Current User:", currentUser)
       const rolebaseUser = await getOneUser(currentUser?.email)
+
       setRolebaseUser(rolebaseUser)
       setLoading(false);
       if (currentUser) {
