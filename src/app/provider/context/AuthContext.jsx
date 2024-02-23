@@ -87,7 +87,6 @@ export const AuthContextProvider = ({ children }) => {
       setUser(currentUser);
       // console.log("Current User:", currentUser)
       const rolebaseUser = await getOneUser(currentUser?.email)
-
       setRolebaseUser(rolebaseUser)
       setLoading(false);
       if (currentUser) {

@@ -20,9 +20,7 @@ export const addUser = async (formData) => {
     };
     const result = await User.create(newFormData);
     // console.log("USER DATA:", result);
-
     const existingUser = await User.findOne({ email });
-
     if (!existingUser) {
       const newFormData = {
         name,
@@ -44,11 +42,11 @@ export const addUser = async (formData) => {
 };
 
 export const getAllUser = async () => {
-
   try {
     await connectDB();
     const result = await User.find();
     // return JSON.parse(JSON.stringify(result));
+
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     if (error instanceof mongoose.Error.ValidationError) {
@@ -75,7 +73,7 @@ export const getUserNumber = async () => {
   try {
     await connectDB();
     const userNum = await User.find().countDocuments();
-    console.log("from user collection count document", userNum);
+    // console.log("from user collection count document", userNum);
     return JSON.parse(JSON.stringify(userNum))
   } catch (error) {
     return JSON.parse(JSON.stringify(error));

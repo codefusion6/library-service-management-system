@@ -159,13 +159,15 @@ export const getFavouriteBook = async (email) => {
     const query = { email: email };
     const result = await Favourite.findOne(query);
     const favouriteBookids = result ? result.bookIds : [];
+
     const bookResult = await Book.find({
       _id: {
         $in: favouriteBookids
       }
     });
+
     revalidatePath("/dashboard/favourite")
-    return JSON.parse(JSON.stringify(bookResult));
+    console.log(JSON.parse(JSON.stringify(bookResult)))
   } catch (error) {
     return error;
   }
