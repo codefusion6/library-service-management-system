@@ -3,9 +3,10 @@ import React from "react";
 import Image from "next/image";
 
 const SimilarAuthor = ({ authorBook }) => {
+  console.log(authorBook);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-      {authorBook.map((author, index) => (
+      {authorBook?.map((author, index) => (
         <div
           key={index}
           className="border-2 hover:border-green-500 hover:border-2 text-center shadow-xl rounded-lg group flex gap-3 p-3"
@@ -16,7 +17,7 @@ const SimilarAuthor = ({ authorBook }) => {
               src={author.bookCover}
               width={270}
               height={270}
-              className="rounded-sm shadow-md"
+              className="rounded-sm shadow-md h-[200px] w-[200px] object-fit"
             />
           </div>
           <div className="text-left space-y-2">

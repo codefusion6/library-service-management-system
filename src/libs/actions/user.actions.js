@@ -3,37 +3,43 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import User from "../database/models/userModel/user";
 import { connectDB } from "../database/MongoConnect";
+import { revalidatePath } from "next/cache";
 
 export const addUser = async (formData) => {
-
-
   try {
     await connectDB();
     const name = formData.get("name");
     const email = formData.get("email");
-    // Add a default role 'user'
     const role = "user";
-    const photoUrl = formData.get("photoUrl");
-    console.log('PhotoURL:', photoUrl);
-    const newFormData = {
-      name: name,
-      email: email,
-    };
-    const result = await User.create(newFormData);
-    console.log("USER DATA:", result);
+    const photoURL = formData.get("photoURL");
 
+    const existingUser = await User.findOne({ email });
 
-    return JSON.parse(JSON.stringify({ success: true, data: result }));
+    if (!existingUser) {
+      const newFormData = {
+        name,
+        email,
+        role,
+        photoURL,
+      };
+      const result = await User.create(newFormData);
+      return JSON.parse(JSON.stringify({ success: true, data: result }));
+    } else {
+      return JSON.parse(JSON.stringify({ success: true, data: existingUser }));
+    }
   } catch (error) {
-    return NextResponse.badRequest({ error: "An error occurred while adding the user", error });
+    return NextResponse.badRequest({
+      error: "An error occurred while adding the user",
+      error,
+    });
   }
 };
 
 export const getAllUser = async () => {
-
   try {
     await connectDB();
     const result = await User.find();
+    revalidatePath('/dashboard/all-user')
     // return JSON.parse(JSON.stringify(result));
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
@@ -81,6 +87,27 @@ export const getOneUser = async (email) => {
 
   }
   catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
+
+// Add the following function to check if a user already exists by email
+export const getUserByEmail = async (email) => {
+  try {
+    await connectDB();
+    const existingUser = await User.findOne({ email });
+    return JSON.parse(JSON.stringify(existingUser));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
+
+export const deleteUser = async (userId) => {
+  try {
+    const result = await User.findByIdAndDelete(userId);
+    revalidatePath("/dashboard/all-user");
+    return JSON.parse(JSON.stringify(result));
+  } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
 };

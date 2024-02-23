@@ -12,14 +12,14 @@ const page = async ({ params }) => {
   const singleBook = await getBook(params.id);
   const authorBook = await getBooksByAuthor(singleBook.authorName);
   const allComments = await getComment();
-
+  // singleBook.authorName
   return (
     <main className="min-h-screen lg:p-0 p-10">
       <div className="container mx-auto m-5">
         <div className="md:flex flex-wrap gap-5">
           <div className=" space-y-4">
             <Image
-              src={singleBook.bookCover}
+              src={singleBook?.bookCover}
               alt="Card Image"
               width={270}
               height={270}
@@ -27,7 +27,7 @@ const page = async ({ params }) => {
               className="w-full h-full object-cover shadow-gray-400 shadow-lg rounded-r-2xl object-center"
             />
             <Button className="w-[80%] rounded-xl hover:bg-lime-700 bg-green-600 text-white font-bold px-5 py-2">
-              <Link href={`/allBooks/${singleBook._id}/view-pdf`}>
+              <Link href={`/allBooks/${singleBook?._id}/view-pdf`}>
                 Went to read
               </Link>
             </Button>
@@ -47,24 +47,24 @@ const page = async ({ params }) => {
           </div>
           <div className="flex-1 md:mt-0 mt-10 space-y-4">
             <div className="text-2xl uppercase font-bold">
-              {singleBook.bookName}
+              {singleBook?.bookName}
             </div>
             <span>By</span>
-            <h4 className="font-bold text-large">{singleBook.authorName}</h4>
-            <p className="text-base">{singleBook.bookDescription}</p>
+            <h4 className="font-bold text-large">{singleBook?.authorName}</h4>
+            <p className="text-base">{singleBook?.bookDescription}</p>
             <p className="text-base">
               <span className="font-semibold">Category:</span>
-              {singleBook.category}
+              {singleBook?.category}
             </p>
             <div className="flex gap-2 items-center">
               <Image
                 alt="author img"
                 className="size-8"
-                src={`${singleBook.authorImage}`}
+                src={`${singleBook?.authorImage}`}
                 width={30}
                 height={30}
               />
-              <p className="font-semibold">{singleBook.publisherEmail}</p>
+              <p className="font-semibold">{singleBook?.publisherEmail}</p>
             </div>
             <hr />
             <div>

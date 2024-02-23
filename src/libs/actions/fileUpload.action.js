@@ -11,7 +11,6 @@ export const fileUpload = async (file, name) => {
   }
   const bytes = await file.arrayBuffer();
   const buffer = Buffer.from(bytes);
-
   // With the file data in the buffer, you can do whatever you want with it.
   // For this, we'll just write it to the filesystem in a new location
   const path = join("public", file.name);

@@ -39,4 +39,5 @@ export const getComment = async () => {
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
-}  
+}; 
+
