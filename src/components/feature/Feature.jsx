@@ -1,3 +1,4 @@
+
 import { getFeatured } from '@/libs/actions/book.action';
 import Image from 'next/image';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
@@ -17,10 +18,10 @@ const renderStars = (rating) => {
   return stars;
 };
 
-const Feature = async ({ books }) => {
+const Feature = async () => {
 
-  const featuredBook = await getFeatured("Featured");
-  console.log(featuredBook);
+  const featured = await getFeatured();
+  console.log(featured)
 
   return (
     <div className="container mx-auto">

@@ -142,12 +142,13 @@ export const deleteBook = async (id) => {
 };
 
 // get the featured books from database
-export const getFeatured = async (type) =>{
-  console.log(type);
+export const getFeatured = async () => {
+  
   try {
     await connectDB();
     const result = await Book.find({ type: "Featured" });
     console.log(result)
+    console.log(JSON.parse(JSON.stringify(result)))
     return JSON.parse(JSON.stringify(result));
     
   } catch (error) {
