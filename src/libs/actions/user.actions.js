@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import User from "../database/models/userModel/user";
 import { connectDB } from "../database/MongoConnect";
+import { revalidatePath } from "next/cache";
 
 export const addUser = async (formData) => {
   try {
@@ -35,10 +36,10 @@ export const addUser = async (formData) => {
 };
 
 export const getAllUser = async () => {
-
   try {
     await connectDB();
     const result = await User.find();
+    revalidatePath('/dashboard/all-user')
     // return JSON.parse(JSON.stringify(result));
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
@@ -96,6 +97,16 @@ export const getUserByEmail = async (email) => {
     await connectDB();
     const existingUser = await User.findOne({ email });
     return JSON.parse(JSON.stringify(existingUser));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
+
+export const deleteUser = async (userId) => {
+  try {
+    const result = await User.findByIdAndDelete(userId);
+    revalidatePath("/dashboard/all-user");
+    return JSON.parse(JSON.stringify(result));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }

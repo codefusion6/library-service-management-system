@@ -1,4 +1,3 @@
-
 import UserTable from "@/components/allUserTable/userTable";
 import { getAllUser } from "@/libs/actions/user.actions";
 import React from "react";
