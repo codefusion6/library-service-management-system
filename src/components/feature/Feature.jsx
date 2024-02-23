@@ -19,7 +19,7 @@ const renderStars = (rating) => {
 
 const Feature = async ({ books }) => {
 
-  const featuredBook = getFeatured(type);
+  const featuredBook = await getFeatured("Featured");
   console.log(featuredBook);
 
   return (

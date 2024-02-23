@@ -146,7 +146,7 @@ export const getFeatured = async (type) =>{
   console.log(type);
   try {
     await connectDB();
-    const result = await Book.find({ type: Featured });
+    const result = await Book.find({ type: "Featured" });
     console.log(result)
     return JSON.parse(JSON.stringify(result));
     
@@ -160,7 +160,7 @@ export const getRecommended = async (type) =>{
   console.log(type);
   try {
     await connectDB();
-    const result = await Book.find({ type: Recommended });
+    const result = await Book.find({ type: "Recommended" });
     console.log(result)
     return JSON.parse(JSON.stringify(result));
     
