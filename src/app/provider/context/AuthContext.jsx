@@ -11,10 +11,12 @@ import {
 } from "firebase/auth";
 import { auth } from "../../firbase/firebase";
 import { createCookie, deleteCookie } from "@/libs/actions/useCookie.action";
+import { getOneUser } from "@/libs/actions/user.actions";
 
 const AuthContext = createContext(null);
 export const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [getRolebaseUser, setRolebaseUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
 
@@ -58,16 +60,16 @@ export const AuthContextProvider = ({ children }) => {
     setLoading(true)
     return signInWithEmailAndPassword(auth, email, password)
   }
-
   const logOut = () => {
     signOut(auth);
   };
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
       // console.log("Current User:", currentUser)
+      const rolebaseUser = await getOneUser(currentUser?.email)
+      setRolebaseUser(rolebaseUser)
       setLoading(false);
-
       if (currentUser) {
         createCookie()
       } else {
@@ -76,9 +78,9 @@ export const AuthContextProvider = ({ children }) => {
     });
     return () => unsubscribe();
   }, [user, loading]);
-  
+
   return (
-    <AuthContext.Provider value={{ user, googleSignIn, logOut, logIn, loading, createUser, updateUserProfile }}>
+    <AuthContext.Provider value={{ user, googleSignIn, logOut, logIn, loading, createUser, updateUserProfile, getRolebaseUser }}>
       {children}
     </AuthContext.Provider>
   );

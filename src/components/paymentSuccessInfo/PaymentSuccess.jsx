@@ -15,7 +15,7 @@ import Confetti from 'react-confetti'
 const PaymentSuccess = ({ payments, alredyExitData }) => {
     // const { width, height } = useWindowSize()
     // console.log(alredyExitData)
-    const { user } = UserAuth();
+    const { user, loading } = UserAuth();
     // console.log(user)
     const paymentss = payments[0]
     const pathName = usePathname()
@@ -63,7 +63,6 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
             })
 
         }
-
     }
     // console.log(alredyExitData)
     if (customerId !== paymentss?.customer) {
@@ -71,7 +70,7 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
             <h1 className='py-20 text-2xl text-center font-semibold'> You don&apos;t have any transation</h1>
         </div>
     }
-    if (!user) {
+    if (!loading && !user) {
         return <div className='container mx-auto'> <h1 className='py-20 text-2xl text-center font-semibold'>You are logged Out</h1></div>
     }
     if (alredyExitData.data !== null && alredyExitData.data?.email !== user?.email) {
@@ -87,8 +86,7 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                     </div>
                     <h1 className='text-primary text-2xl md:text-3xl lg:text-4xl font-bold mb-2'>Congratulations!</h1>
                     <p>You have succesfully <span className='text-primary font-bold'>Subscribed</span></p>
-
-                    <Confetti opacity={.5} className='w-full' />
+                    <Confetti height="1000" width="1500" className='w-full' opacity={.4} />
                     <p className='my-5 pt-10 text-primary md:text-2xl lg:text-3xl'>You are now Member of BookFlw. <span className='text-pink-500 font-bold'>{paymentss.amount_received === 3000 ? 7 : paymentss.amount_received === 1000 ? 30 : paymentss.amount_received === 5000 ? 60 : null} Days</span></p>
                     <div className='flex gap-8 justify-center pt-10'>
                         <Link href="/allBooks">
