@@ -1,5 +1,5 @@
 
-import { getFeatured } from '@/libs/actions/book.action';
+// import { getFeatured } from '@/libs/actions/book.action';
 import Image from 'next/image';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { TypeAnimation } from "react-type-animation";
@@ -18,10 +18,7 @@ const renderStars = (rating) => {
   return stars;
 };
 
-const Feature = async () => {
-
-  const featured = await getFeatured();
-  console.log(featured)
+const Feature = async ({ books }) => {
 
   return (
     <div className="container mx-auto">
