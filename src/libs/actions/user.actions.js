@@ -5,29 +5,32 @@ import User from "../database/models/userModel/user";
 import { connectDB } from "../database/MongoConnect";
 
 export const addUser = async (formData) => {
-
-
   try {
     await connectDB();
     const name = formData.get("name");
     const email = formData.get("email");
-    // Add a default role 'user'
     const role = "user";
     const photoURL = formData.get("photoURL");
-    console.log('photoURL:', photoURL);
-    const newFormData = {
-      name: name,
-      email: email,
-      role: role,
-      photoUrl: photoUrl,
-    };
-    const result = await User.create(newFormData);
-    // console.log("USER DATA:", result);
 
+    const existingUser = await User.findOne({ email });
 
-    return JSON.parse(JSON.stringify({ success: true, data: result }));
+    if (!existingUser) {
+      const newFormData = {
+        name,
+        email,
+        role,
+        photoURL,
+      };
+      const result = await User.create(newFormData);
+      return JSON.parse(JSON.stringify({ success: true, data: result }));
+    } else {
+      return JSON.parse(JSON.stringify({ success: true, data: existingUser }));
+    }
   } catch (error) {
-    return NextResponse.badRequest({ error: "An error occurred while adding the user", error });
+    return NextResponse.badRequest({
+      error: "An error occurred while adding the user",
+      error,
+    });
   }
 };
 
@@ -83,6 +86,17 @@ export const getOneUser = async (email) => {
 
   }
   catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
+
+// Add the following function to check if a user already exists by email
+export const getUserByEmail = async (email) => {
+  try {
+    await connectDB();
+    const existingUser = await User.findOne({ email });
+    return JSON.parse(JSON.stringify(existingUser));
+  } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
 };
