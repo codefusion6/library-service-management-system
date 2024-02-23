@@ -1,5 +1,9 @@
 "use client";
 import React from "react";
+<<<<<<< HEAD
+=======
+import booksData from "../../../public/books.json";
+>>>>>>> d8e4eaf055d6b23c2c9ffdf91c099dfa5df3059e
 import Banner from "@/pages/home/Banner";
 import FAQ from "@/pages/home/faq/FAQ";
 import Slider from "@/pages/home/Slider/Slider";
@@ -14,7 +18,11 @@ const HomePage = () => {
       <Banner />
       <RecommendedBooks></RecommendedBooks>
       <BookTypes />
+<<<<<<< HEAD
       <Feature></Feature>
+=======
+      <Feature books={booksData}></Feature>
+>>>>>>> d8e4eaf055d6b23c2c9ffdf91c099dfa5df3059e
       <Slider></Slider>
       <FAQ></FAQ>
       <HomeContact></HomeContact>
