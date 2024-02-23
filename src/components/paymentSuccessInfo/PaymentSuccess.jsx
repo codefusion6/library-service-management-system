@@ -9,9 +9,11 @@ import React, { } from 'react'
 // import { useEffect } from 'react'
 import toast from 'react-hot-toast'
 import { IoMdDoneAll } from 'react-icons/io'
-// import { Modal, ModalContent, ModalHeader, ModalBody, ModalFooter, Button, useDisclosure } from "@nextui-org/react";
+import useWindowSize from 'react-use/lib/useWindowSize'
+import Confetti from 'react-confetti'
 
 const PaymentSuccess = ({ payments, alredyExitData }) => {
+    const { width, height } = useWindowSize()
     // console.log(alredyExitData)
     const { user } = UserAuth();
     // console.log(user)
@@ -89,6 +91,10 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                         {/* <Link href='/'><button className='py-2 px-4 text-white bg-primary rounded-lg'>Go Home</button></Link>
                         <Link href='/allBooks'><button className='py-2 px-4 text-white bg-primary rounded-lg'>View All Books</button></Link> */}
                     </div>
+                    <Confetti
+                        width={width}
+                        height={height}
+                    />
                     <p className='my-5 pt-14 text-primary md:text-2xl lg:text-3xl'>Your are now Member of BookFlw for <span className='text-pink-500 font-bold'>{paymentss.amount_received === 3000 ? 7 : paymentss.amount_received === 1000 ? 30 : paymentss.amount_received === 5000 ? 60 : null} Days</span></p>
                     <div className='flex gap-8 justify-center'>
                         <Link href="/allBooks">
