@@ -9,11 +9,11 @@ import React, { } from 'react'
 // import { useEffect } from 'react'
 import toast from 'react-hot-toast'
 import { IoMdDoneAll } from 'react-icons/io'
-import useWindowSize from 'react-use/lib/useWindowSize'
+// import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
 
 const PaymentSuccess = ({ payments, alredyExitData }) => {
-    const { width, height } = useWindowSize()
+    // const { width, height } = useWindowSize()
     // console.log(alredyExitData)
     const { user } = UserAuth();
     // console.log(user)
@@ -80,29 +80,25 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
 
     return (
         <div>
-            <div className='py-20 flex justify-center items-center'>
-                <div className='text-center border p-24 rounded-md space-y-4'>
-                    <div className='mb-20 text-center flex justify-center'>
-                        <IoMdDoneAll size={100} className='text-primary' />
+            <div className='pb-10 pt-4 flex justify-center items-center'>
+                <div className='text-center border p-14 rounded-md space-y-4'>
+                    <div className='mb-5 text-center flex justify-center'>
+                        <IoMdDoneAll size={80} className='text-primary' />
                     </div>
-                    <h1 className='text-primary text-2xl md:text-34l lg:text-5xl font-bold mb-7'>Congratulations!</h1>
+                    <h1 className='text-primary text-2xl md:text-3xl lg:text-4xl font-bold mb-2'>Congratulations!</h1>
                     <p>You have succesfully <span className='text-primary font-bold'>Subscribed</span></p>
-                    <div className='pt-6 flex gap-8 justify-center'>
-                        {/* <Link href='/'><button className='py-2 px-4 text-white bg-primary rounded-lg'>Go Home</button></Link>
-                        <Link href='/allBooks'><button className='py-2 px-4 text-white bg-primary rounded-lg'>View All Books</button></Link> */}
-                    </div>
-                    <Confetti
-                        width={width}
-                        height={height}
-                    />
-                    <p className='my-5 pt-14 text-primary md:text-2xl lg:text-3xl'>Your are now Member of BookFlw for <span className='text-pink-500 font-bold'>{paymentss.amount_received === 3000 ? 7 : paymentss.amount_received === 1000 ? 30 : paymentss.amount_received === 5000 ? 60 : null} Days</span></p>
-                    <div className='flex gap-8 justify-center'>
+
+                    <Confetti opacity={.5} className='w-full' />
+                    <p className='my-5 pt-10 text-primary md:text-2xl lg:text-3xl'>You are now Member of BookFlw. <span className='text-pink-500 font-bold'>{paymentss.amount_received === 3000 ? 7 : paymentss.amount_received === 1000 ? 30 : paymentss.amount_received === 5000 ? 60 : null} Days</span></p>
+                    <div className='flex gap-8 justify-center pt-10'>
                         <Link href="/allBooks">
                             <button onClick={() => handlepaymentHistory(paymentHistory)} className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
-                                Confirme
+                                confirm
                             </button>
                         </Link>
                     </div>
+                    <p className='pt-5 text-primary md:text-2xl lg:text-3xl'> Please Click confirm</p>
+
                 </div>
             </div>
         </div>
