@@ -15,7 +15,7 @@ import {  updateProfile } from "firebase/auth";
 import React from "react";
 import toast from "react-hot-toast";
 
-const EditProfileForm = () => {
+const EditProfileForm = ({existingUser}) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const { user } = UserAuth();
   console.log(auth.currentUser);
@@ -41,7 +41,7 @@ const EditProfileForm = () => {
                         const response = await updateUserProfile(formData, user?.email );
                         const name = formData.get("userName") 
                         // const email = formData.get("email") 
-                        console.log(name);
+                        // console.log(name);
                         if (response?.success) {
                          
                          await updateProfile(auth.currentUser,{
@@ -100,6 +100,7 @@ const EditProfileForm = () => {
                         About
                       </label>
                       <textarea
+                      defaultValue={existingUser?.about}
                         name="about"
                         placeholder="write about your-self"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
@@ -114,6 +115,7 @@ const EditProfileForm = () => {
                         Address
                       </label>
                       <textarea
+                      defaultValue={existingUser?.address}
                         name="address"
                         placeholder="write your address"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"

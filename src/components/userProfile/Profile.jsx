@@ -6,8 +6,6 @@ import { AiOutlineTwitter } from "react-icons/ai";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import EditProfileForm from "./editProfile/EditProfileForm";
-import { MdDelete, MdEdit } from "react-icons/md";
-import EditDeleteBtn from "@/app/(root)/userProfile/editDeleteBtn";
 import { getOneUser } from "@/libs/actions/user.actions";
 
 const Profile = () => {
@@ -21,12 +19,12 @@ const Profile = () => {
 
       const getUser = async (email)=>{
         const userData = await getOneUser(email)
-        console.log(userData,email);
-        setExistingUser(userData.data)
+        console.log(userData);
+        setExistingUser(userData)
       }
       getUser(user?.email)
     }
-  },[user,loading])
+  },[user,loading,setExistingUser])
  console.log(existingUser);
 
 if (loading){
@@ -60,7 +58,7 @@ if (loading){
                     className="w-[300px] rounded-full"
                   ></Image>
 
-                  <EditProfileForm></EditProfileForm>
+                  <EditProfileForm existingUser={existingUser}></EditProfileForm>
                   <div>
                    <h2>About  </h2>
                    <p>{existingUser?.about}</p>

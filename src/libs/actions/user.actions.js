@@ -77,13 +77,14 @@ export const getUserNumber = async () => {
 //get one user
 
 export const getOneUser = async (email) => {
-  console.log(email);
+  // console.log(email);
   try {
     await connectDB();
     const query = {
       email: email
     }
     const user = await User.findOne(query)
+    revalidatePath("/userProfile");
     return JSON.parse(JSON.stringify(user))
     // console.log(JSON.parse(JSON.stringify(user)));
 
@@ -120,7 +121,7 @@ export const updateUserProfile = async (formData, useremail) => {
   const userName = formData.get("userName");
   const about = formData.get("about");
   const address = formData.get("address");
-console.log(useremail);
+// console.log(useremail);
   try {
     await connectDB();
 
@@ -130,11 +131,11 @@ console.log(useremail);
       about: about,
       address: address,
     };
-    console.log(updatedInfo);
+    // console.log(updatedInfo);
     
 
     const result = await User.findOneAndUpdate({email: useremail}, updatedInfo,{new: true} );
-    console.log(result);
+    revalidatePath("/userProfile");
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return {
