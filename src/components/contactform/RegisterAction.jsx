@@ -40,7 +40,6 @@ const RegisterAction = () => {
 
         // Update the user profile with additional information
         const updateResult = await updateUserProfile(name, profileImage);
-
         if (updateResult) {
           toast.success('Profile updated successfully');
         }

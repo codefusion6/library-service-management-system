@@ -11,6 +11,7 @@ import toast from 'react-hot-toast'
 import { IoMdDoneAll } from 'react-icons/io'
 // import useWindowSize from 'react-use/lib/useWindowSize'
 import Confetti from 'react-confetti'
+import { getUserAndBecomeMember } from '@/libs/actions/user.actions'
 
 const PaymentSuccess = ({ payments, alredyExitData }) => {
     // const { width, height } = useWindowSize()
@@ -45,11 +46,10 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
             } else {
                 const savePayment = await addPaymentHistory(paymentHistory)
                 if (savePayment?.success) {
-
                     toast.success('Your are Now member of BookFlow', {
                         position: "bottom-right"
                     })
-
+                    await getUserAndBecomeMember(user?.email)
                 }
             }
         }
@@ -61,11 +61,10 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
             toast.success('Your are Now member of BookFlow', {
                 position: "bottom-right"
             })
-
         }
     }
     // console.log(alredyExitData)
-    if (customerId !== paymentss?.customer) {
+    if (customerId !== paymentss?.customer && !"allBooks") {
         return <div className='container mx-auto'>
             <h1 className='py-20 text-2xl text-center font-semibold'> You don&apos;t have any transation</h1>
         </div>
@@ -96,7 +95,6 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                         </Link>
                     </div>
                     <p className='pt-5 text-primary md:text-2xl lg:text-3xl'> Please Click confirm</p>
-
                 </div>
             </div>
         </div>

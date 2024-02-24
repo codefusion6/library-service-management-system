@@ -2,24 +2,28 @@
 import { UserAuth } from '@/app/provider/context/AuthContext'
 import { getFavouriteBook } from '@/libs/actions/book.action'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 
 const FavouriteList = () => {
     const [favouritData, setFavouriteData] = useState([])
     const { user, loading } = UserAuth()
 
-    console.log(user?.email)
+    // console.log(user?.email)
     useEffect(() => {
-        const getData = async (user) => {
-            console.log(user)
-            const data = await getFavouriteBook(user)
-            setFavouriteData(data)
+        if (!loading) {
+            const getData = async (user) => {
+                // console.log(user)
+                const data = await getFavouriteBook(user)
+                setFavouriteData(data)
+            }
+            getData(user?.email)
         }
-        getData(user?.email)
-    }, [user])
+    }, [user, loading])
 
-    console.log(favouritData)
-    const handleRemove = async (id) => {
+    // console.log(favouritData)
+    const handleRemove = async (e, id) => {
+        e.stopPropagation()
         console.log(id)
     }
     return (
@@ -31,11 +35,11 @@ const FavouriteList = () => {
                         <strong className='text-base md:text-xl lg:text-2xl font-bold text-white'>Total - {favouritData?.length}</strong>
                     </div>
                 </section>
-                <div className='grid md:grid-cols-2 gap-5'>
+                <div className='grid lg:grid-cols-2 gap-5'>
                     {
                         !loading &&
                         favouritData?.map((items, idx) => (
-                            <div key={idx} className='flex gap-2 group items-center my-3 shadow-lg rounded-lg overflow-hidden'>
+                            <Link href={`/allBooks/${items?._id}`} key={idx} className='flex gap-2 group items-center my-3 shadow-lg rounded-lg'>
                                 <Image src={items?.bookCover} width={300} height={400} className='max-w-[200px]' alt={items?.bookName} />
                                 <div className=''>
                                     <div className='flex-1 space-y-2 p-3'>
@@ -44,11 +48,11 @@ const FavouriteList = () => {
                                         <p className='text-sm md:text-md line-clamp-5'>{items?.bookDescription}</p>
                                     </div>
                                     <div className='py-2 px-5 flex justify-start gap-6 w-full duration-200 bottom-0'>
-                                        <button className='bg-pink-600 py-2 px-5 md:px-7 text-white rounded-lg hover:bg-pink-700'>View Details</button>
-                                        <button className='bg-pink-600 py-2 px-5 md:px-7 text-white rounded-lg hover:bg-pink-700' onClick={() => handleRemove(items?._id)}>Remove</button>
+                                        <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700'>View Details</button>
+                                        <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700' onClick={() => handleRemove(e, items?._id)}>Remove</button>
                                     </div>
                                 </div>
-                            </div>
+                            </Link>
                         ))
                     }
                 </div>

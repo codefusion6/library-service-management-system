@@ -156,7 +156,7 @@ export const getBooksByAuthor = async (authorName) => {
 
 //  get all favourite books
 export const getFavouriteBook = async (email) => {
-  console.log(email)
+  // console.log(email)
   try {
     await connectDB();
     const query = { email: email };

@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import User from "../database/models/userModel/user";
 import { connectDB } from "../database/MongoConnect";
+import { revalidatePath } from "next/cache";
 
 export const addUser = async (formData) => {
   try {
@@ -81,7 +82,6 @@ export const getUserNumber = async () => {
 };
 
 //get one user
-
 export const getOneUser = async (email) => {
   try {
     await connectDB();
@@ -90,13 +90,11 @@ export const getOneUser = async (email) => {
     }
     const user = await User.findOne(query)
     return JSON.parse(JSON.stringify(user))
-
   }
   catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
 };
-
 // Add the following function to check if a user already exists by email
 export const getUserByEmail = async (email) => {
   try {
@@ -107,3 +105,14 @@ export const getUserByEmail = async (email) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+
+export const getUserAndBecomeMember = async (email) => {
+  try {
+    await connectDB();
+    const result = await User.findOneAndUpdate({ email: email, role: "user" }, { role: "member" }, { new: true })
+    revalidatePath("/dashboard/favourite")
+    return JSON.parse(JSON.stringify(result))
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error))
+  }
+}
