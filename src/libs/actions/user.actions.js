@@ -77,6 +77,7 @@ export const getUserNumber = async () => {
 //get one user
 
 export const getOneUser = async (email) => {
+  console.log(email);
   try {
     await connectDB();
     const query = {
@@ -84,6 +85,7 @@ export const getOneUser = async (email) => {
     }
     const user = await User.findOne(query)
     return JSON.parse(JSON.stringify(user))
+    // console.log(JSON.parse(JSON.stringify(user)));
 
   }
   catch (error) {
@@ -109,5 +111,35 @@ export const deleteUser = async (userId) => {
     return JSON.parse(JSON.stringify(result));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
+  }
+};
+
+
+// add user profile
+export const updateUserProfile = async (formData, useremail) => {
+  const userName = formData.get("userName");
+  const about = formData.get("about");
+  const address = formData.get("address");
+console.log(useremail);
+  try {
+    await connectDB();
+
+    // defied the field
+    const updatedInfo = {
+      name: userName,
+      about: about,
+      address: address,
+    };
+    console.log(updatedInfo);
+    
+
+    const result = await User.findOneAndUpdate({email: useremail}, updatedInfo,{new: true} );
+    console.log(result);
+    return JSON.parse(JSON.stringify({ success: true, data: result }));
+  } catch (error) {
+    return {
+      error: "Fill input properly or send the required data",
+      errorDetails: JSON.parse(JSON.stringify(error)),
+    };
   }
 };

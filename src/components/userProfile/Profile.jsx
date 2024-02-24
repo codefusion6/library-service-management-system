@@ -1,31 +1,37 @@
 "use client";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import EditProfileForm from "./editProfile/EditProfileForm";
 import { MdDelete, MdEdit } from "react-icons/md";
 import EditDeleteBtn from "@/app/(root)/userProfile/editDeleteBtn";
+import { getOneUser } from "@/libs/actions/user.actions";
 
-const Profile = ({ editUserData }) => {
-  console.log(editUserData);
+const Profile = () => {
+  const { user,loading } = UserAuth();
 
-  const { user } = UserAuth();
+  const [ existingUser, setExistingUser] = useState('');
 
+  useEffect (()=>{
 
+    if (!loading ){
 
-  // if (
-  //   !editUserData ||
-  //   !editUserData.data ||
-  //   !Array.isArray(editUserData.data) ||
-  //   editUserData.data.length === 0
-  // ) {
-  //   // Handle the case when data is still loading, not an object, does not have a data property, or an empty array
-  //   return <p>Loading...</p>;
-  // }
+      const getUser = async (email)=>{
+        const userData = await getOneUser(email)
+        console.log(userData,email);
+        setExistingUser(userData.data)
+      }
+      getUser(user?.email)
+    }
+  },[user,loading])
+ console.log(existingUser);
 
+if (loading){
+  return <h2 className="text-center mt-20 text-2xl">loading...</h2>
+}
   return (
     <section>
       <div>
@@ -56,28 +62,20 @@ const Profile = ({ editUserData }) => {
 
                   <EditProfileForm></EditProfileForm>
                   <div>
-                    {/* <div>
-                      {editUserData?.data.map((userData) => (
-                        <div key={userData._id}>
-                         <div>
-                         <h2 className="flex gap-3 text-xl text-blue-400 ">Bio : <span className="text-orange-400">{userData.bio}</span> <MdDelete /> <MdEdit></MdEdit> </h2>
-                         
-                         </div>
-                          <h2 className="text-xl flex  gap-3 "> About Me : {userData.about} <EditDeleteBtn id={userData._id}></EditDeleteBtn> <MdEdit></MdEdit> </h2>
-                        </div>
-                      ))}
-                    </div> */}
+                   <h2>About  </h2>
+                   <p>{existingUser?.about}</p>
+                   <h1>Address <p>{existingUser?.address}</p> </h1>
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <p className="font-semibold">
                     Name: <br />
-                    <span className="font-semibold"> {user?.displayName}</span>
+                    <span className="font-semibold"> {existingUser?.name}</span>
                   </p>
                   <p className="font-semibold">
                     Email: <br />
-                    <span className="font-semibold"> {user?.email}</span>
+                    <span className="font-semibold"> {existingUser?.email}</span>
                   </p>
                   <ul className="flex gap-3 mt-5 mb-10">
                     <li className="text-3xl mb-5">
