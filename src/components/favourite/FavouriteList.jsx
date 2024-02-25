@@ -22,10 +22,10 @@ const FavouriteList = () => {
     }, [user, loading])
 
     // console.log(favouritData)
-    const handleRemove = async (e, id) => {
-        e.stopPropagation()
-        // console.log(id)
-    }
+    // const handleRemove = async (e, id) => {
+    //     e.stopPropagation()
+    //     // console.log(id)
+    // }
     return (
         <section className='p-2'>
             <div>
@@ -49,14 +49,13 @@ const FavouriteList = () => {
                                     </div>
                                     <div className='py-2 px-5 flex justify-start gap-6 w-full duration-200 bottom-0'>
                                         <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700'>View Details</button>
-                                        <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700' onClick={() => handleRemove(e, items?._id)}>Remove</button>
+                                        <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700'>Remove</button>
                                     </div>
                                 </div>
                             </Link>
                         ))
                     }
                 </div>
-
             </div>
         </section>
     )
