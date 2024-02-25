@@ -12,9 +12,16 @@ export const addUser = async (formData) => {
     const email = formData.get("email");
     const role = "user";
     const photoURL = formData.get("photoURL");
-
+    // console.log('photoURL:', photoURL);
+    const newFormData = {
+      name: name,
+      email: email,
+      role: role,
+      photoURL: photoURL,
+    };
+    const result = await User.create(newFormData);
+    // console.log("USER DATA:", result);
     const existingUser = await User.findOne({ email });
-
     if (!existingUser) {
       const newFormData = {
         name,
@@ -41,6 +48,7 @@ export const getAllUser = async () => {
     const result = await User.find();
     revalidatePath('/dashboard/all-user')
     // return JSON.parse(JSON.stringify(result));
+
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     if (error instanceof mongoose.Error.ValidationError) {
@@ -67,7 +75,7 @@ export const getUserNumber = async () => {
   try {
     await connectDB();
     const userNum = await User.find().countDocuments();
-    console.log("from user collection count document", userNum);
+    // console.log("from user collection count document", userNum);
     return JSON.parse(JSON.stringify(userNum))
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
@@ -75,7 +83,6 @@ export const getUserNumber = async () => {
 };
 
 //get one user
-
 export const getOneUser = async (email) => {
   try {
     await connectDB();
@@ -84,13 +91,11 @@ export const getOneUser = async (email) => {
     }
     const user = await User.findOne(query)
     return JSON.parse(JSON.stringify(user))
-
   }
   catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
 };
-
 // Add the following function to check if a user already exists by email
 export const getUserByEmail = async (email) => {
   try {
@@ -111,3 +116,13 @@ export const deleteUser = async (userId) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+export const getUserAndBecomeMember = async (email) => {
+  try {
+    await connectDB();
+    const result = await User.findOneAndUpdate({ email: email, role: "user" }, { role: "member" }, { new: true })
+    revalidatePath("/dashboard/favourite")
+    return JSON.parse(JSON.stringify(result))
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error))
+  }
+}

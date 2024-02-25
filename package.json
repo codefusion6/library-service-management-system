@@ -38,6 +38,7 @@
     "query-string": "^8.2.0",
     "react": "^18",
     "react-chartjs-2": "^5.2.0",
+    "react-confetti": "^6.1.0",
     "react-dom": "^18",
     "react-facebook": "^9.0.12",
     "react-hot-toast": "^2.4.1",

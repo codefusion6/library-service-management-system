@@ -1,4 +1,5 @@
 "use client";
+import { auth } from "@/app/firbase/firebase";
 import { addUserProfile } from "@/libs/actions/userProfile.action";
 import {
   Button,
@@ -13,6 +14,7 @@ import React from "react";
 
 const EditProfileForm = () => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  // console.log(auth)
   return (
     <div>
       <Button

@@ -181,7 +181,6 @@ const AddBookForm = () => {
                             <option value="Elite">Elite</option>
                         </select>
                     </div>
-
                     {/* {/ Add Book Button /} */}
                     <button
                         type="submit"

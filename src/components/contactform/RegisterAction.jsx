@@ -27,24 +27,23 @@ const RegisterAction = () => {
     const name = formData.get('name');
     const email = formData.get('email');
     const password = formData.get('password');
-  
+
     // Append profile image to formData
     formData.append("photoURL", profileImage);
-  
+
     try {
       // Create the user
       const user = await createUser(email, password);
-  
+
       if (user.user) {
         toast.success('User created successfully');
-  
+
         // Update the user profile with additional information
         const updateResult = await updateUserProfile(name, profileImage);
-  
         if (updateResult) {
           toast.success('Profile updated successfully');
         }
-  
+
         // Add user data to the database or perform any other actions
         const res = await addUser(formData);
         console.log(res);

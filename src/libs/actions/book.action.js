@@ -14,6 +14,7 @@ export const addBook = async (formData) => {
   const authorImage = formData.get("authorImage");
   const publisherEmail = formData.get("publisherEmail");
   const category = formData.get("category");
+  const type = formData.get("type");
   // console.log(bookCover, bookPdf, authorImage);
   try {
     await connectDB();
@@ -139,13 +140,14 @@ export const deleteBook = async (id) => {
   }
 };
 
+
 // get the books based on author name
 export const getBooksByAuthor = async (authorName) => {
-  console.log(authorName)
+  // console.log(authorName)
   try {
     await connectDB();
     const result = await Book.find({ authorName: authorName });
-    console.log(result)
+    // console.log(result)
     return JSON.parse(JSON.stringify(result));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
@@ -154,18 +156,21 @@ export const getBooksByAuthor = async (authorName) => {
 
 //  get all favourite books
 export const getFavouriteBook = async (email) => {
+  // console.log(email)
   try {
     await connectDB();
     const query = { email: email };
     const result = await Favourite.findOne(query);
     const favouriteBookids = result ? result.bookIds : [];
+
     const bookResult = await Book.find({
       _id: {
         $in: favouriteBookids
       }
     });
+
     revalidatePath("/dashboard/favourite")
-    return JSON.parse(JSON.stringify(bookResult));
+    return JSON.parse(JSON.stringify(bookResult))
   } catch (error) {
     return error;
   }
