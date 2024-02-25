@@ -48,7 +48,7 @@ const EditProfileForm = ({existingUser}) => {
                             displayName : name
                             // email: email
                           }).then(()=>{
-                            toast.success(" Updated successfully");
+                            toast.success(" Updated successfully ! Press ctrl+r  ");
                           })
                         }
                         console.log(response);

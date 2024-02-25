@@ -60,30 +60,29 @@ if (loading){
 
                   <EditProfileForm existingUser={existingUser}></EditProfileForm>
                   <div>
-                   <h2>About  </h2>
-                   <p>{existingUser?.about}</p>
-                   <h1>Address <p>{existingUser?.address}</p> </h1>
+                  <h2 className="text-xl font-bold text-green-600">{`About:  ${existingUser?.about}`}</h2>
+                   <h1 className="text-xl font-bold text-red-900">{` Live : ${existingUser?.address}`} </h1>
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <p className="font-semibold">
                     Name: <br />
-                    <span className="font-semibold"> {existingUser?.name}</span>
+                    <span className="font-semibold text-xl text-red-900"> {existingUser?.name}</span>
                   </p>
                   <p className="font-semibold">
                     Email: <br />
-                    <span className="font-semibold"> {existingUser?.email}</span>
+                    <span className="font-serif text-xl "> {existingUser?.email}</span>
                   </p>
                   <ul className="flex gap-3 mt-5 mb-10">
-                    <li className="text-3xl mb-5">
-                      <AiOutlineTwitter />
+                    <li className="text-3xl mb-5 ">
+                      <AiOutlineTwitter className="text-blue-400" />
                     </li>
                     <li className="text-3xl">
-                      <FaFacebook />
+                      <FaFacebook   className="text-blue-600" />
                     </li>
                     <li className="text-3xl">
-                      <FaGithub />
+                      <FaGithub    />
                     </li>
                   </ul>
                 </div>
