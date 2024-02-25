@@ -1,16 +1,35 @@
-"use client"
+"use client";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
 import EditProfileForm from "./editProfile/EditProfileForm";
+import { getOneUser } from "@/libs/actions/user.actions";
 
-const Profile =  ({editUserData}) => {
-  
-  const { user } = UserAuth();
+const Profile = () => {
+  const { user,loading } = UserAuth();
 
+  const [ existingUser, setExistingUser] = useState('');
+
+  useEffect (()=>{
+
+    if (!loading ){
+
+      const getUser = async (email)=>{
+        const userData = await getOneUser(email)
+        console.log(userData);
+        setExistingUser(userData)
+      }
+      getUser(user?.email)
+    }
+  },[user,loading,setExistingUser])
+ console.log(existingUser);
+
+if (loading){
+  return <h2 className="text-center mt-20 text-2xl">loading...</h2>
+}
   return (
     <section>
       <div>
@@ -25,13 +44,9 @@ const Profile =  ({editUserData}) => {
               <h1 className="text-3xl text-center font-bold mb-10 mt-5">
                 User Profile
               </h1>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div className="space-y-2">
-                  <h1 className="text-xl font-bold">
-                    About me:
-
-                    </h1>
                   <p className="text-base font-medium"></p>
                 </div>
                 <div className=" flex flex-col items-center justify-center gap-5">
@@ -43,28 +58,31 @@ const Profile =  ({editUserData}) => {
                     className="w-[300px] rounded-full"
                   ></Image>
 
-                  <EditProfileForm></EditProfileForm>
-
+                  <EditProfileForm existingUser={existingUser}></EditProfileForm>
+                  <div>
+                  <h2 className="text-xl font-bold text-green-600">{`About:  ${existingUser?.about}`}</h2>
+                   <h1 className="text-xl font-bold text-red-900">{` Live : ${existingUser?.address}`} </h1>
+                  </div>
                 </div>
 
                 <div className="space-y-2">
                   <p className="font-semibold">
                     Name: <br />
-                    <span className="font-semibold"> {user?.displayName}</span>
+                    <span className="font-semibold text-xl text-red-900"> {existingUser?.name}</span>
                   </p>
                   <p className="font-semibold">
                     Email: <br />
-                    <span className="font-semibold"> {user?.email}</span>
+                    <span className="font-serif text-xl "> {existingUser?.email}</span>
                   </p>
                   <ul className="flex gap-3 mt-5 mb-10">
-                    <li className="text-3xl mb-5">
-                      <AiOutlineTwitter />
+                    <li className="text-3xl mb-5 ">
+                      <AiOutlineTwitter className="text-blue-400" />
                     </li>
                     <li className="text-3xl">
-                      <FaFacebook />
+                      <FaFacebook   className="text-blue-600" />
                     </li>
                     <li className="text-3xl">
-                      <FaGithub />
+                      <FaGithub    />
                     </li>
                   </ul>
                 </div>
