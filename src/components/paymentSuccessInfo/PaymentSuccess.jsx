@@ -93,6 +93,16 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                                 confirm
                             </button>
                         </Link>
+                        {/* {
+                            <div className='flex gap-3'>
+                                <Link href="/" className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
+                                    Home
+                                </Link>
+                                <Link href="/allBooks" className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
+                                    all Books
+                                </Link>
+                            </div>
+                        } */}
                     </div>
                     <p className='pt-5 text-primary md:text-2xl lg:text-3xl'> Please Click confirm</p>
                 </div>
