@@ -9,9 +9,9 @@ const AddBookForm = () => {
     const [bookCover, setBookCover] = useState(null);
     const [bookPdf, setBookPdf] = useState(null);
     const [authorImg, setAuthorImg] = useState(null);
-    console.log(bookCover, "cover ");
-    console.log(bookPdf, "pdf");
-    console.log(authorImg, "author");
+    // console.log(bookCover, "cover ");
+    // console.log(bookPdf, "pdf");
+    // console.log(authorImg, "author");
 
     return (
         <section
@@ -34,9 +34,9 @@ const AddBookForm = () => {
                         if (response?.success) {
                             toast.success("Book added successfully")
                         }
-                        console.log(response);
+                        // console.log(response);
                     } catch (error) {
-                        console.log(error);
+                        // console.log(error);
                     }
 
                 }} className="m-8 max-w-xl mx-auto p-6 bg-white rounded-md shadow-md">
@@ -84,7 +84,7 @@ const AddBookForm = () => {
                                 autoUpload={false}
                                 onSuccess={(result, { widget }) => {
                                     setBookCover(result?.info?.secure_url);
-                                    console.log(resource);
+                                    // console.log(resource);
                                     widget.close();
                                 }}
                             >
@@ -110,7 +110,7 @@ const AddBookForm = () => {
                                 autoUpload={false}
                                 onSuccess={(result, { widget }) => {
                                     setBookPdf(result?.info?.secure_url);
-                                    console.log(resource);
+                                    // console.log(resource);
                                     widget.close();
                                 }}
                             >
@@ -136,7 +136,7 @@ const AddBookForm = () => {
                                 autoUpload={false}
                                 onSuccess={(result, { widget }) => {
                                     setAuthorImg(result?.info?.secure_url);
-                                    console.log(resource);
+                                    // console.log(resource);
                                     widget.close();
                                 }}
                             >
@@ -181,7 +181,6 @@ const AddBookForm = () => {
                             <option value="Elite">Elite</option>
                         </select>
                     </div>
-
                     {/* {/ Add Book Button /} */}
                     <button
                         type="submit"

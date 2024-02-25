@@ -5,9 +5,9 @@ import Banner from "@/pages/home/Banner";
 import FAQ from "@/pages/home/faq/FAQ";
 import Slider from "@/pages/home/Slider/Slider";
 import HomeContact from "@/shared/HomeContact";
-import Feature from "@/pages/home/Feature";
 import RecommendedBooks from "@/pages/home/recomented/RecommendedBooks";
 import BookTypes from "@/pages/home/BookTypes/BookTypes";
+import Feature from "@/components/feature/Feature";
 
 const HomePage = () => {
   return (

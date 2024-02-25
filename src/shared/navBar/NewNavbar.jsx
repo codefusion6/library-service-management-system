@@ -64,7 +64,7 @@ export default function App() {
             window.removeEventListener("scroll", handleScroll);
         };
     }, [scroll]);
-    
+
     return (
         <Navbar
             className={`max-w-full mx-auto py-1 px-3 justify-between ${!scroll ? "bg-slate-800" : null}`} id="navBar"
@@ -103,11 +103,11 @@ export default function App() {
                             Contact us
                         </Link>
                     </NavbarItem>
-                    <NavbarItem>
+                    {/* <NavbarItem>
                         <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/our-services">
                             Our Services
                         </Link>
-                    </NavbarItem>
+                    </NavbarItem> */}
                     <NavbarItem>
                         <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/allBooks">
                             All Books

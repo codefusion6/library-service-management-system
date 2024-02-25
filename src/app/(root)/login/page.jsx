@@ -1,6 +1,5 @@
 import React from "react";
 import LoginForm from "@/components/contactform/LoginForm";
-import LoginBanner from "@/pages/login/LoginBanner";
 
 
 const Login = () => {
