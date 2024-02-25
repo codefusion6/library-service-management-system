@@ -12,16 +12,21 @@ const FavouriteList = () => {
     // console.log(user?.email)
     useEffect(() => {
         if (user) {
-            const getData = async (user) => {
-                // console.log(user)
-                const data = await getFavouriteBook(user)
-                setFavouriteData(data)
+            try {
+                const getData = async (user) => {
+                    // console.log(user)
+                    const data = await getFavouriteBook(user)
+                    setFavouriteData(data)
+                }
+                // getData(user?.email)
+
+            } catch (error) {
+                console.log(error)
             }
-            getData(user?.email)
         }
     }, [user])
 
-    console.log()
+    // console.log(favouritData)
     return (
         <section className='p-2'>
             <div>
@@ -48,7 +53,7 @@ const FavouriteList = () => {
 
                                         </div>
                                     </Link>
-                                    <div className='py-2 px-5 flex justify-center bottom-0 absolute gap-6 w-full duration-200 bottom-0'>
+                                    <div className='py-2 px-5 flex justify-center absolute gap-6 w-full duration-200 bottom-0'>
                                         <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700'>View Details</button>
                                         <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700'>Remove</button>
                                     </div>
