@@ -19,10 +19,10 @@ export const addUserProfile = async (formData) => {
       userName: userName,
       category: category,
     };
-    console.log(userprofile);
+    // console.log(userprofile);
 
     const result = await EditProfile.create(userprofile);
-    console.log(result);
+    // console.log(result);
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return {

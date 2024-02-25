@@ -2,7 +2,7 @@ import EditProfileForm from "@/components/userProfile/editProfile/EditProfileFor
 
 const page = async ({ params }) => {
 
-  console.log(params);
+  // console.log(params);
 
   return (
     <div>

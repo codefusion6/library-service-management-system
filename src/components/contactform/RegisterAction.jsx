@@ -46,10 +46,10 @@ const RegisterAction = () => {
 
         // Add user data to the database or perform any other actions
         const res = await addUser(formData);
-        console.log(res);
+        // console.log(res);
       }
     } catch (error) {
-      console.log('Error creating user:', error.message);
+      // console.log('Error creating user:', error.message);
       // Handle other errors if needed
       toast.error('Failed to create user');
     }

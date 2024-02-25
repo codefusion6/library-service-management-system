@@ -4,7 +4,7 @@ import React from "react";
 
 const userProfile = async () => {
   const editUserData = await getUserProfile();
-  console.log(editUserData);
+  // console.log(editUserData);
 
   return (
     <div className="min-h-screen mt-32">

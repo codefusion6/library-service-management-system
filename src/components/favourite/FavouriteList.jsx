@@ -24,7 +24,7 @@ const FavouriteList = () => {
     // console.log(favouritData)
     const handleRemove = async (e, id) => {
         e.stopPropagation()
-        console.log(id)
+        // console.log(id)
     }
     return (
         <section className='p-2'>
