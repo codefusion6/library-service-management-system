@@ -138,8 +138,6 @@ export const updateUserProfile = async (formData, useremail) => {
       address: address,
     };
     // console.log(updatedInfo);
-
-
     const result = await User.findOneAndUpdate({ email: useremail }, updatedInfo, { new: true });
     revalidatePath("/userProfile");
     return JSON.parse(JSON.stringify({ success: true, data: result }));
