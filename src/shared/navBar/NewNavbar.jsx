@@ -103,11 +103,11 @@ export default function App() {
                             Contact us
                         </Link>
                     </NavbarItem>
-                    <NavbarItem>
+                    {/* <NavbarItem>
                         <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/our-services">
                             Our Services
                         </Link>
-                    </NavbarItem>
+                    </NavbarItem> */}
                     <NavbarItem>
                         <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/allBooks">
                             All Books
