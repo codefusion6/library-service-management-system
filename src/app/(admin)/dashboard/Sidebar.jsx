@@ -8,16 +8,15 @@ import SidebarItems from "./SidebarItems";
 import Link from "next/link";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 
-const Sidebar = ({}) => {
+const Sidebar = ({ }) => {
   const [expanded, setExpanded] = useState(true);
-  const { user } = UserAuth();
+  const { user, loading } = UserAuth();
   // console.log(user)
 
   return (
     <div
-      className={`bg-white fixed top-0 border-r shadow-md lg:static z-50 ${
-        expanded ? "lg:w-[20%] -left-[500%] lg:left-0" : "lg:w-[6%]"
-      } duration-200`}
+      className={`bg-white fixed top-0 border-r shadow-md lg:static z-50 ${expanded ? "lg:w-[20%] -left-[500%] lg:left-0" : "lg:w-[6%]"
+        } duration-200`}
     >
       <aside className="h-screen">
         <nav className="h-screen flex flex-col">
@@ -34,9 +33,8 @@ const Sidebar = ({}) => {
             </Link>
 
             <button
-              className={`p-2 rotate-180 lg:rotate-0 rounded-lg bg-[#18c96433] hover:bg-green-500 text-[#12a150] hover:text-white fixed lg:static left-0 top-0 ${
-                !expanded ? "" : ""
-              }`}
+              className={`p-2 rotate-180 lg:rotate-0 rounded-lg bg-[#18c96433] hover:bg-green-500 text-[#12a150] hover:text-white fixed lg:static left-0 top-0 ${!expanded ? "" : ""
+                }`}
               onClick={() => setExpanded(!expanded)}
             >
               {expanded ? (
@@ -50,22 +48,18 @@ const Sidebar = ({}) => {
             <SidebarItems expanded={expanded} />
           </ul>
           <div className="border-r flex p-3">
-            <Image
-              src={
-                user && user?.photoURL === null
-                  ? "https://i.ibb.co/gTBx7qs/sumon.png"
-                  : user?.photoURL
-              }
-              rel="noreferrer"
-              alt="profile image"
-              width={50}
-              height={30}
-              className="rounded-md"
-            />
+            {
+              !loading && <Image src={user?.photoURL !== null ? user?.photoURL : "https://i.ibb.co/gTBx7qs/sumon.png"}
+                rel="noreferrer"
+                alt="profile image"
+                width={50}
+                height={50}
+                className="rounded-md"
+              />
+            }
             <div
-              className={`flex justify-between items-center text-black px-3 bg-green-100 w-full ml-2 rounded-md ${
-                expanded ? "block" : "hidden"
-              }`}
+              className={`flex justify-between items-center text-black px-3 bg-green-100 w-full ml-2 rounded-md ${expanded ? "block" : "hidden"
+                }`}
             >
               <div className="leading-4">
                 <div className="">

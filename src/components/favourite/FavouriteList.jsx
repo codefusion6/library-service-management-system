@@ -11,7 +11,7 @@ const FavouriteList = () => {
 
     // console.log(user?.email)
     useEffect(() => {
-        if (!loading) {
+        if (user) {
             const getData = async (user) => {
                 // console.log(user)
                 const data = await getFavouriteBook(user)
@@ -19,13 +19,9 @@ const FavouriteList = () => {
             }
             getData(user?.email)
         }
-    }, [user, loading])
+    }, [user])
 
-    // console.log(favouritData)
-    // const handleRemove = async (e, id) => {
-    //     e.stopPropagation()
-    //     // console.log(id)
-    // }
+    console.log()
     return (
         <section className='p-2'>
             <div>
@@ -39,20 +35,25 @@ const FavouriteList = () => {
                     {
                         !loading &&
                         favouritData?.map((items, idx) => (
-                            <Link href={`/allBooks/${items?._id}`} key={idx} className='flex gap-2 group items-center my-3 shadow-lg rounded-lg'>
-                                <Image src={items?.bookCover} width={300} height={400} className='max-w-[200px]' alt={items?.bookName} />
+                            <div key={idx} className='shadow-lg rounded-lg relative'>
                                 <div className=''>
-                                    <div className='flex-1 space-y-2 p-3'>
-                                        <h2 className='font-bold text-base sm:text-xl md:text-2xl lg:text-3xl'>{items?.bookName}</h2>
-                                        <h4 className='font-bold text-primary text-sm md:text-lg lg:text-xl'>Writter: {items?.authorName}</h4>
-                                        <p className='text-sm md:text-md line-clamp-5'>{items?.bookDescription}</p>
-                                    </div>
-                                    <div className='py-2 px-5 flex justify-start gap-6 w-full duration-200 bottom-0'>
+                                    <Link href={`/allBooks/${items?._id}`} className='flex gap-2 group items-center my-3'>
+                                        <Image src={items?.bookCover} width={300} height={400} className='max-w-[200px]' alt={items?.bookName} />
+                                        <div className=''>
+                                            <div className='flex-1 space-y-2 p-3'>
+                                                <h2 className='font-bold text-base sm:text-xl md:text-2xl lg:text-3xl'>{items?.bookName}</h2>
+                                                <h4 className='font-bold text-primary text-sm md:text-lg lg:text-xl'>Writter: {items?.authorName}</h4>
+                                                <p className='text-sm md:text-md line-clamp-5'>{items?.bookDescription}</p>
+                                            </div>
+
+                                        </div>
+                                    </Link>
+                                    <div className='py-2 px-5 flex justify-center bottom-0 absolute gap-6 w-full duration-200 bottom-0'>
                                         <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700'>View Details</button>
                                         <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700'>Remove</button>
                                     </div>
                                 </div>
-                            </Link>
+                            </div>
                         ))
                     }
                 </div>
