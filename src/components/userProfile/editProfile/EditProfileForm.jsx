@@ -1,6 +1,7 @@
 "use client";
 import { auth } from "@/app/firbase/firebase";
-import { addUserProfile } from "@/libs/actions/userProfile.action";
+import { UserAuth } from "@/app/provider/context/AuthContext";
+import { updateUserProfile } from "@/libs/actions/user.actions";
 import {
   Button,
   Modal,
@@ -10,11 +11,14 @@ import {
   ModalHeader,
   useDisclosure,
 } from "@nextui-org/react";
+import {  updateProfile } from "firebase/auth";
 import React from "react";
+import toast from "react-hot-toast";
 
-const EditProfileForm = () => {
+const EditProfileForm = ({existingUser}) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  // console.log(auth)
+  const { user } = UserAuth();
+  console.log(auth.currentUser);
   return (
     <div>
       <Button
@@ -32,10 +36,20 @@ const EditProfileForm = () => {
                 <div>
                   <form
                     action={async (formData) => {
+                      
                       try {
-                        const response = await addUserProfile(formData);
+                        const response = await updateUserProfile(formData, user?.email );
+                        const name = formData.get("userName") 
+                        // const email = formData.get("email") 
+                        // console.log(name);
                         if (response?.success) {
-                          toast.success(" added successfully");
+                         
+                         await updateProfile(auth.currentUser,{
+                            displayName : name
+                            // email: email
+                          }).then(()=>{
+                            toast.success(" Updated successfully ! Press ctrl+r  ");
+                          })
                         }
                         // console.log(response);
                       } catch (error) {
@@ -52,6 +66,7 @@ const EditProfileForm = () => {
                         Name:
                       </label>
                       <input
+                      defaultValue={user?.displayName}
                         type="text"
                         name="userName"
                         placeholder="name"
@@ -60,18 +75,21 @@ const EditProfileForm = () => {
                     </div>
                     <div className="mb-4">
                       <label
-                        htmlFor="bio"
+                        htmlFor="Name"
                         className="block text-gray-700 text-sm font-bold mb-2"
                       >
-                        Bio :
+                        Email:
                       </label>
                       <input
-                        type="text"
-                        name="bio"
-                        placeholder="bio"
+                      disabled
+                      defaultValue={user?.email}
+                        type="email"
+                        name="email"
+                        placeholder="name"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
                       />
                     </div>
+                    
 
                     {/* {/ About /} */}
                     <div className="mb-4">
@@ -82,6 +100,7 @@ const EditProfileForm = () => {
                         About
                       </label>
                       <textarea
+                      defaultValue={existingUser?.about}
                         name="about"
                         placeholder="write about your-self"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
@@ -95,25 +114,18 @@ const EditProfileForm = () => {
                       >
                         Address
                       </label>
-                      <select
-                        name="category"
+                      <textarea
+                      defaultValue={existingUser?.address}
+                        name="address"
+                        placeholder="write your address"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                      >
-                        <option value="Dhaka">Dhaka</option>
-                        <option value="Barishal">Barishal</option>
-                        <option value="Khulna">Khulna</option>
-                        <option value="Jossore">Jossore</option>
-                        <option value="Mymangsing">Mymangsing</option>
-                        <option value="Gazipur">Gazipur</option>
-                        <option value="Sylhet">Sylhet</option>
-                        <option value="Chittagonj">Chittagonj</option>
-                      </select>
+                      />
                     </div>
                     <ModalFooter>
                       <Button color="danger" variant="light" >
                         Close
                       </Button>
-                      <Button color="primary" type="submit">
+                      <Button color="primary" type="submit" onPress={onClose}>
                         Save
                       </Button>
                     </ModalFooter>

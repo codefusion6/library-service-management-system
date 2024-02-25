@@ -14,6 +14,14 @@ const UserSchema = new Schema(
       type: String,
       required: true,
     },
+    about: {
+      type: String,
+      required: false,
+    },
+    address: {
+      type: String,
+      required: false,
+    },
     photoURL: {
       type: String, 
       required: true,
