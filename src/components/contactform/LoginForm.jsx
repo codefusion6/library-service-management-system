@@ -5,7 +5,7 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa6";
 import LottieAnimation from "./LottieAnimation";
-import { UserAuth, userState } from "@/app/provider/context/AuthContext";
+import { UserAuth} from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
 import { useRouter } from 'next/navigation';
 
