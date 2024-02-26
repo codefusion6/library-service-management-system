@@ -16,11 +16,11 @@ const Feedback = () => {
       })
       .then(
         () => {
-          console.log("SUCCESS!");
+          // console.log("SUCCESS!");
           toast.success('Thank You ! We will try to contact with tou very soon ! ')
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          // console.log("FAILED...", error.text);
           toast.error("This didn't work.")
         }
       );

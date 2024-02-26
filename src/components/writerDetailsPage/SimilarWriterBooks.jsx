@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 
 const SimilarWriterBooks = ({ authorBook }) => {
-  console.log(authorBook);
+  // console.log(authorBook);
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 my-10">
       {authorBook.map((similarBook, index) => (

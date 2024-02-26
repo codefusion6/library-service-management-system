@@ -9,23 +9,26 @@ const FavouriteList = () => {
     const [favouritData, setFavouriteData] = useState([])
     const { user, loading } = UserAuth()
 
-    // console.log(user?.email)
     useEffect(() => {
-        if (!loading) {
-            const getData = async (user) => {
-                // console.log(user)
-                const data = await getFavouriteBook(user)
-                setFavouriteData(data)
+        const getData = (user) => {
+            if (user) {
+                try {
+                    getFavouriteBook(user)
+                        .then(data => {
+                            setFavouriteData(data)
+                        })
+                } catch (error) {
+                    console.log(error)
+                }
             }
-            getData(user?.email)
+            // getData(user?.email)
         }
-    }, [user, loading])
+        if (user) {
+            getData(user.email)
+        }
+    }, [user])
 
     // console.log(favouritData)
-    const handleRemove = async (e, id) => {
-        e.stopPropagation()
-        console.log(id)
-    }
     return (
         <section className='p-2'>
             <div>
@@ -39,7 +42,7 @@ const FavouriteList = () => {
                     {
                         !loading &&
                         favouritData?.map((items, idx) => (
-                            <Link href={`/allBooks/${items?._id}`} key={idx} className='flex gap-2 group items-center my-3 shadow-lg rounded-lg'>
+                            <div key={idx} className='shadow-lg rounded-lg relative flex gap-2 group items-center my-3'>
                                 <Image src={items?.bookCover} width={300} height={400} className='max-w-[200px]' alt={items?.bookName} />
                                 <div className=''>
                                     <div className='flex-1 space-y-2 p-3'>
@@ -47,16 +50,17 @@ const FavouriteList = () => {
                                         <h4 className='font-bold text-primary text-sm md:text-lg lg:text-xl'>Writter: {items?.authorName}</h4>
                                         <p className='text-sm md:text-md line-clamp-5'>{items?.bookDescription}</p>
                                     </div>
-                                    <div className='py-2 px-5 flex justify-start gap-6 w-full duration-200 bottom-0'>
-                                        <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700'>View Details</button>
-                                        <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700' onClick={() => handleRemove(e, items?._id)}>Remove</button>
-                                    </div>
                                 </div>
-                            </Link>
+                                <div className='py-2 px-5 flex justify-center absolute gap-6 w-full duration-200 bottom-0'>
+                                    <Link href={`/allBooks/${items?._id}`}>
+                                        <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700'>View Details</button>
+                                    </Link>
+                                    <button className='bg-pink-600 py-2 px-3 lg:px-5 text-white rounded-lg hover:bg-pink-700'>Remove</button>
+                                </div>
+                            </div>
                         ))
                     }
                 </div>
-
             </div>
         </section>
     )

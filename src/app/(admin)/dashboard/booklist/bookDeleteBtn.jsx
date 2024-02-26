@@ -16,7 +16,7 @@ const BookDeleteBtn = ({ id }) => {
         }).then(async (result) => {
             if (result.isConfirmed) {
                 const res = await deleteBook(id);
-                console.log(res);
+                // console.log(res);
                 Swal.fire({
                     title: "Deleted!",
                     text: "Your file has been deleted.",

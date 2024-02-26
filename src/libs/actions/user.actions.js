@@ -121,23 +121,12 @@ export const deleteUser = async (userId) => {
   }
 };
 
-export const getUserAndBecomeMember = async (email) => {
-  try {
-    await connectDB();
-    const result = await User.findOneAndUpdate({ email: email, role: "user" }, { role: "member" }, { new: true })
-    revalidatePath("/dashboard/favourite")
-    return JSON.parse(JSON.stringify(result))
-  } catch (error) {
-    return JSON.parse(JSON.stringify(error))
-  }
-}
-
 // add user profile
 export const updateUserProfile = async (formData, useremail) => {
   const userName = formData.get("userName");
   const about = formData.get("about");
   const address = formData.get("address");
-// console.log(useremail);
+  // console.log(useremail);
   try {
     await connectDB();
 
@@ -148,9 +137,7 @@ export const updateUserProfile = async (formData, useremail) => {
       address: address,
     };
     // console.log(updatedInfo);
-    
-
-    const result = await User.findOneAndUpdate({email: useremail}, updatedInfo,{new: true} );
+    const result = await User.findOneAndUpdate({ email: useremail }, updatedInfo, { new: true });
     revalidatePath("/userProfile");
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
@@ -160,3 +147,16 @@ export const updateUserProfile = async (formData, useremail) => {
     };
   }
 };
+
+export const getUserAndBecomeMember = async (email) => {
+  try {
+    await connectDB();
+
+    const result = await User.findOneAndUpdate({ email: email, role: "user" }, { role: "member" }, { new: true });
+    return JSON.parse(JSON.stringify({ success: true }))
+
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error))
+  }
+}
+

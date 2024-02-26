@@ -37,7 +37,7 @@ export const AuthContextProvider = ({ children }) => {
         formData.append('photoURL', user.photoURL);
 
         await addUser(formData);
-        console.log('User added to the database');
+        // console.log('User added to the database');
       }
     } catch (error) {
       console.error('Google sign-in error:', error);

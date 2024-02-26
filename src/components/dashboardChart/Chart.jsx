@@ -6,9 +6,9 @@ import { Pie } from "react-chartjs-2";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-const Chart = ({bookNum, userNum}) => {
-  console.log( bookNum)
-  
+const Chart = ({ bookNum, userNum }) => {
+  // console.log( bookNum)
+
   const data = {
 
     labels: ["Story", "History", "Horror", "Easy Readers"],

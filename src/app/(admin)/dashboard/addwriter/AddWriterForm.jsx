@@ -7,7 +7,7 @@ import AddWritterBtn from './AddWritterBtn';
 
 const AddWriterForm = () => {
     const [authorImg, setAuthorImg] = useState("");
-    console.log(authorImg);
+    // console.log(authorImg);
     return (
         <form action={async (formData) => {
             const addAuthorImg = formData.append("authorImg", authorImg)
@@ -16,9 +16,9 @@ const AddWriterForm = () => {
                 if (response?.success) {
                     toast.success("Writer added successfully")
                 }
-                console.log(response);
+                // console.log(response);
             } catch (error) {
-                console.log(error);
+                // console.log(error);
                 toast.success(`${error}`)
             }
 

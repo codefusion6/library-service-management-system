@@ -1,13 +1,13 @@
-
-import FavouriteList from '@/components/favourite/FavouriteList';
-import { getFavouriteBook } from '@/libs/actions/book.action';
+import FavouriteList from '@/components/favourite/FavouriteList'
+// import { getFavouriteBook } from '@/libs/actions/book.action'
 import React from 'react'
 
-const FavoritePage = async () => {
-    const allBookList = await getFavouriteBook()
+const page = () => {
+    // const allBookList = await getFavouriteBook()
+    // console.log(allBookList)
     return (
         <main>
-            <FavouriteList allBookList={allBookList}></FavouriteList>
+            <FavouriteList></FavouriteList>
         </main>
     )
 }

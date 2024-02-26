@@ -12,7 +12,7 @@ export const addWriter = async (formData) => {
   const address = formData.get("address");
   const description = formData.get("description");
 
-  console.log(authorImg, writerName);
+  // console.log(authorImg, writerName);
   try {
     await connectDB();
 
@@ -25,14 +25,14 @@ export const addWriter = async (formData) => {
       address: address,
       description: description,
     };
-    console.log("writer", writer);
+    // console.log("writer", writer);
 
     const result = await Writer.create(writer);
     //   revalidatePath("/dashboard/add");
 
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
-    console.log(error);
+    // console.log(error);
     return {
       error: "Fill input properly or send the required data",
       errorDetails: JSON.stringify(error),
