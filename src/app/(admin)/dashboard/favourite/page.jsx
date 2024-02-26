@@ -12,4 +12,4 @@ const page = () => {
     )
 }
 
-export default FavoritePage;
+export default page
