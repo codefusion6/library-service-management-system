@@ -60,8 +60,8 @@ if (loading){
 
                   <EditProfileForm existingUser={existingUser}></EditProfileForm>
                   <div>
-                  <h2 className="text-xl font-bold text-green-600">{`About:  ${existingUser?.about}`}</h2>
-                   <h1 className="text-xl font-bold text-red-900">{` Live : ${existingUser?.address}`} </h1>
+                  <h2 className="text-xl font-bold text-green-600">{existingUser?.about}</h2>
+                   <h1 className="text-xl font-bold text-red-900">{existingUser?.address}</h1>
                   </div>
                 </div>
 
