@@ -1,4 +1,4 @@
-
+"use client"
 import BannerSlider from "@/components/Home/Slider/BannerSlider";
 import { Button } from "@nextui-org/react";
 import React from "react";

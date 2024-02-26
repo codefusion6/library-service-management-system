@@ -51,9 +51,9 @@ const LoginForm = () => {
                   try {
                     const email = formData.get("email")
                     const password = formData.get("password")
-                    console.log(email, password);
+                    // console.log(email, password);
                     const res = await logIn(email, password)
-                    console.log(res);
+                    // console.log(res);
                     if (res.user) {
                       toast.success("Logged In successfully")
                     }

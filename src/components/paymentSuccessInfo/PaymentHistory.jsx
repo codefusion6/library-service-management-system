@@ -14,6 +14,7 @@ const PaymentHistory = ({ paymentHistoryData }) => {
                             <th className="py-2 px-4 border-b font-bold text-lg">Username</th>
                             <th className="py-2 px-4 border-b font-bold text-lg">Email Address</th>
                             <th className="py-2 px-4 border-b font-bold text-lg">Amount</th>
+                            <th className="py-2 px-4 border-b font-bold text-lg">Expire</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,7 +28,8 @@ const PaymentHistory = ({ paymentHistoryData }) => {
                                     <td className="py-2 text-center px-4 border-b">{items?.time}</td>
                                     <td className="py-2 text-center px-4 border-b">{items?.userName}</td>
                                     <td className="py-2 text-center px-4 border-b">{items?.email}</td>
-                                    <td className="py-2 text-center px-4 border-b font-bold">$: {items?.amount_received}</td>
+                                    <td className="py-2 text-center px-4 border-b font-bold">$: {items?.amount_received / 100}</td>
+                                    <td className="py-2 text-center px-4 border-b">{items?.subscriptionType === "plus" ? 30 : items?.subscriptionType === "elite" ? 60 : 7} Days</td>
                                 </tr>
                             ))
                         }

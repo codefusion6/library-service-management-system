@@ -12,9 +12,16 @@ export const addUser = async (formData) => {
     const email = formData.get("email");
     const role = "user";
     const photoURL = formData.get("photoURL");
-
+    // console.log('photoURL:', photoURL);
+    const newFormData = {
+      name: name,
+      email: email,
+      role: role,
+      photoURL: photoURL,
+    };
+    const result = await User.create(newFormData);
+    // console.log("USER DATA:", result);
     const existingUser = await User.findOne({ email });
-
     if (!existingUser) {
       const newFormData = {
         name,
@@ -41,6 +48,7 @@ export const getAllUser = async () => {
     const result = await User.find();
     revalidatePath('/dashboard/all-user')
     // return JSON.parse(JSON.stringify(result));
+
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     if (error instanceof mongoose.Error.ValidationError) {
@@ -67,7 +75,7 @@ export const getUserNumber = async () => {
   try {
     await connectDB();
     const userNum = await User.find().countDocuments();
-    console.log("from user collection count document", userNum);
+    // console.log("from user collection count document", userNum);
     return JSON.parse(JSON.stringify(userNum))
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
@@ -75,7 +83,6 @@ export const getUserNumber = async () => {
 };
 
 //get one user
-
 export const getOneUser = async (email) => {
   // console.log(email);
   try {
@@ -93,7 +100,6 @@ export const getOneUser = async (email) => {
     return JSON.parse(JSON.stringify(error));
   }
 };
-
 // Add the following function to check if a user already exists by email
 export const getUserByEmail = async (email) => {
   try {
@@ -121,7 +127,7 @@ export const updateUserProfile = async (formData, useremail) => {
   const userName = formData.get("userName");
   const about = formData.get("about");
   const address = formData.get("address");
-// console.log(useremail);
+  // console.log(useremail);
   try {
     await connectDB();
 
@@ -132,9 +138,7 @@ export const updateUserProfile = async (formData, useremail) => {
       address: address,
     };
     // console.log(updatedInfo);
-    
-
-    const result = await User.findOneAndUpdate({email: useremail}, updatedInfo,{new: true} );
+    const result = await User.findOneAndUpdate({ email: useremail }, updatedInfo, { new: true });
     revalidatePath("/userProfile");
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
@@ -144,3 +148,16 @@ export const updateUserProfile = async (formData, useremail) => {
     };
   }
 };
+
+export const getUserAndBecomeMember = async (email) => {
+  try {
+    await connectDB();
+
+    const result = await User.findOneAndUpdate({ email: email, role: "user" }, { role: "member" }, { new: true });
+    return JSON.parse(JSON.stringify({ success: true }))
+
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error))
+  }
+}
+

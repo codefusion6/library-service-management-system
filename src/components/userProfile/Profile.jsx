@@ -9,27 +9,27 @@ import EditProfileForm from "./editProfile/EditProfileForm";
 import { getOneUser } from "@/libs/actions/user.actions";
 
 const Profile = () => {
-  const { user,loading } = UserAuth();
+  const { user, loading } = UserAuth();
 
-  const [ existingUser, setExistingUser] = useState('');
+  const [existingUser, setExistingUser] = useState('');
 
-  useEffect (()=>{
+  useEffect(() => {
 
-    if (!loading ){
+    if (!loading) {
 
-      const getUser = async (email)=>{
+      const getUser = async (email) => {
         const userData = await getOneUser(email)
-        console.log(userData);
+        // console.log(userData);
         setExistingUser(userData)
       }
       getUser(user?.email)
     }
-  },[user,loading,setExistingUser])
- console.log(existingUser);
+  }, [user, loading, setExistingUser])
 
-if (loading){
-  return <h2 className="text-center mt-20 text-2xl">loading...</h2>
-}
+
+  if (loading) {
+    return <h2 className="text-center mt-20 text-2xl">loading...</h2>
+  }
   return (
     <section>
       <div>
@@ -79,10 +79,10 @@ if (loading){
                       <AiOutlineTwitter className="text-blue-400" />
                     </li>
                     <li className="text-3xl">
-                      <FaFacebook   className="text-blue-600" />
+                      <FaFacebook className="text-blue-600" />
                     </li>
                     <li className="text-3xl">
-                      <FaGithub    />
+                      <FaGithub />
                     </li>
                   </ul>
                 </div>

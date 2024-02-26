@@ -1,3 +1,5 @@
+'use client'
+import { UserAuth } from "@/app/provider/context/AuthContext";
 import Link from "next/link";
 import React from "react";
 import { CiBoxList } from "react-icons/ci";
@@ -6,30 +8,32 @@ import { MdFormatListBulletedAdd } from "react-icons/md";
 
 
 const SidebarItems = ({ expanded }) => {
-  // const user = "user";
-  const user = "admin";
+  const { getRolebaseUser, loading } = UserAuth();
+
+
   return (
+    !loading &&
     <>
-      {user === "user" ? (
+      {getRolebaseUser?.role === "user" ? (
         <>
           <ul className="text-black space-y-4">
-            <li className="flex justify-center gap-2 items-center p-2 my-1 font-medium rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+            <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
               <Link href="/" className="flex gap-2 font-bold">
                 <FaHome size={25} className="text-xl font-bold mx-2" />
-                <sapn className={`${expanded ? "block" : "hidden"}`}>Home</sapn>
+                <span className={`${expanded ? "block" : "hidden"}`}>Home</span>
               </Link>
             </li>
-            {/* <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+            <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
               <Link
                 href="/dashboard/favourite"
                 className="flex gap-2 font-bold"
               >
                 <CiBoxList size={25} className="text-xl font-bold" />
-                <sapn className={`${expanded ? "block" : "hidden"}`}>
+                <span className={`${expanded ? "block" : "hidden"}`}>
                   Favorite Books
-                </sapn>
+                </span>
               </Link>
-            </li> */}
+            </li>
           </ul>
         </>
       ) : (
@@ -42,9 +46,9 @@ const SidebarItems = ({ expanded }) => {
           >
             <Link href="/dashboard" className="flex gap-2 font-bold">
               <FaHome size={25} className="text-xl font-bold" />
-              <sapn className={`${expanded ? "block" : "hidden"}`}>
+              <span className={`${expanded ? "block" : "hidden"}`}>
                 Admin Home
-              </sapn>
+              </span>
             </Link>
           </li>
           <li
@@ -53,9 +57,9 @@ const SidebarItems = ({ expanded }) => {
           >
             <Link href="/dashboard/booklist" className="flex gap-2 font-bold">
               <CiBoxList size={25} className="text-xl font-bold" />
-              <sapn className={`${expanded ? "block" : "hidden"}`}>
+              <span className={`${expanded ? "block" : "hidden"}`}>
                 Book List
-              </sapn>
+              </span>
             </Link>
           </li>
           <li
@@ -67,9 +71,9 @@ const SidebarItems = ({ expanded }) => {
                 size={25}
                 className="text-xl font-bold"
               />
-              <sapn className={`${expanded ? "block" : "hidden"}`}>
+              <span className={`${expanded ? "block" : "hidden"}`}>
                 Add Book
-              </sapn>
+              </span>
             </Link>
           </li>
           <li
@@ -80,9 +84,9 @@ const SidebarItems = ({ expanded }) => {
                 size={25}
                 className="text-xl font-bold"
               />
-              <sapn className={`${expanded ? "block" : "hidden"}`}>
+              <span className={`${expanded ? "block" : "hidden"}`}>
                 add writer
-              </sapn>
+              </span>
             </Link>
           </li>
           <li
@@ -92,9 +96,9 @@ const SidebarItems = ({ expanded }) => {
           >
             <Link href="/dashboard/all-user" className="flex gap-2 font-bold">
               <CiBoxList size={20} className="text-xl font-bold" />
-              <sapn className={`${expanded ? "block" : "hidden"}`}>
+              <span className={`${expanded ? "block" : "hidden"}`}>
                 All Users
-              </sapn>
+              </span>
             </Link>
           </li>
           <li
@@ -107,9 +111,9 @@ const SidebarItems = ({ expanded }) => {
               className="flex gap-2 font-bold"
             >
               <CiBoxList size={20} className="text-xl font-bold" />
-              <sapn className={`${expanded ? "block" : "hidden"}`}>
+              <span className={`${expanded ? "block" : "hidden"}`}>
                 Payment History
-              </sapn>
+              </span>
             </Link>
           </li>
         </ul>
