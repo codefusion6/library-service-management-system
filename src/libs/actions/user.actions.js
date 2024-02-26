@@ -121,7 +121,6 @@ export const deleteUser = async (userId) => {
   }
 };
 
-
 // add user profile
 export const updateUserProfile = async (formData, useremail) => {
   const userName = formData.get("userName");
