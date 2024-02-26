@@ -121,6 +121,16 @@ export const deleteUser = async (userId) => {
   }
 };
 
+export const getUserAndBecomeMember = async (email) => {
+  try {
+    await connectDB();
+    const result = await User.findOneAndUpdate({ email: email, role: "user" }, { role: "member" }, { new: true })
+    revalidatePath("/dashboard/favourite")
+    return JSON.parse(JSON.stringify(result))
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error))
+  }
+}
 
 // add user profile
 export const updateUserProfile = async (formData, useremail) => {

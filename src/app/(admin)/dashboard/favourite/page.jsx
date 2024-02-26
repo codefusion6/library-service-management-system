@@ -1,8 +1,9 @@
-import FavouriteList from '@/components/favourite/FavouriteList'
-import { getFavouriteBook } from '@/libs/actions/book.action'
+
+import FavouriteList from '@/components/favourite/FavouriteList';
+import { getFavouriteBook } from '@/libs/actions/book.action';
 import React from 'react'
 
-const page = async () => {
+const FavoritePage = async () => {
     const allBookList = await getFavouriteBook()
     return (
         <main>
@@ -11,4 +12,4 @@ const page = async () => {
     )
 }
 
-export default page
+export default FavoritePage;
