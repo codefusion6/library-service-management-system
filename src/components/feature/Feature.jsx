@@ -17,7 +17,9 @@ const renderStars = (rating) => {
 };
 
 const Feature = async ({ books }) => {
-
+  if (!books) {
+    <h1 className='text-center mt-10 font-bold text-xl md:text-2xl'>Loading...</h1>
+  }
   return (
     <div className="container mx-auto">
       <h1 className="text-3xl font-bold text-center mb-8">
