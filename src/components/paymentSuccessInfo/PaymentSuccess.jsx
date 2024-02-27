@@ -66,6 +66,7 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                     position: "bottom-right"
                 })
             }
+            redirect("/")
         }
     }
     // console.log(alredyExitData)
