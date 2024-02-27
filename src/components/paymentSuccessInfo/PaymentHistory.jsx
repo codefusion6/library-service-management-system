@@ -7,7 +7,7 @@ const PaymentHistory = ({ paymentHistoryData }) => {
     return (
         <>
             {
-                paymentHistoryData.length < 1 ? <h1 className='text-xl md:text-2xl font-bold text-center mt-20'>No payment available</h1> :
+                paymentHistoryData?.length < 1 ? <h1 className='text-xl md:text-2xl font-bold text-center mt-20'>No payment available</h1> :
                     <div className="container mx-auto mt-8">
                         <div className="overflow-x-auto">
                             <table className="min-w-full bg-white border rounded-lg">
