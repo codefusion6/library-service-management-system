@@ -15,7 +15,7 @@ import { getUserAndBecomeMember } from '@/libs/actions/user.actions'
 
 const PaymentSuccess = ({ payments, alredyExitData }) => {
     // const { width, height } = useWindowSize()
-    console.log(alredyExitData)
+    // console.log(alredyExitData)
     const { user, loading } = UserAuth();
     // console.log(user)
     const paymentss = payments[0]

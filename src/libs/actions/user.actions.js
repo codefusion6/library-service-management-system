@@ -153,7 +153,7 @@ export const getUserAndBecomeMember = async (email) => {
   try {
     await connectDB();
 
-    const result = await User.findOneAndUpdate({ email: email, role: "user" }, { role: "member" }, { new: true });
+    const result = await User.findOneAndUpdate({ email: email }, { role: "member" }, { new: true });
     return JSON.parse(JSON.stringify({ success: true }))
 
   } catch (error) {
