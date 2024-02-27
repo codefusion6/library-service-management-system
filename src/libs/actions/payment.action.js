@@ -8,7 +8,7 @@ export const addPaymentHistory = async (paymentHistory) => {
   try {
     await connectDB();
     const result = await PaymentHistory.create(paymentHistory);
-    // console.log(result)
+
     revalidatePath("/:customerid")
     return JSON.parse(JSON.stringify({ success: true, data: result }));
 

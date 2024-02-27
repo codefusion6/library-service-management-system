@@ -149,12 +149,12 @@ export const updateUserProfile = async (formData, useremail) => {
 };
 
 export const getUserAndBecomeMember = async (email) => {
-  console.log(email)
+  // console.log(email)
   try {
     await connectDB();
 
     const result = await User.findOneAndUpdate({ email: email }, { role: "member" }, { new: true });
-    console.log(JSON.parse(JSON.stringify(result)))
+
     return JSON.parse(JSON.stringify({ success: true }))
 
   } catch (error) {
