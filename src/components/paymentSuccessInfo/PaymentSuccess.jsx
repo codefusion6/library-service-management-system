@@ -35,25 +35,22 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
     }
 
     const handlepaymentHistory = async (paymentHistory) => {
-
         const storedHistory = await getOnePaymentHistory(paymentss.id)
         // console.log()
         if (alredyExitData.data === null) {
-            if (storedHistory?.data?.paymentId === paymentHistory.paymentId) {
+            if (storedHistory?.data?.paymentId === paymentHistory?.paymentId) {
                 toast.success('Your are alredy member of BookFlow', {
                     position: "bottom-right"
                 })
             } else {
                 const savePayment = await addPaymentHistory(paymentHistory)
+                const result = await getUserAndBecomeMember(user?.email)
                 if (savePayment?.success) {
-                    const result = await getUserAndBecomeMember(user?.email)
                     if (result.success) {
                         toast.success('Your are Now member of BookFlow', {
                             position: "bottom-right"
                         })
                     }
-
-
                 }
             }
         }
@@ -61,7 +58,7 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
             toast.success('Your are already member of BookFlow', {
                 position: "bottom-right"
             })
-        } else if (storedHistory.data.paymentId === paymentss.id) {
+        } else if (storedHistory?.data?.paymentId === paymentss?.id) {
             const result = await getUserAndBecomeMember(user?.email)
             if (result.success) {
                 toast.success('Your are Now member of BookFlow', {
