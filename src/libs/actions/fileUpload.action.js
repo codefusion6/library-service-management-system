@@ -15,7 +15,7 @@ export const fileUpload = async (file, name) => {
   // For this, we'll just write it to the filesystem in a new location
   const path = join("public", file.name);
   await writeFile(path, buffer);
-  const url = `https://library-service-management-system.vercel.app/${file.name}`;
+  const url = `http://localhost:3000/${file.name}`;
   // console.log("open ${path} to see the uploaded file");
   return { success: true, file_url: JSON.parse(JSON.stringify(url)) };
 };
