@@ -4,7 +4,7 @@ import { connectDB } from "../database/MongoConnect";
 import PaymentHistory from "../database/models/paymentModel/payment";
 
 export const addPaymentHistory = async (paymentHistory) => {
-  // console.log(paymentHistory)
+
   try {
     await connectDB();
     const result = await PaymentHistory.create(paymentHistory);
