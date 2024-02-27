@@ -11,14 +11,14 @@ import {
   ModalHeader,
   useDisclosure,
 } from "@nextui-org/react";
-import {  updateProfile } from "firebase/auth";
+import { updateProfile } from "firebase/auth";
 import React from "react";
 import toast from "react-hot-toast";
 
-const EditProfileForm = ({existingUser}) => {
+const EditProfileForm = ({ existingUser }) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const { user } = UserAuth();
-  console.log(auth.currentUser);
+  // console.log(auth.currentUser);
   return (
     <div>
       <Button
@@ -36,18 +36,18 @@ const EditProfileForm = ({existingUser}) => {
                 <div>
                   <form
                     action={async (formData) => {
-                      
+
                       try {
-                        const response = await updateUserProfile(formData, user?.email );
-                        const name = formData.get("userName") 
+                        const response = await updateUserProfile(formData, user?.email);
+                        const name = formData.get("userName")
                         // const email = formData.get("email") 
                         // console.log(name);
                         if (response?.success) {
-                         
-                         await updateProfile(auth.currentUser,{
-                            displayName : name
+
+                          await updateProfile(auth.currentUser, {
+                            displayName: name
                             // email: email
-                          }).then(()=>{
+                          }).then(() => {
                             toast.success(" Updated successfully ! Press ctrl+r  ");
                           })
                         }
@@ -66,7 +66,7 @@ const EditProfileForm = ({existingUser}) => {
                         Name:
                       </label>
                       <input
-                      defaultValue={user?.displayName}
+                        defaultValue={user?.displayName}
                         type="text"
                         name="userName"
                         placeholder="name"
@@ -81,15 +81,15 @@ const EditProfileForm = ({existingUser}) => {
                         Email:
                       </label>
                       <input
-                      disabled
-                      defaultValue={user?.email}
+                        disabled
+                        defaultValue={user?.email}
                         type="email"
                         name="email"
                         placeholder="name"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
                       />
                     </div>
-                    
+
 
                     {/* {/ About /} */}
                     <div className="mb-4">
@@ -100,7 +100,7 @@ const EditProfileForm = ({existingUser}) => {
                         About
                       </label>
                       <textarea
-                      defaultValue={existingUser?.about}
+                        defaultValue={existingUser?.about}
                         name="about"
                         placeholder="write about your-self"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
@@ -115,7 +115,7 @@ const EditProfileForm = ({existingUser}) => {
                         Address
                       </label>
                       <textarea
-                      defaultValue={existingUser?.address}
+                        defaultValue={existingUser?.address}
                         name="address"
                         placeholder="write your address"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
