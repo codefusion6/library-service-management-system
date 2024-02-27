@@ -22,7 +22,6 @@ const LoginForm = () => {
       await googleSignIn();
       toast.success('Login successful');
       router.push("/")
-
     } catch (error) {
       console.error('Google sign-in error:', error);
     }
