@@ -18,7 +18,7 @@ import toast from "react-hot-toast";
 const EditProfileForm = ({existingUser}) => {
   const { isOpen, onOpen, onOpenChange } = useDisclosure();
   const { user } = UserAuth();
-  console.log(auth.currentUser);
+  // console.log(auth.currentUser);
   return (
     <div>
       <Button
