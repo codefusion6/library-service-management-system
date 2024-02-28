@@ -205,7 +205,6 @@ export default function App() {
                     Dashboard
                   </Link>
                 </DropdownItem>
-
                 <DropdownItem
                   key="logout"
                   color="danger"

@@ -53,24 +53,6 @@ const SidebarItems = ({ expanded }) => {
                   </span>
                 </Link>
               </li>
-              <li
-                className="flex gap-2 items-center py-2 px-3 my-1
-      font-medium rounded-md cursor-pointer
-      transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
-              >
-                <Link
-                  href="/dashboard/bookRequest"
-                  className="flex gap-2 font-bold"
-                >
-                  <VscGitPullRequestGoToChanges
-                    size={20}
-                    className="text-xl font-bold"
-                  />
-                  <span className={`${expanded ? "block" : "hidden"}`}>
-                    Book Request
-                  </span>
-                </Link>
-              </li>
             </ul>
           </>
         ) : (
