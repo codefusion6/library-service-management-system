@@ -80,7 +80,7 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                                 </h2>
                                 <div className='flex gap-4 mt-10 justify-center'>
                                     <Link className='bg-pink-500 text-white font-semibold py-1 md:py-2 px-4 md:px-6 rounded-lg' href="/">Home</Link>
-                                    <Link className='bg-pink-500 text-white font-semibold py-1 md:py-2 px-4 md:px-6 rounded-lg' href="all-books">all Books</Link>
+                                    <Link className='bg-pink-500 text-white font-semibold py-1 md:py-2 px-4 md:px-6 rounded-lg' href="allBooks">all Books</Link>
                                 </div>
                             </div>
 

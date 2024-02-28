@@ -24,10 +24,6 @@ export default function App() {
             link: "/contact"
         },
         {
-            url_name: "Our Services",
-            link: "/our-services"
-        },
-        {
             url_name: "All Books",
             link: "/allBooks"
         },
