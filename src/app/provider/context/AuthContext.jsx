@@ -85,7 +85,7 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
-      // console.log("Current User:", currentUser)
+      console.log("Current User:", currentUser)
       const rolebaseUser = await getOneUser(currentUser?.email)
       setRolebaseUser(rolebaseUser)
       setLoading(false);
