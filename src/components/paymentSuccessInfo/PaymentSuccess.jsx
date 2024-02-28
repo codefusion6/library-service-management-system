@@ -15,17 +15,14 @@ import { getUserAndBecomeMember } from '@/libs/actions/user.actions'
 
 const PaymentSuccess = ({ payments, alredyExitData }) => {
     // const { width, height } = useWindowSize()
-    const today = new Date()
-    const oldDate = new Date(alredyExitData.data.time)
-    console.log(today)
-
+    const paymentss = payments[0]
     const { user, loading } = UserAuth();
     // console.log(user)
-    const paymentss = payments[0]
     const pathName = usePathname()
     const customerId = pathName.slice(1, pathName.length)
 
     const time = new Date().toLocaleDateString("en-bd")
+
     const paymentHistory = {
         amount_received: paymentss.amount_received,
         paymentId: paymentss.id,
@@ -35,14 +32,19 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
         time: time,
         subscriptionType: (Number(paymentss.amount_received) / 100) === 30 ? "plus" : (Number(paymentss.amount_received) / 100) === 50 ? "elite" : "basic"
     }
-    console.log(alredyExitData.data)
+
     const handlepaymentHistory = async (paymentHistory, alredyExitData) => {
-        if (alredyExitData?.data !== null) {
+        if (!alredyExitData?.data) {
             const storedHistory = await getOnePaymentHistory(paymentss.id)
-            if (storedHistory?.data !== null) {
+            // console.log(!storedHistory?.data)
+            if (!storedHistory?.data) {
                 const savePayment = await addPaymentHistory(paymentHistory)
+                await getUserAndBecomeMember(paymentHistory?.email)
                 if (savePayment?.data) {
-                    toast.success("You are now membership has been successful")
+                    await getUserAndBecomeMember()
+                    toast.success("You are now membership has been successful", {
+                        position: "bottom-right"
+                    })
                 }
             }
         }
@@ -70,14 +72,25 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                     <h1 className='text-primary text-2xl md:text-3xl lg:text-4xl font-bold mb-2'>Congratulations!</h1>
                     <p>You have succesfully <span className='text-primary font-bold'>Subscribed</span></p>
                     <Confetti height="1000" width="1500" className='w-full' opacity={.4} />
-                    <p className='my-5 pt-10 text-primary md:text-2xl lg:text-3xl'>You are now Member of BookFlw. <span className='text-pink-500 font-bold'>{paymentss.amount_received === 3000 ? 7 : paymentss.amount_received === 1000 ? 30 : paymentss.amount_received === 5000 ? 60 : null} Days</span></p>
+                    <p className='my-5 pt-10 text-primary md:text-2xl lg:text-3xl'>You are now Member of BookFlw. for <span className='text-pink-500 font-bold'>{paymentss.amount_received === 3000 ? 7 : paymentss.amount_received === 1000 ? 30 : paymentss.amount_received === 5000 ? 60 : null} Days</span></p>
                     <div className='flex gap-8 justify-center pt-10'>
                         {
-                            alredyExitData?.data ? <h2 className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>Your membership Remains {Number(new Date().toLocaleDateString()) - Number(new Date(alredyExitData?.data?.time))}</h2>
+                            alredyExitData?.data ? <div>
+                                <h2 className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>Your subscription type is <span className='uppercase'>{alredyExitData?.data?.subscriptionType}</span>
+                                </h2>
+                                <div className='flex gap-4 mt-10 justify-center'>
+                                    <Link className='bg-pink-500 text-white font-semibold py-1 md:py-2 px-4 md:px-6 rounded-lg' href="/">Home</Link>
+                                    <Link className='bg-pink-500 text-white font-semibold py-1 md:py-2 px-4 md:px-6 rounded-lg' href="all-books">all Books</Link>
+                                </div>
+                            </div>
+
                                 :
-                                <button onClick={() => handlepaymentHistory(paymentHistory)} className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
-                                    confirm
-                                </button>
+                                <div>
+                                    <button onClick={() => handlepaymentHistory(paymentHistory)} className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
+                                        confirm
+                                    </button>
+                                    <p className='pt-5 text-primary md:text-2xl lg:text-3xl'> Please Click confirm</p>
+                                </div>
                         }
 
                         {/* {
@@ -91,10 +104,10 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                             </div>
                         } */}
                     </div>
-                    <p className='pt-5 text-primary md:text-2xl lg:text-3xl'> Please Click confirm</p>
+
                 </div>
             </div>
-        </div>
+        </div >
     )
 
 

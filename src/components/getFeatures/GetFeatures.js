@@ -1,7 +1,7 @@
 // import React from 'react'
 
 // async function GetFeatures() {
-//     const res = await fetch("https://library-service-management-system.vercel.app/api/addFeatures", {
+//     const res = await fetch("http://localhost:3000/api/addFeatures", {
 //         cache: "no-cache"
 //     });
 
