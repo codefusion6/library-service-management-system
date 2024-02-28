@@ -15,7 +15,9 @@ import { getUserAndBecomeMember } from '@/libs/actions/user.actions'
 
 const PaymentSuccess = ({ payments, alredyExitData }) => {
     // const { width, height } = useWindowSize()
-    // console.log(alredyExitData)
+    const today = new Date(alredyExitData.data.time)
+    console.log(today.toDateString())
+
     const { user, loading } = UserAuth();
     // console.log(user)
     const paymentss = payments[0]
@@ -23,7 +25,6 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
     const customerId = pathName.slice(1, pathName.length)
 
     const time = new Date().toLocaleDateString("en-bd")
-
     const paymentHistory = {
         amount_received: paymentss.amount_received,
         paymentId: paymentss.id,
@@ -33,42 +34,16 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
         time: time,
         subscriptionType: (Number(paymentss.amount_received) / 100) === 30 ? "plus" : (Number(paymentss.amount_received) / 100) === 50 ? "elite" : "basic"
     }
-
-    const handlepaymentHistory = async (paymentHistory) => {
-        const storedHistory = await getOnePaymentHistory(paymentss.id)
-        // console.log()
-        if (alredyExitData.data === null) {
-            if (storedHistory?.data?.paymentId === paymentHistory?.paymentId) {
-                toast.success('Your are alredy member of BookFlow', {
-                    position: "bottom-right"
-                })
-            } else {
+    console.log(alredyExitData.data)
+    const handlepaymentHistory = async (paymentHistory, alredyExitData) => {
+        if (alredyExitData?.data !== null) {
+            const storedHistory = await getOnePaymentHistory(paymentss.id)
+            if (storedHistory?.data !== null) {
                 const savePayment = await addPaymentHistory(paymentHistory)
-                const result = await getUserAndBecomeMember(user?.email)
-                if (savePayment?.success) {
-                    if (result.success) {
-                        toast.success('Your are Now member of BookFlow', {
-                            position: "bottom-right"
-                        })
-                        // redirect("/")
-                    }
+                if (savePayment?.data) {
+                    toast.success("You are now membership has been successful")
                 }
             }
-        }
-        else if (alredyExitData.data.paymentId === paymentHistory.paymentId) {
-            toast.success('Your are already member of BookFlow', {
-                position: "bottom-right"
-            })
-        } else if (storedHistory?.data?.paymentId === paymentss?.id) {
-            const savePayment = await addPaymentHistory(paymentHistory)
-            const result = await getUserAndBecomeMember(user?.email)
-            if (result.success && savePayment.success) {
-                toast.success('Your are Now member of BookFlow', {
-                    position: "bottom-right"
-                })
-
-            }
-            // redirect("/")
         }
     }
     // console.log(alredyExitData)
@@ -96,11 +71,14 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                     <Confetti height="1000" width="1500" className='w-full' opacity={.4} />
                     <p className='my-5 pt-10 text-primary md:text-2xl lg:text-3xl'>You are now Member of BookFlw. <span className='text-pink-500 font-bold'>{paymentss.amount_received === 3000 ? 7 : paymentss.amount_received === 1000 ? 30 : paymentss.amount_received === 5000 ? 60 : null} Days</span></p>
                     <div className='flex gap-8 justify-center pt-10'>
-                        <Link href="/">
-                            <button onClick={() => handlepaymentHistory(paymentHistory)} className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
-                                confirm
-                            </button>
-                        </Link>
+                        {
+                            alredyExitData?.data ? <h2 className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>Your membership Remains {Number(new Date().toLocaleDateString()) - Number(new Date(alredyExitData?.data?.time))}</h2>
+                                :
+                                <button onClick={() => handlepaymentHistory(paymentHistory)} className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
+                                    confirm
+                                </button>
+                        }
+
                         {/* {
                             <div className='flex gap-3'>
                                 <Link href="/" className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
