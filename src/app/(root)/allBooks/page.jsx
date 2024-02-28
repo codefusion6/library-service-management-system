@@ -1,4 +1,4 @@
-// "use client"
+
 import Image from "next/image";
 import AllBookCard from "./AllBookCard";
 import BooksSidebar from "./BooksSidebar";
@@ -11,7 +11,7 @@ const AllBooks = async ({ searchParams }) => {
   const pageNumber = Number(searchParams.page === undefined ? "1" : searchParams.page)
   const searchText = (searchParams?.query) || "";
   const { books, totalPage } = await getAllBooks({ query: searchText, page: pageNumber, })
-
+  console.log("from allbooks",pageNumber, searchText);
 
   return (
     <section className="min-h-screen">

@@ -14,14 +14,13 @@ export const POST = async (request) => {
             },
         });
         // create a session for stripe
-
         const checkOutSession = await stripe.checkout.sessions.create({
             payment_method_types: ["card"],
             customer: customer.id,
             mode: "payment",
             // "https://library-service-management-system.vercel.app"
-            success_url: "http://localhost:3000/successPyment",
-            cancel_url: "http://localhost:3000/pricing",
+            success_url: "https://library-service-management-system.vercel.app/successPyment",
+            cancel_url: "https://library-service-management-system.vercel.app/pricing",
             line_items: [
                 {
                     quantity: 1,
@@ -35,13 +34,6 @@ export const POST = async (request) => {
                 }
             ]
         })
-        // const stripe = new Stripe(process.env.NEXT_PUBLIC_STRIPE_SECRET_KEY);
-        // const paymentIntents = await stripe.paymentIntents.list({
-        //     limit: 1,
-        // });
-        // const paymentDetails = paymentIntents.data[0];
-
-        // console.log(paymentDetails)
         return NextResponse.json({ checkOutSession, url: checkOutSession.url, status: 200 })
     } catch (error) {
         return NextResponse.json({ message: error.message, status: 500 })

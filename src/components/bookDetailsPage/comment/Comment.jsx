@@ -2,7 +2,7 @@
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import Image from "next/image";
 import React from "react";
-import { FaRegHandPointDown, FaRegStar } from "react-icons/fa";
+import { FaStar } from "react-icons/fa";
 import {
   Modal,
   ModalContent,
@@ -47,59 +47,50 @@ const Comment = () => {
                   <div>
                     <form
                       action={async (formData) => {
-                        const text = formData.get("commentDescription")
-                        console.log(text);
+                        // const text = formData.get("commentDescription");
+                        // const rating = formData.get("ratingNumber");
+                        const profileImage = user?.photoURL
                         try {
-                          const response = await addComment(formData);
+                          const response = await addComment(formData, profileImage);
+                          // console.log(user?.photoURL)
                           if (response?.success) {
                             toast.success("Book added successfully");
                           }
-                          console.log(response);
+                          // console.log(response);
                         } catch (error) {
                           console.log(error);
                         }
                       }}>
+                      <p className="text-tiny font-semibold mb-1">Write your comment:</p>
                       <textarea
                         name="commentDescription"
                         placeholder="write a comment"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
                       />
-                      <p className="flex gap-2 items-center justify-center">
-                        <FaRegStar className="text-3xl" />
-                        <FaRegStar className="text-3xl" />
-                        <FaRegStar className="text-3xl" />
-                        <FaRegStar className="text-3xl" />
-                        <FaRegStar className="text-3xl" />
-                      </p>
-                      <Button
-                        type="submit"
-                        color="primary"
-                        variant="flat"
-                      // onPress={onClose}
-                      >
-                        Submit
-                      </Button>
+                      <div className="flex gap-1 items-center">
+                        <FaStar className="text-3xl text-yellow-500"></FaStar>
+                        <input
+                          name="ratingNumber"
+                          placeholder="Give a rate"
+                          max={5}
+                          className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-green-500"
+                        ></input>
+                      </div>
+
+                      <ModalFooter>
+                        <Button type="submit" color="primary" variant="flat">
+                          Submit
+                        </Button>
+                      </ModalFooter>
                     </form>
                   </div>
                 </ModalBody>
-                <ModalFooter>
-                  <Button type="submit" color="primary" variant="flat" 
-                  // onPress={onClose}
-                  >
-                    Submit
-                  </Button>
-                </ModalFooter>
               </>
             )}
           </ModalContent>
         </Modal>
       </div>
-      <h2 className="my-8 text-base font-semibold flex items-center gap-2">
-        Your rating & review
-        <span>
-          <FaRegHandPointDown />
-        </span>
-      </h2>
+
     </section>
   );
 };

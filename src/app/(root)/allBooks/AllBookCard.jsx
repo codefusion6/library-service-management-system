@@ -17,12 +17,11 @@ const AllBookCard = ({ books }) => {
       email: user.email,
       bookId: bookId,
     }
+
     try {
       const response = await addFavourite(favouritBook)
-      // console.log(favouritBook)
       if (response.success) {
         toast.success("Book added to your favourite list")
-        // console.log(response)
       }
     } catch (error) {
       toast.error(error.message)

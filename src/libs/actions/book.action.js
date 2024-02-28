@@ -27,10 +27,8 @@ export const addBook = async (formData) => {
       publisherEmail: publisherEmail,
       category: category,
     };
-
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
-
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
     return {
@@ -39,7 +37,6 @@ export const addBook = async (formData) => {
     };
   }
 };
-
 // many book
 export const addManyBook = async () => {
   const books = [
@@ -108,10 +105,11 @@ export const getAllBooks = async ({ query, page }) => {
   try {
     await connectDB();
     // get all books from db
+    const titleCondition = query ? { bookName: { $regex: query, $options: 'i' } } : {}
     const per_page = 6;
     const pageNumber = page || 1;
     const count = await Book.find().countDocuments();
-    const books = await Book.find().limit(per_page).skip((pageNumber - 1) * per_page);
+    const books = await Book.find(titleCondition).limit(per_page).skip((pageNumber - 1) * per_page);
     const totalPage = Math.ceil(count / per_page);
     revalidatePath("/addbook");
     return JSON.parse(JSON.stringify({ books: books, totalPage }));
@@ -120,6 +118,7 @@ export const getAllBooks = async ({ query, page }) => {
   }
 };
 
+// single book 
 export const getBook = async (id) => {
   try {
     await connectDB();
@@ -177,39 +176,4 @@ export const getBooksNumber = async () => {
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
-};
-
-// export const deleteFavourite = async (id, email) => {
-//   console.log(id)
-//   try {
-//     const query = { email: email }
-//     const favouriteId = await Favourite.find(query)
-//     favouriteId.map((items) => {
-//       console.log(items.bookIds.length)
-//       const removeid = items.bookIds.find(removeFavourite => JSON.parse(JSON.stringify(removeFavourite)) === id)
-//     })
-//     // const result = await Favourite.findByIdAndDelete(id);
-//     revalidatePath("/dashboard/favourite");
-//     return JSON.parse(JSON.stringify(result));
-//   } catch (error) {
-//     return JSON.parse(JSON.stringify(error));
-//   }
-// };
-
-export const deleteFavourite = async (email, bookid) => {
-  // console.log(email, bookid)
-  // try {
-  //   await connectDB();
-  //   const result = await Favourite.findOneAndUpdate({ email: email }, { $pull: { bookIds: bookIdToRemove } }, { new: true });
-  //   const favouriteBookids = result ? result.bookIds : [];
-  //   const bookResult = await Book.find({
-  //     _id: {
-  //       $in: favouriteBookids
-  //     }
-  //   });
-  //   revalidatePath("/dashboard/favourite")
-  //   return JSON.parse(JSON.stringify(bookResult));
-  // } catch (error) {
-  //   return error;
-  // }
 };

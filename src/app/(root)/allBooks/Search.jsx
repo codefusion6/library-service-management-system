@@ -4,8 +4,6 @@ import { FaSearch } from "react-icons/fa";
 const Search = () => {
   // const books = await getAllBooks();
 
-
-
   return (
     <div className="relative rounded-md shadow-sm">
       <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
