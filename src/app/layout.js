@@ -5,7 +5,6 @@ import { Toaster } from "react-hot-toast";
 import Chatbot from "@/components/chatbot/chatbot";
 import Template from "./template";
 import { Providers } from "./providers";
-import { Suspense } from "react";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
