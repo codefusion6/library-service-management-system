@@ -43,8 +43,8 @@ const PublisherRequestButton = () => {
       <button
         onClick={handlePublisherRequest}
         disabled={isLoading}
-        className={`py-2 px-4 bg-blue-500 text-white rounded ${
-          isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-blue-600'
+        className={`py-2 px-4 bg-green-500 text-white rounded ${
+          isLoading ? 'opacity-50 cursor-not-allowed' : 'hover:bg-green-600'
         }`}
       >
         {isLoading ? 'Sending...' : 'Send Publisher Request'}
