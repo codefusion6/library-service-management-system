@@ -19,7 +19,7 @@ const Pricing = () => {
             body: JSON.stringify(paymentInfo)
         }).then(res => res.json()
             .then(data => {
-                toast("Payment Proccessing")
+                toast("Payment Processing")
                 // const paymentInfo = {
                 //     name: userName,
                 //     email: resData?.customer_details?.email,
