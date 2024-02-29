@@ -5,7 +5,6 @@ import React from "react";
 import { CiBoxList } from "react-icons/ci";
 import { FaHome } from "react-icons/fa";
 import { MdFormatListBulletedAdd } from "react-icons/md";
-import { VscGitPullRequestGoToChanges } from "react-icons/vsc";
 
 const SidebarItems = ({ expanded }) => {
   const { getRolebaseUser, loading } = UserAuth();
@@ -16,6 +15,7 @@ const SidebarItems = ({ expanded }) => {
         {getRolebaseUser?.role === "user" ? (
           <>
             <ul className="text-black space-y-4">
+              {/* home */}
               <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
                 <Link href="/" className="flex gap-2 font-bold">
                   <FaHome size={25} className="text-xl font-bold mx-2" />
@@ -24,6 +24,7 @@ const SidebarItems = ({ expanded }) => {
                   </span>
                 </Link>
               </li>
+              {/* Favorite Books */}
               <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
                 <Link
                   href="/dashboard/favourite"
@@ -35,6 +36,19 @@ const SidebarItems = ({ expanded }) => {
                   </span>
                 </Link>
               </li>
+              {/* Publisher Request */}
+              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+                <Link
+                  href="/dashboard/publisher-request"
+                  className="flex gap-2 font-bold"
+                >
+                  <CiBoxList size={25} className="text-xl font-bold" />
+                  <span className={`${expanded ? "block" : "hidden"}`}>
+                    Publisher Request
+                  </span>
+                </Link>
+              </li>
+              {/* User Profile */}
               <li
                 className="flex gap-2 items-center py-2 px-3 my-1
       font-medium rounded-md cursor-pointer
@@ -44,10 +58,10 @@ const SidebarItems = ({ expanded }) => {
                   href="/dashboard/userProfile"
                   className="flex gap-2 font-bold"
                 >
-                  <VscGitPullRequestGoToChanges
+                  {/* <VscGitPullRequestGoToChanges
                     size={20}
                     className="text-xl font-bold"
-                  />
+                  /> */}
                   <span className={`${expanded ? "block" : "hidden"}`}>
                     User Profile
                   </span>
@@ -55,13 +69,51 @@ const SidebarItems = ({ expanded }) => {
               </li>
             </ul>
           </>
-        ) : (
-          // admin related route
+        ) : getRolebaseUser?.role === "member" ? (
+          <>
+            <ul className="text-black space-y-4">
+              {/* home */}
+              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+                <Link href="/" className="flex gap-2 font-bold">
+                  <FaHome size={25} className="text-xl font-bold mx-2" />
+                  <span className={`${expanded ? "block" : "hidden"}`}>
+                    Home
+                  </span>
+                </Link>
+              </li>
+              {/* Favorite Books */}
+              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+                <Link
+                  href="/dashboard/favourite"
+                  className="flex gap-2 font-bold"
+                >
+                  <CiBoxList size={25} className="text-xl font-bold" />
+                  <span className={`${expanded ? "block" : "hidden"}`}>
+                    Favorite Books
+                  </span>
+                </Link>
+              </li>
+              {/* Publisher Request */}
+              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+                <Link
+                  href="/dashboard/publisher-request"
+                  className="flex gap-2 font-bold"
+                >
+                  <CiBoxList size={25} className="text-xl font-bold" />
+                  <span className={`${expanded ? "block" : "hidden"}`}>
+                    Publisher Request
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </>
+        ) : getRolebaseUser?.role === "admin" ? (
           <ul className="text-black space-y-4">
+            {/* Admin Home */}
             <li
               className="flex gap-2 items-center py-2 px-3 my-1
-  font-medium rounded-md cursor-pointer
-  transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            font-medium rounded-md cursor-pointer
+            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
             >
               <Link href="/dashboard" className="flex gap-2 font-bold">
                 <FaHome size={25} className="text-xl font-bold" />
@@ -70,9 +122,10 @@ const SidebarItems = ({ expanded }) => {
                 </span>
               </Link>
             </li>
+            {/* Book List */}
             <li
               className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-  transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
             >
               <Link href="/dashboard/booklist" className="flex gap-2 font-bold">
                 <CiBoxList size={25} className="text-xl font-bold" />
@@ -81,9 +134,10 @@ const SidebarItems = ({ expanded }) => {
                 </span>
               </Link>
             </li>
+            {/* Add Book */}
             <li
               className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-  transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96525] text-[#12a150]"
+            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96525] text-[#12a150]"
             >
               <Link href="/dashboard/addbook" className="flex gap-2 font-bold">
                 <MdFormatListBulletedAdd
@@ -95,9 +149,10 @@ const SidebarItems = ({ expanded }) => {
                 </span>
               </Link>
             </li>
+            {/* Add Writer */}
             <li
               className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-  transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
             >
               <Link
                 href="/dashboard/addwriter"
@@ -108,14 +163,15 @@ const SidebarItems = ({ expanded }) => {
                   className="text-xl font-bold"
                 />
                 <span className={`${expanded ? "block" : "hidden"}`}>
-                  add writer
+                  Add Writer
                 </span>
               </Link>
             </li>
+            {/* All Users */}
             <li
               className="flex gap-2 items-center py-2 px-3 my-1
-      font-medium rounded-md cursor-pointer
-      transition-colors group hover:bg-green-500 hover:text-white  bg-[#18c96433] text-[#12a150]"
+            font-medium rounded-md cursor-pointer
+            transition-colors group hover:bg-green-500 hover:text-white  bg-[#18c96433] text-[#12a150]"
             >
               <Link href="/dashboard/all-user" className="flex gap-2 font-bold">
                 <CiBoxList size={20} className="text-xl font-bold" />
@@ -124,10 +180,11 @@ const SidebarItems = ({ expanded }) => {
                 </span>
               </Link>
             </li>
+            {/* Payment History */}
             <li
               className="flex gap-2 items-center py-2 px-3 my-1
-      font-medium rounded-md cursor-pointer
-      transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            font-medium rounded-md cursor-pointer
+            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
             >
               <Link
                 href="/dashboard/payment-history"
@@ -139,17 +196,23 @@ const SidebarItems = ({ expanded }) => {
                 </span>
               </Link>
             </li>
-            <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+            {/* Publisher Pending Request */}
+            <li
+              className="flex gap-2 items-center py-2 px-3 my-1
+            font-medium rounded-md cursor-pointer
+            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            >
               <Link
-                href="/dashboard/publisher-request"
+                href="/dashboard/publisher-pending-request"
                 className="flex gap-2 font-bold"
               >
-                <CiBoxList size={25} className="text-xl font-bold" />
+                <CiBoxList size={20} className="text-xl font-bold" />
                 <span className={`${expanded ? "block" : "hidden"}`}>
-                Publisher Request
+                  Publisher Pending Request
                 </span>
               </Link>
             </li>
+            {/* user Book request */}
             <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
               <Link
                 href="/dashboard/book-request"
@@ -157,11 +220,38 @@ const SidebarItems = ({ expanded }) => {
               >
                 <CiBoxList size={25} className="text-xl font-bold" />
                 <span className={`${expanded ? "block" : "hidden"}`}>
-                Book Request
+                  Book Request
                 </span>
               </Link>
             </li>
           </ul>
+        ) : getRolebaseUser?.role === "publisher" ? (
+          <>
+            <ul className="text-black space-y-4">
+              <li
+                className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
+            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96525] text-[#12a150]"
+              >
+                <Link
+                  href="/dashboard/addbook"
+                  className="flex gap-2 font-bold"
+                >
+                  <MdFormatListBulletedAdd
+                    size={25}
+                    className="text-xl font-bold"
+                  />
+                  <span className={`${expanded ? "block" : "hidden"}`}>
+                    Add Book
+                  </span>
+                </Link>
+              </li>
+            </ul>
+          </>
+        ) : (
+          // Space for other roles
+          <div className="text-black space-y-4">
+            {/* Add links for other roles here if needed */}
+          </div>
         )}
       </>
     )

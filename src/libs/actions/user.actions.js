@@ -173,8 +173,9 @@ export const updateUserRole = async (email, role) => {
       return JSON.parse(JSON.stringify({ success: false, error: 'User not found' }));
     }
 
-    userToUpdate.role = role;
-
+    // Revert to the default role if 'role' is not provided or if it's 'rejected'
+    userToUpdate.role = role && role.toLowerCase() !== 'rejected' ? role : 'user';
+    
     const updatedUser = await userToUpdate.save();
 
     console.log('User role updated successfully:', updatedUser);
