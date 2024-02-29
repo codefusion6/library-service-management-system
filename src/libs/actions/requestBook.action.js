@@ -7,6 +7,7 @@ export const addRequestBook = async (formData) => {
   const bookName = formData.get("bookName");
   const authorName = formData.get("authorName");
   const requestSMS = formData.get("requestSMS");
+  const status = "pending"
 
   try {
     await connectDB();
@@ -15,6 +16,7 @@ export const addRequestBook = async (formData) => {
       bookName: bookName,
       authorName: authorName,
       requestSMS: requestSMS,
+      status: status,
     };
 
     const result = await BookRequest.create(requestBook);

@@ -58,10 +58,7 @@ const SidebarItems = ({ expanded }) => {
                   href="/dashboard/userProfile"
                   className="flex gap-2 font-bold"
                 >
-                  {/* <VscGitPullRequestGoToChanges
-                    size={20}
-                    className="text-xl font-bold"
-                  /> */}
+                  <CiBoxList size={25} className="text-xl font-bold" />
                   <span className={`${expanded ? "block" : "hidden"}`}>
                     User Profile
                   </span>
