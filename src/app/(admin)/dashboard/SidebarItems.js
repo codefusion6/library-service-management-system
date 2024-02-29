@@ -10,7 +10,6 @@ import { MdFormatListBulletedAdd } from "react-icons/md";
 const SidebarItems = ({ expanded }) => {
   const { getRolebaseUser, loading } = UserAuth();
 
-
   return (
     !loading &&
     <>

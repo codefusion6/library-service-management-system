@@ -18,7 +18,7 @@ export const POST = async (request) => {
             payment_method_types: ["card"],
             customer: customer.id,
             mode: "payment",
-            // "https://library-service-management-system.vercel.app"
+            // "http://localhost:3000"
             success_url: `https://library-service-management-system.vercel.app/${customer.id}`,
             cancel_url: `https://library-service-management-system.vercel.app/pricing`,
             line_items: [

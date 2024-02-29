@@ -14,17 +14,17 @@ const Profile = () => {
   const [existingUser, setExistingUser] = useState('');
 
   useEffect(() => {
-
-    if (!loading) {
-
+    if (!loading && user) {
       const getUser = async (email) => {
         const userData = await getOneUser(email)
         // console.log(userData);
         setExistingUser(userData)
       }
-      getUser(user?.email)
+      if (user) {
+        getUser(user?.email)
+      }
     }
-  }, [user, loading, setExistingUser])
+  }, [user, loading])
 
 
   if (loading) {

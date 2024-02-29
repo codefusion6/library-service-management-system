@@ -5,7 +5,7 @@ import { FaBookOpen, FaSearch, FaUserFriends } from 'react-icons/fa'
 import { FaBookBible } from 'react-icons/fa6'
 import { IoIosNotifications } from 'react-icons/io'
 
-const DashboardHome = ({bookNum, userNum, writerNum}) => {
+const DashboardHome = ({ bookNum, userNum, writerNum }) => {
     return (
 
         <div className="">
