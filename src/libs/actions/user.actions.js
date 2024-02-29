@@ -160,3 +160,25 @@ export const getUserAndBecomeMember = async (email) => {
   }
 }
 
+export const updateUserRole = async (email, role) => {
+  try {
+    console.log('Updating user role for email:', email, 'to role:', role);
+
+    const userToUpdate = await User.findOne({ email });
+
+    if (!userToUpdate) {
+      console.log('User not found.');
+      return JSON.parse(JSON.stringify({ success: false, error: 'User not found' }));
+    }
+
+    userToUpdate.role = role;
+
+    const updatedUser = await userToUpdate.save();
+
+    console.log('User role updated successfully:', updatedUser);
+    return JSON.parse(JSON.stringify({ success: true, data: updatedUser }));
+  } catch (error) {
+    console.error('Error updating user role:', error);
+    return JSON.parse(JSON.stringify({ success: false, error: 'Error updating user role', errorDetails: error }));
+  }
+};

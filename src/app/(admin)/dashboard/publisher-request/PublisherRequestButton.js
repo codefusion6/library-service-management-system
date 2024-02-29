@@ -1,4 +1,3 @@
-
 "use client"
 import { UserAuth } from '@/app/provider/context/AuthContext';
 import { sendPublisherRequest } from '@/libs/actions/publisherRequestActions';
@@ -16,7 +15,8 @@ const PublisherRequestButton = () => {
           const userData = {
             name: user.displayName, 
             email: user.email,
-            status: 'pending',
+            status: 'pending'
+
           };
   
           const result = await sendPublisherRequest(userData);
