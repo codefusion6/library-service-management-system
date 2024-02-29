@@ -8,6 +8,7 @@ import { FiPlus } from "react-icons/fi";
 import EditProfileForm from "./editProfile/EditProfileForm";
 import { getOneUser } from "@/libs/actions/user.actions";
 import BookRequest from "../bookRequest/BookRequest";
+import { Progress } from "@nextui-org/react";
 
 const Profile = () => {
   const { user, loading } = UserAuth();
@@ -26,7 +27,16 @@ const Profile = () => {
   }, [user, loading, setExistingUser]);
 
   if (loading) {
-    return <h2 className="text-center mt-20 text-2xl">loading...</h2>;
+    return (
+      <h2 className="text-center mt-20 text-2xl">
+        <Progress
+          size="sm"
+          isIndeterminate
+          aria-label="Loading..."
+          className="max-w-md text-center flex justify-center items-center"
+        />
+      </h2>
+    );
   }
   return (
     <section className="container mx-auto">
@@ -91,7 +101,7 @@ const Profile = () => {
         </div>
       </div>
       <div className="mt-10">
-      <BookRequest></BookRequest>
+        <BookRequest></BookRequest>
       </div>
     </section>
   );
