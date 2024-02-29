@@ -22,38 +22,34 @@ import toast from "react-hot-toast";
 import NavUser from "./NavUser";
 // import { AcmeLogo } from "./AcmeLogo.jsx";
 export default function App() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, logOut } = UserAuth();
-  const menuItems = [
-    {
-      url_name: "Home",
-      link: "/",
-    },
-    {
-      url_name: "About Us",
-      link: "/about",
-    },
-    {
-      url_name: "Contact Us",
-      link: "/contact",
-    },
-    {
-      url_name: "Our Services",
-      link: "/our-services",
-    },
-    {
-      url_name: "All Books",
-      link: "/allBooks",
-    },
-    {
-      url_name: "Pricing",
-      link: "/pricing",
-    },
-    {
-      url_name: "Writters",
-      link: "/all-writers",
-    },
-  ];
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const { user, logOut } = UserAuth();
+    const menuItems = [
+        {
+            url_name: "Home",
+            link: "/"
+        },
+        {
+            url_name: "About Us",
+            link: "/about"
+        },
+        {
+            url_name: "Contact Us",
+            link: "/contact"
+        },
+        {
+            url_name: "All Books",
+            link: "/allBooks"
+        },
+        {
+            url_name: "Pricing",
+            link: "/pricing"
+        },
+        {
+            url_name: "Writters",
+            link: "/all-writers"
+        }
+    ];
 
   const handleLogout = async () => {
     try {
