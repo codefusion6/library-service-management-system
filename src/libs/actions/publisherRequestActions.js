@@ -2,7 +2,6 @@
 import mongoose from "mongoose";
 import { NextResponse } from "next/server";
 import { connectDB } from "../database/MongoConnect";
-import { revalidatePath } from "next/cache";
 import PublisherRequest from "../database/models/publisherRequestModel/publisherRequestSchema";
 
 export const sendPublisherRequest = async (requestData) => {
