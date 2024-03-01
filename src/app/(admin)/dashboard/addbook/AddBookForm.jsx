@@ -9,9 +9,11 @@ const AddBookForm = () => {
     const [bookCover, setBookCover] = useState(null);
     const [bookPdf, setBookPdf] = useState(null);
     const [authorImg, setAuthorImg] = useState(null);
-    // console.log(bookCover, "cover ");
-    // console.log(bookPdf, "pdf");
-    // console.log(authorImg, "author");
+    const [type, setType] = useState("No");
+
+    const handleTypeChange = (e) => {
+        setType(e.target.value);
+      };
 
     return (
         <section
@@ -26,6 +28,7 @@ const AddBookForm = () => {
             <div className="absolute inset-0 bg-black opacity-50"></div>
             <div className="container mx-auto p-6 relative z-10">
                 <form action={async (formData) => {
+                    formData.append("type", type);
                     const bookCoverField = formData.append("bookCover", bookCover)
                     const bookPdfField = formData.append("bookPdf", bookPdf)
                     const authorImageField = formData.append("authorImage", authorImg)
@@ -184,18 +187,18 @@ const AddBookForm = () => {
                     {/* {/ Is Featured Dropdown /} */}
                     {/* Book Is Featured */}
                     <div className="mb-4">
-                    <label htmlFor="type" className="block text-gray-700 text-sm font-bold mb-2">
+                        <label htmlFor="type" className="block text-gray-700 text-sm font-bold mb-2">
                         Is Featured:
-                    </label>
-                    <select
+                        </label>
+                        <select
                         name="type"
                         className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                    >
-                        <option value="Yes">Yes</option>
+                        onChange={handleTypeChange}
+                        >
                         <option value="No">No</option>
-                    </select>
+                        <option value="Yes">Yes</option>
+                        </select>
                     </div>
-
 
                     {/* {/ Add Book Button /} */}
                     <button

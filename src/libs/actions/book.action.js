@@ -222,3 +222,14 @@ export const deleteFavourite = async (email, bookid) => {
   //   return error;
   // }
 };
+
+// get all books with type = "Yes"
+export const getFeaturedBooks = async () => {
+  try {
+    await connectDB();
+    const featuredBooks = await Book.find({ type: 'Yes' });
+    return JSON.parse(JSON.stringify(featuredBooks));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
