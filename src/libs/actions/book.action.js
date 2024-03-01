@@ -27,6 +27,7 @@ export const addBook = async (formData) => {
       authorImage: authorImage,
       publisherEmail: publisherEmail,
       category: category,
+      type: type
     };
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
