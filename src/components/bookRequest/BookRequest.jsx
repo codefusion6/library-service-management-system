@@ -1,11 +1,14 @@
+"use client"
 import React from "react";
 import { Input, Textarea } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
 import toast from "react-hot-toast";
 import { addRequestBook } from "@/libs/actions/requestBook.action";
 import { FaRegHandPointDown } from "react-icons/fa";
+import { UserAuth } from "@/app/provider/context/AuthContext";
 
 const BookRequest = () => {
+  const {user} = UserAuth();
   return (
     <section>
       <div className="space-y-1">
@@ -16,7 +19,7 @@ const BookRequest = () => {
         <form
           action={async (formData) => {
             try {
-              const response = await addRequestBook(formData);
+              const response = await addRequestBook(formData, user);
               if (response?.success) {
                 toast.success("Request send to the LSMS admin successfully");
               }
