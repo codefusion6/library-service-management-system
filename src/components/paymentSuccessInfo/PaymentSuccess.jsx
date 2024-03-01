@@ -15,10 +15,9 @@ import { getUserAndBecomeMember } from '@/libs/actions/user.actions'
 
 const PaymentSuccess = ({ payments, alredyExitData }) => {
     // const { width, height } = useWindowSize()
-    // console.log(alredyExitData)
+    const paymentss = payments[0]
     const { user, loading } = UserAuth();
     // console.log(user)
-    const paymentss = payments[0]
     const pathName = usePathname()
     const customerId = pathName.slice(1, pathName.length)
 
@@ -34,41 +33,20 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
         subscriptionType: (Number(paymentss.amount_received) / 100) === 30 ? "plus" : (Number(paymentss.amount_received) / 100) === 50 ? "elite" : "basic"
     }
 
-    const handlepaymentHistory = async (paymentHistory) => {
-        const storedHistory = await getOnePaymentHistory(paymentss.id)
-        // console.log()
-        if (alredyExitData.data === null) {
-            if (storedHistory?.data?.paymentId === paymentHistory?.paymentId) {
-                toast.success('Your are alredy member of BookFlow', {
-                    position: "bottom-right"
-                })
-            } else {
+    const handlepaymentHistory = async (paymentHistory, alredyExitData) => {
+        if (!alredyExitData?.data) {
+            const storedHistory = await getOnePaymentHistory(paymentss.id)
+            // console.log(!storedHistory?.data)
+            if (!storedHistory?.data) {
                 const savePayment = await addPaymentHistory(paymentHistory)
-                const result = await getUserAndBecomeMember(user?.email)
-                if (savePayment?.success) {
-                    if (result.success) {
-                        toast.success('Your are Now member of BookFlow', {
-                            position: "bottom-right"
-                        })
-                        // redirect("/")
-                    }
+                await getUserAndBecomeMember(paymentHistory?.email)
+                if (savePayment?.data) {
+                    await getUserAndBecomeMember()
+                    toast.success("You are now membership has been successful", {
+                        position: "bottom-right"
+                    })
                 }
             }
-        }
-        else if (alredyExitData.data.paymentId === paymentHistory.paymentId) {
-            toast.success('Your are already member of BookFlow', {
-                position: "bottom-right"
-            })
-        } else if (storedHistory?.data?.paymentId === paymentss?.id) {
-            const savePayment = await addPaymentHistory(paymentHistory)
-            const result = await getUserAndBecomeMember(user?.email)
-            if (result.success && savePayment.success) {
-                toast.success('Your are Now member of BookFlow', {
-                    position: "bottom-right"
-                })
-
-            }
-            // redirect("/")
         }
     }
     // console.log(alredyExitData)
@@ -94,13 +72,27 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                     <h1 className='text-primary text-2xl md:text-3xl lg:text-4xl font-bold mb-2'>Congratulations!</h1>
                     <p>You have succesfully <span className='text-primary font-bold'>Subscribed</span></p>
                     <Confetti height="1000" width="1500" className='w-full' opacity={.4} />
-                    <p className='my-5 pt-10 text-primary md:text-2xl lg:text-3xl'>You are now Member of BookFlw. <span className='text-pink-500 font-bold'>{paymentss.amount_received === 3000 ? 7 : paymentss.amount_received === 1000 ? 30 : paymentss.amount_received === 5000 ? 60 : null} Days</span></p>
+                    <p className='my-5 pt-10 text-primary md:text-2xl lg:text-3xl'>You are now Member of BookFlw. for <span className='text-pink-500 font-bold'>{paymentss.amount_received === 3000 ? 7 : paymentss.amount_received === 1000 ? 30 : paymentss.amount_received === 5000 ? 60 : null} Days</span></p>
                     <div className='flex gap-8 justify-center pt-10'>
-                        <Link href="/">
-                            <button onClick={() => handlepaymentHistory(paymentHistory)} className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
-                                confirm
-                            </button>
-                        </Link>
+                        {
+                            alredyExitData?.data ? <div>
+                                <h2 className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>Your subscription type is <span className='uppercase'>{alredyExitData?.data?.subscriptionType}</span>
+                                </h2>
+                                <div className='flex gap-4 mt-10 justify-center'>
+                                    <Link className='bg-pink-500 text-white font-semibold py-1 md:py-2 px-4 md:px-6 rounded-lg' href="/">Home</Link>
+                                    <Link className='bg-pink-500 text-white font-semibold py-1 md:py-2 px-4 md:px-6 rounded-lg' href="allBooks">all Books</Link>
+                                </div>
+                            </div>
+
+                                :
+                                <div>
+                                    <button onClick={() => handlepaymentHistory(paymentHistory)} className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
+                                        confirm
+                                    </button>
+                                    <p className='pt-5 text-primary md:text-2xl lg:text-3xl'> Please Click confirm</p>
+                                </div>
+                        }
+
                         {/* {
                             <div className='flex gap-3'>
                                 <Link href="/" className='py-2 px-4 md:px-7 text-white bg-pink-600 text-xl hover:bg-lime-600 duration-200 hover:text-white rounded-lg'>
@@ -112,10 +104,10 @@ const PaymentSuccess = ({ payments, alredyExitData }) => {
                             </div>
                         } */}
                     </div>
-                    <p className='pt-5 text-primary md:text-2xl lg:text-3xl'> Please Click confirm</p>
+
                 </div>
             </div>
-        </div>
+        </div >
     )
 
 

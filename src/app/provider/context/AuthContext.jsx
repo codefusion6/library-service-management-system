@@ -85,10 +85,15 @@ export const AuthContextProvider = ({ children }) => {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
-      // console.log("Current User:", currentUser)
-      const rolebaseUser = await getOneUser(currentUser?.email)
-      setRolebaseUser(rolebaseUser)
+      // console.log("Current User:", currentUser?.email)
+      if (currentUser) {
+        const rolebaseUser = await getOneUser(currentUser?.email)
+        setRolebaseUser(rolebaseUser)
+        // console.log(rolebaseUser)
+      }
+
       setLoading(false);
+
       if (currentUser) {
         createCookie()
       } else {
