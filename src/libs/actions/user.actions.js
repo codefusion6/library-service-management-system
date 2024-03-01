@@ -121,7 +121,6 @@ export const deleteUser = async (userId) => {
   }
 };
 
-
 // add user profile
 export const updateUserProfile = async (formData, useremail) => {
   const userName = formData.get("userName");
@@ -150,14 +149,39 @@ export const updateUserProfile = async (formData, useremail) => {
 };
 
 export const getUserAndBecomeMember = async (email) => {
+  // console.log(email)
   try {
     await connectDB();
 
-    const result = await User.findOneAndUpdate({ email: email, role: "user" }, { role: "member" }, { new: true });
+    const result = await User.findOneAndUpdate({ email: email }, { role: "member" }, { new: true });
+
     return JSON.parse(JSON.stringify({ success: true }))
 
   } catch (error) {
-    return JSON.parse(JSON.stringify(error))
+    return { error: "An error occurred while updating user role." };
   }
 }
 
+export const updateUserRole = async (email, role) => {
+  try {
+    console.log('Updating user role for email:', email, 'to role:', role);
+
+    const userToUpdate = await User.findOne({ email });
+
+    if (!userToUpdate) {
+      console.log('User not found.');
+      return JSON.parse(JSON.stringify({ success: false, error: 'User not found' }));
+    }
+
+    // Revert to the default role if 'role' is not provided or if it's 'rejected'
+    userToUpdate.role = role && role.toLowerCase() !== 'rejected' ? role : 'user';
+    
+    const updatedUser = await userToUpdate.save();
+
+    console.log('User role updated successfully:', updatedUser);
+    return JSON.parse(JSON.stringify({ success: true, data: updatedUser }));
+  } catch (error) {
+    console.error('Error updating user role:', error);
+    return JSON.parse(JSON.stringify({ success: false, error: 'Error updating user role', errorDetails: error }));
+  }
+};

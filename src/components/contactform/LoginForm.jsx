@@ -5,7 +5,7 @@ import React from "react";
 import { Input } from "@nextui-org/react";
 import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa6";
 import LottieAnimation from "./LottieAnimation";
-import { UserAuth} from "@/app/provider/context/AuthContext";
+import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
 import { useRouter } from 'next/navigation';
 
@@ -22,7 +22,6 @@ const LoginForm = () => {
       await googleSignIn();
       toast.success('Login successful');
       router.push("/")
-
     } catch (error) {
       console.error('Google sign-in error:', error);
     }

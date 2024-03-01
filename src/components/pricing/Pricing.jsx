@@ -12,14 +12,14 @@ const Pricing = () => {
     const userName = user?.displayName;
     const handleCheckout = async (amount, subscriptionType) => {
         const paymentInfo = { email, userName, amount, subscriptionType }
-        // https://library-service-management-system.vercel.app
+        // http://localhost:3000
         await fetch("https://library-service-management-system.vercel.app/api/payment", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(paymentInfo)
         }).then(res => res.json()
             .then(data => {
-                toast("Payment Proccessing")
+                toast("Payment Processing")
                 // const paymentInfo = {
                 //     name: userName,
                 //     email: resData?.customer_details?.email,
