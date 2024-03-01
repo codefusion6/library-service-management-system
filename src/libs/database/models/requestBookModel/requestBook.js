@@ -1,3 +1,5 @@
+import mongoose from "mongoose";
+
 const { Schema, models, model  } = require("mongoose");
 
 const BookRequestSchema = new Schema({
@@ -9,6 +11,6 @@ const BookRequestSchema = new Schema({
     status: { type: String, default: 'pending' },
 });
 
-const BookRequest = models.BookRequest || model("BookRequest", BookRequestSchema)
+const BookRequest = mongoose.models.BookRequest || mongoose.model("BookRequest", BookRequestSchema)
 
 export default BookRequest;

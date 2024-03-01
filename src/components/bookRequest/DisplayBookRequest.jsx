@@ -3,7 +3,7 @@ import { acceptBookRequest } from "@/libs/actions/acceptPublisherRequest.action"
 import React from "react";
 
 const DisplayBookRequest = ({ requestedBooks }) => {
-  
+ 
 
   // accept the request
   const handleAcceptRequest = async (requestId) => {
@@ -30,27 +30,27 @@ const DisplayBookRequest = ({ requestedBooks }) => {
   };
 
   //   reject the Book request
-  const handleRejectRequest = async (requestId) => {
-    try {
-      const result = await rejectBookRequest(requestId);
+  // const handleRejectRequest = async (requestId) => {
+  //   try {
+  //     const result = await rejectBookRequest(requestId);
 
-      if (result.success) {
-        setPendingRequests((prevRequests) =>
-          prevRequests.map((request) =>
-            request._id === requestId
-              ? { ...request, status: "rejected" }
-              : request
-          )
-        );
-        console.log("Request rejected successfully!", result.data);
-        toast.success("Request rejected successfully!");
-      } else {
-        console.error("Failed to reject request:", result.error);
-      }
-    } catch (error) {
-      console.error("Error rejecting request:", error);
-    }
-  };
+  //     if (result.success) {
+  //       setPendingRequests((prevRequests) =>
+  //         prevRequests.map((request) =>
+  //           request._id === requestId
+  //             ? { ...request, status: "rejected" }
+  //             : request
+  //         )
+  //       );
+  //       console.log("Request rejected successfully!", result.data);
+  //       toast.success("Request rejected successfully!");
+  //     } else {
+  //       console.error("Failed to reject request:", result.error);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error rejecting request:", error);
+  //   }
+  // };
 
   return (
     <div>
@@ -93,12 +93,12 @@ const DisplayBookRequest = ({ requestedBooks }) => {
                   >
                     Accept
                   </button>
-                  <button
+                  {/* <button
                     onClick={() => handleRejectRequest(request._id)}
                     className="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600"
                   >
                     Reject
-                  </button>
+                  </button> */}
                 </td>
               </tr>
             ))}
