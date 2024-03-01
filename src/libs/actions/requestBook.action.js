@@ -3,10 +3,13 @@
 import { connectDB } from "../database/MongoConnect";
 import BookRequest from "../database/models/requestBookModel/requestBook";
 
-export const addRequestBook = async (formData, user) => {
+export const addRequestBook = async (formData) => {
+  console.log("user from book rquest", formData)
   const bookName = formData.get("bookName");
   const authorName = formData.get("authorName");
   const requestSMS = formData.get("requestSMS");
+  const userEmail = formData.get("email");
+  const userName = formData.get("userName");
   const status = "pending";
 
   try {
@@ -17,11 +20,13 @@ export const addRequestBook = async (formData, user) => {
       authorName: authorName,
       requestSMS: requestSMS,
       status: status,
-      email: user?.email,
-      userName: user?.displayName
+      userEmail: userEmail,
+      userName: userName
     };
+   console.log(requestBook);
 
     const result = await BookRequest.create(requestBook);
+    console.log(result)
 
     return JSON.parse(JSON.stringify({ success: true, data: result }));
   } catch (error) {
