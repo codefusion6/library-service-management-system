@@ -1,63 +1,80 @@
+"use client"
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
-import { TypeAnimation } from "react-type-animation";
-const renderStars = (rating) => {
+import { getFeaturedBooks } from '@/libs/actions/book.action';
 
-  const fullStars = Math.floor(rating);
-  const hasHalfStar = rating % 1 !== 0;
-  const stars = [];
-  for (let i = 0; i < fullStars; i++) {
-    stars.push(<FaStar key={i} className="text-yellow-500" />);
-  }
+const Features = () => {
+  const [featuredBooks, setFeaturedBooks] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  if (hasHalfStar) {
-    stars.push(<FaStarHalfAlt key="half" className="text-yellow-500" />);
-  }
-  return stars;
-};
+  useEffect(() => {
+    const fetchFeaturedBooks = async () => {
+      try {
+        const books = await getFeaturedBooks();
+        setFeaturedBooks(books);
+      } catch (error) {
+        console.error('Error fetching featured books:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-const Feature = async ({ books }) => {
-  if (!books) {
-    <h1 className='text-center mt-10 font-bold text-xl md:text-2xl'>Loading...</h1>
-  }
+    fetchFeaturedBooks();
+  }, []);
+
   return (
     <div className="container mx-auto">
-      <h1 className="text-3xl font-bold text-center mb-8">
-        <TypeAnimation
-          sequence={["", 1000, "Featured Books", 1000]}
-          wrapper="span"
-          speed={50}
-          style={{ fontSize: "1em", display: "inline-block" }}
-          repeat={Infinity}
-        />
-
-      </h1>
-
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-        {books?.map((book, index) => (
-          <div key={index} className="p-4 border border-gray-300 rounded-md">
-            <Image
-              src={book.book.image}
-              alt={book.book.name}
-              className="mb-4 w-full h-auto object-cover"
-              layout="responsive"
-              height={400}
-              width={200}
-            />
-            <h2 className="text-xl font-bold mb-2">{book.book.name}</h2>
-            <p className="text-sm mb-2">{book.book.type}</p>
-            <p className="text-sm mb-2">Author: {book.book.createdBy}</p>
-            <p className="text-sm mb-2">Price: {book.book.price}</p>
-            <div className="flex items-center mb-2">
-              {renderStars(book.book.starMarking)}
-              <p className="text-sm ml-1">{book.book.starMarking}</p>
+      <h2 className="text-2xl font-bold mb-4">Featured Books</h2>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+          {featuredBooks.map((book) => (
+            <div key={book._id} className="p-4 border border-gray-300 rounded text-center">
+              <h3 className="text-lg font-semibold mb-2">{book.bookName}</h3>
+              {/* Show Book Cover for desktop and tablet */}
+              <div className="hidden sm:block md:block">
+                {book?.bookCover !== null && book?.bookCover !== 'null' && (
+                  <Image
+                    src={book?.bookCover}
+                    alt="Book Cover"
+                    width={250} // Adjust the width as needed
+                    height={350} // Adjust the height as needed
+                    className="mx-auto mt-4 mb-2 rounded"
+                  />
+                )}
+              </div>
+              {/* Show Book Cover for mobile */}
+              <div className="block sm:hidden md:hidden">
+                {book?.bookCover !== null && book?.bookCover !== 'null' && (
+                  <Image
+                    src={book?.bookCover}
+                    alt="Book Cover"
+                    width={250} // Adjust the width as needed
+                    height={350} // Adjust the height as needed
+                    className="mx-auto mt-4 mb-2 rounded"
+                  />
+                )}
+              </div>
+              {/* Author Image and Name */}
+              <div className="flex items-center justify-center">
+                {book?.authorImage && (
+                  <Image
+                    src={book.authorImage}
+                    alt="Author"
+                    width={30} // Adjust the width as needed
+                    height={30} // Adjust the height as needed
+                    className="rounded-full mr-2"
+                  />
+                )}
+                <p className="text-gray-600 text-sm">{book?.authorName}</p>
+              </div>
             </div>
-            <button className="bg-primaryColor px-4 py-2 rounded-md">Add to Cart</button>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
+export default Features;
 
-export default Feature;
