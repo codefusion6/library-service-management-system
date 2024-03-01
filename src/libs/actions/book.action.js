@@ -189,11 +189,12 @@ export const getBooksNumber = async () => {
 
 
 
+
 // get all books with type = "Yes"
 export const getFeaturedBooks = async () => {
   try {
     await connectDB();
-    const featuredBooks = await Book.find({ type: 'Yes' });
+    const featuredBooks = (await Book.find({ type: 'Yes' })).reverse().slice(0,4);
     return JSON.parse(JSON.stringify(featuredBooks));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));

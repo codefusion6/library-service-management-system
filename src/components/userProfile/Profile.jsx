@@ -53,11 +53,9 @@ const Profile = () => {
                 <FiPlus className="mt-1 ml-2" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-green-600">
-                  {existingUser?.about ? existingUser?.about : ""}
-                </h2>
+                <h2 className="text-xl font-bold text-green-600">{existingUser?.about?existingUser?.about:""}</h2>
                 <h1 className="text-xl font-bold text-red-900">
-                  {existingUser?.address ? existingUser?.address : ""}
+                  {existingUser?.address?existingUser?.address:""}
                 </h1>
               </div>
             </div>
