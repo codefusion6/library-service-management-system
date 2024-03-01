@@ -235,24 +235,24 @@ const SidebarItems = ({ expanded }) => {
           </div>
         )}
         <div className="text-black space-y-4">
-        <ul>
-          {/* User Profile */}
-          <li
-                className="flex gap-2 items-center py-2 px-3 my-1
+          <ul className="mt-3">
+            {/* User Profile */}
+            <li
+              className="flex gap-2 items-center py-2 px-3 my-1
       font-medium rounded-md cursor-pointer
       transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            >
+              <Link
+                href="/dashboard/userProfile"
+                className="flex gap-2 font-bold"
               >
-                <Link
-                  href="/dashboard/userProfile"
-                  className="flex gap-2 font-bold"
-                >
-                  <CiBoxList size={25} className="text-xl font-bold" />
-                  <span className={`${expanded ? "block" : "hidden"}`}>
-                    User Profile
-                  </span>
-                </Link>
-              </li>
-        </ul>
+                <CiBoxList size={25} className="text-xl font-bold" />
+                <span className={`${expanded ? "block" : "hidden"}`}>
+                  User Profile
+                </span>
+              </Link>
+            </li>
+          </ul>
         </div>
       </>
     )
