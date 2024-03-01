@@ -4,7 +4,6 @@ import React from "react";
 
 const DisplayBookRequest = ({ requestedBooks }) => {
   console.log(requestedBooks);
-  console.log("display book request")
 
   // accept the request
   const handleAcceptRequest = async (requestId) => {
@@ -60,34 +59,40 @@ const DisplayBookRequest = ({ requestedBooks }) => {
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
             <tr>
-              <th className="py-3 px-4 border-b">Name</th>
-              <th className="py-3 px-4 border-b">Email</th>
+              <th className="py-3 px-4 border-b">User Email</th>
+              <th className="py-3 px-4 border-b">User Name</th>
+              <th className="py-3 px-4 border-b">Book Name</th>
+              <th className="py-3 px-4 border-b">Author Name</th>
               <th className="py-3 px-4 border-b">Status</th>
-              <th className="py-3 px-4 border-b">Actions</th>
-              <th className="py-3 px-4 border-b">Actions</th>
+              <th className="py-3 px-4 border-b">Action</th>
             </tr>
           </thead>
           <tbody>
             {requestedBooks?.requestBook?.map((request) => (
               <tr key={request._id}>
                 <td className="py-3 px-4 border-b text-center">
-                  {request.name}
+                  {request.userEmail}
                 </td>
                 <td className="py-3 px-4 border-b text-center">
-                  {request.email}
+                  {request.userName}
                 </td>
+                <td className="py-3 px-4 border-b text-center">
+                  {request.bookName}
+                </td>
+                <td className="py-3 px-4 border-b text-center">
+                  {request.authorName}
+                </td>
+
                 <td className="py-3 px-4 border-b text-center">
                   {request.status}
                 </td>
-                <td className="py-3 px-4 border-b text-center">
+                <td className="py-3 px-4 border-b text-center ">
                   <button
                     onClick={() => handleAcceptRequest(request._id)}
-                    className="bg-green-500 text-white py-1 px-2 rounded hover:bg-green-600"
+                    className="bg-green-500 text-white py-1 px-2 mr-2 rounded hover:bg-green-600"
                   >
                     Accept
                   </button>
-                </td>
-                <td className="py-3 px-4 border-b text-center">
                   <button
                     onClick={() => handleRejectRequest(request._id)}
                     className="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600"
