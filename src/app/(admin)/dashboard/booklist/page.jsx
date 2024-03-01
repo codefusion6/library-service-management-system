@@ -22,7 +22,6 @@ const BookListPage = async ({ searchParams }) => {
       <DashBookSlider></DashBookSlider>
       <BookCard books={books} ></BookCard>
       <Pagination totalPage={totalPage} currentPage={pageNumber} />
-      <button className="bg-[#18c96433] text-[#12a150] py-2 px-5 rounded-full">Test Button</button>
     </section>
   );
 };
