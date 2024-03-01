@@ -9,7 +9,7 @@ import { CldUploadWidget } from 'next-cloudinary';
 
 const RegisterAction = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const { createUser } = UserAuth();
+  const { createUser, updateUserProfile } = UserAuth();
   const { googleSignIn } = UserAuth();
   const [profileImage, setProfileImage] = useState(null);
 
@@ -23,28 +23,40 @@ const RegisterAction = () => {
       console.error('Google sign-in error:', error);
     }
   };
+  const handleSubmit = async (formData) => {
+    const name = formData.get('name');
+    const email = formData.get('email');
+    const password = formData.get('password');
 
+    // Append profile image to formData
+    formData.append("photoURL", profileImage);
+
+    try {
+      // Create the user
+      const user = await createUser(email, password);
+
+      if (user.user) {
+        toast.success('User created successfully');
+
+        // Update the user profile with additional information
+        const updateResult = await updateUserProfile(name, profileImage);
+        if (updateResult) {
+          toast.success('Profile updated successfully');
+        }
+
+        // Add user data to the database or perform any other actions
+        const res = await addUser(formData);
+        // console.log(res);
+      }
+    } catch (error) {
+      // console.log('Error creating user:', error.message);
+      // Handle other errors if needed
+      toast.error('Failed to create user');
+    }
+  };
   return (
     <div className="max-w-md mx-auto ">
-      <form action={async (formData) => {
-        const profileImageField = formData.append("photoUrl", profileImage);
-    const name = formData.get('name');
-          const email = formData.get('email');
-          const password = formData.get('password');
-
-console.log("profile image:", profileImage);
-          try {
-            const user = await createUser(email, password);
-            if (user.user) {
-              toast.success('User created successfully');
-              const res = await addUser(formData);
-              console.log(res);
-            }
-          } catch (error) {
-            console.log(error.message);
-          }
-        }}
-      >
+      <form action={handleSubmit}>
         <div className="mt-5">
           <div>
             <label className="font-semibold ml-5 text-sm text-gray-600 pb-1 block" htmlFor="fullname">
@@ -103,7 +115,7 @@ console.log("profile image:", profileImage);
         </div>
 
         {/* Profile Image Upload */}
-        <div className="mb-4">
+        <div className="mb-4 flex items-center justify-center">
           <CldUploadWidget
             uploadPreset="lms_code_fusion"
             autoUpload={false}

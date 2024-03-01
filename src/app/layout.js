@@ -5,6 +5,7 @@ import { Toaster } from "react-hot-toast";
 import Chatbot from "@/components/chatbot/chatbot";
 import Template from "./template";
 import { Providers } from "./providers";
+import { Suspense } from "react";
 
 const merriweather = Merriweather({
   subsets: ["latin"],
@@ -20,7 +21,9 @@ const RootLayout = ({ children }) => {
       <body className={`${merriweather.className}`}>
         <AuthContextProvider>
           <Template>
-            <Providers>{children}</Providers>
+            <Suspense>
+              <Providers>{children}</Providers>
+            </Suspense>
           </Template>
           <Toaster position="top-right" />
           <Chatbot />

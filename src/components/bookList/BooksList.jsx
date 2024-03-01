@@ -14,18 +14,18 @@ const BooksList = ({ singleBookData }) => {
             <div className="w-full  flex flex-col md:flex-row md:w-2/3 mx-auto bg-white shadow-lg rounded-lg border hover:border-green-500 hover:border-2">
                 <div className="w-full  md:max-w-[300px] p-2">
                     <Image
-                        src={singleBookData.bookCover}
+                        src={singleBookData?.bookCover}
                         alt="Card Image"
                         width={270}
                         height={270}
                         className="w-full h-full object-cover object-center" />
                 </div>
                 <div className="flex-1 p-2">
-                    <p className="text-lg uppercase font-bold">{singleBookData.bookName}</p>
+                    <p className="text-lg uppercase font-bold">{singleBookData?.bookName}</p>
                     <span>By</span>
-                    <h4 className="font-bold text-large">{singleBookData.authorName}</h4>
+                    <h4 className="font-bold text-large">{singleBookData?.authorName}</h4>
                     <p className="text-base font-medium">
-                        Price: <span className="font-bold">{singleBookData.category}</span>
+                        Price: <span className="font-bold">{singleBookData?.category}</span>
                     </p>
                     <p className="text-yellow-500 flex">
                         <FaStar />

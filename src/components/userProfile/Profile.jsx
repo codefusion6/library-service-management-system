@@ -1,30 +1,38 @@
 "use client";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { FiPlus } from "react-icons/fi";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  useDisclosure,
-} from "@nextui-org/react";
-import { CldUploadWidget } from "next-cloudinary";
+import EditProfileForm from "./editProfile/EditProfileForm";
+import { getOneUser } from "@/libs/actions/user.actions";
 
 const Profile = () => {
-  const { user } = UserAuth();
-  // console.log(user);
+  const { user, loading } = UserAuth();
 
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
+  const [existingUser, setExistingUser] = useState('');
 
+  useEffect(() => {
+    if (!loading && user) {
+      const getUser = async (email) => {
+        const userData = await getOneUser(email)
+        // console.log(userData);
+        setExistingUser(userData)
+      }
+      if (user) {
+        getUser(user?.email)
+      }
+    }
+  }, [user, loading])
+
+
+  if (loading) {
+    return <h2 className="text-center mt-20 text-2xl">loading...</h2>
+  }
   return (
     <section>
-      <div className="container mx-auto ">
+      <div>
         <div className="border-green-500 border-[5px]">
           <div>
             <div className="container bg-white mx-auto m-10 h-full p-10 ">
@@ -36,10 +44,9 @@ const Profile = () => {
               <h1 className="text-3xl text-center font-bold mb-10 mt-5">
                 User Profile
               </h1>
-              <div></div>
+
               <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
                 <div className="space-y-2">
-                  <h1 className="text-xl font-bold">About me:</h1>
                   <p className="text-base font-medium"></p>
                 </div>
                 <div className=" flex flex-col items-center justify-center gap-5">
@@ -51,160 +58,28 @@ const Profile = () => {
                     className="w-[300px] rounded-full"
                   ></Image>
 
-                  <Button
-                    className="bg-green-600  mt-10 px-6 py-2 rounded-md "
-                    onPress={onOpen}
-                  >
-                    Edit Profile
-                  </Button>
-
-                  <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
-                    <ModalContent>
-                      {(onClose) => (
-                        <>
-                          <ModalHeader className="flex flex-col gap-1">
-                            <p>{user?.displayName}</p>
-                          </ModalHeader>
-                          <ModalBody>
-                            <div>
-                              <form className="m-8 max-w-xl mx-auto p-6 bg-white rounded-md shadow-md">
-                                <div className="mb-4">
-                                  <label
-                                    htmlFor="Name"
-                                    className="block text-gray-700 text-sm font-bold mb-2"
-                                  >
-                                    Name:
-                                  </label>
-                                  <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="name"
-                                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                                  />
-                                </div>
-                                <div className="mb-4">
-                                  <label
-                                    htmlFor="bio"
-                                    className="block text-gray-700 text-sm font-bold mb-2"
-                                  >
-                                    Bio :
-                                  </label>
-                                  <input
-                                    type="text"
-                                    name="bio"
-                                    placeholder="bio"
-                                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                                  />
-                                </div>
-
-                                {/* {/ About /} */}
-                                <div className="mb-4">
-                                  <label
-                                    htmlFor="bookDescription"
-                                    className="block text-gray-700 text-sm font-bold mb-2"
-                                  >
-                                    About
-                                  </label>
-                                  <textarea
-                                    name="about"
-                                    placeholder="write about your-self"
-                                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                                  />
-                                </div>
-
-                                <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-                                  {/* User Image  */}
-                                  <div className="mb-4">
-                                    <CldUploadWidget
-                                      uploadPreset="lms_code_fusion"
-                                      autoUpload={false}
-                                      onSuccess={(result, { widget }) => {
-                                        setAuthorImg(result?.info?.secure_url);
-                                        console.log(resource);
-                                        widget.close();
-                                      }}
-                                    >
-                                      {({ open }) => {
-                                        function handleOnClick() {
-                                          // setAuthorImg(null);
-                                          open();
-                                        }
-                                        return (
-                                          <button
-                                            type="button"
-                                            className="px-5 py-3 rounded-md text-white bg-blue-500 hover:bg-blue-700"
-                                            onClick={handleOnClick}
-                                          >
-                                            Upload Image
-                                          </button>
-                                        );
-                                      }}
-                                    </CldUploadWidget>
-                                  </div>
-                                </div>
-                                <div className="mb-4">
-                                  <label
-                                    htmlFor="category"
-                                    className="block text-gray-700 text-sm font-bold mb-2"
-                                  >
-                                    Live
-                                  </label>
-                                  <select
-                                    name="category"
-                                    className="w-full px-3 py-2 border rounded-md focus:outline-none focus:border-blue-500"
-                                  >
-                                    <option value="Basic">Dhaka</option>
-                                    <option value="Plus">Barishal</option>
-                                    <option value="Elite">Khulna</option>
-                                    <option value="Elite">Jossore</option>
-                                    <option value="Elite">Mymangsing</option>
-                                    <option value="Elite">Gazipur</option>
-                                    <option value="Elite">Sylhet</option>
-                                    <option value="Elite">Chittagonj</option>
-                                  </select>
-                                </div>
-                                <button
-                                  type="submit"
-                                  className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:shadow-outline-blue"
-                                >
-                                  Submit
-                                </button>
-                              </form>
-                            </div>
-                          </ModalBody>
-                          <ModalFooter>
-                            <Button
-                              color="danger"
-                              variant="light"
-                              onPress={onClose}
-                            >
-                              Close
-                            </Button>
-                            <Button color="primary" onPress={onClose}>
-                              Save
-                            </Button>
-                          </ModalFooter>
-                        </>
-                      )}
-                    </ModalContent>
-                  </Modal>
+                  <EditProfileForm existingUser={existingUser}></EditProfileForm>
+                  <div>
+                    <h2 className="text-xl font-bold text-green-600">{`About:  ${existingUser?.about}`}</h2>
+                    <h1 className="text-xl font-bold text-red-900">{` Address : ${existingUser?.address}`} </h1>
+                  </div>
                 </div>
 
                 <div className="space-y-2">
                   <p className="font-semibold">
                     Name: <br />
-                    <span className="font-semibold"> {user?.displayName}</span>
+                    <span className="font-semibold text-xl text-red-900"> {existingUser?.name}</span>
                   </p>
                   <p className="font-semibold">
                     Email: <br />
-                    <span className="font-semibold"> {user?.email}</span>
+                    <span className="font-serif text-xl "> {existingUser?.email}</span>
                   </p>
                   <ul className="flex gap-3 mt-5 mb-10">
-                    <li className="text-3xl mb-5">
-                      <AiOutlineTwitter />
+                    <li className="text-3xl mb-5 ">
+                      <AiOutlineTwitter className="text-blue-400" />
                     </li>
                     <li className="text-3xl">
-                      <FaFacebook />
+                      <FaFacebook className="text-blue-600" />
                     </li>
                     <li className="text-3xl">
                       <FaGithub />

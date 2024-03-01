@@ -14,6 +14,7 @@ export const addBook = async (formData) => {
   const authorImage = formData.get("authorImage");
   const publisherEmail = formData.get("publisherEmail");
   const category = formData.get("category");
+  const type = formData.get("type");
   // console.log(bookCover, bookPdf, authorImage);
   try {
     await connectDB();
@@ -100,6 +101,7 @@ export const addManyBook = async () => {
     return JSON.parse(JSON.stringify(error));
   }
 };
+
 // get all books
 export const getAllBooks = async ({ query, page }) => {
   try {
@@ -112,7 +114,8 @@ export const getAllBooks = async ({ query, page }) => {
     const books = await Book.find(titleCondition).limit(per_page).skip((pageNumber - 1) * per_page);
     const totalPage = Math.ceil(count / per_page);
     revalidatePath("/addbook");
-    return JSON.parse(JSON.stringify({ books: books, totalPage }));
+    return JSON.parse(JSON.stringify({ books: books, totalPage }))
+
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
@@ -137,36 +140,45 @@ export const deleteBook = async (id) => {
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
+  
 };
-// get the books based on author name
 
+
+// get the books based on author name
 export const getBooksByAuthor = async (authorName) => {
+  // console.log(authorName)
   try {
     await connectDB();
     const result = await Book.find({ authorName: authorName });
+    // console.log(result)
     return JSON.parse(JSON.stringify(result));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
 }
+
 //  get all favourite books
 export const getFavouriteBook = async (email) => {
+  // console.log(email)
   try {
     await connectDB();
     const query = { email: email };
     const result = await Favourite.findOne(query);
     const favouriteBookids = result ? result.bookIds : [];
+
     const bookResult = await Book.find({
       _id: {
         $in: favouriteBookids
       }
     });
+
     revalidatePath("/dashboard/favourite")
-    return JSON.parse(JSON.stringify(bookResult));
+    return JSON.parse(JSON.stringify(bookResult))
   } catch (error) {
     return error;
   }
 };
+
 // get the books numbers for the dashboard Cart
 export const getBooksNumber = async () => {
   try {

@@ -10,7 +10,7 @@ import Swal from 'sweetalert2'
 const FavouriteBook = ({ book }) => {
     // console.log(book);
     const { user } = UserAuth()
-
+    console.log(user);
 
     const handleRemove = async (id) => {
 

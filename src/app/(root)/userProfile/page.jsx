@@ -1,14 +1,17 @@
-
+// "use client"
 import Profile from "@/components/userProfile/Profile";
-import React from "react";
+import { getUserProfile } from "@/libs/actions/userProfile.action";
 
-const userProfile = () => {
+const userProfile = async () => {
+  const editUserData = await getUserProfile();
+  // console.log(editUserData);
 
   return (
+
     <div className="min-h-screen mt-32">
-      <Profile></Profile>
+      <Profile />
     </div>
   );
 };
 
-export default userProfile;
+export default userProfile; 

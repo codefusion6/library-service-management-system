@@ -1,40 +1,16 @@
 "use client";
 import React, { Fragment, useState } from "react";
-import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Button,
-  useDisclosure,
-  Image,
-} from "@nextui-org/react";
+import UserDeleteBtn from "@/app/(admin)/dashboard/all-user/userDeleteBtn";
+import Image from "next/image";
 
 const UserTable = ({ allUser }) => {
-
-
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const [searchQuery, setSearchQuery] = useState("");
-
-  // const allUser = [
-  //   {
-  //     name: "Priyanka Das Dipa",
-  //     email: "dipa@gmail.com",
-  //     role: "Admin",
-  //     status: "Online",
-  //   },
-  //   {
-  //     name: "Arina  Huque Rafa",
-  //     email: "rafa@gmail.com",
-  //     role: "Admin",
-  //     status: "Online",
-  //   },
-  // ];
+  const [searchQuery, setSearchQuery] = useState('');
 
   // Filter users based on search query
-  const filteredUsers = allUser.data?.filter((user) => user.name.toLowerCase() === searchQuery.toLowerCase());
-  // console.log(filteredUsers)
+  const filteredUsers = allUser.data?.filter((user) =>
+    user.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div>
       <Fragment>
@@ -172,11 +148,10 @@ const UserTable = ({ allUser }) => {
                   </tr>
                 </thead>
                 <tbody>
-                  {allUser.data?.map((user, index) => (
+                {filteredUsers?.map((user, index) => (
                     <tr key={index}
                       className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
                       <th scope="col" className="px-6 py-3">{index + 1}</th>
-                      {/* ... rest of the rendering logic for each user */}
                       <th
                         scope="row"
                         className="flex items-center px-6 py-4 text-gray-900 whitespace-nowrap dark:text-white"
@@ -185,15 +160,16 @@ const UserTable = ({ allUser }) => {
                           style={{ opacity: 100 }}
                           width={100}
                           className="w-10 h-10 rounded-full"
-                          src={user.photoUrl}
+                          src={user?.photoURL}
                           alt="img"
+                          height={100}
                         />
                         <div className="ps-3">
                           <div className="text-base font-semibold">
-                            <h2>{user.name}</h2>
+                            <h2>{user?.name}</h2>
                           </div>
                           <div className="font-normal text-gray-500">
-                            <h2>{user.email}</h2>
+                            <h2>{user?.email}</h2>
                           </div>
                         </div>
                       </th>
@@ -255,39 +231,8 @@ const UserTable = ({ allUser }) => {
                         </div>
                       </td>
                       <td className="px-6 py-4">
-                        <>
-                          <Button onPress={onOpen} className="text-blue-700 font-serif">Edit</Button>
-                          <Modal isOpen={isOpen} onOpenChange={onOpenChange} className="bg-green-200 border h-52" >
-                            <ModalContent>
-                              {(onClose) => (
-                                <>
-                                  <ModalHeader className="flex flex-col gap-1">
-                                    Modal Title
-                                  </ModalHeader>
-                                  <ModalBody>
-                                    <p>
-                                      Lorem ipsum dolor sit amet, consectetur
-                                      adipiscing elit. Nullam pulvinar risus non
-                                      risus hendrerit venenatis. Pellentesque sit
-                                      amet hendrerit risus, sed porttitor quam.
-                                    </p>
+                      <UserDeleteBtn userId={user._id} />
 
-                                  </ModalBody>
-                                  <ModalFooter>
-                                    <Button className="bg-green-700 text-xl font-serif  rounded-md"
-                                      color="danger"
-                                      variant="light"
-                                      onPress={onClose}
-                                    >
-                                      Close
-                                    </Button>
-
-                                  </ModalFooter>
-                                </>
-                              )}
-                            </ModalContent>
-                          </Modal>
-                        </>
                       </td>
                     </tr>
                   ))}

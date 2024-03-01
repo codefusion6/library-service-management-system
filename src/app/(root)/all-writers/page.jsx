@@ -1,16 +1,20 @@
+import { getAllWriters } from "@/libs/actions/writer.action";
+import React from "react";
+import WritersCard from "./WritersCard";
 
-import HowHelp from '@/components/allwriters/HowHelp'
-import Writers from '@/components/allwriters/Writers'
-import React from 'react'
-
-const Allwriters = () => {
+const Allwriters = async () => {
+  const allWriters = await getAllWriters();
+  // console.log(allWriters);
   return (
-    <div className='mt-5'>
-        <h2 className='text-3xl text-center'>All Writers With Us</h2>
-       <Writers />
-       <HowHelp />
-    </div>
-  )
-}
+    <section>
+      <div className="container mx-auto min-h-screen p-5 lg:p-0">
+        <h2 className="text-3xl text-center my-5">Meet Our Writer&apos;s</h2>
+        <div className="my-10">
+          <WritersCard allWriters={allWriters}></WritersCard>
+        </div>
+      </div>
+    </section>
+  );
+};
 
-export default Allwriters
+export default Allwriters;
