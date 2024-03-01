@@ -3,12 +3,12 @@ import React from "react";
 import { Card, CardBody } from "@nextui-org/react";
 import Image from "next/image";
 import { FaEye } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
+// import { FaEdit } from "react-icons/fa";
 import Link from "next/link";
 import BookDeleteBtn from "./bookDeleteBtn";
 
 const BookCard = async ({ books }) => {
- 
+
   return (
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-10">
@@ -33,10 +33,10 @@ const BookCard = async ({ books }) => {
                 <span className="text-white">View</span>
               </Link>
 
-              <Link href={`/dashboard/booklist/${book._id}`}>
+              {/* <Link href={`/dashboard/booklist/${book._id}`}>
                 <FaEdit className="text-3xl text-white" />
                 <span className="text-white">Edit</span>
-              </Link>
+              </Link> */}
               <BookDeleteBtn id={book._id}></BookDeleteBtn>
             </div>
           </Card>

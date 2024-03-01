@@ -12,7 +12,6 @@ import { Progress } from "@nextui-org/react";
 
 const Profile = () => {
   const { user, loading } = UserAuth();
-
   const [existingUser, setExistingUser] = useState("");
 
   useEffect(() => {

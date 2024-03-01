@@ -14,7 +14,6 @@ const LoginForm = () => {
 
   const [isVisible, setIsVisible] = React.useState(false);
   const { googleSignIn, logIn } = UserAuth();
-
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   const handleGoogleSignIn = async () => {
