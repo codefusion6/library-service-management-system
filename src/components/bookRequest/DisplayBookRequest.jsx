@@ -3,7 +3,7 @@ import { acceptBookRequest } from "@/libs/actions/acceptPublisherRequest.action"
 import React from "react";
 
 const DisplayBookRequest = ({ requestedBooks }) => {
-  console.log(requestedBooks);
+  
 
   // accept the request
   const handleAcceptRequest = async (requestId) => {
