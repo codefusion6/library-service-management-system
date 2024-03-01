@@ -9,6 +9,7 @@ import toast from 'react-hot-toast'
 
 const FavouriteList = () => {
     const [favouritData, setFavouriteData] = useState([])
+    const [dataLoading, setDataLoading] = useState(true)
     const { user, loading } = UserAuth()
     useEffect(() => {
         const getData = (user) => {
@@ -17,9 +18,11 @@ const FavouriteList = () => {
                     getFavouriteBook(user)
                         .then(data => {
                             setFavouriteData(data)
+                            setDataLoading(false)
                         })
                 } catch (error) {
                     console.log(error)
+                    setDataLoading(false)
                 }
             }
         }
@@ -38,12 +41,12 @@ const FavouriteList = () => {
             }
         }
     }
-    if (loading) {
+    if (loading && dataLoading) {
         <h2 className='mt-10 text-center font-bold text-xl md:text-3xl'>Loading...</h2>
     }
     return (
         <>{
-            favouritData?.length < 1 ? <h1 className='text-center font-bold text-xl md:text-2xl mt-20'>No Favourite books available</h1>
+            favouritData?.length < 1 && !dataLoading ? <h1 className='text-center font-bold text-xl md:text-2xl mt-20'>No Favourite books available</h1>
                 :
                 <section className='p-2'>
                     <div>

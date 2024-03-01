@@ -22,7 +22,7 @@ const Sidebar = ({ }) => {
         <nav className="h-screen flex flex-col">
           <div className="p-4 pb-2 flex justify-between items-start">
             <Link href="/">
-      
+
               <Image
                 src={logo}
                 alt="Image"
@@ -62,7 +62,7 @@ const Sidebar = ({ }) => {
                 }`}
             >
               <div className="leading-4">
-                <div className="">
+                <div className="text-wrap">
                   <h2 className="font-semibold pb-1">{user?.displayName}</h2>
                   <span className="text-sm">{user?.email}</span>
                 </div>

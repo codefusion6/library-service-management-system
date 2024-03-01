@@ -35,11 +35,11 @@ const BooksList = ({ singleBookData }) => {
                         <FaStar />
                     </p>
                     <div className="flex my-5">
-                        <Button
+                        {/* <Button
                             variant="ghost"
                             className="hover:bg-gradient-to-r from-yellow-200 to-green-600  hover:text-white text-black font-bold py-2 px-4 rounded"
                             size="lg"> Buy
-                        </Button>
+                        </Button> */}
                         <Link href={`/dashboard/booklist/${singleBookData._id}/view-pdf`} target="_blank">
                             <Button
                                 variant="ghost"

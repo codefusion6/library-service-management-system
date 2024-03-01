@@ -155,7 +155,6 @@ export const getBooksByAuthor = async (authorName) => {
     return JSON.parse(JSON.stringify(error));
   }
 }
-
 //  get all favourite books
 export const getFavouriteBook = async (email) => {
   // console.log(email)
