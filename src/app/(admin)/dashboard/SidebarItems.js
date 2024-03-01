@@ -234,7 +234,7 @@ const SidebarItems = ({ expanded }) => {
             {/* Add links for other roles here if needed */}
           </div>
         )}
-        <>
+        <div className="text-black space-y-4">
         <ul>
           {/* User Profile */}
           <li
@@ -253,7 +253,7 @@ const SidebarItems = ({ expanded }) => {
                 </Link>
               </li>
         </ul>
-        </>
+        </div>
       </>
     )
   );
