@@ -3,55 +3,55 @@ import { acceptBookRequest } from "@/libs/actions/acceptPublisherRequest.action"
 import React from "react";
 
 const DisplayBookRequest = ({requestedBooks}) => {
-    // console.log(requestedBooks)
+    console.log(requestedBooks.requestBook)
   // accept the request
 
-  const handleAcceptRequest = async (requestId) => {
-    try {
-      const result = await acceptBookRequest(requestId);
+  // const handleAcceptRequest = async (requestId) => {
+  //   try {
+  //     const result = await acceptBookRequest(requestId);
 
 
-      if (result.success) {
-        setPendingRequests((prevRequests) =>
-          prevRequests.map((request) =>
-            request._id === requestId
-              ? { ...request, status: "accepted" }
-              : request
-          )
-        );
+  //     if (result.success) {
+  //       setPendingRequests((prevRequests) =>
+  //         prevRequests.map((request) =>
+  //           request._id === requestId
+  //             ? { ...request, status: "accepted" }
+  //             : request
+  //         )
+  //       );
 
-        console.log("Request accepted successfully!", result.data);
-        toast.success("Request accepted successfully!");
-      } else {
-        console.error("Failed to accept request:", result.error);
-      }
-    } catch (error) {
-      console.error("Error accepting request:", error);
-    }
-  };
+  //       console.log("Request accepted successfully!", result.data);
+  //       toast.success("Request accepted successfully!");
+  //     } else {
+  //       console.error("Failed to accept request:", result.error);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error accepting request:", error);
+  //   }
+  // };
 
   //   reject the Book request
-  const handleRejectRequest = async (requestId) => {
-    try {
-      const result = await rejectBookRequest(requestId);
+  // const handleRejectRequest = async (requestId) => {
+  //   try {
+  //     const result = await rejectBookRequest(requestId);
 
-      if (result.success) {
-        setPendingRequests((prevRequests) =>
-          prevRequests.map((request) =>
-            request._id === requestId
-              ? { ...request, status: "rejected" }
-              : request
-          )
-        );
-        console.log("Request rejected successfully!", result.data);
-        toast.success("Request rejected successfully!");
-      } else {
-        console.error("Failed to reject request:", result.error);
-      }
-    } catch (error) {
-      console.error("Error rejecting request:", error);
-    }
-  };
+  //     if (result.success) {
+  //       setPendingRequests((prevRequests) =>
+  //         prevRequests.map((request) =>
+  //           request._id === requestId
+  //             ? { ...request, status: "rejected" }
+  //             : request
+  //         )
+  //       );
+  //       console.log("Request rejected successfully!", result.data);
+  //       toast.success("Request rejected successfully!");
+  //     } else {
+  //       console.error("Failed to reject request:", result.error);
+  //     }
+  //   } catch (error) {
+  //     console.error("Error rejecting request:", error);
+  //   }
+  // };
 
   return (
     <div>
@@ -81,7 +81,7 @@ const DisplayBookRequest = ({requestedBooks}) => {
                 </td>
                 <td className="py-3 px-4 border-b text-center">
                   <button
-                    onClick={() => handleAcceptRequest(request._id)}
+                    // onClick={() => handleAcceptRequest(request._id)}
                     className="bg-green-500 text-white py-1 px-2 rounded hover:bg-green-600"
                   >
                     Accept
@@ -89,7 +89,7 @@ const DisplayBookRequest = ({requestedBooks}) => {
                 </td>
                 <td className="py-3 px-4 border-b text-center">
                   <button
-                    onClick={() => handleRejectRequest(request._id)}
+                    // onClick={() => handleRejectRequest(request._id)}
                     className="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600"
                   >
                     Reject

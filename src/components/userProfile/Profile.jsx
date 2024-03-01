@@ -22,7 +22,9 @@ const Profile = () => {
         // console.log(userData);
         setExistingUser(userData);
       };
-      getUser(user?.email);
+      if (user) {
+        getUser(user?.email);
+      }
     }
   }, [user, loading, setExistingUser]);
 

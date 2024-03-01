@@ -9,6 +9,7 @@ import { UserAuth } from "@/app/provider/context/AuthContext";
 
 const BookRequest = () => {
   const {user} = UserAuth();
+  console.log(user)
   return (
     <section>
       <div className="space-y-1">
