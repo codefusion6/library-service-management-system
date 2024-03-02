@@ -11,7 +11,6 @@ const BookRequest = () => {
   const {
     user: { providerData: userData },
   } = UserAuth();
-  console.log(userData);
   return (
     <section>
       <div className="space-y-1">
