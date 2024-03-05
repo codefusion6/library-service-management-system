@@ -149,14 +149,16 @@ export const updateUserProfile = async (formData, useremail) => {
 };
 
 export const getUserAndBecomeMember = async (email) => {
+  // console.log(email)
   try {
     await connectDB();
 
-    const result = await User.findOneAndUpdate({ email: email, role: "user" }, { role: "member" }, { new: true });
+    const result = await User.findOneAndUpdate({ email: email }, { role: "member" }, { new: true });
+
     return JSON.parse(JSON.stringify({ success: true }))
 
   } catch (error) {
-    return JSON.parse(JSON.stringify(error))
+    return { error: "An error occurred while updating user role." };
   }
 }
 
