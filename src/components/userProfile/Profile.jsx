@@ -24,7 +24,6 @@ const Profile = () => {
       getUser(user?.email);
     }
   }, [user, loading, setExistingUser]);
-
   if (loading) {
     return (
       <h2 className="text-center mt-20 text-2xl">
@@ -65,9 +64,7 @@ const Profile = () => {
                 src={user?.photoURL}
                 height={30}
                 width={350}
-                className="w-[300px] rounded-full"
-              ></Image>
-
+                className="w-[300px] rounded-full"></Image>
               <EditProfileForm existingUser={existingUser}></EditProfileForm>
             </div>
 
