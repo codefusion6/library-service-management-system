@@ -1,11 +1,15 @@
-import React from 'react';
+import DisplayBookRequest from "@/components/bookRequest/DisplayBookRequest";
+import { getRequestBook } from "@/libs/actions/requestBook.action";
+import React from "react";
 
-const RequestBook = () => {
-    return (
-        <div>
-            <h1>this is page</h1>
-        </div>
-    );
+const RequestBook = async () => {
+  const result = await getRequestBook();
+  // console.log(result)
+  return (
+    <>
+      <DisplayBookRequest requestedBooks={result}></DisplayBookRequest>
+    </>
+  );
 };
 
 export default RequestBook;

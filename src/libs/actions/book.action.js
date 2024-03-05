@@ -139,7 +139,7 @@ export const deleteBook = async (id) => {
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
-  
+
 };
 
 
@@ -155,7 +155,6 @@ export const getBooksByAuthor = async (authorName) => {
     return JSON.parse(JSON.stringify(error));
   }
 }
-
 //  get all favourite books
 export const getFavouriteBook = async (email) => {
   // console.log(email)
@@ -164,13 +163,11 @@ export const getFavouriteBook = async (email) => {
     const query = { email: email };
     const result = await Favourite.findOne(query);
     const favouriteBookids = result ? result.bookIds : [];
-
     const bookResult = await Book.find({
       _id: {
         $in: favouriteBookids
       }
     });
-
     revalidatePath("/dashboard/favourite")
     return JSON.parse(JSON.stringify(bookResult))
   } catch (error) {
@@ -188,40 +185,9 @@ export const getBooksNumber = async () => {
     return JSON.parse(JSON.stringify(error));
   }
 };
-// export const deleteFavourite = async (id, email) => {
-//   console.log(id)
-//   try {
-//     const query = { email: email }
-//     const favouriteId = await Favourite.find(query)
-//     favouriteId.map((items) => {
-//       console.log(items.bookIds.length)
-//       const removeid = items.bookIds.find(removeFavourite => JSON.parse(JSON.stringify(removeFavourite)) === id)
-//     })
-//     // const result = await Favourite.findByIdAndDelete(id);
-//     revalidatePath("/dashboard/favourite");
-//     return JSON.parse(JSON.stringify(result));
-//   } catch (error) {
-//     return JSON.parse(JSON.stringify(error));
-//   }
-// };
 
-export const deleteFavourite = async (email, bookid) => {
-  // console.log(email, bookid)
-  // try {
-  //   await connectDB();
-  //   const result = await Favourite.findOneAndUpdate({ email: email }, { $pull: { bookIds: bookIdToRemove } }, { new: true });
-  //   const favouriteBookids = result ? result.bookIds : [];
-  //   const bookResult = await Book.find({
-  //     _id: {
-  //       $in: favouriteBookids
-  //     }
-  //   });
-  //   revalidatePath("/dashboard/favourite")
-  //   return JSON.parse(JSON.stringify(bookResult));
-  // } catch (error) {
-  //   return error;
-  // }
-};
+
+
 
 
 // get all books with type = "Yes"

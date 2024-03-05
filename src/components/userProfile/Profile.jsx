@@ -12,7 +12,6 @@ import { Progress } from "@nextui-org/react";
 
 const Profile = () => {
   const { user, loading } = UserAuth();
-
   const [existingUser, setExistingUser] = useState("");
 
   useEffect(() => {
@@ -25,7 +24,6 @@ const Profile = () => {
       getUser(user?.email);
     }
   }, [user, loading, setExistingUser]);
-
   if (loading) {
     return (
       <h2 className="text-center mt-20 text-2xl">
@@ -54,9 +52,9 @@ const Profile = () => {
                 <FiPlus className="mt-1 ml-2" />
               </div>
               <div>
-                <h2 className="text-xl font-bold text-green-600">{existingUser?.about?existingUser?.about:""}</h2>
+                <h2 className="text-xl font-bold text-green-600">{existingUser?.about ? existingUser?.about : ""}</h2>
                 <h1 className="text-xl font-bold text-red-900">
-                  {existingUser?.address?existingUser?.address:""}
+                  {existingUser?.address ? existingUser?.address : ""}
                 </h1>
               </div>
             </div>
@@ -66,9 +64,7 @@ const Profile = () => {
                 src={user?.photoURL}
                 height={30}
                 width={350}
-                className="w-[300px] rounded-full"
-              ></Image>
-
+                className="w-[300px] rounded-full"></Image>
               <EditProfileForm existingUser={existingUser}></EditProfileForm>
             </div>
 
@@ -96,6 +92,7 @@ const Profile = () => {
                   <FaGithub />
                 </li>
               </ul>
+              <h3 className="font-semibold md:text-xl">Your role: <span className="text-primary text-xl">{existingUser?.role}</span></h3>
             </div>
           </div>
         </div>

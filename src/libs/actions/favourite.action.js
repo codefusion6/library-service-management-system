@@ -23,3 +23,23 @@ export const addFavourite = async (favouriteInfo) => {
     return error.message;
   }
 };
+
+export const removeFavouriteBooks = async (favouriteBookId, email) => {
+  // console.log(favouriteInfo);
+  try {
+    await connectDB();
+    const query = { email: email };
+    // const options = { new: true, upsert: true };
+    const bookId = favouriteBookId;
+
+    const result = await Favourite.findOneAndUpdate(
+      query,
+      { $pull: { bookIds: bookId } }
+    );
+
+    revalidatePath("/dashboard/favourite");
+    return JSON.parse(JSON.stringify({ success: true, result }));
+  } catch (error) {
+    return error.message;
+  }
+};
