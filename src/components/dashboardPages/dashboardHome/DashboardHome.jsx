@@ -24,62 +24,61 @@ const DashboardHome = ({ bookNum, userNum, writerNum }) => {
         <IoIosNotifications className="text-3xl" />
       </div>
       <div className="pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
-        <Card className="flex gap-5 max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
-          <CardHeader className="">
-            <div className="">
-              <p className="text-bold font-semibold uppercase">Total User</p>
-              <p className="text-xl font-bold">{userNum}</p>
-            </div>
-          </CardHeader>
-          <CardBody>
-            <p className="bg-blue-600 p-7 rounded-3xl">
+        <div className="flex gap-5 justify-between max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
+          <div className="">
+            <p className="text-bold font-semibold uppercase">Total User</p>
+            <p className="text-xl font-bold">{userNum}</p>
+          </div>
+
+          <div>
+            <p className="bg-blue-600 p-5 rounded-3xl">
               <FaUserFriends className="text-3xl  text-white" />
             </p>
-          </CardBody>
-        </Card>
-        <Card className="flex gap-5  max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
-          <CardHeader className="flex gap-3">
+          </div>
+        </div>
+        <div className="flex gap-5 justify-between  max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
+          <div className="flex gap-3">
             <div className="">
               <p className="text-bold text-xl font-bold uppercase">
                 Total Books
               </p>
               <p className="text-xl font-semibold flex gap-3 ">{bookNum}</p>
             </div>
-          </CardHeader>
-          <CardBody>
-            <p className="bg-blue-600 p-7 rounded-3xl">
+          </div>
+          <div>
+            <p className="bg-blue-600 p-5 rounded-3xl">
               <FaBookOpen className="text-3xl text-white" />
             </p>
-          </CardBody>
-        </Card>
-        <Card className="flex gap-5  max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
-          <CardHeader className="">
+          </div>
+        </div>
+        <div className="flex gap-5  justify-between max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
+          <div className="">
             <div className="flex flex-col">
               <p className="text-bold font-bold uppercase">Total Writers</p>
               <p className="text-xl font-semibold flex gap-3 ">{writerNum}</p>
             </div>
-          </CardHeader>
-          <CardBody>
-            <p className="bg-blue-600 p-7 rounded-3xl">
+          </div>
+          <div>
+            <p className="bg-blue-600 p-5 rounded-3xl">
               <FaUserTie className="text-3xl text-white" />
             </p>
-          </CardBody>
-        </Card>
-        <Card className="flex gap-5  max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
-          <CardHeader className="">
+          </div>
+        </div>
+        <div className="flex gap-5 justify-between  max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
+          <div className="">
             <div className="">
               <p className="text-bold text-xl font-bold uppercase">
                 Recommended books
               </p>
               <p className="text-xl font-semibold flex gap-3 ">8</p>
             </div>
-          </CardHeader>
-          <CardBody>
-            <p className="bg-blue-600 p-7 rounded-3xl ">
+          </div>
+          <div>
+            <p className="bg-blue-600 p-5 rounded-3xl ">
               <FaBook className="text-3xl text-white" />
             </p>
-          </CardBody>
-        </Card>
+          </div>
+        </div>
       </div>
     </div>
   );
