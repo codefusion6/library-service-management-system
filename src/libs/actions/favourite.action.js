@@ -25,19 +25,22 @@ export const addFavourite = async (favouriteInfo) => {
   }
 };
 
-export const deleteFavourite = async (email, id) => {
-  console.log(email, id);
-  console.log("Working");
+export const removeFavouriteBooks = async (favouriteBookId, email) => {
+  // console.log(favouriteInfo);
   try {
     await connectDB();
-    const queryEmail = { email: email };
-    const result = await Favourite.findOneAndUpdate(queryEmail, {
-      $pull: { bookIds: id },
-    });
-    revalidatePath("/dashboard/favourite")
-    return JSON.parse(JSON.stringify(result));
+    const query = { email: email };
+    // const options = { new: true, upsert: true };
+    const bookId = favouriteBookId;
 
+    const result = await Favourite.findOneAndUpdate(
+      query,
+      { $pull: { bookIds: bookId } }
+    );
+
+    revalidatePath("/dashboard/favourite");
+    return JSON.parse(JSON.stringify({ success: true, result }));
   } catch (error) {
-    return JSON.stringify(error);
+    return error.message;
   }
 };

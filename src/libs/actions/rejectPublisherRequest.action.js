@@ -56,7 +56,7 @@ export const rejectBookRequest = async (requestId) => {
         JSON.stringify({ success: false, error: "Request not found" })
       );
     }
-
+    const updatedRequest = await requestToUpdate.save();
     return JSON.parse(JSON.stringify({ success: true, data: updatedRequest }));
   } catch (error) {
     return JSON.parse(

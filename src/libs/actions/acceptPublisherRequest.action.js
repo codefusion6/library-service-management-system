@@ -48,6 +48,8 @@ export const acceptPublisherRequest = async (requestId) => {
 
 // book request changing status
 export const acceptBookRequest = async (requestId) => {
+  // console.log(requestId)
+ 
   try {
     await connectDB();
 
@@ -60,6 +62,7 @@ export const acceptBookRequest = async (requestId) => {
     }
 
     requestToUpdate.status = "accepted";
+    const updatedRequest = await requestToUpdate.save();
 
     if (result.success) {
       return JSON.parse(

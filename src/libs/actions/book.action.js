@@ -27,6 +27,7 @@ export const addBook = async (formData) => {
       authorImage: authorImage,
       publisherEmail: publisherEmail,
       category: category,
+      type: type
     };
     const result = await Book.create(book);
     revalidatePath("/dashboard/addbook");
@@ -140,7 +141,7 @@ export const deleteBook = async (id) => {
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
-  
+
 };
 
 
@@ -156,7 +157,6 @@ export const getBooksByAuthor = async (authorName) => {
     return JSON.parse(JSON.stringify(error));
   }
 }
-
 //  get all favourite books
 export const getFavouriteBook = async (email) => {
   // console.log(email)
@@ -165,13 +165,11 @@ export const getFavouriteBook = async (email) => {
     const query = { email: email };
     const result = await Favourite.findOne(query);
     const favouriteBookids = result ? result.bookIds : [];
-
     const bookResult = await Book.find({
       _id: {
         $in: favouriteBookids
       }
     });
-
     revalidatePath("/dashboard/favourite")
     return JSON.parse(JSON.stringify(bookResult))
   } catch (error) {
@@ -185,6 +183,21 @@ export const getBooksNumber = async () => {
     await connectDB();
     const bookNum = await Book.find().countDocuments();
     return JSON.parse(JSON.stringify(bookNum))
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
+
+
+
+
+
+// get all books with type = "Yes"
+export const getFeaturedBooks = async () => {
+  try {
+    await connectDB();
+    const featuredBooks = (await Book.find({ type: 'Yes' })).reverse().slice(0,4);
+    return JSON.parse(JSON.stringify(featuredBooks));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }
