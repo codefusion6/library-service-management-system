@@ -19,7 +19,7 @@ async function Dashboard() {
     <main className="h-[100vh]">
       <DashboardHome bookNum={bookNum} userNum={userNum} writerNum={writerNum}></DashboardHome>
       <div className="w-96 container mx-auto mt-20">
-        <Chart bookNum={bookNum} userNum={userNum} writerNum={writerNum}></Chart>
+        <Chart></Chart>
       </div>
     </main>
   );

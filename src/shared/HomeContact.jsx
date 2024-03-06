@@ -14,16 +14,16 @@ const HomeContact = () => {
                     <h1 className="text-3xl font-bold text-center mb-8">Contact</h1>
                     <div className="grid grid-cols-4 items-center justify-center gap-5">
                         <Link href="" className="border border-[#ddb425] mx-auto justify-center rounded-full p-5">
-                            <MdOutlineMail size={50} color="#ddb425" />
+                            <MdOutlineMail size={40} color="#ddb425" />
                         </Link>
                         <Link href="" className="border justify-center border-[#ddb425] mx-auto rounded-full p-5">
-                            <FaFacebookF size={50} color="#ddb425" />
+                            <FaFacebookF size={40} color="#ddb425" />
                         </Link>
                         <Link href="" className="border justify-center border-[#ddb425] mx-auto rounded-full p-5">
-                            <FiGithub size={50} color="#ddb425" />
+                            <FiGithub size={40} color="#ddb425" />
                         </Link>
                         <Link href="" className="border justify-center border-[#ddb425] mx-auto rounded-full p-5">
-                            <FaPhoneAlt size={50} color="#ddb425" />
+                            <FaPhoneAlt size={40} color="#ddb425" />
                         </Link>
                     </div>
                 </div>

@@ -81,10 +81,10 @@ const Cards = () => {
           key={index}
           className="py-1 border shadow-md relative transition-transform duration-300 transform hover:scale-95 group"
         >
-          <CardBody className="py-2 card-inner overflow-hidden">
+          <CardBody className="py-1 card-inner overflow-hidden">
             <Image
               alt="Card background"
-              className="rounded-xl w-full p-5"
+              className="rounded-xl p-3 w-[180px] h-full"
               src={items.image_url}
               width={270}
               height={250}
@@ -94,7 +94,7 @@ const Cards = () => {
                 <Tooltip
                   showArrow={true}
                   content="view book"
-                  className="text-white font-bold"
+                  className="text-black font-bold"
                 >
                   <Button>
                     <Link href="">
@@ -107,7 +107,7 @@ const Cards = () => {
                 <Tooltip
                   showArrow={true}
                   content="add to favorite"
-                  className="text-white font-bold"
+                  className="text-black font-bold"
                 >
                   <Button>
                     <FaRegHeart className="text-2xl text-black"></FaRegHeart>
@@ -118,13 +118,12 @@ const Cards = () => {
           </CardBody>
 
           <div className="border-b-1 pb-2 "></div>
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-center py-5">
+          <CardHeader className="pb-0 pt-2 px-4 flex-col items-center py-2">
             <div>
               <p className="uppercase font-bold text-center flex text-2xl text-yellow-400">
                 {renderStars(items.rating)}
               </p>
               <h4 className="font-semibold text-lg">{items.title}</h4>
-              <p className=" text-black text-xl font-bold">$ {items.price}</p>
             </div>
           </CardHeader>
         </Card>
