@@ -86,7 +86,7 @@ const Cards = () => {
           <CardBody className="py-1 card-inner overflow-hidden">
             <Image
               alt="Card background"
-              className="rounded-xl mx-auto p-3 h-full"
+              className="rounded-xl w-full mx-auto p-3 h-full"
               src={items.image_url}
               width={270}
               height={250}

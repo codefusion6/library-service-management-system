@@ -22,6 +22,7 @@ import toast from "react-hot-toast";
 import NavUser from "./NavUser";
 import { IoMdLogOut } from "react-icons/io";
 import { LuLayoutDashboard } from "react-icons/lu";
+import ScrolledSideLogo from "./ScrolledSideLogo";
 // import { AcmeLogo } from "./AcmeLogo.jsx";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -95,8 +96,7 @@ export default function App() {
 
       <NavbarContent className="lg:hidden pr-3" justify="center">
         <NavbarBrand>
-          {/* <AcmeLogo /> */}
-          <SiteLogo />
+          {scroll ? <SiteLogo /> : <ScrolledSideLogo />}
         </NavbarBrand>
       </NavbarContent>
       {/* after sm */}
@@ -106,7 +106,7 @@ export default function App() {
           justify="center"
         >
           <NavbarBrand>
-            <SiteLogo />
+            {scroll ? <SiteLogo /> : <ScrolledSideLogo />}
           </NavbarBrand>
           <NavbarItem>
             <Link
@@ -138,11 +138,6 @@ export default function App() {
               Contact us
             </Link>
           </NavbarItem>
-          {/* <NavbarItem>
-                        <Link className={`${scroll ? "text-black" : "text-white"} hover:text-primary duration-200`} href="/our-services">
-                            Our Services
-                        </Link>
-                    </NavbarItem> */}
           <NavbarItem>
             <Link
               className={`${
