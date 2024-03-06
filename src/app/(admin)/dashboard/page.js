@@ -4,6 +4,7 @@ import DashboardHome from "@/components/dashboardPages/dashboardHome/DashboardHo
 import { getUserNumber } from "@/libs/actions/user.actions";
 import { getBooksNumber } from "@/libs/actions/book.action";
 import { getWritersNumber } from "@/libs/actions/writer.action";
+import ReaderChart from "@/components/dashboardChart/ReaderChart";
 
 
 async function Dashboard() {
@@ -18,8 +19,13 @@ async function Dashboard() {
   return (
     <main className="h-[100vh]">
       <DashboardHome bookNum={bookNum} userNum={userNum} writerNum={writerNum}></DashboardHome>
-      <div className="w-96 container mx-auto mt-20">
-        <Chart></Chart>
+      <div className="flex flex-col lg:flex-row gap-5 w-full pt-20">
+        <div className="flex-1">
+          <ReaderChart></ReaderChart>
+        </div>
+        <div className="flex-1 shadow-md border sm:p-10">
+          <Chart userNum={userNum} bookNum={bookNum} writerNum={writerNum} ></Chart>
+        </div>
       </div>
     </main>
   );

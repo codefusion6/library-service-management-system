@@ -30,28 +30,28 @@ export default function App() {
   const menuItems = [
     {
       url_name: "Home",
-      link: "/",
+      link: "/"
     },
     {
       url_name: "About Us",
-      link: "/about",
+      link: "/about"
     },
     {
       url_name: "Contact Us",
-      link: "/contact",
+      link: "/contact"
     },
     {
       url_name: "All Books",
-      link: "/allBooks",
+      link: "/allBooks"
     },
     {
       url_name: "Pricing",
-      link: "/pricing",
+      link: "/pricing"
     },
     {
       url_name: "Writters",
-      link: "/all-writers",
-    },
+      link: "/all-writers"
+    }
   ];
 
   const handleLogout = async () => {
@@ -80,9 +80,8 @@ export default function App() {
 
   return (
     <Navbar
-      className={`max-w-full mx-auto py-1 px-3 justify-between ${
-        !scroll ? "bg-slate-800" : null
-      }`}
+      className={`max-w-full mx-auto py-1 px-3 justify-between ${!scroll ? "bg-slate-800" : null
+        }`}
       id="navBar"
       isBordered
       isMenuOpen={isMenuOpen}
@@ -110,9 +109,8 @@ export default function App() {
           </NavbarBrand>
           <NavbarItem>
             <Link
-              className={`${
-                scroll ? "text-black" : "text-white"
-              } hover:text-primary duration-200`}
+              className={`${scroll ? "text-black" : "text-white"
+                } hover:text-primary duration-200`}
               href="/"
             >
               Home
@@ -120,9 +118,8 @@ export default function App() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className={`${
-                scroll ? "text-black" : "text-white"
-              } hover:text-primary duration-200`}
+              className={`${scroll ? "text-black" : "text-white"
+                } hover:text-primary duration-200`}
               href="/about"
             >
               About us
@@ -130,9 +127,8 @@ export default function App() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className={`${
-                scroll ? "text-black" : "text-white"
-              } hover:text-primary duration-200`}
+              className={`${scroll ? "text-black" : "text-white"
+                } hover:text-primary duration-200`}
               href="/contact"
             >
               Contact us
@@ -140,9 +136,8 @@ export default function App() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className={`${
-                scroll ? "text-black" : "text-white"
-              } hover:text-primary duration-200`}
+              className={`${scroll ? "text-black" : "text-white"
+                } hover:text-primary duration-200`}
               href="/allBooks"
             >
               All Books
@@ -150,9 +145,8 @@ export default function App() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className={`${
-                scroll ? "text-black" : "text-white"
-              } hover:text-primary duration-200`}
+              className={`${scroll ? "text-black" : "text-white"
+                } hover:text-primary duration-200`}
               href="/pricing"
             >
               Pricing
@@ -160,9 +154,8 @@ export default function App() {
           </NavbarItem>
           <NavbarItem>
             <Link
-              className={`${
-                scroll ? "text-black" : "text-white"
-              } hover:text-primary duration-200`}
+              className={`${scroll ? "text-black" : "text-white"
+                } hover:text-primary duration-200`}
               href="/all-writers"
             >
               Writers

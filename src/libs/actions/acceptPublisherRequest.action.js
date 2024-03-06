@@ -1,7 +1,7 @@
 "use server";
 import { connectDB } from "../database/MongoConnect";
 import PublisherRequest from "../database/models/publisherRequestModel/publisherRequestSchema";
-import BookRequest from "../database/models/requestBookModel/requestBook";
+
 import { updateUserRole } from "./user.actions";
 
 export const acceptPublisherRequest = async (requestId) => {

@@ -27,7 +27,6 @@ const RegisterAction = () => {
     const name = formData.get('name');
     const email = formData.get('email');
     const password = formData.get('password');
-
     // Append profile image to formData
     formData.append("photoURL", profileImage);
 
