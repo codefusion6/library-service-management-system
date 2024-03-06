@@ -58,7 +58,7 @@ const Sidebar = ({ }) => {
               />
             }
             <div
-              className={`flex justify-between items-center text-black px-3 bg-green-100 w-full ml-2 rounded-md ${expanded ? "block" : "hidden"
+              className={`flex justify-between items-center text-black px-3 py-2 bg-[#acd0f97b] w-full ml-2 rounded-md ${expanded ? "block" : "hidden"
                 }`}
             >
               <div className="leading-4">
