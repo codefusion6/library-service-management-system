@@ -1,58 +1,83 @@
-"use client"
-import { Radar, RadarChart, PolarGrid, Legend, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer } from 'recharts';
+"use client";
+import {
+  Radar,
+  RadarChart,
+  PolarGrid,
+  Legend,
+  PolarAngleAxis,
+  PolarRadiusAxis,
+  ResponsiveContainer,
+} from "recharts";
 
-const data = [
+const ReaderChart = ({ paymentNum, requestNum }) => {
+  console.log(paymentNum, requestNum);
+  const data = [
     {
-        subject: 'Math',
-        A: 120,
-        B: 110,
-        fullMark: 150,
+      subject: "Payment History",
+      A: paymentNum,
+      B: 50,
+      fullMark: 50,
     },
     {
-        subject: 'Chinese',
-        A: 98,
-        B: 130,
-        fullMark: 150,
+      subject: "Publisher Request",
+      A: requestNum,
+      B: 45,
+      fullMark: 50,
     },
     {
-        subject: 'English',
-        A: 86,
-        B: 130,
-        fullMark: 150,
+      subject: "R. Book",
+      A: 8,
+      B: 40,
+      fullMark: 50,
     },
     {
-        subject: 'Geography',
-        A: 99,
-        B: 100,
-        fullMark: 150,
+      subject: "Featured Books",
+      A: 20,
+      B: 50,
+      fullMark: 50,
     },
     {
-        subject: 'Physics',
-        A: 85,
-        B: 90,
-        fullMark: 150,
+      subject: "Book PDF's",
+      A: 18,
+      B: 50,
+      fullMark: 50,
     },
     {
-        subject: 'History',
-        A: 65,
-        B: 85,
-        fullMark: 150,
+      subject: "History",
+      A: 65,
+      B: 50,
+      fullMark: 50,
     },
-];
+  ];
 
-const ReaderChart = () => {
-    // static demoUrl = 'https://codesandbox.io/s/radar-chart-specified-domain-mfl04';
-    return (
-        <ResponsiveContainer width="100%" height="100%" className="shadow-md border sm:p-10">
-            <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
-                <PolarGrid />
-                <PolarAngleAxis dataKey="subject" />
-                <PolarRadiusAxis angle={30} domain={[0, 150]} />
-                <Radar name="Mike" dataKey="A" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-                <Radar name="Lily" dataKey="B" stroke="#82ca9d" fill="#82ca9d" fillOpacity={0.6} />
-                <Legend />
-            </RadarChart>
-        </ResponsiveContainer>
-    );
-}
-export default ReaderChart
+  return (
+    <ResponsiveContainer
+      width="100%"
+      height="100%"
+      className="shadow-md border sm:p-10 space-y-3"
+    >
+      <RadarChart cx="50%" cy="50%" outerRadius="80%" data={data}>
+        <PolarGrid />
+        <PolarAngleAxis dataKey="subject" />
+        <PolarRadiusAxis angle={30} domain={[0, 50]} />
+        <Radar
+          name="Admin"
+          dataKey="B"
+          stroke="#82ca9d"
+          fill="#82ca9d"
+          fillOpacity={0.6}
+        />
+        <Radar
+          name="Subscribed User"
+          dataKey="A"
+          stroke="#8884d8"
+          fill="#8884d8"
+          fillOpacity={0.6}
+        />
+
+        <Legend />
+      </RadarChart>
+    </ResponsiveContainer>
+  );
+};
+export default ReaderChart;
