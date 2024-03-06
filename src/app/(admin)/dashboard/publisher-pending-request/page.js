@@ -70,7 +70,8 @@ const PendingRequestsPage = () => {
 
   return (
     <div className="container mx-auto p-8">
-      <h1 className="text-3xl font-bold mb-8">Pending Requests</h1>
+      <h1 className="text-3xl uppercase text-center font-bold mb-8">Pending Requests</h1>
+
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
