@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import booksData from "../../../public/books.json";
 import Banner from "@/pages/home/Banner";
