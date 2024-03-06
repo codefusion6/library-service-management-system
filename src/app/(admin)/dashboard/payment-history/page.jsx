@@ -7,6 +7,7 @@ const PaymentHistorypage = async () => {
 
   return (
     <section>
+      <h1 className="text-3xl uppercase text-center font-bold mb-8">All Payment History</h1>
       <PaymentHistory paymentHistoryData={data}></PaymentHistory>
     </section>
   );

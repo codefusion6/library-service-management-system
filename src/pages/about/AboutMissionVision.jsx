@@ -24,7 +24,7 @@ const AboutMissionVision = () => {
         <div className="md:w-2/3 px-8 my-4">
           <div className="bg-white rounded-md p-6 shadow-md mb-8">
             <h2 className="text-xl font-semibold mb-4">
-              <span className="bg-gradient-to-r from-[#68a74b] to-[#dcde4e] text-transparent text-white px-4 py-2 rounded-sm">Our Mission</span>
+              <span className="bg-gradient-to-r from-[#4b79a7] to-[#4ebcde] text-transparent text-white px-4 py-2 rounded-sm">Our Mission</span>
             </h2>
             <p className="text-gray-700 leading-relaxed">
               At Library Service Management, our mission is to provide an enriching experience for book enthusiasts.
@@ -44,7 +44,7 @@ const AboutMissionVision = () => {
           {/* Vision */}
           <div className="bg-white rounded-md p-6 shadow-md">
             <h2 className="text-xl font-semibold mb-4">
-              <span className="bg-gradient-to-r from-[#68a74b] to-[#dcde4e] text-transparent text-white px-4 py-2 rounded-sm">Our Vision</span>
+              <span className="bg-gradient-to-r from-[#4b79a7] to-[#4ebcde] text-transparent text-white px-4 py-2 rounded-sm">Our Vision</span>
             </h2>
             <p className="text-gray-700 leading-relaxed">
               Empowering individuals through knowledge, our vision is to be a beacon of enlightenment and inspiration.

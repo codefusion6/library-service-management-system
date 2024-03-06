@@ -19,7 +19,7 @@ const PoliciesAchievements = () => {
     <section className="py-16 bg-gray-100">
       <div className="container mx-auto">
         <h2 className="text-xl font-semibold mb-8 text-center">
-        <span className="bg-gradient-to-r from-[#68a74b] to-[#dcde4e] text-transparent text-white px-4 py-2 rounded-sm">
+        <span className="bg-gradient-to-r from-[#4b79a7] to-[#4ebcde]  text-transparent text-white px-4 py-2 rounded-sm">
         Policies and Achievements
         </span>
       </h2>

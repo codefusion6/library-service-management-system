@@ -11,16 +11,16 @@ const BookCard = async ({ books }) => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 mt-10 gap-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 mt-10 gap-10">
         {books?.map((book, index) => (
           <Card
             key={index}
-            className="p-6 border hover:border-green-500 hover:border-2 text-center shadow-xl rounded-lg relative overflow-hidden group"
+            className="p-2 border hover:border-blue-500 hover:border-2 text-center shadow-xl rounded-lg relative overflow-hidden group"
           >
             <CardBody className="overflow-visible py-2">
               <Image
                 alt="Card Image"
-                className="object-cover rounded-xl"
+                className="object-cover w-full rounded-xl"
                 src={book.bookCover}
                 width={270}
                 height={270}
