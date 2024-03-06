@@ -20,36 +20,38 @@ import "./navbar.css";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
 import NavUser from "./NavUser";
+import { IoMdLogOut } from "react-icons/io";
+import { LuLayoutDashboard } from "react-icons/lu";
 // import { AcmeLogo } from "./AcmeLogo.jsx";
 export default function App() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const { user, logOut } = UserAuth();
-    const menuItems = [
-        {
-            url_name: "Home",
-            link: "/"
-        },
-        {
-            url_name: "About Us",
-            link: "/about"
-        },
-        {
-            url_name: "Contact Us",
-            link: "/contact"
-        },
-        {
-            url_name: "All Books",
-            link: "/allBooks"
-        },
-        {
-            url_name: "Pricing",
-            link: "/pricing"
-        },
-        {
-            url_name: "Writters",
-            link: "/all-writers"
-        }
-    ];
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logOut } = UserAuth();
+  const menuItems = [
+    {
+      url_name: "Home",
+      link: "/",
+    },
+    {
+      url_name: "About Us",
+      link: "/about",
+    },
+    {
+      url_name: "Contact Us",
+      link: "/contact",
+    },
+    {
+      url_name: "All Books",
+      link: "/allBooks",
+    },
+    {
+      url_name: "Pricing",
+      link: "/pricing",
+    },
+    {
+      url_name: "Writters",
+      link: "/all-writers",
+    },
+  ];
 
   const handleLogout = async () => {
     try {
@@ -186,7 +188,7 @@ export default function App() {
               </DropdownTrigger>
               <DropdownMenu
                 aria-label="Profile Actions"
-                className="bg-gradient-to-tr py-5 from-yellow-200 to-[#1ba752] text-black border rounded-2xl"
+                className=" py-5  text-black border rounded-2xl"
                 variant="flat"
               >
                 <DropdownItem key="profile" className="h-14 gap-2 pb-3">
@@ -198,21 +200,27 @@ export default function App() {
                     className="font-bold text-black py-2 w-full border-t pt-3 hover:text-primary duration-200"
                     href="/dashboard"
                   >
-                    Dashboard
+                    <div className="flex gap-2 items-center">
+                      <LuLayoutDashboard />
+                      Dashboard
+                    </div>
                   </Link>
                 </DropdownItem>
                 <DropdownItem
                   key="logout"
                   color="danger"
-                  className="hover:text-primary duration-200 font-bold"
+                  className="hover:text-primary duration-200 font-bold "
                   onClick={handleLogout}
                 >
-                  Log Out
+                  <div className="flex gap-2">
+                    <IoMdLogOut className="text-xl font-bold items-center" />
+                    Log Out
+                  </div>
                 </DropdownItem>
               </DropdownMenu>
             </Dropdown>
           ) : (
-            <button className="py-2 px-3 rounded-3xl text-md bg-green-700 text-white">
+            <button className="py-2 px-3 rounded-3xl text-md bg-blue-700 text-white">
               <Link href="/login" className="text-white">
                 Login
               </Link>
