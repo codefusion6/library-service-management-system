@@ -24,7 +24,7 @@ const DashboardHome = ({ bookNum, userNum, writerNum }) => {
         <IoIosNotifications className="text-3xl" />
       </div>
       <div className="pt-5 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-3">
-        <div className="flex gap-5 justify-between max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
+        <div className="flex gap-5 justify-between max-w-[400px] shadow shadow-slate-400 border p-5 text-black rounded-lg">
           <div className="">
             <p className="text-bold font-semibold uppercase">Total User</p>
             <p className="text-xl font-bold">{userNum}</p>
@@ -36,7 +36,7 @@ const DashboardHome = ({ bookNum, userNum, writerNum }) => {
             </p>
           </div>
         </div>
-        <div className="flex gap-5 justify-between  max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
+        <div className="flex gap-5 justify-between  max-w-[400px] shadow shadow-slate-400 border p-5 text-black rounded-lg">
           <div className="flex gap-3">
             <div className="">
               <p className="text-bold text-xl font-bold uppercase">
@@ -51,7 +51,7 @@ const DashboardHome = ({ bookNum, userNum, writerNum }) => {
             </p>
           </div>
         </div>
-        <div className="flex gap-5  justify-between max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
+        <div className="flex gap-5  justify-between max-w-[400px] shadow shadow-slate-400 border p-5 text-black rounded-lg">
           <div className="">
             <div className="flex flex-col">
               <p className="text-bold font-bold uppercase">Total Writers</p>
@@ -64,7 +64,7 @@ const DashboardHome = ({ bookNum, userNum, writerNum }) => {
             </p>
           </div>
         </div>
-        <div className="flex gap-5 justify-between  max-w-[400px] shadow-md shadow-slate-400 border p-5 text-black rounded-lg">
+        <div className="flex gap-5 justify-between  max-w-[400px] shadow shadow-slate-400 border p-5 text-black rounded-lg">
           <div className="">
             <div className="">
               <p className="text-bold text-xl font-bold uppercase">
