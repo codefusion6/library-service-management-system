@@ -11,50 +11,52 @@ const Cards = () => {
   const data = [
     {
       image_url: "https://i.ibb.co/ZHNxKhm/image1.jpg",
-      title: "The Catcher in the Rye",
-      price: 19.99,
+      title: "Agnibeena",
+      authorName: "Kazi Nazrul Islam",
       rating: 1.5,
     },
     {
       image_url: "https://i.ibb.co/ZxmCxVC/book1.gif",
-      title: "To Kill a Mockingbird",
-      price: 29.99,
+      title: "Post Master",
+      authorName: "Rabindranath Tagore",
       rating: 3.8,
     },
     {
       image_url: "https://i.ibb.co/6Rr9ggd/book2.jpg",
-      title: "1984",
+      title: "Bachai Golpo",
+      authorName: "Shibram Chakraborty",
       price: 14.99,
       rating: 4.2,
     },
     {
       image_url: "https://i.ibb.co/PTxG8dD/book3.jpg",
-      title: "The Great Gatsby",
+      title: "Kuhelika",
+      authorName: "Kazi Nazrul Islam",
       price: 24.99,
       rating: 4.0,
     },
     {
       image_url: "https://i.ibb.co/KNLm4VK/book4.jpg",
-      title: "Harry Potter and the Sorcerer's Stone",
-      price: 39.99,
+      title: "Chutoder Nirbachon",
+      authorName: "Kazi Nazrul Islam",
       rating: 4.8,
     },
     {
       image_url: "https://i.ibb.co/980s5Mn/book5.jpg",
-      title: "The Hobbit",
-      price: 49.99,
+      title: "Shrestho Golpo",
+      authorName: "Taradas Bandyopadhyay",
       rating: 2.0,
     },
     {
       image_url: "https://i.ibb.co/wND8KSD/book6.gif",
-      title: "Pride and Prejudice",
-      price: 16.99,
+      title: "Tuni Mem",
+      authorName: "Syed Mujtaba Ali",
       rating: 4.1,
     },
     {
       image_url: "https://i.ibb.co/s3JDK3j/book7.png",
-      title: "The Lord of the Rings",
-      price: 32.99,
+      title: "Golpo Somogra",
+      authorName: "Sarat Chandra Chattopadhyay",
       rating: 4.6,
     },
   ];
@@ -84,7 +86,7 @@ const Cards = () => {
           <CardBody className="py-1 card-inner overflow-hidden">
             <Image
               alt="Card background"
-              className="rounded-xl p-3 w-[180px] h-full"
+              className="rounded-xl mx-auto p-3 h-full"
               src={items.image_url}
               width={270}
               height={250}
@@ -118,12 +120,13 @@ const Cards = () => {
           </CardBody>
 
           <div className="border-b-1 pb-2 "></div>
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-center py-2">
+          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start  py-2">
             <div>
               <p className="uppercase font-bold text-center flex text-2xl text-yellow-400">
                 {renderStars(items.rating)}
               </p>
               <h4 className="font-semibold text-lg">{items.title}</h4>
+              <h6 className="font-medium uppercase text-lg">{items.authorName}</h6>
             </div>
           </CardHeader>
         </Card>

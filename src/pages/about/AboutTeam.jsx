@@ -61,7 +61,7 @@ const AboutTeam = () => {
     <section className="py-8 bg-gray-100">
       <div className="container mx-auto relative z-10">
       <h2 className="text-xl font-semibold mb-8 text-center">
-        <span className="bg-gradient-to-r from-[#68a74b] to-[#dcde4e] text-transparent text-white px-4 py-2 rounded-sm">
+        <span className="bg-gradient-to-r from-[#4b79a7] to-[#4ebcde] text-transparent text-white px-4 py-2 rounded-sm">
           Meet Our Team
         </span>
       </h2>
@@ -72,14 +72,14 @@ const AboutTeam = () => {
             <div key={member.id} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 px-4 mb-8">
               <div className="bg-white rounded-lg overflow-hidden shadow-lg">
                 <div className="p-6 text-center">
-                  <h3 className="text-xl font-semibold mb-2 text-[#68a74b]">{member.name}</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-black">{member.name}</h3>
                   <p className="text-gray-600 mb-4">{member.designation}</p>
                   <div className="flex justify-center space-x-4">
                     <a
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#68a74b] hover:text-green-700 text-xl"
+                      className="text-blue-700 hover:text-text-[#4b8ba7] text-xl"
                     >
                       <FaLinkedin />
                     </a>
@@ -87,7 +87,7 @@ const AboutTeam = () => {
                       href={member.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#68a74b] hover:text-green-700 text-xl">
+                      className="text-blue-700 hover:text-text-[#4b8ba7] text-xl">
                       <FaFacebook />
                     </a>
                   </div>
