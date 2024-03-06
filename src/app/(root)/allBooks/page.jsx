@@ -1,6 +1,5 @@
 import Image from "next/image";
 import AllBookCard from "./AllBookCard";
-import BooksSidebar from "./BooksSidebar";
 import Pagination from "./Pagination";
 import { getAllBooks } from "@/libs/actions/book.action";
 import Search from "@/shared/Search";
@@ -18,7 +17,7 @@ const AllBooks = async ({ searchParams }) => {
 
   return (
     <section className="min-h-screen">
-      <div className="container mx-auto my-10">
+      <div className="container mx-auto my-10 ">
         <div className="relative">
           <Image
             src="https://i.ibb.co/3kbYLkR/allbooks.jpg"
@@ -33,10 +32,7 @@ const AllBooks = async ({ searchParams }) => {
           </p>
           <div className="divider text-white text-2xl"></div>
         </div>
-        <div className="flex mt-5">
-          <div className="w-[300px] mt-2 md:mr-7">
-            <BooksSidebar></BooksSidebar>
-          </div>
+        <div className="flex mt-5 px-5 lg:px-0">
           <div className="flex-1 space-y-3">
             <h1 className="text-xl font-semibold">Search Here</h1>
             <div className="flex gap-2 items-center">

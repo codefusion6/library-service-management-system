@@ -38,8 +38,8 @@ const Features = () => {
                   <Image
                     src={book?.bookCover}
                     alt="Book Cover"
-                    width={250} // Adjust the width as needed
-                    height={350} // Adjust the height as needed
+                    width={250} 
+                    height={350} 
                     className="mx-auto mt-4 mb-2 rounded"
                   />
                 )}
