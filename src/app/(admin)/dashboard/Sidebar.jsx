@@ -33,7 +33,7 @@ const Sidebar = ({ }) => {
             </Link>
 
             <button
-              className={`p-2 rotate-180 lg:rotate-0 rounded-lg bg-[#18c96433] hover:bg-green-500 text-[#12a150] hover:text-white fixed lg:static left-0 top-0 ${!expanded ? "" : ""
+              className={`p-2 rotate-180 lg:rotate-0 rounded-lg bg-[#acd0f97b] hover:bg-blue-600 text-[#454dc4] hover:text-white fixed lg:static left-0 top-0 ${!expanded ? "" : ""
                 }`}
               onClick={() => setExpanded(!expanded)}
             >
