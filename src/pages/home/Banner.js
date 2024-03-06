@@ -31,7 +31,7 @@ const Banner = () => {
               <div className="flex gap-5 font-medium">
                 <Link href="/allBooks">
                
-                <button className="text-xl w-32 h-16 bg-black text-white relative overflow-hidden group z-10 rounded-lg">
+                <button className="text-xl w-32 h-16 bg-[#1E293B] text-white relative overflow-hidden group z-10 rounded-lg">
                   <span className="absolute bg-white rotate-12
                  -inset-8 group-hover:duration-300 duration-700 scale-x-0 group-hover:scale-x-100 
                  origin-left transform transition-transform"></span><span className="absolute bg-green-700 
