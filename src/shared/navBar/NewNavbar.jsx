@@ -193,7 +193,7 @@ export default function App() {
               >
                 <DropdownItem key="profile" className="h-14 gap-2 pb-3">
                   <p className="font-semibold">Signed in as</p>
-                  <p className="font-semibold">{user?.email}</p>
+                  <p className="font-semibold text-sm">{user?.email}</p>
                 </DropdownItem>
                 <DropdownItem>
                   <Link
