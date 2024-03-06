@@ -55,3 +55,15 @@ export const getAllPublisherRequests = async () => {
     }
   }
 };
+
+// get the number of publisher request
+
+export const getPublisherRequestNumber = async () => {
+  try {
+    await connectDB();
+    const requestNum = await PublisherRequest.find().countDocuments();
+    return JSON.parse(JSON.stringify(requestNum))
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+};
