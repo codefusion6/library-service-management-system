@@ -84,7 +84,7 @@ const Cards = () => {
           <CardBody className="py-1 card-inner overflow-hidden">
             <Image
               alt="Card background"
-              className="rounded-xl w-full p-3 "
+              className="rounded-xl p-3 w-[180px] h-full"
               src={items.image_url}
               width={270}
               height={250}
@@ -124,7 +124,6 @@ const Cards = () => {
                 {renderStars(items.rating)}
               </p>
               <h4 className="font-semibold text-lg">{items.title}</h4>
-              <p className=" text-black text-xl font-bold">$ {items.price}</p>
             </div>
           </CardHeader>
         </Card>

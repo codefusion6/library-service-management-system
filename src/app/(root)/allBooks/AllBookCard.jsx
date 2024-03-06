@@ -31,7 +31,7 @@ const AllBookCard = ({ books }) => {
       {books?.map((book, index) => (
         <div
           key={index}
-          className="hover:border-green-500 border-transparent rounded-lg hover:border-2 hover:shadow-inner shadow-lg text-center shadow-slate-400300 relative group py-3
+          className="hover:border-blue-600 border-transparent rounded-lg hover:border-2 hover:shadow-inner shadow-lg text-center shadow-slate-400300 relative group py-3
           w-full
           "
         >
