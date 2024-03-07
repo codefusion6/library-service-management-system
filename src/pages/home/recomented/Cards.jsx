@@ -11,11 +11,11 @@ import toast from "react-hot-toast";
 import { addFavourite } from "@/libs/actions/favourite.action";
 
 const Cards = ({ books }) => {
-  const { user, getRolebaseUser } = UserAuth();
+  const { user } = UserAuth();
   // console.log(getRolebaseUser)
   const handleFavouriteClick = async (bookId) => {
     const favouritBook = {
-      email: user.email,
+      email: user?.email,
       bookId: bookId,
     };
 
