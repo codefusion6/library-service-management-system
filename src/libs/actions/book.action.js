@@ -142,13 +142,22 @@ export const deleteBook = async (id) => {
 
 };
 
-
-// get the books based on author name
 export const getBooksByAuthor = async (authorName) => {
-  // console.log(authorName)
   try {
     await connectDB();
     const result = await Book.find({ authorName: authorName });
+
+    return JSON.parse(JSON.stringify(result));
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+}
+
+// get the books recommanded name
+export const getRecommandedBooks = async () => {
+  try {
+    await connectDB();
+    const result = await Book.find({ category: "Elite" });
     // console.log(result)
     return JSON.parse(JSON.stringify(result));
   } catch (error) {
@@ -194,7 +203,7 @@ export const getBooksNumber = async () => {
 export const getFeaturedBooks = async () => {
   try {
     await connectDB();
-    const featuredBooks = (await Book.find({ type: 'Yes' })).reverse().slice(0,4);
+    const featuredBooks = (await Book.find({ type: 'Yes' })).reverse().slice(0, 4);
     return JSON.parse(JSON.stringify(featuredBooks));
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
