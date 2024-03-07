@@ -29,7 +29,7 @@ const Features = () => {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
           {featuredBooks.map((book) => (
-            <div key={book._id} className="p-4 border border-gray-300 rounded text-center">
+            <div key={book._id} className="bg-sky-100 p-4 border border-gray-300 rounded text-center transition-transform transform hover:scale-105">
               <h3 className="text-lg font-semibold mb-2">{book.bookName}</h3>
               {/* Show Book Cover for desktop and tablet */}
               <div className="hidden sm:block md:block">
@@ -39,7 +39,7 @@ const Features = () => {
                     alt="Book Cover"
                     width={250}
                     height={350}
-                    className="mx-auto mt-4 mb-2 rounded"
+                    className="mx-auto mt-4 mb-2 rounded transition-transform transform hover:scale-110"
                   />
                 )}
               </div>
@@ -49,9 +49,9 @@ const Features = () => {
                   <Image
                     src={book?.bookCover}
                     alt="Book Cover"
-                    width={250} // Adjust the width as needed
-                    height={350} // Adjust the height as needed
-                    className="mx-auto mt-4 mb-2 rounded"
+                    width={250}
+                    height={350}
+                    className="mx-auto mt-4 mb-2 rounded transition-transform transform hover:scale-110"
                   />
                 )}
               </div>
@@ -61,9 +61,9 @@ const Features = () => {
                   <Image
                     src={book.authorImage}
                     alt="Author"
-                    width={30} // Adjust the width as needed
-                    height={30} // Adjust the height as needed
-                    className="rounded-full mr-2"
+                    width={30}
+                    height={30}
+                    className="rounded-full mr-2 transition-transform transform hover:scale-110"
                   />
                 )}
                 <p className="text-gray-600 text-sm">{book?.authorName}</p>
@@ -75,5 +75,5 @@ const Features = () => {
     </div>
   );
 };
-export default Features;
 
+export default Features;
