@@ -18,14 +18,8 @@ const AddBookForm = () => {
     return (
         <section
             className="relative min-h-screen flex items-center justify-center"
-            style={{
-                backgroundImage: 'url("/images/addbook.png")',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-                backgroundAttachment: 'fixed',
-            }}
         >
-            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="absolute inset-0 bg-[#acd0f97b] opacity-20"></div>
             <div className="container mx-auto p-6 relative z-10">
                 <form action={async (formData) => {
                     formData.append("type", type);
@@ -42,7 +36,7 @@ const AddBookForm = () => {
                         // console.log(error);
                     }
 
-                }} className="m-8 max-w-xl mx-auto p-6 bg-white rounded-md shadow-md">
+                }} className="m-8 max-w-xl mx-auto p-6 bg-white rounded-md shadow-md transition-transform transform hover:scale-105">
                     {/* {/ Book Name /} */}
                     <div className="mb-4">
                         <label htmlFor="bookName" className="block text-gray-700 text-sm font-bold mb-2">
