@@ -2,6 +2,9 @@
     max-width: 100vw;
 }
 .active {
-    color: #6969d4;
+    background-color: rgba(49, 111, 236, 0.696);
+    color: white;
+    padding: 6px;
+    border-radius: 4px;
     
 }
