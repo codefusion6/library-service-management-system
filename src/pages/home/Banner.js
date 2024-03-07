@@ -11,7 +11,7 @@ const Banner = () => {
 
 
   return (
-    <section className="lg:h-[80vh] flex items-center justify-center py-16 lg:py-0 px-1 bg-sky-800">
+    <section className="lg:h-[100vh] flex items-center justify-center py-16 lg:py-0 px-1 bg-sky-800">
       <div className="container mx-auto">
         <div className="justify-content-center align-items-center grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
           <div className="flex flex-col gap-y-8 gap-2 px-5 lg:px-0">

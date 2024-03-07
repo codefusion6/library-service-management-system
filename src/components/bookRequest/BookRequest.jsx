@@ -13,11 +13,11 @@ const BookRequest = () => {
   } = UserAuth();
   return (
     <section>
-      <div className="space-y-1">
-        <h1 className="text-base font-semibold text-center ">
+      <div className="space-y-1 mt-10">
+        <h1 className=" font-semibold text-center text-xl ">
           We are giving you an opportunity to requesting for a book
         </h1>
-        <p className="text-base font-medium text-center flex gap-2 items-center justify-center">
+        <p className="text-xl font-medium text-center flex gap-2 items-center justify-center">
           By filling up this from you can request for a book{" "}
           <FaRegHandPointDown className="text-green-400" />
         </p>
@@ -41,19 +41,22 @@ const BookRequest = () => {
             }
           }}
         >
+          
           <p className="text-base font-light mb-1">Enter Book Name:</p>
           <Input
             type="text"
             name="bookName"
             variant="bordered"
-            className="w-1/3"
+            className="w-full"
+            placeholder="Enter Book Name"
           />
           <p className="text-base font-light mb-1">Enter Author Name:</p>
           <Input
             type="text"
             name="authorName"
             variant="bordered"
-            className="w-1/3"
+            className="w-full"
+            placeholder="Enter Author Name:"
           />
           <p className="text-base font-light mb-1">
             Please Write a request sms:
@@ -63,16 +66,21 @@ const BookRequest = () => {
             name="requestSMS"
             variant="bordered"
             labelPlacement="outside"
-            className="w-1/3"
+            className="w-full"
+            placeholder="Enter Text Here"
           />
+          <div className="text-center items-center justify-center">
+
           <Button
             type="submit"
             className="mt-2"
             color="primary"
             variant="ghost"
+
           >
             Submit
           </Button>
+          </div>
         </form>
       </div>
     </section>

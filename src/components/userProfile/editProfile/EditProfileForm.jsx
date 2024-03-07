@@ -23,7 +23,7 @@ const EditProfileForm = ({ existingUser }) => {
     <div>
       <Button
         onPress={onOpen}
-        className="rounded-xl hover:bg-lime-700 border text-black border-green-600 hover:text-white font-bold px-5 py-2"
+        className="rounded-xl bg-blue-400 hover:bg-blue-700 border text-black  hover:text-white font-bold px-5 py-2"
       >
         Edit Profile
       </Button>
