@@ -8,7 +8,12 @@ module.exports = {
       "mongodb-client-encryption": false,
       "aws4": false,
     };
+
     // config.infrastructureLogging = { debug: /PackFileCache/ }
     return config;
-  }
+  },
+  reactStrictMode: true,
+  experimental: {
+    serverActions: true,
+  },
 };
