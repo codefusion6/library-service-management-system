@@ -11,9 +11,5 @@ module.exports = {
 
     // config.infrastructureLogging = { debug: /PackFileCache/ }
     return config;
-  },
-  reactStrictMode: true,
-  experimental: {
-    serverActions: true,
-  },
+  }
 };
