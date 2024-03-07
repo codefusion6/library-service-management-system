@@ -23,10 +23,12 @@ import NavUser from "./NavUser";
 import { IoMdLogOut } from "react-icons/io";
 import { LuLayoutDashboard } from "react-icons/lu";
 import ScrolledSideLogo from "./ScrolledSideLogo";
+import { usePathname } from "next/navigation";
 // import { AcmeLogo } from "./AcmeLogo.jsx";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { user, logOut } = UserAuth();
+    const pathname = usePathname()
   const menuItems = [
     {
       url_name: "Home",
@@ -110,7 +112,7 @@ export default function App() {
           <NavbarItem>
             <Link
               className={`${scroll ? "text-black" : "text-white"
-                } hover:text-primary duration-200`}
+                } hover:text-primary duration-200 ${pathname === '/' ? 'active' : ''}`}
               href="/"
             >
               Home
@@ -119,7 +121,7 @@ export default function App() {
           <NavbarItem>
             <Link
               className={`${scroll ? "text-black" : "text-white"
-                } hover:text-primary duration-200`}
+                } hover:text-primary duration-200 ${pathname === '/about' ? 'active' : ''}`}
               href="/about"
             >
               About us
@@ -128,7 +130,7 @@ export default function App() {
           <NavbarItem>
             <Link
               className={`${scroll ? "text-black" : "text-white"
-                } hover:text-primary duration-200`}
+                } hover:text-primary duration-200 ${pathname === '/contact' ? 'active' : ''}`}
               href="/contact"
             >
               Contact us
@@ -137,7 +139,7 @@ export default function App() {
           <NavbarItem>
             <Link
               className={`${scroll ? "text-black" : "text-white"
-                } hover:text-primary duration-200`}
+                } hover:text-primary duration-200 ${pathname === '/allBooks' ? 'active' : ''}`}
               href="/allBooks"
             >
               All Books
@@ -146,7 +148,7 @@ export default function App() {
           <NavbarItem>
             <Link
               className={`${scroll ? "text-black" : "text-white"
-                } hover:text-primary duration-200`}
+                } hover:text-primary duration-200 ${pathname === '/pricing' ? 'active' : ''}`}
               href="/pricing"
             >
               Pricing
@@ -155,7 +157,7 @@ export default function App() {
           <NavbarItem>
             <Link
               className={`${scroll ? "text-black" : "text-white"
-                } hover:text-primary duration-200`}
+                } hover:text-primary duration-200 ${pathname === '/all-writers' ? 'active' : ''}`}
               href="/all-writers"
             >
               Writers

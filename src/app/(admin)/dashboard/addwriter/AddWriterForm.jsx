@@ -3,7 +3,6 @@ import { addWriter } from "@/libs/actions/writer.action";
 import { CldUploadWidget } from "next-cloudinary";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import AddWritterBtn from "./AddWritterBtn";
 
 const AddWriterForm = () => {
   const [authorImg, setAuthorImg] = useState("");
@@ -80,7 +79,7 @@ const AddWriterForm = () => {
       </div>
       <div className="flex md:flex-row flex-col items-start md:items-center justify-start  md:justify-center px-0  md:px-10 py-5">
         <div className="md:w-[200px] font-bold text-xl">
-          <h1>Write Address:</h1>
+          <h1>Writer Address:</h1>
         </div>
         <div className="relative flex-1 sm:w-auto w-full">
           <input
@@ -116,6 +115,7 @@ const AddWriterForm = () => {
           </label>
         </div>
       </div>
+      {/* image upload and submit button */}
       <div className="flex flex-col md:flex-row gap-5 justify-center">
         <div>
           <CldUploadWidget
@@ -144,7 +144,14 @@ const AddWriterForm = () => {
             }}
           </CldUploadWidget>
         </div>
-        <AddWritterBtn></AddWritterBtn>
+        <div>
+          <button
+            type="submit"
+            className="bg-gradient-to-r from-[#4b79a7] to-[#4ebcde]  py-4 px-5 rounded-md text-white text-sm font-semibold"
+          >
+            Add Writer
+          </button>
+        </div>
       </div>
     </form>
   );

@@ -1,7 +1,7 @@
 import { Link } from '@nextui-org/react';
 import Image from 'next/image';
 import React from 'react';
-import scrolledSiteLogo from "../../../public/logo-no-background.png"
+import scrolledSiteLogo from "../../../public/images/bookflow2.png"
 
 const ScrolledSideLogo = () => {
     return (
