@@ -9,7 +9,7 @@ const Chart = ({ writerNum, bookNum, userNum }) => {
   // console.log(writerNum, bookNum, userNum)
   const data = [
     {
-      name: "Writters",
+      name: "Writers",
       uv: writerNum,
       pv: bookNum,
       amt: userNum,
@@ -32,24 +32,6 @@ const Chart = ({ writerNum, bookNum, userNum }) => {
       pv: 0,
       amt: 0,
     },
-    // {
-    //   name: "Page E",
-    //   uv: 1890,
-    //   pv: 4800,
-    //   amt: 2181,
-    // },
-    // {
-    //   name: "Page F",
-    //   uv: 2390,
-    //   pv: 3800,
-    //   amt: 2500,
-    // },
-    // {
-    //   name: "Page G",
-    //   uv: 3490,
-    //   pv: 4300,
-    //   amt: 2100,
-    // },
   ];
 
   const getPath = (x, y, width, height) => {

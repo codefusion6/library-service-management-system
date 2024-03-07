@@ -1,20 +1,19 @@
-import AddWriterForm from "./AddWriterForm"
+import AddWriterForm from "./AddWriterForm";
 
 const AddWriter = () => {
   return (
-    <div className=''>
-      <div className=' py-5 px-3 md:px-0'>
-       
-        <div className=''>
-          <h2 className='text-2xl font-semibold text-center'>Create Writer Here</h2>
-          <hr className='mb-3' />
+    <div className="">
+      <div className=" py-5 px-3 md:px-0">
+        <div className="">
+          <h2 className="text-2xl font-bold uppercase py-3 text-left border-b-2 pb-5">
+            Create Writer Here
+          </h2>
 
-         <AddWriterForm />
-
+          <AddWriterForm />
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default AddWriter
+export default AddWriter;

@@ -21,7 +21,7 @@ const DisplayBookRequest = ({ requestedBooks }) => {
   };
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8">Book Request Table of users </h1>
+      <h1 className="text-3xl font-bold uppercase text-center py-5 mb-8">Book Request Table of users </h1>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>

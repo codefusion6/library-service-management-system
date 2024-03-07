@@ -16,7 +16,7 @@ const SidebarItems = ({ expanded }) => {
           <>
             <ul className="text-black space-y-4">
               {/* home */}
-              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600">
                 <Link href="/" className="flex gap-2 font-bold">
                   <FaHome size={25} className="text-xl font-bold mx-2" />
                   <span className={`${expanded ? "block" : "hidden"}`}>
@@ -25,9 +25,9 @@ const SidebarItems = ({ expanded }) => {
                 </Link>
               </li>
               {/* Favorite Books */}
-              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600">
                 <Link
-                  href="/dashboard/favourite"
+                  href="/dashboard/favorite"
                   className="flex gap-2 font-bold"
                 >
                   <CiBoxList size={25} className="text-xl font-bold" />
@@ -37,7 +37,7 @@ const SidebarItems = ({ expanded }) => {
                 </Link>
               </li>
               {/* Publisher Request */}
-              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600">
                 <Link
                   href="/dashboard/publisher-request"
                   className="flex gap-2 font-bold"
@@ -54,7 +54,7 @@ const SidebarItems = ({ expanded }) => {
           <>
             <ul className="text-black space-y-4">
               {/* home */}
-              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600">
                 <Link href="/" className="flex gap-2 font-bold">
                   <FaHome size={25} className="text-xl font-bold mx-2" />
                   <span className={`${expanded ? "block" : "hidden"}`}>
@@ -63,7 +63,7 @@ const SidebarItems = ({ expanded }) => {
                 </Link>
               </li>
               {/* Favorite Books */}
-              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600">
                 <Link
                   href="/dashboard/favourite"
                   className="flex gap-2 font-bold"
@@ -75,7 +75,7 @@ const SidebarItems = ({ expanded }) => {
                 </Link>
               </li>
               {/* Publisher Request */}
-              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+              <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600">
                 <Link
                   href="/dashboard/publisher-request"
                   className="flex gap-2 font-bold"
@@ -94,7 +94,7 @@ const SidebarItems = ({ expanded }) => {
             <li
               className="flex gap-2 items-center py-2 px-3 my-1
             font-medium rounded-md cursor-pointer
-            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600"
             >
               <Link href="/dashboard" className="flex gap-2 font-bold">
                 <FaHome size={25} className="text-xl font-bold" />
@@ -106,7 +106,7 @@ const SidebarItems = ({ expanded }) => {
             {/* Book List */}
             <li
               className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600"
             >
               <Link href="/dashboard/booklist" className="flex gap-2 font-bold">
                 <CiBoxList size={25} className="text-xl font-bold" />
@@ -118,7 +118,7 @@ const SidebarItems = ({ expanded }) => {
             {/* Add Book */}
             <li
               className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96525] text-[#12a150]"
+            transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600"
             >
               <Link href="/dashboard/addbook" className="flex gap-2 font-bold">
                 <MdFormatListBulletedAdd
@@ -133,7 +133,7 @@ const SidebarItems = ({ expanded }) => {
             {/* Add Writer */}
             <li
               className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600"
             >
               <Link
                 href="/dashboard/addwriter"
@@ -152,7 +152,7 @@ const SidebarItems = ({ expanded }) => {
             <li
               className="flex gap-2 items-center py-2 px-3 my-1
             font-medium rounded-md cursor-pointer
-            transition-colors group hover:bg-green-500 hover:text-white  bg-[#18c96433] text-[#12a150]"
+            transition-colors group hover:bg-blue-600 hover:text-white  bg-[#acd0f97b] text-blue-600"
             >
               <Link href="/dashboard/all-user" className="flex gap-2 font-bold">
                 <CiBoxList size={20} className="text-xl font-bold" />
@@ -165,7 +165,7 @@ const SidebarItems = ({ expanded }) => {
             <li
               className="flex gap-2 items-center py-2 px-3 my-1
             font-medium rounded-md cursor-pointer
-            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600"
             >
               <Link
                 href="/dashboard/payment-history"
@@ -181,7 +181,7 @@ const SidebarItems = ({ expanded }) => {
             <li
               className="flex gap-2 items-center py-2 px-3 my-1
             font-medium rounded-md cursor-pointer
-            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+            transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600"
             >
               <Link
                 href="/dashboard/publisher-pending-request"
@@ -194,7 +194,7 @@ const SidebarItems = ({ expanded }) => {
               </Link>
             </li>
             {/* user Book request */}
-            <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]">
+            <li className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600">
               <Link
                 href="/dashboard/book-request"
                 className="flex gap-2 font-bold"
@@ -211,7 +211,7 @@ const SidebarItems = ({ expanded }) => {
             <ul className="text-black space-y-4">
               <li
                 className="flex gap-2 font-bold items-center py-2 px-3 my-1 rounded-md cursor-pointer
-            transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96525] text-[#12a150]"
+            transition-colors group hover:bg-blue-600 hover:text-white bg-[#18c96525] text-blue-600"
               >
                 <Link
                   href="/dashboard/addbook"
@@ -240,7 +240,7 @@ const SidebarItems = ({ expanded }) => {
             <li
               className="flex gap-2 items-center py-2 px-3 my-1
       font-medium rounded-md cursor-pointer
-      transition-colors group hover:bg-green-500 hover:text-white bg-[#18c96433] text-[#12a150]"
+      transition-colors group hover:bg-blue-600 hover:text-white bg-[#acd0f97b] text-blue-600"
             >
               <Link
                 href="/dashboard/userProfile"
