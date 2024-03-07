@@ -3,7 +3,6 @@ import { addWriter } from "@/libs/actions/writer.action";
 import { CldUploadWidget } from "next-cloudinary";
 import React, { useState } from "react";
 import toast from "react-hot-toast";
-import AddWritterBtn from "./AddWritterBtn";
 
 const AddWriterForm = () => {
   const [authorImg, setAuthorImg] = useState("");
