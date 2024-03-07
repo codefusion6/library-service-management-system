@@ -13,26 +13,23 @@ import { addFavourite } from "@/libs/actions/favourite.action";
 const Cards = ({ books }) => {
   const { user, getRolebaseUser } = UserAuth();
   // console.log(getRolebaseUser)
-
-  if (getRolebaseUser && getRolebaseUser?.role == "member") {
-    const handleFavouriteClick = async (bookId) => {
-      const favouritBook = {
-        email: user.email,
-        bookId: bookId,
-      };
-
-      try {
-        const response = await addFavourite(favouritBook);
-        if (response.success) {
-          toast.success("Book added to your favourite list", {
-            position: "bottom-right"
-          });
-        }
-      } catch (error) {
-        toast.error(error.message);
-      }
+  const handleFavouriteClick = async (bookId) => {
+    const favouritBook = {
+      email: user.email,
+      bookId: bookId,
     };
-  }
+
+    try {
+      const response = await addFavourite(favouritBook);
+      if (response.success) {
+        toast.success("Book added to your favourite list", {
+          position: "bottom-right"
+        });
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
 
   return (
     <>
@@ -82,7 +79,7 @@ const Cards = ({ books }) => {
                 {/* {renderStars(items.rating)} */}
               </p>
               <h4 className="font-semibold text-lg mt-2">{items?.bookName}</h4>
-              <h4 className="text-lg mt-2 uppercase sm:text-xl font-medium">{items?.authorName}</h4>
+              <h4 className="text-md mt-2 uppercase sm:text-lg font-medium">{items?.authorName}</h4>
             </div>
           </CardHeader>
         </Card>

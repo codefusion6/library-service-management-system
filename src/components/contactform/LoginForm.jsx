@@ -19,6 +19,7 @@ const LoginForm = () => {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
+      console.log(loginResut)
       toast.success('Login successful');
       redirect("/")
     } catch (error) {

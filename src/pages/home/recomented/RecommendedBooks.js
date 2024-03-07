@@ -12,7 +12,7 @@ const RecommendedBooks = async () => {
       <div className="container mx-auto">
         <p className="text-3xl font-bold pb-2 pl-5 lg:pl-0">Recommenced Book&apos;s </p>
 
-        <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 p-5 lg:p-0">
+        <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-5 lg:p-0">
           <Cards books={books}></Cards>
         </div>
       </div>
