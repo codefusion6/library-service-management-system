@@ -31,32 +31,8 @@ const Features = () => {
           {featuredBooks.map((book) => (
             <div key={book._id} className="p-4 border border-gray-300 rounded text-center">
               <h3 className="text-lg font-semibold mb-2">{book.bookName}</h3>
-              {/* Show Book Cover for desktop and tablet */}
-              <div className="hidden sm:block md:block">
-                {book?.bookCover !== null && book?.bookCover !== 'null' && (
-                  <Image
-                    src={book?.bookCover}
-                    alt="Book Cover"
-                    width={250}
-                    height={350}
-                    className="mx-auto mt-4 mb-2 rounded"
-                  />
-                )}
-              </div>
-              {/* Show Book Cover for mobile */}
-              <div className="block sm:hidden md:hidden">
-                {book?.bookCover !== null && book?.bookCover !== 'null' && (
-                  <Image
-                    src={book?.bookCover}
-                    alt="Book Cover"
-                    width={250} // Adjust the width as needed
-                    height={350} // Adjust the height as needed
-                    className="mx-auto mt-4 mb-2 rounded"
-                  />
-                )}
-              </div>
-              {/* Author Image and Name */}
-              <div className="flex items-center justify-center">
+                            {/* Author Image and Name */}
+                            <div className="flex items-center justify-center">
                 {book?.authorImage && (
                   <Image
                     src={book.authorImage}
@@ -68,6 +44,32 @@ const Features = () => {
                 )}
                 <p className="text-gray-600 text-sm">{book?.authorName}</p>
               </div>
+              {/* Show Book Cover for desktop and tablet */}
+              <div className="hidden sm:block md:block">
+                {book?.bookCover !== null && book?.bookCover !== 'null' && (
+                  <Image
+                  src={book?.bookCover}
+                  alt="Book Cover"
+                  width={250}
+                  height={350}
+                  className="mx-auto mt-4 mb-2 rounded object-contain w-48 h-72"
+                  />
+                )}
+              </div>
+              {/* Show Book Cover for mobile */}
+              <div className="block sm:hidden md:hidden">
+                {book?.bookCover !== null && book?.bookCover !== 'null' && (
+                  <Image
+                  src={book?.bookCover}
+                  alt="Book Cover"
+                  width={250}
+                  height={350}
+                  className="mx-auto mt-4 mb-2 rounded object-contain w-48 h-72"
+                  />
+
+                )}
+              </div>
+
             </div>
           ))}
         </div>
