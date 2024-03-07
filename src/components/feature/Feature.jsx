@@ -18,7 +18,6 @@ const Features = () => {
         setLoading(false);
       }
     };
-
     fetchFeaturedBooks();
   }, []);
 
@@ -38,8 +37,8 @@ const Features = () => {
                   <Image
                     src={book?.bookCover}
                     alt="Book Cover"
-                    width={250} 
-                    height={350} 
+                    width={250}
+                    height={350}
                     className="mx-auto mt-4 mb-2 rounded"
                   />
                 )}
