@@ -2,18 +2,15 @@
 import React from "react";
 import "./card.styles.css";
 import Cards from "./Cards";
-import { getRecommandedBooks } from "@/libs/actions/book.action";
 
-const RecommendedBooks = async () => {
-  const books = await getRecommandedBooks()
-  // console.log(books)
+const RecommendedBooks = () => {
   return (
-    <section className="py-20 bg-sky-100">
+    <section className="min-h-screen">
       <div className="container mx-auto">
-        <p className="text-3xl font-bold pb-2 pl-5 lg:pl-0">Recommenced Book&apos;s </p>
-
-        <div className="mt-3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 p-5 lg:p-0">
-          <Cards books={books}></Cards>
+        <p className="text-2xl font-bold pb-2 pl-5 lg:pl-0">Recommenced Book&apos;s </p>
+        <hr />
+        <div className="mt-3 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 p-5 lg:p-0">
+          <Cards></Cards>
         </div>
       </div>
     </section>
