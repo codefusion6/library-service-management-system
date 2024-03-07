@@ -18,7 +18,6 @@ const Features = () => {
         setLoading(false);
       }
     };
-
     fetchFeaturedBooks();
   }, []);
 

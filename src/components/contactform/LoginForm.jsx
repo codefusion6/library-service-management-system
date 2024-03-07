@@ -11,7 +11,6 @@ import { redirect } from 'next/navigation';
 
 const LoginForm = () => {
   // const router = useRouter()
-
   const [isVisible, setIsVisible] = React.useState(false);
   const { googleSignIn, logIn } = UserAuth();
   const toggleVisibility = () => setIsVisible(!isVisible);
@@ -19,9 +18,7 @@ const LoginForm = () => {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
-      console.log(loginResut)
       toast.success('Login successful');
-      redirect("/")
     } catch (error) {
       console.error('Google sign-in error:', error);
     }
