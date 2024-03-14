@@ -160,6 +160,7 @@ export const getRecommandedBooks = async () => {
     const result = await Book.find({ category: "Elite" });
     // console.log(result)
     return JSON.parse(JSON.stringify(result));
+    // console.log(JSON.parse(JSON.stringify(result)))
   } catch (error) {
     return JSON.parse(JSON.stringify(error));
   }

@@ -7,10 +7,10 @@ import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa6";
 import LottieAnimation from "./LottieAnimation";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
-import { redirect } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
-  // const router = useRouter()
+  const router = useRouter()
   const [isVisible, setIsVisible] = React.useState(false);
   const { googleSignIn, logIn } = UserAuth();
   const toggleVisibility = () => setIsVisible(!isVisible);
@@ -18,6 +18,7 @@ const LoginForm = () => {
   const handleGoogleSignIn = async () => {
     try {
       await googleSignIn();
+      router.push("/")
       toast.success('Login successful');
     } catch (error) {
       console.error('Google sign-in error:', error);

@@ -1,35 +1,59 @@
 "use client";
-
 import React from "react";
 import { Card, CardHeader, CardBody } from "@nextui-org/react";
-import { FaEye, FaRegHeart, FaStar, FaStarHalfAlt } from "react-icons/fa";
+import { FaEye, FaRegHeart } from "react-icons/fa";
 import Image from "next/image";
 import { Tooltip, Button } from "@nextui-org/react";
 import Link from "next/link";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
 import { addFavourite } from "@/libs/actions/favourite.action";
+import Swal from "sweetalert2";
+import { useRouter } from "next/navigation";
+// import { redirect } from "next/navigation";
+// import { addFavourite } from "@/libs/actions/favourite.action";
 
 const Cards = ({ books }) => {
   const { user } = UserAuth();
-  // console.log(getRolebaseUser)
+  const router = useRouter()
+
   const handleFavouriteClick = async (bookId) => {
     const favouritBook = {
       email: user?.email,
       bookId: bookId,
     };
 
-    try {
-      const response = await addFavourite(favouritBook);
-      if (response.success) {
-        toast.success("Book added to your favourite list", {
-          position: "bottom-right"
-        });
+    if (!user) {
+      Swal.fire({
+        title: "Are you sure?",
+        text: "You won't be able to revert this!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Yes, Login"
+      }).then((result) => {
+        if (result.isConfirmed) {
+          router.push("/login")
+          // redirect("/login")
+        }
+      });
+    } else {
+      try {
+        console.log(favouritBook)
+        const { result } = await addFavourite(favouritBook);
+        // console.log(result)
+        if (result) {
+          toast.success("Book added to your favourite list");
+        }
+      } catch (error) {
+        toast.error(error.message);
       }
-    } catch (error) {
-      toast.error(error.message);
-    }
-  };
+    };
+  }
+
+
+
 
   return (
     <>
