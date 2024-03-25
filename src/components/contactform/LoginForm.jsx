@@ -21,7 +21,7 @@ const LoginForm = () => {
       if (result.user) {
         console.log(result);
         router.push("/")
-        toast.success('Login successful')
+        // toast.success('Login successful')
       }
     })
       .catch((error) => {

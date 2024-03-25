@@ -1,7 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import siteLogo from '../../../public/images/bookflow.png'
+import siteLogo from '../../../public/images/bookflow1.png'
+
 const SiteLogo = () => {
     return (
         <Link href="/">

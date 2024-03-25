@@ -13,6 +13,8 @@ import { auth } from "../../firbase/firebase";
 import { createCookie, deleteCookie } from "@/libs/actions/useCookie.action";
 import { getOneUser } from "@/libs/actions/user.actions";
 import { addUser, getUserByEmail } from "@/libs/actions/user.actions";
+import { redirect } from "next/navigation";
+
 
 const AuthContext = createContext(null);
 export const AuthContextProvider = ({ children }) => {

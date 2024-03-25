@@ -45,3 +45,15 @@ export const getOnePaymentHistory = async (paymentId) => {
     return JSON.parse(JSON.stringify(error));
   }
 } 
+
+// get the payment number
+export const getPaymentNumber = async () => {
+  try {
+    const paymentNumber = await PaymentHistory.find().countDocuments();
+    return JSON.parse(JSON.stringify(paymentNumber));
+    
+  } catch (error) {
+    return JSON.parse(JSON.stringify(error));
+  }
+}
+

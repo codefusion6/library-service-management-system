@@ -28,11 +28,13 @@ const AllBookCard = ({ books }) => {
   };
   // authorName bookName
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16">
       {books?.map((book, index) => (
         <div
           key={index}
-          className="hover:border-green-500 border-transparent rounded-lg hover:border-2 hover:shadow-inner shadow-green-500 text-center shadow-none  relative group py-3"
+          className="hover:border-blue-600 border-transparent rounded-lg hover:border-2 hover:shadow-inner shadow-lg text-center shadow-slate-400300 relative group py-3
+          w-full
+          "
         >
           <div className="space-y-1">
             <Image

@@ -1,60 +1,27 @@
 "use client";
-import { acceptBookRequest } from "@/libs/actions/acceptPublisherRequest.action";
+import { acceptBookRequest, rejectRequest } from "@/libs/actions/requestBook.action";
 import React from "react";
+import toast from "react-hot-toast";
 
 const DisplayBookRequest = ({ requestedBooks }) => {
- 
 
   // accept the request
   const handleAcceptRequest = async (requestId) => {
-    try {
-      const result = await acceptBookRequest(requestId);
-
-      if (result.success) {
-        setPendingRequests((prevRequests) =>
-          prevRequests.map((request) =>
-            request._id === requestId
-              ? { ...request, status: "accepted" }
-              : request
-          )
-        );
-
-        console.log("Request accepted successfully!", result.data);
-        toast.success("Request accepted successfully!");
-      } else {
-        console.error("Failed to accept request:", result.error);
-      }
-    } catch (error) {
-      console.error("Error accepting request:", error);
+    const result = await acceptBookRequest(requestId)
+    if (result) {
+      toast.success("Request Acceptted")
     }
   };
 
-  //   reject the Book request
-  // const handleRejectRequest = async (requestId) => {
-  //   try {
-  //     const result = await rejectBookRequest(requestId);
-
-  //     if (result.success) {
-  //       setPendingRequests((prevRequests) =>
-  //         prevRequests.map((request) =>
-  //           request._id === requestId
-  //             ? { ...request, status: "rejected" }
-  //             : request
-  //         )
-  //       );
-  //       console.log("Request rejected successfully!", result.data);
-  //       toast.success("Request rejected successfully!");
-  //     } else {
-  //       console.error("Failed to reject request:", result.error);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error rejecting request:", error);
-  //   }
-  // };
-
+  const handleRejectRequest = async (requestId) => {
+    const result = await rejectRequest(requestId)
+    if (result) {
+      toast.success("Request Rejected")
+    }
+  };
   return (
     <div>
-      <h1 className="text-3xl font-bold mb-8">Book Request Table of users </h1>
+      <h1 className="text-3xl font-bold uppercase text-center py-5 mb-8">Book Request Table of users </h1>
       <div className="overflow-x-auto">
         <table className="min-w-full bg-white border border-gray-300">
           <thead>
@@ -89,23 +56,23 @@ const DisplayBookRequest = ({ requestedBooks }) => {
                 <td className="py-3 px-4 border-b text-center ">
                   <button
                     onClick={() => handleAcceptRequest(request._id)}
-                    className="bg-green-500 text-white py-1 px-2 mr-2 rounded hover:bg-green-600"
+                    className={`bg-green-500 text-white py-1 px-2 mr-2 rounded hover:bg-green-600 disabled:bg-gray-900 disabled:text-white`} disabled={request.status == "Accepted"}
                   >
                     Accept
                   </button>
-                  {/* <button
-                    onClick={() => handleRejectRequest(request._id)}
-                    className="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600"
+                  <button
+                    onClick={() => handleRejectRequest(request._id)} disabled={request.status == "Rejected"}
+                    className="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600 disabled:bg-gray-900 disabled:text-white"
                   >
                     Reject
-                  </button> */}
+                  </button>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </div>
-    </div>
+    </div >
   );
 };
 

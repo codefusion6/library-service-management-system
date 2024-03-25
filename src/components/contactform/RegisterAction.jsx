@@ -6,6 +6,7 @@ import toast from 'react-hot-toast';
 import { UserAuth } from '@/app/provider/context/AuthContext';
 import { Input } from '@nextui-org/react';
 import { CldUploadWidget } from 'next-cloudinary';
+import { redirect } from 'next/navigation';
 
 const RegisterAction = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -27,7 +28,6 @@ const RegisterAction = () => {
     const name = formData.get('name');
     const email = formData.get('email');
     const password = formData.get('password');
-
     // Append profile image to formData
     formData.append("photoURL", profileImage);
 
@@ -36,17 +36,16 @@ const RegisterAction = () => {
       const user = await createUser(email, password);
 
       if (user.user) {
-        toast.success('User created successfully');
 
+        toast.success('User created successfully');
         // Update the user profile with additional information
         const updateResult = await updateUserProfile(name, profileImage);
         if (updateResult) {
           toast.success('Profile updated successfully');
         }
-
         // Add user data to the database or perform any other actions
         const res = await addUser(formData);
-        // console.log(res);
+        redirect("/")
       }
     } catch (error) {
       // console.log('Error creating user:', error.message);
@@ -54,6 +53,7 @@ const RegisterAction = () => {
       toast.error('Failed to create user');
     }
   };
+
   return (
     <div className="max-w-md mx-auto ">
       <form action={handleSubmit}>
@@ -86,7 +86,6 @@ const RegisterAction = () => {
               className="max-w-xs  rounded-lg px-3 py-2 mt-1 mb-5 w-96 text-sm ml-5 focus:border-blue-500 focus:ring-2 focus:ring-blue-500"
             />
           </div>
-
           <div>
             <label className="font-semibold ml-5 text-sm text-gray-600 pb-1 block" htmlFor="password">
               Password

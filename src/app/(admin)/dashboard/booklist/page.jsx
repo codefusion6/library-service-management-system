@@ -16,7 +16,7 @@ const BookListPage = async ({ searchParams }) => {
 
   return (
     <section className="container mx-auto">
-      <h2 className="text-3xl text-center my-5 font-medium text-green-700">
+      <h2 className="text-3xl text-center my-5 font-bold text-black uppercase">
         Available Books List
       </h2>
       <DashBookSlider></DashBookSlider>
