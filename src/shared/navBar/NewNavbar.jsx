@@ -23,7 +23,7 @@ import NavUser from "./NavUser";
 import { IoMdLogOut } from "react-icons/io";
 import { LuLayoutDashboard } from "react-icons/lu";
 import ScrolledSideLogo from "./ScrolledSideLogo";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 // import { AcmeLogo } from "./AcmeLogo.jsx";
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,10 +55,11 @@ export default function App() {
       link: "/all-writers"
     }
   ];
-
+  const router = useRouter();
   const handleLogout = async () => {
     try {
       await logOut();
+      router.push("/login")
       toast.success("Logout successful");
     } catch (error) {
       console.error("Logout error:", error);

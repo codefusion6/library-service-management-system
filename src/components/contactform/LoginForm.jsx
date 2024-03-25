@@ -7,30 +7,35 @@ import { FaGoogle, FaEye, FaEyeSlash } from "react-icons/fa6";
 import LottieAnimation from "./LottieAnimation";
 import { UserAuth } from "@/app/provider/context/AuthContext";
 import toast from "react-hot-toast";
-import { redirect } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 const LoginForm = () => {
-  // const router = useRouter()
+  const router = useRouter();
+
   const [isVisible, setIsVisible] = React.useState(false);
   const { googleSignIn, logIn } = UserAuth();
   const toggleVisibility = () => setIsVisible(!isVisible);
 
   const handleGoogleSignIn = async () => {
-    try {
-      await googleSignIn();
-      toast.success('Login successful');
-    } catch (error) {
-      console.error('Google sign-in error:', error);
-    }
+    googleSignIn().then((result) => {
+      if (result.user) {
+        console.log(result);
+        router.push("/")
+        // toast.success('Login successful')
+      }
+    })
+      .catch((error) => {
+        console.log(error);
+      });
   };
 
   return (
     <div className="mx-auto">
       <div>
-        <h2 className="text-2xl lg:text-4xl text-blue-500 text-center lg:font-medium lg:mt-5">
+        <h2 className="text-2xl w-max mx-auto border-b-2 p-4 lg:text-4xl text-blue-500 lg:font-medium lg:mt-5">
           Please Sign In
         </h2>
-        <hr className="w-1/2 lg:w-[46vh] lg:ml-[87vh] mt-3 mb-5 border mx-auto" />
+        {/* <hr className="w-1/2 lg:w-[46vh] lg:ml-[87vh] mt-3 mb-5 border mx-auto" /> */}
       </div>
       <section className="flex dark:bg-gray-900">
         <div className="flex flex-col lg:flex-row lg:items-center lg:justify-center lg:px-6 lg:py-8 mx-auto md:h-screen">
@@ -54,7 +59,7 @@ const LoginForm = () => {
                       toast.success("Logged In successfully")
                     }
                   } catch (error) {
-                    console.log(error);
+                    toast.error(error)
                   }
                 }}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
@@ -107,16 +112,6 @@ const LoginForm = () => {
                       />
                     </div>
                   </div>
-                  <div className="flex justify-center items-center mt-3 lg:mt-5">
-                    <button
-                      className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg px-4 py-2"
-                      onClick={handleGoogleSignIn}
-                    >
-                      <FaGoogle className="text-xl" />
-                      <span className="ml-2">Sign in with Google</span>
-                    </button>
-
-                  </div >
                   <div className="mt-5">
                     <button
                       className="bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg px-4 py-2"
@@ -125,18 +120,31 @@ const LoginForm = () => {
                       Sign In
                     </button>
                   </div>
-                  <div className="flex items-center justify-between mt-4">
-                    <span className="w-1/5 border-b dark:border-gray-600"></span>
-                    <Link
-                      className="text-xs text-gray-500 uppercase mb-4 dark:text-gray-400 hover:underline"
-                      href="/register"
-                    >
-                      Do not have an account?
-                      <span className="text-blue-500 font-serif">Sign Up</span>
-                    </Link>
-                    <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
-                  </div>
                 </form>
+                <div className="flex justify-center items-center mt-3 lg:mt-5">
+                  <button
+                    type="button"
+                    className="flex items-center justify-center bg-blue-600 hover:bg-blue-700 focus:ring-blue-500 focus:ring-offset-blue-200 text-white w-full transition ease-in duration-200 text-center text-base font-semibold shadow-md focus:outline-none focus:ring-2 focus:ring-offset-2 rounded-lg px-4 py-2"
+                    onClick={handleGoogleSignIn}
+                  >
+                    <FaGoogle className="text-xl" />
+                    <span className="ml-2">Sign in with Google</span>
+                  </button>
+
+                </div >
+
+                <div className="flex items-center justify-between mt-4">
+                  <span className="w-1/5 border-b dark:border-gray-600"></span>
+                  <Link
+                    className="text-xs text-gray-500 uppercase mb-4 dark:text-gray-400 hover:underline"
+                    href="/register"
+                  >
+                    Do not have an account?
+                    <span className="text-blue-500 font-serif">Sign Up</span>
+                  </Link>
+                  <span className="w-1/5 border-b dark:border-gray-600 md:w-1/4"></span>
+                </div>
+
               </div >
             </div >
           </div >

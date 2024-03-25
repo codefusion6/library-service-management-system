@@ -7,7 +7,7 @@ const LottieAnimation = () => {
   return (
     <div>
 
-      <Lottie animationData={lottie}></Lottie>
+      <Lottie animationData={lottie} loop={false}></Lottie>
     </div>
   );
 };

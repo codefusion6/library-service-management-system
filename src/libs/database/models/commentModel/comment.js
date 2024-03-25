@@ -6,6 +6,6 @@ const CommentSchema = new Schema({
   ratingNumber: { type: Number, required: true },
 });
 
-const BookComment = models.BookComment || model("BookComment", CommentSchema);
+const Comment = models.Comment || model("Comment", CommentSchema);
 
-export default BookComment;
+export default Comment;

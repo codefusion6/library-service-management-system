@@ -47,7 +47,7 @@ const Sidebar = ({ }) => {
           <ul className="flex-1 px-6 mt-4">
             <SidebarItems expanded={expanded} />
           </ul>
-          <div className="border-r flex p-3">
+          <div className="border-r flex p-3 text-wrap">
             {
               !loading && <Image src={user?.photoURL !== null ? user?.photoURL : "https://i.ibb.co/gTBx7qs/sumon.png"}
                 rel="noreferrer"
@@ -61,10 +61,10 @@ const Sidebar = ({ }) => {
               className={`flex justify-between items-center text-black px-3 py-2 bg-[#acd0f97b] w-full ml-2 rounded-md ${expanded ? "block" : "hidden"
                 }`}
             >
-              <div className="leading-4">
+              <div className="leading-4 ">
                 <div className="text-wrap">
                   <h2 className="font-semibold pb-1">{user?.displayName}</h2>
-                  <span className="text-sm">{user?.email}</span>
+                  <p className="w-[50px] text-wrap"><span className="text-sm w-[50px]">{user?.email}</span></p>
                 </div>
               </div>
               <BsThreeDotsVertical size={20} className="" />

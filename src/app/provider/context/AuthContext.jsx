@@ -22,25 +22,30 @@ export const AuthContextProvider = ({ children }) => {
   const [getRolebaseUser, setRolebaseUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const googleProvider = new GoogleAuthProvider();
 
   const googleSignIn = async () => {
-    const provider = new GoogleAuthProvider();
-    try {
-      const { user } = await signInWithPopup(auth, provider);
-      // Check if the user already exists in the database
-      const existingUser = await getUserByEmail(user.email);
-      if (!existingUser) {
-        // If the user doesn't exist, add them to the database
-        const formData = new FormData();
-        formData.append('name', user.displayName);
-        formData.append('email', user.email);
-        formData.append('photoURL', user.photoURL);
-        await addUser(formData);
-        // console.log('User added to the database');
-      }
-    } catch (error) {
-      console.error('Google sign-in error:', error);
-    }
+
+    return signInWithPopup(auth, googleProvider)
+    // try {
+    //   const { user } = await signInWithPopup(auth, googleProvider);
+
+    //   // Check if the user already exists in the database
+    //   // const existingUser = await getUserByEmail(user.email);
+
+    //   // if (!existingUser) {
+    //   //   // If the user doesn't exist, add them to the database
+    //   //   const formData = new FormData();
+    //   //   formData.append('name', user.displayName);
+    //   //   formData.append('email', user.email);
+    //   //   formData.append('photoURL', user.photoURL);
+
+    //   //   await addUser(formData);
+    //   //   console.log('User added to the database');
+    //   // }
+    // } catch (error) {
+    //   console.error('Google sign-in error:', error);
+    // }
   };
 
   const createUser = async (email, password,) => {

@@ -11,6 +11,7 @@ const AllBookCard = ({ books }) => {
   const { user } = UserAuth();
 
   const handleFavouriteClick = async (bookId) => {
+    console.log(bookId);
     const favouritBook = {
       email: user.email,
       bookId: bookId,

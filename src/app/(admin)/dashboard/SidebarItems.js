@@ -200,7 +200,10 @@ const SidebarItems = ({ expanded }) => {
                 href="/dashboard/book-request"
                 className="flex gap-2 font-bold"
               >
-                <CiBoxList size={25} className="text-xl font-bold" />
+                <MdFormatListBulletedAdd
+                  size={25}
+                  className="text-xl font-bold"
+                />
                 <span className={`${expanded ? "block" : "hidden"}`}>
                   Book Request
                 </span>
